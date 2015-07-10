@@ -22,14 +22,17 @@ var RT_REQUEST_URL = "https://raw.githubusercontent.com/facebook/react-native/ma
 
 
 var AwesomeProject = React.createClass({
+
   getInitalState: function() {
     return {
-      movies: null;
+      movies: null,
     };
   },
+
   componentDidMount: function() {
     this.fetchData();
   },
+
   fetchData: function() {
     fetch(RT_REQUEST_URL)
       .then((response) => response.json())
@@ -40,12 +43,26 @@ var AwesomeProject = React.createClass({
       })
       .done();
   },
+
   render: function() {
     if (!this.state.movies) {
       return this.renderLoadingView();
-    },
+    }
 
     var movie = MOCKED_DATA[0]
+    return this.renderMovie(movie)
+  },
+
+  renderLoadingView: function() {
+    return (
+      <View style={style.container}>
+        <Text>
+          Loading movies...
+        </Text>
+      </View>
+    )
+  },
+  renderMovie: function(movie) {
     return (
       <View style={styles.container}>
         <Image
@@ -58,7 +75,7 @@ var AwesomeProject = React.createClass({
         </View>
       </View>
     );
-  }
+  },
 });
 
 var styles = StyleSheet.create({
