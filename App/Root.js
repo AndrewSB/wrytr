@@ -7,6 +7,7 @@
 
 var React = require('react-native');
 var {
+	ActivityIndicatorIOS,
 	AppRegistry,
 	Image,
 	ListView,
@@ -60,7 +61,12 @@ var AwesomeProject = React.createClass({
 	renderLoadingView: function() {
 		return (
 			<View style={styles.container}>
-			<Text>Loading movies...</Text>
+				<ActivityIndicatorIOS
+					animating='true'
+					style={styles.activityIndicator}
+					size='large'
+				/>
+				<Text>Loading movies...</Text>
 			</View>
 		);
 	},
@@ -68,14 +74,14 @@ var AwesomeProject = React.createClass({
 	renderMovie: function(movie) {
 		return (
 			<View style={styles.container}>
-			<Image 
-			source={{uri: movie.posters.thumbnail}} 
-			style={styles.thumbnail}	
-			/>
-			<View style={styles.rightContainer}>
-			<Text style={styles.title}>{movie.title}</Text>
-			<Text style={styles.year}>{movie.year}</Text>
-			</View>
+				<Image 
+					source={{uri: movie.posters.thumbnail}} 
+					style={styles.thumbnail}	
+				/>
+				<View style={styles.rightContainer}>
+					<Text style={styles.title}>{movie.title}</Text>
+					<Text style={styles.year}>{movie.year}</Text>
+				</View>
 			</View>
 		);
 	},
@@ -110,6 +116,11 @@ var styles = StyleSheet.create({
 	year: {
 		textAlign: 'center',
 	},
+	activityIndicator: {
+		alignItems: 'center',
+		justifyContent: 'center',
+		height: 80,
+	}
 });
 
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
