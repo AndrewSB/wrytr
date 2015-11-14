@@ -18,7 +18,6 @@ class LoginView extends React.Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<Text>whaddup</Text>
 				<FBSDKLoginButton
 					onLoginFinished={(error, result) => {
 						if (error) {
