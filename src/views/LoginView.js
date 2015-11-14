@@ -6,40 +6,34 @@ var {
 	View,	
 	Text,
 } = React;
-
 import {FBSDKLoginButton} from 'react-native-fbsdklogin';
-import LoginView from './views/LoginView.js'
 
-class wrytr extends React.Component {
+class LoginView extends React.Component {
 	constructor(props) {
 		super(props);
 
-		console.log('constructor called');
-
-		this.state = {loggedIn: false};
+		console.log('login view constructed');
 	}
 
 	render() {
-		console.log('render called');
-
-		if (!this.state.loggedIn) {
-			return this.renderLoginView();
-		}
-
 		return (
 			<View style={styles.container}>
-				<Text style={styles.centerText}>welcome</Text>
+				<Text>whaddup</Text>
+				<FBSDKLoginButton
+					onLoginFinished={(error, result) => {
+						if (error) {
+							alert('error logging in ' + error);
+						} else {
+							alert('Logged in');
+						}
+					}}
+					onLogoutFinished={() => alert('Logged out.')}
+					readPermissions={['public_profile', 'email', 'user_friends']}
+				/>
 			</View>
 		);
 	}
-
-	renderLoginView() {
-		return (
-			<LoginView />
-		);
-	}
-
-}
+};
 
 var styles = React.StyleSheet.create({
 	container: {
@@ -49,10 +43,7 @@ var styles = React.StyleSheet.create({
 		alignItems: 'center',
 		marginTop: 2,
 		marginBottom: 2,
-	},
-	centerText: {
-		textAlign: 'center',
-	},
+	}
 });
 
-export default wrytr;
+export default LoginView;
