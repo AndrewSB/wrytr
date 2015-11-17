@@ -2,13 +2,9 @@
 'use strict';
 
 import React from 'react-native';
-var {
-	View,	
-	Text,
-} = React;
 
-import {FBSDKLoginButton} from 'react-native-fbsdklogin';
-import LoginView from './views/LoginView.js'
+import HomeView from './views/main/HomeView.js';
+import LoginView from './views/login/LoginView.js';
 
 class wrytr extends React.Component {
 	constructor(props) {
@@ -16,29 +12,18 @@ class wrytr extends React.Component {
 
 		console.log('constructor called');
 
-		this.state = {loggedIn: false};
+		this.state = {loggedIn: true};
 	}
 
 	render() {
 		console.log('render called');
 
-		if (!this.state.loggedIn) {
-			return this.renderLoginView();
-		}
-
 		return (
-			<View style={styles.container}>
-				<Text style={styles.centerText}>welcome</Text>
-			</View>
+			<HomeView />
 		);
-	}
 
-	renderLoginView() {
-		return (
-			<LoginView />
-		);
+		// return this.state.loggedIn ? (<HomeView />) (<LoginView />);
 	}
-
 }
 
 var styles = React.StyleSheet.create({

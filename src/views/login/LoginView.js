@@ -17,6 +17,12 @@ class LoginView extends React.Component {
 
 	render() {
 		return (
+			<View style={[styles.container, styles.loginBackground]}>
+				<Text style={styles.headerText}>wrytr</Text>
+				<Text style={styles.subtitleText}>Use your words</Text>
+			</View>
+		);
+		return (
 			<View style={styles.container}>
 				<FBSDKLoginButton
 					onLoginFinished={(error, result) => {
@@ -40,9 +46,16 @@ var styles = React.StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'center',
 		alignItems: 'center',
-		marginTop: 2,
-		marginBottom: 2,
-	}
+	},
+	loginBackground: {
+	 backgroundColor: '#54BFA8',
+	},
+	headerText: {
+		color: 'white',
+	},
+	subtitleText: {
+		color: 'white',
+	},
 });
 
 export default LoginView;
