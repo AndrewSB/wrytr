@@ -54,13 +54,13 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   React:
-    :path: "../node_modules/react-native"
+    :path: ../node_modules/react-native
   react-native-fbsdkcore:
-    :path: "../node_modules/react-native-fbsdkcore"
+    :path: ../node_modules/react-native-fbsdkcore
   react-native-fbsdklogin:
-    :path: "../node_modules/react-native-fbsdklogin"
+    :path: ../node_modules/react-native-fbsdklogin
   react-native-fbsdkshare:
-    :path: "../node_modules/react-native-fbsdkshare"
+    :path: ../node_modules/react-native-fbsdkshare
 
 SPEC CHECKSUMS:
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4

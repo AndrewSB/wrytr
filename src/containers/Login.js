@@ -6,7 +6,7 @@ var {
 	View,	
 	Text,
 } = React;
-import {FBSDKLoginButton} from 'react-native-fbsdklogin';
+import { FBSDKLoginButton } from 'react-native-fbsdklogin';
 
 class LoginView extends React.Component {
 	constructor(props) {
