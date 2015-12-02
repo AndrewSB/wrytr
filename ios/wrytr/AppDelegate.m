@@ -45,7 +45,13 @@
    * on the same Wi-Fi network.
    */
 
-  jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
+  if (TARGET_IPHONE_SIMULATOR) {
+    NSLog(@"sim");
+    jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
+  } else {
+    NSLog(@"device");
+    jsCodeLocation = [NSURL URLWithString:@"http://andrews-macbook-pro.local:8081/index.ios.bundle?platform=ios&dev=true"];
+  }
 
   /**
    * OPTION 2

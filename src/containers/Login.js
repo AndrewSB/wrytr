@@ -3,23 +3,25 @@
 
 import React from 'react-native';
 var {
-	View,	
+	View,
 	Text,
+	Image,
+	Dimensions,
 } = React;
-import { FBSDKLoginButton } from 'react-native-fbsdklogin';
+import SocialIcons from '../components/SocialIcons'
 
 class LoginView extends React.Component {
 	constructor(props) {
 		super(props);
-
-		console.log('login view constructed');
 	}
 
 	render() {
+		var wrytrWrittenLogo = require('./../../img/wrytr-logo.png');
 		return (
-			<View style={[styles.container, styles.loginBackground]}>
-				<Text style={styles.headerText}>wrytr</Text>
+			<View style={[styles.container]}>
+				<Image style={styles.writtenLogo} source={wrytrWrittenLogo} />
 				<Text style={styles.subtitleText}>Use your words</Text>
+				<SocialIcons />
 			</View>
 		);
 		return (
@@ -43,18 +45,19 @@ class LoginView extends React.Component {
 var styles = React.StyleSheet.create({
 	container: {
 		flex: 1,
-		flexDirection: 'row',
+		flexDirection: 'column',
 		justifyContent: 'center',
 		alignItems: 'center',
+		position: 'relative',
+		backgroundColor: '#54BFA8',
 	},
-	loginBackground: {
-	 backgroundColor: '#54BFA8',
-	},
-	headerText: {
-		color: 'white',
+	writtenLogo: {
+		width: (Dimensions.get('window').width * 0.7),
+		resizeMode: Image.resizeMode.contain,
 	},
 	subtitleText: {
 		color: 'white',
+		margin: 1,
 	},
 });
 
