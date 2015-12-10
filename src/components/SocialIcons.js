@@ -8,6 +8,7 @@ var {
   TouchableHighlight,
   Text,
 } = React;
+import {FBSDKLoginManager} from 'react-native-fbsdklogin';
 
 export default class SocialIcons extends Component {
   render() {
@@ -16,7 +17,7 @@ export default class SocialIcons extends Component {
         <TouchableHighlight style={[styles.button, styles.twitter]}>
           <Text style={styles.whiteText}>twitter</Text>
         </TouchableHighlight>
-        <TouchableHighlight style={[styles.button, styles.facebook]}>
+        <TouchableHighlight style={[styles.button, styles.facebook]} onPress={this._facebook}>
           <Text style={styles.whiteText}>facebook</Text>
         </TouchableHighlight>
         <TouchableHighlight style={[styles.button, styles.email]}>
@@ -24,6 +25,16 @@ export default class SocialIcons extends Component {
         </TouchableHighlight>
       </View>
     );
+  }
+
+  _facebook() {
+    FBSDKLoginManager.logInWithReadPermissions(['public_profile', 'email', 'user_friends'], (error, result) => {
+      if (error) {
+        alert('error logging in');
+      } else {
+        alert('loggedin')
+      }
+    });
   }
 }
 
