@@ -1,1 +1,2 @@
 github "ReSwift/ReSwift" "0.2.5"
+github "ReSwift/ReSwiftRouter" "0.2.5"
