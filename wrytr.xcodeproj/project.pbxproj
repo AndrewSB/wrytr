@@ -12,6 +12,8 @@
 		468614C41C89CC3A002C2BAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468614C21C89CC3A002C2BAC /* Main.storyboard */; };
 		468614C61C89CC3A002C2BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468614C51C89CC3A002C2BAC /* Assets.xcassets */; };
 		468614C91C89CC3A002C2BAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */; };
+		469FF7591C975904007508CD /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469FF7571C975904007508CD /* Fabric.framework */; };
+		469FF75A1C975904007508CD /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469FF7581C975904007508CD /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		468614C51C89CC3A002C2BAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		468614C81C89CC3A002C2BAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468614CA1C89CC3A002C2BAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		469FF7571C975904007508CD /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		469FF7581C975904007508CD /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				469FF75A1C975904007508CD /* Crashlytics.framework in Frameworks */,
+				469FF7591C975904007508CD /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +44,7 @@
 		468614B21C89CC3A002C2BAC = {
 			isa = PBXGroup;
 			children = (
+				469FF75B1C975912007508CD /* Frameworks */,
 				468614BD1C89CC3A002C2BAC /* wrytr */,
 				468614BC1C89CC3A002C2BAC /* Products */,
 			);
@@ -64,6 +71,15 @@
 			path = wrytr;
 			sourceTree = "<group>";
 		};
+		469FF75B1C975912007508CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				469FF7571C975904007508CD /* Fabric.framework */,
+				469FF7581C975904007508CD /* Crashlytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +90,7 @@
 				468614B71C89CC3A002C2BAC /* Sources */,
 				468614B81C89CC3A002C2BAC /* Frameworks */,
 				468614B91C89CC3A002C2BAC /* Resources */,
+				469FF7481C9758AD007508CD /* Install Fabric */,
 			);
 			buildRules = (
 			);
@@ -129,6 +146,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		469FF7481C9758AD007508CD /* Install Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Install Fabric";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run c9709f407e459760ed04225dc4c1524bbe299ea1 3be561ba47fb763f2e8743990529806fc905488acbe191665fddec5d469631fd";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		468614B71C89CC3A002C2BAC /* Sources */ = {
@@ -247,6 +281,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = wrytr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tfw.wrytr;
@@ -258,6 +296,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = wrytr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tfw.wrytr;
@@ -284,6 +326,7 @@
 				468614CF1C89CC3A002C2BAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
