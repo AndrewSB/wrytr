@@ -8,20 +8,53 @@
 
 import UIKit
 
+import ReSwift
+import ReSwiftRouter
+
 import Fabric
 import Crashlytics
+
+var store = Store<State>(reducer: AppReducer(), state: nil)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var router: Router<State>!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         Fabric.with([Crashlytics.self])
         
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        /*
+        Set a dummy VC to satisfy UIKit
+        Router will set correct VC throug async call which means
+        window would not have rootVC at completion of this method
+        which causes a crash.
+        */
+        window?.rootViewController = UIViewController()
+        
+        let rootRoutable = RootRoutable(window: window!)
+        router = Router(store: store, rootRoutable: rootRoutable) { state in
+            state.navigationState
+        }
+        
+        if case .LoggedIn(_) = store.state.authenticationState.loggedInState {
+            store.dispatch(ReSwiftRouter.SetRouteAction([mainRoute]))
+        } else {
+            store.dispatch(ReSwiftRouter.SetRouteAction([landingRoute]))
+        }
+        
+        window?.makeKeyAndVisible()
+        
         return true
+    }
+    
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        
+        return false
     }
 
     func applicationWillResignActive(application: UIApplication) {

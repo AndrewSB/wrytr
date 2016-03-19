@@ -1,2 +1,2 @@
 github "ReSwift/ReSwift"
-github "ReSwift/ReSwiftRouter"
+github "ReSwift/ReSwiftRouter" "master"

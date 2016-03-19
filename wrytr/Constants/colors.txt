@@ -1,0 +1,3 @@
+LoginLandingBackround	: #2BACB5
+LoginLoginBackground	: #3798CB
+LoginSignupBackground	: #53BFA8

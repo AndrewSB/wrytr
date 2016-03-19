@@ -7,25 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4644FB9C1C9CBCEF004ACBAF /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */; };
+		4644FB9D1C9CBCEF004ACBAF /* ReSwiftRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */; };
+		4644FBA01C9CBDEE004ACBAF /* RootRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FB9F1C9CBDEE004ACBAF /* RootRoutable.swift */; };
+		4644FBA51C9CC820004ACBAF /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBA41C9CC820004ACBAF /* Storyboards.swift */; };
+		4644FBA81C9CC9CB004ACBAF /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBA71C9CC9CB004ACBAF /* State.swift */; };
+		4644FBAB1C9CCA89004ACBAF /* AuthenticationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBAA1C9CCA89004ACBAF /* AuthenticationState.swift */; };
+		4644FBAD1C9CCAD6004ACBAF /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBAC1C9CCAD6004ACBAF /* AppReducer.swift */; };
+		4644FBB11C9CCE79004ACBAF /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBB01C9CCE79004ACBAF /* Images.swift */; };
+		4644FBB31C9CCF4D004ACBAF /* AuthenticationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBB21C9CCF4D004ACBAF /* AuthenticationReducer.swift */; };
+		4644FBB51C9CD389004ACBAF /* LoginViewRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBB41C9CD389004ACBAF /* LoginViewRoutable.swift */; };
+		4644FBB71C9CD3C3004ACBAF /* MainViewRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBB61C9CD3C3004ACBAF /* MainViewRoutable.swift */; };
+		4644FBB91C9CD4B1004ACBAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4644FBB81C9CD4B1004ACBAF /* Main.storyboard */; };
+		4644FBBC1C9CD67D004ACBAF /* colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4644FBBB1C9CD67D004ACBAF /* colors.txt */; };
+		4644FBBE1C9CD686004ACBAF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBBD1C9CD686004ACBAF /* Colors.swift */; };
+		4644FBC31C9CD6E4004ACBAF /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBC21C9CD6E4004ACBAF /* LandingViewController.swift */; };
 		468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468614BE1C89CC3A002C2BAC /* AppDelegate.swift */; };
-		468614C11C89CC3A002C2BAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468614C01C89CC3A002C2BAC /* ViewController.swift */; };
-		468614C41C89CC3A002C2BAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468614C21C89CC3A002C2BAC /* Main.storyboard */; };
 		468614C61C89CC3A002C2BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468614C51C89CC3A002C2BAC /* Assets.xcassets */; };
 		468614C91C89CC3A002C2BAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */; };
 		469FF7591C975904007508CD /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469FF7571C975904007508CD /* Fabric.framework */; };
 		469FF75A1C975904007508CD /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469FF7581C975904007508CD /* Crashlytics.framework */; };
+		46BF97791C9B6DA700579066 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF97781C9B6DA700579066 /* Login.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
+		4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRouter.framework; path = Carthage/Build/iOS/ReSwiftRouter.framework; sourceTree = "<group>"; };
+		4644FB9F1C9CBDEE004ACBAF /* RootRoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRoutable.swift; sourceTree = "<group>"; };
+		4644FBA41C9CC820004ACBAF /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Storyboards.swift; path = Constants/Build/Storyboards.swift; sourceTree = "<group>"; };
+		4644FBA71C9CC9CB004ACBAF /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		4644FBAA1C9CCA89004ACBAF /* AuthenticationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationState.swift; sourceTree = "<group>"; };
+		4644FBAC1C9CCAD6004ACBAF /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		4644FBB01C9CCE79004ACBAF /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Images.swift; path = Constants/Build/Images.swift; sourceTree = "<group>"; };
+		4644FBB21C9CCF4D004ACBAF /* AuthenticationReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationReducer.swift; sourceTree = "<group>"; };
+		4644FBB41C9CD389004ACBAF /* LoginViewRoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewRoutable.swift; sourceTree = "<group>"; };
+		4644FBB61C9CD3C3004ACBAF /* MainViewRoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewRoutable.swift; sourceTree = "<group>"; };
+		4644FBB81C9CD4B1004ACBAF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4644FBBB1C9CD67D004ACBAF /* colors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = colors.txt; path = Constants/colors.txt; sourceTree = "<group>"; };
+		4644FBBD1C9CD686004ACBAF /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Constants/Build/Colors.swift; sourceTree = "<group>"; };
+		4644FBC21C9CD6E4004ACBAF /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		468614BB1C89CC3A002C2BAC /* wrytr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wrytr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		468614BE1C89CC3A002C2BAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		468614C01C89CC3A002C2BAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		468614C31C89CC3A002C2BAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		468614C51C89CC3A002C2BAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		468614C81C89CC3A002C2BAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468614CA1C89CC3A002C2BAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		469FF7571C975904007508CD /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		469FF7581C975904007508CD /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		46BF97781C9B6DA700579066 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +63,103 @@
 			files = (
 				469FF75A1C975904007508CD /* Crashlytics.framework in Frameworks */,
 				469FF7591C975904007508CD /* Fabric.framework in Frameworks */,
+				4644FB9C1C9CBCEF004ACBAF /* ReSwift.framework in Frameworks */,
+				4644FB9D1C9CBCEF004ACBAF /* ReSwiftRouter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4644FBA21C9CC80A004ACBAF /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				4644FBBB1C9CD67D004ACBAF /* colors.txt */,
+				4644FBA31C9CC814004ACBAF /* Build */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		4644FBA31C9CC814004ACBAF /* Build */ = {
+			isa = PBXGroup;
+			children = (
+				4644FBA41C9CC820004ACBAF /* Storyboards.swift */,
+				4644FBB01C9CCE79004ACBAF /* Images.swift */,
+				4644FBBD1C9CD686004ACBAF /* Colors.swift */,
+			);
+			name = Build;
+			sourceTree = "<group>";
+		};
+		4644FBA61C9CC9A7004ACBAF /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				4644FB9F1C9CBDEE004ACBAF /* RootRoutable.swift */,
+				4644FBB41C9CD389004ACBAF /* LoginViewRoutable.swift */,
+				4644FBB61C9CD3C3004ACBAF /* MainViewRoutable.swift */,
+			);
+			name = Routes;
+			sourceTree = "<group>";
+		};
+		4644FBA91C9CC9CE004ACBAF /* State */ = {
+			isa = PBXGroup;
+			children = (
+				4644FBA71C9CC9CB004ACBAF /* State.swift */,
+				4644FBAA1C9CCA89004ACBAF /* AuthenticationState.swift */,
+			);
+			name = State;
+			sourceTree = "<group>";
+		};
+		4644FBAF1C9CCAE1004ACBAF /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				4644FBAC1C9CCAD6004ACBAF /* AppReducer.swift */,
+				4644FBB21C9CCF4D004ACBAF /* AuthenticationReducer.swift */,
+			);
+			name = Reducers;
+			sourceTree = "<group>";
+		};
+		4644FBBA1C9CD566004ACBAF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */,
+				468614C51C89CC3A002C2BAC /* Assets.xcassets */,
+				468614CA1C89CC3A002C2BAC /* Info.plist */,
+				4644FBA21C9CC80A004ACBAF /* Constants */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4644FBBF1C9CD69A004ACBAF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4644FBC01C9CD6A7004ACBAF /* Login */,
+				4644FBC11C9CD6AB004ACBAF /* Main */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4644FBC01C9CD6A7004ACBAF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				46BF97781C9B6DA700579066 /* Login.storyboard */,
+				4644FBC21C9CD6E4004ACBAF /* LandingViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		4644FBC11C9CD6AB004ACBAF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4644FBB81C9CD4B1004ACBAF /* Main.storyboard */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
 		468614B21C89CC3A002C2BAC = {
 			isa = PBXGroup;
 			children = (
-				469FF75B1C975912007508CD /* Frameworks */,
 				468614BD1C89CC3A002C2BAC /* wrytr */,
+				469FF75B1C975912007508CD /* Dependencies */,
 				468614BC1C89CC3A002C2BAC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,23 +175,25 @@
 		468614BD1C89CC3A002C2BAC /* wrytr */ = {
 			isa = PBXGroup;
 			children = (
+				4644FBA61C9CC9A7004ACBAF /* Routes */,
+				4644FBA91C9CC9CE004ACBAF /* State */,
+				4644FBAF1C9CCAE1004ACBAF /* Reducers */,
 				468614BE1C89CC3A002C2BAC /* AppDelegate.swift */,
-				468614C01C89CC3A002C2BAC /* ViewController.swift */,
-				468614C21C89CC3A002C2BAC /* Main.storyboard */,
-				468614C51C89CC3A002C2BAC /* Assets.xcassets */,
-				468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */,
-				468614CA1C89CC3A002C2BAC /* Info.plist */,
+				4644FBBF1C9CD69A004ACBAF /* Views */,
+				4644FBBA1C9CD566004ACBAF /* Supporting Files */,
 			);
 			path = wrytr;
 			sourceTree = "<group>";
 		};
-		469FF75B1C975912007508CD /* Frameworks */ = {
+		469FF75B1C975912007508CD /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */,
+				4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */,
 				469FF7571C975904007508CD /* Fabric.framework */,
 				469FF7581C975904007508CD /* Crashlytics.framework */,
 			);
-			name = Frameworks;
+			name = Dependencies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,10 +203,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 468614CD1C89CC3A002C2BAC /* Build configuration list for PBXNativeTarget "wrytr" */;
 			buildPhases = (
+				4644FBA11C9CBFFA004ACBAF /* SwiftGen */,
 				468614B71C89CC3A002C2BAC /* Sources */,
 				468614B81C89CC3A002C2BAC /* Frameworks */,
 				468614B91C89CC3A002C2BAC /* Resources */,
 				469FF7481C9758AD007508CD /* Install Fabric */,
+				4644FB9E1C9CBCFE004ACBAF /* Carthage Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,15 +257,47 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4644FBBC1C9CD67D004ACBAF /* colors.txt in Resources */,
+				46BF97791C9B6DA700579066 /* Login.storyboard in Resources */,
 				468614C91C89CC3A002C2BAC /* LaunchScreen.storyboard in Resources */,
 				468614C61C89CC3A002C2BAC /* Assets.xcassets in Resources */,
-				468614C41C89CC3A002C2BAC /* Main.storyboard in Resources */,
+				4644FBB91C9CD4B1004ACBAF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4644FB9E1C9CBCFE004ACBAF /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ReSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReSwiftRouter.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		4644FBA11C9CBFFA004ACBAF /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "DOT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\nCONST_DIR=$DOT_DIR\"/Constants\"\n\nif which /usr/local/bin/swiftgen > /dev/null; then\n    echo \"SwiftGen-ing\"\n    /usr/local/bin/swiftgen storyboards $DOT_DIR --output $CONST_DIR\"/Build/Storyboards.swift\"\n    /usr/local/bin/swiftgen images $DOT_DIR\"/Assets.xcassets/\" --output $CONST_DIR\"/Build/Images.swift\"\n    /usr/local/bin/swiftgen colors $CONST_DIR\"/colors.txt\" --output $CONST_DIR\"/Build/Colors.swift\"\nelse\n    echo \"BUILD ERROR: You need to brew install swiftgen\"\n    exit 1\nfi";
+		};
 		469FF7481C9758AD007508CD /* Install Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -169,7 +319,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				468614C11C89CC3A002C2BAC /* ViewController.swift in Sources */,
+				4644FBA51C9CC820004ACBAF /* Storyboards.swift in Sources */,
+				4644FBBE1C9CD686004ACBAF /* Colors.swift in Sources */,
+				4644FBAB1C9CCA89004ACBAF /* AuthenticationState.swift in Sources */,
+				4644FBAD1C9CCAD6004ACBAF /* AppReducer.swift in Sources */,
+				4644FBB71C9CD3C3004ACBAF /* MainViewRoutable.swift in Sources */,
+				4644FBB31C9CCF4D004ACBAF /* AuthenticationReducer.swift in Sources */,
+				4644FBA01C9CBDEE004ACBAF /* RootRoutable.swift in Sources */,
+				4644FBB51C9CD389004ACBAF /* LoginViewRoutable.swift in Sources */,
+				4644FBB11C9CCE79004ACBAF /* Images.swift in Sources */,
+				4644FBA81C9CC9CB004ACBAF /* State.swift in Sources */,
+				4644FBC31C9CD6E4004ACBAF /* LandingViewController.swift in Sources */,
 				468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,14 +337,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		468614C21C89CC3A002C2BAC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				468614C31C89CC3A002C2BAC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -232,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -270,7 +422,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -281,9 +433,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = wrytr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -296,9 +450,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = wrytr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
