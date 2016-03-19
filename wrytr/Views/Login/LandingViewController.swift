@@ -10,15 +10,30 @@ import UIKit
 
 import Library
 
-class LandingViewController: UIViewController {
+import ReSwift
+import ReSwiftRouter
+
+import RxSwift
+import RxCocoa
+
+class LandingViewController: RxViewController {
     
-    @IBOutlet weak var subtitle: UILabel! { didSet { subtitle.text = tr(.LoginLandingSubtitle) } }
+    @IBOutlet weak var subtitle: UILabel! {
+        didSet { subtitle.text = tr(.LoginLandingSubtitle) }
+    }
     
-    @IBOutlet weak var facebookSignup: RoundedButton!
-    @IBOutlet weak var twitterSignup: RoundedButton!
-    @IBOutlet weak var emailSignup: RoundedButton!
+    @IBOutlet weak var facebookSignup: RoundedButton! {
+        didSet { facebookSignup.title = tr(.LoginLandingFacebookbuttonTitle) }
+    }
+    @IBOutlet weak var twitterSignup: RoundedButton! {
+        didSet { twitterSignup.title = tr(.LoginLandingTwitterbuttonTitle) }
+    }
+    @IBOutlet weak var emailSignup: RoundedButton! {
+        didSet { emailSignup.title = tr(.LoginLandingEmailbuttonTitle) }
+    }
     @IBOutlet weak var login: RoundedButton! {
         didSet {
+            login.title = tr(.LoginLandingLoginbuttonTitle)
             login.layer.borderColor = UIColor.whiteColor().CGColor
             login.layer.borderWidth = 2
         }
@@ -28,6 +43,15 @@ class LandingViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor(named: .LoginLandingBackround)
+        
+        emailSignup.rx_tap
+            .bindNext { store.dispatch(SetRouteAction([landingRoute, signupRoute])) }
+            .addDisposableTo(disposeBag)
+        
+        login.rx_tap
+            .bindNext { store.dispatch(SetRouteAction([landingRoute, loginRoute])) }
+            .addDisposableTo(disposeBag)
+            
     }
 
 }

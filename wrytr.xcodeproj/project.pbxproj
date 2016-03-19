@@ -25,6 +25,10 @@
 		4644FBC51C9CDE8D004ACBAF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4644FBC41C9CDE8D004ACBAF /* Localizable.strings */; };
 		4644FBC71C9D256B004ACBAF /* Localizable_Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBC61C9D256B004ACBAF /* Localizable_Strings.swift */; };
 		4644FBD31C9E046B004ACBAF /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FBD21C9E046B004ACBAF /* Library.framework */; };
+		4644FBD81C9E1307004ACBAF /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FBD61C9E1307004ACBAF /* RxCocoa.framework */; };
+		4644FBD91C9E1307004ACBAF /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FBD71C9E1307004ACBAF /* RxSwift.framework */; };
+		4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBDA1C9E1535004ACBAF /* RxViewController.swift */; };
+		4644FBDE1C9E16CD004ACBAF /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBDD1C9E16CD004ACBAF /* OnboardingViewController.swift */; };
 		468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468614BE1C89CC3A002C2BAC /* AppDelegate.swift */; };
 		468614C61C89CC3A002C2BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468614C51C89CC3A002C2BAC /* Assets.xcassets */; };
 		468614C91C89CC3A002C2BAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */; };
@@ -52,6 +56,10 @@
 		4644FBC41C9CDE8D004ACBAF /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		4644FBC61C9D256B004ACBAF /* Localizable_Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable_Strings.swift; sourceTree = "<group>"; };
 		4644FBD21C9E046B004ACBAF /* Library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Library.framework; path = Carthage/Build/iOS/Library.framework; sourceTree = "<group>"; };
+		4644FBD61C9E1307004ACBAF /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		4644FBD71C9E1307004ACBAF /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		4644FBDA1C9E1535004ACBAF /* RxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxViewController.swift; sourceTree = "<group>"; };
+		4644FBDD1C9E16CD004ACBAF /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		468614BB1C89CC3A002C2BAC /* wrytr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wrytr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		468614BE1C89CC3A002C2BAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		468614C51C89CC3A002C2BAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,7 +75,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4644FBD81C9E1307004ACBAF /* RxCocoa.framework in Frameworks */,
 				469FF75A1C975904007508CD /* Crashlytics.framework in Frameworks */,
+				4644FBD91C9E1307004ACBAF /* RxSwift.framework in Frameworks */,
 				469FF7591C975904007508CD /* Fabric.framework in Frameworks */,
 				4644FB9C1C9CBCEF004ACBAF /* ReSwift.framework in Frameworks */,
 				4644FB9D1C9CBCEF004ACBAF /* ReSwiftRouter.framework in Frameworks */,
@@ -130,6 +140,7 @@
 		4644FBBA1C9CD566004ACBAF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4644FBDC1C9E1539004ACBAF /* Extensions */,
 				468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */,
 				468614C51C89CC3A002C2BAC /* Assets.xcassets */,
 				468614CA1C89CC3A002C2BAC /* Info.plist */,
@@ -152,6 +163,7 @@
 			children = (
 				46BF97781C9B6DA700579066 /* Login.storyboard */,
 				4644FBC21C9CD6E4004ACBAF /* LandingViewController.swift */,
+				4644FBDD1C9E16CD004ACBAF /* OnboardingViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -162,6 +174,14 @@
 				4644FBB81C9CD4B1004ACBAF /* Main.storyboard */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		4644FBDC1C9E1539004ACBAF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4644FBDA1C9E1535004ACBAF /* RxViewController.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		468614B21C89CC3A002C2BAC = {
@@ -197,11 +217,13 @@
 		469FF75B1C975912007508CD /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				4644FBD21C9E046B004ACBAF /* Library.framework */,
-				4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */,
-				4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */,
 				469FF7571C975904007508CD /* Fabric.framework */,
 				469FF7581C975904007508CD /* Crashlytics.framework */,
+				4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */,
+				4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */,
+				4644FBD21C9E046B004ACBAF /* Library.framework */,
+				4644FBD71C9E1307004ACBAF /* RxSwift.framework */,
+				4644FBD61C9E1307004ACBAF /* RxCocoa.framework */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
@@ -288,6 +310,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ReSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ReSwiftRouter.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Library.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
@@ -338,7 +362,9 @@
 				4644FBAD1C9CCAD6004ACBAF /* AppReducer.swift in Sources */,
 				4644FBB71C9CD3C3004ACBAF /* MainViewRoutable.swift in Sources */,
 				4644FBB31C9CCF4D004ACBAF /* AuthenticationReducer.swift in Sources */,
+				4644FBDE1C9E16CD004ACBAF /* OnboardingViewController.swift in Sources */,
 				4644FBA01C9CBDEE004ACBAF /* RootRoutable.swift in Sources */,
+				4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */,
 				4644FBB51C9CD389004ACBAF /* LoginViewRoutable.swift in Sources */,
 				4644FBB11C9CCE79004ACBAF /* Images.swift in Sources */,
 				4644FBA81C9CC9CB004ACBAF /* State.swift in Sources */,

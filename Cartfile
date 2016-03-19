@@ -1,6 +1,6 @@
 github "ReSwift/ReSwift"
 github "ReSwift/ReSwiftRouter" "master"
 
-github "AndrewSB/Library" "master"
+github "AndrewSB/Library" "f583b71"
 
 github "ReactiveX/RxSwift"
