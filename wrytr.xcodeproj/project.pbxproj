@@ -22,6 +22,9 @@
 		4644FBBC1C9CD67D004ACBAF /* colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4644FBBB1C9CD67D004ACBAF /* colors.txt */; };
 		4644FBBE1C9CD686004ACBAF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBBD1C9CD686004ACBAF /* Colors.swift */; };
 		4644FBC31C9CD6E4004ACBAF /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBC21C9CD6E4004ACBAF /* LandingViewController.swift */; };
+		4644FBC51C9CDE8D004ACBAF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4644FBC41C9CDE8D004ACBAF /* Localizable.strings */; };
+		4644FBC71C9D256B004ACBAF /* Localizable_Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBC61C9D256B004ACBAF /* Localizable_Strings.swift */; };
+		4644FBD31C9E046B004ACBAF /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FBD21C9E046B004ACBAF /* Library.framework */; };
 		468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468614BE1C89CC3A002C2BAC /* AppDelegate.swift */; };
 		468614C61C89CC3A002C2BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468614C51C89CC3A002C2BAC /* Assets.xcassets */; };
 		468614C91C89CC3A002C2BAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */; };
@@ -46,6 +49,9 @@
 		4644FBBB1C9CD67D004ACBAF /* colors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = colors.txt; sourceTree = "<group>"; };
 		4644FBBD1C9CD686004ACBAF /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4644FBC21C9CD6E4004ACBAF /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		4644FBC41C9CDE8D004ACBAF /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		4644FBC61C9D256B004ACBAF /* Localizable_Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable_Strings.swift; sourceTree = "<group>"; };
+		4644FBD21C9E046B004ACBAF /* Library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Library.framework; path = Carthage/Build/iOS/Library.framework; sourceTree = "<group>"; };
 		468614BB1C89CC3A002C2BAC /* wrytr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wrytr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		468614BE1C89CC3A002C2BAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		468614C51C89CC3A002C2BAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +71,7 @@
 				469FF7591C975904007508CD /* Fabric.framework in Frameworks */,
 				4644FB9C1C9CBCEF004ACBAF /* ReSwift.framework in Frameworks */,
 				4644FB9D1C9CBCEF004ACBAF /* ReSwiftRouter.framework in Frameworks */,
+				4644FBD31C9E046B004ACBAF /* Library.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				4644FBBB1C9CD67D004ACBAF /* colors.txt */,
+				4644FBC41C9CDE8D004ACBAF /* Localizable.strings */,
 				4644FBA31C9CC814004ACBAF /* Build */,
 			);
 			path = Constants;
@@ -86,6 +94,7 @@
 				4644FBA41C9CC820004ACBAF /* Storyboards.swift */,
 				4644FBB01C9CCE79004ACBAF /* Images.swift */,
 				4644FBBD1C9CD686004ACBAF /* Colors.swift */,
+				4644FBC61C9D256B004ACBAF /* Localizable_Strings.swift */,
 			);
 			path = Build;
 			sourceTree = "<group>";
@@ -188,6 +197,7 @@
 		469FF75B1C975912007508CD /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				4644FBD21C9E046B004ACBAF /* Library.framework */,
 				4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */,
 				4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */,
 				469FF7571C975904007508CD /* Fabric.framework */,
@@ -258,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4644FBBC1C9CD67D004ACBAF /* colors.txt in Resources */,
+				4644FBC51C9CDE8D004ACBAF /* Localizable.strings in Resources */,
 				46BF97791C9B6DA700579066 /* Login.storyboard in Resources */,
 				468614C91C89CC3A002C2BAC /* LaunchScreen.storyboard in Resources */,
 				468614C61C89CC3A002C2BAC /* Assets.xcassets in Resources */,
@@ -270,12 +281,13 @@
 /* Begin PBXShellScriptBuildPhase section */
 		4644FB9E1C9CBCFE004ACBAF /* Carthage Copy Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/ReSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ReSwiftRouter.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Library.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
@@ -296,7 +308,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "DOT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\nCONST_DIR=\"$DOT_DIR\"\"/Supporting Files/Constants\"\n\nif which /usr/local/bin/swiftgen > /dev/null; then\n    echo \"SwiftGen-ing\"\n    /usr/local/bin/swiftgen storyboards \"$DOT_DIR\" --output \"$CONST_DIR\"\"/Build/Storyboards.swift\"\n    /usr/local/bin/swiftgen images \"$DOT_DIR\"\"/Supporting Files/Assets.xcassets\" --output \"$CONST_DIR\"\"/Build/Images.swift\"\n    /usr/local/bin/swiftgen colors \"$CONST_DIR\"\"/colors.txt\" --output \"${CONST_DIR}/Build/Colors.swift\"\nelse\n    echo \"BUILD ERROR: You need to brew install swiftgen\"\n    exit 1\nfi";
+			shellScript = "DOT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\nCONST_DIR=\"$DOT_DIR\"\"/Supporting Files/Constants\"\n\nif which /usr/local/bin/swiftgen > /dev/null; then\n    /usr/local/bin/swiftgen storyboards \"$DOT_DIR\" --output \"$CONST_DIR\"\"/Build/Storyboards.swift\"\n    /usr/local/bin/swiftgen images \"$DOT_DIR\"\"/Supporting Files/Assets.xcassets\" --output \"$CONST_DIR\"\"/Build/Images.swift\"\n    /usr/local/bin/swiftgen colors \"$CONST_DIR\"\"/colors.txt\" --output \"$CONST_DIR\"\"/Build/Colors.swift\"\n    /usr/local/bin/swiftgen strings \"$CONST_DIR\"\"/Localizable.strings\" -output \"$CONST_DIR\"\"/Build/Localizable_Strings.swift\"\nelse\n    echo \"BUILD ERROR: You need to brew install swiftgen\"\n    exit 1\nfi";
 		};
 		469FF7481C9758AD007508CD /* Install Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -321,6 +333,7 @@
 			files = (
 				4644FBA51C9CC820004ACBAF /* Storyboards.swift in Sources */,
 				4644FBBE1C9CD686004ACBAF /* Colors.swift in Sources */,
+				4644FBC71C9D256B004ACBAF /* Localizable_Strings.swift in Sources */,
 				4644FBAB1C9CCA89004ACBAF /* AuthenticationState.swift in Sources */,
 				4644FBAD1C9CCAD6004ACBAF /* AppReducer.swift in Sources */,
 				4644FBB71C9CD3C3004ACBAF /* MainViewRoutable.swift in Sources */,
