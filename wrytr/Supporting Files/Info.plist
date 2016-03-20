@@ -32,6 +32,19 @@
 				<key>KitName</key>
 				<string>Crashlytics</string>
 			</dict>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>AWSCognitoIdentityPoolId</key>
+					<string>us-east-1:15e09a88-18dd-40ec-b7e2-81798dc63121</string>
+					<key>AWSCognitoIdentityRegionType</key>
+					<string>US_EAST_1</string>
+					<key>AWSDefaultRegionType</key>
+					<string>US_EAST_1</string>
+				</dict>
+				<key>KitName</key>
+				<string>AWSCognitoIdentity</string>
+			</dict>
 		</array>
 	</dict>
 	<key>LSRequiresIPhoneOS</key>

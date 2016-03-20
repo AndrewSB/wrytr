@@ -32,9 +32,16 @@
 		468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468614BE1C89CC3A002C2BAC /* AppDelegate.swift */; };
 		468614C61C89CC3A002C2BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468614C51C89CC3A002C2BAC /* Assets.xcassets */; };
 		468614C91C89CC3A002C2BAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */; };
-		469FF7591C975904007508CD /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469FF7571C975904007508CD /* Fabric.framework */; };
-		469FF75A1C975904007508CD /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469FF7581C975904007508CD /* Crashlytics.framework */; };
 		46BF97791C9B6DA700579066 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF97781C9B6DA700579066 /* Login.storyboard */; };
+		46C099061C9E34D10015779C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099011C9E34D10015779C /* Bolts.framework */; };
+		46C099071C9E34D10015779C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099021C9E34D10015779C /* Crashlytics.framework */; };
+		46C099081C9E34D10015779C /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099031C9E34D10015779C /* Fabric.framework */; };
+		46C099091C9E34D10015779C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099041C9E34D10015779C /* FBSDKCoreKit.framework */; };
+		46C0990A1C9E34D10015779C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099051C9E34D10015779C /* FBSDKLoginKit.framework */; };
+		46C0990D1C9E3A5A0015779C /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C0990B1C9E3A5A0015779C /* AWSCognito.framework */; };
+		46C0990E1C9E3A5A0015779C /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C0990C1C9E3A5A0015779C /* AWSCore.framework */; };
+		46C099101C9F49CF0015779C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C0990F1C9F49CF0015779C /* libsqlite3.tbd */; };
+		46C099141C9F49F90015779C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099131C9F49F90015779C /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,9 +72,16 @@
 		468614C51C89CC3A002C2BAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		468614C81C89CC3A002C2BAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468614CA1C89CC3A002C2BAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		469FF7571C975904007508CD /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		469FF7581C975904007508CD /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		46BF97781C9B6DA700579066 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		46C099011C9E34D10015779C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
+		46C099021C9E34D10015779C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
+		46C099031C9E34D10015779C /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Frameworks/Fabric.framework; sourceTree = "<group>"; };
+		46C099041C9E34D10015779C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Frameworks/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		46C099051C9E34D10015779C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Frameworks/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		46C0990B1C9E3A5A0015779C /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognito.framework; path = Frameworks/AWSCognito.framework; sourceTree = "<group>"; };
+		46C0990C1C9E3A5A0015779C /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = Frameworks/AWSCore.framework; sourceTree = "<group>"; };
+		46C0990F1C9F49CF0015779C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		46C099131C9F49F90015779C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,13 +89,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46C099141C9F49F90015779C /* SystemConfiguration.framework in Frameworks */,
+				46C099101C9F49CF0015779C /* libsqlite3.tbd in Frameworks */,
 				4644FBD81C9E1307004ACBAF /* RxCocoa.framework in Frameworks */,
-				469FF75A1C975904007508CD /* Crashlytics.framework in Frameworks */,
 				4644FBD91C9E1307004ACBAF /* RxSwift.framework in Frameworks */,
-				469FF7591C975904007508CD /* Fabric.framework in Frameworks */,
+				46C0990A1C9E34D10015779C /* FBSDKLoginKit.framework in Frameworks */,
 				4644FB9C1C9CBCEF004ACBAF /* ReSwift.framework in Frameworks */,
+				46C099081C9E34D10015779C /* Fabric.framework in Frameworks */,
+				46C0990E1C9E3A5A0015779C /* AWSCore.framework in Frameworks */,
+				46C099061C9E34D10015779C /* Bolts.framework in Frameworks */,
+				46C0990D1C9E3A5A0015779C /* AWSCognito.framework in Frameworks */,
 				4644FB9D1C9CBCEF004ACBAF /* ReSwiftRouter.framework in Frameworks */,
 				4644FBD31C9E046B004ACBAF /* Library.framework in Frameworks */,
+				46C099091C9E34D10015779C /* FBSDKCoreKit.framework in Frameworks */,
+				46C099071C9E34D10015779C /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,13 +238,20 @@
 		469FF75B1C975912007508CD /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				469FF7571C975904007508CD /* Fabric.framework */,
-				469FF7581C975904007508CD /* Crashlytics.framework */,
+				46C0990F1C9F49CF0015779C /* libsqlite3.tbd */,
+				46C099131C9F49F90015779C /* SystemConfiguration.framework */,
+				46C0990B1C9E3A5A0015779C /* AWSCognito.framework */,
+				46C0990C1C9E3A5A0015779C /* AWSCore.framework */,
+				46C099021C9E34D10015779C /* Crashlytics.framework */,
+				46C099031C9E34D10015779C /* Fabric.framework */,
 				4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */,
 				4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */,
 				4644FBD21C9E046B004ACBAF /* Library.framework */,
 				4644FBD71C9E1307004ACBAF /* RxSwift.framework */,
 				4644FBD61C9E1307004ACBAF /* RxCocoa.framework */,
+				46C099011C9E34D10015779C /* Bolts.framework */,
+				46C099041C9E34D10015779C /* FBSDKCoreKit.framework */,
+				46C099051C9E34D10015779C /* FBSDKLoginKit.framework */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
@@ -346,7 +374,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run c9709f407e459760ed04225dc4c1524bbe299ea1 3be561ba47fb763f2e8743990529806fc905488acbe191665fddec5d469631fd";
+			shellScript = "./Frameworks/Fabric.framework/run c9709f407e459760ed04225dc4c1524bbe299ea1 3be561ba47fb763f2e8743990529806fc905488acbe191665fddec5d469631fd";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -478,6 +506,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "wrytr/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -495,6 +524,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "wrytr/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

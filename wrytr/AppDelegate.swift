@@ -13,6 +13,7 @@ import ReSwiftRouter
 
 import Fabric
 import Crashlytics
+import AWSCognito
 
 var store = Store<State>(reducer: AppReducer(), state: nil)
 
@@ -24,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-        Fabric.with([Crashlytics.self])
+        Fabric.with([Crashlytics.self, AWSCognito.self])
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
