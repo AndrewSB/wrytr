@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -36,39 +35,51 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Otc-7n-gGs">
-                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Otc-7n-gGs">
+                                <rect key="frame" x="0.0" y="337" width="600" height="263"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZ3-4p-Hd1" customClass="RoundedButton" customModule="Library">
-                                        <rect key="frame" x="22" y="0.0" width="556" height="44"/>
+                                        <rect key="frame" x="22" y="0.0" width="556" height="32"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Sign in with Facebook"/>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9T-X7-uT8" customClass="RoundedButton" customModule="Library">
-                                        <rect key="frame" x="22" y="70.5" width="556" height="44"/>
+                                        <rect key="frame" x="22" y="47" width="556" height="32"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Sign in with Twitter"/>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMR-fg-WPn" customClass="RoundedButton" customModule="Library">
-                                        <rect key="frame" x="22" y="141.5" width="556" height="44"/>
+                                        <rect key="frame" x="22" y="94" width="556" height="32"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Sign up with Email"/>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4y-Zh-Td1">
-                                        <rect key="frame" x="0.0" y="212" width="600" height="88"/>
+                                        <rect key="frame" x="0.0" y="141" width="600" height="122"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgR-3T-kw7" customClass="RoundedButton" customModule="Library">
-                                                <rect key="frame" x="22" y="22" width="556" height="44"/>
-                                                <state key="normal" title="Log in"/>
+                                                <rect key="frame" x="22" y="22" width="556" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <state key="normal" title="Log in">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZ7-Py-Hdg">
+                                                <rect key="frame" x="285.5" y="54" width="30" height="68"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <state key="normal" title="frgt?">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="88" id="C2p-80-9l7"/>
+                                            <constraint firstAttribute="height" constant="122" id="C2p-80-9l7"/>
                                             <constraint firstAttribute="trailing" secondItem="jgR-3T-kw7" secondAttribute="trailing" constant="22" id="JQn-cg-GhT"/>
+                                            <constraint firstItem="PZ7-Py-Hdg" firstAttribute="top" secondItem="jgR-3T-kw7" secondAttribute="bottom" id="Qih-OL-oh5"/>
+                                            <constraint firstItem="PZ7-Py-Hdg" firstAttribute="centerX" secondItem="P4y-Zh-Td1" secondAttribute="centerX" id="b42-mS-vjm"/>
                                             <constraint firstItem="jgR-3T-kw7" firstAttribute="top" secondItem="P4y-Zh-Td1" secondAttribute="top" constant="22" id="eDS-JB-2Ds"/>
                                             <constraint firstItem="jgR-3T-kw7" firstAttribute="leading" secondItem="P4y-Zh-Td1" secondAttribute="leading" constant="22" id="iYp-ZR-ovm"/>
-                                            <constraint firstAttribute="bottom" secondItem="jgR-3T-kw7" secondAttribute="bottom" constant="22" id="s6o-oj-CvJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="PZ7-Py-Hdg" secondAttribute="bottom" id="oeQ-sf-g7v"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -86,7 +97,6 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Otc-7n-gGs" firstAttribute="top" secondItem="see-T2-rE1" secondAttribute="centerY" id="2ck-cJ-vts"/>
                             <constraint firstAttribute="trailingMargin" secondItem="W0C-63-wOv" secondAttribute="trailing" constant="44" id="B9j-mr-SJ8"/>
                             <constraint firstItem="f4c-HD-SWi" firstAttribute="top" secondItem="Otc-7n-gGs" secondAttribute="bottom" id="TsO-I9-bQV"/>
                             <constraint firstItem="W0C-63-wOv" firstAttribute="top" secondItem="oto-3T-0Id" secondAttribute="bottom" constant="44" id="cV7-yC-kxc"/>
@@ -123,62 +133,67 @@
                                 <rect key="frame" x="64" y="64" width="472" height="180"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wrytr-worded" translatesAutoresizingMaskIntoConstraints="NO" id="tyn-6L-KMm">
-                                        <rect key="frame" x="0.0" y="0.0" width="472" height="134.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="472" height="135"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="tyn-6L-KMm" secondAttribute="height" multiplier="446:127" id="gCz-2B-gnQ"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTW-Dx-mQ4">
-                                        <rect key="frame" x="0.0" y="156.5" width="472" height="23.5"/>
+                                        <rect key="frame" x="0.0" y="157" width="472" height="24"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1fY-DZ-Gky">
-                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1fY-DZ-Gky">
+                                <rect key="frame" x="0.0" y="300" width="600" height="182"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M2x-vG-AbG" customClass="RoundedTextField" customModule="Library">
-                                        <rect key="frame" x="22" y="0.0" width="556" height="30"/>
+                                        <rect key="frame" x="288" y="0.0" width="25" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xME-yn-68T" customClass="RoundedTextField" customModule="Library">
-                                        <rect key="frame" x="22" y="106" width="556" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xME-yn-68T" customClass="RoundedTextField" customModule="Library">
+                                        <rect key="frame" x="288" y="30" width="25" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7S-aO-Sxg">
-                                        <rect key="frame" x="0.0" y="212" width="600" height="88"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Psz-Xh-9Lq">
+                                        <rect key="frame" x="0.0" y="60" width="600" height="122"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DuN-oQ-oro" customClass="RoundedButton" customModule="Library">
-                                                <rect key="frame" x="22" y="22" width="556" height="44"/>
-                                                <state key="normal" title="Log in"/>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSX-ZE-4Lu" customClass="RoundedButton" customModule="Library">
+                                                <rect key="frame" x="22" y="22" width="556" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <state key="normal" title="Log in">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNW-hu-ele">
+                                                <rect key="frame" x="285.5" y="54" width="30" height="68"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <state key="normal" title="frgt?">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="88" id="Bbl-9f-LI6"/>
-                                            <constraint firstAttribute="bottom" secondItem="DuN-oQ-oro" secondAttribute="bottom" constant="22" id="CGD-Hr-s2y"/>
-                                            <constraint firstItem="DuN-oQ-oro" firstAttribute="top" secondItem="U7S-aO-Sxg" secondAttribute="top" constant="22" id="HbP-jg-jRF"/>
-                                            <constraint firstAttribute="trailing" secondItem="DuN-oQ-oro" secondAttribute="trailing" constant="22" id="hc6-tn-QLG"/>
-                                            <constraint firstItem="DuN-oQ-oro" firstAttribute="leading" secondItem="U7S-aO-Sxg" secondAttribute="leading" constant="22" id="itz-nt-Zmh"/>
+                                            <constraint firstItem="DNW-hu-ele" firstAttribute="top" secondItem="nSX-ZE-4Lu" secondAttribute="bottom" id="04t-fr-mPC"/>
+                                            <constraint firstItem="DNW-hu-ele" firstAttribute="centerX" secondItem="Psz-Xh-9Lq" secondAttribute="centerX" id="5b8-CL-pOu"/>
+                                            <constraint firstItem="nSX-ZE-4Lu" firstAttribute="leading" secondItem="Psz-Xh-9Lq" secondAttribute="leading" constant="22" id="AKa-Ao-VHH"/>
+                                            <constraint firstItem="nSX-ZE-4Lu" firstAttribute="top" secondItem="Psz-Xh-9Lq" secondAttribute="top" constant="22" id="W1r-yQ-8ct"/>
+                                            <constraint firstAttribute="height" constant="122" id="bsR-T9-5gf"/>
+                                            <constraint firstAttribute="trailing" secondItem="nSX-ZE-4Lu" secondAttribute="trailing" constant="22" id="dw0-Pf-ZN3"/>
+                                            <constraint firstAttribute="bottom" secondItem="DNW-hu-ele" secondAttribute="bottom" id="wBg-eE-NiD"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="U7S-aO-Sxg" firstAttribute="leading" secondItem="1fY-DZ-Gky" secondAttribute="leading" id="6IA-0b-IJy"/>
-                                    <constraint firstItem="xME-yn-68T" firstAttribute="width" secondItem="DuN-oQ-oro" secondAttribute="width" id="MCK-0M-FS4"/>
-                                    <constraint firstItem="DuN-oQ-oro" firstAttribute="width" secondItem="M2x-vG-AbG" secondAttribute="width" id="hhv-YG-YFE"/>
-                                    <constraint firstAttribute="trailing" secondItem="U7S-aO-Sxg" secondAttribute="trailing" id="rHh-G8-ZQy"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iBM-dr-lwg" firstAttribute="top" secondItem="EYz-4I-A5a" secondAttribute="bottom" constant="44" id="24n-U3-9jM"/>
-                            <constraint firstItem="1fY-DZ-Gky" firstAttribute="top" secondItem="ilF-5d-qdv" secondAttribute="centerY" id="3Gt-n6-oot"/>
                             <constraint firstItem="ZtG-zM-DPo" firstAttribute="top" secondItem="1fY-DZ-Gky" secondAttribute="bottom" id="CBE-j4-nNc"/>
                             <constraint firstItem="iBM-dr-lwg" firstAttribute="leading" secondItem="ilF-5d-qdv" secondAttribute="leadingMargin" constant="44" id="FbI-mG-MpQ"/>
                             <constraint firstAttribute="trailing" secondItem="1fY-DZ-Gky" secondAttribute="trailing" id="Kn1-iI-nZa"/>
@@ -187,7 +202,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="login" destination="DuN-oQ-oro" id="wso-yy-5lL"/>
                         <outlet property="subtitle" destination="wTW-Dx-mQ4" id="S8f-aW-Xm3"/>
                     </connections>
                 </viewController>

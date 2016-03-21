@@ -14,6 +14,7 @@ import ReSwiftRouter
 import Fabric
 import Crashlytics
 import AWSCognito
+import TwitterKit
 
 var store = Store<State>(reducer: AppReducer(), state: nil)
 
@@ -22,11 +23,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var router: Router<State>!
+    
+    var dataset: AWSCognitoDataset!
+    var colorField: UITextField!
 
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-        Fabric.with([Crashlytics.self, AWSCognito.self])
+        Fabric.with([Crashlytics.self, AWSCognito.self, Twitter.self])
         
+        let credentialProvider = AWSCognitoCredentialsProvider(regionType: .USEast1, identityPoolId: "us-east-1:c3f360b3-855b-49ca-bded-d8e66440d163")
+        let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialProvider)
+        AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = configuration
+        
+            
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         /*
@@ -82,4 +92,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-

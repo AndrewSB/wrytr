@@ -42,6 +42,10 @@
 		46C0990E1C9E3A5A0015779C /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C0990C1C9E3A5A0015779C /* AWSCore.framework */; };
 		46C099101C9F49CF0015779C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C0990F1C9F49CF0015779C /* libsqlite3.tbd */; };
 		46C099141C9F49F90015779C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099131C9F49F90015779C /* SystemConfiguration.framework */; };
+		46C099181CA072250015779C /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099151CA072250015779C /* TwitterKit.framework */; };
+		46C099191CA072250015779C /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 46C099161CA072250015779C /* TwitterKitResources.bundle */; };
+		46C0991A1CA072250015779C /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099171CA072250015779C /* TwitterCore.framework */; };
+		46C0991C1CA087A60015779C /* Twitter+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0991B1CA087A60015779C /* Twitter+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +86,10 @@
 		46C0990C1C9E3A5A0015779C /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = Frameworks/AWSCore.framework; sourceTree = "<group>"; };
 		46C0990F1C9F49CF0015779C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		46C099131C9F49F90015779C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		46C099151CA072250015779C /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = Frameworks/TwitterKit.framework; sourceTree = "<group>"; };
+		46C099161CA072250015779C /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = Frameworks/TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		46C099171CA072250015779C /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = Frameworks/TwitterCore.framework; sourceTree = "<group>"; };
+		46C0991B1CA087A60015779C /* Twitter+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Twitter+Rx.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +108,9 @@
 				46C099061C9E34D10015779C /* Bolts.framework in Frameworks */,
 				46C0990D1C9E3A5A0015779C /* AWSCognito.framework in Frameworks */,
 				4644FB9D1C9CBCEF004ACBAF /* ReSwiftRouter.framework in Frameworks */,
+				46C099181CA072250015779C /* TwitterKit.framework in Frameworks */,
 				4644FBD31C9E046B004ACBAF /* Library.framework in Frameworks */,
+				46C0991A1CA072250015779C /* TwitterCore.framework in Frameworks */,
 				46C099091C9E34D10015779C /* FBSDKCoreKit.framework in Frameworks */,
 				46C099071C9E34D10015779C /* Crashlytics.framework in Frameworks */,
 			);
@@ -201,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				4644FBDA1C9E1535004ACBAF /* RxViewController.swift */,
+				46C0991B1CA087A60015779C /* Twitter+Rx.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -238,6 +249,9 @@
 		469FF75B1C975912007508CD /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				46C099151CA072250015779C /* TwitterKit.framework */,
+				46C099161CA072250015779C /* TwitterKitResources.bundle */,
+				46C099171CA072250015779C /* TwitterCore.framework */,
 				46C0990F1C9F49CF0015779C /* libsqlite3.tbd */,
 				46C099131C9F49F90015779C /* SystemConfiguration.framework */,
 				46C0990B1C9E3A5A0015779C /* AWSCognito.framework */,
@@ -291,6 +305,7 @@
 				TargetAttributes = {
 					468614BA1C89CC3A002C2BAC = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = L8BYC3JY5Z;
 					};
 				};
 			};
@@ -318,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4644FBBC1C9CD67D004ACBAF /* colors.txt in Resources */,
+				46C099191CA072250015779C /* TwitterKitResources.bundle in Resources */,
 				4644FBC51C9CDE8D004ACBAF /* Localizable.strings in Resources */,
 				46BF97791C9B6DA700579066 /* Login.storyboard in Resources */,
 				468614C91C89CC3A002C2BAC /* LaunchScreen.storyboard in Resources */,
@@ -386,6 +402,7 @@
 				4644FBA51C9CC820004ACBAF /* Storyboards.swift in Sources */,
 				4644FBBE1C9CD686004ACBAF /* Colors.swift in Sources */,
 				4644FBC71C9D256B004ACBAF /* Localizable_Strings.swift in Sources */,
+				46C0991C1CA087A60015779C /* Twitter+Rx.swift in Sources */,
 				4644FBAB1C9CCA89004ACBAF /* AuthenticationState.swift in Sources */,
 				4644FBAD1C9CCAD6004ACBAF /* AppReducer.swift in Sources */,
 				4644FBB71C9CD3C3004ACBAF /* MainViewRoutable.swift in Sources */,
@@ -501,6 +518,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -519,6 +537,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
