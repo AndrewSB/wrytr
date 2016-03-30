@@ -46,6 +46,10 @@
 		46C099191CA072250015779C /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 46C099161CA072250015779C /* TwitterKitResources.bundle */; };
 		46C0991A1CA072250015779C /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099171CA072250015779C /* TwitterCore.framework */; };
 		46C0991C1CA087A60015779C /* Twitter+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0991B1CA087A60015779C /* Twitter+Rx.swift */; };
+		46C0991E1CA092770015779C /* ParseRxCallbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0991D1CA092770015779C /* ParseRxCallbacks.swift */; };
+		46C099201CA097640015779C /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0991F1CA097640015779C /* LoadingViewController.swift */; };
+		46C099221CA09ECF0015779C /* AWS+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C099211CA09ECF0015779C /* AWS+Rx.swift */; };
+		46C0992F1CA0A0E80015779C /* AuthenticationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0992E1CA0A0E80015779C /* AuthenticationActions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +94,10 @@
 		46C099161CA072250015779C /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = Frameworks/TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		46C099171CA072250015779C /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = Frameworks/TwitterCore.framework; sourceTree = "<group>"; };
 		46C0991B1CA087A60015779C /* Twitter+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Twitter+Rx.swift"; sourceTree = "<group>"; };
+		46C0991D1CA092770015779C /* ParseRxCallbacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseRxCallbacks.swift; sourceTree = "<group>"; };
+		46C0991F1CA097640015779C /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		46C099211CA09ECF0015779C /* AWS+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AWS+Rx.swift"; sourceTree = "<group>"; };
+		46C0992E1CA0A0E80015779C /* AuthenticationActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationActions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,7 +219,10 @@
 			isa = PBXGroup;
 			children = (
 				4644FBDA1C9E1535004ACBAF /* RxViewController.swift */,
+				46C0991F1CA097640015779C /* LoadingViewController.swift */,
 				46C0991B1CA087A60015779C /* Twitter+Rx.swift */,
+				46C099211CA09ECF0015779C /* AWS+Rx.swift */,
+				46C0991D1CA092770015779C /* ParseRxCallbacks.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -236,6 +247,7 @@
 		468614BD1C89CC3A002C2BAC /* wrytr */ = {
 			isa = PBXGroup;
 			children = (
+				46C0992D1CA0A0DF0015779C /* Actions */,
 				4644FBA61C9CC9A7004ACBAF /* Routes */,
 				4644FBA91C9CC9CE004ACBAF /* State */,
 				4644FBAF1C9CCAE1004ACBAF /* Reducers */,
@@ -268,6 +280,14 @@
 				46C099051C9E34D10015779C /* FBSDKLoginKit.framework */,
 			);
 			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		46C0992D1CA0A0DF0015779C /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				46C0992E1CA0A0E80015779C /* AuthenticationActions.swift */,
+			);
+			name = Actions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,12 +421,16 @@
 			files = (
 				4644FBA51C9CC820004ACBAF /* Storyboards.swift in Sources */,
 				4644FBBE1C9CD686004ACBAF /* Colors.swift in Sources */,
+				46C099221CA09ECF0015779C /* AWS+Rx.swift in Sources */,
 				4644FBC71C9D256B004ACBAF /* Localizable_Strings.swift in Sources */,
 				46C0991C1CA087A60015779C /* Twitter+Rx.swift in Sources */,
 				4644FBAB1C9CCA89004ACBAF /* AuthenticationState.swift in Sources */,
+				46C099201CA097640015779C /* LoadingViewController.swift in Sources */,
 				4644FBAD1C9CCAD6004ACBAF /* AppReducer.swift in Sources */,
 				4644FBB71C9CD3C3004ACBAF /* MainViewRoutable.swift in Sources */,
+				46C0991E1CA092770015779C /* ParseRxCallbacks.swift in Sources */,
 				4644FBB31C9CCF4D004ACBAF /* AuthenticationReducer.swift in Sources */,
+				46C0992F1CA0A0E80015779C /* AuthenticationActions.swift in Sources */,
 				4644FBDE1C9E16CD004ACBAF /* OnboardingViewController.swift in Sources */,
 				4644FBA01C9CBDEE004ACBAF /* RootRoutable.swift in Sources */,
 				4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */,

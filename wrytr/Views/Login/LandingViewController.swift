@@ -51,39 +51,27 @@ class LandingViewController: RxViewController {
         view.backgroundColor = UIColor(named: .LoginLandingBackround)
         
         twitterSignup.rx_tap
-            .bindNext {
-                Twitter.sharedInstance().logInWithCompletion({ (session, err) in
-                    if err != nil {
-                        print("couldn't login \(err!)")
-                    } else {
-                        print(session)
-                        
-                        let credentialProvider = AWSCognitoCredentialsProvider(regionType: .USEast1, identityPoolId: "us-east-1:c3f360b3-855b-49ca-bded-d8e66440d163")
-                        let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialProvider)
-                        AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = configuration
-
-                        credentialProvider.logins = ["api.twitter.com": "\(session!.authToken);\(session!.authTokenSecret)"]
-                        
-                        credentialProvider.refresh().continueWithBlock { task in
-                            let dataset = AWSCognito.defaultCognito().openOrCreateDataset("fabricExample")
-                            dataset.setString("testString", forKey: "testKey")
-                            
-                            dataset.synchronize().continueWithBlock { task in
-                                if let error = task.error {
-                                    NSLog("Error in sync: %@", error.localizedDescription)
-                                    return nil
-                                }
-                                
-                                if task.completed {
-                                    NSLog("Sync successful")
-                                }
-                                
-                                return nil
-                            }
-                            return nil
-                        }
-                    }
-                })
+            .map {
+                self.view.userInteractionEnabled = false
+                self.loader.show()
+            }
+            .flatMap(Twitter.sharedInstance().rx_login)
+            .map { ["api.twitter.com": "\($0.authToken);\($0.authTokenSecret)"] }
+            .subscribe { observer in
+                switch observer {
+                case .Error(let e):
+                    print(e)
+                case .Next(let loginDict):
+                    let credentialProvider = AWSCognitoCredentialsProvider(regionType: .USEast1, identityPoolId: "us-east-1:c3f360b3-855b-49ca-bded-d8e66440d163")
+                    let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialProvider)
+                    AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = configuration
+                    
+                    credentialProvider.logins = loginDict
+                    
+                case .Completed:
+                    self.view.userInteractionEnabled = true
+                    self.loader.hide()
+                }
             }
             .addDisposableTo(disposeBag)
         

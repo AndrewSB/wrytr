@@ -4,6 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Landing View Controller-->
@@ -36,60 +37,44 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Otc-7n-gGs">
-                                <rect key="frame" x="0.0" y="337" width="600" height="263"/>
+                                <rect key="frame" x="0.0" y="367.5" width="600" height="232.5"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZ3-4p-Hd1" customClass="RoundedButton" customModule="Library">
-                                        <rect key="frame" x="22" y="0.0" width="556" height="32"/>
+                                        <rect key="frame" x="22" y="0.0" width="556" height="57.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Sign in with Facebook"/>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9T-X7-uT8" customClass="RoundedButton" customModule="Library">
-                                        <rect key="frame" x="22" y="47" width="556" height="32"/>
+                                        <rect key="frame" x="22" y="72.5" width="556" height="57"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Sign in with Twitter"/>
                                     </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMR-fg-WPn" customClass="RoundedButton" customModule="Library">
-                                        <rect key="frame" x="22" y="94" width="556" height="32"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Sign up with Email"/>
-                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4y-Zh-Td1">
-                                        <rect key="frame" x="0.0" y="141" width="600" height="122"/>
+                                        <rect key="frame" x="0.0" y="144.5" width="600" height="88"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgR-3T-kw7" customClass="RoundedButton" customModule="Library">
-                                                <rect key="frame" x="22" y="22" width="556" height="32"/>
+                                                <rect key="frame" x="22" y="22" width="556" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <state key="normal" title="Log in">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZ7-Py-Hdg">
-                                                <rect key="frame" x="285.5" y="54" width="30" height="68"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <state key="normal" title="frgt?">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="122" id="C2p-80-9l7"/>
+                                            <constraint firstAttribute="height" constant="88" id="C2p-80-9l7"/>
                                             <constraint firstAttribute="trailing" secondItem="jgR-3T-kw7" secondAttribute="trailing" constant="22" id="JQn-cg-GhT"/>
-                                            <constraint firstItem="PZ7-Py-Hdg" firstAttribute="top" secondItem="jgR-3T-kw7" secondAttribute="bottom" id="Qih-OL-oh5"/>
-                                            <constraint firstItem="PZ7-Py-Hdg" firstAttribute="centerX" secondItem="P4y-Zh-Td1" secondAttribute="centerX" id="b42-mS-vjm"/>
+                                            <constraint firstAttribute="bottom" secondItem="jgR-3T-kw7" secondAttribute="bottom" constant="22" id="cNw-X4-H2i"/>
                                             <constraint firstItem="jgR-3T-kw7" firstAttribute="top" secondItem="P4y-Zh-Td1" secondAttribute="top" constant="22" id="eDS-JB-2Ds"/>
                                             <constraint firstItem="jgR-3T-kw7" firstAttribute="leading" secondItem="P4y-Zh-Td1" secondAttribute="leading" constant="22" id="iYp-ZR-ovm"/>
-                                            <constraint firstAttribute="bottom" secondItem="PZ7-Py-Hdg" secondAttribute="bottom" id="oeQ-sf-g7v"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="q9T-X7-uT8" firstAttribute="width" secondItem="jgR-3T-kw7" secondAttribute="width" id="B0b-2u-1f0"/>
-                                    <constraint firstItem="jgR-3T-kw7" firstAttribute="height" secondItem="TMR-fg-WPn" secondAttribute="height" id="Gfc-qC-p9R"/>
-                                    <constraint firstItem="jgR-3T-kw7" firstAttribute="height" secondItem="LZ3-4p-Hd1" secondAttribute="height" id="UIf-fg-FyI"/>
-                                    <constraint firstItem="jgR-3T-kw7" firstAttribute="height" secondItem="q9T-X7-uT8" secondAttribute="height" id="UXW-R9-d8d"/>
+                                    <constraint firstItem="jgR-3T-kw7" firstAttribute="height" secondItem="LZ3-4p-Hd1" secondAttribute="height" multiplier="0.77" id="UIf-fg-FyI"/>
+                                    <constraint firstItem="jgR-3T-kw7" firstAttribute="height" secondItem="q9T-X7-uT8" secondAttribute="height" multiplier="0.77" id="UXW-R9-d8d"/>
                                     <constraint firstItem="LZ3-4p-Hd1" firstAttribute="width" secondItem="jgR-3T-kw7" secondAttribute="width" id="V2G-aM-kOe"/>
-                                    <constraint firstItem="TMR-fg-WPn" firstAttribute="width" secondItem="jgR-3T-kw7" secondAttribute="width" id="epN-Xc-dPD"/>
                                     <constraint firstItem="P4y-Zh-Td1" firstAttribute="leading" secondItem="Otc-7n-gGs" secondAttribute="leading" id="qfj-3N-sfZ"/>
                                     <constraint firstAttribute="trailing" secondItem="P4y-Zh-Td1" secondAttribute="trailing" id="ybM-7A-Nld"/>
                                 </constraints>
@@ -106,7 +91,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailSignup" destination="TMR-fg-WPn" id="N8n-HB-SUd"/>
                         <outlet property="facebookSignup" destination="LZ3-4p-Hd1" id="DUA-3z-2Bc"/>
                         <outlet property="login" destination="jgR-3T-kw7" id="4OW-Ei-aG9"/>
                         <outlet property="subtitle" destination="ki5-P1-8yM" id="fAN-Yh-YTm"/>
