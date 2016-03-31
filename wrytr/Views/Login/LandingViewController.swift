@@ -13,9 +13,6 @@ import Library
 import Twitter
 import TwitterKit
 
-import AWSCore
-import AWSCognito
-
 import ReSwift
 import ReSwiftRouter
 
@@ -62,12 +59,7 @@ class LandingViewController: RxViewController {
                 case .Error(let e):
                     print(e)
                 case .Next(let loginDict):
-                    let credentialProvider = AWSCognitoCredentialsProvider(regionType: .USEast1, identityPoolId: "us-east-1:c3f360b3-855b-49ca-bded-d8e66440d163")
-                    let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialProvider)
-                    AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = configuration
-                    
-                    credentialProvider.logins = loginDict
-                    
+                    print(loginDict)
                 case .Completed:
                     self.view.userInteractionEnabled = true
                     self.loader.hide()
