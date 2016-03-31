@@ -13,6 +13,8 @@ import Library
 import Twitter
 import TwitterKit
 
+import FBSDKLoginKit
+
 import ReSwift
 import ReSwiftRouter
 
@@ -47,13 +49,24 @@ class LandingViewController: RxViewController {
 
         view.backgroundColor = UIColor(named: .LoginLandingBackround)
         
-        twitterSignup.rx_tap
-            .map {
-                self.view.userInteractionEnabled = false
-                self.loader.show()
+        facebookSignup.rx_tap
+            .map(startLoading)
+            .flatMap(FBSDKLoginManager().rx_login)
+            .subscribe { observer in
+                switch observer {
+                case .Error(let e):
+                    print(e)
+                case .Next(let loginResult):
+                    print(loginResult)
+                case .Completed:
+                    self.stopLoading()
+                }
             }
+            .addDisposableTo(disposeBag)
+        
+        twitterSignup.rx_tap
+            .map(startLoading)
             .flatMap(Twitter.sharedInstance().rx_login)
-            .map { ["api.twitter.com": "\($0.authToken);\($0.authTokenSecret)"] }
             .subscribe { observer in
                 switch observer {
                 case .Error(let e):
@@ -61,13 +74,12 @@ class LandingViewController: RxViewController {
                 case .Next(let loginDict):
                     print(loginDict)
                 case .Completed:
-                    self.view.userInteractionEnabled = true
-                    self.loader.hide()
+                    self.stopLoading()
                 }
             }
             .addDisposableTo(disposeBag)
         
-        emailSignup.rx_tap
+        emailSignup?.rx_tap
             .bindNext { store.dispatch(SetRouteAction([landingRoute, signupRoute])) }
             .addDisposableTo(disposeBag)
         

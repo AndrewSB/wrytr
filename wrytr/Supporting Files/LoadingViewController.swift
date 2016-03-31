@@ -35,7 +35,17 @@ class LoadingViewController: UIViewController {
 }
 
 extension UIViewController {
+    
+    func startLoading() {
+        self.view.userInteractionEnabled = false
+        self.loader.show()
+    }
 
+    func stopLoading() {
+        self.view.userInteractionEnabled = true
+        self.loader.hide()
+    }
+    
     var loader: LoadingViewController {
         get {
             return childViewControllers
