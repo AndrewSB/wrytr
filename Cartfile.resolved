@@ -1,4 +1,4 @@
 github "AndrewSB/Library" "f583b7150c1db8d3d01717c49443acb1420ee74e"
 github "ReSwift/ReSwift" "1.0.0"
 github "ReactiveX/RxSwift" "2.3.1"
-github "ReSwift/ReSwiftRouter" "dacfd017efb182a5645ae61e373111e1a8105433"
+github "ReSwift/ReSwiftRouter" "2af0cc9d4f01678951dcb760dbd563e80ad078aa"

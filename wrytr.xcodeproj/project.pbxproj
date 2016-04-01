@@ -35,6 +35,8 @@
 		466BD09B1CADAA14008DC0C3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD09A1CADAA14008DC0C3 /* Security.framework */; };
 		466BD09E1CADAB09008DC0C3 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD09D1CADAB09008DC0C3 /* Firebase.framework */; };
 		466BD0A01CADAD6C008DC0C3 /* Facebook+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466BD09F1CADAD6C008DC0C3 /* Facebook+Rx.swift */; };
+		466E73FB1CAF222E00EC0B7C /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E73FA1CAF222E00EC0B7C /* AuthenticationProvider.swift */; };
+		466E73FD1CAF271A00EC0B7C /* Firebase+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E73FC1CAF271A00EC0B7C /* Firebase+Rx.swift */; };
 		468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468614BE1C89CC3A002C2BAC /* AppDelegate.swift */; };
 		468614C61C89CC3A002C2BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468614C51C89CC3A002C2BAC /* Assets.xcassets */; };
 		468614C91C89CC3A002C2BAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */; };
@@ -84,6 +86,8 @@
 		466BD09A1CADAA14008DC0C3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		466BD09D1CADAB09008DC0C3 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Frameworks/Firebase.framework; sourceTree = "<group>"; };
 		466BD09F1CADAD6C008DC0C3 /* Facebook+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Facebook+Rx.swift"; sourceTree = "<group>"; };
+		466E73FA1CAF222E00EC0B7C /* AuthenticationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationProvider.swift; sourceTree = "<group>"; };
+		466E73FC1CAF271A00EC0B7C /* Firebase+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+Rx.swift"; sourceTree = "<group>"; };
 		468614BB1C89CC3A002C2BAC /* wrytr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wrytr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		468614BE1C89CC3A002C2BAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		468614C51C89CC3A002C2BAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 				46C0991F1CA097640015779C /* LoadingViewController.swift */,
 				46C0991B1CA087A60015779C /* Twitter+Rx.swift */,
 				466BD09F1CADAD6C008DC0C3 /* Facebook+Rx.swift */,
+				466E73FC1CAF271A00EC0B7C /* Firebase+Rx.swift */,
 				46C0991D1CA092770015779C /* ParseRxCallbacks.swift */,
 			);
 			name = Extensions;
@@ -246,6 +251,14 @@
 				46C099131C9F49F90015779C /* SystemConfiguration.framework */,
 			);
 			name = "Firebase dependencies";
+			sourceTree = "<group>";
+		};
+		466E73F91CAF222300EC0B7C /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				466E73FA1CAF222E00EC0B7C /* AuthenticationProvider.swift */,
+			);
+			name = Providers;
 			sourceTree = "<group>";
 		};
 		468614B21C89CC3A002C2BAC = {
@@ -268,6 +281,7 @@
 		468614BD1C89CC3A002C2BAC /* wrytr */ = {
 			isa = PBXGroup;
 			children = (
+				466E73F91CAF222300EC0B7C /* Providers */,
 				46C0992D1CA0A0DF0015779C /* Actions */,
 				4644FBA61C9CC9A7004ACBAF /* Routes */,
 				4644FBA91C9CC9CE004ACBAF /* State */,
@@ -448,6 +462,7 @@
 				46C099201CA097640015779C /* LoadingViewController.swift in Sources */,
 				4644FBAD1C9CCAD6004ACBAF /* AppReducer.swift in Sources */,
 				4644FBB71C9CD3C3004ACBAF /* MainViewRoutable.swift in Sources */,
+				466E73FB1CAF222E00EC0B7C /* AuthenticationProvider.swift in Sources */,
 				46C0991E1CA092770015779C /* ParseRxCallbacks.swift in Sources */,
 				4644FBB31C9CCF4D004ACBAF /* AuthenticationReducer.swift in Sources */,
 				46C0992F1CA0A0E80015779C /* AuthenticationActions.swift in Sources */,
@@ -458,6 +473,7 @@
 				4644FBB11C9CCE79004ACBAF /* Images.swift in Sources */,
 				4644FBA81C9CC9CB004ACBAF /* State.swift in Sources */,
 				4644FBC31C9CD6E4004ACBAF /* LandingViewController.swift in Sources */,
+				466E73FD1CAF271A00EC0B7C /* Firebase+Rx.swift in Sources */,
 				468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

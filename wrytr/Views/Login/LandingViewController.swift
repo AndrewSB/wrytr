@@ -51,31 +51,15 @@ class LandingViewController: RxViewController {
         
         facebookSignup.rx_tap
             .map(startLoading)
-            .flatMap(FBSDKLoginManager().rx_login)
-            .subscribe { observer in
-                switch observer {
-                case .Error(let e):
-                    print(e)
-                case .Next(let loginResult):
-                    print(loginResult)
-                case .Completed:
-                    self.stopLoading()
-                }
+            .subscribeNext {
+                store.dispatch(AuthenticationProvider.loginWithFacebook)
             }
             .addDisposableTo(disposeBag)
         
         twitterSignup.rx_tap
             .map(startLoading)
-            .flatMap(Twitter.sharedInstance().rx_login)
-            .subscribe { observer in
-                switch observer {
-                case .Error(let e):
-                    print(e)
-                case .Next(let loginDict):
-                    print(loginDict)
-                case .Completed:
-                    self.stopLoading()
-                }
+            .subscribeNext {
+                store.dispatch(AuthenticationProvider.loginWithTwitter)
             }
             .addDisposableTo(disposeBag)
         
@@ -88,5 +72,7 @@ class LandingViewController: RxViewController {
             .addDisposableTo(disposeBag)
             
     }
+    
+    
 
 }

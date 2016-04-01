@@ -8,6 +8,8 @@
 
 import UIKit
 
+import RxSwift
+
 import ReSwift
 import ReSwiftRouter
 
@@ -22,6 +24,8 @@ import Firebase
 let firebase = Firebase(url: "http://wrytr.firebaseio.com")
 
 var store = Store<State>(reducer: AppReducer(), state: nil)
+
+let neverDisposeBag = DisposeBag()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

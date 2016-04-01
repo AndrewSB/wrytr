@@ -8,6 +8,8 @@
 
 import Foundation
 
+import Firebase
+
 import ReSwift
 import ReSwiftRouter
 
@@ -20,10 +22,11 @@ struct AuthenticationState {
 
 enum LoggedInState {
     case NotLoggedIn
+    case ErrorLoggingIn(NSError)
     case LoggedIn(Social)
 }
 
 enum Social {
-    case Facebook
-    case Twitter(TWTRSession)
+    case Facebook(FAuthData)
+    case Twitter(FAuthData)
 }

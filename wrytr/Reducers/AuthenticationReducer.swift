@@ -15,9 +15,6 @@ func authenticationReducer(state: AuthenticationState?, action: Action) -> Authe
     var state = state ?? initialAuthenticationState()
     
     switch action {
-    case _ as ReSwiftInit:
-        break
-        
     case let action as UpdateLoggedInState:
         state.loggedInState = action.loggedInState
     default:
