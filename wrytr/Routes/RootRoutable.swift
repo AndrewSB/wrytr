@@ -12,12 +12,11 @@ import ReSwift
 import ReSwiftRouter
 
 let landingRoute: RouteElementIdentifier = StoryboardScene.Login.LandingScene.rawValue
-let mainRoute: RouteElementIdentifier = StoryboardScene.Main.HomeScene.rawValue
+let mainRoute: RouteElementIdentifier = HomeTabBarController.identifier
 
 class RootRoutable: Routable {
     
     let loginStoryboard = StoryboardScene.Login.storyboard()
-    let mainStoryboard = StoryboardScene.Main.storyboard()
     
     let window: UIWindow
     
@@ -32,22 +31,9 @@ class RootRoutable: Routable {
     }
     
     func setToMainViewController() -> Routable {
-        self.window.rootViewController = mainStoryboard.instantiateViewControllerWithIdentifier(mainRoute)
+        self.window.rootViewController = HomeTabBarController()
         
         return MainViewRoutable(self.window.rootViewController!)
-    }
-    
-    func pushRouteSegment(routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
-        
-        if routeElementIdentifier == landingRoute {
-            completionHandler()
-            return self.setToLandingViewController()
-        } else if routeElementIdentifier == mainRoute {
-            completionHandler()
-            return self.setToMainViewController()
-        } else {
-            fatalError("Route not supported!")
-        }
     }
     
     func changeRouteSegment(from: RouteElementIdentifier, to: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
@@ -63,4 +49,18 @@ class RootRoutable: Routable {
             fatalError("Route not supported!")
         }
     }
+    
+    func pushRouteSegment(routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
+        
+        if routeElementIdentifier == landingRoute {
+            completionHandler()
+            return self.setToLandingViewController()
+        } else if routeElementIdentifier == mainRoute {
+            completionHandler()
+            return self.setToMainViewController()
+        } else {
+            fatalError("Route not supported!")
+        }
+    }
+
 }

@@ -43,11 +43,8 @@ class AuthenticationProvider {
     class func loginWithTwitter(state: StateType, store: Store<State>) -> Action? {
         
         Twitter.sharedInstance().rx_login()
-            .flatMap { firebase.rx_oauth("twitter", parameters: [
-                "user_id": $0.userID,
-                "oauth_token": $0.authToken,
-                "oauth_token_secret": $0.authTokenSecret
-            ]) }
+            .map { ("twitter", parameters: ["user_id": $0.userID, "oauth_token": $0.authToken, "oauth_token_secret": $0.authTokenSecret]) }
+            .flatMap(firebase.rx_oauth)
             .map(Social.Twitter)
             .map(LoggedInState.LoggedIn)
             .subscribe(handleAuthenticationResponse)
@@ -60,7 +57,6 @@ class AuthenticationProvider {
         
         switch observer {
         case .Error(let error):
-            print("login error \(error))")
             store.dispatch(UpdateLoggedInState(loggedInState: LoggedInState.ErrorLoggingIn(error as NSError)))
         case .Next(let loggedInState):
             store.dispatch(UpdateLoggedInState(loggedInState: loggedInState))
