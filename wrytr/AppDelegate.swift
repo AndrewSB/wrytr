@@ -40,8 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Fabric.with([Crashlytics.self, Twitter.self])
         
-        
-        
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         /*

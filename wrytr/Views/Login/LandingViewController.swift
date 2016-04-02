@@ -72,7 +72,36 @@ class LandingViewController: RxViewController {
             .addDisposableTo(disposeBag)
             
     }
+
+}
+
+extension LandingViewController: StoreSubscriber {
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        store.subscribe(self) { state in
+            state.authenticationState.loggedInState
+        }
+        
+    }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        store.unsubscribe(self)
+    }
+    
+    func newState(state: LoggedInState) {
+        self.stopLoading()
+        switch state {
+        case .ErrorLoggingIn(let error):
+            presentViewController(UIAlertController(actionedTitle: "Couldn't log in 😔", message: error.localizedDescription), animated: true, completion: nil)
+        case .LoggedIn:
+            print("Logged in")
+        case .NotLoggedIn:
+            print("still not logged in")
+        }
+    }
 
 }

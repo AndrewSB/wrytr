@@ -39,6 +39,15 @@ class LoginViewRoutable: Routable {
         
         return OnboardingRoutable()
     }
+    
+    func changeRouteSegment(from: RouteElementIdentifier, to: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
+        if to == mainRoute {
+            return RootRoutable(window: UIApplication.sharedApplication().delegate!.window!!).setToMainViewController()
+        } else {
+            assertionFailure("bruh")
+            return self
+        }
+    }
 
 }
 

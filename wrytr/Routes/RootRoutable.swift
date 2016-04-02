@@ -49,4 +49,18 @@ class RootRoutable: Routable {
             fatalError("Route not supported!")
         }
     }
+    
+    func changeRouteSegment(from: RouteElementIdentifier, to: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
+        print("root is changing segment")
+        
+        if to == landingRoute {
+            completionHandler()
+            return self.setToLandingViewController()
+        } else if to == mainRoute {
+            completionHandler()
+            return self.setToMainViewController()
+        } else {
+            fatalError("Route not supported!")
+        }
+    }
 }

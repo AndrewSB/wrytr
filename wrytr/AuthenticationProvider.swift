@@ -13,6 +13,7 @@ import Library
 import RxSwift
 
 import ReSwift
+import ReSwiftRouter
 
 import FBSDKLoginKit
 import TwitterKit
@@ -26,6 +27,7 @@ class AuthenticationProvider {
             .flatMap { loginResult -> Observable<LoggedInState> in
                 
                 if loginResult.isCancelled {
+                    print(FBSDKAccessToken.currentAccessToken())
                     return .just(.ErrorLoggingIn(NSError(localizedDescription: "Did you cancel the login?", code: 99)))
                 } else {
                     return firebase.rx_oauth("facebook", token: FBSDKAccessToken.currentAccessToken().tokenString).map { LoggedInState.LoggedIn(Social.Facebook($0)) }
@@ -41,8 +43,11 @@ class AuthenticationProvider {
     class func loginWithTwitter(state: StateType, store: Store<State>) -> Action? {
         
         Twitter.sharedInstance().rx_login()
-            .map { $0.authToken }
-            .flatMap(firebase.rx_curried_oauth("twitter"))
+            .flatMap { firebase.rx_oauth("twitter", parameters: [
+                "user_id": $0.userID,
+                "oauth_token": $0.authToken,
+                "oauth_token_secret": $0.authTokenSecret
+            ]) }
             .map(Social.Twitter)
             .map(LoggedInState.LoggedIn)
             .subscribe(handleAuthenticationResponse)
@@ -55,9 +60,11 @@ class AuthenticationProvider {
         
         switch observer {
         case .Error(let error):
+            print("login error \(error))")
             store.dispatch(UpdateLoggedInState(loggedInState: LoggedInState.ErrorLoggingIn(error as NSError)))
         case .Next(let loggedInState):
             store.dispatch(UpdateLoggedInState(loggedInState: loggedInState))
+            store.dispatch(SetRouteAction([mainRoute]))
         case .Completed:
             break
         }

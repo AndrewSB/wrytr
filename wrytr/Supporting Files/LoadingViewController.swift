@@ -29,7 +29,7 @@ class LoadingViewController: UIViewController {
     }
 
     func hide() {
-        (self.view as! UIActivityIndicatorView).startAnimating()
+        (self.view as! UIActivityIndicatorView).stopAnimating()
     }
 
 }
@@ -43,6 +43,7 @@ extension UIViewController {
 
     func stopLoading() {
         self.view.userInteractionEnabled = true
+        print(childViewControllers)
         self.loader.hide()
     }
     
@@ -56,9 +57,11 @@ extension UIViewController {
     }
     
     private func createAndAddLoader() -> LoadingViewController {
+        print("adding new loader")
         let loader = LoadingViewController()
         self.addChildViewController(loader)
         loader.didMoveToParentViewController(self)
+        loader.view.center = view.center
         view.addSubview(loader.view)
         return loader
     }
