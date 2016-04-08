@@ -38,8 +38,8 @@
 		466E73FD1CAF271A00EC0B7C /* Firebase+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E73FC1CAF271A00EC0B7C /* Firebase+Rx.swift */; };
 		466E73FF1CAF4FEC00EC0B7C /* ReSwiftTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E73FE1CAF4FEC00EC0B7C /* ReSwiftTabBarController.swift */; };
 		466E74011CAFA60000EC0B7C /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E74001CAFA60000EC0B7C /* HomeTabBarController.swift */; };
-		466E74031CAFA72600EC0B7C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466E74021CAFA72600EC0B7C /* Home.storyboard */; };
-		466E74051CAFA74800EC0B7C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E74041CAFA74800EC0B7C /* HomeViewController.swift */; };
+		466E74031CAFA72600EC0B7C /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466E74021CAFA72600EC0B7C /* Feed.storyboard */; };
+		466E74051CAFA74800EC0B7C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E74041CAFA74800EC0B7C /* FeedViewController.swift */; };
 		468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468614BE1C89CC3A002C2BAC /* AppDelegate.swift */; };
 		468614C61C89CC3A002C2BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468614C51C89CC3A002C2BAC /* Assets.xcassets */; };
 		468614C91C89CC3A002C2BAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */; };
@@ -92,8 +92,8 @@
 		466E73FC1CAF271A00EC0B7C /* Firebase+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+Rx.swift"; sourceTree = "<group>"; };
 		466E73FE1CAF4FEC00EC0B7C /* ReSwiftTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReSwiftTabBarController.swift; sourceTree = "<group>"; };
 		466E74001CAFA60000EC0B7C /* HomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
-		466E74021CAFA72600EC0B7C /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		466E74041CAFA74800EC0B7C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		466E74021CAFA72600EC0B7C /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
+		466E74041CAFA74800EC0B7C /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		468614BB1C89CC3A002C2BAC /* wrytr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wrytr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		468614BE1C89CC3A002C2BAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		468614C51C89CC3A002C2BAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -230,8 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				466E74001CAFA60000EC0B7C /* HomeTabBarController.swift */,
-				466E74021CAFA72600EC0B7C /* Home.storyboard */,
-				466E74041CAFA74800EC0B7C /* HomeViewController.swift */,
+				466E74021CAFA72600EC0B7C /* Feed.storyboard */,
+				466E74041CAFA74800EC0B7C /* FeedViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -395,7 +395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				466E74031CAFA72600EC0B7C /* Home.storyboard in Resources */,
+				466E74031CAFA72600EC0B7C /* Feed.storyboard in Resources */,
 				4644FBBC1C9CD67D004ACBAF /* colors.txt in Resources */,
 				46C099191CA072250015779C /* TwitterKitResources.bundle in Resources */,
 				4644FBC51C9CDE8D004ACBAF /* Localizable.strings in Resources */,
@@ -462,7 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				466E74051CAFA74800EC0B7C /* HomeViewController.swift in Sources */,
+				466E74051CAFA74800EC0B7C /* FeedViewController.swift in Sources */,
 				4644FBA51C9CC820004ACBAF /* Storyboards.swift in Sources */,
 				4644FBBE1C9CD686004ACBAF /* Colors.swift in Sources */,
 				4644FBC71C9D256B004ACBAF /* Localizable_Strings.swift in Sources */,

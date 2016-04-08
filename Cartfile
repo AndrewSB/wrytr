@@ -1,5 +1,6 @@
 github "ReSwift/ReSwift"
 github "ReSwift/ReSwiftRouter" "master"
+github "ReSwift/ReSwift-Recorder"
 
 github "AndrewSB/Library" "f583b71"
 

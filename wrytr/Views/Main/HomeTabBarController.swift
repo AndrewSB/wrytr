@@ -17,7 +17,7 @@ class HomeTabBarController: ReSwiftTabBarController {
         super.viewDidLoad()
         
         self.viewControllers = [
-            StoryboardScene.Home.initialViewController()
+            StoryboardScene.Feed.initialViewController()
         ]
     }
 }
