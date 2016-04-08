@@ -30,3 +30,18 @@ enum Social {
     case Facebook(FAuthData)
     case Twitter(FAuthData)
 }
+
+extension Social {
+
+    init?(authData: FAuthData) {
+        switch authData.provider {
+        case "facebook":
+            self = Facebook(authData)
+        case "twitter":
+            self = Twitter(authData)
+        default:
+            return nil
+        }
+    }
+
+}

@@ -11,6 +11,8 @@ import Foundation
 import ReSwift
 import ReSwiftRouter
 
+import Firebase
+
 func authenticationReducer(state: AuthenticationState?, action: Action) -> AuthenticationState {
     var state = state ?? initialAuthenticationState()
     
@@ -25,5 +27,11 @@ func authenticationReducer(state: AuthenticationState?, action: Action) -> Authe
 }
 
 func initialAuthenticationState() -> AuthenticationState {
-    return AuthenticationState(loggedInState: .NotLoggedIn)
+    
+    if let authData = firebase?.authData {
+        return AuthenticationState(loggedInState: .LoggedIn(Social(authData: authData)!))
+    } else {
+        return AuthenticationState(loggedInState: .NotLoggedIn)
+    }
+    
 }
