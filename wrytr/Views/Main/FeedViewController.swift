@@ -24,6 +24,7 @@ class FeedViewController: RxViewController {
 
         Variable(["Keala", "is", "absolutely", "beautiful"]).asObservable()
             .bindTo(tableView.rx_itemsWithCellIdentifier("lol", cellType: UITableViewCell.self)) { (row, element, cell) in
+                print("set label")
                 cell.textLabel!.text = element
             }
             .addDisposableTo(disposeBag)

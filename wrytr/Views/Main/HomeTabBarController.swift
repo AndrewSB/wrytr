@@ -19,5 +19,8 @@ class HomeTabBarController: ReSwiftTabBarController {
         self.viewControllers = [
             StoryboardScene.Feed.initialViewController()
         ]
+        
+        tabBar.autoresizesSubviews = false
+        tabBar.clipsToBounds = true
     }
 }
