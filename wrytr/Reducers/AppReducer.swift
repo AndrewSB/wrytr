@@ -16,7 +16,8 @@ struct AppReducer: Reducer {
     func handleAction(action: Action, state: State?) -> State {
         return State(
             navigationState: NavigationReducer.handleAction(action, state: state?.navigationState),
-            authenticationState: authenticationReducer(state?.authenticationState, action: action)
+            authenticationState: authenticationReducer(action, state: state?.authenticationState),
+            postState: postReducer(action, state: state?.postState)
         )
     }
     

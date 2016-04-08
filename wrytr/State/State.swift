@@ -14,4 +14,5 @@ import ReSwiftRouter
 struct State: StateType {
     var navigationState: NavigationState
     var authenticationState: AuthenticationState
+    var postState: PostState
 }

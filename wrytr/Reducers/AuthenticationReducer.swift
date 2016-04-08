@@ -13,7 +13,7 @@ import ReSwiftRouter
 
 import Firebase
 
-func authenticationReducer(state: AuthenticationState?, action: Action) -> AuthenticationState {
+func authenticationReducer(action: Action, state: AuthenticationState?) -> AuthenticationState {
     var state = state ?? initialAuthenticationState()
     
     switch action {

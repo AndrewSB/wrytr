@@ -28,6 +28,11 @@
 		4644FBD91C9E1307004ACBAF /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FBD71C9E1307004ACBAF /* RxSwift.framework */; };
 		4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBDA1C9E1535004ACBAF /* RxViewController.swift */; };
 		4644FBDE1C9E16CD004ACBAF /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBDD1C9E16CD004ACBAF /* OnboardingViewController.swift */; };
+		4650715F1CB741770041C43C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4650715E1CB741770041C43C /* Post.swift */; };
+		465071621CB741E40041C43C /* PostState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465071611CB741E40041C43C /* PostState.swift */; };
+		465071641CB742290041C43C /* PostReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465071631CB742290041C43C /* PostReducer.swift */; };
+		465071661CB743340041C43C /* PostActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465071651CB743340041C43C /* PostActions.swift */; };
+		465071681CB745A50041C43C /* PostProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465071671CB745A50041C43C /* PostProvider.swift */; };
 		466BD0951CADA990008DC0C3 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD0941CADA990008DC0C3 /* libc++.tbd */; };
 		466BD0971CADA9FF008DC0C3 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD0961CADA9FF008DC0C3 /* libicucore.tbd */; };
 		466BD0991CADAA08008DC0C3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD0981CADAA08008DC0C3 /* CFNetwork.framework */; };
@@ -82,6 +87,11 @@
 		4644FBD71C9E1307004ACBAF /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		4644FBDA1C9E1535004ACBAF /* RxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxViewController.swift; sourceTree = "<group>"; };
 		4644FBDD1C9E16CD004ACBAF /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		4650715E1CB741770041C43C /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = Reducers/Post.swift; sourceTree = "<group>"; };
+		465071611CB741E40041C43C /* PostState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostState.swift; sourceTree = "<group>"; };
+		465071631CB742290041C43C /* PostReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostReducer.swift; sourceTree = "<group>"; };
+		465071651CB743340041C43C /* PostActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostActions.swift; sourceTree = "<group>"; };
+		465071671CB745A50041C43C /* PostProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostProvider.swift; sourceTree = "<group>"; };
 		466BD0941CADA990008DC0C3 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		466BD0961CADA9FF008DC0C3 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		466BD0981CADAA08008DC0C3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -182,6 +192,7 @@
 			children = (
 				4644FBA71C9CC9CB004ACBAF /* State.swift */,
 				4644FBAA1C9CCA89004ACBAF /* AuthenticationState.swift */,
+				465071611CB741E40041C43C /* PostState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -191,6 +202,7 @@
 			children = (
 				4644FBAC1C9CCAD6004ACBAF /* AppReducer.swift */,
 				4644FBB21C9CCF4D004ACBAF /* AuthenticationReducer.swift */,
+				465071631CB742290041C43C /* PostReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -250,6 +262,14 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		465071601CB7417D0041C43C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4650715E1CB741770041C43C /* Post.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		466BD09C1CADAAEF008DC0C3 /* Firebase dependencies */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				466E73FA1CAF222E00EC0B7C /* AuthenticationProvider.swift */,
+				465071671CB745A50041C43C /* PostProvider.swift */,
 			);
 			name = Providers;
 			sourceTree = "<group>";
@@ -296,6 +317,7 @@
 				4644FBA91C9CC9CE004ACBAF /* State */,
 				4644FBAF1C9CCAE1004ACBAF /* Reducers */,
 				468614BE1C89CC3A002C2BAC /* AppDelegate.swift */,
+				465071601CB7417D0041C43C /* Models */,
 				4644FBBF1C9CD69A004ACBAF /* Views */,
 				4644FBBA1C9CD566004ACBAF /* Supporting Files */,
 			);
@@ -329,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				46C0992E1CA0A0E80015779C /* AuthenticationActions.swift */,
+				465071651CB743340041C43C /* PostActions.swift */,
 			);
 			name = Actions;
 			sourceTree = "<group>";
@@ -476,14 +499,19 @@
 				466E73FB1CAF222E00EC0B7C /* AuthenticationProvider.swift in Sources */,
 				46C0991E1CA092770015779C /* ParseRxCallbacks.swift in Sources */,
 				4644FBB31C9CCF4D004ACBAF /* AuthenticationReducer.swift in Sources */,
+				465071621CB741E40041C43C /* PostState.swift in Sources */,
 				46C0992F1CA0A0E80015779C /* AuthenticationActions.swift in Sources */,
 				4644FBDE1C9E16CD004ACBAF /* OnboardingViewController.swift in Sources */,
 				4644FBA01C9CBDEE004ACBAF /* RootRoutable.swift in Sources */,
+				4650715F1CB741770041C43C /* Post.swift in Sources */,
 				4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */,
 				4644FBB51C9CD389004ACBAF /* LoginViewRoutable.swift in Sources */,
 				4644FBB11C9CCE79004ACBAF /* Images.swift in Sources */,
+				465071681CB745A50041C43C /* PostProvider.swift in Sources */,
 				4644FBA81C9CC9CB004ACBAF /* State.swift in Sources */,
 				4644FBC31C9CD6E4004ACBAF /* LandingViewController.swift in Sources */,
+				465071661CB743340041C43C /* PostActions.swift in Sources */,
+				465071641CB742290041C43C /* PostReducer.swift in Sources */,
 				466E74011CAFA60000EC0B7C /* HomeTabBarController.swift in Sources */,
 				466E73FD1CAF271A00EC0B7C /* Firebase+Rx.swift in Sources */,
 				468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */,
