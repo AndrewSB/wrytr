@@ -27,8 +27,7 @@ class AuthenticationProvider {
             .flatMap { loginResult -> Observable<LoggedInState> in
                 
                 if loginResult.isCancelled {
-                    print(FBSDKAccessToken.currentAccessToken())
-                    return .just(.ErrorLoggingIn(NSError(localizedDescription: "Did you cancel the login?", code: 99)))
+                    return Observable.error(NSError(localizedDescription: "Did you cancel the login?", code: 99))
                 } else {
                     return firebase.rx_oauth("facebook", token: FBSDKAccessToken.currentAccessToken().tokenString).map { LoggedInState.LoggedIn(Social.Facebook($0)) }
                 }
