@@ -14,11 +14,11 @@ class CreateViewController: UIViewController, Identifiable {
     
     static let identifier = "CreateViewController"
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func awakeFromNib() {
+        super.awakeFromNib()
         
         self.title = "Create"
-        self.tabBarItem = UITabBarItem(title: self.title, image: UIImage(asset: UIImage.Asset.Icon_Tabbar_Feed), tag: 2)
+        self.tabBarItem = UITabBarItem(title: self.title, image: UIImage(asset: .Icon_Tabbar_Create), tag: 2)
     }
 
 }

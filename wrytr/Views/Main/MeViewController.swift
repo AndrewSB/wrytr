@@ -14,11 +14,11 @@ class MeViewController: UIViewController, Identifiable {
     
     static let identifier = "MeViewController"
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func awakeFromNib() {
+        super.awakeFromNib()
         
         self.title = "Me"
-        self.tabBarItem = UITabBarItem(title: self.title, image: UIImage(asset: UIImage.Asset.Icon_Tabbar_Feed), tag: 3)
+        self.tabBarItem = UITabBarItem(title: self.title, image: UIImage(asset: .Icon_Tabbar_Profile), tag: 3)
     }
 
 }

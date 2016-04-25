@@ -13,14 +13,12 @@ import ReSwiftRouter
 class FriendsViewController: UIViewController, Identifiable {
     
     static let identifier = "FriendsViewController"
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
     
-        self.title = "Friends"
-        self.tabBarItem = UITabBarItem(title: self.title, image: UIImage(asset: UIImage.Asset.Icon_Tabbar_Feed), tag: 1)
+    override func awakeFromNib() {
+        super.awakeFromNib()
         
-        print("created")
+        self.title = "Friends"
+        self.tabBarItem = UITabBarItem(title: self.title, image: UIImage(asset: .Icon_Tabbar_Friends), tag: 0)
     }
 
 }
