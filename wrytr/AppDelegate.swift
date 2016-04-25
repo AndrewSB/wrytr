@@ -63,13 +63,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.makeKeyAndVisible()
         
-        return FBSDKApplicationDelegate.sharedInstance()
-            .application(application, didFinishLaunchingWithOptions: launchOptions)
-    }
-    
-    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        return false
+        return true
     }
 
     func applicationWillResignActive(application: UIApplication) {
