@@ -15,16 +15,22 @@ import RxCocoa
 
 extension Firebase {
     
+    /**
+     Usually Facebook
+     */
     func rx_oauth(provider: String, token: String) -> Observable<FAuthData> {
-    
+        
         return ParseRxCallbacks.createWithCallback({ observer in
             self.authWithOAuthProvider(provider, token: token) {
                 ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)(object: $1, error: $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
             }
         })
-    
+        
     }
     
+    /**
+     Usually Twitter
+     */
     func rx_oauth(provider: String, parameters: [NSObject: AnyObject]) -> Observable<FAuthData> {
         
         return ParseRxCallbacks.createWithCallback({ observer in
@@ -35,15 +41,42 @@ extension Firebase {
         
     }
     
-    func rx_observeEventType(eventType: FEventType = .ChildAdded) -> Observable<FDataSnapshot> {
-                
+    func rx_authAnon() -> Observable<FAuthData> {
+        
         return ParseRxCallbacks.createWithCallback({ observer in
-            self.observeEventType(eventType) { snapshot in
-                ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)(object: snapshot, error: nil)
+            self.authAnonymouslyWithCompletionBlock {
+                ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)(object: $1, error: $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
             }
-            
         })
         
     }
+    
+    func rx_setValue(value: AnyObject!) -> Observable<Firebase> {
+        
+        return ParseRxCallbacks.createWithCallback({ observer in
+            self.setValue(value) { (error, firebaseRef) in
+                ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)(object: firebaseRef, error: error) // Firebase Y U switch the order of object & error? Conventions exist for a reason
+            }
+        })
+        
+    }
+    
+    func rx_setChildByAutoId(value: AnyObject!) -> Observable<Firebase> {
+        
+        return ParseRxCallbacks.createWithCallback({ observer in
+            self.childByAutoId().setValue(value) { (error, firebaseRef) in
+                ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)(object: firebaseRef, error: error) // Firebase Y U switch the order of object & error? Conventions exist for a reason
+            }
+        })
+        
+    }
+    
+}
 
+extension Firebase {
+    
+    var loggedIn: Bool {
+        return authData != nil
+    }
+    
 }

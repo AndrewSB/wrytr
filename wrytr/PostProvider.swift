@@ -19,8 +19,16 @@ class PostProvider {
 
     static func loadNewPosts(state: StateType, store: Store<State>) -> Action? {
         
-        let postsRef = firebase.childByAppendingPath("posts")
-        postsRef.queryOrderedByChild("ts")//.observeEventType(FEvent, withBlock: <#T##((FDataSnapshot!) -> Void)!##((FDataSnapshot!) -> Void)!##(FDataSnapshot!) -> Void#>)
+        firebase.childByAppendingPath("posts").queryOrderedByChild("date")
+            .observeEventType(.Value) { (snapshot, _) in
+                let snapshotKeys = snapshot.value as? Dictionary<String, Dictionary<String, String>>
+                
+                let posts: [Post] = snapshotKeys?.values.map { postDict -> Post in
+                    Post(user: postDict["user"]!, prompt: postDict["prompt"]!, stars: nil, comments: nil)
+                } ?? [Post]()
+
+                store.dispatch(UpdatePosts(posts: posts))
+            }
         
         return nil
     }
