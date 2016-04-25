@@ -33,7 +33,7 @@ class RootRoutable: Routable {
     func setToMainViewController() -> Routable {
         self.window.rootViewController = HomeTabBarController()
         
-        return MainViewRoutable(self.window.rootViewController!)
+        return self.window.rootViewController as! HomeTabBarController
     }
     
     func changeRouteSegment(from: RouteElementIdentifier, to: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {

@@ -10,13 +10,3 @@ import UIKit
 
 import ReSwift
 import ReSwiftRouter
-
-class MainViewRoutable: Routable {
-    
-    let viewController: UIViewController
-    
-    init(_ viewController: UIViewController) {
-        self.viewController = viewController
-    }
-    
-}

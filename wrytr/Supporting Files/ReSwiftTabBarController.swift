@@ -12,7 +12,7 @@ import ReSwift
 import ReSwiftRouter
 
 protocol Identifiable {
-    var identifier: String { get }
+    static var identifier: String { get }
 }
 
 class ReSwiftTabBarController: UITabBarController {
@@ -25,8 +25,6 @@ class ReSwiftTabBarController: UITabBarController {
         self.delegate = self
     }
     
-
-    
 }
 
 
@@ -34,13 +32,25 @@ extension ReSwiftTabBarController: UITabBarControllerDelegate {
 
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
         
+        var vc = viewController
+        if let navCon = viewController as? UINavigationController {
+            vc = navCon.viewControllers[0]
+        }
+        
          let destinationVC = self.viewControllers?
+            .map {
+                if let navCon = $0 as? UINavigationController {
+                    return navCon.viewControllers[0]
+                } else {
+                    return $0
+                }
+            }
             .filter { (childVC: UIViewController) in
-                viewController.dynamicType == childVC.dynamicType
+                vc.dynamicType == childVC.dynamicType
             }
             .first as? Identifiable
         
-        if let destinationIdentifier = destinationVC?.identifier {
+        if let destinationIdentifier = destinationVC?.dynamicType.identifier {
             store.dispatch(SetRouteAction([ReSwiftTabBarController.identifier, destinationIdentifier]))
         }
         
@@ -52,11 +62,52 @@ extension ReSwiftTabBarController: UITabBarControllerDelegate {
 extension ReSwiftTabBarController: Routable {
 
     func changeRouteSegment(from: RouteElementIdentifier, to: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
+                
+        let viewController = self.viewControllers?
+            .map { $0.unwrapNavigationController() }
+            .filter { to == ($0 as! Identifiable).dynamicType.identifier }
+            .first
         
-        return self.viewControllers?
-            .filter { to == ($0 as! Identifiable).identifier }
-            .first as! Routable
         
+        selectedIndex = self.viewControllers!.indexOf(viewController!.rewrapNavigationController())!
+        
+        completionHandler()
+        return viewController as! Routable
+    }
+    
+    func pushRouteSegment(routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
+        
+        print("pushing \(routeElementIdentifier)")
+        
+        let viewController = self.viewControllers?
+            .map { $0.unwrapNavigationController() }
+            .filter { routeElementIdentifier == ($0 as! Identifiable).dynamicType.identifier }
+            .first
+        
+        selectedIndex = self.viewControllers!.indexOf(viewController!.rewrapNavigationController())!
+        
+        completionHandler()
+        return viewController as! Routable
     }
 
+}
+
+extension UIViewController {
+    
+    func unwrapNavigationController() -> UIViewController {
+        
+        if let navCon = self as? UINavigationController {
+            return navCon.viewControllers[0]
+        } else {
+            return self
+        }
+        
+    }
+    
+    func rewrapNavigationController() -> UIViewController {
+        
+        return self.navigationController ?? self
+        
+    }
+    
 }

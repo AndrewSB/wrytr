@@ -12,8 +12,11 @@ import RxSwift
 import RxCocoa
 
 import ReSwift
+import ReSwiftRouter
 
-class FeedViewController: RxViewController {
+class FeedViewController: RxViewController, Identifiable {
+    
+    static let identifier = "FeedViewController"
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -60,3 +63,5 @@ extension FeedViewController: StoreSubscriber {
     }
 
 }
+
+extension FeedViewController: Routable {}

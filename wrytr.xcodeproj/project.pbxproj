@@ -33,6 +33,12 @@
 		465071641CB742290041C43C /* PostReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465071631CB742290041C43C /* PostReducer.swift */; };
 		465071661CB743340041C43C /* PostActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465071651CB743340041C43C /* PostActions.swift */; };
 		465071681CB745A50041C43C /* PostProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465071671CB745A50041C43C /* PostProvider.swift */; };
+		4658D6B81CC08914009527DF /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4658D6B71CC08914009527DF /* Friends.storyboard */; };
+		4658D6BA1CC08919009527DF /* Create.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4658D6B91CC08919009527DF /* Create.storyboard */; };
+		4658D6BC1CC0891F009527DF /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4658D6BB1CC0891F009527DF /* Me.storyboard */; };
+		4658D6BE1CC089AA009527DF /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658D6BD1CC089AA009527DF /* FriendsViewController.swift */; };
+		4658D6C01CC089AF009527DF /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658D6BF1CC089AF009527DF /* CreateViewController.swift */; };
+		4658D6C21CC089B4009527DF /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658D6C11CC089B4009527DF /* MeViewController.swift */; };
 		466BD0951CADA990008DC0C3 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD0941CADA990008DC0C3 /* libc++.tbd */; };
 		466BD0971CADA9FF008DC0C3 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD0961CADA9FF008DC0C3 /* libicucore.tbd */; };
 		466BD0991CADAA08008DC0C3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD0981CADAA08008DC0C3 /* CFNetwork.framework */; };
@@ -92,6 +98,12 @@
 		465071631CB742290041C43C /* PostReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostReducer.swift; sourceTree = "<group>"; };
 		465071651CB743340041C43C /* PostActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostActions.swift; sourceTree = "<group>"; };
 		465071671CB745A50041C43C /* PostProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostProvider.swift; sourceTree = "<group>"; };
+		4658D6B71CC08914009527DF /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
+		4658D6B91CC08919009527DF /* Create.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Create.storyboard; sourceTree = "<group>"; };
+		4658D6BB1CC0891F009527DF /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
+		4658D6BD1CC089AA009527DF /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		4658D6BF1CC089AF009527DF /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		4658D6C11CC089B4009527DF /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		466BD0941CADA990008DC0C3 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		466BD0961CADA9FF008DC0C3 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		466BD0981CADAA08008DC0C3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -244,6 +256,12 @@
 				466E74001CAFA60000EC0B7C /* HomeTabBarController.swift */,
 				466E74021CAFA72600EC0B7C /* Feed.storyboard */,
 				466E74041CAFA74800EC0B7C /* FeedViewController.swift */,
+				4658D6B71CC08914009527DF /* Friends.storyboard */,
+				4658D6BD1CC089AA009527DF /* FriendsViewController.swift */,
+				4658D6B91CC08919009527DF /* Create.storyboard */,
+				4658D6BF1CC089AF009527DF /* CreateViewController.swift */,
+				4658D6BB1CC0891F009527DF /* Me.storyboard */,
+				4658D6C11CC089B4009527DF /* MeViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -419,9 +437,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				466E74031CAFA72600EC0B7C /* Feed.storyboard in Resources */,
+				4658D6BA1CC08919009527DF /* Create.storyboard in Resources */,
+				4658D6BC1CC0891F009527DF /* Me.storyboard in Resources */,
 				4644FBBC1C9CD67D004ACBAF /* colors.txt in Resources */,
 				46C099191CA072250015779C /* TwitterKitResources.bundle in Resources */,
 				4644FBC51C9CDE8D004ACBAF /* Localizable.strings in Resources */,
+				4658D6B81CC08914009527DF /* Friends.storyboard in Resources */,
 				46BF97791C9B6DA700579066 /* Login.storyboard in Resources */,
 				468614C91C89CC3A002C2BAC /* LaunchScreen.storyboard in Resources */,
 				468614C61C89CC3A002C2BAC /* Assets.xcassets in Resources */,
@@ -493,9 +514,11 @@
 				46C0991C1CA087A60015779C /* Twitter+Rx.swift in Sources */,
 				466E73FF1CAF4FEC00EC0B7C /* ReSwiftTabBarController.swift in Sources */,
 				4644FBAB1C9CCA89004ACBAF /* AuthenticationState.swift in Sources */,
+				4658D6C01CC089AF009527DF /* CreateViewController.swift in Sources */,
 				46C099201CA097640015779C /* LoadingViewController.swift in Sources */,
 				4644FBAD1C9CCAD6004ACBAF /* AppReducer.swift in Sources */,
 				4644FBB71C9CD3C3004ACBAF /* MainViewRoutable.swift in Sources */,
+				4658D6C21CC089B4009527DF /* MeViewController.swift in Sources */,
 				466E73FB1CAF222E00EC0B7C /* AuthenticationProvider.swift in Sources */,
 				46C0991E1CA092770015779C /* ParseRxCallbacks.swift in Sources */,
 				4644FBB31C9CCF4D004ACBAF /* AuthenticationReducer.swift in Sources */,
@@ -510,6 +533,7 @@
 				465071681CB745A50041C43C /* PostProvider.swift in Sources */,
 				4644FBA81C9CC9CB004ACBAF /* State.swift in Sources */,
 				4644FBC31C9CD6E4004ACBAF /* LandingViewController.swift in Sources */,
+				4658D6BE1CC089AA009527DF /* FriendsViewController.swift in Sources */,
 				465071661CB743340041C43C /* PostActions.swift in Sources */,
 				465071641CB742290041C43C /* PostReducer.swift in Sources */,
 				466E74011CAFA60000EC0B7C /* HomeTabBarController.swift in Sources */,
