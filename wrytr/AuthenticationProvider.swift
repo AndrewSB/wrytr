@@ -10,6 +10,8 @@ import Foundation
 
 import Library
 
+import Firebase
+
 import RxSwift
 
 import ReSwift
@@ -24,15 +26,16 @@ class AuthenticationProvider {
     class func loginWithFacebook(state: StateType, store: Store<State>) -> Action? {
         
         FBSDKLoginManager().rx_login()
-            .flatMap { loginResult -> Observable<LoggedInState> in
-                
+            .flatMap { loginResult -> Observable<FAuthData> in
                 if loginResult.isCancelled {
                     return .error(NSError(localizedDescription: "Did you cancel the login?", code: 99))
                 } else {
-                    return firebase.rx_oauth("facebook", token: FBSDKAccessToken.currentAccessToken().tokenString).map { .LoggedIn(Social.Facebook($0)) }
+                    return firebase.rx_oauth("facebook", token: FBSDKAccessToken.currentAccessToken().tokenString)
                 }
-                
             }
+            .map(Social.Facebook)
+            .map(LoggedInState.LoggedIn)
+            .flatMap(scrapeSocialData)
             .subscribe(handleAuthenticationResponse)
             .addDisposableTo(neverDisposeBag)
         
@@ -46,6 +49,7 @@ class AuthenticationProvider {
             .flatMap(firebase.rx_oauth)
             .map(Social.Twitter)
             .map(LoggedInState.LoggedIn)
+            .flatMap(scrapeSocialData)
             .subscribe(handleAuthenticationResponse)
             .addDisposableTo(neverDisposeBag)
         
@@ -64,6 +68,19 @@ class AuthenticationProvider {
             break
         }
         
+    }
+    
+    private class func scrapeSocialData(loggedInState: LoggedInState) -> Observable<LoggedInState> {
+        let userRef = firebase.childByAppendingPath("users/\(firebase.authData.id)")
+
+        let userDict = [
+            "name": firebase.authData.name,
+            "id": firebase.authData.id,
+            "profilePictureUrl": "\(firebase.authData.profilePictureUrl)",
+        ]
+        
+        return userRef.rx_setValue(userDict)
+            .map { _ in loggedInState }
     }
     
 }

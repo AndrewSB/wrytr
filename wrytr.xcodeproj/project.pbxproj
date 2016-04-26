@@ -57,6 +57,7 @@
 		468D0E4F1CCED0F2004250F6 /* FQuery+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E4E1CCED0F2004250F6 /* FQuery+Rx.swift */; };
 		468D0E511CCED4ED004250F6 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E501CCED4ED004250F6 /* FeedTableViewCell.swift */; };
 		468D0E531CCED77A004250F6 /* RenderedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E521CCED77A004250F6 /* RenderedImageView.swift */; };
+		46B630DC1CCFF6B50000EFC4 /* FAuthData Convinience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B630DB1CCFF6B50000EFC4 /* FAuthData Convinience.swift */; };
 		46BF97791C9B6DA700579066 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF97781C9B6DA700579066 /* Login.storyboard */; };
 		46C099061C9E34D10015779C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099011C9E34D10015779C /* Bolts.framework */; };
 		46C099071C9E34D10015779C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099021C9E34D10015779C /* Crashlytics.framework */; };
@@ -129,6 +130,7 @@
 		468D0E4E1CCED0F2004250F6 /* FQuery+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FQuery+Rx.swift"; sourceTree = "<group>"; };
 		468D0E501CCED4ED004250F6 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		468D0E521CCED77A004250F6 /* RenderedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderedImageView.swift; sourceTree = "<group>"; };
+		46B630DB1CCFF6B50000EFC4 /* FAuthData Convinience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FAuthData Convinience.swift"; sourceTree = "<group>"; };
 		46BF97781C9B6DA700579066 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		46C099011C9E34D10015779C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
 		46C099021C9E34D10015779C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				466BD09F1CADAD6C008DC0C3 /* Facebook+Rx.swift */,
 				466E73FC1CAF271A00EC0B7C /* Firebase+Rx.swift */,
 				468D0E4E1CCED0F2004250F6 /* FQuery+Rx.swift */,
+				46B630DB1CCFF6B50000EFC4 /* FAuthData Convinience.swift */,
 				46C0991D1CA092770015779C /* ParseRxCallbacks.swift */,
 				466E73FE1CAF4FEC00EC0B7C /* ReSwiftTabBarController.swift */,
 			);
@@ -534,6 +537,7 @@
 				4644FBAB1C9CCA89004ACBAF /* AuthenticationState.swift in Sources */,
 				4658D6C01CC089AF009527DF /* CreateViewController.swift in Sources */,
 				46C099201CA097640015779C /* LoadingViewController.swift in Sources */,
+				46B630DC1CCFF6B50000EFC4 /* FAuthData Convinience.swift in Sources */,
 				4644FBAD1C9CCAD6004ACBAF /* AppReducer.swift in Sources */,
 				4644FBB71C9CD3C3004ACBAF /* MainViewRoutable.swift in Sources */,
 				4658D6C21CC089B4009527DF /* MeViewController.swift in Sources */,
