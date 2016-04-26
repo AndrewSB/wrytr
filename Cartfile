@@ -5,3 +5,5 @@ github "ReSwift/ReSwift-Recorder"
 github "AndrewSB/Library" "f583b71"
 
 github "ReactiveX/RxSwift"
+
+github "Haneke/HanekeSwift"

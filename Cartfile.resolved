@@ -1,5 +1,6 @@
+github "Haneke/HanekeSwift" "v0.10.1"
 github "AndrewSB/Library" "f583b7150c1db8d3d01717c49443acb1420ee74e"
 github "ReSwift/ReSwift" "1.0.0"
-github "ReactiveX/RxSwift" "2.3.1"
+github "ReactiveX/RxSwift" "2.4"
 github "ReSwift/ReSwift-Recorder" "0.2.5"
 github "ReSwift/ReSwiftRouter" "2af0cc9d4f01678951dcb760dbd563e80ad078aa"

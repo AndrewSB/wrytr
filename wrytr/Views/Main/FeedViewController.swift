@@ -14,13 +14,20 @@ import RxCocoa
 import ReSwift
 import ReSwiftRouter
 
+import Haneke
+
 import Firebase
 
 class FeedViewController: RxViewController, Identifiable {
     
     static let identifier = "FeedViewController"
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.rowHeight = UITableViewAutomaticDimension
+            tableView.estimatedRowHeight = 90
+        }
+    }
 
     let posts: Variable<[Post]>! = Variable([Post]())
     
@@ -35,12 +42,12 @@ class FeedViewController: RxViewController, Identifiable {
         super.viewDidLoad()
         
         posts.asObservable()
-            .bindTo(tableView.rx_itemsWithCellIdentifier("lol", cellType: UITableViewCell.self)) { (row, element, cell) in
-                print("ran")
-                return cell.textLabel!.text = element.prompt
+            .bindTo(tableView.rx_itemsWithCellIdentifier("lol", cellType: FeedTableViewCell.self)) { (row, element, cell) in
+                cell.prompt.text = element.prompt
+//                cell.profilePicture.hnk_setImageFromURL(element.user)
             }
             .addDisposableTo(disposeBag)
-        
+    
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -68,7 +75,6 @@ extension FeedViewController: StoreSubscriber {
     func newState(state: State) {
         
         posts.value = state.postState.posts
-        
     }
 
 }
