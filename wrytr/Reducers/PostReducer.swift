@@ -30,7 +30,7 @@ func initialPostState() -> PostState {
     
     return PostState(
         busyLoading: false,
-        posts: [Post]()
+        posts: [InflatedPost]()
     )
 
 }

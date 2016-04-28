@@ -29,7 +29,7 @@ class FeedViewController: RxViewController, Identifiable {
         }
     }
 
-    let posts: Variable<[Post]>! = Variable([Post]())
+    let posts: Variable<[InflatedPost]>! = Variable([InflatedPost]())
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,8 +43,10 @@ class FeedViewController: RxViewController, Identifiable {
         
         posts.asObservable()
             .bindTo(tableView.rx_itemsWithCellIdentifier("lol", cellType: FeedTableViewCell.self)) { (row, element, cell) in
-                cell.prompt.text = element.prompt
-//                cell.profilePicture.hnk_setImageFromURL(element.user)
+                cell.prompt.text = element.post.prompt
+                cell.profilePicture.setImage(UIImage(asset: .Share).imageWithRenderingMode(.AlwaysTemplate), forState: .Normal)
+                cell.profilePicture.hnk_setImageFromURL(NSURL(string: element.user.profilePictureUrl)!)
+                cell.layoutIfNeeded()
             }
             .addDisposableTo(disposeBag)
     

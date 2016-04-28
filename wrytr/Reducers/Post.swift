@@ -8,9 +8,12 @@
 
 import Foundation
 
-public struct Post {
+import RxSwift
+import Firebase
 
-    let user: String
+struct Post {
+
+    let userId: String
     let prompt: String
 
     let stars: [Response]?
@@ -18,12 +21,27 @@ public struct Post {
     
 }
 
-public extension Post {
+extension Post {
+    
+    func inflate() -> Observable<InflatedPost> {
+        
+        return firebase.childByAppendingPath("users/\(userId)").rx_observeEventOnce(.Value)
+            .map { $0.value as! Dictionary<String, String> }
+            .map(User.init)
+            .map { user in
+                InflatedPost(post: self, user: user)
+            }
+        
+    }
+    
+}
+
+extension Post {
 
     func asAnyObject() -> AnyObject {
         
         return [
-            "user": user,
+            "userId": userId,
             "prompt": prompt
         ]
         
@@ -31,4 +49,4 @@ public extension Post {
 
 }
 
-let dummyPost = Post(user: "facebook:10207161782556434", prompt: "yo yo", stars: nil, comments: nil)
+let dummyPost = Post(userId: "facebook:10207161782556434", prompt: "yo yo", stars: nil, comments: nil)

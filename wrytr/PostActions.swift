@@ -13,5 +13,5 @@ import ReSwift
 struct RequestNewPosts: Action {}
 
 struct UpdatePosts: Action {
-    let posts: [Post]
+    let posts: [InflatedPost]
 }

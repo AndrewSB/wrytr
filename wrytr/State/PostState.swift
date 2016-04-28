@@ -12,5 +12,5 @@ import ReSwift
 
 struct PostState {
     var busyLoading: Bool
-    var posts: [Post]
+    var posts: [InflatedPost]
 }

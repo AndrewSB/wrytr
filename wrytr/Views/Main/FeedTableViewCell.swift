@@ -12,8 +12,19 @@ import Library
 
 class FeedTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var elipses: UIButton!
-    @IBOutlet weak var profilePicture: UIButton!
+    @IBOutlet weak var elipses: UIButton! {
+        didSet {
+            let elipsesImage = UIImage(asset: .Elipses).imageWithRenderingMode(.AlwaysTemplate)
+            elipses.setImage(elipsesImage, forState: .Normal)
+        }
+    }
+    @IBOutlet weak var profilePicture: RoundedButton! {
+        didSet {
+            profilePicture.clipsToBounds = true
+            profilePicture.imageView!.contentMode = .ScaleAspectFit
+            self.setNeedsLayout()
+        }
+    }
     @IBOutlet weak var prompt: UILabel!
     
     
@@ -25,14 +36,4 @@ class FeedTableViewCell: UITableViewCell {
             reply.layer.borderColor = UIColor.lightGrayColor().CGColor
         }
     }
-    
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        let elipsesImage = UIImage(asset: .Elipses).imageWithRenderingMode(.AlwaysTemplate)
-        elipses.setImage(elipsesImage, forState: .Normal)
-    }
-
 }

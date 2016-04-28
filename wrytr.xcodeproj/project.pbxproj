@@ -58,6 +58,8 @@
 		468D0E511CCED4ED004250F6 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E501CCED4ED004250F6 /* FeedTableViewCell.swift */; };
 		468D0E531CCED77A004250F6 /* RenderedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E521CCED77A004250F6 /* RenderedImageView.swift */; };
 		46B630DC1CCFF6B50000EFC4 /* FAuthData Convinience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B630DB1CCFF6B50000EFC4 /* FAuthData Convinience.swift */; };
+		46B630DE1CCFFE6B0000EFC4 /* InflatedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B630DD1CCFFE6B0000EFC4 /* InflatedPost.swift */; };
+		46B630E01CCFFE880000EFC4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B630DF1CCFFE880000EFC4 /* User.swift */; };
 		46BF97791C9B6DA700579066 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF97781C9B6DA700579066 /* Login.storyboard */; };
 		46C099061C9E34D10015779C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099011C9E34D10015779C /* Bolts.framework */; };
 		46C099071C9E34D10015779C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099021C9E34D10015779C /* Crashlytics.framework */; };
@@ -131,6 +133,8 @@
 		468D0E501CCED4ED004250F6 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		468D0E521CCED77A004250F6 /* RenderedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderedImageView.swift; sourceTree = "<group>"; };
 		46B630DB1CCFF6B50000EFC4 /* FAuthData Convinience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FAuthData Convinience.swift"; sourceTree = "<group>"; };
+		46B630DD1CCFFE6B0000EFC4 /* InflatedPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflatedPost.swift; sourceTree = "<group>"; };
+		46B630DF1CCFFE880000EFC4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		46BF97781C9B6DA700579066 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		46C099011C9E34D10015779C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
 		46C099021C9E34D10015779C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
@@ -301,6 +305,8 @@
 			isa = PBXGroup;
 			children = (
 				4650715E1CB741770041C43C /* Post.swift */,
+				46B630DD1CCFFE6B0000EFC4 /* InflatedPost.swift */,
+				46B630DF1CCFFE880000EFC4 /* User.swift */,
 				46CF36A11CCEBCFA00BC17A4 /* Response.swift */,
 			);
 			name = Models;
@@ -549,10 +555,12 @@
 				468D0E4F1CCED0F2004250F6 /* FQuery+Rx.swift in Sources */,
 				46C0992F1CA0A0E80015779C /* AuthenticationActions.swift in Sources */,
 				4644FBDE1C9E16CD004ACBAF /* OnboardingViewController.swift in Sources */,
+				46B630DE1CCFFE6B0000EFC4 /* InflatedPost.swift in Sources */,
 				4644FBA01C9CBDEE004ACBAF /* RootRoutable.swift in Sources */,
 				4650715F1CB741770041C43C /* Post.swift in Sources */,
 				4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */,
 				4644FBB51C9CD389004ACBAF /* LoginViewRoutable.swift in Sources */,
+				46B630E01CCFFE880000EFC4 /* User.swift in Sources */,
 				468D0E511CCED4ED004250F6 /* FeedTableViewCell.swift in Sources */,
 				4644FBB11C9CCE79004ACBAF /* Images.swift in Sources */,
 				465071681CB745A50041C43C /* PostProvider.swift in Sources */,
