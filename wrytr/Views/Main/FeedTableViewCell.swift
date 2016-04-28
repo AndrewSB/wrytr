@@ -18,22 +18,37 @@ class FeedTableViewCell: UITableViewCell {
             elipses.setImage(elipsesImage, forState: .Normal)
         }
     }
-    @IBOutlet weak var profilePicture: RoundedButton! {
+    @IBOutlet weak var profilePicture: RoundedImageView! {
         didSet {
             profilePicture.clipsToBounds = true
-            profilePicture.imageView!.contentMode = .ScaleAspectFit
-            self.setNeedsLayout()
+            profilePicture.contentMode = .ScaleAspectFit
         }
     }
     @IBOutlet weak var prompt: UILabel!
     
     
-    @IBOutlet weak var stars: RenderedImageButton!
-    @IBOutlet weak var comments: RenderedImageButton!
-    @IBOutlet weak var share: RenderedImageButton!
+    @IBOutlet weak var stars: RenderedImageButton! {
+        didSet { stars.imageView!.contentMode = .ScaleAspectFit }
+    }
+    @IBOutlet weak var comments: RenderedImageButton! {
+        didSet { comments.imageView!.contentMode = .ScaleAspectFit }
+    }
+    @IBOutlet weak var share: RenderedImageButton! {
+        didSet { share.imageView!.contentMode = .ScaleAspectFit }
+    }
     @IBOutlet weak var reply: RoundedButton! {
         didSet {
+            reply.layer.borderWidth = 1
             reply.layer.borderColor = UIColor.lightGrayColor().CGColor
         }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        layer.borderColor = UIColor.lightGrayColor().CGColor
+        layer.borderWidth = 1
+
+        layer.cornerRadius = 10
     }
 }

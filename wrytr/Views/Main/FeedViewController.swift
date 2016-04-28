@@ -22,12 +22,16 @@ class FeedViewController: RxViewController, Identifiable {
     
     static let identifier = "FeedViewController"
     
-    @IBOutlet weak var tableView: UITableView! {
-        didSet {
-            tableView.rowHeight = UITableViewAutomaticDimension
-            tableView.estimatedRowHeight = 90
-        }
-    }
+    let titleImageView: UIImageView = {
+        let navImageView = UIImageView(image: UIImage(asset: .Wrytr_Worded))
+        let navImageHeight = 30
+        let navAspectRatio = (446/127)
+        navImageView.frame = CGRect(origin: .zero, size: CGSize(width: 100, height: 30))//.size = CGSize(width: navAspectRatio * navImageHeight, height: navImageHeight)
+        
+        return navImageView
+    }()
+    
+    @IBOutlet weak var tableView: FeedTableView!
 
     let posts: Variable<[InflatedPost]>! = Variable([InflatedPost]())
     
@@ -36,20 +40,20 @@ class FeedViewController: RxViewController, Identifiable {
         
         self.title = "Home"
         self.tabBarItem = UITabBarItem(title: self.title, image: UIImage(asset: .Icon_Tabbar_Feed), tag: 0)
+        
+        
+        let titleView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 30)))
+        titleView.addSubview(titleImageView)
+        titleImageView.center = titleView.center
+        self.navigationItem.titleView = titleView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         posts.asObservable()
-            .bindTo(tableView.rx_itemsWithCellIdentifier("lol", cellType: FeedTableViewCell.self)) { (row, element, cell) in
-                cell.prompt.text = element.post.prompt
-                cell.profilePicture.setImage(UIImage(asset: .Share).imageWithRenderingMode(.AlwaysTemplate), forState: .Normal)
-                cell.profilePicture.hnk_setImageFromURL(NSURL(string: element.user.profilePictureUrl)!)
-                cell.layoutIfNeeded()
-            }
+            .bindTo(tableView.data)
             .addDisposableTo(disposeBag)
-    
     }
     
     override func viewDidAppear(animated: Bool) {
