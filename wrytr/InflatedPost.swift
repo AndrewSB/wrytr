@@ -13,3 +13,12 @@ struct InflatedPost {
     
     let user: User
 }
+
+extension InflatedPost: Equatable { }
+
+func ==(lhs: InflatedPost, rhs: InflatedPost) -> Bool {
+    let postsEqual = lhs.post.id == rhs.post.id
+    let usersEqual = lhs.user.id == lhs.user.id
+    
+    return postsEqual && usersEqual
+}

@@ -9,9 +9,11 @@
 import Foundation
 
 import RxSwift
+
 import Firebase
 
 struct Post {
+    let id: String
 
     let userId: String
     let prompt: String
@@ -31,7 +33,33 @@ extension Post {
             .map { user in
                 InflatedPost(post: self, user: user)
             }
+    }
+    
+    static func inflate(posts: [Post]) -> Observable<[InflatedPost]> {
+        return posts.map { $0.inflate() }
+            .toObservable()
+            .merge()
+            .toArray()
+    }
+    
+}
+
+extension Post {
+    
+    static func parseFromFirebase(snapshot: FDataSnapshot) -> [Post] {
+        let snapshotKeys = snapshot.value as? Dictionary<String, Dictionary<String, String>>
         
+        let posts: [Post] = snapshotKeys?.map { postDict -> Post in
+            Post(
+                id: postDict.0,
+                userId: postDict.1["user"]!,
+                prompt: postDict.1["prompt"]!,
+                stars: nil,
+                comments: nil
+            )
+            } ?? [Post]()
+        
+        return posts
     }
     
 }
@@ -48,5 +76,3 @@ extension Post {
     }
 
 }
-
-let dummyPost = Post(userId: "facebook:10207161782556434", prompt: "yo yo", stars: nil, comments: nil)

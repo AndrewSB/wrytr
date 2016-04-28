@@ -23,21 +23,23 @@ class PostProvider {
         
         firebase.childByAppendingPath("posts" as String!).queryOrderedByChild("date" as String!)
             .rx_observeEventOnce(.Value)
-            .map { snapshot -> [Post] in
-                let snapshotKeys = snapshot.value as? Dictionary<String, Dictionary<String, String>>
-                let posts: [Post] = snapshotKeys?.values.map { postDict -> Post in
-                    Post(userId: postDict["user"]!, prompt: postDict["prompt"]!, stars: nil, comments: nil)
-                    } ?? [Post]()
-            
-                return posts
-            }
-            .flatMap { posts in
-                posts.map { $0.inflate() }
-                    .toObservable()
-                    .merge()
-                    .toArray()
-            }
-            .subscribeNext { store.dispatch(UpdatePosts(posts: $0)) }
+            .map(Post.parseFromFirebase)
+            .flatMap(Post.inflate)
+            .subscribeNext { store.dispatch(UpdatePosts(newPosts: $0, myPosts: nil)) }
+            .addDisposableTo(neverDispose)
+        
+        return nil
+    }
+    
+    static func loadMyPosts(state: StateType, store: Store<State>) -> Action? {
+        
+        firebase.childByAppendingPath("posts")
+            .queryOrderedByChild("user")
+            .queryEqualToValue(firebase.authData.uid)
+            .rx_observeEventOnce(.Value)
+            .map(Post.parseFromFirebase)
+            .flatMap(Post.inflate)
+            .subscribeNext { store.dispatch(UpdatePosts(newPosts: nil, myPosts: $0)) }
             .addDisposableTo(neverDispose)
         
         return nil

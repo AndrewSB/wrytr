@@ -12,6 +12,9 @@ import ReSwift
 
 struct RequestNewPosts: Action {}
 
+struct RequestMyPosts: Action {}
+
 struct UpdatePosts: Action {
-    let posts: [InflatedPost]
+    let newPosts: [InflatedPost]?
+    let myPosts: [InflatedPost]?
 }

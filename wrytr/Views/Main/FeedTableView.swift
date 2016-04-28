@@ -23,13 +23,18 @@ class FeedTableView: UITableView {
         (dataSource, delegate) = (self, self)
         
         data.asObservable()
-            .subscribeNext { _ in self.reloadData() }
+            .scan([InflatedPost]()) { (lastState, newValue) in
+                if lastState != newValue {
+                    self.reloadData()
+                }
+                return newValue
+            }
+            .subscribeNext { _ in }
             .addDisposableTo(disposeBag)
         
         rx_itemSelected
             .subscribeNext { iPath in
                 self.deselectRowAtIndexPath(iPath, animated: true)
-//                store.dispatch(<#T##action: Action##Action#>)
             }
             .addDisposableTo(disposeBag)
     }
@@ -58,7 +63,7 @@ extension FeedTableView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("lol") as! FeedTableViewCell
         let element = data.value[indexPath.section]
         
-        cell.prompt.text = (0...10).map { $0 }.map { _ in element.post.prompt }.joinWithSeparator(" ")
+        cell.prompt.text = element.post.prompt
         cell.profilePicture.hnk_setImageFromURL(NSURL(string: element.user.profilePictureUrl)!)
 
         return cell
