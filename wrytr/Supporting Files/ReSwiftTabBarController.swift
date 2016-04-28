@@ -62,6 +62,8 @@ extension ReSwiftTabBarController: UITabBarControllerDelegate {
 extension ReSwiftTabBarController: Routable {
 
     func changeRouteSegment(from: RouteElementIdentifier, to: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
+        
+        print("changing \(to)")
                 
         let viewController = self.viewControllers?
             .map { $0.unwrapNavigationController() }
@@ -76,9 +78,7 @@ extension ReSwiftTabBarController: Routable {
     }
     
     func pushRouteSegment(routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
-        
-        print("pushing \(routeElementIdentifier)")
-        
+
         let viewController = self.viewControllers?
             .map { $0.unwrapNavigationController() }
             .filter { routeElementIdentifier == ($0 as! Identifiable).dynamicType.identifier }

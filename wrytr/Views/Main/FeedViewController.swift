@@ -22,16 +22,21 @@ class FeedViewController: RxViewController, Identifiable {
     
     static let identifier = "FeedViewController"
     
-    let titleImageView: UIImageView = {
+    let headerTitleView: UIView = {
         let navImageView = UIImageView(image: UIImage(asset: .Wrytr_Worded))
         let navImageHeight = 30
-        let navAspectRatio = (446/127)
-        navImageView.frame = CGRect(origin: .zero, size: CGSize(width: 100, height: 30))//.size = CGSize(width: navAspectRatio * navImageHeight, height: navImageHeight)
+        let navAspectRatio = 446/127
+        navImageView.frame.size = CGSize(width: navAspectRatio * navImageHeight, height: navImageHeight)
         
-        return navImageView
+        let titleView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 30)))
+        titleView.addSubview(navImageView)
+        navImageView.center = titleView.center
+        
+        return titleView
     }()
     
     @IBOutlet weak var tableView: FeedTableView!
+    @IBOutlet weak var postCategory: UISegmentedControl!
 
     let posts: Variable<[InflatedPost]>! = Variable([InflatedPost]())
     
@@ -41,11 +46,7 @@ class FeedViewController: RxViewController, Identifiable {
         self.title = "Home"
         self.tabBarItem = UITabBarItem(title: self.title, image: UIImage(asset: .Icon_Tabbar_Feed), tag: 0)
         
-        
-        let titleView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 30)))
-        titleView.addSubview(titleImageView)
-        titleImageView.center = titleView.center
-        self.navigationItem.titleView = titleView
+        self.navigationItem.titleView = headerTitleView
     }
 
     override func viewDidLoad() {
@@ -53,6 +54,12 @@ class FeedViewController: RxViewController, Identifiable {
         
         posts.asObservable()
             .bindTo(tableView.data)
+            .addDisposableTo(disposeBag)
+        
+        tableView.rx_modelSelected(InflatedPost)
+            .subscribeNext { post in
+                
+            }
             .addDisposableTo(disposeBag)
     }
     
@@ -85,4 +92,17 @@ extension FeedViewController: StoreSubscriber {
 
 }
 
-extension FeedViewController: Routable {}
+extension FeedViewController: Routable {
+
+    func pushRouteSegment(routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
+        
+        
+        
+//        self.showViewController(<#T##vc: UIViewController##UIViewController#>, sender: <#T##AnyObject?#>)
+        
+        completionHandler()
+        
+        return self
+    }
+
+}

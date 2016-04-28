@@ -67,54 +67,49 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nui-mU-bV4">
-                                                    <rect key="frame" x="52" y="95" width="486" height="104.5"/>
+                                                    <rect key="frame" x="52" y="95" width="486" height="111.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WaG-FU-CqY" userLabel="border line">
-                                                    <rect key="frame" x="8" y="205" width="574" height="1"/>
+                                                    <rect key="frame" x="8" y="212" width="574" height="1"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="Dpx-pr-DRx"/>
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cgb-TS-CXj">
-                                                    <rect key="frame" x="8" y="210" width="574" height="33"/>
+                                                    <rect key="frame" x="8" y="217" width="574" height="26"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="bottom" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="aQJ-LP-nAD">
-                                                            <rect key="frame" x="0.0" y="0.0" width="179" height="33"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IN-pp-Sbe" customClass="RenderedImageButton" customModule="wrytr" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="57" height="33"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                    <state key="normal" title="22" image="star">
-                                                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                    </state>
-                                                                </button>
-                                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OK6-Ge-PbC" customClass="RenderedImageButton" customModule="wrytr" customModuleProvider="target">
-                                                                    <rect key="frame" x="79" y="0.0" width="48" height="33"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
-                                                                    <state key="normal" title="12" image="comment">
-                                                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                    </state>
-                                                                </button>
-                                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQa-iP-Kaj" customClass="RenderedImageButton" customModule="wrytr" customModuleProvider="target">
-                                                                    <rect key="frame" x="149" y="0.0" width="30" height="33"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="2"/>
-                                                                    <state key="normal" image="share">
-                                                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                    </state>
-                                                                </button>
-                                                            </subviews>
-                                                        </stackView>
+                                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IN-pp-Sbe" customClass="RenderedImageButton" customModule="wrytr" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="57" height="26"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <state key="normal" title="22" image="star">
+                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OK6-Ge-PbC" customClass="RenderedImageButton" customModule="wrytr" customModuleProvider="target">
+                                                            <rect key="frame" x="176.5" y="0.0" width="48" height="26"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
+                                                            <state key="normal" title="12" image="comment">
+                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQa-iP-Kaj" customClass="RenderedImageButton" customModule="wrytr" customModuleProvider="target">
+                                                            <rect key="frame" x="344.5" y="0.0" width="30" height="26"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="2"/>
+                                                            <state key="normal" image="share">
+                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRa-6Q-Rv5" customClass="RoundedButton" customModule="Library">
-                                                            <rect key="frame" x="494" y="0.0" width="80" height="33"/>
+                                                            <rect key="frame" x="494" y="0.0" width="80" height="26"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="80" id="uwz-9t-J5b"/>
                                                             </constraints>
@@ -125,7 +120,7 @@
                                                         </button>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="33" id="XQZ-Lh-QM5"/>
+                                                        <constraint firstAttribute="height" constant="26" id="XQZ-Lh-QM5"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
@@ -169,6 +164,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="blB-K1-3Cd"/>
                     <connections>
+                        <outlet property="postCategory" destination="jLQ-id-dKz" id="LGk-Cd-PxZ"/>
                         <outlet property="tableView" destination="XUX-zT-VfB" id="BRa-2v-bKJ"/>
                     </connections>
                 </viewController>
