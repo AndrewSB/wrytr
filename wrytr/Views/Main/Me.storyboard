@@ -24,7 +24,7 @@
         <!--Me View Controller-->
         <scene sceneID="d4y-X8-qWh">
             <objects>
-                <viewController id="9K3-0u-z2v" customClass="MeViewController" customModule="wrytr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="9K3-0u-z2v" customClass="MeViewController" customModule="wrytr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kcg-rM-ipy"/>
                         <viewControllerLayoutGuide type="bottom" id="3wY-aJ-tzF"/>

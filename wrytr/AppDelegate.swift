@@ -61,6 +61,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             store.dispatch(ReSwiftRouter.SetRouteAction([landingRoute]))
         }
         
+        store.subscribe(self)
+        
         window?.makeKeyAndVisible()
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -95,4 +97,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }
 
+}
+
+extension AppDelegate: StoreSubscriber {
+    
+    func newState(state: State) {
+        
+        if case .NotLoggedIn = state.authenticationState.loggedInState {
+            print("should logout")
+        }
+    
+    }
+    
 }

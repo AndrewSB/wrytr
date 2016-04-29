@@ -13,3 +13,4 @@ import ReSwift
 struct UpdateLoggedInState: Action {
     let loggedInState: LoggedInState
 }
+

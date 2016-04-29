@@ -11,8 +11,8 @@ import UIKit
 import ReSwift
 import ReSwiftRouter
 
-let signupRoute: RouteElementIdentifier = "\(StoryboardScene.Login.OnboardingScene.rawValue)signup"
-let loginRoute: RouteElementIdentifier = "\(StoryboardScene.Login.OnboardingScene.rawValue)login"
+let signupRoute: RouteElementIdentifier = "\(StoryboardScene.Login.LandingScene.rawValue)signup"
+let loginRoute: RouteElementIdentifier = "\(StoryboardScene.Login.LandingScene.rawValue)login"
 
 class LoginViewRoutable: Routable {
 
@@ -26,18 +26,18 @@ class LoginViewRoutable: Routable {
         
         switch routeElementIdentifier {
         case signupRoute:
-            let signupVC = StoryboardScene.Login.OnboardingScene.viewController() as! OnboardingViewController
-            signupVC.type = .SignUp
+            let signupVC = StoryboardScene.Login.LandingScene.viewController() as! LandingViewController
+//            signupVC.type = .SignUp
             self.viewController.presentViewController(signupVC, animated: false, completion: completionHandler)
         case loginRoute:
-            let loginVC = StoryboardScene.Login.OnboardingScene.viewController() as! OnboardingViewController
-            loginVC.type = .LogIn
+            let loginVC = StoryboardScene.Login.LandingScene.viewController() as! LandingViewController
+//            loginVC.type = .LogIn
             self.viewController.presentViewController(loginVC, animated: false, completion: completionHandler)
         default:
             assertionFailure()
         }
         
-        return OnboardingRoutable()
+        return LandingRoutable()
     }
     
     func changeRouteSegment(from: RouteElementIdentifier, to: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
@@ -51,4 +51,4 @@ class LoginViewRoutable: Routable {
 
 }
 
-class OnboardingRoutable: Routable {}
+class LandingRoutable: Routable {}

@@ -56,11 +56,6 @@ class FeedViewController: RxViewController, Identifiable {
             .bindTo(tableView.data)
             .addDisposableTo(disposeBag)
         
-        tableView.rx_modelSelected(InflatedPost)
-            .subscribeNext { post in
-                
-            }
-            .addDisposableTo(disposeBag)
     }
     
     override func viewDidAppear(animated: Bool) {

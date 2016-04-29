@@ -36,13 +36,6 @@ class LandingViewController: RxViewController {
     @IBOutlet weak var emailSignup: RoundedButton! {
         didSet { emailSignup.title = tr(.LoginLandingEmailbuttonTitle) }
     }
-    @IBOutlet weak var login: RoundedButton! {
-        didSet {
-            login.title = tr(.LoginLandingLoginbuttonTitle)
-            login.layer.borderColor = UIColor.whiteColor().CGColor
-            login.layer.borderWidth = 2
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,10 +60,6 @@ class LandingViewController: RxViewController {
             .bindNext { store.dispatch(SetRouteAction([landingRoute, signupRoute])) }
             .addDisposableTo(disposeBag)
         
-        login.rx_tap
-            .bindNext { store.dispatch(SetRouteAction([landingRoute, loginRoute])) }
-            .addDisposableTo(disposeBag)
-            
     }
 
 }
