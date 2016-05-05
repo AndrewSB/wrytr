@@ -27,41 +27,24 @@ class LandingViewController: RxViewController {
         didSet { subtitle.text = tr(.LoginLandingSubtitle) }
     }
     
-    @IBOutlet weak var facebookSignup: RoundedButton! {
-        didSet { facebookSignup.title = tr(.LoginLandingFacebookbuttonTitle) }
-    }
-    @IBOutlet weak var twitterSignup: RoundedButton! {
-        didSet { twitterSignup.title = tr(.LoginLandingTwitterbuttonTitle) }
-    }
-    @IBOutlet weak var emailSignup: RoundedButton! {
-        didSet { emailSignup.title = tr(.LoginLandingEmailbuttonTitle) }
-    }
+    var landingForm: LandingFormViewController!
+    @IBOutlet weak var formContainer: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("view loaded")
 
         view.backgroundColor = UIColor(named: .LoginLandingBackround)
-        
-        facebookSignup.rx_tap
-            .map(startLoading)
-            .subscribeNext {
-                store.dispatch(AuthenticationProvider.loginWithFacebook)
-            }
-            .addDisposableTo(disposeBag)
-        
-        twitterSignup.rx_tap
-            .map(startLoading)
-            .subscribeNext {
-                store.dispatch(AuthenticationProvider.loginWithTwitter)
-            }
-            .addDisposableTo(disposeBag)
-        
-        emailSignup?.rx_tap
-            .bindNext { store.dispatch(SetRouteAction([landingRoute, signupRoute])) }
-            .addDisposableTo(disposeBag)
-        
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == StoryboardSegue.Login.LandingForm.rawValue {
+            landingForm = segue.destinationViewController as! LandingFormViewController
+        }
+        
+    }
 }
 
 extension LandingViewController: StoreSubscriber {
@@ -85,7 +68,7 @@ extension LandingViewController: StoreSubscriber {
         self.stopLoading()
         switch state {
         case .ErrorLoggingIn(let error):
-            presentViewController(UIAlertController(actionedTitle: "Couldn't log in 😔", message: error.localizedDescription), animated: true, completion: nil)
+            presentViewController(UIAlertController(okayableTitle: "Couldn't log in 😔", message: error.localizedDescription), animated: true, completion: nil)
         case .LoggedIn:
             print("Logged in")
         case .NotLoggedIn:

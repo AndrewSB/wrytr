@@ -29,7 +29,6 @@
 		4644FBD81C9E1307004ACBAF /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FBD61C9E1307004ACBAF /* RxCocoa.framework */; };
 		4644FBD91C9E1307004ACBAF /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FBD71C9E1307004ACBAF /* RxSwift.framework */; };
 		4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBDA1C9E1535004ACBAF /* RxViewController.swift */; };
-		4644FBDE1C9E16CD004ACBAF /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBDD1C9E16CD004ACBAF /* OnboardingViewController.swift */; };
 		4650715F1CB741770041C43C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4650715E1CB741770041C43C /* Post.swift */; };
 		465071621CB741E40041C43C /* PostState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465071611CB741E40041C43C /* PostState.swift */; };
 		465071641CB742290041C43C /* PostReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465071631CB742290041C43C /* PostReducer.swift */; };
@@ -59,6 +58,7 @@
 		468D0E4F1CCED0F2004250F6 /* FQuery+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E4E1CCED0F2004250F6 /* FQuery+Rx.swift */; };
 		468D0E511CCED4ED004250F6 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E501CCED4ED004250F6 /* FeedTableViewCell.swift */; };
 		468D0E531CCED77A004250F6 /* RenderedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E521CCED77A004250F6 /* RenderedImageView.swift */; };
+		469D35AC1CDB144900705F57 /* LandingFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469D35AB1CDB144900705F57 /* LandingFormViewController.swift */; };
 		46B630DC1CCFF6B50000EFC4 /* FAuthData Convinience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B630DB1CCFF6B50000EFC4 /* FAuthData Convinience.swift */; };
 		46B630DE1CCFFE6B0000EFC4 /* InflatedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B630DD1CCFFE6B0000EFC4 /* InflatedPost.swift */; };
 		46B630E01CCFFE880000EFC4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B630DF1CCFFE880000EFC4 /* User.swift */; };
@@ -104,7 +104,6 @@
 		4644FBD61C9E1307004ACBAF /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		4644FBD71C9E1307004ACBAF /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		4644FBDA1C9E1535004ACBAF /* RxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxViewController.swift; sourceTree = "<group>"; };
-		4644FBDD1C9E16CD004ACBAF /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		4650715E1CB741770041C43C /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = Reducers/Post.swift; sourceTree = "<group>"; };
 		465071611CB741E40041C43C /* PostState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostState.swift; sourceTree = "<group>"; };
 		465071631CB742290041C43C /* PostReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostReducer.swift; sourceTree = "<group>"; };
@@ -136,6 +135,7 @@
 		468D0E4E1CCED0F2004250F6 /* FQuery+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FQuery+Rx.swift"; sourceTree = "<group>"; };
 		468D0E501CCED4ED004250F6 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		468D0E521CCED77A004250F6 /* RenderedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderedImageView.swift; sourceTree = "<group>"; };
+		469D35AB1CDB144900705F57 /* LandingFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingFormViewController.swift; sourceTree = "<group>"; };
 		46B630DB1CCFF6B50000EFC4 /* FAuthData Convinience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FAuthData Convinience.swift"; sourceTree = "<group>"; };
 		46B630DD1CCFFE6B0000EFC4 /* InflatedPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflatedPost.swift; sourceTree = "<group>"; };
 		46B630DF1CCFFE880000EFC4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -278,7 +278,7 @@
 			children = (
 				46BF97781C9B6DA700579066 /* Login.storyboard */,
 				4644FBC21C9CD6E4004ACBAF /* LandingViewController.swift */,
-				4644FBDD1C9E16CD004ACBAF /* OnboardingViewController.swift */,
+				469D35AB1CDB144900705F57 /* LandingFormViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -569,7 +569,6 @@
 				468D0E531CCED77A004250F6 /* RenderedImageView.swift in Sources */,
 				468D0E4F1CCED0F2004250F6 /* FQuery+Rx.swift in Sources */,
 				46C0992F1CA0A0E80015779C /* AuthenticationActions.swift in Sources */,
-				4644FBDE1C9E16CD004ACBAF /* OnboardingViewController.swift in Sources */,
 				46B630DE1CCFFE6B0000EFC4 /* InflatedPost.swift in Sources */,
 				4644FBA01C9CBDEE004ACBAF /* RootRoutable.swift in Sources */,
 				4650715F1CB741770041C43C /* Post.swift in Sources */,
@@ -583,6 +582,7 @@
 				4644FBA81C9CC9CB004ACBAF /* State.swift in Sources */,
 				4644FBC31C9CD6E4004ACBAF /* LandingViewController.swift in Sources */,
 				4658D6BE1CC089AA009527DF /* FriendsViewController.swift in Sources */,
+				469D35AC1CDB144900705F57 /* LandingFormViewController.swift in Sources */,
 				465071661CB743340041C43C /* PostActions.swift in Sources */,
 				465071641CB742290041C43C /* PostReducer.swift in Sources */,
 				466E74011CAFA60000EC0B7C /* HomeTabBarController.swift in Sources */,

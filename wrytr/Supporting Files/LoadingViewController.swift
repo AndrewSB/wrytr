@@ -52,7 +52,7 @@ extension UIViewController {
             return childViewControllers
                 .flatMap { $0 as? LoadingViewController }
                 .first
-                .getOrElse(self.createAndAddLoader())!
+                .getOrElse(self.createAndAddLoader())
         }
     }
     
