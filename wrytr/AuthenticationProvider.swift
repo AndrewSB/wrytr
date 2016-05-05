@@ -73,7 +73,7 @@ class AuthenticationProvider {
     private class func scrapeSocialData(loggedInState: LoggedInState) -> Observable<LoggedInState> {
         let userRef = firebase.childByAppendingPath("users/\(firebase.authData.uid)")
 
-        let userDict = User.scrapeAuthData(firebase.authData)
+        let userDict = User.AuthData.scrapeAuthData(firebase.authData)
         
         return userRef.rx_setValue(userDict)
             .map { _ in loggedInState }

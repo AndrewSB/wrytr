@@ -29,6 +29,8 @@ extension Post {
         
         return firebase.childByAppendingPath("users/\(userId)").rx_observeEventOnce(.Value)
             .map { $0.value as! Dictionary<String, String> }
+            .map(User.AuthData.init)
+            .map { ($0, nil) }
             .map(User.init)
             .map { user in
                 InflatedPost(post: self, user: user)

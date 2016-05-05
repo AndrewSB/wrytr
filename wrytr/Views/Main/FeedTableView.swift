@@ -68,7 +68,7 @@ extension FeedTableView: UITableViewDataSource {
         let element = data.value[indexPath.section]
         
         cell.prompt.text = element.post.prompt
-        cell.profilePicture.hnk_setImageFromURL(NSURL(string: element.user.profilePictureUrl)!)
+        cell.profilePicture.hnk_setImageFromURL(NSURL(string: element.user.authData.profilePictureUrl)!)
 
         return cell
     }

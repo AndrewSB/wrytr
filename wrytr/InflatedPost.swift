@@ -18,7 +18,7 @@ extension InflatedPost: Equatable { }
 
 func ==(lhs: InflatedPost, rhs: InflatedPost) -> Bool {
     let postsEqual = lhs.post.id == rhs.post.id
-    let usersEqual = lhs.user.id == lhs.user.id
+    let usersEqual = lhs.user.authData.id == lhs.user.authData.id
     
     return postsEqual && usersEqual
 }

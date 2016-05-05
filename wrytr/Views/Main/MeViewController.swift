@@ -50,7 +50,7 @@ class MeViewController: RxViewController, Identifiable {
         
         profilePicture.hnk_setImageFromURL(User.local.profilePictureNSUrl)
         
-        name.text = User.local.name
+        name.text = User.local.authData.name
         
         settings.rx_tap
             .subscribeNext {
