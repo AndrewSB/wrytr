@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K3r-Xz-UDh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K3r-Xz-UDh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -8,9 +8,10 @@
         <scene sceneID="McQ-Vf-qx8">
             <objects>
                 <navigationController id="K3r-Xz-UDh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YpG-qR-ahU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="YpG-qR-ahU" customClass="NoHairlineNavigationBar" customModule="wrytr" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.12132338434457779" green="0.67502456903457642" blue="0.71426230669021606" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="eRm-vT-ZXq" kind="relationship" relationship="rootViewController" id="oyU-1O-lV8"/>
@@ -29,9 +30,46 @@
                         <viewControllerLayoutGuide type="bottom" id="ql5-FI-LjR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uVT-8R-PJI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jx-Ta-QcG" customClass="ExtendedNavigationBarView" customModule="wrytr" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vaI-ls-6oR">
+                                        <rect key="frame" x="44" y="0.0" width="512" height="106"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Create a challenge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWa-Dr-dUH">
+                                                <rect key="frame" x="157" y="0.0" width="200" height="61"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let people know what you want them to write about." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5z-vS-3re">
+                                                <rect key="frame" x="45" y="61" width="422" height="45"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.12132338434457779" green="0.67502456903457642" blue="0.71426230669021606" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="5Ci-Rr-Qc3"/>
+                                    <constraint firstItem="vaI-ls-6oR" firstAttribute="leading" secondItem="0jx-Ta-QcG" secondAttribute="leading" constant="44" id="6Cz-MP-oP7"/>
+                                    <constraint firstAttribute="trailing" secondItem="vaI-ls-6oR" secondAttribute="trailing" constant="44" id="7JG-OX-zVD"/>
+                                    <constraint firstAttribute="bottom" secondItem="vaI-ls-6oR" secondAttribute="bottom" constant="44" id="Rhq-LS-aKj"/>
+                                    <constraint firstItem="vaI-ls-6oR" firstAttribute="top" secondItem="0jx-Ta-QcG" secondAttribute="top" id="xdp-nz-o3a"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0jx-Ta-QcG" firstAttribute="leading" secondItem="uVT-8R-PJI" secondAttribute="leading" id="Akg-6I-42D"/>
+                            <constraint firstItem="0jx-Ta-QcG" firstAttribute="top" secondItem="G5p-5F-YZx" secondAttribute="bottom" id="SUB-yj-UIY"/>
+                            <constraint firstAttribute="trailing" secondItem="0jx-Ta-QcG" secondAttribute="trailing" id="xw2-TU-UAd"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="045-rl-Dzc"/>
                 </viewController>

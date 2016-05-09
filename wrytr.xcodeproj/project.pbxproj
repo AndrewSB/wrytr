@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		46271FAB1CD2AB36007196B2 /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46271FAA1CD2AB36007196B2 /* Library.framework */; };
 		46271FAE1CD2B02F007196B2 /* FeedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46271FAD1CD2B02F007196B2 /* FeedTableView.swift */; };
+		462F03181CE148CE0031B1B1 /* NoHairlineNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */; };
+		46307D391CDD67A700E47A1C /* ExtendedNavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */; };
 		4644FB9C1C9CBCEF004ACBAF /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */; };
 		4644FB9D1C9CBCEF004ACBAF /* ReSwiftRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */; };
 		4644FBA01C9CBDEE004ACBAF /* RootRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FB9F1C9CBDEE004ACBAF /* RootRoutable.swift */; };
@@ -84,6 +86,8 @@
 /* Begin PBXFileReference section */
 		46271FAA1CD2AB36007196B2 /* Library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Library.framework; path = Carthage/Build/iOS/Library.framework; sourceTree = "<group>"; };
 		46271FAD1CD2B02F007196B2 /* FeedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableView.swift; sourceTree = "<group>"; };
+		462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoHairlineNavigationBar.swift; sourceTree = "<group>"; };
+		46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedNavbarView.swift; sourceTree = "<group>"; };
 		4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
 		4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRouter.framework; path = Carthage/Build/iOS/ReSwiftRouter.framework; sourceTree = "<group>"; };
 		4644FB9F1C9CBDEE004ACBAF /* RootRoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRoutable.swift; sourceTree = "<group>"; };
@@ -311,6 +315,8 @@
 				46B630DB1CCFF6B50000EFC4 /* FAuthData Convinience.swift */,
 				46C0991D1CA092770015779C /* ParseRxCallbacks.swift */,
 				466E73FE1CAF4FEC00EC0B7C /* ReSwiftTabBarController.swift */,
+				46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */,
+				462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -566,6 +572,7 @@
 				46C0991E1CA092770015779C /* ParseRxCallbacks.swift in Sources */,
 				4644FBB31C9CCF4D004ACBAF /* AuthenticationReducer.swift in Sources */,
 				465071621CB741E40041C43C /* PostState.swift in Sources */,
+				462F03181CE148CE0031B1B1 /* NoHairlineNavigationBar.swift in Sources */,
 				468D0E531CCED77A004250F6 /* RenderedImageView.swift in Sources */,
 				468D0E4F1CCED0F2004250F6 /* FQuery+Rx.swift in Sources */,
 				46C0992F1CA0A0E80015779C /* AuthenticationActions.swift in Sources */,
@@ -584,6 +591,7 @@
 				4658D6BE1CC089AA009527DF /* FriendsViewController.swift in Sources */,
 				469D35AC1CDB144900705F57 /* LandingFormViewController.swift in Sources */,
 				465071661CB743340041C43C /* PostActions.swift in Sources */,
+				46307D391CDD67A700E47A1C /* ExtendedNavbarView.swift in Sources */,
 				465071641CB742290041C43C /* PostReducer.swift in Sources */,
 				466E74011CAFA60000EC0B7C /* HomeTabBarController.swift in Sources */,
 				466E73FD1CAF271A00EC0B7C /* Firebase+Rx.swift in Sources */,

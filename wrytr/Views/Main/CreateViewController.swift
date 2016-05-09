@@ -19,6 +19,9 @@ class CreateViewController: UIViewController, Identifiable {
         
         self.title = "Create"
         self.tabBarItem = UITabBarItem(title: self.title, image: UIImage(asset: .Icon_Tabbar_Create), tag: 2)
+        
+        self.navigationItem.title = nil
+        
     }
 
 }

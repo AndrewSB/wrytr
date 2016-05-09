@@ -1,0 +1,29 @@
+//
+//  ExtendedNavbarView.swift
+//  wrytr
+//
+//  Created by Andrew Breckenridge on 5/6/16.
+//  Copyright © 2016 Andrew Breckenridge. All rights reserved.
+//
+
+import UIKit
+
+class ExtendedNavigationBarView: UIView {
+    
+    //| ------------------------------------------------------------------------
+    //  Called when the view is about to be displayed.  May be called more than
+    //  once.
+    //
+    override func willMoveToWindow(newWindow: UIWindow?) {
+        // Use the layer shadow to draw a one pixel hairline under this view.
+        layer.shadowOffset = CGSize(width: 0, height: 1 / UIScreen.mainScreen().scale)
+        layer.shadowRadius = 0
+        
+        // UINavigationBar's hairline is adaptive, its properties change with
+        // the contents it overlies.  You may need to experiment with these
+        // values to best match your content.
+        layer.shadowColor = UIColor.blackColor().CGColor
+        layer.shadowOpacity = 0.25
+    }
+    
+}
