@@ -15,4 +15,5 @@ struct State: StateType {
     var navigationState: NavigationState
     var authenticationState: AuthenticationState
     var postState: PostState
+    var createPostState: CreatePostState
 }

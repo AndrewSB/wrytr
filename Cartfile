@@ -4,5 +4,6 @@ github "ReSwift/ReSwiftRouter" "master"
 github "AndrewSB/Library" "master"
 
 github "ReactiveX/RxSwift"
+github "antitypical/Result"
 
 github "Haneke/HanekeSwift" "master"

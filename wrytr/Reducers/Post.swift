@@ -13,7 +13,7 @@ import RxSwift
 import Firebase
 
 struct Post {
-    let id: String
+    let id: String?
 
     let userId: String
     let prompt: String
@@ -28,8 +28,12 @@ extension Post {
     func inflate() -> Observable<InflatedPost> {
         
         return firebase.childByAppendingPath("users/\(userId)").rx_observeEventOnce(.Value)
-            .map { $0.value as! Dictionary<String, String> }
-            .map(User.AuthData.init)
+            .map {
+                let dict = NSMutableDictionary(dictionary: $0.value as! Dictionary<String, String>)
+                dict.addEntriesFromDictionary(["uid": $0.key])
+                return NSDictionary(dictionary: dict) as! [String: String]
+            }
+            .map { User.AuthData(dict: $0) }
             .map { ($0, nil) }
             .map(User.init)
             .map { user in
@@ -54,7 +58,7 @@ extension Post {
         let posts: [Post] = snapshotKeys?.map { postDict -> Post in
             Post(
                 id: postDict.0,
-                userId: postDict.1["user"]!,
+                userId: postDict.1["userId"]!,
                 prompt: postDict.1["prompt"]!,
                 stars: nil,
                 comments: nil
@@ -76,5 +80,7 @@ extension Post {
         ]
         
     }
+    
+    
 
 }

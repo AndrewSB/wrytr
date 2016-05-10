@@ -10,6 +10,12 @@
 		46271FAB1CD2AB36007196B2 /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46271FAA1CD2AB36007196B2 /* Library.framework */; };
 		46271FAE1CD2B02F007196B2 /* FeedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46271FAD1CD2B02F007196B2 /* FeedTableView.swift */; };
 		462F03181CE148CE0031B1B1 /* NoHairlineNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */; };
+		462F031A1CE185480031B1B1 /* CreatePostState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03191CE185480031B1B1 /* CreatePostState.swift */; };
+		462F031C1CE1856C0031B1B1 /* CreatePostsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F031B1CE1856C0031B1B1 /* CreatePostsActions.swift */; };
+		462F031E1CE185840031B1B1 /* CreatePostProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F031D1CE185840031B1B1 /* CreatePostProvider.swift */; };
+		462F03201CE254490031B1B1 /* CreatePostReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F031F1CE254490031B1B1 /* CreatePostReducer.swift */; };
+		462F03221CE267280031B1B1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462F03211CE267280031B1B1 /* Result.framework */; };
+		462F03241CE270D60031B1B1 /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03231CE270D60031B1B1 /* KeyboardObserver.swift */; };
 		46307D391CDD67A700E47A1C /* ExtendedNavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */; };
 		4644FB9C1C9CBCEF004ACBAF /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */; };
 		4644FB9D1C9CBCEF004ACBAF /* ReSwiftRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */; };
@@ -87,6 +93,12 @@
 		46271FAA1CD2AB36007196B2 /* Library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Library.framework; path = Carthage/Build/iOS/Library.framework; sourceTree = "<group>"; };
 		46271FAD1CD2B02F007196B2 /* FeedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableView.swift; sourceTree = "<group>"; };
 		462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoHairlineNavigationBar.swift; sourceTree = "<group>"; };
+		462F03191CE185480031B1B1 /* CreatePostState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostState.swift; sourceTree = "<group>"; };
+		462F031B1CE1856C0031B1B1 /* CreatePostsActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostsActions.swift; sourceTree = "<group>"; };
+		462F031D1CE185840031B1B1 /* CreatePostProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostProvider.swift; sourceTree = "<group>"; };
+		462F031F1CE254490031B1B1 /* CreatePostReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostReducer.swift; sourceTree = "<group>"; };
+		462F03211CE267280031B1B1 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		462F03231CE270D60031B1B1 /* KeyboardObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
 		46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedNavbarView.swift; sourceTree = "<group>"; };
 		4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
 		4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRouter.framework; path = Carthage/Build/iOS/ReSwiftRouter.framework; sourceTree = "<group>"; };
@@ -168,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46C099141C9F49F90015779C /* SystemConfiguration.framework in Frameworks */,
+				462F03221CE267280031B1B1 /* Result.framework in Frameworks */,
 				466BD09B1CADAA14008DC0C3 /* Security.framework in Frameworks */,
 				466BD0991CADAA08008DC0C3 /* CFNetwork.framework in Frameworks */,
 				466BD0971CADA9FF008DC0C3 /* libicucore.tbd in Frameworks */,
@@ -242,6 +255,7 @@
 				4644FBA71C9CC9CB004ACBAF /* State.swift */,
 				4644FBAA1C9CCA89004ACBAF /* AuthenticationState.swift */,
 				465071611CB741E40041C43C /* PostState.swift */,
+				462F03191CE185480031B1B1 /* CreatePostState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -252,6 +266,7 @@
 				4644FBAC1C9CCAD6004ACBAF /* AppReducer.swift */,
 				4644FBB21C9CCF4D004ACBAF /* AuthenticationReducer.swift */,
 				465071631CB742290041C43C /* PostReducer.swift */,
+				462F031F1CE254490031B1B1 /* CreatePostReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -317,6 +332,7 @@
 				466E73FE1CAF4FEC00EC0B7C /* ReSwiftTabBarController.swift */,
 				46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */,
 				462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */,
+				462F03231CE270D60031B1B1 /* KeyboardObserver.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -349,6 +365,7 @@
 			children = (
 				466E73FA1CAF222E00EC0B7C /* AuthenticationProvider.swift */,
 				465071671CB745A50041C43C /* PostProvider.swift */,
+				462F031D1CE185840031B1B1 /* CreatePostProvider.swift */,
 			);
 			name = Providers;
 			sourceTree = "<group>";
@@ -407,6 +424,7 @@
 				46C099011C9E34D10015779C /* Bolts.framework */,
 				46C099041C9E34D10015779C /* FBSDKCoreKit.framework */,
 				46C099051C9E34D10015779C /* FBSDKLoginKit.framework */,
+				462F03211CE267280031B1B1 /* Result.framework */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
@@ -416,6 +434,7 @@
 			children = (
 				46C0992E1CA0A0E80015779C /* AuthenticationActions.swift */,
 				465071651CB743340041C43C /* PostActions.swift */,
+				462F031B1CE1856C0031B1B1 /* CreatePostsActions.swift */,
 			);
 			name = Actions;
 			sourceTree = "<group>";
@@ -510,6 +529,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Haneke.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
@@ -553,6 +573,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462F031C1CE1856C0031B1B1 /* CreatePostsActions.swift in Sources */,
 				466E74051CAFA74800EC0B7C /* FeedViewController.swift in Sources */,
 				4644FBA51C9CC820004ACBAF /* Storyboards.swift in Sources */,
 				4644FBBE1C9CD686004ACBAF /* Colors.swift in Sources */,
@@ -562,8 +583,10 @@
 				46C0991C1CA087A60015779C /* Twitter+Rx.swift in Sources */,
 				466E73FF1CAF4FEC00EC0B7C /* ReSwiftTabBarController.swift in Sources */,
 				4644FBAB1C9CCA89004ACBAF /* AuthenticationState.swift in Sources */,
+				462F03241CE270D60031B1B1 /* KeyboardObserver.swift in Sources */,
 				4658D6C01CC089AF009527DF /* CreateViewController.swift in Sources */,
 				46C099201CA097640015779C /* LoadingViewController.swift in Sources */,
+				462F03201CE254490031B1B1 /* CreatePostReducer.swift in Sources */,
 				46B630DC1CCFF6B50000EFC4 /* FAuthData Convinience.swift in Sources */,
 				4644FBAD1C9CCAD6004ACBAF /* AppReducer.swift in Sources */,
 				4644FBB71C9CD3C3004ACBAF /* MainViewRoutable.swift in Sources */,
@@ -572,6 +595,7 @@
 				46C0991E1CA092770015779C /* ParseRxCallbacks.swift in Sources */,
 				4644FBB31C9CCF4D004ACBAF /* AuthenticationReducer.swift in Sources */,
 				465071621CB741E40041C43C /* PostState.swift in Sources */,
+				462F031E1CE185840031B1B1 /* CreatePostProvider.swift in Sources */,
 				462F03181CE148CE0031B1B1 /* NoHairlineNavigationBar.swift in Sources */,
 				468D0E531CCED77A004250F6 /* RenderedImageView.swift in Sources */,
 				468D0E4F1CCED0F2004250F6 /* FQuery+Rx.swift in Sources */,
@@ -580,6 +604,7 @@
 				4644FBA01C9CBDEE004ACBAF /* RootRoutable.swift in Sources */,
 				4650715F1CB741770041C43C /* Post.swift in Sources */,
 				46271FAE1CD2B02F007196B2 /* FeedTableView.swift in Sources */,
+				462F031A1CE185480031B1B1 /* CreatePostState.swift in Sources */,
 				4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */,
 				4644FBB51C9CD389004ACBAF /* LoginViewRoutable.swift in Sources */,
 				46B630E01CCFFE880000EFC4 /* User.swift in Sources */,

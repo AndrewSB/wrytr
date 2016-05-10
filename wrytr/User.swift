@@ -25,7 +25,7 @@ extension User {
         
         init(dict: [String: String]) {
             self.name = dict["name"]!
-            self.id = dict["id"]!
+            self.id = dict["uid"]!
             self.profilePictureUrl = dict["profilePictureUrl"]!
         }
         
@@ -36,7 +36,7 @@ extension User {
         static func scrapeAuthData(authData: FAuthData) -> [String: String] {
             return [
                 "name": authData.name,
-                "id": authData.id,
+                "uid": authData.uid,
                 "profilePictureUrl": "\(authData.profilePictureUrl)",
             ]
         }

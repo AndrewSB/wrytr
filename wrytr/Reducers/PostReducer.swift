@@ -29,7 +29,7 @@ func postReducer(action: Action, state: PostState?) -> PostState {
     return state
 }
 
-func initialPostState() -> PostState {
+private func initialPostState() -> PostState {
     
     return PostState(
         busyLoading: false,

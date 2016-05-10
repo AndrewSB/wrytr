@@ -26,7 +26,7 @@ func authenticationReducer(action: Action, state: AuthenticationState?) -> Authe
     return state
 }
 
-func initialAuthenticationState() -> AuthenticationState {
+private func initialAuthenticationState() -> AuthenticationState {
     
     if let authData = firebase?.authData {
         return AuthenticationState(loggedInState: .LoggedIn(Social(authData: authData)!))

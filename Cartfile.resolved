@@ -1,5 +1,6 @@
 github "Haneke/HanekeSwift" "d4fc957878c85bfa30802f37367180cf2bf76b07"
 github "AndrewSB/Library" "78a61b750baa0c6293a8e8ad1c5076ea79359ca9"
-github "ReSwift/ReSwift" "26cef135763b46d375d5132b782e541132e535ee"
+github "ReSwift/ReSwift" "24fcf45c35e7dc67169747001f29786bc5ff31da"
+github "antitypical/Result" "2.0.0"
 github "ReactiveX/RxSwift" "2.4"
 github "ReSwift/ReSwiftRouter" "2af0cc9d4f01678951dcb760dbd563e80ad078aa"
