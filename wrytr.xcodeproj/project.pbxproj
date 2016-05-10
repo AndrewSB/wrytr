@@ -16,6 +16,8 @@
 		462F03201CE254490031B1B1 /* CreatePostReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F031F1CE254490031B1B1 /* CreatePostReducer.swift */; };
 		462F03221CE267280031B1B1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462F03211CE267280031B1B1 /* Result.framework */; };
 		462F03241CE270D60031B1B1 /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03231CE270D60031B1B1 /* KeyboardObserver.swift */; };
+		462F03261CE273D00031B1B1 /* UIStackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03251CE273D00031B1B1 /* UIStackExtension.swift */; };
+		462F03281CE278110031B1B1 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462F03271CE278110031B1B1 /* IQKeyboardManagerSwift.framework */; };
 		46307D391CDD67A700E47A1C /* ExtendedNavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */; };
 		4644FB9C1C9CBCEF004ACBAF /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */; };
 		4644FB9D1C9CBCEF004ACBAF /* ReSwiftRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */; };
@@ -99,6 +101,8 @@
 		462F031F1CE254490031B1B1 /* CreatePostReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostReducer.swift; sourceTree = "<group>"; };
 		462F03211CE267280031B1B1 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		462F03231CE270D60031B1B1 /* KeyboardObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
+		462F03251CE273D00031B1B1 /* UIStackExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackExtension.swift; sourceTree = "<group>"; };
+		462F03271CE278110031B1B1 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
 		46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedNavbarView.swift; sourceTree = "<group>"; };
 		4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
 		4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRouter.framework; path = Carthage/Build/iOS/ReSwiftRouter.framework; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 				46E9569F1CCF14BB00DCD589 /* Haneke.framework in Frameworks */,
 				466BD0951CADA990008DC0C3 /* libc++.tbd in Frameworks */,
 				46C099101C9F49CF0015779C /* libsqlite3.tbd in Frameworks */,
+				462F03281CE278110031B1B1 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				4644FBD81C9E1307004ACBAF /* RxCocoa.framework in Frameworks */,
 				4644FBD91C9E1307004ACBAF /* RxSwift.framework in Frameworks */,
 				46271FAB1CD2AB36007196B2 /* Library.framework in Frameworks */,
@@ -333,6 +338,7 @@
 				46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */,
 				462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */,
 				462F03231CE270D60031B1B1 /* KeyboardObserver.swift */,
+				462F03251CE273D00031B1B1 /* UIStackExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -425,6 +431,7 @@
 				46C099041C9E34D10015779C /* FBSDKCoreKit.framework */,
 				46C099051C9E34D10015779C /* FBSDKLoginKit.framework */,
 				462F03211CE267280031B1B1 /* Result.framework */,
+				462F03271CE278110031B1B1 /* IQKeyboardManagerSwift.framework */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
@@ -530,6 +537,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Haneke.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
@@ -579,6 +587,7 @@
 				4644FBBE1C9CD686004ACBAF /* Colors.swift in Sources */,
 				4644FBC71C9D256B004ACBAF /* Localizable_Strings.swift in Sources */,
 				466BD0A01CADAD6C008DC0C3 /* Facebook+Rx.swift in Sources */,
+				462F03261CE273D00031B1B1 /* UIStackExtension.swift in Sources */,
 				46CF36A21CCEBCFA00BC17A4 /* Response.swift in Sources */,
 				46C0991C1CA087A60015779C /* Twitter+Rx.swift in Sources */,
 				466E73FF1CAF4FEC00EC0B7C /* ReSwiftTabBarController.swift in Sources */,

@@ -8,6 +8,8 @@
 
 import UIKit
 
+import IQKeyboardManagerSwift
+
 import RxSwift
 
 import ReSwift
@@ -66,6 +68,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        IQKeyboardManager.sharedManager().enable = true
         
         return true
     }

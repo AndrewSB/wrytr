@@ -7,3 +7,5 @@ github "ReactiveX/RxSwift"
 github "antitypical/Result"
 
 github "Haneke/HanekeSwift" "master"
+
+github "hackiftekhar/IQKeyboardManager" "master"
