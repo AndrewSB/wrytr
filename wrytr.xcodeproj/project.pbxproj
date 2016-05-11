@@ -314,9 +314,9 @@
 			isa = PBXGroup;
 			children = (
 				466E74001CAFA60000EC0B7C /* HomeTabBarController.swift */,
+				46271FAC1CD2B00E007196B2 /* Reusable */,
 				466E74021CAFA72600EC0B7C /* Feed.storyboard */,
 				466E74041CAFA74800EC0B7C /* FeedViewController.swift */,
-				46271FAC1CD2B00E007196B2 /* Reusable */,
 				4658D6B71CC08914009527DF /* Friends.storyboard */,
 				4658D6BD1CC089AA009527DF /* FriendsViewController.swift */,
 				4658D6B91CC08919009527DF /* Create.storyboard */,

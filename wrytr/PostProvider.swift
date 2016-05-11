@@ -31,6 +31,19 @@ class PostProvider {
         return nil
     }
     
+    // currently is exactly the same as loadNewPosts. Need to implement following
+    static func loadFriendPosts(state: StateType, store: Store<State>) -> Action? {
+        
+        firebase.childByAppendingPath("posts" as String!).queryOrderedByChild("date" as String!)
+            .rx_observeEventOnce(.Value)
+            .map(Post.parseFromFirebase)
+            .flatMap(Post.inflate)
+            .subscribeNext { store.dispatch(UpdatePosts(newPosts: $0, myPosts: nil)) }
+            .addDisposableTo(neverDispose)
+        
+        return nil
+    }
+    
     static func loadMyPosts(state: StateType, store: Store<State>) -> Action? {
         
         firebase.childByAppendingPath("posts")
