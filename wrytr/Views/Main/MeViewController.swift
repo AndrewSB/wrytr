@@ -27,7 +27,6 @@ class MeViewController: RxViewController, Identifiable {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    @IBOutlet weak var settings: UIButton!
     @IBOutlet weak var elipses: UIButton!
     
     let posts: Variable<[InflatedPost]>! = Variable([InflatedPost]())
@@ -52,7 +51,7 @@ class MeViewController: RxViewController, Identifiable {
         
         name.text = User.local.authData.name
         
-        settings.rx_tap
+        elipses.rx_tap
             .subscribeNext {
                 store.dispatch(SetRouteAction([mainRoute, MeViewController.identifier, "Settings"]))
             }

@@ -65,10 +65,6 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36k-1m-TMF">
-                                            <rect key="frame" x="502" y="29.5" width="30" height="34"/>
-                                            <state key="normal" title="s"/>
-                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubn-GS-qUM">
                                             <rect key="frame" x="551" y="42.5" width="33" height="8"/>
                                             <constraints>
@@ -83,9 +79,7 @@
                                         <constraint firstItem="TUh-jG-ZQw" firstAttribute="top" secondItem="utx-4L-V0W" secondAttribute="top" constant="19" id="8l9-fq-pkP"/>
                                         <constraint firstItem="Ubn-GS-qUM" firstAttribute="centerY" secondItem="TUh-jG-ZQw" secondAttribute="centerY" id="GDC-I5-2Rh"/>
                                         <constraint firstAttribute="trailing" secondItem="Ubn-GS-qUM" secondAttribute="trailing" constant="16" id="HqL-eB-oo4"/>
-                                        <constraint firstItem="36k-1m-TMF" firstAttribute="centerY" secondItem="TUh-jG-ZQw" secondAttribute="centerY" id="I9X-xC-877"/>
                                         <constraint firstItem="5Wv-9e-EnX" firstAttribute="top" secondItem="TUh-jG-ZQw" secondAttribute="bottom" constant="8" id="M3f-na-wSt"/>
-                                        <constraint firstItem="Ubn-GS-qUM" firstAttribute="leading" secondItem="36k-1m-TMF" secondAttribute="trailing" constant="19" id="Yca-Ub-Sll"/>
                                         <constraint firstItem="TUh-jG-ZQw" firstAttribute="centerX" secondItem="utx-4L-V0W" secondAttribute="centerX" id="bhq-fM-gZa"/>
                                         <constraint firstAttribute="trailing" secondItem="RYW-uX-3fp" secondAttribute="trailing" id="faK-iX-UrS"/>
                                         <constraint firstItem="5Wv-9e-EnX" firstAttribute="centerX" secondItem="utx-4L-V0W" secondAttribute="centerX" id="qhB-nx-DHV"/>
@@ -128,7 +122,6 @@
                         <outlet property="name" destination="5Wv-9e-EnX" id="7GU-dy-3tl"/>
                         <outlet property="profilePicture" destination="TUh-jG-ZQw" id="W4Y-Qu-BrM"/>
                         <outlet property="segmentedControl" destination="RYW-uX-3fp" id="xbI-ho-Vbx"/>
-                        <outlet property="settings" destination="36k-1m-TMF" id="LCQ-gi-TND"/>
                         <outlet property="tableView" destination="gQC-2w-GSP" id="sEG-6a-AZQ"/>
                     </connections>
                 </viewController>
