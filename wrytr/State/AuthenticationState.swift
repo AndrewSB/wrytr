@@ -25,6 +25,8 @@ enum LoggedInState {
     case NotLoggedIn
     case ErrorLoggingIn(NSError)
     case LoggedIn(Social)
+    
+    case Logout
 }
 
 enum Social {

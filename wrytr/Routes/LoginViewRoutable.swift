@@ -51,4 +51,11 @@ class LoginViewRoutable: Routable {
 
 }
 
-class LandingRoutable: Routable {}
+class LandingRoutable: Routable {
+
+    func popRouteSegment(routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) {
+        print("is landing")
+        completionHandler()
+    }
+
+}

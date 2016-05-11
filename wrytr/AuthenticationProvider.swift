@@ -81,4 +81,15 @@ class AuthenticationProvider {
     
 }
 
-extension AuthenticationProvider {}
+extension AuthenticationProvider {
+
+
+    class func logout(state: StateType, store: Store<State>) -> Action? {
+        
+        firebase.unauth()
+        store.dispatch(SetRouteAction([loginRoute]))
+        
+        return UpdateLoggedInState(loggedInState: .Logout)
+        
+    }
+}

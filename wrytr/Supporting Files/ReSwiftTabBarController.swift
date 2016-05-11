@@ -90,6 +90,11 @@ extension ReSwiftTabBarController: Routable {
         return viewController as! Routable
     }
 
+    func popRouteSegment(routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) {
+        print("best i ever had")
+        completionHandler()
+    }
+    
 }
 
 extension UIViewController {

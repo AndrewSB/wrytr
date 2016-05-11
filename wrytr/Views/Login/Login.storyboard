@@ -19,17 +19,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="W0C-63-wOv">
-                                <rect key="frame" x="64" y="64" width="472" height="172.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="W0C-63-wOv">
+                                <rect key="frame" x="64" y="64" width="472" height="61"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wrytr-worded" translatesAutoresizingMaskIntoConstraints="NO" id="egt-Et-c6B">
-                                        <rect key="frame" x="13" y="0.0" width="446" height="127"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="wrytr-worded" translatesAutoresizingMaskIntoConstraints="NO" id="egt-Et-c6B">
+                                        <rect key="frame" x="210" y="0.0" width="52" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="egt-Et-c6B" secondAttribute="height" multiplier="446:127" id="ZrN-go-na5"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ki5-P1-8yM">
-                                        <rect key="frame" x="0.0" y="149" width="472" height="23.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ki5-P1-8yM">
+                                        <rect key="frame" x="0.0" y="37" width="472" height="24"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                                     <constraint firstItem="ki5-P1-8yM" firstAttribute="leading" secondItem="W0C-63-wOv" secondAttribute="leading" id="h9b-NS-Whc"/>
                                 </constraints>
                             </stackView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVw-Bn-kfd">
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UVw-Bn-kfd">
                                 <rect key="frame" x="0.0" y="258.5" width="600" height="341.5"/>
                                 <connections>
                                     <segue destination="qFU-Sj-hIv" kind="embed" identifier="landingForm" id="9n7-ea-vRq"/>
@@ -205,7 +205,7 @@
                                                 <rect key="frame" x="226" y="0.0" width="149" height="44"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Already registered?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myM-00-EFj">
-                                                        <rect key="frame" x="1" y="0.0" width="149" height="44"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="149" height="44"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>

@@ -96,10 +96,12 @@ extension MeViewController: Routable {
         if routeElementIdentifier == "Settings" {
             
             let actions: [(String, UIAlertActionStyle, ((UIAlertAction) -> Void)?)] = [
-                ("Sign Out", .Destructive, nil),
+                ("Sign Out", .Destructive, { _ in store.dispatch(AuthenticationProvider.logout) }),
                 ("Edit Bio", .Default, nil),
                 ("Change Username", .Default, nil),
-                ("Cancel", .Cancel, nil)
+                ("Cancel", .Cancel, { _ in
+                    store.dispatch(SetRouteAction([mainRoute, MeViewController.identifier]))
+                })
             ]
             
             let settingsAlert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
@@ -109,11 +111,18 @@ extension MeViewController: Routable {
             
             self.presentViewController(settingsAlert, animated: true, completion: nil)
             
-            
         }
 
         completionHandler()
         return self.tabBarController as! HomeTabBarController
     }
 
+    func popRouteSegment(routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) {
+        
+        if routeElementIdentifier == "Settings" {
+            print("did pop settings")
+        }
+        
+        completionHandler()
+    }
 }

@@ -35,9 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var router: Router<State>!
     
-    var colorField: UITextField!
-
-    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         Fabric.with([Crashlytics.self, Twitter.self])
@@ -72,6 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().enableAutoToolbar = false
         IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 22
+        IQKeyboardManager.sharedManager().disableDistanceHandlingInViewControllerClass(CreateViewController)
         
         return true
     }
@@ -108,10 +106,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: StoreSubscriber {
     
     func newState(state: State) {
-        
-        if case .NotLoggedIn = state.authenticationState.loggedInState {
-            print("should logout")
-        }
     
     }
     

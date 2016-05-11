@@ -71,6 +71,8 @@ extension LandingViewController: StoreSubscriber {
             print("Logged in")
         case .NotLoggedIn:
             print("still not logged in")
+        case .Logout:
+            assertionFailure("Cant logout from this screen")
         }
     }
 

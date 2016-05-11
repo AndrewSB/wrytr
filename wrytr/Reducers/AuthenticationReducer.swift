@@ -18,7 +18,12 @@ func authenticationReducer(action: Action, state: AuthenticationState?) -> Authe
     
     switch action {
     case let action as UpdateLoggedInState:
-        state.loggedInState = action.loggedInState
+        switch action.loggedInState {
+        case .Logout:
+            state.loggedInState = .NotLoggedIn
+        case .ErrorLoggingIn, .LoggedIn, .NotLoggedIn:
+            state.loggedInState = action.loggedInState
+        }
     case let action as NewLandingState:
         state.landingState = action.state
     default:
