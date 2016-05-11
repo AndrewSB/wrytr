@@ -80,17 +80,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3T-cL-4jv">
-                                <rect key="frame" x="180" y="0.0" width="240" height="0.0"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="300" y="0.0" width="0.0" height="0.0"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="wtI-2l-21t"/>
+                                    <constraint firstAttribute="width" id="wtI-2l-21t"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ryc-Ud-bH2">
-                                <rect key="frame" x="180" y="341.5" width="240" height="0.0"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="300" y="341.5" width="0.0" height="0.0"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="tmX-N5-Tqs"/>
+                                    <constraint firstAttribute="width" id="tmX-N5-Tqs"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="iYv-26-bel">
@@ -104,6 +104,9 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up with Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuB-Ea-X2E">
                                                         <rect key="frame" x="0.0" y="0.0" width="600" height="22"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="22" id="P5w-Hi-Pbe"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -111,7 +114,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="CpC-0Q-XxJ">
                                                         <rect key="frame" x="0.0" y="32" width="600" height="143"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="bruh" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yiq-Co-iH4" customClass="InsettableTextField" customModule="Library">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="@Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yiq-Co-iH4" customClass="InsettableTextField" customModule="Library">
                                                                 <rect key="frame" x="120" y="0.0" width="360" height="33"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="33" id="L6m-vi-6hL"/>
@@ -120,7 +123,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="bruh" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YgR-1k-nsa" customClass="InsettableTextField" customModule="Library">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YgR-1k-nsa" customClass="InsettableTextField" customModule="Library">
                                                                 <rect key="frame" x="120" y="55" width="360" height="33"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="33" id="unO-tP-dad"/>
@@ -129,7 +132,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="bruh" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oMC-QD-XlE" customClass="InsettableTextField" customModule="Library">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oMC-QD-XlE" customClass="InsettableTextField" customModule="Library">
                                                                 <rect key="frame" x="120" y="110" width="360" height="33"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="360" id="mSz-tH-lh0"/>
@@ -147,8 +150,8 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iHc-L5-rBX">
-                                                <rect key="frame" x="0.0" y="175" width="600" height="52"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iHc-L5-rBX">
+                                                <rect key="frame" x="0.0" y="175" width="600" height="51"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Or sign up with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lU-oZ-XPU">
                                                         <rect key="frame" x="243" y="0.0" width="116" height="26"/>
@@ -159,7 +162,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="Nfs-wV-kWM">
                                                         <rect key="frame" x="207" y="26" width="186" height="26"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvT-gb-xpt" customClass="RoundedButton" customModule="Library">
+                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvT-gb-xpt" customClass="RoundedButton" customModule="Library">
                                                                 <rect key="frame" x="0.0" y="0.0" width="82" height="26"/>
                                                                 <color key="backgroundColor" red="0.31500020623207092" green="0.66942018270492554" blue="0.94374459981918335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <inset key="contentEdgeInsets" minX="22" minY="10" maxX="22" maxY="10"/>
@@ -201,14 +204,14 @@
                                                 <rect key="frame" x="226" y="0.0" width="149" height="44"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Already registered?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myM-00-EFj">
-                                                        <rect key="frame" x="1" y="0.0" width="149" height="44"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="149" height="44"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ad9-Ta-Y0Z" customClass="RoundedButton" customModule="Library">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ad9-Ta-Y0Z" customClass="RoundedButton" customModule="Library">
                                                 <rect key="frame" x="245" y="44" width="111" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="qte-sk-eZq"/>
@@ -245,6 +248,7 @@
                         <outlet property="textThree" destination="oMC-QD-XlE" id="bhz-Hb-po9"/>
                         <outlet property="textTwo" destination="YgR-1k-nsa" id="5GH-4z-Kku"/>
                         <outlet property="titleLabel" destination="HuB-Ea-X2E" id="UOw-Ib-ptm"/>
+                        <outlet property="tosButton" destination="57w-8A-hNZ" id="NRM-RF-Tvm"/>
                         <outlet property="twitterSignup" destination="NvT-gb-xpt" id="Nr0-Io-V8K"/>
                     </connections>
                 </viewController>

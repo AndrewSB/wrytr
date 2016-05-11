@@ -18,6 +18,7 @@
 		462F03241CE270D60031B1B1 /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03231CE270D60031B1B1 /* KeyboardObserver.swift */; };
 		462F03261CE273D00031B1B1 /* UIStackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03251CE273D00031B1B1 /* UIStackExtension.swift */; };
 		462F03281CE278110031B1B1 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462F03271CE278110031B1B1 /* IQKeyboardManagerSwift.framework */; };
+		462F032A1CE2ADDF0031B1B1 /* NSRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03291CE2ADDF0031B1B1 /* NSRangeExtension.swift */; };
 		46307D391CDD67A700E47A1C /* ExtendedNavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */; };
 		4644FB9C1C9CBCEF004ACBAF /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */; };
 		4644FB9D1C9CBCEF004ACBAF /* ReSwiftRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */; };
@@ -103,6 +104,7 @@
 		462F03231CE270D60031B1B1 /* KeyboardObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
 		462F03251CE273D00031B1B1 /* UIStackExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackExtension.swift; sourceTree = "<group>"; };
 		462F03271CE278110031B1B1 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
+		462F03291CE2ADDF0031B1B1 /* NSRangeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRangeExtension.swift; sourceTree = "<group>"; };
 		46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedNavbarView.swift; sourceTree = "<group>"; };
 		4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
 		4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRouter.framework; path = Carthage/Build/iOS/ReSwiftRouter.framework; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */,
 				462F03231CE270D60031B1B1 /* KeyboardObserver.swift */,
 				462F03251CE273D00031B1B1 /* UIStackExtension.swift */,
+				462F03291CE2ADDF0031B1B1 /* NSRangeExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				465071641CB742290041C43C /* PostReducer.swift in Sources */,
 				466E74011CAFA60000EC0B7C /* HomeTabBarController.swift in Sources */,
 				466E73FD1CAF271A00EC0B7C /* Firebase+Rx.swift in Sources */,
+				462F032A1CE2ADDF0031B1B1 /* NSRangeExtension.swift in Sources */,
 				468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

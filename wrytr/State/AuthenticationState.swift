@@ -17,6 +17,7 @@ import Twitter
 import TwitterKit
 
 struct AuthenticationState {
+    var landingState: LandingFormViewController.State
     var loggedInState: LoggedInState
 }
 

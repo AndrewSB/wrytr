@@ -19,6 +19,8 @@ func authenticationReducer(action: Action, state: AuthenticationState?) -> Authe
     switch action {
     case let action as UpdateLoggedInState:
         state.loggedInState = action.loggedInState
+    case let action as NewLandingState:
+        state.landingState = action.state
     default:
         break
     }
@@ -28,10 +30,10 @@ func authenticationReducer(action: Action, state: AuthenticationState?) -> Authe
 
 private func initialAuthenticationState() -> AuthenticationState {
     
-    if let authData = firebase?.authData {
-        return AuthenticationState(loggedInState: .LoggedIn(Social(authData: authData)!))
-    } else {
-        return AuthenticationState(loggedInState: .NotLoggedIn)
-    }
+    let loggedInState: LoggedInState = firebase.authData != nil
+        ? .LoggedIn(Social(authData: firebase.authData)!)
+        : .NotLoggedIn
+    
+    return AuthenticationState(landingState: .Login, loggedInState: loggedInState)
     
 }

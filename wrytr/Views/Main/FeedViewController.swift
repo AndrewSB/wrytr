@@ -89,13 +89,6 @@ extension FeedViewController: StoreSubscriber {
 
 extension FeedViewController: Routable {
 
-    func pushRouteSegment(routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
-        
-//        self.showViewController(<#T##vc: UIViewController##UIViewController#>, sender: <#T##AnyObject?#>)
-        
-        completionHandler()
-        
-        return self
-    }
+
 
 }
