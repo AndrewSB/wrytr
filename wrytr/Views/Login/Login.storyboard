@@ -76,28 +76,29 @@
                         <viewControllerLayoutGuide type="bottom" id="Wkf-GE-zZk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pRy-0j-g4d">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="341.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="450"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3T-cL-4jv">
-                                <rect key="frame" x="300" y="0.0" width="0.0" height="0.0"/>
+                                <rect key="frame" x="300" y="0.0" width="0.0" height="22"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="22" id="XkJ-y7-7iZ"/>
                                     <constraint firstAttribute="width" id="wtI-2l-21t"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ryc-Ud-bH2">
-                                <rect key="frame" x="300" y="341.5" width="0.0" height="0.0"/>
+                                <rect key="frame" x="300" y="428" width="0.0" height="21.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="tmX-N5-Tqs"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="iYv-26-bel">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="342"/>
+                                <rect key="frame" x="0.0" y="22" width="600" height="406"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="41y-zn-ZKX">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="254"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="307"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dmV-IZ-uLy">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="175"/>
@@ -151,25 +152,25 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iHc-L5-rBX">
-                                                <rect key="frame" x="0.0" y="175" width="600" height="51"/>
+                                                <rect key="frame" x="0.0" y="175" width="600" height="104"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Or sign up with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lU-oZ-XPU">
-                                                        <rect key="frame" x="243" y="0.0" width="116" height="26"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or continue with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lU-oZ-XPU">
+                                                        <rect key="frame" x="237" y="0.0" width="126" height="52"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="Nfs-wV-kWM">
-                                                        <rect key="frame" x="207" y="26" width="186" height="26"/>
+                                                        <rect key="frame" x="207" y="52" width="186" height="52"/>
                                                         <subviews>
                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvT-gb-xpt" customClass="RoundedButton" customModule="Library">
-                                                                <rect key="frame" x="0.0" y="0.0" width="82" height="26"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="82" height="52"/>
                                                                 <color key="backgroundColor" red="0.31500020623207092" green="0.66942018270492554" blue="0.94374459981918335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <inset key="contentEdgeInsets" minX="22" minY="10" maxX="22" maxY="10"/>
                                                                 <state key="normal" image="twitter-logo"/>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uik-PT-VeE" customClass="RoundedButton" customModule="Library">
-                                                                <rect key="frame" x="104" y="0.0" width="82" height="26"/>
+                                                                <rect key="frame" x="104" y="1" width="82" height="51"/>
                                                                 <color key="backgroundColor" red="0.22537201642990112" green="0.34264656901359558" blue="0.60412263870239258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <inset key="contentEdgeInsets" minX="22" minY="10" maxX="22" maxY="10"/>
                                                                 <state key="normal" image="facebook-logo"/>
@@ -182,15 +183,15 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57w-8A-hNZ">
-                                                <rect key="frame" x="0.0" y="226" width="600" height="27"/>
+                                                <rect key="frame" x="0.0" y="279" width="600" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <state key="normal" title="By signing up, you agree to your Terms &amp; Privacy Policy.">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3x-su-4I4">
-                                                <rect key="frame" x="0.0" y="253" width="600" height="1"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <rect key="frame" x="0.0" y="306" width="600" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="enX-if-YRe"/>
                                                 </constraints>
@@ -198,13 +199,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JhE-Yq-sRg">
-                                        <rect key="frame" x="0.0" y="254" width="600" height="88"/>
+                                        <rect key="frame" x="0.0" y="318" width="600" height="88"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Rfm-6K-dQt">
                                                 <rect key="frame" x="226" y="0.0" width="149" height="44"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Already registered?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myM-00-EFj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="149" height="44"/>
+                                                        <rect key="frame" x="1" y="0.0" width="149" height="44"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -239,8 +240,9 @@
                             <constraint firstItem="Ryc-Ud-bH2" firstAttribute="centerX" secondItem="pRy-0j-g4d" secondAttribute="centerX" id="vvC-Rb-qYM"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="450"/>
                     <connections>
-                        <outlet property="containerStackView" destination="iYv-26-bel" id="qo8-Qb-3k0"/>
                         <outlet property="facebookSignup" destination="uik-PT-VeE" id="JW3-34-3aP"/>
                         <outlet property="loginSignupButton" destination="ad9-Ta-Y0Z" id="VhR-25-muu"/>
                         <outlet property="loginSignupTitle" destination="myM-00-EFj" id="kom-6L-qMz"/>
@@ -254,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsd-Rf-rCs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="571" y="1564.75"/>
+            <point key="canvasLocation" x="571" y="1734"/>
         </scene>
     </scenes>
     <resources>

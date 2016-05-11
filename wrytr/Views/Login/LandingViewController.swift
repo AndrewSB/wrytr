@@ -33,8 +33,6 @@ class LandingViewController: RxViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("view loaded")
-
         view.backgroundColor = UIColor(named: .LoginLandingBackround)
     }
 

@@ -70,6 +70,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.sharedManager().enableAutoToolbar = false
+        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 22
         
         return true
     }

@@ -18,8 +18,6 @@ import ReSwift
 import SafariServices
 
 class LandingFormViewController: RxViewController {
-    @IBOutlet weak var containerStackView: UIStackView!
-    
     @IBOutlet weak var titleLabel: UILabel!
 
     @IBOutlet weak var twitterSignup: RoundedButton! {
@@ -62,14 +60,14 @@ class LandingFormViewController: RxViewController {
         super.viewDidLoad()
         
         facebookSignup.rx_tap
-            .map(startLoading)
+            .map { self.parentViewController!.startLoading(.grayColor()) }
             .subscribeNext {
                 store.dispatch(AuthenticationProvider.loginWithFacebook)
             }
             .addDisposableTo(disposeBag)
         
         twitterSignup.rx_tap
-            .map(startLoading)
+            .map { self.parentViewController!.startLoading(.grayColor()) }
             .subscribeNext {
                 store.dispatch(AuthenticationProvider.loginWithTwitter)
             }
@@ -96,9 +94,7 @@ extension LandingFormViewController: StoreSubscriber {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        store.subscribe(self) { state in
-            state.authenticationState.landingState
-        }
+        store.subscribe(self) { state in state.authenticationState.landingState }
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -108,14 +104,24 @@ extension LandingFormViewController: StoreSubscriber {
     }
 
     func newState(state: State) {
-        textOne.hidden = state == .Signup
-        loginSignupButton.setTitle(state.rawValue, forState: .Normal)
+        textOne.hidden = state == .Login
+        loginSignupButton.setTitle(state.not.rawValue, forState: .Normal)
         titleLabel.text = "\(state.rawValue) with Email"
+        loginSignupTitle.text = state == .Login ? "Haven't registered yet?" : "Already registered?"
     }
     
     enum State: String {
         case Login
         case Signup
+        
+        var not: State {
+            switch self {
+            case .Login:
+                return .Signup
+            case .Signup:
+                return .Login
+            }
+        }
     }
     
 }

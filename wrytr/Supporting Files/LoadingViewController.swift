@@ -36,8 +36,9 @@ class LoadingViewController: UIViewController {
 
 extension UIViewController {
     
-    func startLoading() {
+    func startLoading(loaderColor: UIColor? = .whiteColor()) {
         self.view.userInteractionEnabled = false
+        self.loader.loadingView.color = loaderColor
         self.loader.show()
     }
 
@@ -51,8 +52,7 @@ extension UIViewController {
         get {
             return childViewControllers
                 .flatMap { $0 as? LoadingViewController }
-                .first
-                .getOrElse(self.createAndAddLoader())
+                .first ?? self.createAndAddLoader()
         }
     }
     
