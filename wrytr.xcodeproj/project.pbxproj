@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		46271FAB1CD2AB36007196B2 /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46271FAA1CD2AB36007196B2 /* Library.framework */; };
-		46271FAE1CD2B02F007196B2 /* FeedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46271FAD1CD2B02F007196B2 /* FeedTableView.swift */; };
+		46271FAE1CD2B02F007196B2 /* ChallengeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */; };
 		462F03181CE148CE0031B1B1 /* NoHairlineNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */; };
 		462F031A1CE185480031B1B1 /* CreatePostState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03191CE185480031B1B1 /* CreatePostState.swift */; };
 		462F031C1CE1856C0031B1B1 /* CreatePostsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F031B1CE1856C0031B1B1 /* CreatePostsActions.swift */; };
@@ -19,6 +19,7 @@
 		462F03261CE273D00031B1B1 /* UIStackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03251CE273D00031B1B1 /* UIStackExtension.swift */; };
 		462F03281CE278110031B1B1 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462F03271CE278110031B1B1 /* IQKeyboardManagerSwift.framework */; };
 		462F032A1CE2ADDF0031B1B1 /* NSRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03291CE2ADDF0031B1B1 /* NSRangeExtension.swift */; };
+		462F03301CE2CF1B0031B1B1 /* ChallengeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462F032F1CE2CF1B0031B1B1 /* ChallengeTableViewCell.xib */; };
 		46307D391CDD67A700E47A1C /* ExtendedNavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */; };
 		4644FB9C1C9CBCEF004ACBAF /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */; };
 		4644FB9D1C9CBCEF004ACBAF /* ReSwiftRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */; };
@@ -67,7 +68,7 @@
 		468614C61C89CC3A002C2BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468614C51C89CC3A002C2BAC /* Assets.xcassets */; };
 		468614C91C89CC3A002C2BAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */; };
 		468D0E4F1CCED0F2004250F6 /* FQuery+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E4E1CCED0F2004250F6 /* FQuery+Rx.swift */; };
-		468D0E511CCED4ED004250F6 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E501CCED4ED004250F6 /* FeedTableViewCell.swift */; };
+		468D0E511CCED4ED004250F6 /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E501CCED4ED004250F6 /* ChallengeTableViewCell.swift */; };
 		468D0E531CCED77A004250F6 /* RenderedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E521CCED77A004250F6 /* RenderedImageView.swift */; };
 		469D35AC1CDB144900705F57 /* LandingFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469D35AB1CDB144900705F57 /* LandingFormViewController.swift */; };
 		46B630DC1CCFF6B50000EFC4 /* FAuthData Convinience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B630DB1CCFF6B50000EFC4 /* FAuthData Convinience.swift */; };
@@ -94,7 +95,7 @@
 
 /* Begin PBXFileReference section */
 		46271FAA1CD2AB36007196B2 /* Library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Library.framework; path = Carthage/Build/iOS/Library.framework; sourceTree = "<group>"; };
-		46271FAD1CD2B02F007196B2 /* FeedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableView.swift; sourceTree = "<group>"; };
+		46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeTableView.swift; sourceTree = "<group>"; };
 		462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoHairlineNavigationBar.swift; sourceTree = "<group>"; };
 		462F03191CE185480031B1B1 /* CreatePostState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostState.swift; sourceTree = "<group>"; };
 		462F031B1CE1856C0031B1B1 /* CreatePostsActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostsActions.swift; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 		462F03251CE273D00031B1B1 /* UIStackExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackExtension.swift; sourceTree = "<group>"; };
 		462F03271CE278110031B1B1 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
 		462F03291CE2ADDF0031B1B1 /* NSRangeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRangeExtension.swift; sourceTree = "<group>"; };
+		462F032F1CE2CF1B0031B1B1 /* ChallengeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChallengeTableViewCell.xib; sourceTree = "<group>"; };
 		46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedNavbarView.swift; sourceTree = "<group>"; };
 		4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
 		4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRouter.framework; path = Carthage/Build/iOS/ReSwiftRouter.framework; sourceTree = "<group>"; };
@@ -155,7 +157,7 @@
 		468614C81C89CC3A002C2BAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468614CA1C89CC3A002C2BAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		468D0E4E1CCED0F2004250F6 /* FQuery+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FQuery+Rx.swift"; sourceTree = "<group>"; };
-		468D0E501CCED4ED004250F6 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		468D0E501CCED4ED004250F6 /* ChallengeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewCell.swift; sourceTree = "<group>"; };
 		468D0E521CCED77A004250F6 /* RenderedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderedImageView.swift; sourceTree = "<group>"; };
 		469D35AB1CDB144900705F57 /* LandingFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingFormViewController.swift; sourceTree = "<group>"; };
 		46B630DB1CCFF6B50000EFC4 /* FAuthData Convinience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FAuthData Convinience.swift"; sourceTree = "<group>"; };
@@ -214,15 +216,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		46271FAC1CD2B00E007196B2 /* Feed */ = {
+		46271FAC1CD2B00E007196B2 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
-				468D0E501CCED4ED004250F6 /* FeedTableViewCell.swift */,
-				466E74021CAFA72600EC0B7C /* Feed.storyboard */,
-				466E74041CAFA74800EC0B7C /* FeedViewController.swift */,
-				46271FAD1CD2B02F007196B2 /* FeedTableView.swift */,
+				468D0E501CCED4ED004250F6 /* ChallengeTableViewCell.swift */,
+				46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */,
+				462F032F1CE2CF1B0031B1B1 /* ChallengeTableViewCell.xib */,
 			);
-			name = Feed;
+			name = Reusable;
 			sourceTree = "<group>";
 		};
 		4644FBA21C9CC80A004ACBAF /* Constants */ = {
@@ -313,7 +314,9 @@
 			isa = PBXGroup;
 			children = (
 				466E74001CAFA60000EC0B7C /* HomeTabBarController.swift */,
-				46271FAC1CD2B00E007196B2 /* Feed */,
+				466E74021CAFA72600EC0B7C /* Feed.storyboard */,
+				466E74041CAFA74800EC0B7C /* FeedViewController.swift */,
+				46271FAC1CD2B00E007196B2 /* Reusable */,
 				4658D6B71CC08914009527DF /* Friends.storyboard */,
 				4658D6BD1CC089AA009527DF /* FriendsViewController.swift */,
 				4658D6B91CC08919009527DF /* Create.storyboard */,
@@ -515,6 +518,7 @@
 				4658D6BA1CC08919009527DF /* Create.storyboard in Resources */,
 				4658D6BC1CC0891F009527DF /* Me.storyboard in Resources */,
 				4644FBBC1C9CD67D004ACBAF /* colors.txt in Resources */,
+				462F03301CE2CF1B0031B1B1 /* ChallengeTableViewCell.xib in Resources */,
 				46C099191CA072250015779C /* TwitterKitResources.bundle in Resources */,
 				4644FBC51C9CDE8D004ACBAF /* Localizable.strings in Resources */,
 				4658D6B81CC08914009527DF /* Friends.storyboard in Resources */,
@@ -615,12 +619,12 @@
 				46B630DE1CCFFE6B0000EFC4 /* InflatedPost.swift in Sources */,
 				4644FBA01C9CBDEE004ACBAF /* RootRoutable.swift in Sources */,
 				4650715F1CB741770041C43C /* Post.swift in Sources */,
-				46271FAE1CD2B02F007196B2 /* FeedTableView.swift in Sources */,
+				46271FAE1CD2B02F007196B2 /* ChallengeTableView.swift in Sources */,
 				462F031A1CE185480031B1B1 /* CreatePostState.swift in Sources */,
 				4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */,
 				4644FBB51C9CD389004ACBAF /* LoginViewRoutable.swift in Sources */,
 				46B630E01CCFFE880000EFC4 /* User.swift in Sources */,
-				468D0E511CCED4ED004250F6 /* FeedTableViewCell.swift in Sources */,
+				468D0E511CCED4ED004250F6 /* ChallengeTableViewCell.swift in Sources */,
 				4644FBB11C9CCE79004ACBAF /* Images.swift in Sources */,
 				465071681CB745A50041C43C /* PostProvider.swift in Sources */,
 				4644FBA81C9CC9CB004ACBAF /* State.swift in Sources */,

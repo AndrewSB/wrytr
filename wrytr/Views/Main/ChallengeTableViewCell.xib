@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="197" id="xJd-6k-WQv" customClass="ChallengeTableViewCell" customModule="wrytr" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="511" height="197"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xJd-6k-WQv" id="9PY-iA-Qsq">
+                <rect key="frame" x="0.0" y="0.0" width="511" height="196.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9H2-jR-IOU" customClass="RenderedImageButton" customModule="wrytr" customModuleProvider="target">
+                        <rect key="frame" x="448" y="30" width="33" height="7.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="33" id="0Xm-Dj-LND"/>
+                            <constraint firstAttribute="width" secondItem="9H2-jR-IOU" secondAttribute="height" multiplier="13:3" id="DUS-a3-RbM"/>
+                        </constraints>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <state key="normal" image="elipses"/>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gOD-4U-hRe" customClass="RoundedImageView" customModule="Library">
+                        <rect key="frame" x="233.5" y="41" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="gOD-4U-hRe" secondAttribute="height" multiplier="1:1" id="Kan-qq-px0"/>
+                            <constraint firstAttribute="width" constant="44" id="vdt-fR-Crf"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P3N-MV-H3T" userLabel="border line">
+                        <rect key="frame" x="0.0" y="156" width="511" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="ezZ-bQ-Dym"/>
+                        </constraints>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yzz-w9-rUS">
+                        <rect key="frame" x="8" y="162.5" width="495" height="26"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxe-cT-JlV" customClass="RenderedImageButton" customModule="wrytr" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="57" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="22" image="star">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7D-8c-YdN" customClass="RenderedImageButton" customModule="wrytr" customModuleProvider="target">
+                                <rect key="frame" x="150.5" y="0.0" width="48" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="12" image="comment">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YY9-FY-F2O" customClass="RenderedImageButton" customModule="wrytr" customModuleProvider="target">
+                                <rect key="frame" x="291.5" y="0.0" width="30" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="2"/>
+                                <state key="normal" image="share">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="984-aT-h6u" customClass="RoundedButton" customModule="Library">
+                                <rect key="frame" x="415" y="0.0" width="80" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="BSg-qL-EbJ"/>
+                                </constraints>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Reply">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="i8d-H7-OSt"/>
+                        </constraints>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RF4-rq-UNe">
+                        <rect key="frame" x="8" y="107" width="495" height="33.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="yzz-w9-rUS" firstAttribute="top" secondItem="RF4-rq-UNe" secondAttribute="bottom" constant="22" id="1By-6z-D9j"/>
+                    <constraint firstItem="9H2-jR-IOU" firstAttribute="top" secondItem="9PY-iA-Qsq" secondAttribute="topMargin" constant="22" id="23Z-2n-6OZ"/>
+                    <constraint firstItem="RF4-rq-UNe" firstAttribute="leading" secondItem="9PY-iA-Qsq" secondAttribute="leadingMargin" id="Fjt-lx-U5e"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9H2-jR-IOU" secondAttribute="trailing" constant="22" id="J1l-SW-3E8"/>
+                    <constraint firstItem="P3N-MV-H3T" firstAttribute="width" secondItem="9PY-iA-Qsq" secondAttribute="width" id="KFd-iW-ePt"/>
+                    <constraint firstItem="yzz-w9-rUS" firstAttribute="top" secondItem="P3N-MV-H3T" secondAttribute="bottom" constant="5" id="Li0-WT-rmG"/>
+                    <constraint firstItem="gOD-4U-hRe" firstAttribute="top" secondItem="9PY-iA-Qsq" secondAttribute="topMargin" constant="33" id="TGD-lf-23k"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="yzz-w9-rUS" secondAttribute="trailing" id="VPm-Wi-mdO"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="yzz-w9-rUS" secondAttribute="bottom" id="asy-m2-r9m"/>
+                    <constraint firstItem="P3N-MV-H3T" firstAttribute="centerX" secondItem="9PY-iA-Qsq" secondAttribute="centerX" id="duO-Jh-5PU"/>
+                    <constraint firstItem="yzz-w9-rUS" firstAttribute="leading" secondItem="9PY-iA-Qsq" secondAttribute="leadingMargin" id="kxE-ux-XOY"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="RF4-rq-UNe" secondAttribute="trailing" id="l2U-FI-Ssd"/>
+                    <constraint firstItem="RF4-rq-UNe" firstAttribute="top" secondItem="gOD-4U-hRe" secondAttribute="bottom" constant="22" id="m3D-Aa-Aea"/>
+                    <constraint firstItem="gOD-4U-hRe" firstAttribute="centerX" secondItem="9PY-iA-Qsq" secondAttribute="centerX" id="nBp-IL-F0H"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="comments" destination="u7D-8c-YdN" id="CeM-Vl-VpU"/>
+                <outlet property="elipses" destination="9H2-jR-IOU" id="Fba-g7-Ib3"/>
+                <outlet property="profilePicture" destination="gOD-4U-hRe" id="3FX-aY-8g1"/>
+                <outlet property="prompt" destination="RF4-rq-UNe" id="2cI-C0-s6d"/>
+                <outlet property="reply" destination="984-aT-h6u" id="v9s-st-cgO"/>
+                <outlet property="share" destination="YY9-FY-F2O" id="CVx-TG-4Dn"/>
+                <outlet property="stars" destination="Gxe-cT-JlV" id="6R6-Pc-L3B"/>
+            </connections>
+            <point key="canvasLocation" x="79.5" y="217.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="comment" width="35" height="34"/>
+        <image name="elipses" width="52" height="12"/>
+        <image name="share" width="30" height="40"/>
+        <image name="star" width="42" height="42"/>
+    </resources>
+</document>

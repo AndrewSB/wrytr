@@ -1,43 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5li-ht-2sN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NmY-Ns-VsH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
-        <scene sceneID="tto-oo-haT">
+        <scene sceneID="Wvu-Ub-1EG">
             <objects>
-                <navigationController id="5li-ht-2sN" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BQt-P1-yKN">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NmY-Ns-VsH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2O8-lt-abz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1213233843" green="0.67502456899999996" blue="0.71426230670000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="tUU-9X-gfc" kind="relationship" relationship="rootViewController" id="iNC-Es-u2r"/>
-                    </connections>
+                    <nil name="viewControllers"/>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0eO-A7-GNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pd2-NX-JqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-813" y="365"/>
-        </scene>
-        <!--Friends View Controller-->
-        <scene sceneID="e3C-6h-Hvq">
-            <objects>
-                <viewController id="tUU-9X-gfc" customClass="FriendsViewController" customModule="wrytr" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3OU-cO-qMr"/>
-                        <viewControllerLayoutGuide type="bottom" id="mb8-jD-AMC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="w2a-3o-UcX">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="JFE-C7-Hn9"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oAT-KH-N0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-61" y="365"/>
+            <point key="canvasLocation" x="-218" y="716"/>
         </scene>
     </scenes>
 </document>

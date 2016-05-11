@@ -1,5 +1,5 @@
 //
-//  FeedTableViewCell.swift
+//  ChallengeTableViewCell.swift
 //  wrytr
 //
 //  Created by Andrew Breckenridge on 4/25/16.
@@ -10,7 +10,9 @@ import UIKit
 
 import Library
 
-class FeedTableViewCell: UITableViewCell {
+class ChallengeTableViewCell: UITableViewCell {
+    
+    
 
     @IBOutlet weak var elipses: UIButton! {
         didSet {

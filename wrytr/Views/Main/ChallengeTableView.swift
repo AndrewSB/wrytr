@@ -1,5 +1,5 @@
 //
-//  FeedTableView.swift
+//  ChallengeTableView.swift
 //  wrytr
 //
 //  Created by Andrew Breckenridge on 4/28/16.
@@ -11,7 +11,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class FeedTableView: UITableView {
+class ChallengeTableView: UITableView {
     
     let disposeBag = DisposeBag()
     
@@ -19,6 +19,11 @@ class FeedTableView: UITableView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.rowHeight = UITableViewAutomaticDimension
+        self.estimatedRowHeight = 100
+        
+        self.registerNib(UINib(nibName: "ChallengeTableViewCell", bundle: nil), forCellReuseIdentifier: "lol")
         
         (dataSource, delegate) = (self, self)
         
@@ -41,7 +46,7 @@ class FeedTableView: UITableView {
     
 }
 
-extension FeedTableView: UITableViewDelegate {
+extension ChallengeTableView: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -49,7 +54,7 @@ extension FeedTableView: UITableViewDelegate {
     
 }
 
-extension FeedTableView: UITableViewDataSource {
+extension ChallengeTableView: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -64,7 +69,7 @@ extension FeedTableView: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("lol") as! FeedTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("lol") as! ChallengeTableViewCell
         let element = data.value[indexPath.section]
         
         cell.prompt.text = element.post.prompt

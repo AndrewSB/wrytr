@@ -35,7 +35,7 @@ class FeedViewController: RxViewController, Identifiable {
         return titleView
     }()
     
-    @IBOutlet weak var tableView: FeedTableView!
+    @IBOutlet weak var tableView: ChallengeTableView!
     @IBOutlet weak var postCategory: UISegmentedControl!
 
     let posts: Variable<[InflatedPost]>! = Variable([InflatedPost]())
@@ -55,7 +55,6 @@ class FeedViewController: RxViewController, Identifiable {
         posts.asObservable()
             .bindTo(tableView.data)
             .addDisposableTo(disposeBag)
-        
     }
     
     override func viewDidAppear(animated: Bool) {
