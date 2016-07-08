@@ -37,7 +37,6 @@
 		4644FBC31C9CD6E4004ACBAF /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBC21C9CD6E4004ACBAF /* LandingViewController.swift */; };
 		4644FBC51C9CDE8D004ACBAF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4644FBC41C9CDE8D004ACBAF /* Localizable.strings */; };
 		4644FBC71C9D256B004ACBAF /* Localizable_Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBC61C9D256B004ACBAF /* Localizable_Strings.swift */; };
-		4644FBD31C9E046B004ACBAF /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FBD21C9E046B004ACBAF /* Library.framework */; };
 		4644FBD81C9E1307004ACBAF /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FBD61C9E1307004ACBAF /* RxCocoa.framework */; };
 		4644FBD91C9E1307004ACBAF /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FBD71C9E1307004ACBAF /* RxSwift.framework */; };
 		4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBDA1C9E1535004ACBAF /* RxViewController.swift */; };
@@ -206,7 +205,6 @@
 				46C099061C9E34D10015779C /* Bolts.framework in Frameworks */,
 				4644FB9D1C9CBCEF004ACBAF /* ReSwiftRouter.framework in Frameworks */,
 				46C099181CA072250015779C /* TwitterKit.framework in Frameworks */,
-				4644FBD31C9E046B004ACBAF /* Library.framework in Frameworks */,
 				46C0991A1CA072250015779C /* TwitterCore.framework in Frameworks */,
 				46C099091C9E34D10015779C /* FBSDKCoreKit.framework in Frameworks */,
 				46C099071C9E34D10015779C /* Crashlytics.framework in Frameworks */,
@@ -482,7 +480,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Andrew Breckenridge";
 				TargetAttributes = {
 					468614BA1C89CC3A002C2BAC = {
