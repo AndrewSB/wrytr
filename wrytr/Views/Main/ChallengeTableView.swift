@@ -16,7 +16,11 @@ class ChallengeTableView: UITableView {
     let disposeBag = DisposeBag()
     
     let data = Variable([InflatedPost]())
+    
+}
 
+extension ChallengeTableView {
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -42,6 +46,10 @@ class ChallengeTableView: UITableView {
                 self.deselectRowAtIndexPath(iPath, animated: true)
             }
             .addDisposableTo(disposeBag)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
     }
     
 }

@@ -62,7 +62,12 @@ class FeedViewController: RxViewController, Identifiable {
         
         store.dispatch(PostProvider.loadNewPosts)
     }
-
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 22, bottom: 0, right: 22)
+    }
 }
 
 extension FeedViewController: StoreSubscriber {
