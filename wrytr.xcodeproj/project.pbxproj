@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		46271FAB1CD2AB36007196B2 /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46271FAA1CD2AB36007196B2 /* Library.framework */; };
 		46271FAE1CD2B02F007196B2 /* ChallengeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */; };
+		462894E61D37F593006044E1 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462894E51D37F593006044E1 /* PostDetailViewController.swift */; };
+		462894E81D37F6B3006044E1 /* PublishReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462894E71D37F6B3006044E1 /* PublishReplyViewController.swift */; };
+		462894EA1D37F6D7006044E1 /* PostResponsesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462894E91D37F6D7006044E1 /* PostResponsesViewController.swift */; };
 		462F03181CE148CE0031B1B1 /* NoHairlineNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */; };
 		462F031A1CE185480031B1B1 /* CreatePostState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03191CE185480031B1B1 /* CreatePostState.swift */; };
 		462F031C1CE1856C0031B1B1 /* CreatePostsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F031B1CE1856C0031B1B1 /* CreatePostsActions.swift */; };
@@ -95,6 +98,9 @@
 /* Begin PBXFileReference section */
 		46271FAA1CD2AB36007196B2 /* Library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Library.framework; path = Carthage/Build/iOS/Library.framework; sourceTree = "<group>"; };
 		46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeTableView.swift; sourceTree = "<group>"; };
+		462894E51D37F593006044E1 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		462894E71D37F6B3006044E1 /* PublishReplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishReplyViewController.swift; sourceTree = "<group>"; };
+		462894E91D37F6D7006044E1 /* PostResponsesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostResponsesViewController.swift; sourceTree = "<group>"; };
 		462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoHairlineNavigationBar.swift; sourceTree = "<group>"; };
 		462F03191CE185480031B1B1 /* CreatePostState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostState.swift; sourceTree = "<group>"; };
 		462F031B1CE1856C0031B1B1 /* CreatePostsActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostsActions.swift; sourceTree = "<group>"; };
@@ -217,11 +223,30 @@
 		46271FAC1CD2B00E007196B2 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				462894E41D37F564006044E1 /* Challenge Table + Cells */,
+				462894EB1D37F76D006044E1 /* Post Detail */,
+			);
+			name = Reusable;
+			sourceTree = "<group>";
+		};
+		462894E41D37F564006044E1 /* Challenge Table + Cells */ = {
+			isa = PBXGroup;
+			children = (
 				468D0E501CCED4ED004250F6 /* ChallengeTableViewCell.swift */,
 				46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */,
 				462F032F1CE2CF1B0031B1B1 /* ChallengeTableViewCell.xib */,
 			);
-			name = Reusable;
+			name = "Challenge Table + Cells";
+			sourceTree = "<group>";
+		};
+		462894EB1D37F76D006044E1 /* Post Detail */ = {
+			isa = PBXGroup;
+			children = (
+				462894E51D37F593006044E1 /* PostDetailViewController.swift */,
+				462894E71D37F6B3006044E1 /* PublishReplyViewController.swift */,
+				462894E91D37F6D7006044E1 /* PostResponsesViewController.swift */,
+			);
+			name = "Post Detail";
 			sourceTree = "<group>";
 		};
 		4644FBA21C9CC80A004ACBAF /* Constants */ = {
@@ -609,8 +634,10 @@
 				46C0991E1CA092770015779C /* ParseRxCallbacks.swift in Sources */,
 				4644FBB31C9CCF4D004ACBAF /* AuthenticationReducer.swift in Sources */,
 				465071621CB741E40041C43C /* PostState.swift in Sources */,
+				462894E81D37F6B3006044E1 /* PublishReplyViewController.swift in Sources */,
 				462F031E1CE185840031B1B1 /* CreatePostProvider.swift in Sources */,
 				462F03181CE148CE0031B1B1 /* NoHairlineNavigationBar.swift in Sources */,
+				462894EA1D37F6D7006044E1 /* PostResponsesViewController.swift in Sources */,
 				468D0E531CCED77A004250F6 /* RenderedImageView.swift in Sources */,
 				468D0E4F1CCED0F2004250F6 /* FQuery+Rx.swift in Sources */,
 				46C0992F1CA0A0E80015779C /* AuthenticationActions.swift in Sources */,
@@ -634,6 +661,7 @@
 				465071641CB742290041C43C /* PostReducer.swift in Sources */,
 				466E74011CAFA60000EC0B7C /* HomeTabBarController.swift in Sources */,
 				466E73FD1CAF271A00EC0B7C /* Firebase+Rx.swift in Sources */,
+				462894E61D37F593006044E1 /* PostDetailViewController.swift in Sources */,
 				462F032A1CE2ADDF0031B1B1 /* NSRangeExtension.swift in Sources */,
 				468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */,
 			);
