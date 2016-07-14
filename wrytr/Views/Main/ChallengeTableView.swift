@@ -17,6 +17,8 @@ class ChallengeTableView: UITableView {
     
     let data = Variable([InflatedPost]())
     
+    let sideInset: CGFloat = 14
+    
 }
 
 extension ChallengeTableView {
@@ -40,24 +42,28 @@ extension ChallengeTableView {
             }
             .subscribeNext { _ in }
             .addDisposableTo(disposeBag)
+
+    }
         
-        rx_itemSelected
-            .subscribeNext { iPath in
-                self.deselectRowAtIndexPath(iPath, animated: true)
-            }
-            .addDisposableTo(disposeBag)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-    
 }
 
 extension ChallengeTableView: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = .clearColor()
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return 0
+        default:
+            return 10
+        }
     }
     
 }
@@ -72,14 +78,11 @@ extension ChallengeTableView: UITableViewDataSource {
         return data.value.count
     }
     
-    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 10))
-    }
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("lol") as! ChallengeTableViewCell
         let element = data.value[indexPath.section]
         
+        cell.xInsets = sideInset
         cell.prompt.text = element.post.prompt
         cell.profilePicture.hnk_setImageFromURL(NSURL(string: element.user.authData.profilePictureUrl)!)
 

@@ -12,7 +12,7 @@ import Library
 
 class ChallengeTableViewCell: UITableViewCell {
     
-    
+    var xInsets: CGFloat?
 
     @IBOutlet weak var elipses: UIButton! {
         didSet {
@@ -45,6 +45,20 @@ class ChallengeTableViewCell: UITableViewCell {
         }
     }
     
+    override var frame: CGRect {
+        get {
+            return super.frame
+        }
+        set (newFrame) {
+            var frame = newFrame
+            
+            frame.origin.x += xInsets ?? 0
+            frame.size.width = newFrame.width - (2 * (xInsets ?? 0))
+            
+            super.frame = frame
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -53,4 +67,6 @@ class ChallengeTableViewCell: UITableViewCell {
 
         layer.cornerRadius = 10
     }
+
+    
 }
