@@ -12,6 +12,7 @@
 		462894E61D37F593006044E1 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462894E51D37F593006044E1 /* PostDetailViewController.swift */; };
 		462894E81D37F6B3006044E1 /* PublishReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462894E71D37F6B3006044E1 /* PublishReplyViewController.swift */; };
 		462894EA1D37F6D7006044E1 /* PostResponsesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462894E91D37F6D7006044E1 /* PostResponsesViewController.swift */; };
+		462894ED1D37F78A006044E1 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462894EC1D37F78A006044E1 /* ComposeViewController.swift */; };
 		462F03181CE148CE0031B1B1 /* NoHairlineNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */; };
 		462F031A1CE185480031B1B1 /* CreatePostState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03191CE185480031B1B1 /* CreatePostState.swift */; };
 		462F031C1CE1856C0031B1B1 /* CreatePostsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F031B1CE1856C0031B1B1 /* CreatePostsActions.swift */; };
@@ -101,6 +102,7 @@
 		462894E51D37F593006044E1 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		462894E71D37F6B3006044E1 /* PublishReplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishReplyViewController.swift; sourceTree = "<group>"; };
 		462894E91D37F6D7006044E1 /* PostResponsesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostResponsesViewController.swift; sourceTree = "<group>"; };
+		462894EC1D37F78A006044E1 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoHairlineNavigationBar.swift; sourceTree = "<group>"; };
 		462F03191CE185480031B1B1 /* CreatePostState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostState.swift; sourceTree = "<group>"; };
 		462F031B1CE1856C0031B1B1 /* CreatePostsActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostsActions.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 		46271FAC1CD2B00E007196B2 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				462894EC1D37F78A006044E1 /* ComposeViewController.swift */,
 				462894E41D37F564006044E1 /* Challenge Table + Cells */,
 				462894EB1D37F76D006044E1 /* Post Detail */,
 			);
@@ -650,6 +653,7 @@
 				4644FBB51C9CD389004ACBAF /* LoginViewRoutable.swift in Sources */,
 				46B630E01CCFFE880000EFC4 /* User.swift in Sources */,
 				468D0E511CCED4ED004250F6 /* ChallengeTableViewCell.swift in Sources */,
+				462894ED1D37F78A006044E1 /* ComposeViewController.swift in Sources */,
 				4644FBB11C9CCE79004ACBAF /* Images.swift in Sources */,
 				465071681CB745A50041C43C /* PostProvider.swift in Sources */,
 				4644FBA81C9CC9CB004ACBAF /* State.swift in Sources */,

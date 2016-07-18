@@ -122,28 +122,4 @@ extension CreateViewController: StoreSubscriber {
     
 }
 
-extension CreateViewController: UITextViewDelegate {
-    
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        
-        if text == "\n" {
-            let text = textView.text
-            textView.endEditing(true)
-            self.postChallenge(Post(id: nil, userId: User.local.authData.id, prompt: text, stars: nil, comments: nil))
-            return false
-        } else {
-            return true
-        }
-        
-    }
-    
-    func postChallenge(post: Post) {
-        store.dispatch(LocalPostReady(post: post))
-        store.dispatch(CreatePostProvider.uploadPost)
-    }
-    
-}
-
-extension CreateViewController {}
-
 extension CreateViewController: Routable {}
