@@ -64,12 +64,6 @@
                                     <constraint firstItem="vaI-ls-6oR" firstAttribute="top" secondItem="0jx-Ta-QcG" secondAttribute="top" id="xdp-nz-o3a"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcx-OC-gGk">
-                                <rect key="frame" x="528" y="493" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvr-1H-gvZ">
                                 <rect key="frame" x="20" y="157" width="560" height="379"/>
                                 <connections>
@@ -84,9 +78,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="dvr-1H-gvZ" secondAttribute="trailing" id="DrS-e6-Vtv"/>
                             <constraint firstItem="ql5-FI-LjR" firstAttribute="top" secondItem="dvr-1H-gvZ" secondAttribute="bottom" id="ITZ-Xq-F9c"/>
                             <constraint firstItem="0jx-Ta-QcG" firstAttribute="top" secondItem="G5p-5F-YZx" secondAttribute="bottom" id="SUB-yj-UIY"/>
-                            <constraint firstItem="ql5-FI-LjR" firstAttribute="top" secondItem="gcx-OC-gGk" secondAttribute="bottom" constant="22" id="XNG-dL-ToE"/>
                             <constraint firstItem="dvr-1H-gvZ" firstAttribute="top" secondItem="0jx-Ta-QcG" secondAttribute="bottom" constant="22" id="Yd3-Qo-Kg0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gcx-OC-gGk" secondAttribute="trailing" constant="10" id="b21-IX-YKy"/>
                             <constraint firstAttribute="trailing" secondItem="0jx-Ta-QcG" secondAttribute="trailing" id="xw2-TU-UAd"/>
                         </constraints>
                     </view>
@@ -95,10 +87,6 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="bottomLayoutConstraint" destination="XNG-dL-ToE" id="mtQ-Pb-lkD"/>
-                        <outlet property="characterCountLabel" destination="gcx-OC-gGk" id="QOQ-mP-bbT"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ZO-qL-gGd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -19,19 +19,6 @@ class CreateViewController: RxViewController, Identifiable {
     
     static let identifier = "CreateViewController"
     
-    @IBOutlet weak var profileImageView: UIImageView! {
-        didSet { profileImageView.hnk_setImageFromURL(User.local.profilePictureNSUrl) }
-    }
-    @IBOutlet weak var usernameLabel: UILabel! {
-        didSet { usernameLabel.text = User.local.authData.name }
-    }
-    @IBOutlet weak var challengeTextView: UITextView! {
-        didSet { challengeTextView.delegate = self }
-    }
-    
-    @IBOutlet weak var characterCountLabel: UILabel!
-    @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
-
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -47,48 +34,8 @@ class CreateViewController: RxViewController, Identifiable {
         let dismissKeyboardTap = UITapGestureRecognizer()
         dismissKeyboardTap.rx_event.subscribeNext { _ in self.view.endEditing(true) }.addDisposableTo(disposeBag)
         view.addGestureRecognizer(dismissKeyboardTap)
-        
-        let characterLimit = 150
-        let attributedCharacterLimitString = attributedString("/\(characterLimit)", color: .blackColor())
-        
-        challengeTextView.rx_text
-            .map { text in text.characters.count }
-            .map { count in
-                let countColor: UIColor = count >= characterLimit ? .redColor() : .grayColor()
-                let countString = self.attributedString("\(count)", color: countColor)
-                countString.appendAttributedString(attributedCharacterLimitString)
-                return countString
-            }
-            .bindTo(characterCountLabel.rx_attributedText)
-            .addDisposableTo(disposeBag)
-        
-        challengeTextView.rx_text
-            .subscribeNext { _ in self.characterCountLabel.sizeToFit() }
-            .addDisposableTo(disposeBag)
-        
-        KeyboardObserver().willShow
-            .subscribeNext { _ in print("SEX")}
-            .addDisposableTo(disposeBag)
     }
 
-    private func attributedString(string: String, color: UIColor) -> NSMutableAttributedString {
-        let attributedString = NSAttributedString(string: string, attributes: [NSForegroundColorAttributeName: color])
-            
-        return attributedString.mutableCopy() as! NSMutableAttributedString
-    }
-    
-    private func animateKeyboardChange(keyboardInfo: KeyboardObserver.KeyboardInfo) {        
-
-        let convertedKeyboardEndFrame = view.convertRect(keyboardInfo.frameEnd, fromView: view.window)
-        
-        bottomLayoutConstraint.constant = CGRectGetMaxY(self.view.bounds) - CGRectGetMinY(convertedKeyboardEndFrame)
-        
-        print("animating \(bottomLayoutConstraint.constant)")
-        
-        UIView.animateWithDuration(keyboardInfo.animationDuration, delay: 0.0, options: [.BeginFromCurrentState, keyboardInfo.animationCurve], animations: {
-            self.view.layoutIfNeeded()
-        }, completion: nil)
-    }
 }
 
 extension CreateViewController: StoreSubscriber {
