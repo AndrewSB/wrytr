@@ -69,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().enableAutoToolbar = false
         IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 22
-        IQKeyboardManager.sharedManager().disabledDistanceHandlingClasses = [CreateViewController.Type]()
+        IQKeyboardManager.sharedManager().disabledDistanceHandlingClasses = [CreateViewController.self, ComposeViewController.self]
         
         return true
     }

@@ -18,6 +18,15 @@ import Haneke
 class CreateViewController: RxViewController, Identifiable {
     
     static let identifier = "CreateViewController"
+    var composer: ComposeViewController! {
+        didSet {
+            composer.delegate = self
+        }
+    }
+    
+}
+
+extension CreateViewController {
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,6 +43,14 @@ class CreateViewController: RxViewController, Identifiable {
         let dismissKeyboardTap = UITapGestureRecognizer()
         dismissKeyboardTap.rx_event.subscribeNext { _ in self.view.endEditing(true) }.addDisposableTo(disposeBag)
         view.addGestureRecognizer(dismissKeyboardTap)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let des = segue.destinationViewController as? ComposeViewController {
+            self.composer = des
+        }
+        
     }
 
 }
@@ -67,6 +84,13 @@ extension CreateViewController: StoreSubscriber {
 
     }
     
+}
+
+extension CreateViewController: ComposeViewControllerDelegate {
+    func shouldPost(post: Post) {
+        store.dispatch(LocalPostReady(post: post))
+        store.dispatch(CreatePostProvider.uploadPost)
+    }
 }
 
 extension CreateViewController: Routable {}

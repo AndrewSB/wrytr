@@ -1,5 +1,6 @@
 import UIKit
 import Library
+import RxSwift
 
 protocol ComposeViewControllerDelegate {
     func shouldPost(post: Post)
@@ -9,6 +10,8 @@ class ComposeViewController: RxViewController {
     
     var delegate: ComposeViewControllerDelegate!
     var characterLimit = 150
+    
+    let keyboardObserver = KeyboardObserver()
 
     @IBOutlet weak var profileImageView: RoundedImageView! {
         didSet { profileImageView.hnk_setImageFromURL(User.local.profilePictureNSUrl) }
@@ -29,7 +32,66 @@ extension ComposeViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        handleText(addDisposablesTo: disposeBag)
+        handleKeyboard(addDisposablesTo: disposeBag)
+    }
+    
+}
 
+private typealias KeyboardHandler = ComposeViewController
+extension KeyboardHandler {
+    
+    private enum KeyboardState {
+        case Hiding
+        case Showing
+    }
+    
+    private func handleKeyboard(addDisposablesTo disposeBag: DisposeBag) {
+        keyboardObserver.willShow
+            .map { (.Showing, $0) }
+            .subscribeNext(animateKeyboardChange)
+            .addDisposableTo(disposeBag)
+        
+        keyboardObserver.willHide
+            .map { (.Hiding, $0) }
+            .subscribeNext(animateKeyboardChange)
+            .addDisposableTo(disposeBag)
+    }
+    
+    private func animateKeyboardChange(keyboardState: KeyboardState, keyboardInfo: KeyboardObserver.KeyboardInfo) {
+        let padding: CGFloat = 11
+        let defaultKeyboardSize: CGFloat = 250
+        
+        let convertedKeyboardEndFrame = view.convertRect(keyboardInfo.frameEnd, fromView: view.window)
+        let keyboardSize = CGRectGetMaxY(self.view.bounds) - CGRectGetMinY(convertedKeyboardEndFrame)
+        
+        var offsetAmount: CGFloat
+        
+        // handle 3rd party keyboards with no keyboard size
+        if keyboardState == .Showing && keyboardSize == 0 {
+            offsetAmount = defaultKeyboardSize + padding
+        } else if keyboardState == .Hiding {
+            offsetAmount = padding
+        } else {
+            offsetAmount = keyboardSize + padding
+        }
+        
+        bottomLayoutConstraint.constant = offsetAmount
+        print("animating \(bottomLayoutConstraint.constant)")
+        
+        UIView.animateWithDuration(keyboardInfo.animationDuration, delay: 0.0, options: [.BeginFromCurrentState, keyboardInfo.animationCurve], animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+
+    }
+    
+}
+
+private typealias TextHandler = ComposeViewController
+extension TextHandler {
+    
+    private func handleText(addDisposablesTo disposeBag: DisposeBag) {
         let attributedCharacterLimitString = generateAttributedString("/\(characterLimit)", color: .blackColor())
         
         challengeTextView.rx_text
@@ -46,35 +108,7 @@ extension ComposeViewController {
             }
             .bindTo(characterCountLabel.rx_attributedText)
             .addDisposableTo(disposeBag)
-
-        KeyboardObserver().willShow
-            .subscribeNext { _ in print("SHOW SEX")}
-            .addDisposableTo(disposeBag)
-        
-        KeyboardObserver().willHide
-            .subscribeNext { _ in print("HIDE SEX")}
-            .addDisposableTo(disposeBag)
     }
-    
-}
-
-private typealias KeyboardHandler = ComposeViewController
-extension KeyboardHandler {
-    
-    
-    private func animateKeyboardChange(keyboardInfo: KeyboardObserver.KeyboardInfo) {
-        
-        let convertedKeyboardEndFrame = view.convertRect(keyboardInfo.frameEnd, fromView: view.window)
-        
-        bottomLayoutConstraint.constant = CGRectGetMaxY(self.view.bounds) - CGRectGetMinY(convertedKeyboardEndFrame)
-        
-        print("animating \(bottomLayoutConstraint.constant)")
-        
-        UIView.animateWithDuration(keyboardInfo.animationDuration, delay: 0.0, options: [.BeginFromCurrentState, keyboardInfo.animationCurve], animations: {
-            self.view.layoutIfNeeded()
-            }, completion: nil)
-    }
-    
     
 }
 
