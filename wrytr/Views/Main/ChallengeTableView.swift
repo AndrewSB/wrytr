@@ -8,6 +8,9 @@
 
 import UIKit
 
+import ReSwift
+import ReSwiftRouter
+
 import RxSwift
 import RxCocoa
 
@@ -51,6 +54,8 @@ extension ChallengeTableView: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        store.dispatch(FeedProvider.selectPost(data.value[indexPath.section]))
     }
     
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {

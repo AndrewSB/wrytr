@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="842-C5-Nbb" customClass="ChallengeTableView" customModule="wrytr" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="842-C5-Nbb" customClass="ChallengeTableView" customModule="wrytr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="Agt-o7-ARe">
@@ -54,16 +54,17 @@
                     <connections>
                         <outlet property="postCategory" destination="GvT-s4-ZBp" id="fVM-Br-Ccd"/>
                         <outlet property="tableView" destination="842-C5-Nbb" id="3EL-zZ-lp7"/>
+                        <segue destination="1mP-kc-G2b" kind="show" identifier="detail" id="KZI-fL-Dbv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lna-sc-dI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1258" y="148"/>
         </scene>
-        <!--View Controller-->
+        <!--Post Detail View Controller-->
         <scene sceneID="iUE-AJ-L0Y">
             <objects>
-                <viewController id="1mP-kc-G2b" sceneMemberID="viewController">
+                <viewController id="1mP-kc-G2b" customClass="PostDetailViewController" customModule="wrytr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4sh-dd-Chx"/>
                         <viewControllerLayoutGuide type="bottom" id="xmd-CY-hNW"/>
@@ -73,17 +74,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaM-xY-B5b">
-                                <rect key="frame" x="0.0" y="332" width="600" height="268"/>
+                                <rect key="frame" x="0.0" y="129" width="600" height="471"/>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XgL-sb-oYU" customClass="ExtendedNavigationBarView" customModule="wrytr" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="600" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NF-yB-UkV">
+                                        <rect key="frame" x="44" y="22" width="512" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1213233843" green="0.67502456899999996" blue="0.71426230670000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="0NF-yB-UkV" firstAttribute="leading" secondItem="XgL-sb-oYU" secondAttribute="leading" constant="44" id="HWQ-Ld-MHI"/>
+                                    <constraint firstItem="0NF-yB-UkV" firstAttribute="top" secondItem="XgL-sb-oYU" secondAttribute="top" constant="22" id="oiL-K1-0ig"/>
+                                    <constraint firstAttribute="trailing" secondItem="0NF-yB-UkV" secondAttribute="trailing" constant="44" id="rgS-TW-6AQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="0NF-yB-UkV" secondAttribute="bottom" constant="22" id="sgQ-9w-XhL"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="oaM-xY-B5b" firstAttribute="top" secondItem="4sh-dd-Chx" secondAttribute="bottom" constant="312" id="FKg-8M-8be"/>
+                            <constraint firstItem="XgL-sb-oYU" firstAttribute="leading" secondItem="d5R-fN-Wi6" secondAttribute="leading" id="9gY-Hu-fKg"/>
                             <constraint firstAttribute="trailing" secondItem="oaM-xY-B5b" secondAttribute="trailing" id="HUi-p8-Vpt"/>
+                            <constraint firstAttribute="trailing" secondItem="XgL-sb-oYU" secondAttribute="trailing" id="RF6-Zt-3FO"/>
+                            <constraint firstItem="XgL-sb-oYU" firstAttribute="top" secondItem="4sh-dd-Chx" secondAttribute="bottom" id="U2F-J3-KHg"/>
                             <constraint firstItem="xmd-CY-hNW" firstAttribute="top" secondItem="oaM-xY-B5b" secondAttribute="bottom" id="ac6-rc-UOJ"/>
+                            <constraint firstItem="oaM-xY-B5b" firstAttribute="top" secondItem="XgL-sb-oYU" secondAttribute="bottom" id="k2a-Ui-Nmz"/>
                             <constraint firstItem="oaM-xY-B5b" firstAttribute="leading" secondItem="d5R-fN-Wi6" secondAttribute="leading" id="maK-hH-CuX"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="gy2-Yb-q0B">
+                        <barButtonItem key="leftBarButtonItem" image="arrow-left" id="RbK-kN-3db">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="elipses" id="uqP-J0-GQ2">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gVk-gc-XtL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,7 +160,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vNa-Bw-iUW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VVv-3Z-ExB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VVv-3Z-ExB" customClass="NoHairlineNavigationBar" customModule="wrytr" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.12132338434457779" green="0.67502456903457642" blue="0.71426230669021606" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -145,4 +175,8 @@
             <point key="canvasLocation" x="446" y="148"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow-left" width="21" height="39"/>
+        <image name="elipses" width="52" height="12"/>
+    </resources>
 </document>

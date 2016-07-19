@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46260A6C1D3E937600CB6850 /* FeedActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46260A6B1D3E937600CB6850 /* FeedActions.swift */; };
+		46260A6E1D3E956E00CB6850 /* FeedReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46260A6D1D3E956E00CB6850 /* FeedReducer.swift */; };
+		46260A701D3E95A800CB6850 /* FeedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46260A6F1D3E95A800CB6850 /* FeedState.swift */; };
+		46260A721D3E966A00CB6850 /* FeedProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46260A711D3E966A00CB6850 /* FeedProvider.swift */; };
 		46271FAB1CD2AB36007196B2 /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46271FAA1CD2AB36007196B2 /* Library.framework */; };
 		46271FAE1CD2B02F007196B2 /* ChallengeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */; };
 		462894E61D37F593006044E1 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462894E51D37F593006044E1 /* PostDetailViewController.swift */; };
@@ -97,6 +101,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		46260A6B1D3E937600CB6850 /* FeedActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedActions.swift; sourceTree = "<group>"; };
+		46260A6D1D3E956E00CB6850 /* FeedReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedReducer.swift; sourceTree = "<group>"; };
+		46260A6F1D3E95A800CB6850 /* FeedState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedState.swift; sourceTree = "<group>"; };
+		46260A711D3E966A00CB6850 /* FeedProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedProvider.swift; sourceTree = "<group>"; };
 		46271FAA1CD2AB36007196B2 /* Library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Library.framework; path = Carthage/Build/iOS/Library.framework; sourceTree = "<group>"; };
 		46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeTableView.swift; sourceTree = "<group>"; };
 		462894E51D37F593006044E1 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +230,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46260A601D3D42F000CB6850 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4644FBDC1C9E1539004ACBAF /* Extensions */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		46271FAC1CD2B00E007196B2 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +305,7 @@
 				4644FBA71C9CC9CB004ACBAF /* State.swift */,
 				4644FBAA1C9CCA89004ACBAF /* AuthenticationState.swift */,
 				465071611CB741E40041C43C /* PostState.swift */,
+				46260A6F1D3E95A800CB6850 /* FeedState.swift */,
 				462F03191CE185480031B1B1 /* CreatePostState.swift */,
 			);
 			path = State;
@@ -300,6 +317,7 @@
 				4644FBAC1C9CCAD6004ACBAF /* AppReducer.swift */,
 				4644FBB21C9CCF4D004ACBAF /* AuthenticationReducer.swift */,
 				465071631CB742290041C43C /* PostReducer.swift */,
+				46260A6D1D3E956E00CB6850 /* FeedReducer.swift */,
 				462F031F1CE254490031B1B1 /* CreatePostReducer.swift */,
 			);
 			path = Reducers;
@@ -308,7 +326,7 @@
 		4644FBBA1C9CD566004ACBAF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4644FBDC1C9E1539004ACBAF /* Extensions */,
+				46260A601D3D42F000CB6850 /* Classes */,
 				468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */,
 				468614C51C89CC3A002C2BAC /* Assets.xcassets */,
 				468614CA1C89CC3A002C2BAC /* Info.plist */,
@@ -403,6 +421,7 @@
 			children = (
 				466E73FA1CAF222E00EC0B7C /* AuthenticationProvider.swift */,
 				465071671CB745A50041C43C /* PostProvider.swift */,
+				46260A711D3E966A00CB6850 /* FeedProvider.swift */,
 				462F031D1CE185840031B1B1 /* CreatePostProvider.swift */,
 			);
 			name = Providers;
@@ -473,6 +492,7 @@
 			children = (
 				46C0992E1CA0A0E80015779C /* AuthenticationActions.swift */,
 				465071651CB743340041C43C /* PostActions.swift */,
+				46260A6B1D3E937600CB6850 /* FeedActions.swift */,
 				462F031B1CE1856C0031B1B1 /* CreatePostsActions.swift */,
 			);
 			name = Actions;
@@ -624,10 +644,12 @@
 				46CF36A21CCEBCFA00BC17A4 /* Response.swift in Sources */,
 				46C0991C1CA087A60015779C /* Twitter+Rx.swift in Sources */,
 				466E73FF1CAF4FEC00EC0B7C /* ReSwiftTabBarController.swift in Sources */,
+				46260A6E1D3E956E00CB6850 /* FeedReducer.swift in Sources */,
 				4644FBAB1C9CCA89004ACBAF /* AuthenticationState.swift in Sources */,
 				462F03241CE270D60031B1B1 /* KeyboardObserver.swift in Sources */,
 				4658D6C01CC089AF009527DF /* CreateViewController.swift in Sources */,
 				46C099201CA097640015779C /* LoadingViewController.swift in Sources */,
+				46260A701D3E95A800CB6850 /* FeedState.swift in Sources */,
 				462F03201CE254490031B1B1 /* CreatePostReducer.swift in Sources */,
 				46B630DC1CCFF6B50000EFC4 /* FAuthData Convinience.swift in Sources */,
 				4644FBAD1C9CCAD6004ACBAF /* AppReducer.swift in Sources */,
@@ -643,10 +665,12 @@
 				462894EA1D37F6D7006044E1 /* PostResponsesViewController.swift in Sources */,
 				468D0E531CCED77A004250F6 /* RenderedImageView.swift in Sources */,
 				468D0E4F1CCED0F2004250F6 /* FQuery+Rx.swift in Sources */,
+				46260A6C1D3E937600CB6850 /* FeedActions.swift in Sources */,
 				46C0992F1CA0A0E80015779C /* AuthenticationActions.swift in Sources */,
 				46B630DE1CCFFE6B0000EFC4 /* InflatedPost.swift in Sources */,
 				4644FBA01C9CBDEE004ACBAF /* RootRoutable.swift in Sources */,
 				4650715F1CB741770041C43C /* Post.swift in Sources */,
+				46260A721D3E966A00CB6850 /* FeedProvider.swift in Sources */,
 				46271FAE1CD2B02F007196B2 /* ChallengeTableView.swift in Sources */,
 				462F031A1CE185480031B1B1 /* CreatePostState.swift in Sources */,
 				4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */,

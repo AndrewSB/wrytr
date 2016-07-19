@@ -88,6 +88,27 @@ extension FeedViewController: StoreSubscriber {
 
 extension FeedViewController: Routable {
 
-
+    func pushRouteSegment(routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
+        switch routeElementIdentifier {
+        case PostDetailViewController.identifier:
+            self.performSegue(StoryboardSegue.Feed.Detail)
+        default:
+            assertionFailure("I don't know how to push \(routeElementIdentifier)")
+        }
+        
+        completionHandler()
+        return self
+    }
+    
+    func popRouteSegment(routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) {
+        switch routeElementIdentifier {
+        case PostDetailViewController.identifier:
+            self.navigationController!.popViewControllerAnimated(true)
+        default:
+            assertionFailure("I don't know how to pop \(routeElementIdentifier)")
+        }
+        
+        completionHandler()
+    }
 
 }

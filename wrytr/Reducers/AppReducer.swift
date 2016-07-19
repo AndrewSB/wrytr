@@ -18,6 +18,7 @@ struct AppReducer: Reducer {
             navigationState: NavigationReducer.handleAction(action, state: state?.navigationState),
             authenticationState: authenticationReducer(action, state: state?.authenticationState),
             postState: postReducer(action, state: state?.postState),
+            feedState: feedReducer(action, state: state?.feedState),
             createPostState: createPostReducer(action, state: state?.createPostState)
         )
     }
