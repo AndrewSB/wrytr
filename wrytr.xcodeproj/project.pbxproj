@@ -11,6 +11,7 @@
 		46260A6E1D3E956E00CB6850 /* FeedReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46260A6D1D3E956E00CB6850 /* FeedReducer.swift */; };
 		46260A701D3E95A800CB6850 /* FeedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46260A6F1D3E95A800CB6850 /* FeedState.swift */; };
 		46260A721D3E966A00CB6850 /* FeedProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46260A711D3E966A00CB6850 /* FeedProvider.swift */; };
+		46260A741D3EAEF400CB6850 /* Observable + Ignore Nil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46260A731D3EAEF400CB6850 /* Observable + Ignore Nil.swift */; };
 		46271FAB1CD2AB36007196B2 /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46271FAA1CD2AB36007196B2 /* Library.framework */; };
 		46271FAE1CD2B02F007196B2 /* ChallengeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */; };
 		462894E61D37F593006044E1 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462894E51D37F593006044E1 /* PostDetailViewController.swift */; };
@@ -105,6 +106,7 @@
 		46260A6D1D3E956E00CB6850 /* FeedReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedReducer.swift; sourceTree = "<group>"; };
 		46260A6F1D3E95A800CB6850 /* FeedState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedState.swift; sourceTree = "<group>"; };
 		46260A711D3E966A00CB6850 /* FeedProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedProvider.swift; sourceTree = "<group>"; };
+		46260A731D3EAEF400CB6850 /* Observable + Ignore Nil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable + Ignore Nil.swift"; sourceTree = "<group>"; };
 		46271FAA1CD2AB36007196B2 /* Library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Library.framework; path = Carthage/Build/iOS/Library.framework; sourceTree = "<group>"; };
 		46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeTableView.swift; sourceTree = "<group>"; };
 		462894E51D37F593006044E1 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 				462F03231CE270D60031B1B1 /* KeyboardObserver.swift */,
 				462F03251CE273D00031B1B1 /* UIStackExtension.swift */,
 				462F03291CE2ADDF0031B1B1 /* NSRangeExtension.swift */,
+				46260A731D3EAEF400CB6850 /* Observable + Ignore Nil.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -689,6 +692,7 @@
 				465071641CB742290041C43C /* PostReducer.swift in Sources */,
 				466E74011CAFA60000EC0B7C /* HomeTabBarController.swift in Sources */,
 				466E73FD1CAF271A00EC0B7C /* Firebase+Rx.swift in Sources */,
+				46260A741D3EAEF400CB6850 /* Observable + Ignore Nil.swift in Sources */,
 				462894E61D37F593006044E1 /* PostDetailViewController.swift in Sources */,
 				462F032A1CE2ADDF0031B1B1 /* NSRangeExtension.swift in Sources */,
 				468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */,

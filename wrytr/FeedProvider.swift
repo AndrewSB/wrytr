@@ -16,9 +16,8 @@ class FeedProvider {
     static func selectPost(post: InflatedPost) -> (state: StateType, store: Store<State>) -> Action? {
         
         return { state, store in
-            store.dispatch(SelectPostAction(post: post))
             store.dispatch(SetRouteAction([ReSwiftTabBarController.identifier, FeedViewController.identifier, PostDetailViewController.identifier]))
-            store.dispatch(SelectPostAction(post: nil))
+            store.dispatch(SelectPostAction(post: post, displayState: .List))
             
             return nil
         }

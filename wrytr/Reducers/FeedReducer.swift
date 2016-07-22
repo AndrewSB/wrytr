@@ -16,6 +16,7 @@ func feedReducer(action: Action, state: FeedState?) -> FeedState {
     switch action {
     case let action as SelectPostAction:
         state.selectedPost = action.post
+        state.displayState = action.displayState
     default:
         break
     }
@@ -24,5 +25,5 @@ func feedReducer(action: Action, state: FeedState?) -> FeedState {
 }
 
 private func initialFeedState() -> FeedState {
-    return FeedState(selectedPost: nil)
+    return FeedState(selectedPost: nil, displayState: nil)
 }
