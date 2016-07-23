@@ -20,6 +20,12 @@ import SafariServices
 class LandingFormViewController: RxViewController {
     @IBOutlet weak var titleLabel: UILabel!
 
+    @IBOutlet weak var socialContainerStackView: UIStackView! {
+        didSet {
+            socialContainerStackView.addEdgePadding()
+        }
+    }
+    
     @IBOutlet weak var twitterSignup: RoundedButton! {
         didSet { twitterSignup.title = tr(.LoginLandingTwitterbuttonTitle) }
     }
