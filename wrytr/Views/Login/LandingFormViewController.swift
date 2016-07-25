@@ -22,15 +22,34 @@ class LandingFormViewController: RxViewController {
 
     @IBOutlet weak var socialContainerStackView: UIStackView! {
         didSet {
-            socialContainerStackView.addEdgePadding()
+//            socialContainerStackView.addEdgePadding()
         }
     }
     
     @IBOutlet weak var twitterSignup: RoundedButton! {
-        didSet { twitterSignup.title = tr(.LoginLandingTwitterbuttonTitle) }
+        didSet {
+            twitterSignup.title = tr(.LoginLandingTwitterbuttonTitle)
+            
+            twitterSignup.setImage(twitterSignup.imageView!.image?.imageWithRenderingMode(.AlwaysTemplate), forState: .Normal)
+            twitterSignup.tintColor = UIColor(named: .TwitterBlue)
+            twitterSignup.imageView!.contentMode = .ScaleAspectFit
+
+            
+            twitterSignup.layer.borderWidth = 1
+            twitterSignup.layer.borderColor = UIColor(named: .TwitterBlue).CGColor
+        }
     }
     @IBOutlet weak var facebookSignup: RoundedButton! {
-        didSet { facebookSignup.title = tr(.LoginLandingFacebookbuttonTitle) }
+        didSet {
+            facebookSignup.title = tr(.LoginLandingFacebookbuttonTitle)
+            
+            facebookSignup.setImage(facebookSignup.imageView!.image!.imageWithRenderingMode(.AlwaysTemplate), forState: .Normal)
+            facebookSignup.tintColor = UIColor(named: .FacebookBlue)
+            facebookSignup.imageView!.contentMode = .ScaleAspectFit
+            
+            facebookSignup.layer.borderWidth = 1
+            facebookSignup.layer.borderColor = UIColor(named: .FacebookBlue).CGColor
+        }
     }
     
     @IBOutlet weak var textOne: InsettableTextField! {
@@ -93,6 +112,12 @@ class LandingFormViewController: RxViewController {
             }
             .addDisposableTo(disposeBag)
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        [textOne, textTwo, textThree].forEach(styleTextField)
+    }
 }
 
 extension LandingFormViewController: StoreSubscriber {
@@ -136,6 +161,7 @@ extension LandingFormViewController {
     
     private func styleTextField(tF: InsettableTextField) {
         tF.insetX = 8
+        tF.insetY = 5
         
         tF.layer.borderWidth = 1
         tF.layer.borderColor = UIColor.grayColor().CGColor

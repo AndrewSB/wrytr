@@ -1,4 +1,4 @@
-git_url "https://www.github.com/AndrewSB/wrytr-keys"
+git_url "git+ssh://git@github.com/AndrewSB/wrytr-keys"
 
 type "development" # The default type, can be: appstore, adhoc or development
 

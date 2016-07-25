@@ -10,51 +10,36 @@ import UIKit
 
 extension UIStackView {
     
-    func removeArrangedSubviews(except: (UIView -> Bool)? = nil) {
-    
-        arrangedSubviews.forEach { subview in
-            if except?(subview) ?? true {
-                removeArrangedSubview(subview)
-                subview.removeFromSuperview()
-            }
-        }
-    
-    }
+    private class StackViewSpacer: UIView {}
     
 }
 
 extension UIStackView {
-
-    private class SpacerView: UIView {
+    
+    func addEdgePadding(padding: CGFloat = 0 /* defaults to zero so you can use the stackView's padding */) {
         
-        private override func contentHuggingPriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority {
-            return axis == .Horizontal ? 1 : super.contentHuggingPriorityForAxis(axis)
+        let spacers = (0..<2).map { _ in StackViewSpacer() }
+        spacers.forEach { $0.backgroundColor = .yellowColor() }
+        
+        if self.axis == .Horizontal {
+            spacers.forEach { view in view.widthAnchor.constraintEqualToConstant(padding) }
+        } else {
+            spacers.forEach { view in view.heightAnchor.constraintEqualToConstant(padding) }
+        }
+        
+        insertArrangedSubview(spacers[0], atIndex: 0)
+        addArrangedSubview(spacers[1])
+    }
+    
+    func removePadding() {
+        
+        arrangedSubviews
+            .flatMap { subview in subview as? StackViewSpacer }
+            .forEach { spacer in
+                self.removeArrangedSubview(spacer)
+                spacer.removeFromSuperview()
         }
         
     }
     
-    func addEdgePadding() {
-        addBeginningPadding()
-        addEndingPadding()
-    }
-    
-    func addBeginningPadding() {
-        insertArrangedSubview(SpacerView(), atIndex: 0)
-    }
-    
-    func addEndingPadding() {
-        insertArrangedSubview(SpacerView(), atIndex: arrangedSubviews.count)
-    }
-    
-    func removeEdgePadding() {
-        
-        arrangedSubviews
-            .flatMap { $0 as? SpacerView }
-            .forEach { spacer in
-                removeArrangedSubview(spacer)
-                spacer.removeFromSuperview()
-            }
-        
-    }
-
 }

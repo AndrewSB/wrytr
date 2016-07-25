@@ -3,3 +3,6 @@ LoginLoginBackground	: #3798CB
 LoginSignupBackground	: #53BFA8
 
 CreateBackground        : #2BACB5
+
+TwitterBlue             : #50ABF1
+FacebookBlue            : #39579A
