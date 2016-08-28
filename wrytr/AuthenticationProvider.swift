@@ -83,6 +83,17 @@ class AuthenticationProvider {
 
 extension AuthenticationProvider {
 
+    indirect enum Params {
+        case Signup(name: String, loginParams: Params)
+        case Login(email: String, password: String)
+    }
+    
+    class func authWithFirebase(params: Params) {
+    }
+
+}
+
+extension AuthenticationProvider {
 
     class func logout(state: StateType, store: Store<State>) -> Action? {
         
