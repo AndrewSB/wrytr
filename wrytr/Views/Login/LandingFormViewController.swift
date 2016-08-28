@@ -20,28 +20,22 @@ import SafariServices
 class LandingFormViewController: RxViewController {
     @IBOutlet weak var titleLabel: UILabel!
 
-    @IBOutlet weak var socialContainerStackView: UIStackView! {
-        didSet {
-//            socialContainerStackView.addEdgePadding()
-        }
-    }
-    
+    @IBOutlet weak var socialContainerStackView: UIStackView!
     @IBOutlet weak var twitterSignup: RoundedButton! {
         didSet {
-            twitterSignup.title = tr(.LoginLandingTwitterbuttonTitle)
+            twitterSignup.setTitle(tr(.LoginLandingTwitterbuttonTitle))
             
             twitterSignup.setImage(twitterSignup.imageView!.image?.imageWithRenderingMode(.AlwaysTemplate), forState: .Normal)
             twitterSignup.tintColor = UIColor(named: .TwitterBlue)
             twitterSignup.imageView!.contentMode = .ScaleAspectFit
 
-            
             twitterSignup.layer.borderWidth = 1
             twitterSignup.layer.borderColor = UIColor(named: .TwitterBlue).CGColor
         }
     }
     @IBOutlet weak var facebookSignup: RoundedButton! {
         didSet {
-            facebookSignup.title = tr(.LoginLandingFacebookbuttonTitle)
+            facebookSignup.setTitle(tr(.LoginLandingFacebookbuttonTitle))
             
             facebookSignup.setImage(facebookSignup.imageView!.image!.imageWithRenderingMode(.AlwaysTemplate), forState: .Normal)
             facebookSignup.tintColor = UIColor(named: .FacebookBlue)
@@ -62,6 +56,11 @@ class LandingFormViewController: RxViewController {
         didSet { styleTextField(textThree) }
     }
     
+    @IBOutlet weak var tosAndRegisterStackView: UIStackView! {
+        didSet {
+            tosAndRegisterStackView.addEdgePadding(44)
+        }
+    }
     @IBOutlet weak var tosButton: UIButton! {
         didSet {
             let title = tosButton.titleLabel!.text!
@@ -69,9 +68,14 @@ class LandingFormViewController: RxViewController {
             
             let attributedString = NSMutableAttributedString(string: title)
             attributedString.addAttributes([NSForegroundColorAttributeName: UIColor(named: .LoginLandingBackround)], range: range)
-            tosButton.setAttributedTitle(attributedString, forState: .Normal)
+            
+            self.tosButton.titleLabel!.lineBreakMode = .ByWordWrapping
+            UIView.performWithoutAnimation {
+                self.tosButton.setAttributedTitle(attributedString, forState: .Normal)
+            }
         }
     }
+    @IBOutlet weak var actionButton: RoundedButton!
     
     @IBOutlet weak var loginSignupTitle: UILabel!
     @IBOutlet weak var loginSignupButton: RoundedButton! {
@@ -81,6 +85,11 @@ class LandingFormViewController: RxViewController {
         }
     }
     
+    var state: State?
+}
+
+extension LandingFormViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -97,6 +106,12 @@ class LandingFormViewController: RxViewController {
                 store.dispatch(AuthenticationProvider.loginWithTwitter)
             }
             .addDisposableTo(disposeBag)
+        
+        actionButton.rx_tap
+            .map { self.state! }
+            .map {
+                
+            }
         
         loginSignupButton.rx_tap.scan(State.Login) { (previousState, _) -> State in
                 previousState == .Login ? .Signup : .Login
@@ -135,7 +150,11 @@ extension LandingFormViewController: StoreSubscriber {
     }
 
     func newState(state: State) {
+        self.state = state
         textOne.hidden = state == .Login
+        
+        actionButton.setTitle("\(state.rawValue)", animated: true)
+        
         loginSignupButton.setTitle(state.not.rawValue, forState: .Normal)
         titleLabel.text = "\(state.rawValue) with Email"
         loginSignupTitle.text = state == .Login ? "Haven't registered yet?" : "Already registered?"
@@ -164,9 +183,9 @@ extension LandingFormViewController {
         tF.insetY = 5
         
         tF.layer.borderWidth = 1
-        tF.layer.borderColor = UIColor.grayColor().CGColor
+        tF.layer.borderColor = UIColor.lightGrayColor().CGColor
         
-        tF.layer.cornerRadius = tF.frame.height / 2
+        tF.layer.cornerRadius = 5
         tF.clipsToBounds = true
     }
     

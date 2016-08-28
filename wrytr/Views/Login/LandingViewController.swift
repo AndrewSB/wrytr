@@ -66,7 +66,8 @@ extension LandingViewController: StoreSubscriber {
         self.stopLoading()
         switch state {
         case .ErrorLoggingIn(let error):
-            presentViewController(UIAlertController(okayableTitle: "Couldn't log in 😔", message: error.localizedDescription), animated: true, completion: nil)
+            let alert = UIAlertController(okayableTitle: "Couldn't log in 😔", message: error.localizedDescription)
+            presentViewController(alert, animated: true, completion: { store.dispatch(UpdateLoggedInState(loggedInState: .NotLoggedIn)) })
         case .LoggedIn:
             print("Logged in")
         case .NotLoggedIn:
