@@ -168,7 +168,7 @@ extension LandingFormViewController: StoreSubscriber {
         self.state = state
         textOne.hidden = state == .Login
         
-        actionButton.setTitle("\(state.rawValue)", animated: true)
+        actionButton.setTitle("\(state.rawValue)", forState: .Normal)
         
         loginSignupButton.setTitle(state.not.rawValue, forState: .Normal)
         titleLabel.text = "\(state.rawValue) with Email"

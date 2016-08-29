@@ -211,29 +211,42 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VwX-Fj-c87">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9qT-Lg-DAH">
                                         <rect key="frame" x="0.0" y="253" width="600" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57w-8A-hNZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="534" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <state key="normal" title="By signing up, you agree to our Terms &amp; Privacy Policy.">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5w9-bV-d4J" customClass="RoundedButton" customModule="Library">
-                                                <rect key="frame" x="534" y="0.0" width="66" height="30"/>
-                                                <color key="backgroundColor" red="0.1213233843" green="0.67502456899999996" blue="0.71426230670000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="66" id="rU9-Xx-nEK"/>
-                                                </constraints>
-                                                <size key="titleShadowOffset" width="0.0" height="2.2250738585072014e-308"/>
-                                                <state key="normal" title="Register">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="VwX-Fj-c87">
+                                                <rect key="frame" x="22" y="0.0" width="556" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57w-8A-hNZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="468" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <state key="normal" title="By signing up, you agree to our Terms &amp; Privacy Policy.">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5w9-bV-d4J" customClass="RoundedButton" customModule="Library">
+                                                        <rect key="frame" x="490" y="0.0" width="66" height="30"/>
+                                                        <color key="backgroundColor" red="0.1213233843" green="0.67502456899999996" blue="0.71426230670000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="66" id="rU9-Xx-nEK"/>
+                                                        </constraints>
+                                                        <size key="titleShadowOffset" width="0.0" height="2.2250738585072014e-308"/>
+                                                        <state key="normal" title="Register">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="VwX-Fj-c87" secondAttribute="bottom" id="1pS-py-auK"/>
+                                            <constraint firstAttribute="trailing" secondItem="VwX-Fj-c87" secondAttribute="trailing" constant="22" id="LMp-L2-RmY"/>
+                                            <constraint firstItem="VwX-Fj-c87" firstAttribute="leading" secondItem="9qT-Lg-DAH" secondAttribute="leading" constant="22" id="XT8-Ld-8ec"/>
+                                            <constraint firstAttribute="height" constant="30" id="dTN-3Q-hcQ"/>
+                                            <constraint firstItem="VwX-Fj-c87" firstAttribute="top" secondItem="9qT-Lg-DAH" secondAttribute="top" id="icO-4q-ZW2"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zn-OB-Gtw">
                                         <rect key="frame" x="0.0" y="296" width="600" height="110"/>
                                         <subviews>
