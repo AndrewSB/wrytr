@@ -73,7 +73,10 @@ class AuthenticationProvider {
     private class func scrapeSocialData(loggedInState: LoggedInState) -> Observable<LoggedInState> {
         let userRef = firebase.childByAppendingPath("users/\(firebase.authData.uid)")
 
-        let userDict = User.AuthData.scrapeAuthData(firebase.authData)
+        var userDict: [String: String] = [:]
+        for (key, value) in User.AuthData.scrapeAuthData(firebase.authData) {
+            userDict[key] = value!
+        }
         
         return userRef.rx_setValue(userDict)
             .map { _ in loggedInState }
@@ -88,7 +91,25 @@ extension AuthenticationProvider {
         case Login(email: String, password: String)
     }
     
-    class func authWithFirebase(params: Params) {
+    class func authWithFirebase(params: Params) -> ((state: StateType, store: Store<State>) -> Action?) {
+        
+        return { state, store in
+            firebase.rx_authUser(params)
+                .map { LoggedInState.LoggedIn(.Firebase($0)) }
+                .subscribe {
+                    switch $0 {
+                    case .Next(let loggedInState):
+                        store.dispatch(UpdateLoggedInState(loggedInState: loggedInState))
+                        store.dispatch(SetRouteAction([mainRoute]))
+                    case .Error(let err):
+                        store.dispatch(UpdateLoggedInState(loggedInState: LoggedInState.ErrorLoggingIn(err as NSError)))
+                    case .Completed:
+                        break
+                    }
+                }
+            
+            return nil
+        }
     }
 
 }

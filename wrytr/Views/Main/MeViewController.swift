@@ -47,7 +47,7 @@ class MeViewController: RxViewController, Identifiable {
             }
             .addDisposableTo(disposeBag)
         
-        profilePicture.hnk_setImageFromURL(User.local.profilePictureNSUrl)
+        _ = User.local.profilePictureNSUrl.flatMap { profilePicture.hnk_setImageFromURL($0) }
         
         name.text = User.local.authData.name
         

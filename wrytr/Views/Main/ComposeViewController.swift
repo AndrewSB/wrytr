@@ -14,7 +14,7 @@ class ComposeViewController: RxViewController {
     let keyboardObserver = KeyboardObserver()
 
     @IBOutlet weak var profileImageView: RoundedImageView! {
-        didSet { profileImageView.hnk_setImageFromURL(User.local.profilePictureNSUrl) }
+        didSet { _ = User.local.profilePictureNSUrl.flatMap { profileImageView.hnk_setImageFromURL($0) } }
     }
     @IBOutlet weak var usernameLabel: UILabel! {
         didSet { usernameLabel.text = User.local.authData.name }

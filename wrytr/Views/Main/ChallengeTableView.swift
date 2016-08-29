@@ -89,7 +89,10 @@ extension ChallengeTableView: UITableViewDataSource {
         
         cell.xInsets = sideInset
         cell.prompt.text = element.post.prompt
-        cell.profilePicture.hnk_setImageFromURL(NSURL(string: element.user.authData.profilePictureUrl)!)
+        
+        _ = element.user.profilePictureNSUrl.flatMap {
+            cell.profilePicture.hnk_setImageFromURL($0)
+        }        
 
         return cell
     }

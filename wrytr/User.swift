@@ -19,13 +19,13 @@ struct User {
 extension User {
     
     struct AuthData {
-        let name: String
+        let name: String?
         let id: String
-        let profilePictureUrl: String
+        let profilePictureUrl: String?
         
-        init(dict: [String: String]) {
+        init(dict: [String: String?]) {
             self.name = dict["name"]!
-            self.id = dict["uid"]!
+            self.id = dict["uid"]!!
             self.profilePictureUrl = dict["profilePictureUrl"]!
         }
         
@@ -33,10 +33,10 @@ extension User {
             self.init(dict: AuthData.scrapeAuthData(authData))
         }
         
-        static func scrapeAuthData(authData: FAuthData) -> [String: String] {
+        static func scrapeAuthData(authData: FAuthData) -> [String: String?] {
             return [
-                "name": authData.name,
                 "uid": authData.uid,
+                "name": authData.name,
                 "profilePictureUrl": "\(authData.profilePictureUrl)",
             ]
         }
@@ -47,8 +47,8 @@ extension User {
 
 extension User {
 
-    var profilePictureNSUrl: NSURL {
-        return NSURL(string: authData.profilePictureUrl)!
+    var profilePictureNSUrl: NSURL? {
+        return authData.profilePictureUrl.flatMap(NSURL.init)
     }
 
 }

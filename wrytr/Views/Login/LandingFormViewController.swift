@@ -108,10 +108,25 @@ extension LandingFormViewController {
             .addDisposableTo(disposeBag)
         
         actionButton.rx_tap
-            .map { self.state! }
-            .map {
+            .map { _ -> AuthenticationProvider.Params in
+                let loginParams = AuthenticationProvider.Params.Login(
+                    email: self.textTwo.text ?? "",
+                    password: self.textThree.text ?? ""
+                )
                 
+                let signupParams = AuthenticationProvider.Params.Signup(name: self.textOne.text ?? "", loginParams: loginParams)
+                
+                switch self.state! {
+                case .Login:
+                    return loginParams
+                case .Signup:
+                    return signupParams
+                }
             }
+            .subscribeNext { authParams in
+                store.dispatch(AuthenticationProvider.authWithFirebase(authParams))
+            }
+            .addDisposableTo(disposeBag)
         
         loginSignupButton.rx_tap.scan(State.Login) { (previousState, _) -> State in
                 previousState == .Login ? .Signup : .Login

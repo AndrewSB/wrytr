@@ -29,9 +29,15 @@ extension Post {
         
         return firebase.childByAppendingPath("users/\(userId)").rx_observeEventOnce(.Value)
             .map {
-                let dict = NSMutableDictionary(dictionary: $0.value as! Dictionary<String, String>)
-                dict.addEntriesFromDictionary(["uid": $0.key])
-                return NSDictionary(dictionary: dict) as! [String: String]
+                var dict = $0.value as! [String: String]
+                dict["uid"] = $0.key
+                
+                var optionalValueDict = [String: String?]()
+                dict.forEach { key, val in
+                    optionalValueDict[key] = val
+                }
+                
+                return optionalValueDict
             }
             .map { User.AuthData(dict: $0) }
             .map { ($0, nil) }

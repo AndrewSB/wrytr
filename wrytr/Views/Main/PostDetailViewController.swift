@@ -46,7 +46,10 @@ extension PostDetailViewController {
             .ignoreNil()
             .subscribeNext { inflatedPost in
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.imageView.hnk_setImageFromURL(inflatedPost.user.profilePictureNSUrl)
+                    _ = inflatedPost.user.profilePictureNSUrl
+                        .flatMap {
+                            self.imageView.hnk_setImageFromURL($0)
+                        }
                 }
                 self.titleLabel.text = inflatedPost.post.prompt
             }

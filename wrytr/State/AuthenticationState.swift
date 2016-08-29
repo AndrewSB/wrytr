@@ -32,6 +32,7 @@ enum LoggedInState {
 enum Social {
     case Facebook(FAuthData)
     case Twitter(FAuthData)
+    case Firebase(FAuthData)
 }
 
 extension Social {
@@ -43,7 +44,7 @@ extension Social {
         case "twitter":
             self = Twitter(authData)
         default:
-            return nil
+            self = Firebase(authData)
         }
     }
 

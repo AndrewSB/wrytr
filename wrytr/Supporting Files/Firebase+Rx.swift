@@ -47,32 +47,41 @@ extension Firebase {
             return rx_authUser(email, password: password)
         case let .Signup(name, .Login(email, password)):
             return rx_createUser(email, password: password)
+                .flatMap { self.rx_authUser(email, password: password) }
+                .flatMap { authData -> Observable<Firebase> in
+                    let userRef = firebase.childByAppendingPath("users/\(authData.uid)")
+                    let userDict = ["name": name]
+                    return userRef.rx_setValue(userDict)
+                }
+                .map { $0.authData! }
         default:
             assertionFailure("tf are you doing. Dont recurse and do a .Signup(name, .Signup)")
             return .empty()
         }
     }
     
-    private func rx_createUser(email: String, password: String) -> Observable<FAuthData> {
+    private func rx_createUser(email: String, password: String) -> Observable<Void> {
+        
         return ParseRxCallbacks.createWithCallback({ observer in
-            firebase.createUser(email, password: password, withCompletionBlock: { error in
+            firebase.createUser(email, password: password, withValueCompletionBlock: { error, dict in
                 if let error = error {
                     observer.onError(error)
                 } else {
-                    // assume auth
-                    let authData = firebase.authData!
-                    observer.onNext(authData)
+                    observer.onNext()
                     observer.onCompleted()
                 }
             })
         })
+        
     }
     
     private func rx_authUser(email: String, password: String) -> Observable<FAuthData> {
+        
         return ParseRxCallbacks.createWithCallback({ observer in
             firebase.authUser(email, password: password, withCompletionBlock: { ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)(object: $1, error: $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
             })
         })
+        
     }
     
     func rx_authAnon() -> Observable<FAuthData> {

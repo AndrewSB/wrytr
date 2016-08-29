@@ -12,23 +12,19 @@ import Firebase
 
 extension FAuthData {
     
-    var profilePictureUrl: NSURL {
-        var urlString = self.providerData!["profileImageURL" as NSObject] as! String
+    var profilePictureUrl: NSURL? {
+        var urlString = self.providerData!["profileImageURL" as NSObject] as? String
         
-        if let normalRange = urlString.rangeOfString("_normal") {
-            urlString.removeRange(normalRange) // twitter
+        if let normalRange = urlString?.rangeOfString("_normal") {
+            urlString!.removeRange(normalRange) // twitter
         }
         
-        
-        return NSURL(string: urlString)!
+        return urlString.flatMap(NSURL.init)
     }
     
-    var id: String {
-        return self.providerData!["id" as NSObject] as! String
-    }
-    
-    var name: String {
-        return self.providerData!["displayName" as NSObject] as! String
+    var name: String? {
+        return
+            self.providerData!["displayName" as NSObject] as? String
     }
     
 }
