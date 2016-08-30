@@ -10,6 +10,9 @@ import ReSwift
 import SafariServices
 
 class LandingFormViewController: RxViewController {
+    @IBOutlet weak var containerStackView: UIStackView! {
+        didSet { containerStackView.addEdgePadding() }
+    }
     @IBOutlet weak var titleLabel: UILabel!
 
     @IBOutlet weak var socialContainerStackView: UIStackView!
@@ -49,9 +52,7 @@ class LandingFormViewController: RxViewController {
     }
     
     @IBOutlet weak var tosAndRegisterStackView: UIStackView! {
-        didSet {
-            tosAndRegisterStackView.addEdgePadding(44)
-        }
+        didSet { tosAndRegisterStackView.addEdgePadding(44) }
     }
     @IBOutlet weak var tosButton: UIButton! {
         didSet {
@@ -190,7 +191,7 @@ extension LandingFormViewController {
         tF.insetY = 5
         
         tF.layer.borderWidth = 1
-        tF.layer.borderColor = UIColor.lightGray.cgColor
+        tF.layer.borderColor = UIColor(white: 0.75, alpha: 0.5).cgColor
         
         tF.layer.cornerRadius = 5
         tF.clipsToBounds = true
