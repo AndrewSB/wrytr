@@ -33,7 +33,7 @@ extension User {
             self.init(dict: AuthData.scrapeAuthData(authData))
         }
         
-        static func scrapeAuthData(authData: FAuthData) -> [String: String?] {
+        static func scrapeAuthData(_ authData: FAuthData) -> [String: String?] {
             return [
                 "uid": authData.uid,
                 "name": authData.name,
@@ -47,8 +47,8 @@ extension User {
 
 extension User {
 
-    var profilePictureNSUrl: NSURL? {
-        return authData.profilePictureUrl.flatMap(NSURL.init)
+    var profilePictureNSUrl: URL? {
+        return authData.profilePictureUrl.flatMap(URL.init)
     }
 
 }
@@ -56,7 +56,7 @@ extension User {
 extension User {
     
     static var local: User {
-        return User(authData: User.AuthData(authData: firebase.authData), following: nil)
+        return User(authData: User.AuthData(authData: firebase!.authData), following: nil)
     }
     
 }

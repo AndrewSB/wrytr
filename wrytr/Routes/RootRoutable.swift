@@ -36,7 +36,7 @@ class RootRoutable: Routable {
         return self.window.rootViewController as! HomeTabBarController
     }
     
-    func changeRouteSegment(from: RouteElementIdentifier, to: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
+    func changeRouteSegment(_ from: RouteElementIdentifier, to: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
         print("root is changing segment")
         
         if to == landingRoute {
@@ -50,7 +50,7 @@ class RootRoutable: Routable {
         }
     }
     
-    func pushRouteSegment(routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
+    func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
         
         if routeElementIdentifier == landingRoute {
             completionHandler()

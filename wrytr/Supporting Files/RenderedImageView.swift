@@ -13,7 +13,7 @@ class RenderedImageView: UIImageView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.image = self.image?.imageWithRenderingMode(.AlwaysTemplate)
+        self.image = self.image?.withRenderingMode(.alwaysTemplate)
     }
 
 }
@@ -25,7 +25,7 @@ class RenderedImageButton: UIButton {
         super.awakeFromNib()
         
         if let image = self.imageView?.image {
-            setImage(image.imageWithRenderingMode(.AlwaysTemplate), forState: .Normal)
+            setImage(image.withRenderingMode(.alwaysTemplate), for: UIControlState())
         }
     }
     

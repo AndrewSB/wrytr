@@ -18,7 +18,7 @@ extension FQuery {
     /**
      Usually to observe childAdded
      */
-    func rx_observeEventType(eventType: FEventType) -> Observable<FDataSnapshot> {
+    func rx_observeEventType(_ eventType: FEventType) -> Observable<FDataSnapshot> {
         
         return ParseRxCallbacks.createWithCallback({ observer in
             self.observeEventType(eventType) { snapshot in
@@ -29,7 +29,7 @@ extension FQuery {
         
     }
     
-    func rx_observeEventOnce(eventType: FEventType) -> Observable<FDataSnapshot> {
+    func rx_observeEventOnce(_ eventType: FEventType) -> Observable<FDataSnapshot> {
         
         return ParseRxCallbacks.createWithCallback({ observer in
             self.observeSingleEventOfType(eventType) { snapshot in

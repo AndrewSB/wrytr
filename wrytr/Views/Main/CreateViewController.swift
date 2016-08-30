@@ -45,9 +45,9 @@ extension CreateViewController {
         view.addGestureRecognizer(dismissKeyboardTap)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let des = segue.destinationViewController as? ComposeViewController {
+        if let des = segue.destination as? ComposeViewController {
             self.composer = des
         }
         
@@ -57,19 +57,19 @@ extension CreateViewController {
 
 extension CreateViewController: StoreSubscriber {
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         store.subscribe(self)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         store.unsubscribe(self)
     }
     
-    func newState(state: State) {
+    func newState(_ state: State) {
     
         if let result = state.createPostState.didUpload {
             switch result {
@@ -87,7 +87,7 @@ extension CreateViewController: StoreSubscriber {
 }
 
 extension CreateViewController: ComposeViewControllerDelegate {
-    func shouldPost(post: Post) {
+    func shouldPost(_ post: Post) {
         store.dispatch(LocalPostReady(post: post))
         store.dispatch(CreatePostProvider.uploadPost)
     }

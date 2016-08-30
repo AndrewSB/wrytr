@@ -23,7 +23,7 @@ import TwitterKit
 // This is an example of an Action Creator Provider
 class AuthenticationProvider {
 
-    class func loginWithFacebook(state: StateType, store: Store<State>) -> Action? {
+    class func loginWithFacebook(_ state: StateType, store: Store<State>) -> Action? {
         
         FBSDKLoginManager().rx_login()
             .flatMap { loginResult -> Observable<FAuthData> in
@@ -42,7 +42,7 @@ class AuthenticationProvider {
         return nil
     }
     
-    class func loginWithTwitter(state: StateType, store: Store<State>) -> Action? {
+    class func loginWithTwitter(_ state: StateType, store: Store<State>) -> Action? {
         
         Twitter.sharedInstance().rx_login()
             .map { ("twitter", parameters: ["user_id": $0.userID, "oauth_token": $0.authToken, "oauth_token_secret": $0.authTokenSecret]) }
@@ -56,7 +56,7 @@ class AuthenticationProvider {
         return nil
     }
     
-    private class func handleAuthenticationResponse(observer: Event<LoggedInState>) {
+    fileprivate class func handleAuthenticationResponse(_ observer: Event<LoggedInState>) {
         
         switch observer {
         case .Error(let error):
@@ -70,8 +70,8 @@ class AuthenticationProvider {
         
     }
     
-    private class func scrapeSocialData(loggedInState: LoggedInState) -> Observable<LoggedInState> {
-        let userRef = firebase.childByAppendingPath("users/\(firebase.authData.uid)")
+    fileprivate class func scrapeSocialData(_ loggedInState: LoggedInState) -> Observable<LoggedInState> {
+        let userRef = firebase?.child(byAppendingPath: "users/\(firebase?.authData.uid)")
 
         var userDict: [String: String] = [:]
         for (key, value) in User.AuthData.scrapeAuthData(firebase.authData) {
@@ -87,11 +87,11 @@ class AuthenticationProvider {
 extension AuthenticationProvider {
 
     indirect enum Params {
-        case Signup(name: String, loginParams: Params)
-        case Login(email: String, password: String)
+        case signup(name: String, loginParams: Params)
+        case login(email: String, password: String)
     }
     
-    class func authWithFirebase(params: Params) -> ((state: StateType, store: Store<State>) -> Action?) {
+    class func authWithFirebase(_ params: Params) -> ((_ state: StateType, _ store: Store<State>) -> Action?) {
         
         return { state, store in
             firebase.rx_authUser(params)
@@ -116,9 +116,9 @@ extension AuthenticationProvider {
 
 extension AuthenticationProvider {
 
-    class func logout(state: StateType, store: Store<State>) -> Action? {
+    class func logout(_ state: StateType, store: Store<State>) -> Action? {
         
-        firebase.unauth()
+        firebase?.unauth()
         store.dispatch(SetRouteAction([loginRoute]))
         
         return UpdateLoggedInState(loggedInState: .Logout)

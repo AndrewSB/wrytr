@@ -58,7 +58,7 @@ class MeViewController: RxViewController, Identifiable {
             .addDisposableTo(disposeBag)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         store.dispatch(PostProvider.loadMyPosts)
@@ -68,19 +68,19 @@ class MeViewController: RxViewController, Identifiable {
 
 extension MeViewController: StoreSubscriber {
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         store.subscribe(self)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         store.unsubscribe(self)
     }
     
-    func newState(state: State) {
+    func newState(_ state: State) {
         print(state.postState)
         
         posts.value = state.postState.mine
@@ -90,7 +90,7 @@ extension MeViewController: StoreSubscriber {
 
 extension MeViewController: Routable {
 
-    func pushRouteSegment(routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
+    func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
         
         if routeElementIdentifier == "Settings" {
             
@@ -103,12 +103,12 @@ extension MeViewController: Routable {
                 })
             ]
             
-            let settingsAlert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+            let settingsAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             actions
                 .map(UIAlertAction.init)
                 .forEach(settingsAlert.addAction)
             
-            self.presentViewController(settingsAlert, animated: true, completion: nil)
+            self.present(settingsAlert, animated: true, completion: nil)
             
         }
 
@@ -116,7 +116,7 @@ extension MeViewController: Routable {
         return self.tabBarController as! HomeTabBarController
     }
 
-    func popRouteSegment(routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) {
+    func popRouteSegment(_ routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) {
         
         if routeElementIdentifier == "Settings" {
             print("did pop settings")

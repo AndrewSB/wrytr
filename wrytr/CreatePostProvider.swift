@@ -18,7 +18,7 @@ import Firebase
 class CreatePostProvider {
     static let neverDisposeBag = DisposeBag()
     
-    static func uploadPost(state: StateType, store: Store<State>) -> Action? {
+    static func uploadPost(_ state: StateType, store: Store<State>) -> Action? {
         
         if let post = store.state.createPostState.toBeUploaded {
             firebase.childByAppendingPath("posts")

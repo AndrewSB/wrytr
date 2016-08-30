@@ -24,9 +24,9 @@ extension PostDetailViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageView.contentMode = .ScaleAspectFit
+        imageView.contentMode = .scaleAspectFit
         
-        view.backgroundColor = UIColor(named: .CreateBackground)
+        view.backgroundColor = UIColor(named: .createBackground)
         self.navigationItem.titleView = imageView
         
         displayState.asObservable()
@@ -60,19 +60,19 @@ extension PostDetailViewController {
 
 extension PostDetailViewController: StoreSubscriber {
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         store.subscribe(self)
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         store.unsubscribe(self)
     }
     
-    func newState(state: State) {
+    func newState(_ state: State) {
         self.displayState.value = state.feedState.displayState
         self.post.value = state.feedState.selectedPost
     }
@@ -81,7 +81,7 @@ extension PostDetailViewController: StoreSubscriber {
 
 extension PostDetailViewController {
     enum DisplayState {
-        case List
-        case Reply
+        case list
+        case reply
     }
 }

@@ -13,7 +13,7 @@ import ReSwiftRouter
 
 class FeedProvider {
     
-    static func selectPost(post: InflatedPost) -> (state: StateType, store: Store<State>) -> Action? {
+    static func selectPost(_ post: InflatedPost) -> (_ state: StateType, _ store: Store<State>) -> Action? {
         
         return { state, store in
             store.dispatch(SetRouteAction([ReSwiftTabBarController.identifier, FeedViewController.identifier, PostDetailViewController.identifier]))

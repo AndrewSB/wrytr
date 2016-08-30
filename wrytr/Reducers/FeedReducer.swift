@@ -10,7 +10,7 @@ import Foundation
 
 import ReSwift
 
-func feedReducer(action: Action, state: FeedState?) -> FeedState {
+func feedReducer(_ action: Action, state: FeedState?) -> FeedState {
     var state = state ?? initialFeedState()
     
     switch action {

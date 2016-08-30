@@ -12,7 +12,7 @@ import Result
 
 import ReSwift
 
-func createPostReducer(action: Action, state: CreatePostState?) -> CreatePostState {
+func createPostReducer(_ action: Action, state: CreatePostState?) -> CreatePostState {
     var state = state ?? initialCreatePostState()
 
     switch action {

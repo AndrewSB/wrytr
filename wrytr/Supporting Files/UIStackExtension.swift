@@ -10,24 +10,24 @@ import UIKit
 
 extension UIStackView {
     
-    private class StackViewSpacer: UIView {}
+    fileprivate class StackViewSpacer: UIView {}
     
 }
 
 extension UIStackView {
     
-    func addEdgePadding(padding: CGFloat = 0 /* defaults to zero so you can use the stackView's padding */) {
+    func addEdgePadding(_ padding: CGFloat = 0 /* defaults to zero so you can use the stackView's padding */) {
         
         let spacers = (0..<2).map { _ in StackViewSpacer() }
-        spacers.forEach { $0.backgroundColor = .yellowColor() }
+        spacers.forEach { $0.backgroundColor = .yellow() }
         
-        if self.axis == .Horizontal {
-            spacers.forEach { view in view.widthAnchor.constraintEqualToConstant(padding) }
+        if self.axis == .horizontal {
+            spacers.forEach { view in view.widthAnchor.constraint(equalToConstant: padding) }
         } else {
-            spacers.forEach { view in view.heightAnchor.constraintEqualToConstant(padding) }
+            spacers.forEach { view in view.heightAnchor.constraint(equalToConstant: padding) }
         }
         
-        insertArrangedSubview(spacers[0], atIndex: 0)
+        insertArrangedSubview(spacers[0], at: 0)
         addArrangedSubview(spacers[1])
     }
     

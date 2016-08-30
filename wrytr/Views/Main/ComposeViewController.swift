@@ -3,7 +3,7 @@ import Library
 import RxSwift
 
 protocol ComposeViewControllerDelegate {
-    func shouldPost(post: Post)
+    func shouldPost(_ post: Post)
 }
 
 class ComposeViewController: RxViewController {
@@ -42,12 +42,12 @@ extension ComposeViewController {
 private typealias KeyboardHandler = ComposeViewController
 extension KeyboardHandler {
     
-    private enum KeyboardState {
-        case Hiding
-        case Showing
+    fileprivate enum KeyboardState {
+        case hiding
+        case showing
     }
     
-    private func handleKeyboard(addDisposablesTo disposeBag: DisposeBag) {
+    fileprivate func handleKeyboard(addDisposablesTo disposeBag: DisposeBag) {
         keyboardObserver.willShow
             .map { (.Showing, $0) }
             .subscribeNext(animateKeyboardChange)
@@ -59,19 +59,19 @@ extension KeyboardHandler {
             .addDisposableTo(disposeBag)
     }
     
-    private func animateKeyboardChange(keyboardState: KeyboardState, keyboardInfo: KeyboardObserver.KeyboardInfo) {
+    fileprivate func animateKeyboardChange(_ keyboardState: KeyboardState, keyboardInfo: KeyboardObserver.KeyboardInfo) {
         let padding: CGFloat = 11
         let defaultKeyboardSize: CGFloat = 250
         
-        let convertedKeyboardEndFrame = view.convertRect(keyboardInfo.frameEnd, fromView: view.window)
-        let keyboardSize = CGRectGetMaxY(self.view.bounds) - CGRectGetMinY(convertedKeyboardEndFrame)
+        let convertedKeyboardEndFrame = view.convert(keyboardInfo.frameEnd, from: view.window)
+        let keyboardSize = self.view.bounds.maxY - convertedKeyboardEndFrame.minY
         
         var offsetAmount: CGFloat
         
         // handle 3rd party keyboards with no keyboard size
-        if keyboardState == .Showing && keyboardSize == 0 {
+        if keyboardState == .showing && keyboardSize == 0 {
             offsetAmount = defaultKeyboardSize + padding
-        } else if keyboardState == .Hiding {
+        } else if keyboardState == .hiding {
             offsetAmount = padding
         } else {
             offsetAmount = keyboardSize + padding
@@ -80,7 +80,7 @@ extension KeyboardHandler {
         bottomLayoutConstraint.constant = offsetAmount
         print("animating \(bottomLayoutConstraint.constant)")
         
-        UIView.animateWithDuration(keyboardInfo.animationDuration, delay: 0.0, options: [.BeginFromCurrentState, keyboardInfo.animationCurve], animations: {
+        UIView.animate(withDuration: keyboardInfo.animationDuration, delay: 0.0, options: [.beginFromCurrentState, keyboardInfo.animationCurve], animations: {
             self.view.layoutIfNeeded()
         }, completion: nil)
 
@@ -91,8 +91,8 @@ extension KeyboardHandler {
 private typealias TextHandler = ComposeViewController
 extension TextHandler {
     
-    private func handleText(addDisposablesTo disposeBag: DisposeBag) {
-        let attributedCharacterLimitString = generateAttributedString("/\(characterLimit)", color: .blackColor())
+    fileprivate func handleText(addDisposablesTo disposeBag: DisposeBag) {
+        let attributedCharacterLimitString = generateAttributedString("/\(characterLimit)", color: .black())
         
         challengeTextView.rx_text
             .subscribeNext { _ in self.characterCountLabel.sizeToFit() }
@@ -114,12 +114,12 @@ extension TextHandler {
 
 extension ComposeViewController: UITextViewDelegate {
     
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
         if text == "\n" {
             let text = textView.text
             textView.endEditing(true)
-            self.postChallenge(Post(id: nil, userId: User.local.authData.id, prompt: text, stars: nil, comments: nil))
+            self.postChallenge(Post(id: nil, userId: User.local.authData.id, prompt: text!, stars: nil, comments: nil))
             return false
         } else {
             return true
@@ -127,13 +127,13 @@ extension ComposeViewController: UITextViewDelegate {
         
     }
     
-    func postChallenge(post: Post) {
+    func postChallenge(_ post: Post) {
         delegate.shouldPost(post)
     }
     
 }
 
-private func generateAttributedString(string: String, color: UIColor) -> NSMutableAttributedString {
+private func generateAttributedString(_ string: String, color: UIColor) -> NSMutableAttributedString {
     let attributedString = NSAttributedString(string: string, attributes: [NSForegroundColorAttributeName: color])
     
     return attributedString.mutableCopy() as! NSMutableAttributedString

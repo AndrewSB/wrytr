@@ -13,7 +13,7 @@ import Library
 class LoadingViewController: UIViewController {
 
     override func loadView() {
-        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
         activityIndicator.hidesWhenStopped = true
         activityIndicator.stopAnimating()
         
@@ -36,14 +36,14 @@ class LoadingViewController: UIViewController {
 
 extension UIViewController {
     
-    func startLoading(loaderColor: UIColor? = .whiteColor()) {
-        self.view.userInteractionEnabled = false
+    func startLoading(_ loaderColor: UIColor? = .white()) {
+        self.view.isUserInteractionEnabled = false
         self.loader.loadingView.color = loaderColor
         self.loader.show()
     }
 
     func stopLoading() {
-        self.view.userInteractionEnabled = true
+        self.view.isUserInteractionEnabled = true
         print(childViewControllers)
         self.loader.hide()
     }
@@ -56,11 +56,11 @@ extension UIViewController {
         }
     }
     
-    private func createAndAddLoader() -> LoadingViewController {
+    fileprivate func createAndAddLoader() -> LoadingViewController {
         print("adding new loader")
         let loader = LoadingViewController()
         self.addChildViewController(loader)
-        loader.didMoveToParentViewController(self)
+        loader.didMove(toParentViewController: self)
         loader.view.center = view.center
         view.addSubview(loader.view)
         return loader

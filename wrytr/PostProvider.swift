@@ -19,7 +19,7 @@ class PostProvider {
     
     static let neverDispose = DisposeBag()
 
-    static func loadNewPosts(state: StateType, store: Store<State>) -> Action? {
+    static func loadNewPosts(_ state: StateType, store: Store<State>) -> Action? {
         
         firebase.childByAppendingPath("posts" as String!).queryOrderedByChild("date" as String!)
             .rx_observeEventOnce(.Value)
@@ -32,7 +32,7 @@ class PostProvider {
     }
     
     // currently is exactly the same as loadNewPosts. Need to implement following
-    static func loadFriendPosts(state: StateType, store: Store<State>) -> Action? {
+    static func loadFriendPosts(_ state: StateType, store: Store<State>) -> Action? {
         
         firebase.childByAppendingPath("posts" as String!).queryOrderedByChild("date" as String!)
             .rx_observeEventOnce(.Value)
@@ -44,7 +44,7 @@ class PostProvider {
         return nil
     }
     
-    static func loadMyPosts(state: StateType, store: Store<State>) -> Action? {
+    static func loadMyPosts(_ state: StateType, store: Store<State>) -> Action? {
         
         firebase.childByAppendingPath("posts")
             .queryOrderedByChild("user")

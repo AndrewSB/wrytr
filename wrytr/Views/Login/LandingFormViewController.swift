@@ -67,11 +67,11 @@ class LandingFormViewController: RxViewController {
             let range = NSRange.init(ofString: "Terms & Privacy Policy", inString: title)
             
             let attributedString = NSMutableAttributedString(string: title)
-            attributedString.addAttributes([NSForegroundColorAttributeName: UIColor(named: .LoginLandingBackround)], range: range)
+            attributedString.addAttributes([NSForegroundColorAttributeName: UIColor(named: .loginLandingBackround)], range: range)
             
-            self.tosButton.titleLabel!.lineBreakMode = .ByWordWrapping
+            self.tosButton.titleLabel!.lineBreakMode = .byWordWrapping
             UIView.performWithoutAnimation {
-                self.tosButton.setAttributedTitle(attributedString, forState: .Normal)
+                self.tosButton.setAttributedTitle(attributedString, for: UIControlState())
             }
         }
     }
@@ -152,19 +152,19 @@ extension LandingFormViewController {
 
 extension LandingFormViewController: StoreSubscriber {
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         store.subscribe(self) { state in state.authenticationState.landingState }
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         store.unsubscribe(self)
     }
 
-    func newState(state: State) {
+    func newState(_ state: State) {
         self.state = state
         textOne.hidden = state == .Login
         
@@ -193,7 +193,7 @@ extension LandingFormViewController: StoreSubscriber {
 
 extension LandingFormViewController {
     
-    private func styleTextField(tF: InsettableTextField) {
+    fileprivate func styleTextField(_ tF: InsettableTextField) {
         tF.insetX = 8
         tF.insetY = 5
         

@@ -22,7 +22,7 @@ class LoginViewRoutable: Routable {
         self.viewController = viewController
     }
     
-    func pushRouteSegment(routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
+    func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
         
         switch routeElementIdentifier {
         case signupRoute:
@@ -40,7 +40,7 @@ class LoginViewRoutable: Routable {
         return LandingRoutable()
     }
     
-    func changeRouteSegment(from: RouteElementIdentifier, to: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
+    func changeRouteSegment(_ from: RouteElementIdentifier, to: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
         if to == mainRoute {
             return RootRoutable(window: UIApplication.sharedApplication().delegate!.window!!).setToMainViewController()
         } else {
@@ -53,7 +53,7 @@ class LoginViewRoutable: Routable {
 
 class LandingRoutable: Routable {
 
-    func popRouteSegment(routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) {
+    func popRouteSegment(_ routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) {
         print("is landing")
         completionHandler()
     }

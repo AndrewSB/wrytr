@@ -22,17 +22,17 @@ struct AuthenticationState {
 }
 
 enum LoggedInState {
-    case NotLoggedIn
-    case ErrorLoggingIn(NSError)
-    case LoggedIn(Social)
+    case notLoggedIn
+    case errorLoggingIn(NSError)
+    case loggedIn(Social)
     
-    case Logout
+    case logout
 }
 
 enum Social {
-    case Facebook(FAuthData)
-    case Twitter(FAuthData)
-    case Firebase(FAuthData)
+    case facebook(FAuthData)
+    case twitter(FAuthData)
+    case firebase(FAuthData)
 }
 
 extension Social {
@@ -40,11 +40,11 @@ extension Social {
     init?(authData: FAuthData) {
         switch authData.provider {
         case "facebook":
-            self = Facebook(authData)
+            self = .facebook(authData)
         case "twitter":
-            self = Twitter(authData)
+            self = .twitter(authData)
         default:
-            self = Firebase(authData)
+            self = self.firebase(authData)
         }
     }
 

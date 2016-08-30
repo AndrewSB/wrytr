@@ -21,16 +21,16 @@ public final class KeyboardObserver {
         public let frameBegin: CGRect
         public let frameEnd: CGRect
         
-        init(notification: NSNotification) {
-            let userInfo = notification.userInfo!
+        init(notification: Notification) {
+            let userInfo = (notification as NSNotification).userInfo!
             
             self.animationDuration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
             
-            let rawAnimationCurve = (userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).unsignedIntValue << 16
+            let rawAnimationCurve = (userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).uint32Value << 16
             self.animationCurve = UIViewAnimationOptions(rawValue: UInt(rawAnimationCurve))
             
-            self.frameBegin = (userInfo[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue)!
-            self.frameEnd = (userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue)!
+            self.frameBegin = (userInfo[UIKeyboardFrameBeginUserInfoKey]?.cgRectValue)!
+            self.frameEnd = (userInfo[UIKeyboardFrameEndUserInfoKey]?.cgRectValue)!
         }
     }
     
@@ -44,42 +44,42 @@ public final class KeyboardObserver {
     
     public init() {
         
-        NSNotificationCenter.defaultCenter()
-            .rx_notification(UIKeyboardWillChangeFrameNotification)
+        NotificationCenter.default
+            .rx_notification(NSNotification.Name.UIKeyboardWillChangeFrame)
             .map { KeyboardInfo(notification: $0) }
             .bindTo(self.willChangeFrame)
             .addDisposableTo(self.disposeBag)
         
-        NSNotificationCenter.defaultCenter()
-            .rx_notification(UIKeyboardDidChangeFrameNotification)
+        NotificationCenter.default
+            .rx_notification(NSNotification.Name.UIKeyboardDidChangeFrame)
             .map { KeyboardInfo(notification: $0) }
             .bindTo(self.didChangeFrame)
             .addDisposableTo(self.disposeBag)
         
-        NSNotificationCenter.defaultCenter()
-            .rx_notification(UIKeyboardWillShowNotification)
+        NotificationCenter.default
+            .rx_notification(NSNotification.Name.UIKeyboardWillShow)
             .map { KeyboardInfo(notification: $0) }
             .bindTo(self.willShow)
             .addDisposableTo(self.disposeBag)
         
-        NSNotificationCenter.defaultCenter()
-            .rx_notification(UIKeyboardDidShowNotification)
+        NotificationCenter.default
+            .rx_notification(NSNotification.Name.UIKeyboardDidShow)
             .map { KeyboardInfo(notification: $0) }
             .bindTo(self.didShow)
             .addDisposableTo(self.disposeBag)
         
-        NSNotificationCenter.defaultCenter()
-            .rx_notification(UIKeyboardWillHideNotification)
+        NotificationCenter.default
+            .rx_notification(NSNotification.Name.UIKeyboardWillHide)
             .map { KeyboardInfo(notification: $0) }
             .bindTo(self.willHide)
             .addDisposableTo(self.disposeBag)
         
-        NSNotificationCenter.defaultCenter()
-            .rx_notification(UIKeyboardDidHideNotification)
+        NotificationCenter.default
+            .rx_notification(NSNotification.Name.UIKeyboardDidHide)
             .map { KeyboardInfo(notification: $0) }
             .bindTo(self.didHide)
             .addDisposableTo(self.disposeBag)
     }
     
-    private let disposeBag = DisposeBag()
+    fileprivate let disposeBag = DisposeBag()
 }

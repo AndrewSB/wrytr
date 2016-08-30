@@ -57,7 +57,7 @@ class FeedViewController: RxViewController, Identifiable {
             .addDisposableTo(disposeBag)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         store.dispatch(PostProvider.loadNewPosts)
@@ -67,19 +67,19 @@ class FeedViewController: RxViewController, Identifiable {
 
 extension FeedViewController: StoreSubscriber {
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         store.subscribe(self)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         store.unsubscribe(self)
     }
     
-    func newState(state: State) {
+    func newState(_ state: State) {
         
         posts.value = state.postState.new
     }
@@ -88,7 +88,7 @@ extension FeedViewController: StoreSubscriber {
 
 extension FeedViewController: Routable {
 
-    func pushRouteSegment(routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
+    func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
         switch routeElementIdentifier {
         case PostDetailViewController.identifier:
             self.performSegue(StoryboardSegue.Feed.Detail)
@@ -100,10 +100,10 @@ extension FeedViewController: Routable {
         return self
     }
     
-    func popRouteSegment(routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) {
+    func popRouteSegment(_ routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) {
         switch routeElementIdentifier {
         case PostDetailViewController.identifier:
-            self.navigationController!.popViewControllerAnimated(true)
+            self.navigationController!.popViewController(animated: true)
         default:
             assertionFailure("I don't know how to pop \(routeElementIdentifier)")
         }

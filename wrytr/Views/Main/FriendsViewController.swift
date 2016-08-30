@@ -38,7 +38,7 @@ class FriendsViewController: RxViewController, Identifiable {
             .addDisposableTo(disposeBag)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         store.dispatch(PostProvider.loadFriendPosts)
@@ -47,19 +47,19 @@ class FriendsViewController: RxViewController, Identifiable {
 
 extension FriendsViewController: StoreSubscriber {
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         store.subscribe(self)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         store.unsubscribe(self)
     }
     
-    func newState(state: State) {
+    func newState(_ state: State) {
         
         posts.value = state.postState.new
     }

@@ -12,14 +12,14 @@ import Firebase
 
 extension FAuthData {
     
-    var profilePictureUrl: NSURL? {
+    var profilePictureUrl: URL? {
         var urlString = self.providerData!["profileImageURL" as NSObject] as? String
         
-        if let normalRange = urlString?.rangeOfString("_normal") {
-            urlString!.removeRange(normalRange) // twitter
+        if let normalRange = urlString?.range(of: "_normal") {
+            urlString!.removeSubrange(normalRange) // twitter
         }
         
-        return urlString.flatMap(NSURL.init)
+        return urlString.flatMap(URL.init)
     }
     
     var name: String? {

@@ -16,8 +16,8 @@ class ChallengeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var elipses: UIButton! {
         didSet {
-            let elipsesImage = UIImage(asset: .Elipses).imageWithRenderingMode(.AlwaysTemplate)
-            elipses.setImage(elipsesImage, forState: .Normal)
+            let elipsesImage = UIImage(asset: .Elipses).withRenderingMode(.alwaysTemplate)
+            elipses.setImage(elipsesImage, for: UIControlState())
         }
     }
     @IBOutlet weak var profilePicture: RoundedImageView! {
@@ -30,13 +30,13 @@ class ChallengeTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var stars: RenderedImageButton! {
-        didSet { stars.imageView!.contentMode = .ScaleAspectFit }
+        didSet { stars.imageView!.contentMode = .scaleAspectFit }
     }
     @IBOutlet weak var comments: RenderedImageButton! {
-        didSet { comments.imageView!.contentMode = .ScaleAspectFit }
+        didSet { comments.imageView!.contentMode = .scaleAspectFit }
     }
     @IBOutlet weak var share: RenderedImageButton! {
-        didSet { share.imageView!.contentMode = .ScaleAspectFit }
+        didSet { share.imageView!.contentMode = .scaleAspectFit }
     }
     @IBOutlet weak var reply: RoundedButton! {
         didSet {
@@ -62,7 +62,7 @@ class ChallengeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        layer.borderColor = UIColor.lightGrayColor().CGColor
+        layer.borderColor = UIColor.lightGray.cgColor
         layer.borderWidth = 1
 
         layer.cornerRadius = 10

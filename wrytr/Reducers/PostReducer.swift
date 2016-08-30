@@ -10,7 +10,7 @@ import Foundation
 
 import ReSwift
 
-func postReducer(action: Action, state: PostState?) -> PostState {
+func postReducer(_ action: Action, state: PostState?) -> PostState {
     var state = state ?? initialPostState()
     
     switch action {

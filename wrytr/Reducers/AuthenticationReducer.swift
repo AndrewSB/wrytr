@@ -13,14 +13,14 @@ import ReSwiftRouter
 
 import Firebase
 
-func authenticationReducer(action: Action, state: AuthenticationState?) -> AuthenticationState {
+func authenticationReducer(_ action: Action, state: AuthenticationState?) -> AuthenticationState {
     var state = state ?? initialAuthenticationState()
     
     switch action {
     case let action as UpdateLoggedInState:
         switch action.loggedInState {
         case .Logout:
-            state.loggedInState = .NotLoggedIn
+            state.loggedInState = .notLoggedIn
         case .ErrorLoggingIn, .LoggedIn, .NotLoggedIn:
             state.loggedInState = action.loggedInState
         }
@@ -35,9 +35,9 @@ func authenticationReducer(action: Action, state: AuthenticationState?) -> Authe
 
 private func initialAuthenticationState() -> AuthenticationState {
     
-    let loggedInState: LoggedInState = firebase.authData != nil
-        ? .LoggedIn(Social(authData: firebase.authData)!)
-        : .NotLoggedIn
+    let loggedInState: LoggedInState = firebase!.authData != nil
+        ? .loggedIn(Social(authData: firebase!.authData)!)
+        : .notLoggedIn
     
     return AuthenticationState(landingState: .Login, loggedInState: loggedInState)
     

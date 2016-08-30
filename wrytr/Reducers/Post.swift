@@ -47,7 +47,7 @@ extension Post {
             }
     }
     
-    static func inflate(posts: [Post]) -> Observable<[InflatedPost]> {
+    static func inflate(_ posts: [Post]) -> Observable<[InflatedPost]> {
         return posts.map { $0.inflate() }
             .toObservable()
             .merge()
@@ -58,7 +58,7 @@ extension Post {
 
 extension Post {
     
-    static func parseFromFirebase(snapshot: FDataSnapshot) -> [Post] {
+    static func parseFromFirebase(_ snapshot: FDataSnapshot) -> [Post] {
         let snapshotKeys = snapshot.value as? Dictionary<String, Dictionary<String, String>>
         
         let posts: [Post] = snapshotKeys?.map { postDict -> Post in
