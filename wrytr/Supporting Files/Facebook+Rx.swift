@@ -1,11 +1,3 @@
-//
-//  Facebook+Rx.swift
-//  wrytr
-//
-//  Created by Andrew Breckenridge on 3/31/16.
-//  Copyright © 2016 Andrew Breckenridge. All rights reserved.
-//
-
 import Foundation
 
 import RxSwift

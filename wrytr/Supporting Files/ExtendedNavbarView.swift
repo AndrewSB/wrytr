@@ -1,11 +1,3 @@
-//
-//  ExtendedNavbarView.swift
-//  wrytr
-//
-//  Created by Andrew Breckenridge on 5/6/16.
-//  Copyright © 2016 Andrew Breckenridge. All rights reserved.
-//
-
 import UIKit
 
 class ExtendedNavigationBarView: UIView {

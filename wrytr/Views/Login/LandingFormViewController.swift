@@ -1,11 +1,3 @@
-//
-//  LandingFormViewController.swift
-//  wrytr
-//
-//  Created by Andrew Breckenridge on 5/4/16.
-//  Copyright © 2016 Andrew Breckenridge. All rights reserved.
-//
-
 import UIKit
 
 import Library
