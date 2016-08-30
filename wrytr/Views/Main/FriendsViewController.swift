@@ -51,7 +51,7 @@ extension FriendsViewController: StoreSubscriber {
         store.unsubscribe(self)
     }
     
-    func newState(_ state: State) {
+    func newState(state: State) {
         
         posts.value = state.postState.new
     }

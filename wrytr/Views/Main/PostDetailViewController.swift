@@ -26,33 +26,32 @@ extension PostDetailViewController {
         
         imageView.contentMode = .scaleAspectFit
         
-        view.backgroundColor = UIColor(named: .createBackground)
+        view.backgroundColor = UIColor(named: .CreateBackground)
         self.navigationItem.titleView = imageView
         
         displayState.asObservable()
             .ignoreNil()
             .distinctUntilChanged(==)
-            .subscribeNext { display in
+            .subscribe(onNext: { display in
                 switch display! {
-                case .List:
+                case .list:
                     break
-                case .Reply:
+                case .reply:
                     break
                 }
-            }
+            })
             .addDisposableTo(disposeBag)
         
         post.asObservable()
             .ignoreNil()
-            .subscribeNext { inflatedPost in
-                DispatchQueue.main.asynchronously(DispatchQueue.main) {
-                    _ = inflatedPost.user.profilePictureNSUrl
-                        .flatMap {
-                            self.imageView.hnk_setImageFromURL($0)
-                        }
+            .subscribe(onNext: { inflatedPost in
+                DispatchQueue.main.async {
+                    _ = inflatedPost.user.profilePictureNSUrl.flatMap {
+                        self.imageView.pin_setImage(from: $0)
+                    }
+                    self.titleLabel.text = inflatedPost.post.prompt
                 }
-                self.titleLabel.text = inflatedPost.post.prompt
-            }
+            })
             .addDisposableTo(disposeBag)
     }
 
@@ -72,7 +71,7 @@ extension PostDetailViewController: StoreSubscriber {
         store.unsubscribe(self)
     }
     
-    func newState(_ state: State) {
+    func newState(state: State) {
         self.displayState.value = state.feedState.displayState
         self.post.value = state.feedState.selectedPost
     }

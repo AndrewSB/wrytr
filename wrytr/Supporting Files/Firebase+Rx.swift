@@ -13,8 +13,9 @@ extension Firebase {
     func rx_oauth(_ provider: String, token: String) -> Observable<FAuthData> {
         
         return ParseRxCallbacks.createWithCallback({ observer in
-            self.authWithOAuthProvider(provider, token: token) {
-                ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)(object: $1, error: $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
+            self.auth(withOAuthProvider: provider, token: token) {
+                let listner = ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)
+                listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
             }
         })
         
@@ -23,11 +24,12 @@ extension Firebase {
     /**
      Usually Twitter
      */
-    func rx_oauth(_ provider: String, parameters: [NSObject: AnyObject]) -> Observable<FAuthData> {
+    func rx_oauth(_ provider: String, parameters: [String: String]) -> Observable<FAuthData> {
         
         return ParseRxCallbacks.createWithCallback({ observer in
-            self.authWithOAuthProvider(provider, parameters: parameters) {
-                ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)(object: $1, error: $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
+            self.auth(withOAuthProvider: provider, parameters: parameters) {
+                let listner = ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)
+                listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
             }
         })
         
@@ -35,15 +37,15 @@ extension Firebase {
     
     func rx_authUser(_ params: AuthenticationProvider.Params) -> Observable<FAuthData> {
         switch params {
-        case let .Login(email, password):
+        case let .login(email, password):
             return rx_authUser(email, password: password)
-        case let .Signup(name, .Login(email, password)):
+        case let .signup(name, .login(email, password)):
             return rx_createUser(email, password: password)
                 .flatMap { self.rx_authUser(email, password: password) }
                 .flatMap { authData -> Observable<Firebase> in
-                    let userRef = firebase.childByAppendingPath("users/\(authData.uid)")
+                    let userRef = firebase.child(byAppendingPath: "users/\(authData.uid)")!
                     let userDict = ["name": name]
-                    return userRef.rx_setValue(userDict)
+                    return userRef.rx_setValue(userDict as AnyObject!)
                 }
                 .map { $0.authData! }
         default:
@@ -70,7 +72,9 @@ extension Firebase {
     fileprivate func rx_authUser(_ email: String, password: String) -> Observable<FAuthData> {
         
         return ParseRxCallbacks.createWithCallback({ observer in
-            firebase.authUser(email, password: password, withCompletionBlock: { ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)(object: $1, error: $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
+            firebase.authUser(email, password: password, withCompletionBlock: {
+                let listner = ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)
+                listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
             })
         })
         
@@ -79,8 +83,9 @@ extension Firebase {
     func rx_authAnon() -> Observable<FAuthData> {
         
         return ParseRxCallbacks.createWithCallback({ observer in
-            self.authAnonymouslyWithCompletionBlock {
-                ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)(object: $1, error: $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
+            self.authAnonymously {
+                let listner = ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)
+                listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
             }
         })
         
@@ -89,8 +94,9 @@ extension Firebase {
     func rx_setValue(_ value: AnyObject!) -> Observable<Firebase> {
         
         return ParseRxCallbacks.createWithCallback({ observer in
-            self.setValue(value) { (error, firebaseRef) in
-                ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)(object: firebaseRef, error: error) // Firebase Y U switch the order of object & error? Conventions exist for a reason
+            self.setValue(value) {
+                let listner = ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)
+                listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
             }
         })
         
@@ -99,8 +105,9 @@ extension Firebase {
     func rx_setChildByAutoId(_ value: AnyObject!) -> Observable<Firebase> {
         
         return ParseRxCallbacks.createWithCallback({ observer in
-            self.childByAutoId().setValue(value) { (error, firebaseRef) in
-                ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)(object: firebaseRef, error: error) // Firebase Y U switch the order of object & error? Conventions exist for a reason
+            self.childByAutoId().setValue(value) {
+                let listner = ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)
+                listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
             }
         })
         

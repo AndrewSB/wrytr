@@ -19,7 +19,7 @@ extension UIStackView {
     func addEdgePadding(_ padding: CGFloat = 0 /* defaults to zero so you can use the stackView's padding */) {
         
         let spacers = (0..<2).map { _ in StackViewSpacer() }
-        spacers.forEach { $0.backgroundColor = .yellow() }
+        spacers.forEach { $0.backgroundColor = .yellow }
         
         if self.axis == .horizontal {
             spacers.forEach { view in view.widthAnchor.constraint(equalToConstant: padding) }

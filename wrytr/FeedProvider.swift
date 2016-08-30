@@ -9,7 +9,7 @@ class FeedProvider {
         
         return { state, store in
             store.dispatch(SetRouteAction([ReSwiftTabBarController.identifier, FeedViewController.identifier, PostDetailViewController.identifier]))
-            store.dispatch(SelectPostAction(post: post, displayState: .List))
+            store.dispatch(SelectPostAction(post: post, displayState: .list))
             
             return nil
         }

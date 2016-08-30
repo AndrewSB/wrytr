@@ -1,12 +1,10 @@
 import UIKit
-
 import Library
-
 import RxSwift
 import RxCocoa
-
 import ReSwift
 import ReSwiftRouter
+import PINRemoteImage
 
 class MeViewController: RxViewController, Identifiable {
     
@@ -33,20 +31,22 @@ class MeViewController: RxViewController, Identifiable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         posts.asObservable()
-            .bindTo(tableView.rx_itemsWithCellIdentifier("lol")) { (row, element, cell) in
+            .bindTo(tableView.rx.items(cellIdentifier: "lol")) { (row, element, cell) in
                 cell.textLabel?.text = element.post.prompt
             }
             .addDisposableTo(disposeBag)
         
-        _ = User.local.profilePictureNSUrl.flatMap { profilePicture.hnk_setImageFromURL($0) }
+        
+        _ = User.local.profilePictureNSUrl.flatMap { profilePicture.pin_setImage(from: $0) }
         
         name.text = User.local.authData.name
         
-        elipses.rx_tap
-            .subscribeNext {
+        elipses.rx.tap
+            .subscribe(onNext: {
                 store.dispatch(SetRouteAction([mainRoute, MeViewController.identifier, "Settings"]))
-            }
+            })
             .addDisposableTo(disposeBag)
     }
     
@@ -72,7 +72,7 @@ extension MeViewController: StoreSubscriber {
         store.unsubscribe(self)
     }
     
-    func newState(_ state: State) {
+    func newState(state: State) {
         print(state.postState)
         
         posts.value = state.postState.mine

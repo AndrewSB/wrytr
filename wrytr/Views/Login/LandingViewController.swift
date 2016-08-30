@@ -15,7 +15,7 @@ import RxCocoa
 class LandingViewController: RxViewController {
     
     @IBOutlet weak var subtitle: UILabel! {
-        didSet { subtitle.text = tr(.loginLandingSubtitle) }
+        didSet { subtitle.text = tr(key: .LoginLandingSubtitle) }
     }
     
     var landingForm: LandingFormViewController!
@@ -24,7 +24,7 @@ class LandingViewController: RxViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(named: .loginLandingBackround)
+        view.backgroundColor = UIColor(named: .LoginLandingBackround)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,9 +42,8 @@ extension LandingViewController: StoreSubscriber {
         super.viewWillAppear(animated)
         
         store.subscribe(self) { state in
-            state.authenticationState.loggedInState
-        } as ((_) -> _)? as ((_) -> _)? as ((_) -> _)? as ((_) -> _)? as ((_) -> _)? as ((_) -> _)? as ((_) -> _)?
-        
+            return state.authenticationState.loggedInState
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -53,12 +52,12 @@ extension LandingViewController: StoreSubscriber {
         store.unsubscribe(self)
     }
     
-    func newState(_ state: LoggedInState) {
+    func newState(state: LoggedInState) {
         self.stopLoading()
         switch state {
         case .errorLoggingIn(let error):
             let alert = UIAlertController(okayableTitle: "Couldn't log in 😔", message: error.localizedDescription)
-            presentViewController(alert, animated: true, completion: { store.dispatch(UpdateLoggedInState(loggedInState: .NotLoggedIn)) })
+            present(alert, animated: true, completion: { store.dispatch(UpdateLoggedInState(loggedInState: .notLoggedIn)) })
         case .loggedIn:
             print("Logged in")
         case .notLoggedIn:

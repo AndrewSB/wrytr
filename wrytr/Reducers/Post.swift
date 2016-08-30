@@ -19,7 +19,7 @@ extension Post {
     
     func inflate() -> Observable<InflatedPost> {
         
-        return firebase!.child(byAppendingPath: "users/\(userId)").rx_observeEventOnce(.value)
+        return firebase.child(byAppendingPath: "users/\(userId)").rx_observeEventOnce(.value)
             .map {
                 var dict = $0.value as! [String: String]
                 dict["uid"] = $0.key
@@ -40,8 +40,7 @@ extension Post {
     }
     
     static func inflate(_ posts: [Post]) -> Observable<[InflatedPost]> {
-        return posts.map { $0.inflate() }
-            .toObservable()
+        return Observable.from(posts.map { $0.inflate() })
             .merge()
             .toArray()
     }
@@ -75,7 +74,7 @@ extension Post {
         return [
             "userId": userId,
             "prompt": prompt
-        ]
+        ] as AnyObject
         
     }
     

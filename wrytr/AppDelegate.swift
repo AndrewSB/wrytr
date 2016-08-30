@@ -15,7 +15,7 @@ import FBSDKCoreKit
 
 import Firebase
 
-let firebase = Firebase(url: "http://wrytr.firebaseio.com")
+let firebase = Firebase(url: "http://wrytr.firebaseio.com")!
 
 var store = Store<State>(reducer: AppReducer(), state: nil)
 
@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var router: Router<State>!
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
 
         Fabric.with([Crashlytics.self, Twitter.self])
         
@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             state.navigationState
         }
         
-        if case .LoggedIn(_) = store.state.authenticationState.loggedInState {
+        if case .loggedIn(_) = store.state.authenticationState.loggedInState {
             store.dispatch(ReSwiftRouter.SetRouteAction([mainRoute]))
         } else {
             store.dispatch(ReSwiftRouter.SetRouteAction([landingRoute]))
@@ -97,7 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: StoreSubscriber {
     
-    func newState(_ state: State) {
+    func newState(state: State) {
     
     }
     

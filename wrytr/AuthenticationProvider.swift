@@ -1,14 +1,9 @@
 import Foundation
-
 import Library
-
 import Firebase
-
 import RxSwift
-
 import ReSwift
 import ReSwiftRouter
-
 import FBSDKLoginKit
 import TwitterKit
 
@@ -22,11 +17,11 @@ class AuthenticationProvider {
                 if loginResult.isCancelled {
                     return .error(NSError(localizedDescription: "Did you cancel the login?", code: 99))
                 } else {
-                    return firebase.rx_oauth("facebook", token: FBSDKAccessToken.currentAccessToken().tokenString)
+                    return firebase.rx_oauth("facebook", token: FBSDKAccessToken.current().tokenString)
                 }
             }
-            .map(Social.Facebook)
-            .map(LoggedInState.LoggedIn)
+            .map(Social.facebook)
+            .map(LoggedInState.loggedIn)
             .flatMap(scrapeSocialData)
             .subscribe(handleAuthenticationResponse)
             .addDisposableTo(neverDisposeBag)
@@ -37,10 +32,16 @@ class AuthenticationProvider {
     class func loginWithTwitter(_ state: StateType, store: Store<State>) -> Action? {
         
         Twitter.sharedInstance().rx_login()
-            .map { ("twitter", parameters: ["user_id": $0.userID, "oauth_token": $0.authToken, "oauth_token_secret": $0.authTokenSecret]) }
-            .flatMap(firebase.rx_oauth)
-            .map(Social.Twitter)
-            .map(LoggedInState.LoggedIn)
+            .flatMap { session -> Observable<FAuthData> in
+                let params = [
+                    "user_id": session.userID,
+                    "oauth_token": session.authToken,
+                    "oauth_token_secret": session.authTokenSecret
+                ]
+                return firebase.rx_oauth("twitter", parameters: params)
+            }
+            .map(Social.twitter)
+            .map(LoggedInState.loggedIn)
             .flatMap(scrapeSocialData)
             .subscribe(handleAuthenticationResponse)
             .addDisposableTo(neverDisposeBag)
@@ -51,22 +52,22 @@ class AuthenticationProvider {
     fileprivate class func handleAuthenticationResponse(_ observer: Event<LoggedInState>) {
         
         switch observer {
-        case .Error(let error):
-            store.dispatch(UpdateLoggedInState(loggedInState: LoggedInState.ErrorLoggingIn(error as NSError)))
-        case .Next(let loggedInState):
+        case .error(let error):
+            store.dispatch(UpdateLoggedInState(loggedInState: LoggedInState.errorLoggingIn(error as NSError)))
+        case .next(let loggedInState):
             store.dispatch(UpdateLoggedInState(loggedInState: loggedInState))
             store.dispatch(SetRouteAction([mainRoute]))
-        case .Completed:
+        case .completed:
             break
         }
         
     }
     
     fileprivate class func scrapeSocialData(_ loggedInState: LoggedInState) -> Observable<LoggedInState> {
-        let userRef = firebase?.child(byAppendingPath: "users/\(firebase?.authData.uid)")
+        let userRef = firebase.child(byAppendingPath: "users/\(firebase.authData.uid)")
 
         var userDict: [String: String] = [:]
-        for (key, value) in User.AuthData.scrapeAuthData((firebase?.authData)!) {
+        for (key, value) in User.AuthData.scrapeAuthData((firebase.authData)!) {
             userDict[key] = value!
         }
         
@@ -86,19 +87,20 @@ extension AuthenticationProvider {
     class func authWithFirebase(_ params: Params) -> ((_ state: StateType, _ store: Store<State>) -> Action?) {
         
         return { state, store in
-            firebase?.rx_authUser(params)
-                .map { LoggedInState.LoggedIn(.Firebase($0)) }
+            firebase.rx_authUser(params)
+                .map { LoggedInState.loggedIn(.firebase($0)) }
                 .subscribe {
                     switch $0 {
-                    case .Next(let loggedInState):
+                    case .next(let loggedInState):
                         store.dispatch(UpdateLoggedInState(loggedInState: loggedInState))
                         store.dispatch(SetRouteAction([mainRoute]))
-                    case .Error(let err):
-                        store.dispatch(UpdateLoggedInState(loggedInState: LoggedInState.ErrorLoggingIn(err as NSError)))
-                    case .Completed:
+                    case .error(let err):
+                        store.dispatch(UpdateLoggedInState(loggedInState: LoggedInState.errorLoggingIn(err as NSError)))
+                    case .completed:
                         break
                     }
                 }
+                .addDisposableTo(neverDisposeBag)
             
             return nil
         }
@@ -110,10 +112,10 @@ extension AuthenticationProvider {
 
     class func logout(_ state: StateType, store: Store<State>) -> Action? {
         
-        firebase?.unauth()
+        firebase.unauth()
         store.dispatch(SetRouteAction([loginRoute]))
         
-        return UpdateLoggedInState(loggedInState: .Logout)
+        return UpdateLoggedInState(loggedInState: .logout)
         
     }
 }

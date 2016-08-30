@@ -29,7 +29,7 @@ extension ReSwiftTabBarController: UITabBarControllerDelegate {
             vc = navCon.viewControllers[0]
         }
         
-         let destinationVC = self.viewControllers?
+        let maybeDestinationVC = self.viewControllers?
             .map {
                 if let navCon = $0 as? UINavigationController {
                     return navCon.viewControllers[0]
@@ -42,9 +42,8 @@ extension ReSwiftTabBarController: UITabBarControllerDelegate {
             }
             .first as? Identifiable
         
-        if let destinationIdentifier = type(of: destinationVC).identifier {
-            store.dispatch(SetRouteAction([ReSwiftTabBarController.identifier, destinationIdentifier]))
-        }
+        guard let destinationVC = maybeDestinationVC else { return false }
+        store.dispatch(SetRouteAction([ReSwiftTabBarController.identifier, type(of: destinationVC).identifier]))
         
         return false
     }

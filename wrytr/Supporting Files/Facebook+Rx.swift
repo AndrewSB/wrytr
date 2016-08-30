@@ -12,7 +12,7 @@ extension FBSDKLoginManager {
         let readPermissions = ["email", "public_profile", "user_friends"]
         
         return ParseRxCallbacks.createWithCallback({ observer in
-            self.logInWithReadPermissions(readPermissions, fromViewController: nil, handler: ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer))
+            self.logIn(withReadPermissions: readPermissions, from: nil, handler: ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer))
         })
         
     }

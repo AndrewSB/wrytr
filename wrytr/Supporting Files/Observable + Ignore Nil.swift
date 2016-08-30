@@ -18,7 +18,6 @@ extension ImplicitlyUnwrappedOptional: OptionalType {
 }
 
 public extension ObservableType where E: OptionalType {
-    @warn_unused_result(message="http://git.io/rxs.uo")
     public func ignoreNil() -> Observable<E> {
         return self.filter { $0.hasValue() }
     }

@@ -33,7 +33,7 @@ extension CreateViewController {
         super.viewDidLoad()
         
         let dismissKeyboardTap = UITapGestureRecognizer()
-        dismissKeyboardTap.rx_event.subscribeNext { _ in self.view.endEditing(true) }.addDisposableTo(disposeBag)
+        dismissKeyboardTap.rx.event.subscribe(onNext: { _ in self.view.endEditing(true) }).addDisposableTo(disposeBag)
         view.addGestureRecognizer(dismissKeyboardTap)
     }
     
@@ -61,13 +61,13 @@ extension CreateViewController: StoreSubscriber {
         store.unsubscribe(self)
     }
     
-    func newState(_ state: State) {
+    func newState(state: State) {
     
         if let result = state.createPostState.didUpload {
             switch result {
-            case .Success(let post):
+            case .success(let post):
                 print("post created \(post)")
-            case .Failure(let error):
+            case .failure(let error):
                 print("error \(error)")
             }
         }

@@ -13,15 +13,15 @@ class CreatePostProvider {
     static func uploadPost(_ state: StateType, store: Store<State>) -> Action? {
         
         if let post = store.state.createPostState.toBeUploaded {
-            firebase?.child(byAppendingPath: "posts")
+            firebase.child(byAppendingPath: "posts")
                 .rx_setChildByAutoId(post.asAnyObject())
                 .subscribe { observer in
                     switch observer {
-                    case .Error(let err):
+                    case .error(let err):
                         store.dispatch(PostCreationCompleted(post: nil, error: err as NSError))
-                    case .Next:
+                    case .next:
                         store.dispatch(PostCreationCompleted(post: post, error: nil))
-                    case .Completed:
+                    case .completed:
                         break
                     }
                 }

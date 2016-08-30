@@ -69,7 +69,7 @@ extension FeedViewController: StoreSubscriber {
         store.unsubscribe(self)
     }
     
-    func newState(_ state: State) {
+    func newState(state: State) {
         
         posts.value = state.postState.new
     }
@@ -81,7 +81,7 @@ extension FeedViewController: Routable {
     func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
         switch routeElementIdentifier {
         case PostDetailViewController.identifier:
-            self.performSegue(StoryboardSegue.Feed.Detail)
+            self.performSegue(segue: StoryboardSegue.Feed.Detail)
         default:
             assertionFailure("I don't know how to push \(routeElementIdentifier)")
         }

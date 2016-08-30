@@ -48,7 +48,7 @@ extension User {
 extension User {
     
     static var local: User {
-        return User(authData: User.AuthData(authData: firebase!.authData), following: nil)
+        return User(authData: User.AuthData(authData: firebase.authData), following: nil)
     }
     
 }

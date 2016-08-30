@@ -14,7 +14,7 @@ class ComposeViewController: RxViewController {
     let keyboardObserver = KeyboardObserver()
 
     @IBOutlet weak var profileImageView: RoundedImageView! {
-        didSet { _ = User.local.profilePictureNSUrl.flatMap { profileImageView.hnk_setImageFromURL($0) } }
+        didSet { _ = User.local.profilePictureNSUrl.flatMap { profileImageView.pin_setImage(from: $0) } }
     }
     @IBOutlet weak var usernameLabel: UILabel! {
         didSet { usernameLabel.text = User.local.authData.name }
@@ -49,17 +49,15 @@ extension KeyboardHandler {
     
     fileprivate func handleKeyboard(addDisposablesTo disposeBag: DisposeBag) {
         keyboardObserver.willShow
-            .map { (.Showing, $0) }
-            .subscribeNext(animateKeyboardChange)
+            .subscribe(onNext: { self.animateKeyboardChange(keyboardState: .showing, keyboardInfo: $0) })
             .addDisposableTo(disposeBag)
         
         keyboardObserver.willHide
-            .map { (.Hiding, $0) }
-            .subscribeNext(animateKeyboardChange)
+            .subscribe(onNext: { self.animateKeyboardChange(keyboardState: .hiding, keyboardInfo: $0) })
             .addDisposableTo(disposeBag)
     }
     
-    fileprivate func animateKeyboardChange(_ keyboardState: KeyboardState, keyboardInfo: KeyboardObserver.KeyboardInfo) {
+    fileprivate func animateKeyboardChange(keyboardState: KeyboardState, keyboardInfo: KeyboardObserver.KeyboardInfo) {
         let padding: CGFloat = 11
         let defaultKeyboardSize: CGFloat = 250
         
@@ -92,21 +90,21 @@ private typealias TextHandler = ComposeViewController
 extension TextHandler {
     
     fileprivate func handleText(addDisposablesTo disposeBag: DisposeBag) {
-        let attributedCharacterLimitString = generateAttributedString("/\(characterLimit)", color: .black())
+        let attributedCharacterLimitString = generateAttributedString("/\(characterLimit)", color: .black)
         
-        challengeTextView.rx_text
-            .subscribeNext { _ in self.characterCountLabel.sizeToFit() }
+        challengeTextView.rx.textInput.text
+            .subscribe(onNext: { _ in self.characterCountLabel.sizeToFit() })
             .addDisposableTo(disposeBag)
         
-        challengeTextView.rx_text
+        challengeTextView.rx.textInput.text
             .map { text in text.characters.count }
             .map { count in
-                let countColor: UIColor = count >= self.characterLimit ? .redColor() : .grayColor()
+                let countColor: UIColor = count >= self.characterLimit ? .red : .gray
                 let countString = generateAttributedString("\(count)", color: countColor)
-                countString.appendAttributedString(attributedCharacterLimitString)
+                countString.append(attributedCharacterLimitString)
                 return countString
             }
-            .bindTo(characterCountLabel.rx_attributedText)
+            .bindTo(characterCountLabel.rx.attributedText)
             .addDisposableTo(disposeBag)
     }
     

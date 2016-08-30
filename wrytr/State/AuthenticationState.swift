@@ -36,7 +36,7 @@ extension Social {
         case "twitter":
             self = .twitter(authData)
         default:
-            self = self.firebase(authData)
+            self = .firebase(authData)
         }
     }
 

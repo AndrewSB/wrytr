@@ -35,7 +35,7 @@ extension ChallengeTableView {
                 }
                 return newValue
             }
-            .subscribeNext { _ in }
+            .subscribe()
             .addDisposableTo(disposeBag)
 
     }
@@ -51,7 +51,7 @@ extension ChallengeTableView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        view.tintColor = .clear()
+        view.tintColor = .clear
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -83,7 +83,7 @@ extension ChallengeTableView: UITableViewDataSource {
         cell.prompt.text = element.post.prompt
         
         _ = element.user.profilePictureNSUrl.flatMap {
-            cell.profilePicture.hnk_setImageFromURL($0)
+            cell.profilePicture.pin_setImage(from: $0)
         }        
 
         return cell

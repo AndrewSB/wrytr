@@ -4,8 +4,9 @@ import ReSwift
 import ReSwiftRouter
 
 struct AppReducer: Reducer {
+    typealias ReducerStateType = State
     
-    func handleAction(_ action: Action, state: State?) -> State {
+    func handleAction(action: Action, state: State?) -> State {
         return State(
             navigationState: NavigationReducer.handleAction(action, state: state?.navigationState),
             authenticationState: authenticationReducer(action, state: state?.authenticationState),

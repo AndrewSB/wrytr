@@ -15,7 +15,7 @@ class LandingFormViewController: RxViewController {
     @IBOutlet weak var socialContainerStackView: UIStackView!
     @IBOutlet weak var twitterSignup: RoundedButton! {
         didSet {
-            twitterSignup.setTitle(tr(.LoginLandingTwitterbuttonTitle))
+            twitterSignup.setTitle(title: tr(key: .LoginLandingTwitterbuttonTitle))
             
             twitterSignup.setImage(twitterSignup.imageView!.image?.withRenderingMode(.alwaysTemplate), for: .normal)
             twitterSignup.tintColor = UIColor(named: .TwitterBlue)
@@ -27,7 +27,7 @@ class LandingFormViewController: RxViewController {
     }
     @IBOutlet weak var facebookSignup: RoundedButton! {
         didSet {
-            facebookSignup.setTitle(tr(.LoginLandingFacebookbuttonTitle))
+            facebookSignup.setTitle(title: tr(key: .LoginLandingFacebookbuttonTitle))
             
             facebookSignup.setImage(facebookSignup.imageView!.image!.withRenderingMode(.alwaysTemplate), for: .normal)
             facebookSignup.tintColor = UIColor(named: .FacebookBlue)
@@ -59,7 +59,7 @@ class LandingFormViewController: RxViewController {
             let range = NSRange.init(ofString: "Terms & Privacy Policy", inString: title)
             
             let attributedString = NSMutableAttributedString(string: title)
-            attributedString.addAttributes([NSForegroundColorAttributeName: UIColor(named: .loginLandingBackround)], range: range)
+            attributedString.addAttributes([NSForegroundColorAttributeName: UIColor(named: .LoginLandingBackround)], range: range)
             
             self.tosButton.titleLabel!.lineBreakMode = .byWordWrapping
             UIView.performWithoutAnimation {
@@ -85,28 +85,28 @@ extension LandingFormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        facebookSignup.rx_tap
-            .map { self.parentViewController!.startLoading(.grayColor()) }
-            .subscribeNext {
+        facebookSignup.rx.tap
+            .subscribe(onNext: {
+                self.parent!.startLoading(.gray)
                 store.dispatch(AuthenticationProvider.loginWithFacebook)
-            }
+            })
             .addDisposableTo(disposeBag)
         
-        twitterSignup.rx_tap
-            .map { self.parentViewController!.startLoading(.grayColor()) }
-            .subscribeNext {
+        twitterSignup.rx.tap
+            .subscribe(onNext: {
+                self.parent!.startLoading(.gray)
                 store.dispatch(AuthenticationProvider.loginWithTwitter)
-            }
+            })
             .addDisposableTo(disposeBag)
         
-        actionButton.rx_tap
+        actionButton.rx.tap
             .map { _ -> AuthenticationProvider.Params in
-                let loginParams = AuthenticationProvider.Params.Login(
+                let loginParams = AuthenticationProvider.Params.login(
                     email: self.textTwo.text ?? "",
                     password: self.textThree.text ?? ""
                 )
                 
-                let signupParams = AuthenticationProvider.Params.Signup(name: self.textOne.text ?? "", loginParams: loginParams)
+                let signupParams = AuthenticationProvider.Params.signup(name: self.textOne.text ?? "", loginParams: loginParams)
                 
                 switch self.state! {
                 case .Login:
@@ -115,23 +115,23 @@ extension LandingFormViewController {
                     return signupParams
                 }
             }
-            .subscribeNext { authParams in
+            .subscribe(onNext: { authParams in
                 store.dispatch(AuthenticationProvider.authWithFirebase(authParams))
-            }
+            })
             .addDisposableTo(disposeBag)
         
-        loginSignupButton.rx_tap.scan(State.Login) { (previousState, _) -> State in
+        loginSignupButton.rx.tap.scan(State.Login) { (previousState, _) -> State in
                 previousState == .Login ? .Signup : .Login
             }
             .map(NewLandingState.init)
-            .subscribeNext { store.dispatch($0) }
+            .subscribe(onNext: { store.dispatch($0) })
             .addDisposableTo(disposeBag)
         
-        tosButton.rx_tap
-            .subscribeNext {
-                let sVC = SFSafariViewController(URL: NSURL(string: "https://google.com")!)
-                self.presentViewController(sVC, animated: true, completion: nil)
-            }
+        tosButton.rx.tap
+            .subscribe(onNext: {
+                let sVC = SFSafariViewController(url: URL(string: "https://google.com")!)
+                self.present(sVC, animated: true, completion: nil)
+            })
             .addDisposableTo(disposeBag)
     }
     
@@ -147,7 +147,7 @@ extension LandingFormViewController: StoreSubscriber {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        store.subscribe(self) { state in state.authenticationState.landingState } as ((_) -> _)? as ((_) -> _)? as ((_) -> _)? as ((_) -> _)? as ((_) -> _)? as ((_) -> _)? as ((_) -> _)?
+        store.subscribe(self) { state in return state.authenticationState.landingState }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -156,7 +156,7 @@ extension LandingFormViewController: StoreSubscriber {
         store.unsubscribe(self)
     }
 
-    func newState(_ state: State) {
+    func newState(state: State) {
         self.state = state
         textOne.isHidden = state == .Login
         
