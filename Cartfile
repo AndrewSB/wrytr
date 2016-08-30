@@ -1,11 +1,11 @@
-github "ReSwift/ReSwift" "master"
-github "ReSwift/ReSwiftRouter" "master"
+github "dylan/ReSwift" "swift3"
+github "AndrewSB/ReSwift-Router" "master"
 
 github "AndrewSB/Library" "master"
 
-github "ReactiveX/RxSwift"
+github "ReactiveX/RxSwift" "3.0.0.alpha.1"
 github "antitypical/Result"
 
-github "Haneke/HanekeSwift" "master"
+github "pinterest/PINRemoteImage"
 
-github "hackiftekhar/IQKeyboardManager" "master"
+github "hackiftekhar/IQKeyboardManager" "swift3"
