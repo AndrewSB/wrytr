@@ -32,6 +32,7 @@
 		462F032A1CE2ADDF0031B1B1 /* NSRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03291CE2ADDF0031B1B1 /* NSRangeExtension.swift */; };
 		462F03301CE2CF1B0031B1B1 /* ChallengeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462F032F1CE2CF1B0031B1B1 /* ChallengeTableViewCell.xib */; };
 		46307D391CDD67A700E47A1C /* ExtendedNavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */; };
+		463913E11D7641590077D0E5 /* DismissesKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */; };
 		4644FB9C1C9CBCEF004ACBAF /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */; };
 		4644FB9D1C9CBCEF004ACBAF /* ReSwiftRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */; };
 		4644FBA01C9CBDEE004ACBAF /* RootRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FB9F1C9CBDEE004ACBAF /* RootRoutable.swift */; };
@@ -128,6 +129,7 @@
 		462F03291CE2ADDF0031B1B1 /* NSRangeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRangeExtension.swift; sourceTree = "<group>"; };
 		462F032F1CE2CF1B0031B1B1 /* ChallengeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChallengeTableViewCell.xib; sourceTree = "<group>"; };
 		46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ExtendedNavbarView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissesKeyboardOnTap.swift; sourceTree = "<group>"; };
 		4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
 		4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRouter.framework; path = Carthage/Build/iOS/ReSwiftRouter.framework; sourceTree = "<group>"; };
 		4644FB9F1C9CBDEE004ACBAF /* RootRoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRoutable.swift; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 				462F03251CE273D00031B1B1 /* UIStackExtension.swift */,
 				462F03291CE2ADDF0031B1B1 /* NSRangeExtension.swift */,
 				46260A731D3EAEF400CB6850 /* Observable + Ignore Nil.swift */,
+				463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 				4644FBB71C9CD3C3004ACBAF /* MainViewRoutable.swift in Sources */,
 				4658D6C21CC089B4009527DF /* MeViewController.swift in Sources */,
 				466E73FB1CAF222E00EC0B7C /* AuthenticationProvider.swift in Sources */,
+				463913E11D7641590077D0E5 /* DismissesKeyboardOnTap.swift in Sources */,
 				46C0991E1CA092770015779C /* ParseRxCallbacks.swift in Sources */,
 				4644FBB31C9CCF4D004ACBAF /* AuthenticationReducer.swift in Sources */,
 				465071621CB741E40041C43C /* PostState.swift in Sources */,
