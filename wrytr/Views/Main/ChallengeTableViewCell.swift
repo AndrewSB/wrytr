@@ -15,7 +15,7 @@ class ChallengeTableViewCell: UITableViewCell {
     @IBOutlet weak var profilePicture: RoundedImageView! {
         didSet {
             profilePicture.clipsToBounds = true
-            profilePicture.contentMode = .ScaleAspectFit
+            profilePicture.contentMode = .scaleAspectFit
         }
     }
     @IBOutlet weak var prompt: UILabel!
@@ -33,7 +33,7 @@ class ChallengeTableViewCell: UITableViewCell {
     @IBOutlet weak var reply: RoundedButton! {
         didSet {
             reply.layer.borderWidth = 1
-            reply.layer.borderColor = UIColor.lightGrayColor().CGColor
+            reply.layer.borderColor = UIColor.lightGray.cgColor
         }
     }
     

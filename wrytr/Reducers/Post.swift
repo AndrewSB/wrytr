@@ -19,7 +19,7 @@ extension Post {
     
     func inflate() -> Observable<InflatedPost> {
         
-        return firebase.childByAppendingPath("users/\(userId)").rx_observeEventOnce(.Value)
+        return firebase!.child(byAppendingPath: "users/\(userId)").rx_observeEventOnce(.value)
             .map {
                 var dict = $0.value as! [String: String]
                 dict["uid"] = $0.key

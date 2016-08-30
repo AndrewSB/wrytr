@@ -87,10 +87,10 @@ extension MeViewController: Routable {
         if routeElementIdentifier == "Settings" {
             
             let actions: [(String, UIAlertActionStyle, ((UIAlertAction) -> Void)?)] = [
-                ("Sign Out", .Destructive, { _ in store.dispatch(AuthenticationProvider.logout) }),
-                ("Edit Bio", .Default, nil),
-                ("Change Username", .Default, nil),
-                ("Cancel", .Cancel, { _ in
+                ("Sign Out", .destructive, { _ in store.dispatch(AuthenticationProvider.logout) }),
+                ("Edit Bio", .default, nil),
+                ("Change Username", .default, nil),
+                ("Cancel", .cancel, { _ in
                     store.dispatch(SetRouteAction([mainRoute, MeViewController.identifier]))
                 })
             ]

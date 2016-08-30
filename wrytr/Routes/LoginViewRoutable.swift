@@ -20,11 +20,11 @@ class LoginViewRoutable: Routable {
         case signupRoute:
             let signupVC = StoryboardScene.Login.LandingScene.viewController() as! LandingViewController
 //            signupVC.type = .SignUp
-            self.viewController.presentViewController(signupVC, animated: false, completion: completionHandler)
+            self.viewController.present(signupVC, animated: false, completion: completionHandler)
         case loginRoute:
             let loginVC = StoryboardScene.Login.LandingScene.viewController() as! LandingViewController
 //            loginVC.type = .LogIn
-            self.viewController.presentViewController(loginVC, animated: false, completion: completionHandler)
+            self.viewController.present(loginVC, animated: false, completion: completionHandler)
         default:
             assertionFailure()
         }
@@ -34,7 +34,7 @@ class LoginViewRoutable: Routable {
     
     func changeRouteSegment(_ from: RouteElementIdentifier, to: RouteElementIdentifier, animated: Bool, completionHandler: RoutingCompletionHandler) -> Routable {
         if to == mainRoute {
-            return RootRoutable(window: UIApplication.sharedApplication().delegate!.window!!).setToMainViewController()
+            return RootRoutable(window: UIApplication.shared.delegate!.window!!).setToMainViewController()
         } else {
             assertionFailure("bruh")
             return self

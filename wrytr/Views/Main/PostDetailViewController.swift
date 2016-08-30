@@ -45,7 +45,7 @@ extension PostDetailViewController {
         post.asObservable()
             .ignoreNil()
             .subscribeNext { inflatedPost in
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.asynchronously(DispatchQueue.main) {
                     _ = inflatedPost.user.profilePictureNSUrl
                         .flatMap {
                             self.imageView.hnk_setImageFromURL($0)

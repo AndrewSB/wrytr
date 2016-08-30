@@ -17,7 +17,7 @@ class RootRoutable: Routable {
     }
     
     func setToLandingViewController() -> Routable {
-        self.window.rootViewController = loginStoryboard.instantiateViewControllerWithIdentifier(landingRoute)
+        self.window.rootViewController = loginStoryboard.instantiateViewController(withIdentifier: landingRoute)
         
         return LoginViewRoutable(self.window.rootViewController!)
     }

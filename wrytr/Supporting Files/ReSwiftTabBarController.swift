@@ -63,7 +63,7 @@ extension ReSwiftTabBarController: Routable {
             .first
         
         
-        selectedIndex = self.viewControllers!.indexOf(viewController!.rewrapNavigationController())!
+        selectedIndex = self.viewControllers!.index(of: viewController!.rewrapNavigationController())!
         
         completionHandler()
         return viewController as! Routable
@@ -76,7 +76,7 @@ extension ReSwiftTabBarController: Routable {
             .filter { routeElementIdentifier == type(of: ($0 as! Identifiable)).identifier }
             .first
         
-        selectedIndex = self.viewControllers!.indexOf(viewController!.rewrapNavigationController())!
+        selectedIndex = self.viewControllers!.index(of: viewController!.rewrapNavigationController())!
         
         completionHandler()
         return viewController as! Routable

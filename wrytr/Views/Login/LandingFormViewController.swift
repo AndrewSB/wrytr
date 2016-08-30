@@ -17,24 +17,24 @@ class LandingFormViewController: RxViewController {
         didSet {
             twitterSignup.setTitle(tr(.LoginLandingTwitterbuttonTitle))
             
-            twitterSignup.setImage(twitterSignup.imageView!.image?.imageWithRenderingMode(.AlwaysTemplate), forState: .Normal)
+            twitterSignup.setImage(twitterSignup.imageView!.image?.withRenderingMode(.alwaysTemplate), for: .normal)
             twitterSignup.tintColor = UIColor(named: .TwitterBlue)
-            twitterSignup.imageView!.contentMode = .ScaleAspectFit
+            twitterSignup.imageView!.contentMode = .scaleAspectFit
 
             twitterSignup.layer.borderWidth = 1
-            twitterSignup.layer.borderColor = UIColor(named: .TwitterBlue).CGColor
+            twitterSignup.layer.borderColor = UIColor(named: .TwitterBlue).cgColor
         }
     }
     @IBOutlet weak var facebookSignup: RoundedButton! {
         didSet {
             facebookSignup.setTitle(tr(.LoginLandingFacebookbuttonTitle))
             
-            facebookSignup.setImage(facebookSignup.imageView!.image!.imageWithRenderingMode(.AlwaysTemplate), forState: .Normal)
+            facebookSignup.setImage(facebookSignup.imageView!.image!.withRenderingMode(.alwaysTemplate), for: .normal)
             facebookSignup.tintColor = UIColor(named: .FacebookBlue)
-            facebookSignup.imageView!.contentMode = .ScaleAspectFit
+            facebookSignup.imageView!.contentMode = .scaleAspectFit
             
             facebookSignup.layer.borderWidth = 1
-            facebookSignup.layer.borderColor = UIColor(named: .FacebookBlue).CGColor
+            facebookSignup.layer.borderColor = UIColor(named: .FacebookBlue).cgColor
         }
     }
     
@@ -72,7 +72,7 @@ class LandingFormViewController: RxViewController {
     @IBOutlet weak var loginSignupTitle: UILabel!
     @IBOutlet weak var loginSignupButton: RoundedButton! {
         didSet {
-            loginSignupButton.layer.borderColor = UIColor(named: .LoginLandingBackround).CGColor
+            loginSignupButton.layer.borderColor = UIColor(named: .LoginLandingBackround).cgColor
             loginSignupButton.layer.borderWidth = 1
         }
     }
@@ -147,7 +147,7 @@ extension LandingFormViewController: StoreSubscriber {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        store.subscribe(self) { state in state.authenticationState.landingState }
+        store.subscribe(self) { state in state.authenticationState.landingState } as ((_) -> _)? as ((_) -> _)? as ((_) -> _)? as ((_) -> _)? as ((_) -> _)? as ((_) -> _)? as ((_) -> _)?
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -158,11 +158,11 @@ extension LandingFormViewController: StoreSubscriber {
 
     func newState(_ state: State) {
         self.state = state
-        textOne.hidden = state == .Login
+        textOne.isHidden = state == .Login
         
-        actionButton.setTitle("\(state.rawValue)", forState: .Normal)
+        actionButton.setTitle("\(state.rawValue)", for: .normal)
         
-        loginSignupButton.setTitle(state.not.rawValue, forState: .Normal)
+        loginSignupButton.setTitle(state.not.rawValue, for: .normal)
         titleLabel.text = "\(state.rawValue) with Email"
         loginSignupTitle.text = state == .Login ? "Haven't registered yet?" : "Already registered?"
     }
@@ -190,7 +190,7 @@ extension LandingFormViewController {
         tF.insetY = 5
         
         tF.layer.borderWidth = 1
-        tF.layer.borderColor = UIColor.lightGrayColor().CGColor
+        tF.layer.borderColor = UIColor.lightGray.cgColor
         
         tF.layer.cornerRadius = 5
         tF.clipsToBounds = true

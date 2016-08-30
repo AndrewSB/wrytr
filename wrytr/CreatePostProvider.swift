@@ -13,7 +13,7 @@ class CreatePostProvider {
     static func uploadPost(_ state: StateType, store: Store<State>) -> Action? {
         
         if let post = store.state.createPostState.toBeUploaded {
-            firebase.childByAppendingPath("posts")
+            firebase?.child(byAppendingPath: "posts")
                 .rx_setChildByAutoId(post.asAnyObject())
                 .subscribe { observer in
                     switch observer {

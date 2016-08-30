@@ -43,7 +43,7 @@ extension LandingViewController: StoreSubscriber {
         
         store.subscribe(self) { state in
             state.authenticationState.loggedInState
-        }
+        } as ((_) -> _)? as ((_) -> _)? as ((_) -> _)? as ((_) -> _)? as ((_) -> _)? as ((_) -> _)? as ((_) -> _)?
         
     }
     

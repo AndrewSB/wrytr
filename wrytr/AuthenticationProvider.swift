@@ -66,12 +66,12 @@ class AuthenticationProvider {
         let userRef = firebase?.child(byAppendingPath: "users/\(firebase?.authData.uid)")
 
         var userDict: [String: String] = [:]
-        for (key, value) in User.AuthData.scrapeAuthData(firebase.authData) {
+        for (key, value) in User.AuthData.scrapeAuthData((firebase?.authData)!) {
             userDict[key] = value!
         }
         
-        return userRef.rx_setValue(userDict)
-            .map { _ in loggedInState }
+        return (userRef?.rx_setValue(userDict as AnyObject!)
+            .map { _ in loggedInState })!
     }
     
 }
@@ -86,7 +86,7 @@ extension AuthenticationProvider {
     class func authWithFirebase(_ params: Params) -> ((_ state: StateType, _ store: Store<State>) -> Action?) {
         
         return { state, store in
-            firebase.rx_authUser(params)
+            firebase?.rx_authUser(params)
                 .map { LoggedInState.LoggedIn(.Firebase($0)) }
                 .subscribe {
                     switch $0 {
