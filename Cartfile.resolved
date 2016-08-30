@@ -2,7 +2,7 @@ github "hackiftekhar/IQKeyboardManager" "d27180d877c8d36d5be80ee9d8c24d184ac2608
 github "AndrewSB/Library" "6531ce880865006932a011f8850ab66b9c7d5681"
 github "pinterest/PINCache" "2.3"
 github "dylan/ReSwift" "63ab2ca28b80d151d7f47aaf13acd530bd37ff3f"
-github "antitypical/Result" "2.1.3"
+github "antitypical/Result" "3.0.0-alpha.4"
 github "ReactiveX/RxSwift" "3.0.0.alpha.1"
 github "pinterest/PINRemoteImage" "2.1.4"
 github "AndrewSB/ReSwift-Router" "e86da4dcc98f57ab6ac0e4ad8880ebac09eeb115"

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		461FD7551D760B30001BE92E /* PINCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461FD7531D760B30001BE92E /* PINCache.framework */; };
+		461FD7561D760B30001BE92E /* PINRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461FD7541D760B30001BE92E /* PINRemoteImage.framework */; };
 		46260A6C1D3E937600CB6850 /* FeedActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46260A6B1D3E937600CB6850 /* FeedActions.swift */; };
 		46260A6E1D3E956E00CB6850 /* FeedReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46260A6D1D3E956E00CB6850 /* FeedReducer.swift */; };
 		46260A701D3E95A800CB6850 /* FeedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46260A6F1D3E95A800CB6850 /* FeedState.swift */; };
@@ -98,10 +100,11 @@
 		46C099201CA097640015779C /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0991F1CA097640015779C /* LoadingViewController.swift */; };
 		46C0992F1CA0A0E80015779C /* AuthenticationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0992E1CA0A0E80015779C /* AuthenticationActions.swift */; };
 		46CF36A21CCEBCFA00BC17A4 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CF36A11CCEBCFA00BC17A4 /* Response.swift */; };
-		46E9569F1CCF14BB00DCD589 /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E9569E1CCF14BB00DCD589 /* Haneke.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		461FD7531D760B30001BE92E /* PINCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINCache.framework; path = Carthage/Build/iOS/PINCache.framework; sourceTree = "<group>"; };
+		461FD7541D760B30001BE92E /* PINRemoteImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINRemoteImage.framework; path = Carthage/Build/iOS/PINRemoteImage.framework; sourceTree = "<group>"; };
 		46260A6B1D3E937600CB6850 /* FeedActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedActions.swift; sourceTree = "<group>"; };
 		46260A6D1D3E956E00CB6850 /* FeedReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FeedReducer.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		46260A6F1D3E95A800CB6850 /* FeedState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FeedState.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -196,7 +199,6 @@
 		46C0991F1CA097640015779C /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoadingViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		46C0992E1CA0A0E80015779C /* AuthenticationActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AuthenticationActions.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		46CF36A11CCEBCFA00BC17A4 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Response.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		46E9569E1CCF14BB00DCD589 /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,7 +211,6 @@
 				466BD09B1CADAA14008DC0C3 /* Security.framework in Frameworks */,
 				466BD0991CADAA08008DC0C3 /* CFNetwork.framework in Frameworks */,
 				466BD0971CADA9FF008DC0C3 /* libicucore.tbd in Frameworks */,
-				46E9569F1CCF14BB00DCD589 /* Haneke.framework in Frameworks */,
 				466BD0951CADA990008DC0C3 /* libc++.tbd in Frameworks */,
 				46C099101C9F49CF0015779C /* libsqlite3.tbd in Frameworks */,
 				462F03281CE278110031B1B1 /* IQKeyboardManagerSwift.framework in Frameworks */,
@@ -226,12 +227,42 @@
 				46C0991A1CA072250015779C /* TwitterCore.framework in Frameworks */,
 				46C099091C9E34D10015779C /* FBSDKCoreKit.framework in Frameworks */,
 				46C099071C9E34D10015779C /* Crashlytics.framework in Frameworks */,
+				461FD7551D760B30001BE92E /* PINCache.framework in Frameworks */,
+				461FD7561D760B30001BE92E /* PINRemoteImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		461FD7521D760B30001BE92E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46271FAA1CD2AB36007196B2 /* Library.framework */,
+				466BD09D1CADAB09008DC0C3 /* Firebase.framework */,
+				466BD09C1CADAAEF008DC0C3 /* Firebase dependencies */,
+				46C099151CA072250015779C /* TwitterKit.framework */,
+				46C099161CA072250015779C /* TwitterKitResources.bundle */,
+				46C099171CA072250015779C /* TwitterCore.framework */,
+				46C0990F1C9F49CF0015779C /* libsqlite3.tbd */,
+				46C099021C9E34D10015779C /* Crashlytics.framework */,
+				46C099031C9E34D10015779C /* Fabric.framework */,
+				4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */,
+				4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */,
+				4644FBD21C9E046B004ACBAF /* Library.framework */,
+				4644FBD71C9E1307004ACBAF /* RxSwift.framework */,
+				4644FBD61C9E1307004ACBAF /* RxCocoa.framework */,
+				46C099011C9E34D10015779C /* Bolts.framework */,
+				46C099041C9E34D10015779C /* FBSDKCoreKit.framework */,
+				46C099051C9E34D10015779C /* FBSDKLoginKit.framework */,
+				462F03211CE267280031B1B1 /* Result.framework */,
+				462F03271CE278110031B1B1 /* IQKeyboardManagerSwift.framework */,
+				461FD7531D760B30001BE92E /* PINCache.framework */,
+				461FD7541D760B30001BE92E /* PINRemoteImage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		46260A601D3D42F000CB6850 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,8 +465,8 @@
 			isa = PBXGroup;
 			children = (
 				468614BD1C89CC3A002C2BAC /* wrytr */,
-				469FF75B1C975912007508CD /* Dependencies */,
 				468614BC1C89CC3A002C2BAC /* Products */,
+				461FD7521D760B30001BE92E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -461,33 +492,6 @@
 				4644FBBA1C9CD566004ACBAF /* Supporting Files */,
 			);
 			path = wrytr;
-			sourceTree = "<group>";
-		};
-		469FF75B1C975912007508CD /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				46271FAA1CD2AB36007196B2 /* Library.framework */,
-				46E9569E1CCF14BB00DCD589 /* Haneke.framework */,
-				466BD09D1CADAB09008DC0C3 /* Firebase.framework */,
-				466BD09C1CADAAEF008DC0C3 /* Firebase dependencies */,
-				46C099151CA072250015779C /* TwitterKit.framework */,
-				46C099161CA072250015779C /* TwitterKitResources.bundle */,
-				46C099171CA072250015779C /* TwitterCore.framework */,
-				46C0990F1C9F49CF0015779C /* libsqlite3.tbd */,
-				46C099021C9E34D10015779C /* Crashlytics.framework */,
-				46C099031C9E34D10015779C /* Fabric.framework */,
-				4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */,
-				4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */,
-				4644FBD21C9E046B004ACBAF /* Library.framework */,
-				4644FBD71C9E1307004ACBAF /* RxSwift.framework */,
-				4644FBD61C9E1307004ACBAF /* RxCocoa.framework */,
-				46C099011C9E34D10015779C /* Bolts.framework */,
-				46C099041C9E34D10015779C /* FBSDKCoreKit.framework */,
-				46C099051C9E34D10015779C /* FBSDKLoginKit.framework */,
-				462F03211CE267280031B1B1 /* Result.framework */,
-				462F03271CE278110031B1B1 /* IQKeyboardManagerSwift.framework */,
-			);
-			name = Dependencies;
 			sourceTree = "<group>";
 		};
 		46C0992D1CA0A0DF0015779C /* Actions */ = {
@@ -592,9 +596,10 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Library.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Haneke.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PINRemoteImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PINCache.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (

@@ -1,5 +1,5 @@
 import UIKit
-import Haneke
+import PINRemoteImage
 import RxSwift
 import ReSwift
 

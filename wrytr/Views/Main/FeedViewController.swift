@@ -6,8 +6,6 @@ import RxCocoa
 import ReSwift
 import ReSwiftRouter
 
-import Haneke
-
 import Firebase
 
 class FeedViewController: RxViewController, Identifiable {

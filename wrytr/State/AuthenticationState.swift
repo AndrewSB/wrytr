@@ -5,7 +5,7 @@ import Firebase
 import ReSwift
 import ReSwiftRouter
 
-import Twitter
+//import Twitter
 import TwitterKit
 
 struct AuthenticationState {

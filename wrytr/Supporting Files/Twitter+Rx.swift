@@ -2,7 +2,7 @@ import Foundation
 
 import RxSwift
 
-import Twitter
+//import Twitter
 import TwitterKit
 
 extension Twitter {
