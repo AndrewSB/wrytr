@@ -620,7 +620,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "DOT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\nCONST_DIR=\"$DOT_DIR\"\"/Supporting Files/Constants\"\n\nif which /usr/local/bin/swiftgen > /dev/null; then\n    /usr/local/bin/swiftgen storyboards \"$DOT_DIR\" --output \"$CONST_DIR\"\"/Build/Storyboards.swift\"\n    /usr/local/bin/swiftgen images \"$DOT_DIR\"\"/Supporting Files/Assets.xcassets\" --output \"$CONST_DIR\"\"/Build/Images.swift\"\n    /usr/local/bin/swiftgen colors \"$CONST_DIR\"\"/colors.txt\" --output \"$CONST_DIR\"\"/Build/Colors.swift\"\n    /usr/local/bin/swiftgen strings \"$CONST_DIR\"\"/Localizable.strings\" -output \"$CONST_DIR\"\"/Build/Localizable_Strings.swift\"\nelse\n    echo \"BUILD ERROR: You need to brew install swiftgen\"\n    exit 1\nfi";
+			shellScript = "DOT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\nCONST_DIR=\"$DOT_DIR\"\"/Supporting Files/Constants\"\n\nif which /usr/local/bin/swiftgen > /dev/null; then\n    /usr/local/bin/swiftgen storyboards \"$DOT_DIR\" --output \"$CONST_DIR\"\"/Build/Storyboards.swift\" --template \"swift3\"\n    /usr/local/bin/swiftgen images \"$DOT_DIR\"\"/Supporting Files/Assets.xcassets\" --output \"$CONST_DIR\"\"/Build/Images.swift\"\n    /usr/local/bin/swiftgen colors \"$CONST_DIR\"\"/colors.txt\" --output \"$CONST_DIR\"\"/Build/Colors.swift\"\n    echo \"$CONST_DIR\"\"/swift3.stencil\"\n    /usr/local/bin/swiftgen strings \"$CONST_DIR\"\"/Localizable.strings\" -output \"$CONST_DIR\"\"/Build/Localizable_Strings.swift\" --templatePath \"$CONST_DIR\"\"/swift3-strings.stencil\"\nelse\n    echo \"BUILD ERROR: You need to brew install swiftgen\"\n    exit 1\nfi";
 		};
 		469FF7481C9758AD007508CD /* Install Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
