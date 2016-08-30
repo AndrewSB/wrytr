@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="bottom" id="f4c-HD-SWi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="see-T2-rE1">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="W0C-63-wOv">
@@ -73,7 +73,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Wkf-GE-zZk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pRy-0j-g4d">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="778"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="392.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RT1-vK-D5C" userLabel="grey background view">

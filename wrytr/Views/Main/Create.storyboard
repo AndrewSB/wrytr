@@ -36,11 +36,9 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0jx-Ta-QcG" customClass="ExtendedNavigationBarView" customModule="wrytr" customModuleProvider="target">
-                                <frame key="frameInset" width="600" height="135"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jx-Ta-QcG" customClass="ExtendedNavigationBarView" customModule="wrytr" customModuleProvider="target">
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vaI-ls-6oR">
-                                        <frame key="frameInset" minX="44" width="287" height="88"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vaI-ls-6oR">
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a challenge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWa-Dr-dUH">
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -63,8 +61,7 @@
                                     <constraint firstItem="vaI-ls-6oR" firstAttribute="top" secondItem="0jx-Ta-QcG" secondAttribute="top" id="xdp-nz-o3a"/>
                                 </constraints>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dvr-1H-gvZ">
-                                <frame key="frameInset" minX="20" minY="157" width="560" height="379"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvr-1H-gvZ">
                                 <connections>
                                     <segue destination="7nm-Tx-oyc" kind="embed" id="qGp-SR-CB8"/>
                                 </connections>
@@ -82,7 +79,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="045-rl-Dzc">
-                        <barButtonItem key="rightBarButtonItem" image="i-icon" style="plain" id="hlF-XL-tfI">
+                        <barButtonItem key="rightBarButtonItem" image="i-icon" style="done" id="hlF-XL-tfI">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
