@@ -1,19 +1,19 @@
-import ReSwift
 import Cordux
 
 typealias Store = Cordux.Store<AppState>
 
-struct AppState: Cordux.StateType {
+struct AppState: StateType {
     var route: Route = []
-    var authenticationState: AuthenticationState
+    var authenticationState: Authentication.State = .unauthenticated
 }
 
-enum AuthenticationState: ReSwift.StateType {
-    case unauthenticated
-    case authenticated
-}
+final class AppReducer: Reducer {
+    func handleAction(_ action: Action, state: AppState) -> AppState {
+        var state = state
 
-enum AuthenticationAction: ReSwift.Action {
-    case signIn
-    case signOut
+        return State(
+            route: state.route,
+            authenticationState: Authentication.Reducer.handleAction(action, state: state.authenticationState)
+        )
+    }
 }

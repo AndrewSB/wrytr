@@ -7,22 +7,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var coordinator: AppCoordinator!
     
+    private let thirdPartyServiceHandler = ThirdParty.Service.Handler()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+        guard let mainController = window?.rootViewController as? StartupViewController else {
+            fatalError()
+        }
+        
+        UIViewController.swizzleLifecycleDelegatingViewControllerMethods()
+        
+        thirdPartyServiceHandler.onAppLaunch(application: application, launchOptions: launchOptions)
+        
+        let store = Store(initialState: AppState(), reducer: AppReducer(), middlewares: [])
+        
+        coordinator = AppCoordinator(store: store, container: mainController)
+        coordinator.start(route: state.route)
 
-        Fabric.with([Crashlytics.self, Twitter.self])
-        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        
-                
         return true
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        FBSDKAppEvents.activateApp()
+        thirdPartyServiceHandler.onAppActivate()
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String!, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        return thirdPartyServiceHandler.onAppOpenURL(app: app, url: url, options: options)
     }
 
 }
