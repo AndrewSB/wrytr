@@ -1,13 +1,19 @@
 import ReSwift
+import Cordux
 
-struct AppState: StateType {
-    
+typealias Store = Cordux.Store<AppState>
+
+struct AppState: Cordux.StateType {
+    var route: Route = []
+    var authenticationState: AuthenticationState
 }
 
-//struct State: StateType {
-//    var navigationState: NavigationState
-//    var authenticationState: AuthenticationState
-//    var postState: PostState
-//    var feedState: FeedState
-//    var createPostState: CreatePostState
-//}
+enum AuthenticationState: ReSwift.StateType {
+    case unauthenticated
+    case authenticated
+}
+
+enum AuthenticationAction: ReSwift.Action {
+    case signIn
+    case signOut
+}
