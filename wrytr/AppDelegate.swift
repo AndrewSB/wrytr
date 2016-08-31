@@ -63,11 +63,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-
-extension AppDelegate: StoreSubscriber {
-    
-    func newState(state: State) {
-    
-    }
-    
-}
