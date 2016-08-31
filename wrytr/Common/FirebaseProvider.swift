@@ -5,5 +5,9 @@ extension Firebase {
     
     class Provider {
         
+        static var isLoggedIn: Bool {
+            return ref.authData != nil
+        }
+        
     }
 }

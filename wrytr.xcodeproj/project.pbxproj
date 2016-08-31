@@ -60,7 +60,9 @@
 		4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBDA1C9E1535004ACBAF /* RxViewController.swift */; };
 		46452E5B1D7795190053EC4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E5A1D7795190053EC4A /* User.swift */; };
 		46452E5E1D7795D20053EC4A /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E5D1D7795D20053EC4A /* UserType.swift */; };
-		4650715F1CB741770041C43C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4650715E1CB741770041C43C /* Post.swift */; };
+		46452E601D7797AC0053EC4A /* PostType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E5F1D7797AC0053EC4A /* PostType.swift */; };
+		46452E621D7797B00053EC4A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E611D7797B00053EC4A /* Post.swift */; };
+		46452E641D7797F10053EC4A /* ReactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E631D7797F10053EC4A /* ReactionType.swift */; };
 		465071641CB742290041C43C /* PostReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465071631CB742290041C43C /* PostReducer.swift */; };
 		465071661CB743340041C43C /* PostActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465071651CB743340041C43C /* PostActions.swift */; };
 		465071681CB745A50041C43C /* PostProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465071671CB745A50041C43C /* PostProvider.swift */; };
@@ -90,7 +92,6 @@
 		468D0E531CCED77A004250F6 /* RenderedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E521CCED77A004250F6 /* RenderedImageView.swift */; };
 		469D35AC1CDB144900705F57 /* LandingFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469D35AB1CDB144900705F57 /* LandingFormViewController.swift */; };
 		46B630DC1CCFF6B50000EFC4 /* FAuthData Convinience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B630DB1CCFF6B50000EFC4 /* FAuthData Convinience.swift */; };
-		46B630DE1CCFFE6B0000EFC4 /* InflatedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B630DD1CCFFE6B0000EFC4 /* InflatedPost.swift */; };
 		46BF97791C9B6DA700579066 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF97781C9B6DA700579066 /* Login.storyboard */; };
 		46C099061C9E34D10015779C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099011C9E34D10015779C /* Bolts.framework */; };
 		46C099071C9E34D10015779C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099021C9E34D10015779C /* Crashlytics.framework */; };
@@ -106,7 +107,6 @@
 		46C0991E1CA092770015779C /* ParseRxCallbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0991D1CA092770015779C /* ParseRxCallbacks.swift */; };
 		46C099201CA097640015779C /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0991F1CA097640015779C /* LoadingViewController.swift */; };
 		46C0992F1CA0A0E80015779C /* AuthenticationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0992E1CA0A0E80015779C /* AuthenticationActions.swift */; };
-		46CF36A21CCEBCFA00BC17A4 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CF36A11CCEBCFA00BC17A4 /* Response.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,7 +116,7 @@
 		4623586D1D7788B5007947B6 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		4623586F1D7788BC007947B6 /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		462358721D7788F5007947B6 /* Startup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Startup.storyboard; sourceTree = "<group>"; };
-		462358751D7789F3007947B6 /* FirebaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseProvider.swift; path = ../FirebaseProvider.swift; sourceTree = "<group>"; };
+		462358751D7789F3007947B6 /* FirebaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseProvider.swift; sourceTree = "<group>"; };
 		462358771D778B45007947B6 /* StartupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupViewController.swift; sourceTree = "<group>"; };
 		462358791D778B69007947B6 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		4623587D1D778D9B007947B6 /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
@@ -164,7 +164,9 @@
 		4644FBDA1C9E1535004ACBAF /* RxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxViewController.swift; sourceTree = "<group>"; };
 		46452E5A1D7795190053EC4A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		46452E5D1D7795D20053EC4A /* UserType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
-		4650715E1CB741770041C43C /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		46452E5F1D7797AC0053EC4A /* PostType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostType.swift; sourceTree = "<group>"; };
+		46452E611D7797B00053EC4A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		46452E631D7797F10053EC4A /* ReactionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionType.swift; sourceTree = "<group>"; };
 		465071631CB742290041C43C /* PostReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostReducer.swift; sourceTree = "<group>"; };
 		465071651CB743340041C43C /* PostActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostActions.swift; sourceTree = "<group>"; };
 		465071671CB745A50041C43C /* PostProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostProvider.swift; sourceTree = "<group>"; };
@@ -196,7 +198,6 @@
 		468D0E521CCED77A004250F6 /* RenderedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RenderedImageView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		469D35AB1CDB144900705F57 /* LandingFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LandingFormViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		46B630DB1CCFF6B50000EFC4 /* FAuthData Convinience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "FAuthData Convinience.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		46B630DD1CCFFE6B0000EFC4 /* InflatedPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = InflatedPost.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		46BF97781C9B6DA700579066 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		46C099011C9E34D10015779C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
 		46C099021C9E34D10015779C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
@@ -212,7 +213,6 @@
 		46C0991D1CA092770015779C /* ParseRxCallbacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseRxCallbacks.swift; sourceTree = "<group>"; };
 		46C0991F1CA097640015779C /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoadingViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		46C0992E1CA0A0E80015779C /* AuthenticationActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AuthenticationActions.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		46CF36A11CCEBCFA00BC17A4 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Response.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,7 +286,6 @@
 				46C0992D1CA0A0DF0015779C /* Actions */,
 				4644FBA61C9CC9A7004ACBAF /* Routes */,
 				4644FBAF1C9CCAE1004ACBAF /* Reducers */,
-				465071601CB7417D0041C43C /* Models */,
 				4644FBBF1C9CD69A004ACBAF /* Views */,
 			);
 			name = Legacy;
@@ -327,7 +326,6 @@
 		4623586B1D7788A3007947B6 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				46452E591D77950E0053EC4A /* Provider */,
 				46452E5A1D7795190053EC4A /* User.swift */,
 				4623586D1D7788B5007947B6 /* UserService.swift */,
 				46452E5D1D7795D20053EC4A /* UserType.swift */,
@@ -338,7 +336,10 @@
 		4623586C1D7788AC007947B6 /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				46452E611D7797B00053EC4A /* Post.swift */,
 				4623586F1D7788BC007947B6 /* PostService.swift */,
+				46452E5F1D7797AC0053EC4A /* PostType.swift */,
+				46452E631D7797F10053EC4A /* ReactionType.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -356,6 +357,8 @@
 		462358741D7789E8007947B6 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				46452E5C1D7795BC0053EC4A /* Helper */,
+				462358751D7789F3007947B6 /* FirebaseProvider.swift */,
 				4623586C1D7788AC007947B6 /* Post */,
 				4623586B1D7788A3007947B6 /* User */,
 			);
@@ -536,15 +539,6 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		46452E591D77950E0053EC4A /* Provider */ = {
-			isa = PBXGroup;
-			children = (
-				462358751D7789F3007947B6 /* FirebaseProvider.swift */,
-				46452E5C1D7795BC0053EC4A /* Helper */,
-			);
-			name = Provider;
-			sourceTree = "<group>";
-		};
 		46452E5C1D7795BC0053EC4A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -555,16 +549,7 @@
 				468D0E4E1CCED0F2004250F6 /* FQuery+Rx.swift */,
 			);
 			name = Helper;
-			sourceTree = "<group>";
-		};
-		465071601CB7417D0041C43C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				4650715E1CB741770041C43C /* Post.swift */,
-				46B630DD1CCFFE6B0000EFC4 /* InflatedPost.swift */,
-				46CF36A11CCEBCFA00BC17A4 /* Response.swift */,
-			);
-			path = Models;
+			path = User;
 			sourceTree = "<group>";
 		};
 		466BD09C1CADAAEF008DC0C3 /* Firebase dependencies */ = {
@@ -777,10 +762,10 @@
 				466E74051CAFA74800EC0B7C /* FeedViewController.swift in Sources */,
 				4644FBA51C9CC820004ACBAF /* Storyboards.swift in Sources */,
 				4644FBBE1C9CD686004ACBAF /* Colors.swift in Sources */,
+				46452E621D7797B00053EC4A /* Post.swift in Sources */,
 				4644FBC71C9D256B004ACBAF /* Localizable_Strings.swift in Sources */,
 				466BD0A01CADAD6C008DC0C3 /* Facebook+Rx.swift in Sources */,
 				462F03261CE273D00031B1B1 /* UIStackExtension.swift in Sources */,
-				46CF36A21CCEBCFA00BC17A4 /* Response.swift in Sources */,
 				46C0991C1CA087A60015779C /* Twitter+Rx.swift in Sources */,
 				466E73FF1CAF4FEC00EC0B7C /* ReSwiftTabBarController.swift in Sources */,
 				46260A6E1D3E956E00CB6850 /* FeedReducer.swift in Sources */,
@@ -808,9 +793,7 @@
 				468D0E4F1CCED0F2004250F6 /* FQuery+Rx.swift in Sources */,
 				46260A6C1D3E937600CB6850 /* FeedActions.swift in Sources */,
 				46C0992F1CA0A0E80015779C /* AuthenticationActions.swift in Sources */,
-				46B630DE1CCFFE6B0000EFC4 /* InflatedPost.swift in Sources */,
 				4644FBA01C9CBDEE004ACBAF /* RootRoutable.swift in Sources */,
-				4650715F1CB741770041C43C /* Post.swift in Sources */,
 				46260A721D3E966A00CB6850 /* FeedProvider.swift in Sources */,
 				46271FAE1CD2B02F007196B2 /* ChallengeTableView.swift in Sources */,
 				4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */,
@@ -822,7 +805,9 @@
 				4644FBB11C9CCE79004ACBAF /* Images.swift in Sources */,
 				465071681CB745A50041C43C /* PostProvider.swift in Sources */,
 				4644FBA81C9CC9CB004ACBAF /* AppState.swift in Sources */,
+				46452E601D7797AC0053EC4A /* PostType.swift in Sources */,
 				4644FBC31C9CD6E4004ACBAF /* LandingViewController.swift in Sources */,
+				46452E641D7797F10053EC4A /* ReactionType.swift in Sources */,
 				4658D6BE1CC089AA009527DF /* FriendsViewController.swift in Sources */,
 				469D35AC1CDB144900705F57 /* LandingFormViewController.swift in Sources */,
 				465071661CB743340041C43C /* PostActions.swift in Sources */,

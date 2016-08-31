@@ -7,7 +7,7 @@ extension User {
         static private let 🔥 = Firebase.Provider()
         
         static var isLoggedIn: Bool {
-            return 🔥.authData != nil
+            return 🔥.isLoggedIn
         }
         
         static func login(email: String, password: String) {
