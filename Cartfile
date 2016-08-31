@@ -8,4 +8,4 @@ github "antitypical/Result" "3.0.0-alpha.4"
 
 github "pinterest/PINRemoteImage"
 
-github "hackiftekhar/IQKeyboardManager" "swift3"
+github "marketplacer/UnderKeyboard"

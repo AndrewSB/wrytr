@@ -1,6 +1,7 @@
 import UIKit
 import Library
 import RxSwift
+import UnderKeyboard
 
 protocol ComposeViewControllerDelegate {
     func shouldPost(_ post: Post)
@@ -11,7 +12,7 @@ class ComposeViewController: RxViewController {
     var delegate: ComposeViewControllerDelegate!
     var characterLimit = 150
     
-    let keyboardObserver = KeyboardObserver()
+    let keyboardObserver = UnderKeyboardObserver()
 
     @IBOutlet weak var profileImageView: RoundedImageView! {
         didSet { _ = User.local.profilePictureNSUrl.flatMap { profileImageView.pin_setImage(from: $0) } }
@@ -34,54 +35,17 @@ extension ComposeViewController {
         super.viewDidLoad()
         
         handleText(addDisposablesTo: disposeBag)
-        handleKeyboard(addDisposablesTo: disposeBag)
-    }
-    
-}
-
-private typealias KeyboardHandler = ComposeViewController
-extension KeyboardHandler {
-    
-    fileprivate enum KeyboardState {
-        case hiding
-        case showing
-    }
-    
-    fileprivate func handleKeyboard(addDisposablesTo disposeBag: DisposeBag) {
-        keyboardObserver.willShow
-            .subscribe(onNext: { self.animateKeyboardChange(keyboardState: .showing, keyboardInfo: $0) })
-            .addDisposableTo(disposeBag)
         
-        keyboardObserver.willHide
-            .subscribe(onNext: { self.animateKeyboardChange(keyboardState: .hiding, keyboardInfo: $0) })
-            .addDisposableTo(disposeBag)
-    }
-    
-    fileprivate func animateKeyboardChange(keyboardState: KeyboardState, keyboardInfo: KeyboardObserver.KeyboardInfo) {
-        let padding: CGFloat = 11
-        let defaultKeyboardSize: CGFloat = 250
-        
-        let convertedKeyboardEndFrame = view.convert(keyboardInfo.frameEnd, from: view.window)
-        let keyboardSize = self.view.bounds.maxY - convertedKeyboardEndFrame.minY
-        
-        var offsetAmount: CGFloat
-        
-        // handle 3rd party keyboards with no keyboard size
-        if keyboardState == .showing && keyboardSize == 0 {
-            offsetAmount = defaultKeyboardSize + padding
-        } else if keyboardState == .hiding {
-            offsetAmount = padding
-        } else {
-            offsetAmount = keyboardSize + padding
+        keyboardObserver.start()
+        keyboardObserver.willAnimateKeyboard = { height in
+            let isHidingKeyboard = height == 0
+            
+            let initialBottomPadding: CGFloat = 22
+            let tabBarHeight: CGFloat = 49
+            
+            self.bottomLayoutConstraint.constant = isHidingKeyboard ? initialBottomPadding : height - tabBarHeight
         }
-        
-        bottomLayoutConstraint.constant = offsetAmount
-        print("animating \(bottomLayoutConstraint.constant)")
-        
-        UIView.animate(withDuration: keyboardInfo.animationDuration, delay: 0.0, options: [.beginFromCurrentState, keyboardInfo.animationCurve], animations: {
-            self.view.layoutIfNeeded()
-        }, completion: nil)
-
+        keyboardObserver.animateKeyboard = { _ in self.view.layoutSubviews() }
     }
     
 }

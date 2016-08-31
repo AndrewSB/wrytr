@@ -1,5 +1,4 @@
 import UIKit
-import IQKeyboardManagerSwift
 import RxSwift
 import ReSwift
 import ReSwiftRouter
@@ -51,12 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
-        IQKeyboardManager.sharedManager().enable = true
-        IQKeyboardManager.sharedManager().enableAutoToolbar = false
-        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 22
-        IQKeyboardManager.sharedManager().disabledDistanceHandlingClasses = [CreateViewController.self, ComposeViewController.self]
-        
+                
         return true
     }
 
