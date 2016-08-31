@@ -58,6 +58,8 @@
 		4644FBD81C9E1307004ACBAF /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FBD61C9E1307004ACBAF /* RxCocoa.framework */; };
 		4644FBD91C9E1307004ACBAF /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FBD71C9E1307004ACBAF /* RxSwift.framework */; };
 		4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBDA1C9E1535004ACBAF /* RxViewController.swift */; };
+		46452E5B1D7795190053EC4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E5A1D7795190053EC4A /* User.swift */; };
+		46452E5E1D7795D20053EC4A /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E5D1D7795D20053EC4A /* UserType.swift */; };
 		4650715F1CB741770041C43C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4650715E1CB741770041C43C /* Post.swift */; };
 		465071641CB742290041C43C /* PostReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465071631CB742290041C43C /* PostReducer.swift */; };
 		465071661CB743340041C43C /* PostActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465071651CB743340041C43C /* PostActions.swift */; };
@@ -89,7 +91,6 @@
 		469D35AC1CDB144900705F57 /* LandingFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469D35AB1CDB144900705F57 /* LandingFormViewController.swift */; };
 		46B630DC1CCFF6B50000EFC4 /* FAuthData Convinience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B630DB1CCFF6B50000EFC4 /* FAuthData Convinience.swift */; };
 		46B630DE1CCFFE6B0000EFC4 /* InflatedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B630DD1CCFFE6B0000EFC4 /* InflatedPost.swift */; };
-		46B630E01CCFFE880000EFC4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B630DF1CCFFE880000EFC4 /* User.swift */; };
 		46BF97791C9B6DA700579066 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF97781C9B6DA700579066 /* Login.storyboard */; };
 		46C099061C9E34D10015779C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099011C9E34D10015779C /* Bolts.framework */; };
 		46C099071C9E34D10015779C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099021C9E34D10015779C /* Crashlytics.framework */; };
@@ -115,7 +116,7 @@
 		4623586D1D7788B5007947B6 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		4623586F1D7788BC007947B6 /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		462358721D7788F5007947B6 /* Startup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Startup.storyboard; sourceTree = "<group>"; };
-		462358751D7789F3007947B6 /* FirebaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseProvider.swift; sourceTree = "<group>"; };
+		462358751D7789F3007947B6 /* FirebaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseProvider.swift; path = ../FirebaseProvider.swift; sourceTree = "<group>"; };
 		462358771D778B45007947B6 /* StartupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupViewController.swift; sourceTree = "<group>"; };
 		462358791D778B69007947B6 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		4623587D1D778D9B007947B6 /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
@@ -161,6 +162,8 @@
 		4644FBD61C9E1307004ACBAF /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		4644FBD71C9E1307004ACBAF /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		4644FBDA1C9E1535004ACBAF /* RxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxViewController.swift; sourceTree = "<group>"; };
+		46452E5A1D7795190053EC4A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		46452E5D1D7795D20053EC4A /* UserType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		4650715E1CB741770041C43C /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		465071631CB742290041C43C /* PostReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostReducer.swift; sourceTree = "<group>"; };
 		465071651CB743340041C43C /* PostActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostActions.swift; sourceTree = "<group>"; };
@@ -194,7 +197,6 @@
 		469D35AB1CDB144900705F57 /* LandingFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LandingFormViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		46B630DB1CCFF6B50000EFC4 /* FAuthData Convinience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "FAuthData Convinience.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		46B630DD1CCFFE6B0000EFC4 /* InflatedPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = InflatedPost.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		46B630DF1CCFFE880000EFC4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		46BF97781C9B6DA700579066 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		46C099011C9E34D10015779C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
 		46C099021C9E34D10015779C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
@@ -294,18 +296,10 @@
 		462358651D7787AF007947B6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				4644FBDA1C9E1535004ACBAF /* RxViewController.swift */,
-				468D0E521CCED77A004250F6 /* RenderedImageView.swift */,
-				46C0991F1CA097640015779C /* LoadingViewController.swift */,
-				46C0991D1CA092770015779C /* ParseRxCallbacks.swift */,
-				466E73FE1CAF4FEC00EC0B7C /* ReSwiftTabBarController.swift */,
-				46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */,
-				462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */,
-				462F03251CE273D00031B1B1 /* UIStackExtension.swift */,
-				462F03291CE2ADDF0031B1B1 /* NSRangeExtension.swift */,
-				46260A731D3EAEF400CB6850 /* Observable + Ignore Nil.swift */,
-				463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */,
 				462358741D7789E8007947B6 /* API */,
+				46452E551D7794BC0053EC4A /* Rx */,
+				46452E561D7794C50053EC4A /* UI */,
+				463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -333,12 +327,10 @@
 		4623586B1D7788A3007947B6 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				46B630DB1CCFF6B50000EFC4 /* FAuthData Convinience.swift */,
-				46C0991B1CA087A60015779C /* Twitter+Rx.swift */,
-				466BD09F1CADAD6C008DC0C3 /* Facebook+Rx.swift */,
-				466E73FC1CAF271A00EC0B7C /* Firebase+Rx.swift */,
-				468D0E4E1CCED0F2004250F6 /* FQuery+Rx.swift */,
+				46452E591D77950E0053EC4A /* Provider */,
+				46452E5A1D7795190053EC4A /* User.swift */,
 				4623586D1D7788B5007947B6 /* UserService.swift */,
+				46452E5D1D7795D20053EC4A /* UserType.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -366,7 +358,6 @@
 			children = (
 				4623586C1D7788AC007947B6 /* Post */,
 				4623586B1D7788A3007947B6 /* User */,
-				462358751D7789F3007947B6 /* FirebaseProvider.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -505,12 +496,72 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		46452E551D7794BC0053EC4A /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				46260A731D3EAEF400CB6850 /* Observable + Ignore Nil.swift */,
+				4644FBDA1C9E1535004ACBAF /* RxViewController.swift */,
+				46C0991D1CA092770015779C /* ParseRxCallbacks.swift */,
+			);
+			name = Rx;
+			sourceTree = "<group>";
+		};
+		46452E561D7794C50053EC4A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				46452E581D7794D70053EC4A /* Extensions */,
+				46452E571D7794C90053EC4A /* Subclasses */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		46452E571D7794C90053EC4A /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				468D0E521CCED77A004250F6 /* RenderedImageView.swift */,
+				46C0991F1CA097640015779C /* LoadingViewController.swift */,
+				466E73FE1CAF4FEC00EC0B7C /* ReSwiftTabBarController.swift */,
+				46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */,
+				462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */,
+			);
+			name = Subclasses;
+			sourceTree = "<group>";
+		};
+		46452E581D7794D70053EC4A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				462F03251CE273D00031B1B1 /* UIStackExtension.swift */,
+				462F03291CE2ADDF0031B1B1 /* NSRangeExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		46452E591D77950E0053EC4A /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				462358751D7789F3007947B6 /* FirebaseProvider.swift */,
+				46452E5C1D7795BC0053EC4A /* Helper */,
+			);
+			name = Provider;
+			sourceTree = "<group>";
+		};
+		46452E5C1D7795BC0053EC4A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				46B630DB1CCFF6B50000EFC4 /* FAuthData Convinience.swift */,
+				46C0991B1CA087A60015779C /* Twitter+Rx.swift */,
+				466BD09F1CADAD6C008DC0C3 /* Facebook+Rx.swift */,
+				466E73FC1CAF271A00EC0B7C /* Firebase+Rx.swift */,
+				468D0E4E1CCED0F2004250F6 /* FQuery+Rx.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		465071601CB7417D0041C43C /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				4650715E1CB741770041C43C /* Post.swift */,
 				46B630DD1CCFFE6B0000EFC4 /* InflatedPost.swift */,
-				46B630DF1CCFFE880000EFC4 /* User.swift */,
 				46CF36A11CCEBCFA00BC17A4 /* Response.swift */,
 			);
 			path = Models;
@@ -763,8 +814,9 @@
 				46260A721D3E966A00CB6850 /* FeedProvider.swift in Sources */,
 				46271FAE1CD2B02F007196B2 /* ChallengeTableView.swift in Sources */,
 				4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */,
+				46452E5B1D7795190053EC4A /* User.swift in Sources */,
+				46452E5E1D7795D20053EC4A /* UserType.swift in Sources */,
 				4644FBB51C9CD389004ACBAF /* LoginViewRoutable.swift in Sources */,
-				46B630E01CCFFE880000EFC4 /* User.swift in Sources */,
 				468D0E511CCED4ED004250F6 /* ChallengeTableViewCell.swift in Sources */,
 				462894ED1D37F78A006044E1 /* ComposeViewController.swift in Sources */,
 				4644FBB11C9CCE79004ACBAF /* Images.swift in Sources */,

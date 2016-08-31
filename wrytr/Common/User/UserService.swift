@@ -1,9 +1,32 @@
-//
-//  UserService.swift
-//  wrytr
-//
-//  Created by Andrew Breckenridge on 8/31/16.
-//  Copyright © 2016 Andrew Breckenridge. All rights reserved.
-//
+import Firebase
+import RxSwift
 
-import Foundation
+extension User {
+    
+    class Service {
+        static private let 🔥 = Firebase.Provider()
+        
+        static var isLoggedIn: Bool {
+            return 🔥.authData != nil
+        }
+        
+        static func login(email: String, password: String) {
+            
+        }
+        
+        static func auth(params: Auth) -> Observable<UserType> {
+            return .empty()
+        }
+    }
+    
+}
+
+extension User.Service {
+    indirect enum Auth {
+        case signup(name: String, loginParams: Auth)
+        
+        case login(email: String, password: String)
+        case facebook
+        case twitter
+    }
+}
