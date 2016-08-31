@@ -29,7 +29,7 @@ extension User {
             return [
                 "uid": authData.uid,
                 "name": authData.name,
-                "profilePictureUrl": "\(authData.profilePictureUrl)",
+                "profilePictureUrl": authData.profilePictureUrl.flatMap { "\($0)" } ?? "",
             ]
         }
 

@@ -17,7 +17,7 @@ class AuthenticationProvider {
                 if loginResult.isCancelled {
                     return .error(NSError(localizedDescription: "Did you cancel the login?", code: 99))
                 } else {
-                    return firebase.rx_oauth("facebook", token: FBSDKAccessToken.current().tokenString)
+                    return firebase.rx_oauth("facebook", token: FBSDKAccessToken.current()!.tokenString!)
                 }
             }
             .map(Social.facebook)
@@ -64,15 +64,15 @@ class AuthenticationProvider {
     }
     
     fileprivate class func scrapeSocialData(_ loggedInState: LoggedInState) -> Observable<LoggedInState> {
-        let userRef = firebase.child(byAppendingPath: "users/\(firebase.authData.uid)")
+        let userRef = firebase.child(byAppendingPath: "users/\(firebase.authData!.uid!)")!
 
         var userDict: [String: String] = [:]
         for (key, value) in User.AuthData.scrapeAuthData((firebase.authData)!) {
             userDict[key] = value!
         }
         
-        return (userRef?.rx_setValue(userDict as AnyObject!)
-            .map { _ in loggedInState })!
+        return (userRef.rx_setValue(userDict as AnyObject)
+            .map { _ in loggedInState })
     }
     
 }
