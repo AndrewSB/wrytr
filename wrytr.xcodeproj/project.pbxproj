@@ -354,9 +354,9 @@
 		462358711D7788EF007947B6 /* Startup */ = {
 			isa = PBXGroup;
 			children = (
+				462358791D778B69007947B6 /* AppCoordinator.swift */,
 				462358721D7788F5007947B6 /* Startup.storyboard */,
 				462358771D778B45007947B6 /* StartupViewController.swift */,
-				462358791D778B69007947B6 /* AppCoordinator.swift */,
 			);
 			path = Startup;
 			sourceTree = "<group>";

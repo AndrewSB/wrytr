@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         coordinator = AppCoordinator(store: store, container: mainController)
         coordinator.start(route: state.route)
-
         
         return true
     }
