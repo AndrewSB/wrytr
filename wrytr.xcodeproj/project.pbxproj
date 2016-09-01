@@ -98,7 +98,7 @@
 		462358621D7785C7007947B6 /* Cordux.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cordux.framework; path = Carthage/Build/iOS/Cordux.framework; sourceTree = "<group>"; };
 		4623586D1D7788B5007947B6 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		4623586F1D7788BC007947B6 /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
-		462358721D7788F5007947B6 /* Startup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Startup.storyboard; sourceTree = "<group>"; };
+		462358721D7788F5007947B6 /* Startup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Startup.storyboard; path = ../Molecules/Startup/Startup.storyboard; sourceTree = "<group>"; };
 		462358751D7789F3007947B6 /* FirebaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseProvider.swift; sourceTree = "<group>"; };
 		462358771D778B45007947B6 /* StartupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupViewController.swift; sourceTree = "<group>"; };
 		462358791D778B69007947B6 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 		468D0E4E1CCED0F2004250F6 /* FQuery+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "FQuery+Rx.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		468D0E501CCED4ED004250F6 /* ChallengeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ChallengeTableViewCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		468D0E521CCED77A004250F6 /* RenderedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RenderedImageView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		46BF97781C9B6DA700579066 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		46BF97781C9B6DA700579066 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = ../Legacy/Views/Login/Login.storyboard; sourceTree = "<group>"; };
 		46C099011C9E34D10015779C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
 		46C099021C9E34D10015779C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
 		46C099031C9E34D10015779C /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Frameworks/Fabric.framework; sourceTree = "<group>"; };
@@ -281,6 +281,8 @@
 			isa = PBXGroup;
 			children = (
 				468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */,
+				462358721D7788F5007947B6 /* Startup.storyboard */,
+				46BF97781C9B6DA700579066 /* Login.storyboard */,
 				468614C51C89CC3A002C2BAC /* Assets.xcassets */,
 				4644FBA21C9CC80A004ACBAF /* Constants */,
 			);
@@ -312,7 +314,6 @@
 			isa = PBXGroup;
 			children = (
 				462358791D778B69007947B6 /* AppCoordinator.swift */,
-				462358721D7788F5007947B6 /* Startup.storyboard */,
 				462358771D778B45007947B6 /* StartupViewController.swift */,
 			);
 			path = Startup;
@@ -422,7 +423,6 @@
 		4644FBC01C9CD6A7004ACBAF /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				46BF97781C9B6DA700579066 /* Login.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";

@@ -26,11 +26,21 @@ final class AppCoordinator: SceneCoordinator {
         store.rootCoordinator = self
         
         let initialRoute: RouteSegment = User.Service.isLoggedIn ? .home : .auth
-        changeScene(route ?? initialRoute.route())
+        
+        switch route {
+        case .none:
+            changeScene(initialRoute.route())
+        case .some(let r) where r.count == 0:
+            changeScene(initialRoute.route())
+        case .some(let r):
+            changeScene(r)
+        }
     }
     
     func changeScene(_ route: Route) {
-        let segment = RouteSegment(rawValue: route.first!)!
+        guard let segment = RouteSegment(rawValue: route.first ?? "") else {
+            return
+        }
         
         let old = currentScene?.rootViewController
         let coordinator: AnyCoordinator
@@ -42,8 +52,8 @@ final class AppCoordinator: SceneCoordinator {
 //            coordinator = CatalogCoordinator(store: store)
 //        }
 
-        let sceneRoute = Route(route.dropFirst())
-        coordinator.start(route: sceneRoute)
+//        let sceneRoute = Route(route.dropFirst()) // drop .auth or .home from the route that gets passed to the next scene
+        coordinator.start(route: sceneRoute(route))
         self.currentScene = coordinator
         self.scenePrefix = segment.rawValue
         
@@ -51,6 +61,7 @@ final class AppCoordinator: SceneCoordinator {
         switchView(inContainerView: self.container, from: old, to: new)
     }
     
+
 }
 
 // this handles animating b/w .auth & .home

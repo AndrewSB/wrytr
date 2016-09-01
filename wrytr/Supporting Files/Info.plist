@@ -93,10 +93,10 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>NSMainNibFile</key>
-	<string>Startup</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Startup</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
