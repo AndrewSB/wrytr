@@ -7,7 +7,7 @@ class PostDetailViewController: RxViewController {
     
     static let identifier = "PostDetailViewController"
     
-    let post = Variable<InflatedPost!>(nil)
+    let post = Variable<PostType!>(nil)
     
     let replyViewController = PublishReplyViewController()
     let responsesViewController = PostResponsesViewController()

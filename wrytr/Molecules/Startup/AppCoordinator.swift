@@ -25,7 +25,7 @@ final class AppCoordinator: SceneCoordinator {
     func start(route: Route?) {
         store.rootCoordinator = self
         
-        let initialRoute: RouteSegment = User.Service.isLoggedIn ? : .home : .auth
+        let initialRoute: RouteSegment = User.Service.isLoggedIn ? .home : .auth
         changeScene(route ?? initialRoute)
     }
     

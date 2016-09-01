@@ -10,7 +10,7 @@ class ChallengeTableView: UITableView {
     
     let disposeBag = DisposeBag()
     
-    let data = Variable([InflatedPost]())
+    let data = Variable([PostType]())
     
     let sideInset: CGFloat = 14
     
