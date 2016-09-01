@@ -28,15 +28,15 @@ extension ChallengeTableView {
         
         (dataSource, delegate) = (self, self)
         
-        data.asObservable()
-            .scan([InflatedPost]()) { (lastState, newValue) in
-                if lastState != newValue {
-                    self.reloadData()
-                }
-                return newValue
-            }
-            .subscribe()
-            .addDisposableTo(disposeBag)
+//        data.asObservable()
+//            .scan([PostType]()) { (lastState, newValue) in
+//                if lastState != newValue {
+//                    self.reloadData()
+//                }
+//                return newValue
+//            }
+//            .subscribe()
+//            .addDisposableTo(disposeBag)
 
     }
         
@@ -47,7 +47,7 @@ extension ChallengeTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        store.dispatch(FeedProvider.selectPost(data.value[indexPath.section]))
+//        store.dispatch(FeedProvider.selectPost(data.value[indexPath.section]))
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -80,11 +80,11 @@ extension ChallengeTableView: UITableViewDataSource {
         let element = data.value[indexPath.section]
         
         cell.xInsets = sideInset
-        cell.prompt.text = element.post.prompt
+        cell.prompt.text = element.prompt
         
-        _ = element.user.profilePictureNSUrl.flatMap {
-            cell.profilePicture.pin_setImage(from: $0)
-        }        
+//        _ = element.userId.profilePictureNSUrl.flatMap {
+//            cell.profilePicture.pin_setImage(from: $0)
+//        }        
 
         return cell
     }

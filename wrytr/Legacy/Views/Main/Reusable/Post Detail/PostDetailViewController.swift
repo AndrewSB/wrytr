@@ -45,38 +45,18 @@ extension PostDetailViewController {
         post.asObservable()
             .ignoreNil()
             .subscribe(onNext: { inflatedPost in
-                DispatchQueue.main.async {
-                    _ = inflatedPost.user.profilePictureNSUrl.flatMap {
-                        self.imageView.pin_setImage(from: $0)
-                    }
-                    self.titleLabel.text = inflatedPost.post.prompt
-                }
+//                DispatchQueue.main.async {
+//                    _ = inflatedPost.user.profilePictureNSUrl.flatMap {
+//                        self.imageView.pin_setImage(from: $0)
+//                    }
+//                    self.titleLabel.text = inflatedPost.post.prompt
+//                }
             })
             .addDisposableTo(disposeBag)
     }
 
 }
 
-extension PostDetailViewController: StoreSubscriber {
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        store.subscribe(self)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        store.unsubscribe(self)
-    }
-    
-    func newState(state: State) {
-        self.displayState.value = state.feedState.displayState
-        self.post.value = state.feedState.selectedPost
-    }
-    
-}
 
 extension PostDetailViewController {
     enum DisplayState {

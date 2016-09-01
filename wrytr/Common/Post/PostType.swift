@@ -7,3 +7,11 @@ protocol PostType {
     var authorId: UserID { get }
     var reactions: [ReactionType] { get }
 }
+
+func ==(lhs: PostType, rhs: PostType) -> Bool {
+    return lhs.id == rhs.id
+}
+
+func !=(lhs: PostType, rhs: PostType) -> Bool {
+    return !(lhs == rhs)
+}

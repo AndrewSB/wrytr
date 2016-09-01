@@ -9,11 +9,9 @@ struct AppState: StateType {
 
 final class AppReducer: Reducer {
     func handleAction(_ action: Action, state: AppState) -> AppState {
-        var state = state
-
         return State(
             route: state.route,
-            authenticationState: Authentication.Reducer.handleAction(action, state: state.authenticationState)
+            authenticationState: state.authenticationState
         )
     }
 }

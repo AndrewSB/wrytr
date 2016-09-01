@@ -14,14 +14,14 @@ class ComposeViewController: RxViewController {
     
     let keyboardObserver = UnderKeyboardObserver()
 
-    @IBOutlet weak var profileImageView: RoundedImageView! {
-        didSet {
-            _ = User.local.profilePictureNSUrl.flatMap { profileImageView.pin_setImage(from: $0) }
-        }
-    }
-    @IBOutlet weak var usernameLabel: UILabel! {
-        didSet { usernameLabel.text = User.local.authData.name }
-    }
+//    @IBOutlet weak var profileImageView: RoundedImageView! {
+//        didSet {
+//            _ = User.local.profilePictureNSUrl.flatMap { profileImageView.pin_setImage(from: $0) }
+//        }
+//    }
+//    @IBOutlet weak var usernameLabel: UILabel! {
+//        didSet { usernameLabel.text = User.local.authData.name }
+//    }
     @IBOutlet weak var challengeTextView: UITextView! {
         didSet { challengeTextView.delegate = self }
     }
@@ -83,7 +83,7 @@ extension ComposeViewController: UITextViewDelegate {
         if text == "\n" {
             let text = textView.text
             textView.endEditing(true)
-            self.postChallenge(Post(id: nil, userId: User.local.authData.id, prompt: text!, stars: nil, comments: nil))
+//            self.postChallenge(Post(id: nil, userId: User.local.authData.id, prompt: text!, stars: nil, comments: nil))
             return false
         } else {
             return true

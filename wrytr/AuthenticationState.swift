@@ -1,4 +1,5 @@
 import ReSwift
+import Cordux
 
 extension Authentication {
     enum State: ReSwift.StateType {
@@ -10,9 +11,13 @@ extension Authentication {
         case signIn
         case signOut
     }
+}
 
-    class Reducer: Reducer {
-        func handleAction(_ action: Action, state: State) -> State {
+extension Authentication {
+    class Reducer {
+        typealias State = Authentication.State
+        
+        public func handleAction(_ action: Action, state: State) -> State {
             return state
         }
     }

@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let store = Store(initialState: AppState(), reducer: AppReducer(), middlewares: [])
         
         coordinator = AppCoordinator(store: store, container: mainController)
-        coordinator.start(route: state.route)
+        coordinator.start(route: store.state.route)
         
         return true
     }

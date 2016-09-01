@@ -1,11 +1,10 @@
 import Firebase
 
 extension Firebase {
-    private static let ref = Firebase(url: "http://wrytr.firebaseio.com")!
-    
     class Provider {
+        private let ref = Firebase(url: "http://wrytr.firebaseio.com")!
         
-        static var isLoggedIn: Bool {
+        var isLoggedIn: Bool {
             return ref.authData != nil
         }
         

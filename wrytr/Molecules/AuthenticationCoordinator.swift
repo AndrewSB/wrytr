@@ -19,7 +19,7 @@ extension Authentication {
         
         func start(route: Route?) {
             guard let numberOfSegments = route?.count, numberOfSegments > 0 else {
-                store.setRoute(.push(.landing))
+                return store.setRoute(.push(RouteSegment.landing))
             }
         }
         

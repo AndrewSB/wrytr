@@ -70,8 +70,6 @@
 		466BD09B1CADAA14008DC0C3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD09A1CADAA14008DC0C3 /* Security.framework */; };
 		466BD09E1CADAB09008DC0C3 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD09D1CADAB09008DC0C3 /* Firebase.framework */; };
 		466E73FD1CAF271A00EC0B7C /* Firebase+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E73FC1CAF271A00EC0B7C /* Firebase+Rx.swift */; };
-		466E73FF1CAF4FEC00EC0B7C /* ReSwiftTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E73FE1CAF4FEC00EC0B7C /* ReSwiftTabBarController.swift */; };
-		466E74011CAFA60000EC0B7C /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E74001CAFA60000EC0B7C /* HomeTabBarController.swift */; };
 		466E74031CAFA72600EC0B7C /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466E74021CAFA72600EC0B7C /* Feed.storyboard */; };
 		468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468614BE1C89CC3A002C2BAC /* AppDelegate.swift */; };
 		468614C61C89CC3A002C2BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468614C51C89CC3A002C2BAC /* Assets.xcassets */; };
@@ -159,8 +157,6 @@
 		466BD09A1CADAA14008DC0C3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		466BD09D1CADAB09008DC0C3 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Frameworks/Firebase.framework; sourceTree = "<group>"; };
 		466E73FC1CAF271A00EC0B7C /* Firebase+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Firebase+Rx.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		466E73FE1CAF4FEC00EC0B7C /* ReSwiftTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReSwiftTabBarController.swift; sourceTree = "<group>"; };
-		466E74001CAFA60000EC0B7C /* HomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HomeTabBarController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		466E74021CAFA72600EC0B7C /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		468614BB1C89CC3A002C2BAC /* wrytr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wrytr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		468614BE1C89CC3A002C2BAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -434,7 +430,6 @@
 		4644FBC11C9CD6AB004ACBAF /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				466E74001CAFA60000EC0B7C /* HomeTabBarController.swift */,
 				46271FAC1CD2B00E007196B2 /* Reusable */,
 				466E74021CAFA72600EC0B7C /* Feed.storyboard */,
 				4658D6B71CC08914009527DF /* Friends.storyboard */,
@@ -468,7 +463,6 @@
 			children = (
 				468D0E521CCED77A004250F6 /* RenderedImageView.swift */,
 				46C0991F1CA097640015779C /* LoadingViewController.swift */,
-				466E73FE1CAF4FEC00EC0B7C /* ReSwiftTabBarController.swift */,
 				46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */,
 				462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */,
 			);
@@ -711,7 +705,6 @@
 				46452E621D7797B00053EC4A /* Post.swift in Sources */,
 				4644FBC71C9D256B004ACBAF /* Localizable_Strings.swift in Sources */,
 				462F03261CE273D00031B1B1 /* UIStackExtension.swift in Sources */,
-				466E73FF1CAF4FEC00EC0B7C /* ReSwiftTabBarController.swift in Sources */,
 				46C099201CA097640015779C /* LoadingViewController.swift in Sources */,
 				46452E761D77A7F30053EC4A /* LandingHandler.swift in Sources */,
 				4623587E1D778D9B007947B6 /* AuthenticationCoordinator.swift in Sources */,
@@ -743,7 +736,6 @@
 				46452E641D7797F10053EC4A /* ReactionType.swift in Sources */,
 				46307D391CDD67A700E47A1C /* ExtendedNavbarView.swift in Sources */,
 				46452E661D7799620053EC4A /* ThirdPartyServices.swift in Sources */,
-				466E74011CAFA60000EC0B7C /* HomeTabBarController.swift in Sources */,
 				46452E691D7799760053EC4A /* Facebook.swift in Sources */,
 				466E73FD1CAF271A00EC0B7C /* Firebase+Rx.swift in Sources */,
 				46260A741D3EAEF400CB6850 /* Observable + Ignore Nil.swift in Sources */,
