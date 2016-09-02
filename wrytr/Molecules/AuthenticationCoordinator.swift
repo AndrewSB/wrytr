@@ -19,23 +19,24 @@ extension Authentication {
         init(store: Store) {
             self.store = store
             
-            let landingVC = Landing.make(context: Context(RouteSegment.landing, lifecycleDelegate: self))
-            self.navigationController.viewControllers = [landingVC]
+            let landingVC = Landing.make(context: Context(RouteSegment.landing, lifecycleDelegate: self), store: self.store)
+            self.navigationController.setViewControllers([landingVC], animated: false)
         }
         
         func start(route: Route?) {
-            switch route {
-            case .none:
-                self.store.setRoute(.push(RouteSegment.landing))
-            case .some(let route) where route.count == 0:
-                self.store.setRoute(.push(RouteSegment.landing))
-            case .some(let route):
-                assertionFailure("\(route)")
+            guard let route = route, route.count > 0 else {
+                return self.store.route(.push(RouteSegment.landing)) // this will call updateRoute
             }
+            
+            updateRoute(route)
         }
         
         func updateRoute(_ route: Route) {
-            assertionFailure("need to update route?")
+            let parsedRoute = route.flatMap(RouteSegment.init)
+
+            if parsedRoute != [.landing] || !parsedRoute.isEmpty {} else {
+                assertionFailure()
+            }
         }
         
 
@@ -45,12 +46,12 @@ extension Authentication {
 
 extension Authentication.Coordinator: ViewControllerLifecycleDelegate {
     @objc func viewDidLoad(viewController: UIViewController) {
-        switch viewController {
-        case let landingVC as LandingViewController:
-            self.store.subscribe(landingVC) 
-        default:
-            assertionFailure()
-        }
+//        switch viewController {
+//        case let landingVC as LandingViewController:
+//            self.store.subscribe(l)
+//        default:
+//            assertionFailure()
+//        }
     }
     
     @objc func didMove(toParentViewController parentViewController: UIViewController?, viewController: UIViewController) {

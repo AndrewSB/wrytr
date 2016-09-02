@@ -5,6 +5,11 @@ final class AppCoordinator: SceneCoordinator {
     enum RouteSegment: String, RouteConvertible {
         case auth
         case home
+        
+        var coordinator: AnyCoordinator.Type {
+            return Authentication.Coordinator.self
+        }
+        
     }
     var scenePrefix: String?
     
@@ -25,16 +30,12 @@ final class AppCoordinator: SceneCoordinator {
     func start(route: Route?) {
         store.rootCoordinator = self
         
-        let initialRoute: RouteSegment = User.Service.isLoggedIn ? .home : .auth
-        
-        switch route {
-        case .none:
-            changeScene(initialRoute.route())
-        case .some(let r) where r.count == 0:
-            changeScene(initialRoute.route())
-        case .some(let r):
-            changeScene(r)
+        guard let route = route, route.count > 0 else {
+            let initialRouteSegment: RouteSegment = User.Service.isLoggedIn ? .home : .auth
+            return store.route(.push(initialRouteSegment.route())) // this will call changeScene
         }
+        
+        changeScene(route)
     }
     
     func changeScene(_ route: Route) {
@@ -42,26 +43,21 @@ final class AppCoordinator: SceneCoordinator {
             return
         }
         
+        guard segment.coordinator != type(of: currentScene) else {
+            return
+        }
+        
         let old = currentScene?.rootViewController
+        
         let coordinator: AnyCoordinator
-        coordinator = Authentication.Coordinator(store: store)
-//        switch segment {
-//        case .auth:
-//            coordinator = AuthenticationCoordinator(store: store)
-//        case .home:
-//            coordinator = CatalogCoordinator(store: store)
-//        }
-
-//        let sceneRoute = Route(route.dropFirst()) // drop .auth or .home from the route that gets passed to the next scene
-        coordinator.start(route: sceneRoute(route))
+        coordinator = Authentication.Coordinator(store: self.store)
         self.currentScene = coordinator
         self.scenePrefix = segment.rawValue
+        coordinator.start(route: sceneRoute(route))
         
         let new = coordinator.rootViewController
         switchView(inContainerView: self.container, from: old, to: new)
     }
-    
-
 }
 
 // this handles animating b/w .auth & .home

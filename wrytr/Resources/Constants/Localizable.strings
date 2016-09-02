@@ -7,7 +7,9 @@
 */
 
 "login.landing.subtitle" = "Use your words";
-"login.landing.facebookbutton.title" = "Sign in with Facebook";
-"login.landing.twitterbutton.title" = "Sign in with Twitter";
-"login.landing.emailbutton.title" = "Sign up with Email";
-"login.landing.loginbutton.title" = "Log in";
+"login.landing.socialButton.title" = "Continue with social";
+"login.landing.login.title" = "Log in";
+"login.landing.register.title" = "Sign up";
+"login.landing.emailbutton.title" = "%@ with Email";
+"login.landing.helper.login.title" = "Haven't registered yet?";
+"login.landing.helper.register.title" = "Already registered?";

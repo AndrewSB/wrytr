@@ -1,24 +1,39 @@
+//  Copyright © 2016 Martians Inc. All rights reserved.
 import Foundation
 import RxSwift
+import RxCocoa
 
-public protocol OptionalType {
-    func hasValue() -> Bool
+extension Observable where Element: Equatable {
+    func ignore(value: Element) -> Observable<Element> {
+        return filter { (e) -> Bool in
+            return value != e
+        }
+    }
+}
+
+protocol OptionalType {
+    associatedtype T
+    var asOptional: T? { get }
 }
 
 extension Optional: OptionalType {
-    public func hasValue() -> Bool {
-        return (self != nil)
+    var asOptional: Wrapped? {
+        return self
     }
 }
 
-extension ImplicitlyUnwrappedOptional: OptionalType {
-    public func hasValue() -> Bool {
-        return (self != nil)
+extension Observable where Element: OptionalType {
+    func ignoreNil() -> Observable<Element.T> {
+        return self
+            .filter { return $0.asOptional != nil  }
+            .map { return $0.asOptional! }
     }
 }
 
-public extension ObservableType where E: OptionalType {
-    public func ignoreNil() -> Observable<E> {
-        return self.filter { $0.hasValue() }
+extension Driver where Element: OptionalType {
+    func ignoreNil() -> Driver<Element.T> {
+        return self
+            .filter { return $0.asOptional != nil  }
+            .map { return $0.asOptional! }
     }
 }

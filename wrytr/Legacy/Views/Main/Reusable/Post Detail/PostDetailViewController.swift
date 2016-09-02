@@ -7,11 +7,11 @@ class PostDetailViewController: RxViewController {
     
     static let identifier = "PostDetailViewController"
     
-    let post = Variable<PostType!>(nil)
+    let post = Variable<PostType?>(nil)
     
     let replyViewController = PublishReplyViewController()
     let responsesViewController = PostResponsesViewController()
-    let displayState = Variable<DisplayState!>(nil)
+    let displayState = Variable<DisplayState?>(nil)
     
     let imageView = UIImageView()
     @IBOutlet weak var titleLabel: UILabel!
@@ -33,7 +33,7 @@ extension PostDetailViewController {
             .ignoreNil()
             .distinctUntilChanged(==)
             .subscribe(onNext: { display in
-                switch display! {
+                switch display {
                 case .list:
                     break
                 case .reply:

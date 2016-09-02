@@ -2,23 +2,34 @@ import UIKit
 import Library
 import RxSwift
 import RxCocoa
+import Cordux
 
 extension Landing {
    
     class UI: UIType {
         let interface: Landing.ViewController.IB
-        let handler = Landing.Handler()
+        let handler: Landing.Handler
         
         lazy var bindings: [Disposable] = [
             self.interface.facebookButton.rx.tap.asDriver().drive(onNext: self.handler.facebookTap),
-            self.interface.twitterButton.rx.tap.asDriver().drive(onNext: self.handler.twitterTap)
+            self.interface.twitterButton.rx.tap.asDriver().drive(onNext: self.handler.twitterTap),
+            self.interface.helperButton.rx.tap.asDriver()
+                .scan(ViewModel.Option.login) { previousState, _ in
+                    switch previousState {
+                    case .login: return .register
+                    case .register: return .login
+                    }
+                }
+                .drive(onNext: self.handler.changeAuthOptionTap)
         ]
         
-        init(interface: Landing.ViewController.IB) {
+        init(interface: ViewController.IB, handler: Handler) {
             self.interface = {
                 $0.formContainer.addEdgePadding()
                 
                 $0.subtitle.text = tr(key: .LoginLandingSubtitle)
+                
+                $0.titleLabel.text = tr(key: .LoginLandingSocialButtonTitle)
                 
                 $0.twitterButton.configure(withColor: UIColor(named: .TwitterBlue))
                 $0.facebookButton.configure(withColor: UIColor(named: .FacebookBlue))
@@ -32,9 +43,34 @@ extension Landing {
                 
                 return $0
             }(interface)
+            
+            self.handler = handler
         }
     }
     
+}
+
+extension Landing.UI: Renderer {
+    typealias ViewModel = Landing.ViewModel
+
+    func render(_ viewModel: Landing.ViewModel) {
+        let wordedOption: String
+        let helperTitle: String
+        switch viewModel.option {
+        case .login:
+            wordedOption = tr(key: .LoginLandingLoginTitle)
+            helperTitle = tr(key: .LoginLandingHelperLoginTitle)
+        case .register:
+            wordedOption = tr(key: .LoginLandingRegisterTitle)
+            helperTitle = tr(key: .LoginLandingHelperRegisterTitle)
+        }
+
+        self.interface.formHeader.text = tr(key: L10n.LoginLandingEmailbuttonTitle(wordedOption))
+        self.interface.usernameField.isHidden = viewModel.option == .login
+        self.interface.actionButton.setTitle(title: wordedOption)
+        self.interface.helperButton.setTitle(title: wordedOption)
+        self.interface.helperLabel.text = helperTitle
+    }
 }
 
 fileprivate extension UIButton {

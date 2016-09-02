@@ -6,13 +6,13 @@ extension Landing {
     typealias ViewController = LandingViewController
 }
 
-extension LandingViewController {
+extension Landing.ViewController {
     static func fromStoryboard() -> LandingViewController {
         return StoryboardScene.Landing.instantiateLanding()
     }
 }
 
-class LandingViewController: ForwardingViewController {
+class LandingViewController: ForwardingViewController, InterfaceProvidingPrimitive {
     @IBOutlet weak var subtitle: UILabel!
     @IBOutlet weak var formContainer: UIStackView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -30,11 +30,17 @@ class LandingViewController: ForwardingViewController {
     
     @IBOutlet weak var helperLabel: UILabel!
     @IBOutlet weak var helperButton: RoundedButton!
+    
+    var interface: Primitive!
+    var onViewDidLoad: (() -> ())?
 }
 
-extension LandingViewController {
+extension Landing.ViewController {
+    
     override func viewDidLoad() {
-        let interface = IB(
+        super.viewDidLoad()
+        
+        self.interface = IB(
             subtitle: subtitle,
             formContainer: formContainer,
             titleLabel: titleLabel,
@@ -45,15 +51,15 @@ extension LandingViewController {
             emailField: emailField,
             passwordField: passwordField,
             termsOfServiceButton: termsOfServiceButton,
-            actionButton: actionButton,            
+            actionButton: actionButton,
             helperLabel: helperLabel,
             helperButton: helperButton
         )
         
-        self.ui = Landing.UI(interface: interface)
+        self.onViewDidLoad?()
     }
     
-    struct IB {
+    struct IB: Primitive {
         let subtitle: UILabel
         let formContainer: UIStackView
         let titleLabel: UILabel
@@ -67,13 +73,5 @@ extension LandingViewController {
         let actionButton: RoundedButton
         let helperLabel: UILabel
         let helperButton: RoundedButton
-    }
-}
-
-extension LandingViewController: SubscriberType {
-    typealias StoreSubscriberStateType = AppState
-    
-    func newState(_ state: AppState) {
-        print("NEW STATE: \(state)")
     }
 }
