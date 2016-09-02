@@ -1,4 +1,5 @@
 import Cordux
+import Then
 
 class Authentication {}
 
@@ -11,12 +12,14 @@ extension Authentication {
         
         let store: Store
         
-        let navigationController = UINavigationController()
+        let navigationController = UINavigationController().then {
+            $0.isNavigationBarHidden = true
+        }
         
         init(store: Store) {
             self.store = store
             
-            let landingVC = Landing.build(context: Context(RouteSegment.landing, lifecycleDelegate: self))
+            let landingVC = Landing.make(context: Context(RouteSegment.landing, lifecycleDelegate: self))
             self.navigationController.viewControllers = [landingVC]
         }
         

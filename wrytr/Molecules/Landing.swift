@@ -2,7 +2,7 @@ import Cordux
 
 class Landing {
 
-    static func build(context: Context) -> LandingViewController {
+    static func make(context: Context) -> LandingViewController {
         let viewController = LandingViewController.fromStoryboard()
         viewController.corduxContext = context
     

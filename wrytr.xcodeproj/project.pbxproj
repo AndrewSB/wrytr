@@ -77,7 +77,10 @@
 		468D0E4F1CCED0F2004250F6 /* FQuery+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E4E1CCED0F2004250F6 /* FQuery+Rx.swift */; };
 		468D0E511CCED4ED004250F6 /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E501CCED4ED004250F6 /* ChallengeTableViewCell.swift */; };
 		468D0E531CCED77A004250F6 /* RenderedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E521CCED77A004250F6 /* RenderedImageView.swift */; };
-		46BF97791C9B6DA700579066 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF97781C9B6DA700579066 /* Login.storyboard */; };
+		46AE37471D78F768005A89F3 /* Then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AE37461D78F768005A89F3 /* Then.framework */; };
+		46AE37491D78F7BE005A89F3 /* LandingUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE37481D78F7BE005A89F3 /* LandingUI.swift */; };
+		46AE374B1D78F851005A89F3 /* ForwardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE374A1D78F851005A89F3 /* ForwardingViewController.swift */; };
+		46BF97791C9B6DA700579066 /* Landing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF97781C9B6DA700579066 /* Landing.storyboard */; };
 		46C099061C9E34D10015779C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099011C9E34D10015779C /* Bolts.framework */; };
 		46C099071C9E34D10015779C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099021C9E34D10015779C /* Crashlytics.framework */; };
 		46C099081C9E34D10015779C /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099031C9E34D10015779C /* Fabric.framework */; };
@@ -166,7 +169,10 @@
 		468D0E4E1CCED0F2004250F6 /* FQuery+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "FQuery+Rx.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		468D0E501CCED4ED004250F6 /* ChallengeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ChallengeTableViewCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		468D0E521CCED77A004250F6 /* RenderedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RenderedImageView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		46BF97781C9B6DA700579066 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = ../Legacy/Views/Login/Login.storyboard; sourceTree = "<group>"; };
+		46AE37461D78F768005A89F3 /* Then.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Then.framework; path = Carthage/Build/iOS/Then.framework; sourceTree = "<group>"; };
+		46AE37481D78F7BE005A89F3 /* LandingUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingUI.swift; sourceTree = "<group>"; };
+		46AE374A1D78F851005A89F3 /* ForwardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForwardingViewController.swift; sourceTree = "<group>"; };
+		46BF97781C9B6DA700579066 /* Landing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Landing.storyboard; path = ../Legacy/Views/Login/Landing.storyboard; sourceTree = "<group>"; };
 		46C099011C9E34D10015779C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
 		46C099021C9E34D10015779C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
 		46C099031C9E34D10015779C /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Frameworks/Fabric.framework; sourceTree = "<group>"; };
@@ -198,6 +204,7 @@
 				4644FBD91C9E1307004ACBAF /* RxSwift.framework in Frameworks */,
 				46271FAB1CD2AB36007196B2 /* Library.framework in Frameworks */,
 				46C0990A1C9E34D10015779C /* FBSDKLoginKit.framework in Frameworks */,
+				46AE37471D78F768005A89F3 /* Then.framework in Frameworks */,
 				4644FB9C1C9CBCEF004ACBAF /* ReSwift.framework in Frameworks */,
 				46C099081C9E34D10015779C /* Fabric.framework in Frameworks */,
 				466BD09E1CADAB09008DC0C3 /* Firebase.framework in Frameworks */,
@@ -219,6 +226,7 @@
 		461FD7521D760B30001BE92E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				46AE37461D78F768005A89F3 /* Then.framework */,
 				462358621D7785C7007947B6 /* Cordux.framework */,
 				463913E21D7644C90077D0E5 /* UnderKeyboard.framework */,
 				46271FAA1CD2AB36007196B2 /* Library.framework */,
@@ -261,6 +269,7 @@
 				46452E551D7794BC0053EC4A /* Rx */,
 				46452E561D7794C50053EC4A /* UI */,
 				463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */,
+				46AE374A1D78F851005A89F3 /* ForwardingViewController.swift */,
 				46452E671D77996D0053EC4A /* ThirdParty */,
 			);
 			path = Common;
@@ -282,7 +291,7 @@
 			children = (
 				468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */,
 				462358721D7788F5007947B6 /* Startup.storyboard */,
-				46BF97781C9B6DA700579066 /* Login.storyboard */,
+				46BF97781C9B6DA700579066 /* Landing.storyboard */,
 				468614C51C89CC3A002C2BAC /* Assets.xcassets */,
 				4644FBA21C9CC80A004ACBAF /* Constants */,
 			);
@@ -339,6 +348,7 @@
 				46452E711D77A7E40053EC4A /* LandingViewModel.swift */,
 				46452E751D77A7F30053EC4A /* LandingHandler.swift */,
 				46452E731D77A7ED0053EC4A /* LandingViewController.swift */,
+				46AE37481D78F7BE005A89F3 /* LandingUI.swift */,
 			);
 			name = Landing;
 			sourceTree = "<group>";
@@ -631,7 +641,7 @@
 				46C099191CA072250015779C /* TwitterKitResources.bundle in Resources */,
 				4644FBC51C9CDE8D004ACBAF /* Localizable.strings in Resources */,
 				4658D6B81CC08914009527DF /* Friends.storyboard in Resources */,
-				46BF97791C9B6DA700579066 /* Login.storyboard in Resources */,
+				46BF97791C9B6DA700579066 /* Landing.storyboard in Resources */,
 				468614C91C89CC3A002C2BAC /* LaunchScreen.storyboard in Resources */,
 				468614C61C89CC3A002C2BAC /* Assets.xcassets in Resources */,
 			);
@@ -656,6 +666,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/PINCache.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/UnderKeyboard.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Cordux.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Then.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
@@ -700,6 +711,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4644FBA51C9CC820004ACBAF /* Storyboards.swift in Sources */,
+				46AE37491D78F7BE005A89F3 /* LandingUI.swift in Sources */,
 				4644FBBE1C9CD686004ACBAF /* Colors.swift in Sources */,
 				46452E741D77A7ED0053EC4A /* LandingViewController.swift in Sources */,
 				46452E621D7797B00053EC4A /* Post.swift in Sources */,
@@ -741,6 +753,7 @@
 				46260A741D3EAEF400CB6850 /* Observable + Ignore Nil.swift in Sources */,
 				462358781D778B45007947B6 /* StartupViewController.swift in Sources */,
 				46452E701D77A7D80053EC4A /* Landing.swift in Sources */,
+				46AE374B1D78F851005A89F3 /* ForwardingViewController.swift in Sources */,
 				4623586E1D7788B5007947B6 /* UserService.swift in Sources */,
 				462894E61D37F593006044E1 /* PostDetailViewController.swift in Sources */,
 				462F032A1CE2ADDF0031B1B1 /* NSRangeExtension.swift in Sources */,
