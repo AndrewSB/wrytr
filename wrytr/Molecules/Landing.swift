@@ -18,9 +18,5 @@ class Landing {
     
         return viewController
     }
-    
-    fileprivate static func wireUp() {
-        
-    }
 
 }

@@ -7,6 +7,8 @@ import Cordux
 extension Landing {
    
     class UI: UIType {
+        weak var viewController: UIViewController?
+
         let interface: Landing.ViewController.IB
         let handler: Landing.Handler
         
@@ -54,9 +56,19 @@ extension Landing.UI: Renderer {
     typealias ViewModel = Landing.ViewModel
 
     func render(_ viewModel: Landing.ViewModel) {
+        renderAuthOption(option: viewModel.option)
+        _ = viewModel.loading ? showLoading() : hideLoading()
+        viewModel.error.flatMap { err in
+            self.presentError(error: err, actions: [
+                UIAlertAction(title: "Ok", style: .cancel, handler: self.handler.errorOkTap)
+            ])
+        }
+    }
+    
+    fileprivate func renderAuthOption(option: Landing.ViewModel.Option) {
         let wordedOption: String
         let helperTitle: String
-        switch viewModel.option {
+        switch option {
         case .login:
             wordedOption = tr(key: .LoginLandingLoginTitle)
             helperTitle = tr(key: .LoginLandingHelperLoginTitle)
@@ -64,12 +76,18 @@ extension Landing.UI: Renderer {
             wordedOption = tr(key: .LoginLandingRegisterTitle)
             helperTitle = tr(key: .LoginLandingHelperRegisterTitle)
         }
-
+        
+        self.interface.formContainer.layoutIfNeeded()
+        
         self.interface.formHeader.text = tr(key: L10n.LoginLandingEmailbuttonTitle(wordedOption))
-        self.interface.usernameField.isHidden = viewModel.option == .login
+        self.interface.usernameField.isHidden = option == .login
         self.interface.actionButton.setTitle(title: wordedOption)
         self.interface.helperButton.setTitle(title: wordedOption)
         self.interface.helperLabel.text = helperTitle
+        
+        UIView.animate(withDuration: 0.2) {
+            self.interface.formContainer.layoutIfNeeded()
+        }
     }
 }
 

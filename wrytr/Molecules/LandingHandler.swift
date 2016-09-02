@@ -11,7 +11,7 @@ extension Landing {
         }
         
         func twitterTap() {
-//            store.dispatch()
+            store.dispatch(Landing.Action.startLoading)
         }
         
         func facebookTap() {
@@ -24,6 +24,10 @@ extension Landing {
         
         func changeAuthOptionTap(option: ViewModel.Option) {
             store.dispatch(Landing.Action.updateOption(option))
+        }
+        
+        func errorOkTap() {
+            store.dispatch(Landing.Action.dismissError)
         }
         
     }

@@ -28,7 +28,7 @@ class LoadingViewController: UIViewController {
 
 extension UIViewController {
     
-    func startLoading(_ loaderColor: UIColor? = .white) {
+    func startLoading(_ loaderColor: UIColor? = .gray) {
         self.view.isUserInteractionEnabled = false
         self.loader.loadingView.color = loaderColor
         self.loader.show()

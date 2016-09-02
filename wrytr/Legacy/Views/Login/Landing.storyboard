@@ -143,7 +143,7 @@
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDK-hp-qoC">
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="J4R-EN-HXX">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="J4R-EN-HXX">
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foP-2e-3fU">
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -154,7 +154,7 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gci-of-rTw" customClass="RoundedButton" customModule="Library">
                                                                 <color key="backgroundColor" red="0.1247283444" green="0.61703085899999999" blue="0.65562099220000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="66" id="ZEt-o7-8TZ"/>
+                                                                    <constraint firstAttribute="width" constant="80" id="ZEt-o7-8TZ"/>
                                                                 </constraints>
                                                                 <size key="titleShadowOffset" width="0.0" height="2.2250738585072014e-308"/>
                                                                 <state key="normal" title="action">
