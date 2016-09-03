@@ -12,3 +12,7 @@ github "marketplacer/UnderKeyboard"
 github "willowtreeapps/cordux"
 
 github "devxoul/Then" "swift-3.0"
+
+github "thoughtbot/Curry" "master"
+github "thoughtbot/Argo" "gf-updates"
+github "edwardaux/Ogra" "master"

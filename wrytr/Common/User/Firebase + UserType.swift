@@ -1,6 +1,9 @@
 import Firebase
 import RxSwift
 import RxCocoa
+import Runes
+import Curry
+import Argo
 
 extension Firebase {
     struct User: UserType {
@@ -10,6 +13,19 @@ extension Firebase {
     }
 }
 
+extension Firebase.User: Decodable {
+
+    public static func decode(_ j: JSON) -> Decoded<Firebase.User> {
+        let user = curry(Firebase.User.init)
+            <^> j <| "uid"
+            <*> j <| "name"
+            <*> j <|? "profilePictureUrl"
+        
+        return user
+    }
+    
+}
+
 extension Reactive where Base: Firebase {
     
     func fetchUser(withId id: UserID) -> Observable<Firebase.User> {
@@ -17,15 +33,18 @@ extension Reactive where Base: Firebase {
             .child(byAppendingPath: "users/\(id)")
             .rx.observeEventOnce()
             .map {
-                $0 as! Firebase.User
+                let json = Argo.JSON($0.value)
+                return Firebase.User.decode(json).value!
             }
     }
     
     func updateUser(userId id: UserID, newUser: UserType) -> Observable<Firebase.User> {
+        let firebaseUser = Firebase.User(id: newUser.id, name: newUser.name, photo: newUser.photo)
+        
         return self.base
             .child(byAppendingPath: "users/\(id)")
-            .setValue(newUser)
-            .map { _ in newUser }
+            .rx.setValue("" as AnyObject)
+            .map { _ in firebaseUser }
     }
     
 }
