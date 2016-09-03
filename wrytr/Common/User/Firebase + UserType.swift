@@ -16,4 +16,8 @@ extension Reactive where Base: Firebase {
         return .empty()
     }
     
+    func updateUser(userId id: UserID, newUser: UserType) -> Observable<Firebase.User> {
+        return .empty()
+    }
+    
 }

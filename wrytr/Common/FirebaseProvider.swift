@@ -23,6 +23,12 @@ extension Firebase {
                 .map { $0 as UserType }
         }
         
+        func getUser(withUserID userID: UserID) -> Observable<UserType> {
+            return ref.rx.fetchUser(withId: userID).map { $0 as UserType }
+        }
         
+        func update(userWithID userID: UserID, newUser: UserType) -> Observable<UserType> {
+            return ref.rx.updateUser(userId: userID, newUser: newUser).map { $0 as UserType }
+        }
     }
 }
