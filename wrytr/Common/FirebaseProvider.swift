@@ -12,13 +12,13 @@ extension Firebase {
         }
         
         func login(email: String, password: String) -> Observable<UserType> {
-            return ref.rx_login(email: email, password: password)
+            return ref.rx.login(email: email, password: password)
                 .flatMap(self.ref.rx.fetchUser)
                 .map { $0 as UserType }
         }
         
         func signup(email: String, password: String) -> Observable<UserType> {
-            return ref.rx_signup(email: email, password: password)
+            return ref.rx.signup(email: email, password: password)
                 .flatMap(self.ref.rx.fetchUser)
                 .map { $0 as UserType }
         }

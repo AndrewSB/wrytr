@@ -74,7 +74,7 @@
 		468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468614BE1C89CC3A002C2BAC /* AppDelegate.swift */; };
 		468614C61C89CC3A002C2BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468614C51C89CC3A002C2BAC /* Assets.xcassets */; };
 		468614C91C89CC3A002C2BAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */; };
-		468D0E4F1CCED0F2004250F6 /* Firebase + Rx FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E4E1CCED0F2004250F6 /* Firebase + Rx FetchData.swift */; };
+		468D0E4F1CCED0F2004250F6 /* Firebase+Rx FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E4E1CCED0F2004250F6 /* Firebase+Rx FetchData.swift */; };
 		468D0E511CCED4ED004250F6 /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E501CCED4ED004250F6 /* ChallengeTableViewCell.swift */; };
 		468D0E531CCED77A004250F6 /* RenderedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E521CCED77A004250F6 /* RenderedImageView.swift */; };
 		46AE37471D78F768005A89F3 /* Then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AE37461D78F768005A89F3 /* Then.framework */; };
@@ -171,7 +171,7 @@
 		468614C51C89CC3A002C2BAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		468614C81C89CC3A002C2BAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468614CA1C89CC3A002C2BAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		468D0E4E1CCED0F2004250F6 /* Firebase + Rx FetchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Firebase + Rx FetchData.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		468D0E4E1CCED0F2004250F6 /* Firebase+Rx FetchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Firebase+Rx FetchData.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		468D0E501CCED4ED004250F6 /* ChallengeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ChallengeTableViewCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		468D0E521CCED77A004250F6 /* RenderedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RenderedImageView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		46AE37461D78F768005A89F3 /* Then.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Then.framework; path = Carthage/Build/iOS/Then.framework; sourceTree = "<group>"; };
@@ -533,7 +533,7 @@
 			children = (
 				466E73FC1CAF271A00EC0B7C /* Firebase+Rx Auth.swift */,
 				46AE37541D7A9B95005A89F3 /* Firebase+Rx SetData.swift */,
-				468D0E4E1CCED0F2004250F6 /* Firebase + Rx FetchData.swift */,
+				468D0E4E1CCED0F2004250F6 /* Firebase+Rx FetchData.swift */,
 				46AE37521D7A3FD3005A89F3 /* Firebase + UserType.swift */,
 			);
 			name = Extensions;
@@ -752,7 +752,7 @@
 				462894EA1D37F6D7006044E1 /* PostResponsesViewController.swift in Sources */,
 				462358701D7788BC007947B6 /* PostService.swift in Sources */,
 				468D0E531CCED77A004250F6 /* RenderedImageView.swift in Sources */,
-				468D0E4F1CCED0F2004250F6 /* Firebase + Rx FetchData.swift in Sources */,
+				468D0E4F1CCED0F2004250F6 /* Firebase+Rx FetchData.swift in Sources */,
 				46452E6B1D77997A0053EC4A /* Fabric.swift in Sources */,
 				46271FAE1CD2B02F007196B2 /* ChallengeTableView.swift in Sources */,
 				4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */,

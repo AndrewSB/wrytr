@@ -13,11 +13,19 @@ extension Firebase {
 extension Reactive where Base: Firebase {
     
     func fetchUser(withId id: UserID) -> Observable<Firebase.User> {
-        return .empty()
+        return self.base
+            .child(byAppendingPath: "users/\(id)")
+            .rx.observeEventOnce()
+            .map {
+                $0 as! Firebase.User
+            }
     }
     
     func updateUser(userId id: UserID, newUser: UserType) -> Observable<Firebase.User> {
-        return .empty()
+        return self.base
+            .child(byAppendingPath: "users/\(id)")
+            .setValue(newUser)
+            .map { _ in newUser }
     }
     
 }

@@ -1,40 +1,13 @@
 import Firebase
 import RxSwift
+import RxCocoa
 
-extension Firebase {
+extension Reactive where Base: Firebase {
     
-    /**
-     Usually Facebook
-     */
-    func rx_oauth(_ provider: String, token: String) -> Observable<FAuthData> {
+    func login(email: String, password: String) -> Observable<UserID> {
         
         return ParseRxCallbacks.createWithCallback({ observer in
-            self.auth(withOAuthProvider: provider, token: token) {
-                let listner = ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)
-                listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
-            }
-        })
-        
-    }
-    
-    /**
-     Usually Twitter
-     */
-    func rx_oauth(_ provider: String, parameters: [String: String]) -> Observable<FAuthData> {
-        
-        return ParseRxCallbacks.createWithCallback({ observer in
-            self.auth(withOAuthProvider: provider, parameters: parameters) {
-                let listner = ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)
-                listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
-            }
-        })
-        
-    }
-    
-    func rx_login(email: String, password: String) -> Observable<UserID> {
-        
-        return ParseRxCallbacks.createWithCallback({ observer in
-            self.authUser(email, password: password, withCompletionBlock: {
+            self.base.authUser(email, password: password, withCompletionBlock: {
                 let listner = ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)
                 listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
             })
@@ -44,21 +17,23 @@ extension Firebase {
         
     }
     
-    func rx_signup(email: String, password: String) -> Observable<UserID> {
+    func signup(email: String, password: String) -> Observable<UserID> {
         
         return ParseRxCallbacks.createWithCallback({ observer in
-            return self.createUser(email, password: password, withValueCompletionBlock: { error, dict in
+            return self.base.createUser(email, password: password, withValueCompletionBlock: { error, dict in
                 let listener = ParseRxCallbacks.rx_parseCallback(observer)
-                listener(dict!["uid"] as! UserID, error)
+                listener(dict!, error)
             })
-        })
+        }).map { (dict: [AnyHashable: Any]) in
+            return dict["uid"] as! String
+        }
         
     }
     
-    func rx_authAnon() -> Observable<FAuthData> {
+    func authAnon() -> Observable<FAuthData> {
         
         return ParseRxCallbacks.createWithCallback({ observer in
-            self.authAnonymously {
+            self.base.authAnonymously {
                 let listner = ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)
                 listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
             }
@@ -66,4 +41,27 @@ extension Firebase {
         
     }
     
+    /// Usually facebook
+    func oauth(_ provider: String, token: String) -> Observable<FAuthData> {
+        
+        return ParseRxCallbacks.createWithCallback({ observer in
+            self.base.auth(withOAuthProvider: provider, token: token) {
+                let listner = ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)
+                listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
+            }
+        })
+        
+    }
+
+    /// Usually Twitter
+    func oauth(_ provider: String, parameters: [String: String]) -> Observable<FAuthData> {
+        
+        return ParseRxCallbacks.createWithCallback({ observer in
+            self.base.auth(withOAuthProvider: provider, parameters: parameters) {
+                let listner = ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)
+                listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
+            }
+        })
+        
+    }
 }
