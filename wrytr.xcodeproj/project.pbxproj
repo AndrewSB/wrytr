@@ -308,6 +308,7 @@
 				462358711D7788EF007947B6 /* Startup */,
 				4623587D1D778D9B007947B6 /* AuthenticationCoordinator.swift */,
 				4623587B1D778D87007947B6 /* Landing */,
+				4623587F1D778DA1007947B6 /* HomeCoordinator.swift */,
 				4623587C1D778D8D007947B6 /* Home */,
 			);
 			path = Molecules;
@@ -383,7 +384,6 @@
 		4623587C1D778D8D007947B6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				4623587F1D778DA1007947B6 /* HomeCoordinator.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
