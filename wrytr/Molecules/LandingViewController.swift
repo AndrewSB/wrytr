@@ -12,7 +12,7 @@ extension Landing.ViewController {
     }
 }
 
-class LandingViewController: ForwardingViewController, InterfaceProvidingPrimitive {
+class LandingViewController: InterfaceProvidingViewController {
     @IBOutlet weak var subtitle: UILabel!
     @IBOutlet weak var formContainer: UIStackView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -30,16 +30,11 @@ class LandingViewController: ForwardingViewController, InterfaceProvidingPrimiti
     
     @IBOutlet weak var helperLabel: UILabel!
     @IBOutlet weak var helperButton: RoundedButton!
-    
-    var interface: Primitive!
-    var onViewDidLoad: (() -> ())?
 }
 
 extension Landing.ViewController {
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
         self.interface = IB(
             subtitle: subtitle,
             formContainer: formContainer,
@@ -56,7 +51,7 @@ extension Landing.ViewController {
             helperButton: helperButton
         )
         
-        self.onViewDidLoad?()
+        super.viewDidLoad()
     }
     
     struct IB: Primitive {

@@ -12,6 +12,10 @@ extension Landing {
         
         func twitterTap() {
             store.dispatch(Landing.Action.startLoading)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) { 
+                self.store.dispatch(Landing.Action.stopLoading)
+            }
         }
         
         func facebookTap() {

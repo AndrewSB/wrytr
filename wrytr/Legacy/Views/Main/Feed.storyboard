@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vNa-Bw-iUW">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -8,7 +9,7 @@
         <!--Feed View Controller-->
         <scene sceneID="QrD-qF-N8O">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="kAE-qp-COK" customClass="FeedViewController" customModule="wrytr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="feed" automaticallyAdjustsScrollViewInsets="NO" id="kAE-qp-COK" customClass="FeedViewController" customModule="wrytr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="80b-iE-1c1"/>
                         <viewControllerLayoutGuide type="bottom" id="3am-rO-g6m"/>
@@ -53,12 +54,11 @@
                     <connections>
                         <outlet property="postCategory" destination="GvT-s4-ZBp" id="fVM-Br-Ccd"/>
                         <outlet property="tableView" destination="842-C5-Nbb" id="3EL-zZ-lp7"/>
-                        <segue destination="1mP-kc-G2b" kind="show" identifier="detail" id="KZI-fL-Dbv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lna-sc-dI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1258" y="148"/>
+            <point key="canvasLocation" x="1097" y="148"/>
         </scene>
         <!--Post Detail View Controller-->
         <scene sceneID="iUE-AJ-L0Y">
@@ -121,7 +121,7 @@
         <!--Navigation Controller-->
         <scene sceneID="jhx-pb-TpP">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vNa-Bw-iUW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="feedNav" automaticallyAdjustsScrollViewInsets="NO" id="vNa-Bw-iUW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VVv-3Z-ExB" customClass="NoHairlineNavigationBar" customModule="wrytr" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -135,7 +135,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g0g-PZ-aBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="446" y="148"/>
+            <point key="canvasLocation" x="385" y="148"/>
         </scene>
     </scenes>
     <resources>

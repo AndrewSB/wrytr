@@ -32,6 +32,12 @@
 		462F032A1CE2ADDF0031B1B1 /* NSRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03291CE2ADDF0031B1B1 /* NSRangeExtension.swift */; };
 		462F03301CE2CF1B0031B1B1 /* ChallengeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462F032F1CE2CF1B0031B1B1 /* ChallengeTableViewCell.xib */; };
 		46307D391CDD67A700E47A1C /* ExtendedNavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */; };
+		4636B66D1D7F632700C4B43D /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B66C1D7F632700C4B43D /* Feed.swift */; };
+		4636B66F1D7F633400C4B43D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B66E1D7F633400C4B43D /* FeedViewController.swift */; };
+		4636B6711D7F636200C4B43D /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6701D7F636200C4B43D /* FeedViewModel.swift */; };
+		4636B6731D7F637C00C4B43D /* FeedHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6721D7F637C00C4B43D /* FeedHandler.swift */; };
+		4636B6751D7F638200C4B43D /* FeedUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6741D7F638200C4B43D /* FeedUI.swift */; };
+		4636B6771D7F67AF00C4B43D /* UIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6761D7F67AF00C4B43D /* UIType.swift */; };
 		463913E11D7641590077D0E5 /* DismissesKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */; };
 		463913E31D7644C90077D0E5 /* UnderKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463913E21D7644C90077D0E5 /* UnderKeyboard.framework */; };
 		4644FB9C1C9CBCEF004ACBAF /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */; };
@@ -130,6 +136,12 @@
 		462F03291CE2ADDF0031B1B1 /* NSRangeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRangeExtension.swift; sourceTree = "<group>"; };
 		462F032F1CE2CF1B0031B1B1 /* ChallengeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChallengeTableViewCell.xib; sourceTree = "<group>"; };
 		46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ExtendedNavbarView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4636B66C1D7F632700C4B43D /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		4636B66E1D7F633400C4B43D /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		4636B6701D7F636200C4B43D /* FeedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		4636B6721D7F637C00C4B43D /* FeedHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedHandler.swift; sourceTree = "<group>"; };
+		4636B6741D7F638200C4B43D /* FeedUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedUI.swift; sourceTree = "<group>"; };
+		4636B6761D7F67AF00C4B43D /* UIType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIType.swift; sourceTree = "<group>"; };
 		463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissesKeyboardOnTap.swift; sourceTree = "<group>"; };
 		463913E21D7644C90077D0E5 /* UnderKeyboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UnderKeyboard.framework; path = Carthage/Build/iOS/UnderKeyboard.framework; sourceTree = "<group>"; };
 		4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
@@ -169,7 +181,7 @@
 		466BD09A1CADAA14008DC0C3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		466BD09D1CADAB09008DC0C3 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Frameworks/Firebase.framework; sourceTree = "<group>"; };
 		466E73FC1CAF271A00EC0B7C /* Firebase+Rx Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Firebase+Rx Auth.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		466E74021CAFA72600EC0B7C /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
+		466E74021CAFA72600EC0B7C /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Feed.storyboard; path = ../Legacy/Views/Main/Feed.storyboard; sourceTree = "<group>"; };
 		468614BB1C89CC3A002C2BAC /* wrytr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wrytr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		468614BE1C89CC3A002C2BAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		468614C51C89CC3A002C2BAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -294,6 +306,7 @@
 				46452E561D7794C50053EC4A /* UI */,
 				463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */,
 				46AE374A1D78F851005A89F3 /* ForwardingViewController.swift */,
+				4636B6761D7F67AF00C4B43D /* UIType.swift */,
 				46AE374C1D7A1886005A89F3 /* HandlerType.swift */,
 				46AE374E1D7A3559005A89F3 /* PresentableError.swift */,
 				46AE375C1D7AB85E005A89F3 /* URL + Decodable.swift */,
@@ -309,7 +322,7 @@
 				4623587D1D778D9B007947B6 /* AuthenticationCoordinator.swift */,
 				4623587B1D778D87007947B6 /* Landing */,
 				4623587F1D778DA1007947B6 /* HomeCoordinator.swift */,
-				4623587C1D778D8D007947B6 /* Home */,
+				4623587C1D778D8D007947B6 /* Feed */,
 			);
 			path = Molecules;
 			sourceTree = "<group>";
@@ -321,6 +334,7 @@
 				468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */,
 				462358721D7788F5007947B6 /* Startup.storyboard */,
 				46BF97781C9B6DA700579066 /* Landing.storyboard */,
+				466E74021CAFA72600EC0B7C /* Feed.storyboard */,
 				468614C51C89CC3A002C2BAC /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -381,11 +395,16 @@
 			name = Landing;
 			sourceTree = "<group>";
 		};
-		4623587C1D778D8D007947B6 /* Home */ = {
+		4623587C1D778D8D007947B6 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				4636B66C1D7F632700C4B43D /* Feed.swift */,
+				4636B6701D7F636200C4B43D /* FeedViewModel.swift */,
+				4636B6721D7F637C00C4B43D /* FeedHandler.swift */,
+				4636B66E1D7F633400C4B43D /* FeedViewController.swift */,
+				4636B6741D7F638200C4B43D /* FeedUI.swift */,
 			);
-			name = Home;
+			name = Feed;
 			sourceTree = "<group>";
 		};
 		46271FAC1CD2B00E007196B2 /* Reusable */ = {
@@ -468,7 +487,6 @@
 			isa = PBXGroup;
 			children = (
 				46271FAC1CD2B00E007196B2 /* Reusable */,
-				466E74021CAFA72600EC0B7C /* Feed.storyboard */,
 				4658D6B71CC08914009527DF /* Friends.storyboard */,
 				4658D6B91CC08919009527DF /* Create.storyboard */,
 				4658D6BB1CC0891F009527DF /* Me.storyboard */,
@@ -747,8 +765,10 @@
 				4644FBA51C9CC820004ACBAF /* Storyboards.swift in Sources */,
 				46AE37491D78F7BE005A89F3 /* LandingUI.swift in Sources */,
 				4644FBBE1C9CD686004ACBAF /* Colors.swift in Sources */,
+				4636B6731D7F637C00C4B43D /* FeedHandler.swift in Sources */,
 				46452E741D77A7ED0053EC4A /* LandingViewController.swift in Sources */,
 				46452E621D7797B00053EC4A /* Post.swift in Sources */,
+				4636B66F1D7F633400C4B43D /* FeedViewController.swift in Sources */,
 				4644FBC71C9D256B004ACBAF /* Localizable_Strings.swift in Sources */,
 				462F03261CE273D00031B1B1 /* UIStackExtension.swift in Sources */,
 				46C099201CA097640015779C /* LoadingViewController.swift in Sources */,
@@ -769,8 +789,10 @@
 				46452E7B1D77AB710053EC4A /* TwitterProvider.swift in Sources */,
 				462894EA1D37F6D7006044E1 /* PostResponsesViewController.swift in Sources */,
 				462358701D7788BC007947B6 /* PostService.swift in Sources */,
+				4636B66D1D7F632700C4B43D /* Feed.swift in Sources */,
 				468D0E531CCED77A004250F6 /* RenderedImageView.swift in Sources */,
 				468D0E4F1CCED0F2004250F6 /* Firebase+Rx FetchData.swift in Sources */,
+				4636B6771D7F67AF00C4B43D /* UIType.swift in Sources */,
 				46452E6B1D77997A0053EC4A /* Fabric.swift in Sources */,
 				46271FAE1CD2B02F007196B2 /* ChallengeTableView.swift in Sources */,
 				4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */,
@@ -779,6 +801,7 @@
 				468D0E511CCED4ED004250F6 /* ChallengeTableViewCell.swift in Sources */,
 				462894ED1D37F78A006044E1 /* ComposeViewController.swift in Sources */,
 				4644FBB11C9CCE79004ACBAF /* Images.swift in Sources */,
+				4636B6711D7F636200C4B43D /* FeedViewModel.swift in Sources */,
 				46AE37511D7A3B2C005A89F3 /* UIAlertAction + SimpleHandlerInit.swift in Sources */,
 				4644FBA81C9CC9CB004ACBAF /* AppState.swift in Sources */,
 				46AE374D1D7A1886005A89F3 /* HandlerType.swift in Sources */,
@@ -797,6 +820,7 @@
 				462894E61D37F593006044E1 /* PostDetailViewController.swift in Sources */,
 				462F032A1CE2ADDF0031B1B1 /* NSRangeExtension.swift in Sources */,
 				468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */,
+				4636B6751D7F638200C4B43D /* FeedUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

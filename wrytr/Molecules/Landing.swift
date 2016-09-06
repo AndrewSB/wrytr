@@ -1,22 +1,21 @@
 import Cordux
+import Then
 
 class Landing {
 
-    static func make(context: Context, store: Store) -> LandingViewController {
-        let viewController = LandingViewController.fromStoryboard()
-        viewController.corduxContext = context
+    static func make(routeSegment: RouteConvertible, store: Store) -> ForwardingViewController {
+        let landingVC = ViewController.fromStoryboard()
         
-        viewController.handler = Handler(store: store)
-        
-        viewController.onViewDidLoad = {
-            viewController.ui = UI(
-                interface: viewController.interface as! ViewController.IB,
-                handler: viewController.handler as! Handler
-            )
-            store.subscribe(viewController.ui as! UI) { (appState: AppState) -> ViewModel in appState.landingState }
+        let uiCreationClosure = { (interface: Primitive) -> UIType in
+            let interface = interface as! ViewController.IB
+            let ui = UI(interface: interface, handler: Handler(store: store))
+            ui.viewController = landingVC
+            store.subscribe(ui, { $0.landingState })
+            
+            return ui
         }
-    
-        return viewController
+        
+        return ForwardingViewController(withViewController: landingVC, routeSegment: routeSegment, ui: uiCreationClosure)
     }
 
 }

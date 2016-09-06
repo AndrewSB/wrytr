@@ -19,7 +19,7 @@ extension Authentication {
         init(store: Store) {
             self.store = store
             
-            let landingVC = Landing.make(context: Context(RouteSegment.landing, lifecycleDelegate: self), store: self.store)
+            let landingVC = Landing.make(routeSegment: RouteSegment.landing, store: self.store)
             self.navigationController.setViewControllers([landingVC], animated: false)
         }
         
