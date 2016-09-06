@@ -13,22 +13,41 @@ extension User {
             return 🔥.isLoggedIn
         }
         
-        static func auth(params: Auth) -> Observable<UserType> {
-            return .empty()
-            
+        static func auth(params: Auth) -> Observable<UserType> {            
             switch params {
             case let .signup(name, loginParams):
-                guard case let .login(email, password) = loginParams else { assertionFailure("dont repeatedly recurse"); return .never() }
-                
-                return 🔥.signup(email: email, password: password)
-                
+                guard case let .login(email, password) = loginParams else {
+                    assertionFailure("dont repeatedly recurse"); return .never()
+                }
+                return 🔥.signup(name: name, email: email, password: password)
                 
             case let .login(email, password):
-                break
+                return 🔥.login(email: email, password: password)
+                
             case .facebook:
-                break
+                return 🗣.login()
+                    .map { facebookResult in
+                        switch facebookResult.token {
+                        case .none:
+                            let errorMessage = facebookResult.isCancelled ? tr(key: .AuthErrorFacebookCancelled) : tr(key: .AuthErrorFacebookGeneric)
+                            throw NSError(localizedDescription: errorMessage, code: -1)
+                        case .some(let token):
+                            return token.tokenString!
+                        }
+                    }
+                    .flatMap(🔥.facebookAuth)
+                
             case .twitter:
-                break
+                return 🐦.login()
+                    .map { twitterResult in
+                        return Firebase.Provider.TwitterAuth(
+                            userId: twitterResult.userID,
+                            oauthToken: twitterResult.authToken,
+                            oauthTokenSecret: twitterResult.authTokenSecret
+                        )
+                    }
+                    .flatMap(🔥.twitterAuth)
+                
             }
         }
     }

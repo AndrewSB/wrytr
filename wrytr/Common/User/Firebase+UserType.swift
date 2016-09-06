@@ -39,8 +39,6 @@ extension Reactive where Base: Firebase {
     }
     
     func updateUser(userId id: UserID, newUser: UserType) -> Observable<Firebase.User> {
-        assert(id == newUser.id)
-        
         let firebaseUser = Firebase.User(id: newUser.id, name: newUser.name, photo: newUser.photo)
         
         return self.base

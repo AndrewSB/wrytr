@@ -54,7 +54,7 @@ extension Reactive where Base: Firebase {
     }
 
     /// Usually Twitter
-    func oauth(_ provider: String, parameters: [String: String]) -> Observable<FAuthData> {
+    func oauth(_ provider: String, parameters: [AnyHashable : Any]!) -> Observable<FAuthData> {
         
         return ParseRxCallbacks.createWithCallback({ observer in
             self.base.auth(withOAuthProvider: provider, parameters: parameters) {
