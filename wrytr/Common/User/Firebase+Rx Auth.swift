@@ -21,8 +21,12 @@ extension Reactive where Base: Firebase {
         
         return ParseRxCallbacks.createWithCallback({ observer in
             return self.base.createUser(email, password: password, withValueCompletionBlock: { error, dict in
-                let listener = ParseRxCallbacks.rx_parseCallback(observer)
-                listener(dict!, error)
+                if let dict = dict {
+                    observer.onNext(dict)
+                } else {
+                    observer.onError(error!)
+                }
+                observer.onCompleted()
             })
         }).map { (dict: [AnyHashable: Any]) in
             return dict["uid"] as! String

@@ -83,13 +83,16 @@ extension Landing.UI: Renderer {
     
     fileprivate func renderAuthOption(option: Landing.ViewModel.Option) {
         let wordedOption: String
+        let oppositeWordedOption: String
         let helperTitle: String
         switch option {
         case .login:
             wordedOption = tr(key: .LoginLandingLoginTitle)
+            oppositeWordedOption = tr(key: .LoginLandingRegisterTitle)
             helperTitle = tr(key: .LoginLandingHelperLoginTitle)
         case .register:
             wordedOption = tr(key: .LoginLandingRegisterTitle)
+            oppositeWordedOption = tr(key: .LoginLandingLoginTitle)
             helperTitle = tr(key: .LoginLandingHelperRegisterTitle)
         }
         
@@ -98,7 +101,7 @@ extension Landing.UI: Renderer {
         self.interface.formHeader.text = tr(key: L10n.LoginLandingEmailbuttonTitle(wordedOption))
         self.interface.usernameField.isHidden = option == .login
         self.interface.actionButton.setTitle(title: wordedOption)
-        self.interface.helperButton.setTitle(title: wordedOption)
+        self.interface.helperButton.setTitle(title: oppositeWordedOption)
         self.interface.helperLabel.text = helperTitle
         
         UIView.animate(withDuration: 0.2) {

@@ -29,21 +29,19 @@ class ForwardingViewController: UIViewController {
     let containedViewController: InterfaceProvidingViewController
     let onContainedViewDidLoad: ((Primitive) -> UIType)
     
-    override var view: UIView! {
-        get { return containedViewController.view }
-        set { /*no-op*/ }
-    }
-    
     init(withViewController viewController: InterfaceProvidingViewController,
          routeSegment: RouteConvertible,
          ui: ((Primitive) -> UIType)) {
+        
         self.containedViewController = viewController
         self.onContainedViewDidLoad = ui
         super.init(nibName: nil, bundle: nil)
-        
+    
         let context = Context(routeSegment, lifecycleDelegate: self)
-        
         self.containedViewController.corduxContext = context
+        
+        self.addChildViewController(viewController)
+        view.addSubview(viewController.view)
     }
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
