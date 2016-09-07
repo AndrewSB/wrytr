@@ -4,6 +4,8 @@ import RxSwift
 extension Landing {
     
     class Handler: HandlerType {
+        private let disposeBag = DisposeBag()
+        
         let store: Store
         
         init(store: Store) {
@@ -13,17 +15,25 @@ extension Landing {
         func twitterTap() {
             store.dispatch(Landing.Action.startLoading)
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) { 
-                self.store.dispatch(Landing.Action.stopLoading)
-            }
+            let (disposable, asyncSignIn) = Authentication.signIn(.twitter)
+            store.dispatch(asyncSignIn)
+            disposable.flatMap(disposeBag.insert) // THIS IS A PROBLEM
         }
         
         func facebookTap() {
-        
+            store.dispatch(Landing.Action.startLoading)
+            
+            let (disposable, asyncSignIn) = Authentication.signIn(.facebook)
+            store.dispatch(asyncSignIn)
+            disposable.flatMap(disposeBag.insert) // THIS IS A PROBLEM
         }
         
-        func actionTap() {
+        func actionTap(authData: User.Service.Auth) {
+            store.dispatch(Landing.Action.startLoading)
             
+            let (disposable, asyncSignIn) = Authentication.signIn(authData)
+            store.dispatch(asyncSignIn)
+            disposable.flatMap(disposeBag.insert) // THIS IS A PROBLEM
         }
         
         func changeAuthOptionTap(option: ViewModel.Option) {

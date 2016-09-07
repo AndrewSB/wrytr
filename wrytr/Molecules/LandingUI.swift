@@ -9,12 +9,26 @@ extension Landing {
     class UI: UIType {
         weak var viewController: UIViewController?
 
-        let interface: Landing.ViewController.IB
-        let handler: Landing.Handler
+        let interface: ViewController.IB
+        let handler: Handler
+        
+        fileprivate var currentOption: ViewModel.Option = .login
         
         lazy var bindings: [Disposable] = [
             self.interface.facebookButton.rx.tap.asDriver().drive(onNext: self.handler.facebookTap),
             self.interface.twitterButton.rx.tap.asDriver().drive(onNext: self.handler.twitterTap),
+            self.interface.actionButton.rx.tap.asDriver()
+                .map {
+                    let name = self.interface.emailField.text ?? "", email = self.interface.emailField.text ?? "", password = self.interface.passwordField.text ?? ""
+                    
+                    switch self.currentOption {
+                    case .login:
+                        return User.Service.Auth.login(email: email, password: password)
+                    case .register:
+                        return User.Service.Auth.signup(name: name, loginParams: .login(email: email, password: password))
+                    }
+                }
+                .drive(onNext: self.handler.actionTap),
             self.interface.helperButton.rx.tap.asDriver()
                 .scan(ViewModel.Option.login) { previousState, _ in
                     switch previousState {
@@ -56,6 +70,8 @@ extension Landing.UI: Renderer {
     typealias ViewModel = Landing.ViewModel
 
     func render(_ viewModel: Landing.ViewModel) {
+        print("state is \(viewModel)")
+        self.currentOption = viewModel.option
         renderAuthOption(option: viewModel.option)
         _ = viewModel.loading ? showLoading() : hideLoading()
         viewModel.error.flatMap { err in

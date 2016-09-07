@@ -38,6 +38,7 @@
 		4636B6731D7F637C00C4B43D /* FeedHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6721D7F637C00C4B43D /* FeedHandler.swift */; };
 		4636B6751D7F638200C4B43D /* FeedUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6741D7F638200C4B43D /* FeedUI.swift */; };
 		4636B6771D7F67AF00C4B43D /* UIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6761D7F67AF00C4B43D /* UIType.swift */; };
+		4636B6791D7F78E900C4B43D /* AsyncAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6781D7F78E900C4B43D /* AsyncAction.swift */; };
 		463913E11D7641590077D0E5 /* DismissesKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */; };
 		463913E31D7644C90077D0E5 /* UnderKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463913E21D7644C90077D0E5 /* UnderKeyboard.framework */; };
 		4644FB9C1C9CBCEF004ACBAF /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */; };
@@ -89,7 +90,7 @@
 		46AE374D1D7A1886005A89F3 /* HandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE374C1D7A1886005A89F3 /* HandlerType.swift */; };
 		46AE374F1D7A3559005A89F3 /* PresentableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE374E1D7A3559005A89F3 /* PresentableError.swift */; };
 		46AE37511D7A3B2C005A89F3 /* UIAlertAction + SimpleHandlerInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE37501D7A3B2C005A89F3 /* UIAlertAction + SimpleHandlerInit.swift */; };
-		46AE37531D7A3FD3005A89F3 /* Firebase + UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE37521D7A3FD3005A89F3 /* Firebase + UserType.swift */; };
+		46AE37531D7A3FD3005A89F3 /* Firebase+UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE37521D7A3FD3005A89F3 /* Firebase+UserType.swift */; };
 		46AE37551D7A9B95005A89F3 /* Firebase+Rx SetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE37541D7A9B95005A89F3 /* Firebase+Rx SetData.swift */; };
 		46AE37591D7AB3D7005A89F3 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AE37561D7AB3D7005A89F3 /* Argo.framework */; };
 		46AE375A1D7AB3D7005A89F3 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AE37571D7AB3D7005A89F3 /* Curry.framework */; };
@@ -142,6 +143,7 @@
 		4636B6721D7F637C00C4B43D /* FeedHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedHandler.swift; sourceTree = "<group>"; };
 		4636B6741D7F638200C4B43D /* FeedUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedUI.swift; sourceTree = "<group>"; };
 		4636B6761D7F67AF00C4B43D /* UIType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIType.swift; sourceTree = "<group>"; };
+		4636B6781D7F78E900C4B43D /* AsyncAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncAction.swift; sourceTree = "<group>"; };
 		463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissesKeyboardOnTap.swift; sourceTree = "<group>"; };
 		463913E21D7644C90077D0E5 /* UnderKeyboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UnderKeyboard.framework; path = Carthage/Build/iOS/UnderKeyboard.framework; sourceTree = "<group>"; };
 		4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
@@ -196,7 +198,7 @@
 		46AE374C1D7A1886005A89F3 /* HandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandlerType.swift; sourceTree = "<group>"; };
 		46AE374E1D7A3559005A89F3 /* PresentableError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentableError.swift; sourceTree = "<group>"; };
 		46AE37501D7A3B2C005A89F3 /* UIAlertAction + SimpleHandlerInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertAction + SimpleHandlerInit.swift"; sourceTree = "<group>"; };
-		46AE37521D7A3FD3005A89F3 /* Firebase + UserType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase + UserType.swift"; sourceTree = "<group>"; };
+		46AE37521D7A3FD3005A89F3 /* Firebase+UserType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+UserType.swift"; sourceTree = "<group>"; };
 		46AE37541D7A9B95005A89F3 /* Firebase+Rx SetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+Rx SetData.swift"; sourceTree = "<group>"; };
 		46AE37561D7AB3D7005A89F3 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/iOS/Argo.framework; sourceTree = "<group>"; };
 		46AE37571D7AB3D7005A89F3 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/iOS/Curry.framework; sourceTree = "<group>"; };
@@ -556,6 +558,7 @@
 		46452E6C1D779E980053EC4A /* State */ = {
 			isa = PBXGroup;
 			children = (
+				4636B6781D7F78E900C4B43D /* AsyncAction.swift */,
 				46452E6D1D779EAB0053EC4A /* AuthenticationState.swift */,
 			);
 			name = State;
@@ -567,7 +570,7 @@
 				466E73FC1CAF271A00EC0B7C /* Firebase+Rx Auth.swift */,
 				46AE37541D7A9B95005A89F3 /* Firebase+Rx SetData.swift */,
 				468D0E4E1CCED0F2004250F6 /* Firebase+Rx FetchData.swift */,
-				46AE37521D7A3FD3005A89F3 /* Firebase + UserType.swift */,
+				46AE37521D7A3FD3005A89F3 /* Firebase+UserType.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -779,7 +782,7 @@
 				4623587A1D778B69007947B6 /* AppCoordinator.swift in Sources */,
 				463913E11D7641590077D0E5 /* DismissesKeyboardOnTap.swift in Sources */,
 				46C0991E1CA092770015779C /* ParseRxCallbacks.swift in Sources */,
-				46AE37531D7A3FD3005A89F3 /* Firebase + UserType.swift in Sources */,
+				46AE37531D7A3FD3005A89F3 /* Firebase+UserType.swift in Sources */,
 				462894E81D37F6B3006044E1 /* PublishReplyViewController.swift in Sources */,
 				46452E721D77A7E40053EC4A /* LandingViewModel.swift in Sources */,
 				46452E6E1D779EAB0053EC4A /* AuthenticationState.swift in Sources */,
@@ -807,6 +810,7 @@
 				46AE374D1D7A1886005A89F3 /* HandlerType.swift in Sources */,
 				46452E601D7797AC0053EC4A /* PostType.swift in Sources */,
 				46452E641D7797F10053EC4A /* ReactionType.swift in Sources */,
+				4636B6791D7F78E900C4B43D /* AsyncAction.swift in Sources */,
 				46307D391CDD67A700E47A1C /* ExtendedNavbarView.swift in Sources */,
 				46452E661D7799620053EC4A /* ThirdPartyServices.swift in Sources */,
 				46AE375D1D7AB85E005A89F3 /* URL + Decodable.swift in Sources */,
