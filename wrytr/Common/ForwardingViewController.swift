@@ -31,7 +31,7 @@ class ForwardingViewController: UIViewController {
     
     init(withViewController viewController: InterfaceProvidingViewController,
          routeSegment: RouteConvertible,
-         ui: ((Primitive) -> UIType)) {
+         ui: @escaping ((Primitive) -> UIType)) {
         
         self.containedViewController = viewController
         self.onContainedViewDidLoad = ui

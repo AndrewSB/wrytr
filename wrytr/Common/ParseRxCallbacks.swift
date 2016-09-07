@@ -4,7 +4,7 @@ import RxSwift
 
 class ParseRxCallbacks {
     
-    static func createWithCallback<T>(_ callback: ((AnyObserver<T>) -> Void)) -> Observable<T> {
+    static func createWithCallback<T>(_ callback: @escaping ((AnyObserver<T>) -> Void)) -> Observable<T> {
         return Observable.create({ (observer: AnyObserver<T>) -> Disposable in
             callback(observer)
             return Disposables.create()
