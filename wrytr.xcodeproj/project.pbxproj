@@ -109,6 +109,11 @@
 		46C0991A1CA072250015779C /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099171CA072250015779C /* TwitterCore.framework */; };
 		46C0991E1CA092770015779C /* ParseRxCallbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0991D1CA092770015779C /* ParseRxCallbacks.swift */; };
 		46C099201CA097640015779C /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0991F1CA097640015779C /* LoadingViewController.swift */; };
+		46CD47681D837B3E00C3D217 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47671D837B3E00C3D217 /* Friends.swift */; };
+		46CD476A1D837B4900C3D217 /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47691D837B4900C3D217 /* FriendsViewModel.swift */; };
+		46CD476C1D837B5300C3D217 /* FriendsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD476B1D837B5300C3D217 /* FriendsHandler.swift */; };
+		46CD476E1D837B5B00C3D217 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD476D1D837B5B00C3D217 /* FriendsViewController.swift */; };
+		46CD47701D837B6000C3D217 /* FriendsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD476F1D837B6000C3D217 /* FriendsUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -217,6 +222,11 @@
 		46C099171CA072250015779C /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = Frameworks/TwitterCore.framework; sourceTree = "<group>"; };
 		46C0991D1CA092770015779C /* ParseRxCallbacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseRxCallbacks.swift; sourceTree = "<group>"; };
 		46C0991F1CA097640015779C /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoadingViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		46CD47671D837B3E00C3D217 /* Friends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
+		46CD47691D837B4900C3D217 /* FriendsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
+		46CD476B1D837B5300C3D217 /* FriendsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsHandler.swift; sourceTree = "<group>"; };
+		46CD476D1D837B5B00C3D217 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		46CD476F1D837B6000C3D217 /* FriendsUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +335,7 @@
 				4623587B1D778D87007947B6 /* Landing */,
 				4623587F1D778DA1007947B6 /* HomeCoordinator.swift */,
 				4623587C1D778D8D007947B6 /* Feed */,
+				46CD47661D837B3200C3D217 /* Friends */,
 			);
 			path = Molecules;
 			sourceTree = "<group>";
@@ -619,6 +630,18 @@
 			path = wrytr;
 			sourceTree = "<group>";
 		};
+		46CD47661D837B3200C3D217 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				46CD47671D837B3E00C3D217 /* Friends.swift */,
+				46CD47691D837B4900C3D217 /* FriendsViewModel.swift */,
+				46CD476B1D837B5300C3D217 /* FriendsHandler.swift */,
+				46CD476D1D837B5B00C3D217 /* FriendsViewController.swift */,
+				46CD476F1D837B6000C3D217 /* FriendsUI.swift */,
+			);
+			name = Friends;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -795,6 +818,7 @@
 				4636B66D1D7F632700C4B43D /* Feed.swift in Sources */,
 				468D0E531CCED77A004250F6 /* RenderedImageView.swift in Sources */,
 				468D0E4F1CCED0F2004250F6 /* Firebase+Rx FetchData.swift in Sources */,
+				46CD47681D837B3E00C3D217 /* Friends.swift in Sources */,
 				4636B6771D7F67AF00C4B43D /* UIType.swift in Sources */,
 				46452E6B1D77997A0053EC4A /* Fabric.swift in Sources */,
 				46271FAE1CD2B02F007196B2 /* ChallengeTableView.swift in Sources */,
@@ -804,6 +828,7 @@
 				468D0E511CCED4ED004250F6 /* ChallengeTableViewCell.swift in Sources */,
 				462894ED1D37F78A006044E1 /* ComposeViewController.swift in Sources */,
 				4644FBB11C9CCE79004ACBAF /* Images.swift in Sources */,
+				46CD476E1D837B5B00C3D217 /* FriendsViewController.swift in Sources */,
 				4636B6711D7F636200C4B43D /* FeedViewModel.swift in Sources */,
 				46AE37511D7A3B2C005A89F3 /* UIAlertAction + SimpleHandlerInit.swift in Sources */,
 				4644FBA81C9CC9CB004ACBAF /* AppState.swift in Sources */,
@@ -816,11 +841,14 @@
 				46AE375D1D7AB85E005A89F3 /* URL + Decodable.swift in Sources */,
 				46452E691D7799760053EC4A /* Facebook.swift in Sources */,
 				466E73FD1CAF271A00EC0B7C /* Firebase+Rx Auth.swift in Sources */,
+				46CD476A1D837B4900C3D217 /* FriendsViewModel.swift in Sources */,
 				46260A741D3EAEF400CB6850 /* Observable + Ignore Nil.swift in Sources */,
 				462358781D778B45007947B6 /* StartupViewController.swift in Sources */,
+				46CD476C1D837B5300C3D217 /* FriendsHandler.swift in Sources */,
 				46452E701D77A7D80053EC4A /* Landing.swift in Sources */,
 				46AE374B1D78F851005A89F3 /* ForwardingViewController.swift in Sources */,
 				4623586E1D7788B5007947B6 /* UserService.swift in Sources */,
+				46CD47701D837B6000C3D217 /* FriendsUI.swift in Sources */,
 				462894E61D37F593006044E1 /* PostDetailViewController.swift in Sources */,
 				462F032A1CE2ADDF0031B1B1 /* NSRangeExtension.swift in Sources */,
 				468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */,

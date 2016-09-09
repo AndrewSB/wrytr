@@ -1,4 +1,4 @@
-github "dylan/ReSwift" "swift3"
+github "tkersey/ReSwift" "Xcode8-GM"
 github "AndrewSB/ReSwift-Router" "master"
 
 github "AndrewSB/Library" "master"
@@ -14,5 +14,5 @@ github "willowtreeapps/cordux"
 github "devxoul/Then" "swift-3.0"
 
 github "thoughtbot/Curry" "master"
-github "thoughtbot/Argo" "gf-updates"
+github "thoughtbot/Argo" "master"
 github "edwardaux/Ogra" "master"
