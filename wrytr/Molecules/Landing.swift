@@ -9,7 +9,7 @@ class Landing {
         let uiCreationClosure = { (interface: Primitive) -> UIType in
             let interface = interface as! ViewController.IB
             let ui = UI(interface: interface, handler: Handler(store: store))
-            ui.viewController = landingVC
+            ui.loaderAndErrorPresenter = landingVC
             store.subscribe(ui, { $0.landingState })
             
             return ui

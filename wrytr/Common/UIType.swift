@@ -11,28 +11,21 @@ class InterfaceProvidingViewController: UIViewController, InterfaceProvidingPrim
     var interface: Primitive!
 }
 
-protocol UIType {
-    weak var viewController: UIViewController? { get set }
-    var bindings: [Disposable] { mutating get set }
-    
-    func showLoading()
-    func hideLoading()
-    func presentError(error: PresentableError, actions: [UIAlertAction])
+protocol UIType: class {
+    weak var loaderAndErrorPresenter: LoadingIndicatable & ErrorPresentable? { get set }
+    var bindings: [Disposable] { get set }    
 }
 
 extension UIType {
     func showLoading() {
-        self.viewController?.startLoading()
+        self.loaderAndErrorPresenter?.startLoading()
     }
     
     func hideLoading() {
-        self.viewController?.stopLoading()
+        self.loaderAndErrorPresenter?.stopLoading()
     }
     
-    func presentError(error: PresentableError, actions: [UIAlertAction]) {
-        let alert = UIAlertController(title: error.title, message: error.description, preferredStyle: .alert)
-        actions.forEach(alert.addAction)
-        
-        self.viewController?.present(alert, animated: true, completion: .none)
+    func presentError(error: PresentableError, actions: [UIAlertAction] = []) {
+        self.loaderAndErrorPresenter?.presentError(error: error, actions: actions)
     }
 }

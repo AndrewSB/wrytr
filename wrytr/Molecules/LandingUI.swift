@@ -7,7 +7,7 @@ import Cordux
 extension Landing {
    
     class UI: UIType {
-        weak var viewController: UIViewController?
+        weak var loaderAndErrorPresenter: (ErrorPresentable & LoadingIndicatable)?
 
         let interface: ViewController.IB
         let handler: Handler

@@ -114,6 +114,7 @@
 		46CD476C1D837B5300C3D217 /* FriendsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD476B1D837B5300C3D217 /* FriendsHandler.swift */; };
 		46CD476E1D837B5B00C3D217 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD476D1D837B5B00C3D217 /* FriendsViewController.swift */; };
 		46CD47701D837B6000C3D217 /* FriendsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD476F1D837B6000C3D217 /* FriendsUI.swift */; };
+		46CD47721D83808500C3D217 /* UIViewController + Alert + Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47711D83808500C3D217 /* UIViewController + Alert + Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -227,6 +228,7 @@
 		46CD476B1D837B5300C3D217 /* FriendsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsHandler.swift; sourceTree = "<group>"; };
 		46CD476D1D837B5B00C3D217 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		46CD476F1D837B6000C3D217 /* FriendsUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsUI.swift; sourceTree = "<group>"; };
+		46CD47711D83808500C3D217 /* UIViewController + Alert + Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alert + Error.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +320,7 @@
 				46452E561D7794C50053EC4A /* UI */,
 				463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */,
 				46AE374A1D78F851005A89F3 /* ForwardingViewController.swift */,
+				46CD47711D83808500C3D217 /* UIViewController + Alert + Error.swift */,
 				4636B6761D7F67AF00C4B43D /* UIType.swift */,
 				46AE374C1D7A1886005A89F3 /* HandlerType.swift */,
 				46AE374E1D7A3559005A89F3 /* PresentableError.swift */,
@@ -842,6 +845,7 @@
 				46452E691D7799760053EC4A /* Facebook.swift in Sources */,
 				466E73FD1CAF271A00EC0B7C /* Firebase+Rx Auth.swift in Sources */,
 				46CD476A1D837B4900C3D217 /* FriendsViewModel.swift in Sources */,
+				46CD47721D83808500C3D217 /* UIViewController + Alert + Error.swift in Sources */,
 				46260A741D3EAEF400CB6850 /* Observable + Ignore Nil.swift in Sources */,
 				462358781D778B45007947B6 /* StartupViewController.swift in Sources */,
 				46CD476C1D837B5300C3D217 /* FriendsHandler.swift in Sources */,

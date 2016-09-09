@@ -13,7 +13,7 @@ import Cordux
         * a closure that takes in the view that just loaded (i.e. LandingViewController.view in this case), and creates the Landing.UI
     And then you'd add this new ForwardingViewController, that holds onto Module related things (UI & Handler), while leaving LandingViewController oblivous to the existance of the module.
  
-    #gross but #lean
+    #gross class but #lean consumers
  */
 class ForwardingViewController: UIViewController {
     fileprivate let disposeBag = DisposeBag()

@@ -3,14 +3,9 @@ import RxSwift
 
 extension Feed {
     class UI: UIType {
-        weak internal var viewController: UIViewController?
+        weak var loaderAndErrorPresenter: (ErrorPresentable & LoadingIndicatable)?
 
-        internal var bindings: [Disposable]
-
-        
-        init() {
-            self.bindings = []
-        }
+        lazy var bindings: [Disposable] = []
         
     }
 }
