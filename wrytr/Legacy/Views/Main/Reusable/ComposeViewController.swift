@@ -14,12 +14,12 @@ class ComposeViewController: RxViewController {
     
     let keyboardObserver = UnderKeyboardObserver()
 
-//    @IBOutlet weak var profileImageView: RoundedImageView! {
+    @IBOutlet weak var profileImageView: RoundedImageView! //{
 //        didSet {
 //            _ = User.local.profilePictureNSUrl.flatMap { profileImageView.pin_setImage(from: $0) }
 //        }
 //    }
-//    @IBOutlet weak var usernameLabel: UILabel! {
+    @IBOutlet weak var usernameLabel: UILabel! //{
 //        didSet { usernameLabel.text = User.local.authData.name }
 //    }
     @IBOutlet weak var challengeTextView: UITextView! {

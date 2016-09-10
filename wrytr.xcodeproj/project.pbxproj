@@ -198,8 +198,8 @@
 		46452E751D77A7F30053EC4A /* LandingHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingHandler.swift; sourceTree = "<group>"; };
 		46452E781D77AB6D0053EC4A /* FacebookProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookProvider.swift; sourceTree = "<group>"; };
 		46452E7A1D77AB710053EC4A /* TwitterProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterProvider.swift; sourceTree = "<group>"; };
-		4658D6B91CC08919009527DF /* Create.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Create.storyboard; sourceTree = "<group>"; };
-		4658D6BB1CC0891F009527DF /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
+		4658D6B91CC08919009527DF /* Create.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Create.storyboard; path = ../Legacy/Views/Main/Create.storyboard; sourceTree = "<group>"; };
+		4658D6BB1CC0891F009527DF /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Me.storyboard; path = ../Legacy/Views/Main/Me.storyboard; sourceTree = "<group>"; };
 		466BD0941CADA990008DC0C3 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		466BD0961CADA9FF008DC0C3 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		466BD0981CADAA08008DC0C3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -346,7 +346,7 @@
 		462358641D778777007947B6 /* Legacy */ = {
 			isa = PBXGroup;
 			children = (
-				4644FBBF1C9CD69A004ACBAF /* Views */,
+				46271FAC1CD2B00E007196B2 /* Reusable */,
 			);
 			name = Legacy;
 			path = wrytr/Legacy;
@@ -393,6 +393,8 @@
 				462358721D7788F5007947B6 /* Startup.storyboard */,
 				46BF97781C9B6DA700579066 /* Landing.storyboard */,
 				466E74021CAFA72600EC0B7C /* Feed.storyboard */,
+				4658D6B91CC08919009527DF /* Create.storyboard */,
+				4658D6BB1CC0891F009527DF /* Me.storyboard */,
 				468614C51C89CC3A002C2BAC /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -472,7 +474,8 @@
 				462894E41D37F564006044E1 /* Challenge Table + Cells */,
 				462894EB1D37F76D006044E1 /* Post Detail */,
 			);
-			path = Reusable;
+			name = Reusable;
+			path = Views/Main/Reusable;
 			sourceTree = "<group>";
 		};
 		462894E41D37F564006044E1 /* Challenge Table + Cells */ = {
@@ -523,24 +526,6 @@
 				468614CA1C89CC3A002C2BAC /* Info.plist */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4644FBBF1C9CD69A004ACBAF /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				4644FBC11C9CD6AB004ACBAF /* Main */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		4644FBC11C9CD6AB004ACBAF /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				46271FAC1CD2B00E007196B2 /* Reusable */,
-				4658D6B91CC08919009527DF /* Create.storyboard */,
-				4658D6BB1CC0891F009527DF /* Me.storyboard */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		46452E551D7794BC0053EC4A /* Rx */ = {

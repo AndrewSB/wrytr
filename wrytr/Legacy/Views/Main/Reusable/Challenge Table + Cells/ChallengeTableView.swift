@@ -1,19 +1,13 @@
 import UIKit
-
-import ReSwift
-import ReSwiftRouter
-
 import RxSwift
 import RxCocoa
 
 class ChallengeTableView: UITableView {
-    
-    let disposeBag = DisposeBag()
-    
-    let data = Variable([PostType]())
-    
-    let sideInset: CGFloat = 14
-    
+    fileprivate let disposeBag = DisposeBag()
+
+    fileprivate let sideInset: CGFloat = 14
+
+    let posts = Variable([PostType]())
 }
 
 extension ChallengeTableView {
@@ -27,17 +21,6 @@ extension ChallengeTableView {
         self.register(UINib(nibName: "ChallengeTableViewCell", bundle: nil), forCellReuseIdentifier: "lol")
         
         (dataSource, delegate) = (self, self)
-        
-//        data.asObservable()
-//            .scan([PostType]()) { (lastState, newValue) in
-//                if lastState != newValue {
-//                    self.reloadData()
-//                }
-//                return newValue
-//            }
-//            .subscribe()
-//            .addDisposableTo(disposeBag)
-
     }
         
 }
@@ -47,7 +30,6 @@ extension ChallengeTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-//        store.dispatch(FeedProvider.selectPost(data.value[indexPath.section]))
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -72,19 +54,21 @@ extension ChallengeTableView: UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return data.value.count
+        return posts.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "lol") as! ChallengeTableViewCell
-        let element = data.value[indexPath.section]
+        let element = posts.value[indexPath.section]
         
         cell.xInsets = sideInset
         cell.prompt.text = element.prompt
-        
-//        _ = element.userId.profilePictureNSUrl.flatMap {
-//            cell.profilePicture.pin_setImage(from: $0)
-//        }        
+
+        User.Service.fetchUser(userID: element.authorId).map { $0.photo }
+            .subscribe(onNext: { photoURL in
+                cell.profilePicture.pin_setImage(from: photoURL)
+            })
+            .addDisposableTo(disposeBag)
 
         return cell
     }
