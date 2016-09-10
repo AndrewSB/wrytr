@@ -1,9 +1,8 @@
 import Cordux
-import Then
 
 class Landing {
 
-    static func make(routeSegment: RouteConvertible, store: Store) -> ForwardingViewController {
+    static func make(withRouteSegment routeSegment: RouteConvertible, store: Store) -> ForwardingViewController {
         let landingVC = ViewController.fromStoryboard()
         
         let uiCreationClosure = { (interface: Primitive) -> UIType in

@@ -1,9 +1,11 @@
-//
-//  FeedHandler.swift
-//  wrytr
-//
-//  Created by Andrew Breckenridge on 9/6/16.
-//  Copyright © 2016 Andrew Breckenridge. All rights reserved.
-//
+extension Feed {
 
-import Foundation
+    class Handler: HandlerType {
+        let store: Store
+
+        init(store: Store) {
+            self.store = store
+        }
+    }
+
+}
