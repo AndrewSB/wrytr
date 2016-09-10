@@ -15,21 +15,18 @@ extension Firebase {
 }
 
 extension Firebase.Provider {
-    func login(email: String, password: String) -> Observable<UserType> {
-        return ref.rx.login(email: email, password: password)
-            .flatMap(self.ref.rx.fetchUser)
-            .map { $0 as UserType }
+    func login(email: String, password: String) -> Observable<Firebase.User> {
+        return ref.rx.login(email: email, password: password).flatMap(self.ref.rx.fetchUser)
     }
     
-    func signup(name: String, email: String, password: String) -> Observable<UserType> {
+    func signup(name: String, email: String, password: String) -> Observable<Firebase.User> {
         return ref.rx.signup(email: email, password: password)
             .flatMap { userID in self.update(user: Firebase.User(id: userID, name: name, photo: nil)) }
-            .map { $0 as UserType }
     }
 }
 
 extension Firebase.Provider {
-    func facebookAuth(token: String) -> Observable<UserType> {
+    func facebookAuth(token: String) -> Observable<Firebase.User> {
         return ref.rx.oauth("facebook", token: token).flatMap(scrapeFirebaseAuthData)
     }
     
@@ -47,11 +44,11 @@ extension Firebase.Provider {
         }
     }
     
-    func twitterAuth(params: TwitterAuth) -> Observable<UserType> {
+    func twitterAuth(params: TwitterAuth) -> Observable<Firebase.User> {
         return ref.rx.oauth("twitter", parameters: params.asDict).flatMap(scrapeFirebaseAuthData)
     }
     
-    fileprivate func scrapeFirebaseAuthData(authData: FAuthData) -> Observable<UserType> {
+    fileprivate func scrapeFirebaseAuthData(authData: FAuthData) -> Observable<Firebase.User> {
         print("authdata was \(authData)")
         
         let name = authData.providerData["name"] as! String
@@ -70,12 +67,12 @@ extension Firebase.Provider {
 }
 
 extension Firebase.Provider {
-    func getUser(withUserID userID: UserID) -> Observable<UserType> {
-        return ref.rx.fetchUser(withId: userID).map { $0 as UserType }
+    func getUser(withUserID userID: UserID) -> Observable<Firebase.User> {
+        return ref.rx.fetchUser(withId: userID)
     }
     
-    func update(user newUser: UserType) -> Observable<UserType> {
-        return ref.rx.updateUser(userId: newUser.id, newUser: newUser).map { $0 as UserType }
+    func update(user newUser: UserType) -> Observable<Firebase.User> {
+        return ref.rx.updateUser(userId: newUser.id, newUser: newUser)
     }
     
 }
