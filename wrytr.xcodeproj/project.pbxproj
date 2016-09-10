@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4606A6701D8398CF00259AA1 /* Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A66F1D8398CF00259AA1 /* Create.swift */; };
+		4606A6721D8398D500259AA1 /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6711D8398D500259AA1 /* CreateViewModel.swift */; };
+		4606A6741D8398E600259AA1 /* CreateHander.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6731D8398E600259AA1 /* CreateHander.swift */; };
+		4606A6761D8398F300259AA1 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6751D8398F300259AA1 /* CreateViewController.swift */; };
+		4606A6781D8398FB00259AA1 /* CreateUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6771D8398FB00259AA1 /* CreateUI.swift */; };
+		4606A67A1D83990400259AA1 /* Me.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6791D83990400259AA1 /* Me.swift */; };
+		4606A67C1D83990B00259AA1 /* MeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A67B1D83990B00259AA1 /* MeViewModel.swift */; };
+		4606A67E1D83991300259AA1 /* MeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A67D1D83991300259AA1 /* MeHandler.swift */; };
+		4606A6801D83991900259AA1 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A67F1D83991900259AA1 /* MeViewController.swift */; };
+		4606A6821D83992000259AA1 /* MeViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6811D83992000259AA1 /* MeViewUI.swift */; };
 		461FD7551D760B30001BE92E /* PINCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461FD7531D760B30001BE92E /* PINCache.framework */; };
 		461FD7561D760B30001BE92E /* PINRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461FD7541D760B30001BE92E /* PINRemoteImage.framework */; };
 		462358631D7785C7007947B6 /* Cordux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462358621D7785C7007947B6 /* Cordux.framework */; };
@@ -68,7 +78,6 @@
 		46452E761D77A7F30053EC4A /* LandingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E751D77A7F30053EC4A /* LandingHandler.swift */; };
 		46452E791D77AB6D0053EC4A /* FacebookProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E781D77AB6D0053EC4A /* FacebookProvider.swift */; };
 		46452E7B1D77AB710053EC4A /* TwitterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E7A1D77AB710053EC4A /* TwitterProvider.swift */; };
-		4658D6B81CC08914009527DF /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4658D6B71CC08914009527DF /* Friends.storyboard */; };
 		4658D6BA1CC08919009527DF /* Create.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4658D6B91CC08919009527DF /* Create.storyboard */; };
 		4658D6BC1CC0891F009527DF /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4658D6BB1CC0891F009527DF /* Me.storyboard */; };
 		466BD0951CADA990008DC0C3 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD0941CADA990008DC0C3 /* libc++.tbd */; };
@@ -112,12 +121,21 @@
 		46CD47681D837B3E00C3D217 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47671D837B3E00C3D217 /* Friends.swift */; };
 		46CD476A1D837B4900C3D217 /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47691D837B4900C3D217 /* FriendsViewModel.swift */; };
 		46CD476C1D837B5300C3D217 /* FriendsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD476B1D837B5300C3D217 /* FriendsHandler.swift */; };
-		46CD476E1D837B5B00C3D217 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD476D1D837B5B00C3D217 /* FriendsViewController.swift */; };
 		46CD47701D837B6000C3D217 /* FriendsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD476F1D837B6000C3D217 /* FriendsUI.swift */; };
 		46CD47721D83808500C3D217 /* UIViewController + Alert + Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47711D83808500C3D217 /* UIViewController + Alert + Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4606A66F1D8398CF00259AA1 /* Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Create.swift; sourceTree = "<group>"; };
+		4606A6711D8398D500259AA1 /* CreateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
+		4606A6731D8398E600259AA1 /* CreateHander.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateHander.swift; sourceTree = "<group>"; };
+		4606A6751D8398F300259AA1 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		4606A6771D8398FB00259AA1 /* CreateUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUI.swift; sourceTree = "<group>"; };
+		4606A6791D83990400259AA1 /* Me.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Me.swift; sourceTree = "<group>"; };
+		4606A67B1D83990B00259AA1 /* MeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewModel.swift; sourceTree = "<group>"; };
+		4606A67D1D83991300259AA1 /* MeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeHandler.swift; sourceTree = "<group>"; };
+		4606A67F1D83991900259AA1 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		4606A6811D83992000259AA1 /* MeViewUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewUI.swift; sourceTree = "<group>"; };
 		461FD7531D760B30001BE92E /* PINCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINCache.framework; path = Carthage/Build/iOS/PINCache.framework; sourceTree = "<group>"; };
 		461FD7541D760B30001BE92E /* PINRemoteImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINRemoteImage.framework; path = Carthage/Build/iOS/PINRemoteImage.framework; sourceTree = "<group>"; };
 		462358621D7785C7007947B6 /* Cordux.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cordux.framework; path = Carthage/Build/iOS/Cordux.framework; sourceTree = "<group>"; };
@@ -180,7 +198,6 @@
 		46452E751D77A7F30053EC4A /* LandingHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingHandler.swift; sourceTree = "<group>"; };
 		46452E781D77AB6D0053EC4A /* FacebookProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookProvider.swift; sourceTree = "<group>"; };
 		46452E7A1D77AB710053EC4A /* TwitterProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterProvider.swift; sourceTree = "<group>"; };
-		4658D6B71CC08914009527DF /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
 		4658D6B91CC08919009527DF /* Create.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Create.storyboard; sourceTree = "<group>"; };
 		4658D6BB1CC0891F009527DF /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		466BD0941CADA990008DC0C3 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -226,7 +243,6 @@
 		46CD47671D837B3E00C3D217 /* Friends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		46CD47691D837B4900C3D217 /* FriendsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
 		46CD476B1D837B5300C3D217 /* FriendsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsHandler.swift; sourceTree = "<group>"; };
-		46CD476D1D837B5B00C3D217 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		46CD476F1D837B6000C3D217 /* FriendsUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsUI.swift; sourceTree = "<group>"; };
 		46CD47711D83808500C3D217 /* UIViewController + Alert + Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alert + Error.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -270,6 +286,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4606A66D1D8398C000259AA1 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				4606A6791D83990400259AA1 /* Me.swift */,
+				4606A67B1D83990B00259AA1 /* MeViewModel.swift */,
+				4606A67D1D83991300259AA1 /* MeHandler.swift */,
+				4606A67F1D83991900259AA1 /* MeViewController.swift */,
+				4606A6811D83992000259AA1 /* MeViewUI.swift */,
+			);
+			name = Me;
+			sourceTree = "<group>";
+		};
+		4606A66E1D8398C300259AA1 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				4606A66F1D8398CF00259AA1 /* Create.swift */,
+				4606A6711D8398D500259AA1 /* CreateViewModel.swift */,
+				4606A6731D8398E600259AA1 /* CreateHander.swift */,
+				4606A6751D8398F300259AA1 /* CreateViewController.swift */,
+				4606A6771D8398FB00259AA1 /* CreateUI.swift */,
+			);
+			name = Create;
+			sourceTree = "<group>";
+		};
 		461FD7521D760B30001BE92E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +379,8 @@
 				4623587F1D778DA1007947B6 /* HomeCoordinator.swift */,
 				4623587C1D778D8D007947B6 /* Feed */,
 				46CD47661D837B3200C3D217 /* Friends */,
+				4606A66E1D8398C300259AA1 /* Create */,
+				4606A66D1D8398C000259AA1 /* Me */,
 			);
 			path = Molecules;
 			sourceTree = "<group>";
@@ -486,24 +528,15 @@
 		4644FBBF1C9CD69A004ACBAF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4644FBC01C9CD6A7004ACBAF /* Login */,
 				4644FBC11C9CD6AB004ACBAF /* Main */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		4644FBC01C9CD6A7004ACBAF /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		4644FBC11C9CD6AB004ACBAF /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				46271FAC1CD2B00E007196B2 /* Reusable */,
-				4658D6B71CC08914009527DF /* Friends.storyboard */,
 				4658D6B91CC08919009527DF /* Create.storyboard */,
 				4658D6BB1CC0891F009527DF /* Me.storyboard */,
 			);
@@ -639,7 +672,6 @@
 				46CD47671D837B3E00C3D217 /* Friends.swift */,
 				46CD47691D837B4900C3D217 /* FriendsViewModel.swift */,
 				46CD476B1D837B5300C3D217 /* FriendsHandler.swift */,
-				46CD476D1D837B5B00C3D217 /* FriendsViewController.swift */,
 				46CD476F1D837B6000C3D217 /* FriendsUI.swift */,
 			);
 			name = Friends;
@@ -717,7 +749,6 @@
 				462F03301CE2CF1B0031B1B1 /* ChallengeTableViewCell.xib in Resources */,
 				46C099191CA072250015779C /* TwitterKitResources.bundle in Resources */,
 				4644FBC51C9CDE8D004ACBAF /* Localizable.strings in Resources */,
-				4658D6B81CC08914009527DF /* Friends.storyboard in Resources */,
 				46BF97791C9B6DA700579066 /* Landing.storyboard in Resources */,
 				468614C91C89CC3A002C2BAC /* LaunchScreen.storyboard in Resources */,
 				468614C61C89CC3A002C2BAC /* Assets.xcassets in Resources */,
@@ -805,10 +836,12 @@
 				4623587E1D778D9B007947B6 /* AuthenticationCoordinator.swift in Sources */,
 				46452E791D77AB6D0053EC4A /* FacebookProvider.swift in Sources */,
 				462358761D7789F3007947B6 /* FirebaseProvider.swift in Sources */,
+				4606A6701D8398CF00259AA1 /* Create.swift in Sources */,
 				4623587A1D778B69007947B6 /* AppCoordinator.swift in Sources */,
 				463913E11D7641590077D0E5 /* DismissesKeyboardOnTap.swift in Sources */,
 				46C0991E1CA092770015779C /* ParseRxCallbacks.swift in Sources */,
 				46AE37531D7A3FD3005A89F3 /* Firebase+UserType.swift in Sources */,
+				4606A6721D8398D500259AA1 /* CreateViewModel.swift in Sources */,
 				462894E81D37F6B3006044E1 /* PublishReplyViewController.swift in Sources */,
 				46452E721D77A7E40053EC4A /* LandingViewModel.swift in Sources */,
 				46452E6E1D779EAB0053EC4A /* AuthenticationState.swift in Sources */,
@@ -817,7 +850,10 @@
 				46AE374F1D7A3559005A89F3 /* PresentableError.swift in Sources */,
 				46452E7B1D77AB710053EC4A /* TwitterProvider.swift in Sources */,
 				462894EA1D37F6D7006044E1 /* PostResponsesViewController.swift in Sources */,
+				4606A67A1D83990400259AA1 /* Me.swift in Sources */,
+				4606A6801D83991900259AA1 /* MeViewController.swift in Sources */,
 				462358701D7788BC007947B6 /* PostService.swift in Sources */,
+				4606A6761D8398F300259AA1 /* CreateViewController.swift in Sources */,
 				4636B66D1D7F632700C4B43D /* Feed.swift in Sources */,
 				468D0E531CCED77A004250F6 /* RenderedImageView.swift in Sources */,
 				468D0E4F1CCED0F2004250F6 /* Firebase+Rx FetchData.swift in Sources */,
@@ -831,8 +867,9 @@
 				468D0E511CCED4ED004250F6 /* ChallengeTableViewCell.swift in Sources */,
 				462894ED1D37F78A006044E1 /* ComposeViewController.swift in Sources */,
 				4644FBB11C9CCE79004ACBAF /* Images.swift in Sources */,
-				46CD476E1D837B5B00C3D217 /* FriendsViewController.swift in Sources */,
 				4636B6711D7F636200C4B43D /* FeedViewModel.swift in Sources */,
+				4606A67C1D83990B00259AA1 /* MeViewModel.swift in Sources */,
+				4606A6821D83992000259AA1 /* MeViewUI.swift in Sources */,
 				46AE37511D7A3B2C005A89F3 /* UIAlertAction + SimpleHandlerInit.swift in Sources */,
 				4644FBA81C9CC9CB004ACBAF /* AppState.swift in Sources */,
 				46AE374D1D7A1886005A89F3 /* HandlerType.swift in Sources */,
@@ -843,10 +880,12 @@
 				46452E661D7799620053EC4A /* ThirdPartyServices.swift in Sources */,
 				46AE375D1D7AB85E005A89F3 /* URL + Decodable.swift in Sources */,
 				46452E691D7799760053EC4A /* Facebook.swift in Sources */,
+				4606A6781D8398FB00259AA1 /* CreateUI.swift in Sources */,
 				466E73FD1CAF271A00EC0B7C /* Firebase+Rx Auth.swift in Sources */,
 				46CD476A1D837B4900C3D217 /* FriendsViewModel.swift in Sources */,
 				46CD47721D83808500C3D217 /* UIViewController + Alert + Error.swift in Sources */,
 				46260A741D3EAEF400CB6850 /* Observable + Ignore Nil.swift in Sources */,
+				4606A67E1D83991300259AA1 /* MeHandler.swift in Sources */,
 				462358781D778B45007947B6 /* StartupViewController.swift in Sources */,
 				46CD476C1D837B5300C3D217 /* FriendsHandler.swift in Sources */,
 				46452E701D77A7D80053EC4A /* Landing.swift in Sources */,
@@ -856,6 +895,7 @@
 				462894E61D37F593006044E1 /* PostDetailViewController.swift in Sources */,
 				462F032A1CE2ADDF0031B1B1 /* NSRangeExtension.swift in Sources */,
 				468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */,
+				4606A6741D8398E600259AA1 /* CreateHander.swift in Sources */,
 				4636B6751D7F638200C4B43D /* FeedUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
