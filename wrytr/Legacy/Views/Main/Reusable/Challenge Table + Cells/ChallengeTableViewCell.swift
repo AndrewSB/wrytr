@@ -3,7 +3,7 @@ import UIKit
 import Library
 
 class ChallengeTableViewCell: UITableViewCell {
-    
+
     var xInsets: CGFloat?
 
     @IBOutlet weak var elipses: UIButton! {
@@ -19,8 +19,8 @@ class ChallengeTableViewCell: UITableViewCell {
         }
     }
     @IBOutlet weak var prompt: UILabel!
-    
-    
+
+
     @IBOutlet weak var stars: RenderedImageButton! {
         didSet { stars.imageView!.contentMode = .scaleAspectFit }
     }
@@ -36,29 +36,29 @@ class ChallengeTableViewCell: UITableViewCell {
             reply.layer.borderColor = UIColor.lightGray.cgColor
         }
     }
-    
+
     override var frame: CGRect {
         get {
             return super.frame
         }
         set (newFrame) {
             var frame = newFrame
-            
+
             frame.origin.x += xInsets ?? 0
             frame.size.width = newFrame.width - (2 * (xInsets ?? 0))
-            
+
             super.frame = frame
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         layer.borderColor = UIColor.lightGray.cgColor
         layer.borderWidth = 1
 
         layer.cornerRadius = 10
     }
 
-    
+
 }

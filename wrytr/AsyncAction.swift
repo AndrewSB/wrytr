@@ -5,7 +5,7 @@ typealias AsyncAction = ((_ state: Cordux.StateType, _ store: Store) -> Cordux.A
 extension Cordux.Store {
     func dispatch(_ actionCreatorProvider: @escaping (State, Cordux.Store<State>) -> Action?) {
         let action = actionCreatorProvider(state, self)
-        
+
         if let action = action {
             dispatch(action)
         }

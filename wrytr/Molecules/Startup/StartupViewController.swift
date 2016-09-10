@@ -1,5 +1,3 @@
 import UIKit
 
-class StartupViewController: UIViewController {
-    
-}
+class StartupViewController: UIViewController {}

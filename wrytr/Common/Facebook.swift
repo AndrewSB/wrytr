@@ -9,10 +9,9 @@ extension ThirdParty.Service.Facebook {
         func onAppLaunch(application: UIApplication, launchOptions: [UIApplicationLaunchOptionsKey : Any]?) {
             FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         }
-        
+
         func onAppActivate() {
             FBSDKAppEvents.activateApp()
         }
     }
 }
-

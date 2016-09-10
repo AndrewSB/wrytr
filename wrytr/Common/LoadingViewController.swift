@@ -8,14 +8,14 @@ class LoadingViewController: UIViewController {
         let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
         activityIndicator.hidesWhenStopped = true
         activityIndicator.stopAnimating()
-        
+
         self.view = activityIndicator
     }
-    
+
     var loadingView: UIActivityIndicatorView {
         get { return self.view as! UIActivityIndicatorView }
     }
-    
+
     func show() {
         (self.view as! UIActivityIndicatorView).startAnimating()
     }
@@ -27,7 +27,7 @@ class LoadingViewController: UIViewController {
 }
 
 extension UIViewController {
-    
+
     func startLoading(_ loaderColor: UIColor?) {
         self.view.isUserInteractionEnabled = false
         self.loader.loadingView.color = loaderColor
@@ -39,7 +39,7 @@ extension UIViewController {
         print(childViewControllers)
         self.loader.hide()
     }
-    
+
     var loader: LoadingViewController {
         get {
             return childViewControllers
@@ -47,7 +47,7 @@ extension UIViewController {
                 .first ?? self.createAndAddLoader()
         }
     }
-    
+
     fileprivate func createAndAddLoader() -> LoadingViewController {
         print("adding new loader")
         let loader = LoadingViewController()

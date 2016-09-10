@@ -13,18 +13,18 @@ class InterfaceProvidingViewController: UIViewController, InterfaceProvidingPrim
 
 protocol UIType: class {
     weak var loaderAndErrorPresenter: LoadingIndicatable & ErrorPresentable? { get set }
-    var bindings: [Disposable] { get set }    
+    var bindings: [Disposable] { get set }
 }
 
 extension UIType {
     func showLoading() {
         self.loaderAndErrorPresenter?.startLoading()
     }
-    
+
     func hideLoading() {
         self.loaderAndErrorPresenter?.stopLoading()
     }
-    
+
     func presentError(error: PresentableError, actions: [UIAlertAction] = []) {
         self.loaderAndErrorPresenter?.presentError(error: error, actions: actions)
     }

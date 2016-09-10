@@ -1,0 +1,37 @@
+disabled_rules:
+  - nesting
+opt_in_rules:
+  - empty_count
+included:
+  - wrytr
+excluded:
+  - Carthage
+  - wrytr/Resources/Constants/Build
+
+force_cast: warning
+line_length:
+  warning: 200
+  error: 400
+file_length:
+  warning: 200
+  error: 500
+type_name:
+  excluded:
+    - IB
+    - UI
+variable_name:
+  min_length: # only min_length
+    warning: 5
+    error: 3
+  excluded:
+    - id
+    - ui
+    - app
+    - url
+    - lhs
+    - rhs
+    - open
+    - user
+    - name
+    - post
+    - json

@@ -3,12 +3,12 @@ import TwitterKit
 import RxSwift
 
 extension User {
-    
+
     class Service {
-        private static let 🔥 = Firebase.Provider()
-        fileprivate static let 🗣 = Facebook.Provider()
-        fileprivate static let 🐦 = Twitter.Provider()
-        
+        private static let 🔥 = Firebase.Provider() // swiftlint:disable:this variable_name
+        fileprivate static let 🗣 = Facebook.Provider() // swiftlint:disable:this variable_name
+        fileprivate static let 🐦 = Twitter.Provider() // swiftlint:disable:this variable_name
+
         static var isLoggedIn: Bool {
             return 🔥.isLoggedIn
         }
@@ -17,17 +17,17 @@ extension User {
             return 🔥.getUser(withUserID: userID).map { $0 as UserType }
         }
 
-        static func auth(params: Auth) -> Observable<UserType> {            
+        static func auth(params: Auth) -> Observable<UserType> {
             switch params {
             case let .signup(name, loginParams):
                 guard case let .login(email, password) = loginParams else {
                     assertionFailure("dont repeatedly recurse"); return .never()
                 }
                 return 🔥.signup(name: name, email: email, password: password).map { $0 as UserType }
-                
+
             case let .login(email, password):
                 return 🔥.login(email: email, password: password).map { $0 as UserType }
-                
+
             case .facebook:
                 return 🗣.login()
                     .map { facebookResult in
@@ -41,7 +41,7 @@ extension User {
                     }
                     .flatMap(🔥.facebookAuth)
                     .map { $0 as UserType }
-                
+
             case .twitter:
                 return 🐦.login()
                     .map { twitterResult in
@@ -53,11 +53,11 @@ extension User {
                     }
                     .flatMap(🔥.twitterAuth)
                     .map { $0 as UserType }
-                
+
             }
         }
     }
-    
+
 }
 
 extension User.Service {

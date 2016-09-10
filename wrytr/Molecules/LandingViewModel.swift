@@ -5,10 +5,10 @@ extension Landing {
         var option: Option
         var loading: Bool
         var error: PresentableError?
-        
+
         static let initial = Landing.ViewModel(option: .login, loading: false, error: nil)
     }
-    
+
     enum Action: Cordux.Action {
         case updateOption(ViewModel.Option)
         case startLoading
@@ -28,7 +28,7 @@ extension Landing.ViewModel {
 extension Landing.ViewModel {
     static func handleAction(action: Cordux.Action, state: Landing.ViewModel) -> Landing.ViewModel {
         var state = state
-        
+
         switch action {
         case Authentication.Action.loggedIn(let user):
             print("logged in with \(user)")
@@ -43,13 +43,13 @@ extension Landing.ViewModel {
         default:
             break
         }
-                
+
         return state
     }
-    
+
     private static func handleLandingAction(action: Landing.Action, state: Landing.ViewModel) -> Landing.ViewModel {
         var state = state
-        
+
         switch action {
         case .updateOption(let newOption):
             state.option = newOption
@@ -62,7 +62,7 @@ extension Landing.ViewModel {
         case .dismissError:
             state.error = nil
         }
-        
+
         return state
     }
 }

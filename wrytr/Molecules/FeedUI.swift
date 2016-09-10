@@ -14,6 +14,6 @@ extension Feed {
             self.interface = interface
             self.handler = handler
         }
-        
+
     }
 }

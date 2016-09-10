@@ -1,7 +1,7 @@
 extension Post {
-    
+
     class Service {
-        
+
     }
-    
+
 }

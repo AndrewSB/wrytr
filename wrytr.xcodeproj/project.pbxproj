@@ -17,6 +17,7 @@
 		4606A67E1D83991300259AA1 /* MeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A67D1D83991300259AA1 /* MeHandler.swift */; };
 		4606A6801D83991900259AA1 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A67F1D83991900259AA1 /* MeViewController.swift */; };
 		4606A6821D83992000259AA1 /* MeViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6811D83992000259AA1 /* MeViewUI.swift */; };
+		4606A6841D83A29300259AA1 /* Xcode 8 Print hack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6831D83A29300259AA1 /* Xcode 8 Print hack.swift */; };
 		461FD7551D760B30001BE92E /* PINCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461FD7531D760B30001BE92E /* PINCache.framework */; };
 		461FD7561D760B30001BE92E /* PINRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461FD7541D760B30001BE92E /* PINRemoteImage.framework */; };
 		462358631D7785C7007947B6 /* Cordux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462358621D7785C7007947B6 /* Cordux.framework */; };
@@ -136,6 +137,7 @@
 		4606A67D1D83991300259AA1 /* MeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeHandler.swift; sourceTree = "<group>"; };
 		4606A67F1D83991900259AA1 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		4606A6811D83992000259AA1 /* MeViewUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewUI.swift; sourceTree = "<group>"; };
+		4606A6831D83A29300259AA1 /* Xcode 8 Print hack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Xcode 8 Print hack.swift"; sourceTree = "<group>"; };
 		461FD7531D760B30001BE92E /* PINCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINCache.framework; path = Carthage/Build/iOS/PINCache.framework; sourceTree = "<group>"; };
 		461FD7541D760B30001BE92E /* PINRemoteImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINRemoteImage.framework; path = Carthage/Build/iOS/PINRemoteImage.framework; sourceTree = "<group>"; };
 		462358621D7785C7007947B6 /* Cordux.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cordux.framework; path = Carthage/Build/iOS/Cordux.framework; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 				46AE374C1D7A1886005A89F3 /* HandlerType.swift */,
 				46AE374E1D7A3559005A89F3 /* PresentableError.swift */,
 				46AE375C1D7AB85E005A89F3 /* URL + Decodable.swift */,
+				4606A6831D83A29300259AA1 /* Xcode 8 Print hack.swift */,
 				46452E671D77996D0053EC4A /* ThirdParty */,
 			);
 			path = Common;
@@ -669,6 +672,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 468614CD1C89CC3A002C2BAC /* Build configuration list for PBXNativeTarget "wrytr" */;
 			buildPhases = (
+				4606A6851D83A2AB00259AA1 /* swiftlint */,
 				4644FBA11C9CBFFA004ACBAF /* SwiftGen */,
 				468614B71C89CC3A002C2BAC /* Sources */,
 				468614B81C89CC3A002C2BAC /* Frameworks */,
@@ -743,6 +747,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4606A6851D83A2AB00259AA1 /* swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		4644FB9E1C9CBCFE004ACBAF /* Carthage Copy Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
@@ -863,6 +881,7 @@
 				4636B6791D7F78E900C4B43D /* AsyncAction.swift in Sources */,
 				46307D391CDD67A700E47A1C /* ExtendedNavbarView.swift in Sources */,
 				46452E661D7799620053EC4A /* ThirdPartyServices.swift in Sources */,
+				4606A6841D83A29300259AA1 /* Xcode 8 Print hack.swift in Sources */,
 				46AE375D1D7AB85E005A89F3 /* URL + Decodable.swift in Sources */,
 				46452E691D7799760053EC4A /* Facebook.swift in Sources */,
 				4606A6781D8398FB00259AA1 /* CreateUI.swift in Sources */,

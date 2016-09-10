@@ -1,7 +1,7 @@
 import Argo
 
 extension URL: Decodable {
-    
+
     public static func decode(_ json: JSON) -> Decoded<URL> {
         switch json {
         case .string(let s) where URL(string: s) != nil:
@@ -10,5 +10,5 @@ extension URL: Decodable {
             return .typeMismatch(expected: "URL", actual: json)
         }
     }
-    
+
 }

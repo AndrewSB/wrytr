@@ -4,7 +4,7 @@ import Crashlytics
 
 extension ThirdParty.Service {
     class Fabric: ThirdPartyService {
-        
+
     }
 }
 
@@ -13,10 +13,9 @@ extension ThirdParty.Service.Fabric {
         func onAppLaunch(application: UIApplication, launchOptions: [UIApplicationLaunchOptionsKey : Any]?) {
             Fabric.with([Crashlytics.self, Twitter.self])
         }
-        
+
         func onAppActivate() {
-            
+
         }
     }
 }
-

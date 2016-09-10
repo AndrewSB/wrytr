@@ -18,22 +18,22 @@ class LandingViewController: InterfaceProvidingViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var facebookButton: RoundedButton!
     @IBOutlet weak var twitterButton: RoundedButton!
-    
+
     @IBOutlet weak var formHeader: UILabel!
     @IBOutlet weak var usernameField: InsettableTextField!
     @IBOutlet weak var emailField: InsettableTextField!
     @IBOutlet weak var passwordField: InsettableTextField!
-    
+
     @IBOutlet weak var termsOfServiceButton: UIButton!
-    
+
     @IBOutlet weak var actionButton: RoundedButton!
-    
+
     @IBOutlet weak var helperLabel: UILabel!
     @IBOutlet weak var helperButton: RoundedButton!
 }
 
 extension Landing.ViewController {
-    
+
     override func viewDidLoad() {
         self.interface = IB(
             subtitle: subtitle,
@@ -50,10 +50,10 @@ extension Landing.ViewController {
             helperLabel: helperLabel,
             helperButton: helperButton
         )
-        
+
         super.viewDidLoad()
     }
-    
+
     struct IB: Primitive {
         let subtitle: UILabel
         let formContainer: UIStackView

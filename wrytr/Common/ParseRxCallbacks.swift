@@ -3,7 +3,7 @@ import Foundation
 import RxSwift
 
 class ParseRxCallbacks {
-    
+
     static func createWithCallback<T>(_ callback: @escaping ((AnyObserver<T>) -> Void)) -> Observable<T> {
         return Observable.create({ (observer: AnyObserver<T>) -> Disposable in
             callback(observer)
@@ -21,7 +21,7 @@ class ParseRxCallbacks {
             }
         }
     }
-    
+
     static func rx_parseUnwrappedOptionalCallback<T>(_ observer: AnyObserver<T>) -> (_ object: T?, _ error: Error?) -> Void {
         return { (object: T?, error: Error?) in
             if error == nil {
@@ -32,7 +32,7 @@ class ParseRxCallbacks {
             }
         }
     }
-    
+
     static func rx_parseOptionalCallback<T>(_ observer: AnyObserver<T?>) -> (_ object: T?, _ error: NSError?) -> Void {
         return { (object: T?, error: NSError?) in
             if error == nil {
@@ -43,5 +43,5 @@ class ParseRxCallbacks {
             }
         }
     }
-    
+
 }
