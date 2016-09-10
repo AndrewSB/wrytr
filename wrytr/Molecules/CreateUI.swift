@@ -1,9 +1,18 @@
-//
-//  CreateUI.swift
-//  wrytr
-//
-//  Created by Andrew Breckenridge on 9/9/16.
-//  Copyright © 2016 Andrew Breckenridge. All rights reserved.
-//
+import UIKit
+import RxSwift
 
-import Foundation
+extension Create {
+    class UI: UIType {
+        weak var loaderAndErrorPresenter: (ErrorPresentable & LoadingIndicatable)?
+
+        fileprivate let interface: ViewController.IB
+        fileprivate let handler: Handler
+
+        lazy var bindings: [Disposable] = []
+
+        init(interface: ViewController.IB, handler: Handler) {
+            self.interface = interface
+            self.handler = handler
+        }
+    }
+}

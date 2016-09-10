@@ -3,8 +3,8 @@ github "AndrewSB/ReSwift-Router" "master"
 
 github "AndrewSB/Library" "master"
 
-github "ReactiveX/RxSwift" "3.0.0.alpha.1"
-github "antitypical/Result" "3.0.0-alpha.4"
+github "ReactiveX/RxSwift" "develop"
+github "antitypical/Result" "master"
 
 github "pinterest/PINRemoteImage"
 
@@ -13,6 +13,7 @@ github "willowtreeapps/cordux"
 
 github "devxoul/Then" "swift-3.0"
 
+github "thoughtbot/Runes" "master"
 github "thoughtbot/Curry" "master"
-github "thoughtbot/Argo" "master"
-github "edwardaux/Ogra" "master"
+github "sgoodwin/Argo" "master"
+# github "edwardaux/Ogra" "master"

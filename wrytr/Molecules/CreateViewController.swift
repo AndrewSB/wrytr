@@ -1,9 +1,17 @@
-//
-//  CreateViewController.swift
-//  wrytr
-//
-//  Created by Andrew Breckenridge on 9/9/16.
-//  Copyright © 2016 Andrew Breckenridge. All rights reserved.
-//
+import UIKit
 
-import Foundation
+extension Create {
+    typealias ViewController = CreateViewController
+}
+
+extension Create.ViewController {
+    static func fromStoryboard() -> CreateViewController {
+        return StoryboardScene.Create.instantiateCreate()
+    }
+}
+
+class CreateViewController: InterfaceProvidingViewController {
+
+    struct IB: Primitive {}
+
+}
