@@ -13,27 +13,15 @@ extension Landing {
         }
 
         func twitterTap() {
-            store.dispatch(Landing.Action.startLoading)
-
-            let (disposable, asyncSignIn) = Authentication.signIn(.twitter)
-            store.dispatch(asyncSignIn)
-            disposable.flatMap(disposeBag.insert) // THIS IS A PROBLEM
+            store.dispatch(Authentication.signIn(.twitter))
         }
 
         func facebookTap() {
-            store.dispatch(Landing.Action.startLoading)
-
-            let (disposable, asyncSignIn) = Authentication.signIn(.facebook)
-            store.dispatch(asyncSignIn)
-            disposable.flatMap(disposeBag.insert) // THIS IS A PROBLEM
+            store.dispatch(Authentication.signIn(.facebook))
         }
 
         func actionTap(authData: User.Service.Auth) {
-            store.dispatch(Landing.Action.startLoading)
-
-            let (disposable, asyncSignIn) = Authentication.signIn(authData)
-            store.dispatch(asyncSignIn)
-            disposable.flatMap(disposeBag.insert) // THIS IS A PROBLEM
+            store.dispatch(Authentication.signIn(authData))
         }
 
         func changeAuthOptionTap(option: ViewModel.Option) {

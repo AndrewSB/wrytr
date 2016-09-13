@@ -12,8 +12,6 @@ extension Landing {
         let interface: ViewController.IB
         let handler: Handler
 
-        fileprivate var currentOption: ViewModel.Option = .login
-
         lazy var bindings: [Disposable] = [
             self.interface.facebookButton.rx.tap.asDriver().drive(onNext: self.handler.facebookTap),
             self.interface.twitterButton.rx.tap.asDriver().drive(onNext: self.handler.twitterTap),
@@ -21,7 +19,7 @@ extension Landing {
                 .map {
                     let name = self.interface.emailField.text ?? "", email = self.interface.emailField.text ?? "", password = self.interface.passwordField.text ?? ""
 
-                    switch self.currentOption {
+                    switch store.state.landingState.option {
                     case .login:
                         return User.Service.Auth.login(email: email, password: password)
                     case .register:
@@ -70,14 +68,14 @@ extension Landing.UI: Renderer {
     typealias ViewModel = Landing.ViewModel
 
     func render(_ viewModel: Landing.ViewModel) {
-        print("state is \(viewModel)")
-        self.currentOption = viewModel.option
         renderAuthOption(option: viewModel.option)
+
+        print("sex: \(viewModel)")
+        print("\(viewModel.loading ? "sex showing" : "sex hiding")")
         _ = viewModel.loading ? showLoading() : hideLoading()
         viewModel.error.flatMap { err in
-            self.presentError(error: err, actions: [
-                UIAlertAction(title: "Ok", style: .cancel, handler: self.handler.errorOkTap)
-                ])
+            let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: self.handler.errorOkTap)
+            self.presentError(error: err, actions: [okAction])
         }
     }
 

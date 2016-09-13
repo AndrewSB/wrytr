@@ -2,24 +2,27 @@ import RxSwift
 import ReSwift
 import Cordux
 
-extension Authentication {
-    struct State: ReSwift.StateType {
-        var user: UserType?
-        var error: PresentableError?
+fileprivate let neverDisposeBag = DisposeBag()
 
-        static let initial = State(user: nil, error: nil)
+extension Authentication {
+
+    struct State: ReSwift.StateType {
+        var user: UserType? = nil
+        var error: PresentableError? = nil
     }
 
     enum Action: Cordux.Action {
+        case loggingIn
         case loggedIn(UserType)
         case errorLoggingIn(PresentableError)
         case loggedOut
     }
 
-    static func signIn(_ params: User.Service.Auth) -> (Disposable?, AsyncAction) {
-        var requestDisposable: Disposable! = nil
-        let asyncAction: AsyncAction = { state, store in
-            requestDisposable = User.Service.auth(params: params).subscribe {
+    static func signIn(_ params: User.Service.Auth) -> AsyncAction {
+        return { state, store in
+            store.dispatch(Action.loggingIn)
+
+            User.Service.auth(params: params).subscribe {
                 switch $0 {
                 case .next(let user):
                     store.dispatch(Action.loggedIn(user))
@@ -28,26 +31,36 @@ extension Authentication {
                 case .completed:
                     break
                 }
-            }
+            }.addDisposableTo(neverDisposeBag)
 
             return nil
         }
-
-        return (requestDisposable, asyncAction)
 
     }
 }
 
 extension Authentication {
-    class Reducer {
-        typealias State = Authentication.State
-
-        public static func handleAction(_ action: Cordux.Action, state: State) -> State {
+    final class Reducer: Cordux.Reducer {
+        public func handleAction(_ action: Cordux.Action, state: AppState) -> AppState {
             var state = state
-
-            guard let action = action as? Authentication.Action else { return state }
+            print("sex: dispatched \(action)")
 
             switch action {
+            case let authAction as Authentication.Action:
+                state.authenticationState = self.handleAction(authAction, state: state.authenticationState)
+            default:
+                break
+            }
+
+            return state
+        }
+
+        private func handleAction(_ action: Authentication.Action, state: Authentication.State) -> Authentication.State {
+            var state = state
+
+            switch action {
+            case .loggingIn:
+                break
             case .loggedIn(let user):
                 state.user = user
             case .errorLoggingIn(let error):

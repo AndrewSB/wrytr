@@ -4,16 +4,11 @@ typealias Store = Cordux.Store<AppState>
 
 struct AppState: StateType {
     var route: Route = []
-    var landingState: Landing.ViewModel = Landing.ViewModel.initial
-    var authenticationState: Authentication.State = Authentication.State.initial
+    var landingState = Landing.ViewModel()
+    var authenticationState = Authentication.State()
 }
 
-final class AppReducer: Reducer {
-    func handleAction(_ action: Action, state: AppState) -> AppState {
-        return State(
-            route: state.route,
-            landingState: Landing.ViewModel.handleAction(action: action, state: state.landingState),
-            authenticationState: Authentication.Reducer.handleAction(action, state: state.authenticationState)
-        )
-    }
-}
+let appReducer = CombinedReducer([
+    Authentication.Reducer(),
+    Landing.ViewModel.Reducer(),
+])

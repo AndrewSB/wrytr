@@ -1,6 +1,8 @@
 import UIKit
 import Cordux
 
+let store = Store(initialState: AppState(), reducer: appReducer, middlewares: [])
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,8 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIViewController.swizzleLifecycleDelegatingViewControllerMethods()
 
         thirdPartyServiceHandler.onAppLaunch(application: application, launchOptions: launchOptions)
-
-        let store = Store(initialState: AppState(), reducer: AppReducer(), middlewares: [])
 
         coordinator = AppCoordinator(store: store, container: mainController)
         coordinator.start(route: store.state.route)
