@@ -30,6 +30,7 @@
 		4623587E1D778D9B007947B6 /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4623587D1D778D9B007947B6 /* AuthenticationCoordinator.swift */; };
 		462358801D778DA1007947B6 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4623587F1D778DA1007947B6 /* HomeCoordinator.swift */; };
 		462358821D77947F007947B6 /* strings-swift3.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 462358811D77947F007947B6 /* strings-swift3.stencil */; };
+		4623EB5D1D88ABC9004880E3 /* PostState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4623EB5C1D88ABC9004880E3 /* PostState.swift */; };
 		46260A741D3EAEF400CB6850 /* Observable + Ignore Nil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46260A731D3EAEF400CB6850 /* Observable + Ignore Nil.swift */; };
 		46271FAB1CD2AB36007196B2 /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46271FAA1CD2AB36007196B2 /* Library.framework */; };
 		46271FAE1CD2B02F007196B2 /* ChallengeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */; };
@@ -150,6 +151,7 @@
 		4623587D1D778D9B007947B6 /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		4623587F1D778DA1007947B6 /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		462358811D77947F007947B6 /* strings-swift3.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "strings-swift3.stencil"; sourceTree = "<group>"; };
+		4623EB5C1D88ABC9004880E3 /* PostState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostState.swift; sourceTree = "<group>"; };
 		46260A731D3EAEF400CB6850 /* Observable + Ignore Nil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable + Ignore Nil.swift"; sourceTree = "<group>"; };
 		46271FAA1CD2AB36007196B2 /* Library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Library.framework; path = Carthage/Build/iOS/Library.framework; sourceTree = "<group>"; };
 		46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ChallengeTableView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -600,6 +602,7 @@
 				4636B6781D7F78E900C4B43D /* AsyncAction.swift */,
 				462A77D31D8883D200E6F6A0 /* CombinedReducer.swift */,
 				46452E6D1D779EAB0053EC4A /* AuthenticationState.swift */,
+				4623EB5C1D88ABC9004880E3 /* PostState.swift */,
 			);
 			name = State;
 			sourceTree = "<group>";
@@ -895,6 +898,7 @@
 				46CD47721D83808500C3D217 /* UIViewController + Alert + Error.swift in Sources */,
 				46260A741D3EAEF400CB6850 /* Observable + Ignore Nil.swift in Sources */,
 				4606A67E1D83991300259AA1 /* MeHandler.swift in Sources */,
+				4623EB5D1D88ABC9004880E3 /* PostState.swift in Sources */,
 				462358781D778B45007947B6 /* StartupViewController.swift in Sources */,
 				46CD476C1D837B5300C3D217 /* FriendsHandler.swift in Sources */,
 				46452E701D77A7D80053EC4A /* Landing.swift in Sources */,

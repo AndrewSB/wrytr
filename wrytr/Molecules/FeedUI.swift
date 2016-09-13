@@ -1,5 +1,6 @@
 import UIKit
 import RxSwift
+import Cordux
 
 extension Feed {
     class UI: UIType {
@@ -13,7 +14,18 @@ extension Feed {
         init(interface: ViewController.IB, handler: Handler) {
             self.interface = interface
             self.handler = handler
+
+            // dispatch async because we don't want to call dispatch to the store before currentScene is set in AppCoordinator, it causes an infinite loop
+            DispatchQueue.main.async { self.handler.refreshPosts() }
         }
 
+    }
+}
+
+extension Feed.UI: Renderer {
+    func render(_ viewModel: Feed.ViewModel) {
+        self.interface.tableView.posts.value = viewModel.posts
+
+        
     }
 }

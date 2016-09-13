@@ -7,7 +7,12 @@ final class AppCoordinator: SceneCoordinator {
         case home
 
         var coordinator: AnyCoordinator.Type {
-            return Authentication.Coordinator.self
+            switch self {
+            case .auth:
+                return Authentication.Coordinator.self
+            case .home:
+                return Home.Coordinator.self
+            }
         }
 
     }
@@ -17,7 +22,7 @@ final class AppCoordinator: SceneCoordinator {
     let container: UIViewController
 
     var currentScene: AnyCoordinator?
-
+    
     var rootViewController: UIViewController {
         return container
     }

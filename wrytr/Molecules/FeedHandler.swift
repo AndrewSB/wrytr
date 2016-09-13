@@ -6,6 +6,10 @@ extension Feed {
         init(store: Store) {
             self.store = store
         }
+
+        func refreshPosts() {
+            store.dispatch(Post.loadPosts())
+        }
     }
 
 }

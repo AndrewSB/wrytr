@@ -42,6 +42,7 @@ class ForwardingViewController: UIViewController {
         let context = Context(routeSegment, lifecycleDelegate: self)
         self.containedViewController.corduxContext = context
 
+        self.automaticallyAdjustsScrollViewInsets = false
         self.addChildViewController(viewController)
         view.addSubview(viewController.view)
     }
