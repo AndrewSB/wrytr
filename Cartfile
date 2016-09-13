@@ -1,19 +1,14 @@
-github "tkersey/ReSwift" "Xcode8-GM"
-github "AndrewSB/ReSwift-Router" "master"
+github "ReSwift/ReSwift" "master"
+github "willowtreeapps/cordux"
 
 github "AndrewSB/Library" "master"
 
 github "ReactiveX/RxSwift" "develop"
-github "antitypical/Result" "master"
+github "antitypical/Result" ~> 3.0.0
 
 github "pinterest/PINRemoteImage"
-
 github "marketplacer/UnderKeyboard"
-github "willowtreeapps/cordux"
 
 github "devxoul/Then" "swift-3.0"
 
-github "thoughtbot/Runes" "master"
-github "thoughtbot/Curry" "master"
-github "sgoodwin/Argo" "master"
-# github "edwardaux/Ogra" "master"
+github "ikesyo/Himotoki" "swift3"
