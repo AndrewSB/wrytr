@@ -50,7 +50,12 @@ final class AppCoordinator: SceneCoordinator {
         let old = currentScene?.rootViewController
 
         let coordinator: AnyCoordinator
-        coordinator = Authentication.Coordinator(store: self.store)
+        switch segment {
+        case .auth:
+            coordinator = Authentication.Coordinator(store: self.store)
+        case .home:
+            coordinator = Home.Coordinator(store: self.store)
+        }
         self.currentScene = coordinator
         self.scenePrefix = segment.rawValue
         coordinator.start(route: sceneRoute(route))

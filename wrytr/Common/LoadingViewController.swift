@@ -36,7 +36,7 @@ extension UIViewController {
 
     func stopLoading() {
         self.view.isUserInteractionEnabled = true
-        print(childViewControllers)
+        print("stopped loading with children: \(childViewControllers)")
         self.loader.hide()
     }
 

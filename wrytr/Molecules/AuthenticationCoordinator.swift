@@ -43,22 +43,3 @@ extension Authentication {
     }
 
 }
-
-extension Authentication.Coordinator: ViewControllerLifecycleDelegate {
-    @objc func viewDidLoad(viewController: UIViewController) {
-        switch viewController {
-        case let landingVC as LandingViewController:
-            break
-        default:
-            assertionFailure()
-        }
-    }
-
-    @objc func didMove(toParentViewController parentViewController: UIViewController?, viewController: UIViewController) {
-        guard parentViewController == nil else {
-            return
-        }
-
-        popRoute(viewController)
-    }
-}

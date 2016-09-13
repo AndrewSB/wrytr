@@ -11,6 +11,14 @@ extension Home {
             case friends
             case create
             case me
+
+            static var allValues: [Home.Coordinator.RouteSegment] {
+                return [.feed, .friends, .create, .me]
+            }
+
+            func coordinator(withStore store: Store) -> AnyCoordinator {
+                return Feed.Coordinator(store: store)
+            }
         }
 
         let store: Store
@@ -18,9 +26,12 @@ extension Home {
         let scenes: [Scene]
         let tabBarController = UITabBarController()
 
-        init(store: Store, scenes: [Scene] = RouteSegment.allScenes) {
+        init(store: Store, segments: [RouteSegment] = RouteSegment.allValues) {
             self.store = store
-            self.scenes = scenes
+//            self.scenes = segments.map { route in
+//                Scene(prefix: route.rawValue, coordinator: route.coordinator(withStore: store))
+//            }
+            self.scenes = [Scene(prefix: RouteSegment.feed.rawValue, coordinator: RouteSegment.feed.coordinator(withStore: store))]
             super.init()
 
             self.tabBarController.delegate = self
@@ -39,16 +50,5 @@ extension Home.Coordinator {
 extension Home.Coordinator: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         return setRouteForViewController(viewController)
-    }
-}
-
-
-fileprivate extension Home.Coordinator.RouteSegment {
-    static var allValues: [Home.Coordinator.RouteSegment] {
-        return [.feed, .friends, .create, .me]
-    }
-
-    static var allScenes: [Scene] {
-        return []
     }
 }

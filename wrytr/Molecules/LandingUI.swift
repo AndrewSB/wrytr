@@ -70,8 +70,6 @@ extension Landing.UI: Renderer {
     func render(_ viewModel: Landing.ViewModel) {
         renderAuthOption(option: viewModel.option)
 
-        print("sex: \(viewModel)")
-        print("\(viewModel.loading ? "sex showing" : "sex hiding")")
         _ = viewModel.loading ? showLoading() : hideLoading()
         viewModel.error.flatMap { err in
             let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: self.handler.errorOkTap)

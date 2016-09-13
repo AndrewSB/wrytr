@@ -18,11 +18,12 @@ class FeedViewController: InterfaceProvidingViewController {
     @IBOutlet weak var tableView: ChallengeTableView!
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         self.interface = IB(
             newPopularControl: newPopularControl,
             tableView: tableView
         )
+
+        super.viewDidLoad()
     }
 
     struct IB: Primitive {

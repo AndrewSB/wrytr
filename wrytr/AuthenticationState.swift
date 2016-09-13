@@ -43,7 +43,7 @@ extension Authentication {
     final class Reducer: Cordux.Reducer {
         public func handleAction(_ action: Cordux.Action, state: AppState) -> AppState {
             var state = state
-            print("sex: dispatched \(action)")
+            print("dispatched: \(action)")
 
             switch action {
             case let authAction as Authentication.Action:

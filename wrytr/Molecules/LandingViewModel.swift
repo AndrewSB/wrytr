@@ -38,9 +38,6 @@ extension Landing.ViewModel {
             case Authentication.Action.errorLoggingIn(let error):
                 state.landingState.loading = false
                 state.landingState.error = error
-                print("BRUH")
-                print(state.landingState.loading)
-
 
             case let action as Landing.Action:
                 state.landingState = self.handleLandingAction(action: action, state: state.landingState)
