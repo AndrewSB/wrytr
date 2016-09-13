@@ -11,14 +11,18 @@ protocol ThirdPartyServiceHandler {
 
 extension ThirdPartyServiceHandler {
     func onAppOpenURL(app: UIApplication, url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-        return true
+        return false
     }
 }
 
 class ThirdParty {
     class Service {
-        class Handler: ThirdPartyServiceHandler {
-            private let handlers: [ThirdPartyServiceHandler] = [Facebook.Handler(), Fabric.Handler()]
+        class CombinedHandler: ThirdPartyServiceHandler {
+            private let handlers: [ThirdPartyServiceHandler]
+
+            init(_ handlers: [ThirdPartyServiceHandler]) {
+                self.handlers = handlers
+            }
 
             func onAppLaunch(application: UIApplication, launchOptions: [UIApplicationLaunchOptionsKey : Any]?) {
                 handlers.forEach { $0.onAppLaunch(application: application, launchOptions: launchOptions) }
@@ -31,7 +35,7 @@ class ThirdParty {
             func onAppOpenURL(app: UIApplication, url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
                 return handlers
                     .map { $0.onAppOpenURL(app: app, url: url, options: options) }
-                    .reduce(true) { accumulator, canOpenUrl in accumulator && canOpenUrl }
+                    .reduce(false) { accumulator, canOpenUrl in accumulator || canOpenUrl }
             }
         }
     }

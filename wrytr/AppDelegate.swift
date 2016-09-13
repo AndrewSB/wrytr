@@ -9,7 +9,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var coordinator: AppCoordinator!
 
-    private let thirdPartyServiceHandler = ThirdParty.Service.Handler()
+    private let thirdPartyServiceHandler = ThirdParty.Service.CombinedHandler([
+        ThirdParty.Service.Facebook.Handler(),
+        ThirdParty.Service.Fabric.Handler()
+    ])
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         guard let mainController = window?.rootViewController as? StartupViewController else {

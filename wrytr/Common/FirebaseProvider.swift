@@ -49,9 +49,12 @@ extension Firebase.Provider {
     }
 
     fileprivate func scrapeFirebaseAuthData(authData: FAuthData) -> Observable<Firebase.User> {
-        print("authdata was \(authData)")
+        guard
+            let cachedProfile = authData.providerData!["cachedUserProfile"] as? [AnyHashable: Any],
+            let name = cachedProfile["name"] as? String else {
+                assertionFailure(); return .empty()
+        }
 
-        let name = authData.providerData["name"] as! String
         let imageUrl = (authData.providerData["profileImageURL"] as? String)
             .flatMap { (urlString: String) in
                 var urlString = urlString
