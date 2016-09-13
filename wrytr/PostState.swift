@@ -6,7 +6,7 @@ fileprivate let neverDisposeBag = DisposeBag()
 extension Post {
 
     struct State {
-        var posts: [PostType]
+        var posts: [PostType] = []
     }
 
     enum Action: Cordux.Action {
@@ -33,4 +33,23 @@ extension Post {
             return nil
         }
     }
+}
+
+extension Post {
+
+    final class Reducer: Cordux.Reducer {
+        func handleAction(_ action: Cordux.Action, state: AppState) -> AppState {
+            var state = state
+
+            switch action {
+            case let Action.loaded(posts):
+                state.postState.posts = posts
+            default:
+                break
+            }
+
+            return state
+        }
+    }
+
 }

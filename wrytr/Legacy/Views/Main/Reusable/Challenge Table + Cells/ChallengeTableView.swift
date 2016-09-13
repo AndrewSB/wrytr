@@ -21,6 +21,8 @@ extension ChallengeTableView {
         self.register(UINib(nibName: "ChallengeTableViewCell", bundle: nil), forCellReuseIdentifier: "lol")
 
         (dataSource, delegate) = (self, self)
+
+        posts.asObservable().subscribe(onNext: { _ in self.reloadData() }).addDisposableTo(disposeBag)
     }
 
 }

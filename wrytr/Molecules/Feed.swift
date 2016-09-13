@@ -14,6 +14,7 @@ class Feed {
             let interface = interface as! ViewController.IB
             let ui = UI(interface: interface, handler: Handler(store: store))
             ui.loaderAndErrorPresenter = feedVC
+            store.subscribe(ui, { $0.feedState })
 
             return ui
         }

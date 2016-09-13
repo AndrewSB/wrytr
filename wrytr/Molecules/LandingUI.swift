@@ -65,8 +65,6 @@ extension Landing {
 }
 
 extension Landing.UI: Renderer {
-    typealias ViewModel = Landing.ViewModel
-
     func render(_ viewModel: Landing.ViewModel) {
         renderAuthOption(option: viewModel.option)
 

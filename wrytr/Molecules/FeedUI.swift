@@ -25,7 +25,5 @@ extension Feed {
 extension Feed.UI: Renderer {
     func render(_ viewModel: Feed.ViewModel) {
         self.interface.tableView.posts.value = viewModel.posts
-
-        
     }
 }
