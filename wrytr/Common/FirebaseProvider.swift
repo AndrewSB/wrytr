@@ -10,6 +10,8 @@ extension Firebase {
         var isLoggedIn: Bool {
             return ref.authData != nil
         }
+
+        static let shared = Provider()
     }
 
 }
@@ -78,4 +80,10 @@ extension Firebase.Provider {
         return ref.rx.updateUser(userId: newUser.id, newUser: newUser)
     }
 
+}
+
+extension Firebase.Provider {
+    func fetchPosts() -> Observable<[Firebase.Post]> {
+        return ref.rx.fetchPosts()
+    }
 }

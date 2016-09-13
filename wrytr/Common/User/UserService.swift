@@ -5,7 +5,7 @@ import RxSwift
 extension User {
 
     class Service {
-        private static let 🔥 = Firebase.Provider() // swiftlint:disable:this variable_name
+        private static let 🔥 = Firebase.Provider.shared // swiftlint:disable:this variable_name
         fileprivate static let 🗣 = Facebook.Provider() // swiftlint:disable:this variable_name
         fileprivate static let 🐦 = Twitter.Provider() // swiftlint:disable:this variable_name
 

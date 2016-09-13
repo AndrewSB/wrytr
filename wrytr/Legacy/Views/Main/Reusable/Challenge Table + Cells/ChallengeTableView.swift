@@ -64,7 +64,7 @@ extension ChallengeTableView: UITableViewDataSource {
         cell.xInsets = sideInset
         cell.prompt.text = element.prompt
 
-        User.Service.fetchUser(userID: element.authorId).map { $0.photo }
+        User.Service.fetchUser(userID: element.author).map { $0.photo }
             .subscribe(onNext: { photoURL in
                 cell.profilePicture.pin_setImage(from: photoURL)
             })

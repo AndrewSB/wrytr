@@ -31,6 +31,7 @@
 		462358801D778DA1007947B6 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4623587F1D778DA1007947B6 /* HomeCoordinator.swift */; };
 		462358821D77947F007947B6 /* strings-swift3.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 462358811D77947F007947B6 /* strings-swift3.stencil */; };
 		4623EB5D1D88ABC9004880E3 /* PostState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4623EB5C1D88ABC9004880E3 /* PostState.swift */; };
+		4623EB5F1D88B2A4004880E3 /* Firebase+PostType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4623EB5E1D88B2A4004880E3 /* Firebase+PostType.swift */; };
 		46260A741D3EAEF400CB6850 /* Observable + Ignore Nil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46260A731D3EAEF400CB6850 /* Observable + Ignore Nil.swift */; };
 		46271FAB1CD2AB36007196B2 /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46271FAA1CD2AB36007196B2 /* Library.framework */; };
 		46271FAE1CD2B02F007196B2 /* ChallengeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */; };
@@ -152,6 +153,7 @@
 		4623587F1D778DA1007947B6 /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		462358811D77947F007947B6 /* strings-swift3.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "strings-swift3.stencil"; sourceTree = "<group>"; };
 		4623EB5C1D88ABC9004880E3 /* PostState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostState.swift; sourceTree = "<group>"; };
+		4623EB5E1D88B2A4004880E3 /* Firebase+PostType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+PostType.swift"; sourceTree = "<group>"; };
 		46260A731D3EAEF400CB6850 /* Observable + Ignore Nil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable + Ignore Nil.swift"; sourceTree = "<group>"; };
 		46271FAA1CD2AB36007196B2 /* Library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Library.framework; path = Carthage/Build/iOS/Library.framework; sourceTree = "<group>"; };
 		46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ChallengeTableView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -614,6 +616,7 @@
 				46AE37541D7A9B95005A89F3 /* Firebase+Rx SetData.swift */,
 				468D0E4E1CCED0F2004250F6 /* Firebase+Rx FetchData.swift */,
 				46AE37521D7A3FD3005A89F3 /* Firebase+UserType.swift */,
+				4623EB5E1D88B2A4004880E3 /* Firebase+PostType.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -868,6 +871,7 @@
 				468D0E531CCED77A004250F6 /* RenderedImageView.swift in Sources */,
 				468D0E4F1CCED0F2004250F6 /* Firebase+Rx FetchData.swift in Sources */,
 				46CD47681D837B3E00C3D217 /* Friends.swift in Sources */,
+				4623EB5F1D88B2A4004880E3 /* Firebase+PostType.swift in Sources */,
 				4636B6771D7F67AF00C4B43D /* UIType.swift in Sources */,
 				46452E6B1D77997A0053EC4A /* Fabric.swift in Sources */,
 				46271FAE1CD2B02F007196B2 /* ChallengeTableView.swift in Sources */,

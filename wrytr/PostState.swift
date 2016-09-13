@@ -1,6 +1,8 @@
 import RxSwift
 import Cordux
 
+fileprivate let neverDisposeBag = DisposeBag()
+
 extension Post {
 
     struct State {
@@ -16,11 +18,17 @@ extension Post {
     static func loadPosts() -> AsyncAction {
         return { state, store in
             store.dispatch(Action.loadingPosts)
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-                store.dispatch(Action.errorLoadingPosts(NSError(localizedDescription: "unimplemented", code: -1)))
-            }
 
-//            Post.Service.
+            Post.Service.getNewPosts().subscribe {
+                switch $0 {
+                case .next(let posts):
+                    store.dispatch(Action.loaded(posts))
+                case .error(let err):
+                    store.dispatch(Action.errorLoadingPosts(err as! PresentableError))
+                case .completed:
+                    break
+                }
+            }.addDisposableTo(neverDisposeBag)
 
             return nil
         }
