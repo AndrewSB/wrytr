@@ -1,14 +1,9 @@
-import Argo
+import Himotoki
 
-extension URL: Decodable {
-
-    public static func decode(_ json: JSON) -> Decoded<URL> {
-        switch json {
-        case .string(let s) where URL(string: s) != nil:
-            return URL(string: s).map(pure)!
-        default:
-            return .typeMismatch(expected: "URL", actual: json)
-        }
+let URLTransformer = Transformer<String, URL> { URLString throws -> URL in
+    if let URL = URL(string: URLString) {
+        return URL
     }
-
+    
+    throw customError("Invalid URL string: \(URLString)")
 }

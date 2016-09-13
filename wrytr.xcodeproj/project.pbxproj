@@ -52,8 +52,8 @@
 		4636B6791D7F78E900C4B43D /* AsyncAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6781D7F78E900C4B43D /* AsyncAction.swift */; };
 		463913E11D7641590077D0E5 /* DismissesKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */; };
 		463913E31D7644C90077D0E5 /* UnderKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463913E21D7644C90077D0E5 /* UnderKeyboard.framework */; };
+		463A75961D879E2E0030CFB2 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463A75951D879E2E0030CFB2 /* Himotoki.framework */; };
 		4644FB9C1C9CBCEF004ACBAF /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */; };
-		4644FB9D1C9CBCEF004ACBAF /* ReSwiftRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */; };
 		4644FBA51C9CC820004ACBAF /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBA41C9CC820004ACBAF /* Storyboards.swift */; };
 		4644FBA81C9CC9CB004ACBAF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBA71C9CC9CB004ACBAF /* AppState.swift */; };
 		4644FBB11C9CCE79004ACBAF /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBB01C9CCE79004ACBAF /* Images.swift */; };
@@ -102,9 +102,6 @@
 		46AE37511D7A3B2C005A89F3 /* UIAlertAction + SimpleHandlerInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE37501D7A3B2C005A89F3 /* UIAlertAction + SimpleHandlerInit.swift */; };
 		46AE37531D7A3FD3005A89F3 /* Firebase+UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE37521D7A3FD3005A89F3 /* Firebase+UserType.swift */; };
 		46AE37551D7A9B95005A89F3 /* Firebase+Rx SetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE37541D7A9B95005A89F3 /* Firebase+Rx SetData.swift */; };
-		46AE37591D7AB3D7005A89F3 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AE37561D7AB3D7005A89F3 /* Argo.framework */; };
-		46AE375A1D7AB3D7005A89F3 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AE37571D7AB3D7005A89F3 /* Curry.framework */; };
-		46AE375B1D7AB3D7005A89F3 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AE37581D7AB3D7005A89F3 /* Runes.framework */; };
 		46AE375D1D7AB85E005A89F3 /* URL + Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE375C1D7AB85E005A89F3 /* URL + Decodable.swift */; };
 		46BF97791C9B6DA700579066 /* Landing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF97781C9B6DA700579066 /* Landing.storyboard */; };
 		46C099061C9E34D10015779C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099011C9E34D10015779C /* Bolts.framework */; };
@@ -172,6 +169,7 @@
 		4636B6781D7F78E900C4B43D /* AsyncAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncAction.swift; sourceTree = "<group>"; };
 		463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissesKeyboardOnTap.swift; sourceTree = "<group>"; };
 		463913E21D7644C90077D0E5 /* UnderKeyboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UnderKeyboard.framework; path = Carthage/Build/iOS/UnderKeyboard.framework; sourceTree = "<group>"; };
+		463A75951D879E2E0030CFB2 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
 		4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
 		4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRouter.framework; path = Carthage/Build/iOS/ReSwiftRouter.framework; sourceTree = "<group>"; };
 		4644FBA41C9CC820004ACBAF /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
@@ -254,9 +252,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46AE37591D7AB3D7005A89F3 /* Argo.framework in Frameworks */,
-				46AE375A1D7AB3D7005A89F3 /* Curry.framework in Frameworks */,
-				46AE375B1D7AB3D7005A89F3 /* Runes.framework in Frameworks */,
+				463A75961D879E2E0030CFB2 /* Himotoki.framework in Frameworks */,
 				462358631D7785C7007947B6 /* Cordux.framework in Frameworks */,
 				46C099141C9F49F90015779C /* SystemConfiguration.framework in Frameworks */,
 				462F03221CE267280031B1B1 /* Result.framework in Frameworks */,
@@ -274,7 +270,6 @@
 				46C099081C9E34D10015779C /* Fabric.framework in Frameworks */,
 				466BD09E1CADAB09008DC0C3 /* Firebase.framework in Frameworks */,
 				46C099061C9E34D10015779C /* Bolts.framework in Frameworks */,
-				4644FB9D1C9CBCEF004ACBAF /* ReSwiftRouter.framework in Frameworks */,
 				46C099181CA072250015779C /* TwitterKit.framework in Frameworks */,
 				46C0991A1CA072250015779C /* TwitterCore.framework in Frameworks */,
 				46C099091C9E34D10015779C /* FBSDKCoreKit.framework in Frameworks */,
@@ -315,6 +310,7 @@
 		461FD7521D760B30001BE92E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				463A75951D879E2E0030CFB2 /* Himotoki.framework */,
 				46AE37561D7AB3D7005A89F3 /* Argo.framework */,
 				46AE37571D7AB3D7005A89F3 /* Curry.framework */,
 				46AE37581D7AB3D7005A89F3 /* Runes.framework */,
@@ -769,7 +765,6 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/ReSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReSwiftRouter.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Library.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
@@ -779,9 +774,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/UnderKeyboard.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Cordux.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Then.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Runes.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Curry.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Argo.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Himotoki.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (

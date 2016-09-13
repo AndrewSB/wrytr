@@ -1,9 +1,7 @@
 import Firebase
 import RxSwift
 import RxCocoa
-import Runes
-import Curry
-import Argo
+import Himotoki
 
 extension Firebase {
     struct User: UserType {
@@ -14,16 +12,14 @@ extension Firebase {
 }
 
 extension Firebase.User: Decodable {
-
-    public static func decode(_ j: JSON) -> Decoded<Firebase.User> { //swiftlint:disable:this variable_name
-        let user = curry(Firebase.User.init)
-            <^> j <| "uid"
-            <*> j <| "name"
-            <*> j <|? "profilePictureUrl"
-
-        return user
+    //swiftlint:disable:next variable_name
+    static func decode(_ e: Extractor) throws -> Firebase.User {
+        return try Firebase.User(
+            id: e <| "uid",
+            name: e <| "name",
+            photo: try URLTransformer.apply(e <| "profilePictureUrl")
+        )
     }
-
 }
 
 extension Reactive where Base: Firebase {
@@ -32,10 +28,18 @@ extension Reactive where Base: Firebase {
         return self.base
             .child(byAppendingPath: "users/\(id)")
             .rx.observeEventOnce()
-            .map {
-                let json = Argo.JSON($0.value)
-                return Firebase.User.decode(json).value!
-        }
+            .map { userData -> [String: AnyObject] in
+                guard let json: [String: AnyObject] = userData.value as? [String : AnyObject] else {
+                    assertionFailure()
+                    return [:]
+                }
+                return json
+            }
+            .flatMap { json -> Observable<Firebase.User> in
+                do {
+                    return .just(try Firebase.User.decodeValue(json))
+                } catch { return .error(error) }
+            }
     }
 
     func updateUser(userId id: UserID, newUser: UserType) -> Observable<Firebase.User> {
