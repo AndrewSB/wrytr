@@ -32,6 +32,8 @@
 		462358821D77947F007947B6 /* strings-swift3.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 462358811D77947F007947B6 /* strings-swift3.stencil */; };
 		4623EB5D1D88ABC9004880E3 /* PostState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4623EB5C1D88ABC9004880E3 /* PostState.swift */; };
 		4623EB5F1D88B2A4004880E3 /* Firebase+PostType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4623EB5E1D88B2A4004880E3 /* Firebase+PostType.swift */; };
+		4623EB611D88C25D004880E3 /* CreateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4623EB601D88C25D004880E3 /* CreateCoordinator.swift */; };
+		4623EB651D88D322004880E3 /* Compose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4623EB641D88D322004880E3 /* Compose.storyboard */; };
 		46260A741D3EAEF400CB6850 /* Observable + Ignore Nil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46260A731D3EAEF400CB6850 /* Observable + Ignore Nil.swift */; };
 		46271FAB1CD2AB36007196B2 /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46271FAA1CD2AB36007196B2 /* Library.framework */; };
 		46271FAE1CD2B02F007196B2 /* ChallengeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */; };
@@ -154,6 +156,8 @@
 		462358811D77947F007947B6 /* strings-swift3.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "strings-swift3.stencil"; sourceTree = "<group>"; };
 		4623EB5C1D88ABC9004880E3 /* PostState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostState.swift; sourceTree = "<group>"; };
 		4623EB5E1D88B2A4004880E3 /* Firebase+PostType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+PostType.swift"; sourceTree = "<group>"; };
+		4623EB601D88C25D004880E3 /* CreateCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCoordinator.swift; sourceTree = "<group>"; };
+		4623EB641D88D322004880E3 /* Compose.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Compose.storyboard; path = ../../../../Resources/Compose.storyboard; sourceTree = "<group>"; };
 		46260A731D3EAEF400CB6850 /* Observable + Ignore Nil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable + Ignore Nil.swift"; sourceTree = "<group>"; };
 		46271FAA1CD2AB36007196B2 /* Library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Library.framework; path = Carthage/Build/iOS/Library.framework; sourceTree = "<group>"; };
 		46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ChallengeTableView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -309,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				4606A66F1D8398CF00259AA1 /* Create.swift */,
+				4623EB601D88C25D004880E3 /* CreateCoordinator.swift */,
 				4606A6711D8398D500259AA1 /* CreateViewModel.swift */,
 				4606A6731D8398E600259AA1 /* CreateHander.swift */,
 				4606A6751D8398F300259AA1 /* CreateViewController.swift */,
@@ -482,6 +487,7 @@
 			isa = PBXGroup;
 			children = (
 				462894EC1D37F78A006044E1 /* ComposeViewController.swift */,
+				4623EB641D88D322004880E3 /* Compose.storyboard */,
 				462894E41D37F564006044E1 /* Challenge Table + Cells */,
 				462894EB1D37F76D006044E1 /* Post Detail */,
 			);
@@ -749,6 +755,7 @@
 				4644FBBC1C9CD67D004ACBAF /* colors.txt in Resources */,
 				462F03301CE2CF1B0031B1B1 /* ChallengeTableViewCell.xib in Resources */,
 				46C099191CA072250015779C /* TwitterKitResources.bundle in Resources */,
+				4623EB651D88D322004880E3 /* Compose.storyboard in Resources */,
 				4644FBC51C9CDE8D004ACBAF /* Localizable.strings in Resources */,
 				46BF97791C9B6DA700579066 /* Landing.storyboard in Resources */,
 				468614C91C89CC3A002C2BAC /* LaunchScreen.storyboard in Resources */,
@@ -911,6 +918,7 @@
 				46CD47701D837B6000C3D217 /* FriendsUI.swift in Sources */,
 				462894E61D37F593006044E1 /* PostDetailViewController.swift in Sources */,
 				462A77D41D8883D200E6F6A0 /* CombinedReducer.swift in Sources */,
+				4623EB611D88C25D004880E3 /* CreateCoordinator.swift in Sources */,
 				462F032A1CE2ADDF0031B1B1 /* NSRangeExtension.swift in Sources */,
 				468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */,
 				4606A6741D8398E600259AA1 /* CreateHander.swift in Sources */,

@@ -22,7 +22,7 @@ final class AppCoordinator: SceneCoordinator {
     let container: UIViewController
 
     var currentScene: AnyCoordinator?
-    
+
     var rootViewController: UIViewController {
         return container
     }

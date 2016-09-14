@@ -14,21 +14,11 @@ class ComposeViewController: RxViewController {
 
     let keyboardObserver = UnderKeyboardObserver()
 
-    @IBOutlet weak var profileImageView: RoundedImageView! //{
-    //        didSet {
-    //            _ = User.local.profilePictureNSUrl.flatMap { profileImageView.pin_setImage(from: $0) }
-    //        }
-    //    }
-    @IBOutlet weak var usernameLabel: UILabel! //{
-    //        didSet { usernameLabel.text = User.local.authData.name }
-    //    }
-    @IBOutlet weak var challengeTextView: UITextView! {
-        didSet { challengeTextView.delegate = self }
-    }
-
+    @IBOutlet weak var profileImageView: RoundedImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var challengeTextView: UITextView!
     @IBOutlet weak var characterCountLabel: UILabel!
     @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
-
 }
 
 extension ComposeViewController {
@@ -100,5 +90,5 @@ extension ComposeViewController: UITextViewDelegate {
 private func generateAttributedString(_ string: String, color: UIColor) -> NSMutableAttributedString {
     let attributedString = NSAttributedString(string: string, attributes: [NSForegroundColorAttributeName: color])
 
-    return attributedString.mutableCopy() as! NSMutableAttributedString
+    return NSMutableAttributedString(attributedString: attributedString)
 }
