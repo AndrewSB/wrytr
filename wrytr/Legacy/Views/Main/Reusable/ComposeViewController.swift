@@ -3,30 +3,49 @@ import Library
 import RxSwift
 import UnderKeyboard
 
-protocol ComposeViewControllerDelegate {
-    func shouldPost(_ post: Post)
+extension Compose {
+    typealias ViewController = ComposeViewController
 }
 
-class ComposeViewController: RxViewController {
+extension Compose.ViewController {
+    static func fromStoryboard() -> ComposeViewController {
+        return StoryboardScene.Compose.instantiateCompose()
+    }
+}
 
-    var delegate: ComposeViewControllerDelegate!
-    var characterLimit = 150
-
+class ComposeViewController: InterfaceProvidingViewController {
     let keyboardObserver = UnderKeyboardObserver()
+
+    var ui: UIType? // this is an antipattern, but I dont want do it right rn
 
     @IBOutlet weak var profileImageView: RoundedImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var challengeTextView: UITextView!
     @IBOutlet weak var characterCountLabel: UILabel!
     @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
+
+    struct IB: Primitive {
+        let profile: RoundedImageView
+        let username: UILabel
+        let textView: UITextView
+        let characterCount: UILabel
+        let bottomConstraint: NSLayoutConstraint
+    }
+
 }
 
 extension ComposeViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        self.interface = IB(
+            profile: profileImageView,
+            username: usernameLabel,
+            textView: challengeTextView,
+            characterCount: characterCountLabel,
+            bottomConstraint: bottomLayoutConstraint
+        )
 
-        handleText(addDisposablesTo: disposeBag)
+        super.viewDidLoad()
 
         keyboardObserver.start()
         keyboardObserver.willAnimateKeyboard = { height in
@@ -38,57 +57,7 @@ extension ComposeViewController {
             self.bottomLayoutConstraint.constant = isHidingKeyboard ? initialBottomPadding : height - tabBarHeight
         }
         keyboardObserver.animateKeyboard = { _ in self.view.layoutSubviews() }
-    }
-
-}
-
-private typealias TextHandler = ComposeViewController
-extension TextHandler {
-
-    fileprivate func handleText(addDisposablesTo disposeBag: DisposeBag) {
-        let attributedCharacterLimitString = generateAttributedString("/\(characterLimit)", color: .black)
-
-        challengeTextView.rx.textInput.text
-            .subscribe(onNext: { _ in self.characterCountLabel.sizeToFit() })
-            .addDisposableTo(disposeBag)
-
-        challengeTextView.rx.textInput.text
-            .map { text in text.characters.count }
-            .map { count in
-                let countColor: UIColor = count >= self.characterLimit ? .red : .gray
-                let countString = generateAttributedString("\(count)", color: countColor)
-                countString.append(attributedCharacterLimitString)
-                return countString
-            }
-            .bindTo(characterCountLabel.rx.attributedText)
-            .addDisposableTo(disposeBag)
-    }
-
-}
-
-extension ComposeViewController: UITextViewDelegate {
-
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool { //swiftlint:disable:this variable_name
-
-        if text == "\n" {
-            let text = textView.text
-            textView.endEditing(true)
-            //            self.postChallenge(Post(id: nil, userId: User.local.authData.id, prompt: text!, stars: nil, comments: nil))
-            return false
-        } else {
-            return true
-        }
 
     }
 
-    func postChallenge(_ post: Post) {
-        delegate.shouldPost(post)
-    }
-
-}
-
-private func generateAttributedString(_ string: String, color: UIColor) -> NSMutableAttributedString {
-    let attributedString = NSAttributedString(string: string, attributes: [NSForegroundColorAttributeName: color])
-
-    return NSMutableAttributedString(attributedString: attributedString)
 }

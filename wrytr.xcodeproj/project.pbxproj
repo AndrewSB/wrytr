@@ -18,6 +18,7 @@
 		4606A6801D83991900259AA1 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A67F1D83991900259AA1 /* MeViewController.swift */; };
 		4606A6821D83992000259AA1 /* MeViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6811D83992000259AA1 /* MeViewUI.swift */; };
 		4606A6841D83A29300259AA1 /* Xcode 8 Print hack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6831D83A29300259AA1 /* Xcode 8 Print hack.swift */; };
+		46184E021D89F87F003ECFEB /* ComposeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46184E011D89F87F003ECFEB /* ComposeUI.swift */; };
 		461FD7551D760B30001BE92E /* PINCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461FD7531D760B30001BE92E /* PINCache.framework */; };
 		461FD7561D760B30001BE92E /* PINRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461FD7541D760B30001BE92E /* PINRemoteImage.framework */; };
 		462358631D7785C7007947B6 /* Cordux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462358621D7785C7007947B6 /* Cordux.framework */; };
@@ -57,6 +58,7 @@
 		4636B6751D7F638200C4B43D /* FeedUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6741D7F638200C4B43D /* FeedUI.swift */; };
 		4636B6771D7F67AF00C4B43D /* UIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6761D7F67AF00C4B43D /* UIType.swift */; };
 		4636B6791D7F78E900C4B43D /* AsyncAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6781D7F78E900C4B43D /* AsyncAction.swift */; };
+		46387B5E1D8A0A9A00C7A9EB /* Compose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46387B5D1D8A0A9A00C7A9EB /* Compose.swift */; };
 		463913E11D7641590077D0E5 /* DismissesKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */; };
 		463913E31D7644C90077D0E5 /* UnderKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463913E21D7644C90077D0E5 /* UnderKeyboard.framework */; };
 		463A75961D879E2E0030CFB2 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463A75951D879E2E0030CFB2 /* Himotoki.framework */; };
@@ -142,6 +144,7 @@
 		4606A67F1D83991900259AA1 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		4606A6811D83992000259AA1 /* MeViewUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewUI.swift; sourceTree = "<group>"; };
 		4606A6831D83A29300259AA1 /* Xcode 8 Print hack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Xcode 8 Print hack.swift"; sourceTree = "<group>"; };
+		46184E011D89F87F003ECFEB /* ComposeUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeUI.swift; sourceTree = "<group>"; };
 		461FD7531D760B30001BE92E /* PINCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINCache.framework; path = Carthage/Build/iOS/PINCache.framework; sourceTree = "<group>"; };
 		461FD7541D760B30001BE92E /* PINRemoteImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINRemoteImage.framework; path = Carthage/Build/iOS/PINRemoteImage.framework; sourceTree = "<group>"; };
 		462358621D7785C7007947B6 /* Cordux.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cordux.framework; path = Carthage/Build/iOS/Cordux.framework; sourceTree = "<group>"; };
@@ -181,6 +184,7 @@
 		4636B6741D7F638200C4B43D /* FeedUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedUI.swift; sourceTree = "<group>"; };
 		4636B6761D7F67AF00C4B43D /* UIType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIType.swift; sourceTree = "<group>"; };
 		4636B6781D7F78E900C4B43D /* AsyncAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncAction.swift; sourceTree = "<group>"; };
+		46387B5D1D8A0A9A00C7A9EB /* Compose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compose.swift; sourceTree = "<group>"; };
 		463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissesKeyboardOnTap.swift; sourceTree = "<group>"; };
 		463913E21D7644C90077D0E5 /* UnderKeyboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UnderKeyboard.framework; path = Carthage/Build/iOS/UnderKeyboard.framework; sourceTree = "<group>"; };
 		463A75951D879E2E0030CFB2 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
@@ -320,6 +324,17 @@
 				4606A6771D8398FB00259AA1 /* CreateUI.swift */,
 			);
 			name = Create;
+			sourceTree = "<group>";
+		};
+		46184E031D89F883003ECFEB /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				46387B5D1D8A0A9A00C7A9EB /* Compose.swift */,
+				462894EC1D37F78A006044E1 /* ComposeViewController.swift */,
+				46184E011D89F87F003ECFEB /* ComposeUI.swift */,
+				4623EB641D88D322004880E3 /* Compose.storyboard */,
+			);
+			name = Compose;
 			sourceTree = "<group>";
 		};
 		461FD7521D760B30001BE92E /* Frameworks */ = {
@@ -486,8 +501,7 @@
 		46271FAC1CD2B00E007196B2 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
-				462894EC1D37F78A006044E1 /* ComposeViewController.swift */,
-				4623EB641D88D322004880E3 /* Compose.storyboard */,
+				46184E031D89F883003ECFEB /* Compose */,
 				462894E41D37F564006044E1 /* Challenge Table + Cells */,
 				462894EB1D37F76D006044E1 /* Post Detail */,
 			);
@@ -856,6 +870,7 @@
 				46452E791D77AB6D0053EC4A /* FacebookProvider.swift in Sources */,
 				462358761D7789F3007947B6 /* FirebaseProvider.swift in Sources */,
 				4606A6701D8398CF00259AA1 /* Create.swift in Sources */,
+				46387B5E1D8A0A9A00C7A9EB /* Compose.swift in Sources */,
 				4623587A1D778B69007947B6 /* AppCoordinator.swift in Sources */,
 				463913E11D7641590077D0E5 /* DismissesKeyboardOnTap.swift in Sources */,
 				46C0991E1CA092770015779C /* ParseRxCallbacks.swift in Sources */,
@@ -866,6 +881,7 @@
 				46452E6E1D779EAB0053EC4A /* AuthenticationState.swift in Sources */,
 				462358801D778DA1007947B6 /* HomeCoordinator.swift in Sources */,
 				462F03181CE148CE0031B1B1 /* NoHairlineNavigationBar.swift in Sources */,
+				46184E021D89F87F003ECFEB /* ComposeUI.swift in Sources */,
 				46AE374F1D7A3559005A89F3 /* PresentableError.swift in Sources */,
 				46452E7B1D77AB710053EC4A /* TwitterProvider.swift in Sources */,
 				462894EA1D37F6D7006044E1 /* PostResponsesViewController.swift in Sources */,
