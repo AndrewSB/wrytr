@@ -1,5 +1,14 @@
 import UIKit
 
-class PostResponsesViewController: UIViewController {
+
+extension PostDetail {
+    class Responses {}
+}
+
+extension PostDetail.Responses {
+    typealias ViewController = PostDetailPublishReplyViewController
+}
+
+class PostDetailResponsesViewController: UIViewController {
 
 }

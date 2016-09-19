@@ -59,64 +59,6 @@
             </objects>
             <point key="canvasLocation" x="1093.5999999999999" y="151.57421289355324"/>
         </scene>
-        <!--Post Detail View Controller-->
-        <scene sceneID="iUE-AJ-L0Y">
-            <objects>
-                <viewController id="1mP-kc-G2b" customClass="PostDetailViewController" customModule="wrytr" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="4sh-dd-Chx"/>
-                        <viewControllerLayoutGuide type="bottom" id="xmd-CY-hNW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="d5R-fN-Wi6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaM-xY-B5b"/>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XgL-sb-oYU" customClass="ExtendedNavigationBarView" customModule="wrytr" customModuleProvider="target">
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NF-yB-UkV">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.12472834438085556" green="0.61703085899353027" blue="0.6556209921836853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="0NF-yB-UkV" firstAttribute="leading" secondItem="XgL-sb-oYU" secondAttribute="leading" constant="44" id="HWQ-Ld-MHI"/>
-                                    <constraint firstItem="0NF-yB-UkV" firstAttribute="top" secondItem="XgL-sb-oYU" secondAttribute="top" constant="22" id="oiL-K1-0ig"/>
-                                    <constraint firstAttribute="trailing" secondItem="0NF-yB-UkV" secondAttribute="trailing" constant="44" id="rgS-TW-6AQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="0NF-yB-UkV" secondAttribute="bottom" constant="22" id="sgQ-9w-XhL"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="XgL-sb-oYU" firstAttribute="leading" secondItem="d5R-fN-Wi6" secondAttribute="leading" id="9gY-Hu-fKg"/>
-                            <constraint firstAttribute="trailing" secondItem="oaM-xY-B5b" secondAttribute="trailing" id="HUi-p8-Vpt"/>
-                            <constraint firstAttribute="trailing" secondItem="XgL-sb-oYU" secondAttribute="trailing" id="RF6-Zt-3FO"/>
-                            <constraint firstItem="XgL-sb-oYU" firstAttribute="top" secondItem="4sh-dd-Chx" secondAttribute="bottom" id="U2F-J3-KHg"/>
-                            <constraint firstItem="xmd-CY-hNW" firstAttribute="top" secondItem="oaM-xY-B5b" secondAttribute="bottom" id="ac6-rc-UOJ"/>
-                            <constraint firstItem="oaM-xY-B5b" firstAttribute="top" secondItem="XgL-sb-oYU" secondAttribute="bottom" id="k2a-Ui-Nmz"/>
-                            <constraint firstItem="oaM-xY-B5b" firstAttribute="leading" secondItem="d5R-fN-Wi6" secondAttribute="leading" id="maK-hH-CuX"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="gy2-Yb-q0B">
-                        <barButtonItem key="leftBarButtonItem" image="arrow-left" id="RbK-kN-3db">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="elipses" id="uqP-J0-GQ2">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="containerView" destination="oaM-xY-B5b" id="ItU-J0-0B2"/>
-                        <outlet property="titleLabel" destination="0NF-yB-UkV" id="ww8-k1-xoC"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gVk-gc-XtL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1952" y="148"/>
-        </scene>
         <!--Feed Navigation Controller-->
         <scene sceneID="jhx-pb-TpP">
             <objects>
@@ -137,8 +79,4 @@
             <point key="canvasLocation" x="214" y="148"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="arrow-left" width="12" height="22"/>
-        <image name="elipses" width="22" height="5"/>
-    </resources>
 </document>

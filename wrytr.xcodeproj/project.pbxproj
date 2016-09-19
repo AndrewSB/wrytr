@@ -59,6 +59,9 @@
 		4636B6771D7F67AF00C4B43D /* UIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6761D7F67AF00C4B43D /* UIType.swift */; };
 		4636B6791D7F78E900C4B43D /* AsyncAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6781D7F78E900C4B43D /* AsyncAction.swift */; };
 		46387B5E1D8A0A9A00C7A9EB /* Compose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46387B5D1D8A0A9A00C7A9EB /* Compose.swift */; };
+		46387B611D8A0DF700C7A9EB /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46387B601D8A0DF700C7A9EB /* PostDetail.swift */; };
+		46387B631D8A0F4400C7A9EB /* PostDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46387B621D8A0F4400C7A9EB /* PostDetail.storyboard */; };
+		46387B651D8A0F8600C7A9EB /* PostDetailUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46387B641D8A0F8600C7A9EB /* PostDetailUI.swift */; };
 		463913E11D7641590077D0E5 /* DismissesKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */; };
 		463913E31D7644C90077D0E5 /* UnderKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463913E21D7644C90077D0E5 /* UnderKeyboard.framework */; };
 		463A75961D879E2E0030CFB2 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463A75951D879E2E0030CFB2 /* Himotoki.framework */; };
@@ -185,6 +188,9 @@
 		4636B6761D7F67AF00C4B43D /* UIType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIType.swift; sourceTree = "<group>"; };
 		4636B6781D7F78E900C4B43D /* AsyncAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncAction.swift; sourceTree = "<group>"; };
 		46387B5D1D8A0A9A00C7A9EB /* Compose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compose.swift; sourceTree = "<group>"; };
+		46387B601D8A0DF700C7A9EB /* PostDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
+		46387B621D8A0F4400C7A9EB /* PostDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PostDetail.storyboard; path = wrytr/Legacy/Views/Main/PostDetail.storyboard; sourceTree = SOURCE_ROOT; };
+		46387B641D8A0F8600C7A9EB /* PostDetailUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailUI.swift; sourceTree = "<group>"; };
 		463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissesKeyboardOnTap.swift; sourceTree = "<group>"; };
 		463913E21D7644C90077D0E5 /* UnderKeyboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UnderKeyboard.framework; path = Carthage/Build/iOS/UnderKeyboard.framework; sourceTree = "<group>"; };
 		463A75951D879E2E0030CFB2 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
@@ -371,15 +377,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		462358641D778777007947B6 /* Legacy */ = {
-			isa = PBXGroup;
-			children = (
-				46271FAC1CD2B00E007196B2 /* Reusable */,
-			);
-			name = Legacy;
-			path = wrytr/Legacy;
-			sourceTree = "<group>";
-		};
 		462358651D7787AF007947B6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +399,7 @@
 		462358661D7787B4007947B6 /* Molecules */ = {
 			isa = PBXGroup;
 			children = (
+				46271FAC1CD2B00E007196B2 /* Reusable */,
 				462358711D7788EF007947B6 /* Startup */,
 				4623587D1D778D9B007947B6 /* AuthenticationCoordinator.swift */,
 				4623587B1D778D87007947B6 /* Landing */,
@@ -501,12 +499,13 @@
 		46271FAC1CD2B00E007196B2 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				46387B5F1D8A0D3000C7A9EB /* User Screen */,
 				46184E031D89F883003ECFEB /* Compose */,
 				462894E41D37F564006044E1 /* Challenge Table + Cells */,
 				462894EB1D37F76D006044E1 /* Post Detail */,
 			);
 			name = Reusable;
-			path = Views/Main/Reusable;
+			path = ../Legacy/Views/Main/Reusable;
 			sourceTree = "<group>";
 		};
 		462894E41D37F564006044E1 /* Challenge Table + Cells */ = {
@@ -522,11 +521,21 @@
 		462894EB1D37F76D006044E1 /* Post Detail */ = {
 			isa = PBXGroup;
 			children = (
+				46387B621D8A0F4400C7A9EB /* PostDetail.storyboard */,
+				46387B601D8A0DF700C7A9EB /* PostDetail.swift */,
+				46387B641D8A0F8600C7A9EB /* PostDetailUI.swift */,
 				462894E51D37F593006044E1 /* PostDetailViewController.swift */,
 				462894E71D37F6B3006044E1 /* PublishReplyViewController.swift */,
 				462894E91D37F6D7006044E1 /* PostResponsesViewController.swift */,
 			);
 			path = "Post Detail";
+			sourceTree = "<group>";
+		};
+		46387B5F1D8A0D3000C7A9EB /* User Screen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "User Screen";
 			sourceTree = "<group>";
 		};
 		4644FBA21C9CC80A004ACBAF /* Constants */ = {
@@ -656,7 +665,6 @@
 		468614B21C89CC3A002C2BAC = {
 			isa = PBXGroup;
 			children = (
-				462358641D778777007947B6 /* Legacy */,
 				468614BD1C89CC3A002C2BAC /* wrytr */,
 				468614BC1C89CC3A002C2BAC /* Products */,
 				461FD7521D760B30001BE92E /* Frameworks */,
@@ -764,6 +772,7 @@
 				462358731D7788F5007947B6 /* Startup.storyboard in Resources */,
 				466E74031CAFA72600EC0B7C /* Feed.storyboard in Resources */,
 				462358821D77947F007947B6 /* strings-swift3.stencil in Resources */,
+				46387B631D8A0F4400C7A9EB /* PostDetail.storyboard in Resources */,
 				4658D6BA1CC08919009527DF /* Create.storyboard in Resources */,
 				4658D6BC1CC0891F009527DF /* Me.storyboard in Resources */,
 				4644FBBC1C9CD67D004ACBAF /* colors.txt in Resources */,
@@ -883,6 +892,7 @@
 				462F03181CE148CE0031B1B1 /* NoHairlineNavigationBar.swift in Sources */,
 				46184E021D89F87F003ECFEB /* ComposeUI.swift in Sources */,
 				46AE374F1D7A3559005A89F3 /* PresentableError.swift in Sources */,
+				46387B651D8A0F8600C7A9EB /* PostDetailUI.swift in Sources */,
 				46452E7B1D77AB710053EC4A /* TwitterProvider.swift in Sources */,
 				462894EA1D37F6D7006044E1 /* PostResponsesViewController.swift in Sources */,
 				4606A67A1D83990400259AA1 /* Me.swift in Sources */,
@@ -898,6 +908,7 @@
 				4636B6771D7F67AF00C4B43D /* UIType.swift in Sources */,
 				46452E6B1D77997A0053EC4A /* Fabric.swift in Sources */,
 				46271FAE1CD2B02F007196B2 /* ChallengeTableView.swift in Sources */,
+				46387B611D8A0DF700C7A9EB /* PostDetail.swift in Sources */,
 				4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */,
 				46452E5B1D7795190053EC4A /* User.swift in Sources */,
 				46452E5E1D7795D20053EC4A /* UserType.swift in Sources */,

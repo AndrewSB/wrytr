@@ -1,5 +1,13 @@
 import UIKit
 
-class PublishReplyViewController: UIViewController {
+extension PostDetail {
+    class PublishReply {}
+}
+
+extension PostDetail.PublishReply {
+    typealias ViewController = PostDetailPublishReplyViewController
+}
+
+class PostDetailPublishReplyViewController: UIViewController {
 
 }
