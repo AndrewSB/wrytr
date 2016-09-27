@@ -18,6 +18,10 @@
 		4606A6801D83991900259AA1 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A67F1D83991900259AA1 /* MeViewController.swift */; };
 		4606A6821D83992000259AA1 /* MeViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6811D83992000259AA1 /* MeViewUI.swift */; };
 		4606A6841D83A29300259AA1 /* Xcode 8 Print hack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6831D83A29300259AA1 /* Xcode 8 Print hack.swift */; };
+		461345771D9A4925001ABAF2 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461345731D9A4925001ABAF2 /* FacebookCore.framework */; };
+		461345781D9A4925001ABAF2 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461345741D9A4925001ABAF2 /* FacebookLogin.framework */; };
+		461345791D9A4925001ABAF2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461345751D9A4925001ABAF2 /* FBSDKCoreKit.framework */; };
+		4613457A1D9A4925001ABAF2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461345761D9A4925001ABAF2 /* FBSDKLoginKit.framework */; };
 		46184E021D89F87F003ECFEB /* ComposeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46184E011D89F87F003ECFEB /* ComposeUI.swift */; };
 		461FD7551D760B30001BE92E /* PINCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461FD7531D760B30001BE92E /* PINCache.framework */; };
 		461FD7561D760B30001BE92E /* PINRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461FD7541D760B30001BE92E /* PINRemoteImage.framework */; };
@@ -145,6 +149,10 @@
 		4606A67F1D83991900259AA1 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		4606A6811D83992000259AA1 /* MeViewUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewUI.swift; sourceTree = "<group>"; };
 		4606A6831D83A29300259AA1 /* Xcode 8 Print hack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Xcode 8 Print hack.swift"; sourceTree = "<group>"; };
+		461345731D9A4925001ABAF2 /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = Carthage/Build/iOS/FacebookCore.framework; sourceTree = "<group>"; };
+		461345741D9A4925001ABAF2 /* FacebookLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookLogin.framework; path = Carthage/Build/iOS/FacebookLogin.framework; sourceTree = "<group>"; };
+		461345751D9A4925001ABAF2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Carthage/Build/iOS/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		461345761D9A4925001ABAF2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Carthage/Build/iOS/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		46184E011D89F87F003ECFEB /* ComposeUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeUI.swift; sourceTree = "<group>"; };
 		461FD7531D760B30001BE92E /* PINCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINCache.framework; path = Carthage/Build/iOS/PINCache.framework; sourceTree = "<group>"; };
 		461FD7541D760B30001BE92E /* PINRemoteImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINRemoteImage.framework; path = Carthage/Build/iOS/PINRemoteImage.framework; sourceTree = "<group>"; };
@@ -271,6 +279,7 @@
 				463A75961D879E2E0030CFB2 /* Himotoki.framework in Frameworks */,
 				462358631D7785C7007947B6 /* Cordux.framework in Frameworks */,
 				46C099141C9F49F90015779C /* SystemConfiguration.framework in Frameworks */,
+				461345781D9A4925001ABAF2 /* FacebookLogin.framework in Frameworks */,
 				462F03221CE267280031B1B1 /* Result.framework in Frameworks */,
 				466BD09B1CADAA14008DC0C3 /* Security.framework in Frameworks */,
 				466BD0991CADAA08008DC0C3 /* CFNetwork.framework in Frameworks */,
@@ -278,6 +287,7 @@
 				466BD0951CADA990008DC0C3 /* libc++.tbd in Frameworks */,
 				46C099101C9F49CF0015779C /* libsqlite3.tbd in Frameworks */,
 				4644FBD81C9E1307004ACBAF /* RxCocoa.framework in Frameworks */,
+				4613457A1D9A4925001ABAF2 /* FBSDKLoginKit.framework in Frameworks */,
 				4644FBD91C9E1307004ACBAF /* RxSwift.framework in Frameworks */,
 				46271FAB1CD2AB36007196B2 /* Library.framework in Frameworks */,
 				46AE37471D78F768005A89F3 /* Then.framework in Frameworks */,
@@ -288,7 +298,9 @@
 				46C099181CA072250015779C /* TwitterKit.framework in Frameworks */,
 				46C0991A1CA072250015779C /* TwitterCore.framework in Frameworks */,
 				46C099071C9E34D10015779C /* Crashlytics.framework in Frameworks */,
+				461345791D9A4925001ABAF2 /* FBSDKCoreKit.framework in Frameworks */,
 				461FD7551D760B30001BE92E /* PINCache.framework in Frameworks */,
+				461345771D9A4925001ABAF2 /* FacebookCore.framework in Frameworks */,
 				461FD7561D760B30001BE92E /* PINRemoteImage.framework in Frameworks */,
 				463913E31D7644C90077D0E5 /* UnderKeyboard.framework in Frameworks */,
 			);
@@ -336,6 +348,10 @@
 		461FD7521D760B30001BE92E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				461345731D9A4925001ABAF2 /* FacebookCore.framework */,
+				461345741D9A4925001ABAF2 /* FacebookLogin.framework */,
+				461345751D9A4925001ABAF2 /* FBSDKCoreKit.framework */,
+				461345761D9A4925001ABAF2 /* FBSDKLoginKit.framework */,
 				463A75951D879E2E0030CFB2 /* Himotoki.framework */,
 				46AE37461D78F768005A89F3 /* Then.framework */,
 				462358621D7785C7007947B6 /* Cordux.framework */,
@@ -804,6 +820,10 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Cordux.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Then.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Himotoki.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FBSDKCoreKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FBSDKLoginKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FacebookCore.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FacebookLogin.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
