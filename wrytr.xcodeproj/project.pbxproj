@@ -119,8 +119,6 @@
 		46C099061C9E34D10015779C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099011C9E34D10015779C /* Bolts.framework */; };
 		46C099071C9E34D10015779C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099021C9E34D10015779C /* Crashlytics.framework */; };
 		46C099081C9E34D10015779C /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099031C9E34D10015779C /* Fabric.framework */; };
-		46C099091C9E34D10015779C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099041C9E34D10015779C /* FBSDKCoreKit.framework */; };
-		46C0990A1C9E34D10015779C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099051C9E34D10015779C /* FBSDKLoginKit.framework */; };
 		46C099101C9F49CF0015779C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C0990F1C9F49CF0015779C /* libsqlite3.tbd */; };
 		46C099141C9F49F90015779C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099131C9F49F90015779C /* SystemConfiguration.framework */; };
 		46C099181CA072250015779C /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099151CA072250015779C /* TwitterKit.framework */; };
@@ -255,8 +253,6 @@
 		46C099011C9E34D10015779C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
 		46C099021C9E34D10015779C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
 		46C099031C9E34D10015779C /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Frameworks/Fabric.framework; sourceTree = "<group>"; };
-		46C099041C9E34D10015779C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Frameworks/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		46C099051C9E34D10015779C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Frameworks/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		46C0990F1C9F49CF0015779C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		46C099131C9F49F90015779C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		46C099151CA072250015779C /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = Frameworks/TwitterKit.framework; sourceTree = "<group>"; };
@@ -288,7 +284,6 @@
 				4644FBD81C9E1307004ACBAF /* RxCocoa.framework in Frameworks */,
 				4644FBD91C9E1307004ACBAF /* RxSwift.framework in Frameworks */,
 				46271FAB1CD2AB36007196B2 /* Library.framework in Frameworks */,
-				46C0990A1C9E34D10015779C /* FBSDKLoginKit.framework in Frameworks */,
 				46AE37471D78F768005A89F3 /* Then.framework in Frameworks */,
 				4644FB9C1C9CBCEF004ACBAF /* ReSwift.framework in Frameworks */,
 				46C099081C9E34D10015779C /* Fabric.framework in Frameworks */,
@@ -296,7 +291,6 @@
 				46C099061C9E34D10015779C /* Bolts.framework in Frameworks */,
 				46C099181CA072250015779C /* TwitterKit.framework in Frameworks */,
 				46C0991A1CA072250015779C /* TwitterCore.framework in Frameworks */,
-				46C099091C9E34D10015779C /* FBSDKCoreKit.framework in Frameworks */,
 				46C099071C9E34D10015779C /* Crashlytics.framework in Frameworks */,
 				461FD7551D760B30001BE92E /* PINCache.framework in Frameworks */,
 				461FD7561D760B30001BE92E /* PINRemoteImage.framework in Frameworks */,
@@ -368,8 +362,6 @@
 				4644FBD71C9E1307004ACBAF /* RxSwift.framework */,
 				4644FBD61C9E1307004ACBAF /* RxCocoa.framework */,
 				46C099011C9E34D10015779C /* Bolts.framework */,
-				46C099041C9E34D10015779C /* FBSDKCoreKit.framework */,
-				46C099051C9E34D10015779C /* FBSDKLoginKit.framework */,
 				462F03211CE267280031B1B1 /* Result.framework */,
 				461FD7531D760B30001BE92E /* PINCache.framework */,
 				461FD7541D760B30001BE92E /* PINRemoteImage.framework */,

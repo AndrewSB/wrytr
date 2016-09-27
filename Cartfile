@@ -9,6 +9,8 @@ github "antitypical/Result" ~> 3.0.0
 github "pinterest/PINRemoteImage"
 github "marketplacer/UnderKeyboard"
 
-github "devxoul/Then" "swift-3.0"
+github "devxoul/Then" ~> 2.0
 
-github "ikesyo/Himotoki" "swift3"
+github "ikesyo/Himotoki" ~> 3.0.0
+
+github "facebook/facebook-sdk-swift"
