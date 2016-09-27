@@ -193,7 +193,6 @@
 		463913E21D7644C90077D0E5 /* UnderKeyboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UnderKeyboard.framework; path = Carthage/Build/iOS/UnderKeyboard.framework; sourceTree = "<group>"; };
 		463A75951D879E2E0030CFB2 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
 		4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
-		4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRouter.framework; path = Carthage/Build/iOS/ReSwiftRouter.framework; sourceTree = "<group>"; };
 		4644FBA41C9CC820004ACBAF /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		4644FBA71C9CC9CB004ACBAF /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		4644FBB01C9CCE79004ACBAF /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -245,9 +244,6 @@
 		46AE37501D7A3B2C005A89F3 /* UIAlertAction + SimpleHandlerInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertAction + SimpleHandlerInit.swift"; sourceTree = "<group>"; };
 		46AE37521D7A3FD3005A89F3 /* Firebase+UserType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+UserType.swift"; sourceTree = "<group>"; };
 		46AE37541D7A9B95005A89F3 /* Firebase+Rx SetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+Rx SetData.swift"; sourceTree = "<group>"; };
-		46AE37561D7AB3D7005A89F3 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/iOS/Argo.framework; sourceTree = "<group>"; };
-		46AE37571D7AB3D7005A89F3 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/iOS/Curry.framework; sourceTree = "<group>"; };
-		46AE37581D7AB3D7005A89F3 /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/iOS/Runes.framework; sourceTree = "<group>"; };
 		46AE375C1D7AB85E005A89F3 /* URL + Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL + Decodable.swift"; sourceTree = "<group>"; };
 		46BF97781C9B6DA700579066 /* Landing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Landing.storyboard; path = ../Legacy/Views/Login/Landing.storyboard; sourceTree = "<group>"; };
 		46C099011C9E34D10015779C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
@@ -341,9 +337,6 @@
 			isa = PBXGroup;
 			children = (
 				463A75951D879E2E0030CFB2 /* Himotoki.framework */,
-				46AE37561D7AB3D7005A89F3 /* Argo.framework */,
-				46AE37571D7AB3D7005A89F3 /* Curry.framework */,
-				46AE37581D7AB3D7005A89F3 /* Runes.framework */,
 				46AE37461D78F768005A89F3 /* Then.framework */,
 				462358621D7785C7007947B6 /* Cordux.framework */,
 				463913E21D7644C90077D0E5 /* UnderKeyboard.framework */,
@@ -357,7 +350,6 @@
 				46C099021C9E34D10015779C /* Crashlytics.framework */,
 				46C099031C9E34D10015779C /* Fabric.framework */,
 				4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */,
-				4644FB9B1C9CBCEF004ACBAF /* ReSwiftRouter.framework */,
 				4644FBD21C9E046B004ACBAF /* Library.framework */,
 				4644FBD71C9E1307004ACBAF /* RxSwift.framework */,
 				4644FBD61C9E1307004ACBAF /* RxCocoa.framework */,
