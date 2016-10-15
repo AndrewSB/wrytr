@@ -3,7 +3,7 @@ github "willowtreeapps/cordux"
 
 github "AndrewSB/Library" "master"
 
-github "ReactiveX/RxSwift" "develop"
+github "ReactiveX/RxSwift" "3.0.0-beta.1"
 github "antitypical/Result" ~> 3.0.0
 
 github "pinterest/PINRemoteImage"
