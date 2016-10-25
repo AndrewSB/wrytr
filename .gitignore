@@ -1,6 +1,7 @@
 .DS_Store
 Build/
 *.app.dSYM.zip
+Preview.html
 
 # Created by https://www.gitignore.io/api/swift
 

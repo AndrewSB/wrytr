@@ -8,7 +8,6 @@ protocol ThirdPartyServiceHandler {
     func onAppOpenURL(app: UIApplication, url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool
 }
 
-
 extension ThirdPartyServiceHandler {
     func onAppOpenURL(app: UIApplication, url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
         return false
