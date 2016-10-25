@@ -24,7 +24,7 @@ extension Firebase {
 
 extension Firebase.Post: Decodable {
     static func decode(_ e: Extractor) throws -> Firebase.Post { //swiftlint:disable:this variable_name
-        let r: [Firebase.Reaction] = (try? e <||? "reactons")?.asOptional ?? []
+        let r: [Firebase.Reaction] = (try e <||? "reactons") ?? []
 
         return try Firebase.Post(
             id: e <| "uid",

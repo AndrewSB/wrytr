@@ -1,6 +1,7 @@
 import Firebase
 import RxSwift
 import RxCocoa
+import RxParseCallbacks
 
 extension Reactive where Base: FQuery {
 
@@ -21,7 +22,7 @@ extension Reactive where Base: FQuery {
 
         return ParseRxCallbacks.createWithCallback({ observer in
             self.base.observeSingleEvent(of: eventType) { snapshot in
-                ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)(snapshot, nil)
+                ParseRxCallbacks.parseUnwrappedOptionalCallback(observer)(snapshot, nil)
             }
         })
 

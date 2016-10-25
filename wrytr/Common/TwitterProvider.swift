@@ -1,5 +1,6 @@
 import TwitterKit
 import RxSwift
+import RxParseCallbacks
 
 extension Twitter {
 
@@ -7,7 +8,7 @@ extension Twitter {
 
         func login() -> Observable<TWTRSession> {
             return ParseRxCallbacks.createWithCallback({ observer in
-                Twitter.sharedInstance().logIn(completion: ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer))
+                Twitter.sharedInstance().logIn(completion: ParseRxCallbacks.parseUnwrappedOptionalCallback(observer))
                 return
             })
         }

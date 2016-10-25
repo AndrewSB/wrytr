@@ -1,6 +1,7 @@
 import Firebase
 import RxSwift
 import RxCocoa
+import RxParseCallbacks
 
 extension Reactive where Base: Firebase {
 
@@ -8,7 +9,7 @@ extension Reactive where Base: Firebase {
 
         return ParseRxCallbacks.createWithCallback({ observer in
             self.base.authUser(email, password: password, withCompletionBlock: {
-                let listner = ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)
+                let listner = ParseRxCallbacks.parseUnwrappedOptionalCallback(observer)
                 listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
             })
         }).map { (authData: FAuthData) in
@@ -38,7 +39,7 @@ extension Reactive where Base: Firebase {
 
         return ParseRxCallbacks.createWithCallback({ observer in
             self.base.authAnonymously {
-                let listner = ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)
+                let listner = ParseRxCallbacks.parseUnwrappedOptionalCallback(observer)
                 listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
             }
         })
@@ -50,7 +51,7 @@ extension Reactive where Base: Firebase {
 
         return ParseRxCallbacks.createWithCallback({ observer in
             self.base.auth(withOAuthProvider: provider, token: token) {
-                let listner = ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)
+                let listner = ParseRxCallbacks.parseUnwrappedOptionalCallback(observer)
                 listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
             }
         })
@@ -62,7 +63,7 @@ extension Reactive where Base: Firebase {
 
         return ParseRxCallbacks.createWithCallback({ observer in
             self.base.auth(withOAuthProvider: provider, parameters: parameters) {
-                let listner = ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer)
+                let listner = ParseRxCallbacks.parseUnwrappedOptionalCallback(observer)
                 listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
             }
         })

@@ -19,7 +19,7 @@ extension Compose {
             self.interface.textView.rx.textInput.text
                 .subscribe(onNext: { _ in self.interface.characterCount.sizeToFit() }),
             self.interface.textView.rx.textInput.text
-                .map { text in text.characters.count }
+                .map { text in text!.characters.count }
                 .map { count in
                     let countColor: UIColor = count >= self.characterLimit ? .red : .gray
                     let countString = generateAttributedString("\(count)", color: countColor)
