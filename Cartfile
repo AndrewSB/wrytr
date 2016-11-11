@@ -1,5 +1,5 @@
 github "ReSwift/ReSwift" "master"
-github "willowtreeapps/cordux"
+github "willowtreeapps/cordux" "v0.1.10"
 
 github "AndrewSB/Library" "master"
 github "AndrewSB/RxParseCallback" "master"
