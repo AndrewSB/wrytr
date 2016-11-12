@@ -1065,7 +1065,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 10;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 13;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = L8BYC3JY5Z;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1091,7 +1092,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 10;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CURRENT_PROJECT_VERSION = 13;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = L8BYC3JY5Z;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1105,8 +1107,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = tfw.wrytr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cd823174-b129-4528-b669-503871772cf0";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development tfw.wrytr";
+				PROVISIONING_PROFILE = "33d25488-7b6d-4c82-8d46-8f0a0ef52b0c";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore tfw.wrytr";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
