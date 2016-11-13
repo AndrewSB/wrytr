@@ -828,6 +828,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/FacebookLogin.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxLibrary.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxParseCallbacks.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
