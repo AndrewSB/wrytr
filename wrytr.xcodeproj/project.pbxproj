@@ -226,6 +226,7 @@
 		46452E751D77A7F30053EC4A /* LandingHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingHandler.swift; sourceTree = "<group>"; };
 		46452E781D77AB6D0053EC4A /* FacebookProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookProvider.swift; sourceTree = "<group>"; };
 		46452E7A1D77AB710053EC4A /* TwitterProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterProvider.swift; sourceTree = "<group>"; };
+		4648AA5C1DDC1D610004872D /* wrytr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wrytr.entitlements; sourceTree = "<group>"; };
 		4658D6B91CC08919009527DF /* Create.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Create.storyboard; path = ../Legacy/Views/Main/Create.storyboard; sourceTree = "<group>"; };
 		4658D6BB1CC0891F009527DF /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Me.storyboard; path = ../Legacy/Views/Main/Me.storyboard; sourceTree = "<group>"; };
 		46678C971DBEC28B00E4007F /* RxParseCallbacks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxParseCallbacks.framework; path = Carthage/Build/iOS/RxParseCallbacks.framework; sourceTree = "<group>"; };
@@ -684,6 +685,7 @@
 		468614BD1C89CC3A002C2BAC /* wrytr */ = {
 			isa = PBXGroup;
 			children = (
+				4648AA5C1DDC1D610004872D /* wrytr.entitlements */,
 				468614BE1C89CC3A002C2BAC /* AppDelegate.swift */,
 				4644FBA71C9CC9CB004ACBAF /* AppState.swift */,
 				46452E6C1D779E980053EC4A /* State */,
@@ -745,6 +747,11 @@
 						DevelopmentTeam = L8BYC3JY5Z;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1065,6 +1072,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = wrytr/wrytr.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Rob Santwer (N8T89MCN97)";
 				CURRENT_PROJECT_VERSION = 18;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1091,6 +1099,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = wrytr/wrytr.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Rob Santwer (L8BYC3JY5Z)";
 				CURRENT_PROJECT_VERSION = 18;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
