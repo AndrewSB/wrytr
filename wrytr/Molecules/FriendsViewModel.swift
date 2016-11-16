@@ -1,3 +1,0 @@
-extension Friends {
-    struct ViewModel {}
-}

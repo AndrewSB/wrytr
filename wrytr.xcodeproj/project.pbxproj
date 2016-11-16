@@ -130,10 +130,6 @@
 		46C099191CA072250015779C /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 46C099161CA072250015779C /* TwitterKitResources.bundle */; };
 		46C0991A1CA072250015779C /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099171CA072250015779C /* TwitterCore.framework */; };
 		46C099201CA097640015779C /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0991F1CA097640015779C /* LoadingViewController.swift */; };
-		46CD47681D837B3E00C3D217 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47671D837B3E00C3D217 /* Friends.swift */; };
-		46CD476A1D837B4900C3D217 /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47691D837B4900C3D217 /* FriendsViewModel.swift */; };
-		46CD476C1D837B5300C3D217 /* FriendsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD476B1D837B5300C3D217 /* FriendsHandler.swift */; };
-		46CD47701D837B6000C3D217 /* FriendsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD476F1D837B6000C3D217 /* FriendsUI.swift */; };
 		46CD47721D83808500C3D217 /* UIViewController + Alert + Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47711D83808500C3D217 /* UIViewController + Alert + Error.swift */; };
 /* End PBXBuildFile section */
 
@@ -265,10 +261,6 @@
 		46C099161CA072250015779C /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = Frameworks/TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		46C099171CA072250015779C /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = Frameworks/TwitterCore.framework; sourceTree = "<group>"; };
 		46C0991F1CA097640015779C /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoadingViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		46CD47671D837B3E00C3D217 /* Friends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
-		46CD47691D837B4900C3D217 /* FriendsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
-		46CD476B1D837B5300C3D217 /* FriendsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsHandler.swift; sourceTree = "<group>"; };
-		46CD476F1D837B6000C3D217 /* FriendsUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsUI.swift; sourceTree = "<group>"; };
 		46CD47711D83808500C3D217 /* UIViewController + Alert + Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alert + Error.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -410,7 +402,6 @@
 				4623587B1D778D87007947B6 /* Landing */,
 				4623587F1D778DA1007947B6 /* HomeCoordinator.swift */,
 				4623587C1D778D8D007947B6 /* Feed */,
-				46CD47661D837B3200C3D217 /* Friends */,
 				4606A66E1D8398C300259AA1 /* Create */,
 				4606A66D1D8398C000259AA1 /* Me */,
 			);
@@ -697,17 +688,6 @@
 			path = wrytr;
 			sourceTree = "<group>";
 		};
-		46CD47661D837B3200C3D217 /* Friends */ = {
-			isa = PBXGroup;
-			children = (
-				46CD47671D837B3E00C3D217 /* Friends.swift */,
-				46CD47691D837B4900C3D217 /* FriendsViewModel.swift */,
-				46CD476B1D837B5300C3D217 /* FriendsHandler.swift */,
-				46CD476F1D837B6000C3D217 /* FriendsUI.swift */,
-			);
-			name = Friends;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -918,7 +898,6 @@
 				462A77D61D8892B200E6F6A0 /* FeedCoordinator.swift in Sources */,
 				468D0E531CCED77A004250F6 /* RenderedImageView.swift in Sources */,
 				468D0E4F1CCED0F2004250F6 /* Firebase+Rx FetchData.swift in Sources */,
-				46CD47681D837B3E00C3D217 /* Friends.swift in Sources */,
 				4623EB5F1D88B2A4004880E3 /* Firebase+PostType.swift in Sources */,
 				4636B6771D7F67AF00C4B43D /* UIType.swift in Sources */,
 				46452E6B1D77997A0053EC4A /* Fabric.swift in Sources */,
@@ -947,16 +926,13 @@
 				46452E691D7799760053EC4A /* Facebook.swift in Sources */,
 				4606A6781D8398FB00259AA1 /* CreateUI.swift in Sources */,
 				466E73FD1CAF271A00EC0B7C /* Firebase+Rx Auth.swift in Sources */,
-				46CD476A1D837B4900C3D217 /* FriendsViewModel.swift in Sources */,
 				46CD47721D83808500C3D217 /* UIViewController + Alert + Error.swift in Sources */,
 				4606A67E1D83991300259AA1 /* MeHandler.swift in Sources */,
 				4623EB5D1D88ABC9004880E3 /* PostState.swift in Sources */,
 				462358781D778B45007947B6 /* StartupViewController.swift in Sources */,
-				46CD476C1D837B5300C3D217 /* FriendsHandler.swift in Sources */,
 				46452E701D77A7D80053EC4A /* Landing.swift in Sources */,
 				46AE374B1D78F851005A89F3 /* ForwardingViewController.swift in Sources */,
 				4623586E1D7788B5007947B6 /* UserService.swift in Sources */,
-				46CD47701D837B6000C3D217 /* FriendsUI.swift in Sources */,
 				462894E61D37F593006044E1 /* PostDetailViewController.swift in Sources */,
 				462A77D41D8883D200E6F6A0 /* CombinedReducer.swift in Sources */,
 				4623EB611D88C25D004880E3 /* CreateCoordinator.swift in Sources */,
