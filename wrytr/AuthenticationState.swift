@@ -7,7 +7,7 @@ fileprivate let neverDisposeBag = DisposeBag()
 extension Authentication {
 
     struct State: ReSwift.StateType {
-        var user: UserType? = nil
+        var user: UserType? = User.Service.authedUser
         var error: PresentableError? = nil
     }
 

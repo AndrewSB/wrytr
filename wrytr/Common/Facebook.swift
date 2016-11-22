@@ -21,10 +21,7 @@ extension ThirdParty.Service.Facebook {
             }
             let annotation = options[UIApplicationOpenURLOptionsKey.annotation]
 
-            return FBSDKApplicationDelegate.sharedInstance().application(app,
-                                                                         open: url,
-                                                                         sourceApplication: sourceApp,
-                                                                         annotation: annotation)
+            return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: sourceApp, annotation: annotation)
         }
 
     }

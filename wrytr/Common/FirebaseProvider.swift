@@ -11,6 +11,12 @@ extension Firebase {
             return ref.authData != nil
         }
 
+        var authUser: User? {
+            guard let authData = ref.authData else { return nil }
+
+            return scrapeFirebaseAuthData(authData: authData)
+        }
+
         static let shared = Provider()
     }
 
@@ -29,7 +35,9 @@ extension Firebase.Provider {
 
 extension Firebase.Provider {
     func facebookAuth(token: String) -> Observable<Firebase.User> {
-        return ref.rx.oauth("facebook", token: token).flatMap(scrapeFirebaseAuthData)
+        return ref.rx.oauth("facebook", token: token)
+            .map(scrapeFirebaseAuthData)
+            .flatMap(update)
     }
 
     struct TwitterAuth {
@@ -47,14 +55,16 @@ extension Firebase.Provider {
     }
 
     func twitterAuth(params: TwitterAuth) -> Observable<Firebase.User> {
-        return ref.rx.oauth("twitter", parameters: params.asDict).flatMap(scrapeFirebaseAuthData)
+        return ref.rx.oauth("twitter", parameters: params.asDict)
+            .map(scrapeFirebaseAuthData)
+            .flatMap(update)
     }
 
-    fileprivate func scrapeFirebaseAuthData(authData: FAuthData) -> Observable<Firebase.User> {
+    fileprivate func scrapeFirebaseAuthData(authData: FAuthData) -> Firebase.User {
         guard
             let cachedProfile = authData.providerData!["cachedUserProfile"] as? [AnyHashable: Any],
             let name = cachedProfile["name"] as? String else {
-                assertionFailure(); return .empty()
+                fatalError()
         }
 
         let imageUrl = (authData.providerData["profileImageURL"] as? String)
@@ -67,7 +77,7 @@ extension Firebase.Provider {
             }
             .flatMap { URL(string: $0) }
 
-        return self.update(user: Firebase.User(id: authData.uid, name: name, photo: imageUrl))
+        return Firebase.User(id: authData.uid, name: name, photo: imageUrl)
     }
 }
 

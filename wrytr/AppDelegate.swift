@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             fatalError()
         }
 
-        UIViewController.swizzleLifecycleDelegatingViewControllerMethods()
+        UIViewController.swizzleLifecycleDelegatingViewControllerMethods() // for cordux
 
         thirdPartyServiceHandler.onAppLaunch(application: application, launchOptions: launchOptions)
 

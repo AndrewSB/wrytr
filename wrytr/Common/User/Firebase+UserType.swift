@@ -17,8 +17,20 @@ extension Firebase.User: Decodable {
         return try Firebase.User(
             id: e <| "uid",
             name: e <| "name",
-            photo: try URLTransformer.apply(e <| "profilePictureUrl")
+            photo: try URLTransformer.apply(e <| "profileImageURL")
         )
+    }
+
+    func encoded() -> [String: String] {
+        var coded = [
+            "uid": id,
+            "name": name,
+        ]
+        if let photoUrl = photo {
+            coded["profileImageURL"] = photoUrl.absoluteString
+        }
+
+        return coded
     }
 }
 
@@ -47,7 +59,7 @@ extension Reactive where Base: Firebase {
 
         return self.base
             .child(byAppendingPath: "users/\(id)")
-            .rx.setValue("" as AnyObject)
+            .rx.setValue(firebaseUser.encoded() as AnyObject)
             .map { _ in firebaseUser }
     }
 

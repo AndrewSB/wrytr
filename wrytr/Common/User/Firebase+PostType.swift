@@ -54,7 +54,8 @@ extension Reactive where Base: Firebase {
             .rx.observeEventOnce()
             .map { arrayOfPostData -> Array<[String: AnyObject]> in
                 guard let json = arrayOfPostData.value as? [String : AnyObject] else {
-                    assertionFailure(); return [[:]]
+                    // assume empty
+                    return []
                 }
 
                 let dictionariesWithUIDIncluded = json.map { (key, val) -> [String: AnyObject] in
