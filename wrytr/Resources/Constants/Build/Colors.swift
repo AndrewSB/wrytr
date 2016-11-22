@@ -26,31 +26,31 @@ extension Color {
 enum ColorName {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#2bacb5"></span>
   /// Alpha: 100% <br/> (0x2bacb5ff)
-  case CreateBackground
+  case createBackground
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#39579a"></span>
   /// Alpha: 100% <br/> (0x39579aff)
-  case FacebookBlue
+  case facebookBlue
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#2bacb5"></span>
   /// Alpha: 100% <br/> (0x2bacb5ff)
-  case LoginLandingBackround
+  case loginLandingBackround
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#3798cb"></span>
   /// Alpha: 100% <br/> (0x3798cbff)
-  case LoginLoginBackground
+  case loginLoginBackground
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#53bfa8"></span>
   /// Alpha: 100% <br/> (0x53bfa8ff)
-  case LoginSignupBackground
+  case loginSignupBackground
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#50abf1"></span>
   /// Alpha: 100% <br/> (0x50abf1ff)
-  case TwitterBlue
+  case twitterBlue
 
   var rgbaValue: UInt32 {
     switch self {
-    case .CreateBackground: return 0x2bacb5ff
-    case .FacebookBlue: return 0x39579aff
-    case .LoginLandingBackround: return 0x2bacb5ff
-    case .LoginLoginBackground: return 0x3798cbff
-    case .LoginSignupBackground: return 0x53bfa8ff
-    case .TwitterBlue: return 0x50abf1ff
+    case .createBackground: return 0x2bacb5ff
+    case .facebookBlue: return 0x39579aff
+    case .loginLandingBackround: return 0x2bacb5ff
+    case .loginLoginBackground: return 0x3798cbff
+    case .loginSignupBackground: return 0x53bfa8ff
+    case .twitterBlue: return 0x50abf1ff
     }
   }
 

@@ -8,7 +8,7 @@ class ChallengeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var elipses: UIButton! {
         didSet {
-            let elipsesImage = UIImage(asset: .Elipses).withRenderingMode(.alwaysTemplate)
+            let elipsesImage = UIImage(asset: .elipses).withRenderingMode(.alwaysTemplate)
             elipses.setImage(elipsesImage, for: UIControlState())
         }
     }

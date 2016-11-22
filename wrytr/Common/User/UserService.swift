@@ -33,7 +33,7 @@ extension User {
                     .map { facebookResult in
                         switch facebookResult.token {
                         case .none:
-                            let errorMessage = facebookResult.isCancelled ? tr(key: .AuthErrorFacebookCancelled) : tr(key: .AuthErrorFacebookGeneric)
+                            let errorMessage = facebookResult.isCancelled ? tr(.authErrorFacebookCancelled) : tr(.authErrorFacebookGeneric)
                             throw NSError(localizedDescription: errorMessage, code: -1)
                         case .some(let token):
                             return token.tokenString!

@@ -3,32 +3,34 @@
 import Foundation
 
 // swiftlint:disable file_length
+// swiftlint:disable line_length
+
 // swiftlint:disable type_body_length
 enum L10n {
   /// It seems as if you cancelled the facebook login? Try again.
-  case AuthErrorFacebookCancelled
+  case authErrorFacebookCancelled
   /// There was an error authenticating with Facebook, Try signing in again.
-  case AuthErrorFacebookGeneric
+  case authErrorFacebookGeneric
   /// Create
-  case CreateTitle
+  case createTitle
   /// Feed
-  case FeedTitle
+  case feedTitle
   /// %@ with Email
-  case LoginLandingEmailbuttonTitle(String)
+  case loginLandingEmailbuttonTitle(String)
   /// Haven't registered yet?
-  case LoginLandingHelperLoginTitle
+  case loginLandingHelperLoginTitle
   /// Already registered?
-  case LoginLandingHelperRegisterTitle
+  case loginLandingHelperRegisterTitle
   /// Log in
-  case LoginLandingLoginTitle
+  case loginLandingLoginTitle
   /// Sign up
-  case LoginLandingRegisterTitle
+  case loginLandingRegisterTitle
   /// Continue with social
-  case LoginLandingSocialButtonTitle
+  case loginLandingSocialButtonTitle
   /// Use your words
-  case LoginLandingSubtitle
+  case loginLandingSubtitle
   /// Me
-  case MeTitle
+  case meTitle
 }
 // swiftlint:enable type_body_length
 
@@ -37,29 +39,29 @@ extension L10n: CustomStringConvertible {
 
   var string: String {
     switch self {
-      case .AuthErrorFacebookCancelled:
+      case .authErrorFacebookCancelled:
         return L10n.tr(key: "auth.error.facebook.cancelled")
-      case .AuthErrorFacebookGeneric:
+      case .authErrorFacebookGeneric:
         return L10n.tr(key: "auth.error.facebook.generic")
-      case .CreateTitle:
+      case .createTitle:
         return L10n.tr(key: "create.title")
-      case .FeedTitle:
+      case .feedTitle:
         return L10n.tr(key: "feed.title")
-      case .LoginLandingEmailbuttonTitle(let p0):
+      case .loginLandingEmailbuttonTitle(let p0):
         return L10n.tr(key: "login.landing.emailbutton.title", p0)
-      case .LoginLandingHelperLoginTitle:
+      case .loginLandingHelperLoginTitle:
         return L10n.tr(key: "login.landing.helper.login.title")
-      case .LoginLandingHelperRegisterTitle:
+      case .loginLandingHelperRegisterTitle:
         return L10n.tr(key: "login.landing.helper.register.title")
-      case .LoginLandingLoginTitle:
+      case .loginLandingLoginTitle:
         return L10n.tr(key: "login.landing.login.title")
-      case .LoginLandingRegisterTitle:
+      case .loginLandingRegisterTitle:
         return L10n.tr(key: "login.landing.register.title")
-      case .LoginLandingSocialButtonTitle:
+      case .loginLandingSocialButtonTitle:
         return L10n.tr(key: "login.landing.socialButton.title")
-      case .LoginLandingSubtitle:
+      case .loginLandingSubtitle:
         return L10n.tr(key: "login.landing.subtitle")
-      case .MeTitle:
+      case .meTitle:
         return L10n.tr(key: "me.title")
     }
   }
@@ -70,6 +72,6 @@ extension L10n: CustomStringConvertible {
   }
 }
 
-func tr(key: L10n) -> String {
+func tr(_ key: L10n) -> String {
   return key.string
 }

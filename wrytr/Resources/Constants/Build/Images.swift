@@ -13,19 +13,19 @@
 
 // swiftlint:disable type_body_length
 enum Asset: String {
-  case Comment = "comment"
-  case Facebook_Logo = "facebook-logo"
-  case Arrow_Left = "arrow-left"
-  case Elipses = "elipses"
-  case I_Icon = "i-icon"
-  case Share = "share"
-  case Star = "star"
-  case Icon_Tabbar_Create = "icon-tabbar-create"
-  case Icon_Tabbar_Feed = "icon-tabbar-feed"
-  case Icon_Tabbar_Friends = "icon-tabbar-friends"
-  case Icon_Tabbar_Profile = "icon-tabbar-profile"
-  case Twitter_Logo = "twitter-logo"
-  case Wrytr_Worded = "wrytr-worded"
+  case comment = "comment"
+  case facebookLogo = "facebook-logo"
+  case arrowLeft = "arrow-left"
+  case elipses = "elipses"
+  case iIcon = "i-icon"
+  case share = "share"
+  case star = "star"
+  case iconTabbarCreate = "icon-tabbar-create"
+  case iconTabbarFeed = "icon-tabbar-feed"
+  case iconTabbarFriends = "icon-tabbar-friends"
+  case iconTabbarProfile = "icon-tabbar-profile"
+  case twitterLogo = "twitter-logo"
+  case wrytrWorded = "wrytr-worded"
 
   var image: Image {
     return Image(asset: self)

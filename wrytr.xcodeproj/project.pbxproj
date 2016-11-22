@@ -93,7 +93,6 @@
 		46452E761D77A7F30053EC4A /* LandingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E751D77A7F30053EC4A /* LandingHandler.swift */; };
 		46452E791D77AB6D0053EC4A /* FacebookProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E781D77AB6D0053EC4A /* FacebookProvider.swift */; };
 		46452E7B1D77AB710053EC4A /* TwitterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E7A1D77AB710053EC4A /* TwitterProvider.swift */; };
-		4648AA5E1DDC22260004872D /* tr + _.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4648AA5D1DDC22260004872D /* tr + _.swift */; };
 		4658D6BA1CC08919009527DF /* Create.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4658D6B91CC08919009527DF /* Create.storyboard */; };
 		4658D6BC1CC0891F009527DF /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4658D6BB1CC0891F009527DF /* Me.storyboard */; };
 		46678C981DBEC28B00E4007F /* RxParseCallbacks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46678C971DBEC28B00E4007F /* RxParseCallbacks.framework */; };
@@ -222,7 +221,6 @@
 		46452E781D77AB6D0053EC4A /* FacebookProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookProvider.swift; sourceTree = "<group>"; };
 		46452E7A1D77AB710053EC4A /* TwitterProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterProvider.swift; sourceTree = "<group>"; };
 		4648AA5C1DDC1D610004872D /* wrytr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wrytr.entitlements; sourceTree = "<group>"; };
-		4648AA5D1DDC22260004872D /* tr + _.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "tr + _.swift"; sourceTree = "<group>"; };
 		4658D6B91CC08919009527DF /* Create.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Create.storyboard; path = ../Legacy/Views/Main/Create.storyboard; sourceTree = "<group>"; };
 		4658D6BB1CC0891F009527DF /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Me.storyboard; path = ../Legacy/Views/Main/Me.storyboard; sourceTree = "<group>"; };
 		46678C971DBEC28B00E4007F /* RxParseCallbacks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxParseCallbacks.framework; path = Carthage/Build/iOS/RxParseCallbacks.framework; sourceTree = "<group>"; };
@@ -387,7 +385,6 @@
 				46AE374C1D7A1886005A89F3 /* HandlerType.swift */,
 				46AE374E1D7A3559005A89F3 /* PresentableError.swift */,
 				46AE375C1D7AB85E005A89F3 /* URL + Decodable.swift */,
-				4648AA5D1DDC22260004872D /* tr + _.swift */,
 				46452E671D77996D0053EC4A /* ThirdParty */,
 			);
 			path = Common;
@@ -836,7 +833,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "DOT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\nRESOURCE_DIR=\"$DOT_DIR\"\"/Resources\"\nCONST_DIR=\"$RESOURCE_DIR\"\"/Constants\"\nBUILD_DIR=\"$CONST_DIR\"\"/Build\"\n\nif which /usr/local/bin/swiftgen > /dev/null; then\n    /usr/local/bin/swiftgen storyboards \"$DOT_DIR\" --output \"$BUILD_DIR\"\"/Storyboards.swift\" --template \"swift3\"\n    /usr/local/bin/swiftgen images \"$RESOURCE_DIR\"\"/Assets.xcassets\" --output \"$BUILD_DIR\"\"/Images.swift\"\n    /usr/local/bin/swiftgen colors \"$CONST_DIR\"\"/colors.txt\" --output \"$BUILD_DIR\"\"/Colors.swift\"\n    /usr/local/bin/swiftgen strings \"$CONST_DIR\"\"/Localizable.strings\" -output \"$BUILD_DIR\"\"/Localizable_Strings.swift\" --templatePath \"$CONST_DIR\"\"/strings-swift3.stencil\"\nelse\n    echo \"BUILD ERROR: You need to brew install swiftgen\"\n    exit 1\nfi";
+			shellScript = "./scripts/swiftgen.sh \"${PROJECT_DIR}\" \"${PROJECT_NAME}\"";
 		};
 		469FF7481C9758AD007508CD /* Install Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -925,7 +922,6 @@
 				46452E691D7799760053EC4A /* Facebook.swift in Sources */,
 				4606A6781D8398FB00259AA1 /* CreateUI.swift in Sources */,
 				466E73FD1CAF271A00EC0B7C /* Firebase+Rx Auth.swift in Sources */,
-				4648AA5E1DDC22260004872D /* tr + _.swift in Sources */,
 				46CD47721D83808500C3D217 /* UIViewController + Alert + Error.swift in Sources */,
 				4606A67E1D83991300259AA1 /* MeHandler.swift in Sources */,
 				4623EB5D1D88ABC9004880E3 /* PostState.swift in Sources */,

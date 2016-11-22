@@ -41,18 +41,18 @@ extension Landing {
             self.interface = {
                 $0.formContainer.addEdgePadding()
 
-                $0.subtitle.text = tr(key: .LoginLandingSubtitle)
+                $0.subtitle.text = tr(.loginLandingSubtitle)
 
-                $0.titleLabel.text = tr(key: .LoginLandingSocialButtonTitle)
+                $0.titleLabel.text = tr(.loginLandingSocialButtonTitle)
 
-                $0.twitterButton.configure(withColor: UIColor(named: .TwitterBlue))
-                $0.facebookButton.configure(withColor: UIColor(named: .FacebookBlue))
+                $0.twitterButton.configure(withColor: UIColor(named: .twitterBlue))
+                $0.facebookButton.configure(withColor: UIColor(named: .facebookBlue))
 
                 [$0.usernameField, $0.emailField, $0.passwordField].forEach { field in field.configure() }
 
                 $0.termsOfServiceButton.attributize()
 
-                $0.helperButton.layer.borderColor = UIColor(named: .LoginLandingBackround).cgColor
+                $0.helperButton.layer.borderColor = UIColor(named: .loginLandingBackround).cgColor
                 $0.helperButton.layer.borderWidth = 1
 
                 return $0
@@ -81,21 +81,21 @@ extension Landing.UI: Renderer {
         let helperTitle: String
         switch option {
         case .login:
-            wordedOption = tr(key: .LoginLandingLoginTitle)
-            oppositeWordedOption = tr(key: .LoginLandingRegisterTitle)
-            helperTitle = tr(key: .LoginLandingHelperLoginTitle)
+            wordedOption = tr(.loginLandingLoginTitle)
+            oppositeWordedOption = tr(.loginLandingRegisterTitle)
+            helperTitle = tr(.loginLandingHelperLoginTitle)
         case .register:
-            wordedOption = tr(key: .LoginLandingRegisterTitle)
-            oppositeWordedOption = tr(key: .LoginLandingLoginTitle)
-            helperTitle = tr(key: .LoginLandingHelperRegisterTitle)
+            wordedOption = tr(.loginLandingRegisterTitle)
+            oppositeWordedOption = tr(.loginLandingLoginTitle)
+            helperTitle = tr(.loginLandingHelperRegisterTitle)
         }
 
         self.interface.formContainer.layoutIfNeeded()
 
-        self.interface.formHeader.text = tr(key: L10n.LoginLandingEmailbuttonTitle(wordedOption))
+        self.interface.formHeader.text = tr(L10n.loginLandingEmailbuttonTitle(wordedOption))
         self.interface.usernameField.isHidden = option == .login
-        self.interface.actionButton.setTitle(title: wordedOption)
-        self.interface.helperButton.setTitle(title: oppositeWordedOption)
+        self.interface.actionButton.set(title: wordedOption)
+        self.interface.helperButton.set(title: oppositeWordedOption)
         self.interface.helperLabel.text = helperTitle
 
         UIView.animate(withDuration: 0.2) {
@@ -121,7 +121,7 @@ fileprivate extension UIButton {
         let range = NSRange.init(ofString: "Terms & Privacy Policy", inString: title)
 
         let attributedString = NSMutableAttributedString(string: title)
-        attributedString.addAttributes([NSForegroundColorAttributeName: UIColor(named: .LoginLandingBackround)], range: range)
+        attributedString.addAttributes([NSForegroundColorAttributeName: UIColor(named: .loginLandingBackround)], range: range)
         self.setAttributedTitle(attributedString, for: .normal)
 
         self.titleLabel!.lineBreakMode = .byWordWrapping
