@@ -5,7 +5,7 @@ github "AndrewSB/Library" "master"
 github "AndrewSB/RxParseCallback" "master"
 
 github "ReactiveX/RxSwift" ~> 3.0
-github "antitypical/Result" ~> 3.0.0
+github "antitypical/Result" "5647ba4" # pin to commit hash so we can force a build while they don't vend a swift 3.0.1 binary
 
 github "pinterest/PINRemoteImage"
 github "marketplacer/UnderKeyboard"
