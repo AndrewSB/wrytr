@@ -10,7 +10,6 @@ class RenderedImageView: UIImageView {
 
 }
 
-
 class RenderedImageButton: UIButton {
 
     override func awakeFromNib() {

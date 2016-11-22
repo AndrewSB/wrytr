@@ -20,7 +20,6 @@ class ChallengeTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var prompt: UILabel!
 
-
     @IBOutlet weak var stars: RenderedImageButton! {
         didSet { stars.imageView!.contentMode = .scaleAspectFit }
     }
@@ -59,6 +58,5 @@ class ChallengeTableViewCell: UITableViewCell {
 
         layer.cornerRadius = 10
     }
-
 
 }

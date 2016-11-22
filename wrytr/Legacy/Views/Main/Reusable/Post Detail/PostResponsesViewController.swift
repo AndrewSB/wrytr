@@ -1,6 +1,5 @@
 import UIKit
 
-
 extension PostDetail {
     class Responses {}
 }

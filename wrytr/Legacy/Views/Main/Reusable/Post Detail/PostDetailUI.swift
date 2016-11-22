@@ -5,7 +5,7 @@ extension PostDetail {
 
     class UI: UIType {
         var loaderAndErrorPresenter: (ErrorPresentable & LoadingIndicatable)?
-        
+
         let interface: ViewController.IB
 
         lazy var bindings: [Disposable] = []
@@ -14,5 +14,5 @@ extension PostDetail {
             self.interface = interface
         }
     }
-    
+
 }

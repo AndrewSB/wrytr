@@ -17,5 +17,4 @@ class Create {
         return ForwardingViewController(withViewController: feedVC, routeSegment: routeSegment, ui: uiCreationClosure)
     }
 
-
 }

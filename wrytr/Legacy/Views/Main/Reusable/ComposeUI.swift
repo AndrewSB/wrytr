@@ -41,9 +41,7 @@ extension Compose {
     }
 }
 
-
 extension Compose.UI {
-
 
     class InternalDelegate: NSObject, UITextViewDelegate {
         let hitEnterSubject = PublishSubject<String>()
@@ -65,6 +63,6 @@ extension Compose.UI {
 
 fileprivate func generateAttributedString(_ string: String, color: UIColor) -> NSMutableAttributedString {
     let attributedString = NSAttributedString(string: string, attributes: [NSForegroundColorAttributeName: color])
-    
+
     return NSMutableAttributedString(attributedString: attributedString)
 }

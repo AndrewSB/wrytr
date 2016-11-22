@@ -13,15 +13,15 @@ class LoadingViewController: UIViewController {
     }
 
     var loadingView: UIActivityIndicatorView {
-        get { return self.view as! UIActivityIndicatorView }
+        return self.view as! UIActivityIndicatorView //swiftlint:disable:this force_cast
     }
 
     func show() {
-        (self.view as! UIActivityIndicatorView).startAnimating()
+        loadingView.startAnimating()
     }
 
     func hide() {
-        (self.view as! UIActivityIndicatorView).stopAnimating()
+        loadingView.stopAnimating()
     }
 
 }
