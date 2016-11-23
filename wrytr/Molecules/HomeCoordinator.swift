@@ -1,5 +1,6 @@
 import Cordux
 import RxCocoa
+import Then
 
 class Home {}
 
@@ -21,17 +22,6 @@ extension Home {
                     return Feed.Coordinator(store: store)
                 }
             }
-
-            var tabBarItem: UITabBarItem {
-                switch self {
-                case .feed:
-                    return UITabBarItem(title: tr(.feedTitle), image: #imageLiteral(resourceName: "icon-tabbar-feed"), tag: 0)
-                case .create:
-                    return UITabBarItem(title: tr(.createTitle), image: #imageLiteral(resourceName: "icon-tabbar-create"), tag: 0)
-                case .me:
-                    return UITabBarItem(title: tr(.meTitle), image: #imageLiteral(resourceName: "icon-tabbar-profile"), tag: 0)
-                }
-            }
         }
 
         let store: Store
@@ -41,22 +31,22 @@ extension Home {
 
         init(store: Store) {
             self.store = store
-            self.scenes = [RouteSegment.feed, RouteSegment.create].map { route in
+            self.scenes = [RouteSegment.feed, RouteSegment.create, RouteSegment.me].map { route in
                 Scene(prefix: route.rawValue, coordinator: route.coordinator(withStore: store))
             }
             super.init()
 
             self.tabBarController.delegate = self
-            self.tabBarController.viewControllers = self.scenes.map { $0.coordinator.rootViewController }
+            self.tabBarController.viewControllers = self.scenes.map { scene in
+                scene.coordinator.rootViewController
+            }
         }
     }
 
 }
 
 extension Home.Coordinator {
-    func start(route: Route?) {
-
-    }
+    func start(route: Route?) {}
 }
 
 extension Home.Coordinator: UITabBarControllerDelegate {

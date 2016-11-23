@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             fatalError()
         }
 
+        UITabBar.appearance().tintColor = Color(named: .tint)
+
         UIViewController.swizzleLifecycleDelegatingViewControllerMethods() // for cordux
 
         thirdPartyServiceHandler.onAppLaunch(application: application, launchOptions: launchOptions)

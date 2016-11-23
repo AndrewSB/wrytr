@@ -52,7 +52,7 @@ extension Landing {
 
                 $0.termsOfServiceButton.attributize()
 
-                $0.helperButton.layer.borderColor = UIColor(named: .loginLandingBackround).cgColor
+                $0.helperButton.layer.borderColor = UIColor(named: .tint).cgColor
                 $0.helperButton.layer.borderWidth = 1
 
                 return $0
@@ -121,7 +121,7 @@ fileprivate extension UIButton {
         let range = NSRange.init(ofString: "Terms & Privacy Policy", inString: title)
 
         let attributedString = NSMutableAttributedString(string: title)
-        attributedString.addAttributes([NSForegroundColorAttributeName: UIColor(named: .loginLandingBackround)], range: range)
+        attributedString.addAttributes([NSForegroundColorAttributeName: UIColor(named: .tint)], range: range)
         self.setAttributedTitle(attributedString, for: .normal)
 
         self.titleLabel!.lineBreakMode = .byWordWrapping

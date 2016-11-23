@@ -20,7 +20,8 @@ class FeedViewController: InterfaceProvidingViewController {
     override func viewDidLoad() {
         self.interface = IB(
             newPopularControl: newPopularControl,
-            tableView: tableView
+            tableView: tableView,
+            tabBarItem: tabBarItem
         )
 
         super.viewDidLoad()
@@ -29,5 +30,6 @@ class FeedViewController: InterfaceProvidingViewController {
     struct IB: Primitive {
         let newPopularControl: UISegmentedControl
         let tableView: ChallengeTableView
+        let tabBarItem: UITabBarItem
     }
 }

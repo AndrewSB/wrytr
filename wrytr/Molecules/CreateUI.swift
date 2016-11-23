@@ -19,6 +19,8 @@ extension Create {
                 if let url = localUser.photo { $0.profile.pin_setImage(from: url) }
                 $0.username.text = localUser.name
 
+                $0.tabBarItem.title = tr(.createTitle)
+
                 return $0
             }(interface)
 

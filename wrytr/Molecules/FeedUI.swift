@@ -1,6 +1,7 @@
 import UIKit
 import RxSwift
 import Cordux
+import Then
 
 extension Feed {
     class UI: UIType {
@@ -12,7 +13,11 @@ extension Feed {
         lazy var bindings: [Disposable] = []
 
         init(interface: ViewController.IB, handler: Handler) {
-            self.interface = interface
+            self.interface = {
+                $0.tabBarItem.title = "dfsdfds"//tr(.feedTitle)
+
+                return $0
+            }(interface)
             self.handler = handler
 
             // dispatch async because we don't want to call dispatch to the store before currentScene is set in AppCoordinator, it causes an infinite loop

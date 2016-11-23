@@ -26,6 +26,7 @@ class CreateViewController: InterfaceProvidingViewController {
         let profile: RoundedImageView
         let username: UILabel
         let textView: UITextView
+        let tabBarItem: UITabBarItem
     }
 
     override func viewDidLoad() {
@@ -43,7 +44,8 @@ class CreateViewController: InterfaceProvidingViewController {
         self.interface = IB(
             profile: composeViewController.profileImageView,
             username: composeViewController.usernameLabel,
-            textView: composeViewController.challengeTextView
+            textView: composeViewController.challengeTextView,
+            tabBarItem: tabBarItem
         )
 
         super.viewDidLoad()

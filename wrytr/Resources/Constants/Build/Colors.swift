@@ -24,32 +24,28 @@ extension Color {
 
 // swiftlint:disable type_body_length
 enum ColorName {
-  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#2bacb5"></span>
-  /// Alpha: 100% <br/> (0x2bacb5ff)
-  case createBackground
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#39579a"></span>
   /// Alpha: 100% <br/> (0x39579aff)
   case facebookBlue
-  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#2bacb5"></span>
-  /// Alpha: 100% <br/> (0x2bacb5ff)
-  case loginLandingBackround
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#3798cb"></span>
   /// Alpha: 100% <br/> (0x3798cbff)
   case loginLoginBackground
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#53bfa8"></span>
   /// Alpha: 100% <br/> (0x53bfa8ff)
   case loginSignupBackground
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#2bacb5"></span>
+  /// Alpha: 100% <br/> (0x2bacb5ff)
+  case tint
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#50abf1"></span>
   /// Alpha: 100% <br/> (0x50abf1ff)
   case twitterBlue
 
   var rgbaValue: UInt32 {
     switch self {
-    case .createBackground: return 0x2bacb5ff
     case .facebookBlue: return 0x39579aff
-    case .loginLandingBackround: return 0x2bacb5ff
     case .loginLoginBackground: return 0x3798cbff
     case .loginSignupBackground: return 0x53bfa8ff
+    case .tint: return 0x2bacb5ff
     case .twitterBlue: return 0x50abf1ff
     }
   }

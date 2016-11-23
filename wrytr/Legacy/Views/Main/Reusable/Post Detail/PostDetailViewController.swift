@@ -31,7 +31,7 @@ class PostDetailViewController: InterfaceProvidingViewController {
 
         imageView.contentMode = .scaleAspectFit
 
-        view.backgroundColor = UIColor(named: .createBackground)
+        view.backgroundColor = UIColor(named: .tint)
         self.navigationItem.titleView = imageView
 
         self.interface = IB(
