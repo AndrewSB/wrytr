@@ -1,21 +1,21 @@
 import UIKit
 import Cordux
 
-extension Feed {
+class Feed {
 
     class Coordinator: NavigationControllerCoordinator {
         enum RouteSegment: String, RouteConvertible {
             case feed
         }
 
-        let store: Store
-
         let navigationController: UINavigationController = FeedNavigationController.fromStoryboard()
 
         init(store: Store) {
             self.store = store
 
-            let feedVC = Feed.make(withRouteSegment: RouteSegment.feed, store: self.store)
+            let feedVC = Feed.ViewController.fromStoryboard()
+            store.subscribe(feedVC, { $0.feedState })
+
             self.navigationController.setViewControllers([feedVC], animated: false)
         }
 

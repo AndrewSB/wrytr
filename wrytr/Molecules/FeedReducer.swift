@@ -1,7 +1,7 @@
 import Cordux
 
 extension Feed {
-    struct ViewModel {
+    class State {
         var posts: [PostType] = []
         var error: PresentableError? = nil
     }
@@ -11,22 +11,22 @@ extension Feed {
     }
 }
 
-extension Feed.ViewModel {
+extension Feed {
 
     final class Reducer: Cordux.Reducer {
 
-        func handleAction(_ action: Cordux.Action, state: AppState) -> AppState {
-            var state = state
+        func handleAction(_ action: Cordux.Action, state: Feed.State) -> Feed.State {
+            let state = state
 
             switch action {
             case let Post.Action.loaded(posts):
-                state.feedState.posts = posts
+                state.posts = posts
 
             case let Post.Action.errorLoadingPosts(error):
-                state.feedState.error = error
+                state.error = error
 
             case Feed.Action.dismissError:
-                state.feedState.error = nil
+                state.error = nil
 
             default:
                 break

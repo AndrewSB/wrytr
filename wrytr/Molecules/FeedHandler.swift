@@ -1,15 +1,10 @@
 extension Feed {
+    class Handler {
 
-    class Handler: HandlerType {
-        let store: Store
-
-        init(store: Store) {
-            self.store = store
-        }
-
-        func refreshPosts() {
+        static func refreshPosts() {
             store.dispatch(Post.loadPosts())
         }
+
     }
 
 }
