@@ -15,6 +15,8 @@ enum L10n {
   case createTitle
   /// Feed
   case feedTitle
+  /// By signing up, you agree to our Terms & Privacy Policy.
+  case loginLandingButtonTosTitle
   /// %@ with Email
   case loginLandingEmailbuttonTitle(String)
   /// Haven't registered yet?
@@ -47,6 +49,8 @@ extension L10n: CustomStringConvertible {
         return L10n.tr(key: "create.title")
       case .feedTitle:
         return L10n.tr(key: "feed.title")
+      case .loginLandingButtonTosTitle:
+        return L10n.tr(key: "login.landing.button.tos.title")
       case .loginLandingEmailbuttonTitle(let p0):
         return L10n.tr(key: "login.landing.emailbutton.title", p0)
       case .loginLandingHelperLoginTitle:

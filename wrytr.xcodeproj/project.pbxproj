@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		460573FE1DF248CA00C582A6 /* RoundedRenderedImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460573FD1DF248CA00C582A6 /* RoundedRenderedImageButton.swift */; };
 		4606A6701D8398CF00259AA1 /* Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A66F1D8398CF00259AA1 /* Create.swift */; };
 		4606A6721D8398D500259AA1 /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6711D8398D500259AA1 /* CreateViewModel.swift */; };
 		4606A6741D8398E600259AA1 /* CreateHander.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6731D8398E600259AA1 /* CreateHander.swift */; };
@@ -83,8 +84,7 @@
 		46452E691D7799760053EC4A /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E681D7799760053EC4A /* Facebook.swift */; };
 		46452E6B1D77997A0053EC4A /* Fabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E6A1D77997A0053EC4A /* Fabric.swift */; };
 		46452E6E1D779EAB0053EC4A /* AuthenticationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E6D1D779EAB0053EC4A /* AuthenticationState.swift */; };
-		46452E701D77A7D80053EC4A /* Landing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E6F1D77A7D80053EC4A /* Landing.swift */; };
-		46452E721D77A7E40053EC4A /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E711D77A7E40053EC4A /* LandingViewModel.swift */; };
+		46452E721D77A7E40053EC4A /* LandingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E711D77A7E40053EC4A /* LandingReducer.swift */; };
 		46452E741D77A7ED0053EC4A /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E731D77A7ED0053EC4A /* LandingViewController.swift */; };
 		46452E761D77A7F30053EC4A /* LandingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E751D77A7F30053EC4A /* LandingHandler.swift */; };
 		46452E791D77AB6D0053EC4A /* FacebookProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E781D77AB6D0053EC4A /* FacebookProvider.swift */; };
@@ -129,6 +129,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		460573FD1DF248CA00C582A6 /* RoundedRenderedImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedRenderedImageButton.swift; sourceTree = "<group>"; };
 		4606A66F1D8398CF00259AA1 /* Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Create.swift; sourceTree = "<group>"; };
 		4606A6711D8398D500259AA1 /* CreateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
 		4606A6731D8398E600259AA1 /* CreateHander.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateHander.swift; sourceTree = "<group>"; };
@@ -206,8 +207,7 @@
 		46452E681D7799760053EC4A /* Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
 		46452E6A1D77997A0053EC4A /* Fabric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fabric.swift; sourceTree = "<group>"; };
 		46452E6D1D779EAB0053EC4A /* AuthenticationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationState.swift; sourceTree = "<group>"; };
-		46452E6F1D77A7D80053EC4A /* Landing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Landing.swift; sourceTree = "<group>"; };
-		46452E711D77A7E40053EC4A /* LandingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
+		46452E711D77A7E40053EC4A /* LandingReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingReducer.swift; sourceTree = "<group>"; };
 		46452E731D77A7ED0053EC4A /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		46452E751D77A7F30053EC4A /* LandingHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingHandler.swift; sourceTree = "<group>"; };
 		46452E781D77AB6D0053EC4A /* FacebookProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookProvider.swift; sourceTree = "<group>"; };
@@ -458,8 +458,7 @@
 		4623587B1D778D87007947B6 /* Landing */ = {
 			isa = PBXGroup;
 			children = (
-				46452E6F1D77A7D80053EC4A /* Landing.swift */,
-				46452E711D77A7E40053EC4A /* LandingViewModel.swift */,
+				46452E711D77A7E40053EC4A /* LandingReducer.swift */,
 				46452E751D77A7F30053EC4A /* LandingHandler.swift */,
 				46452E731D77A7ED0053EC4A /* LandingViewController.swift */,
 				46AE37481D78F7BE005A89F3 /* LandingUI.swift */,
@@ -572,6 +571,7 @@
 			isa = PBXGroup;
 			children = (
 				468D0E521CCED77A004250F6 /* RenderedImageView.swift */,
+				460573FD1DF248CA00C582A6 /* RoundedRenderedImageButton.swift */,
 				46C0991F1CA097640015779C /* LoadingViewController.swift */,
 				46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */,
 				462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */,
@@ -869,7 +869,7 @@
 				46AE37531D7A3FD3005A89F3 /* Firebase+UserType.swift in Sources */,
 				4606A6721D8398D500259AA1 /* CreateViewModel.swift in Sources */,
 				462894E81D37F6B3006044E1 /* PublishReplyViewController.swift in Sources */,
-				46452E721D77A7E40053EC4A /* LandingViewModel.swift in Sources */,
+				46452E721D77A7E40053EC4A /* LandingReducer.swift in Sources */,
 				46452E6E1D779EAB0053EC4A /* AuthenticationState.swift in Sources */,
 				462358801D778DA1007947B6 /* HomeCoordinator.swift in Sources */,
 				462F03181CE148CE0031B1B1 /* NoHairlineNavigationBar.swift in Sources */,
@@ -902,6 +902,7 @@
 				4644FBA81C9CC9CB004ACBAF /* AppState.swift in Sources */,
 				46452E601D7797AC0053EC4A /* PostType.swift in Sources */,
 				46452E641D7797F10053EC4A /* ReactionType.swift in Sources */,
+				460573FE1DF248CA00C582A6 /* RoundedRenderedImageButton.swift in Sources */,
 				4636B6791D7F78E900C4B43D /* AsyncAction.swift in Sources */,
 				46307D391CDD67A700E47A1C /* ExtendedNavbarView.swift in Sources */,
 				46452E661D7799620053EC4A /* ThirdPartyServices.swift in Sources */,
@@ -913,7 +914,6 @@
 				4606A67E1D83991300259AA1 /* MeHandler.swift in Sources */,
 				4623EB5D1D88ABC9004880E3 /* PostState.swift in Sources */,
 				462358781D778B45007947B6 /* StartupViewController.swift in Sources */,
-				46452E701D77A7D80053EC4A /* Landing.swift in Sources */,
 				4623586E1D7788B5007947B6 /* UserService.swift in Sources */,
 				462894E61D37F593006044E1 /* PostDetailViewController.swift in Sources */,
 				462A77D41D8883D200E6F6A0 /* CombinedReducer.swift in Sources */,

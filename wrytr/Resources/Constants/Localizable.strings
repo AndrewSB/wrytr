@@ -13,6 +13,7 @@
 "login.landing.emailbutton.title" = "%@ with Email";
 "login.landing.helper.login.title" = "Haven't registered yet?";
 "login.landing.helper.register.title" = "Already registered?";
+"login.landing.button.tos.title" = "By signing up, you agree to our Terms & Privacy Policy.";
 
 "feed.title" = "Feed";
 

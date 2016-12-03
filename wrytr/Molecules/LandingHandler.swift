@@ -1,37 +1,67 @@
 import UIKit
 import RxSwift
+import RxCocoa
 
 extension Landing {
 
-    class Handler: HandlerType {
+    class Output {
         private let disposeBag = DisposeBag()
 
-        let store: Store
+        init(facebookTap: ControlEvent<Void>,
+             twitterTap: ControlEvent<Void>,
+             username: ControlProperty<String>,
+             email: ControlProperty<String>,
+             password: ControlProperty<String>,
+             actionTap: ControlEvent<Void>,
+             switchOptionTap: ControlEvent<Void>) {
 
-        init(store: Store) {
-            self.store = store
+            disposeBag += facebookTap.asDriver().map {  }.drive(onNext: Handler.facebookTap)
+
+            disposeBag += twitterTap.asDriver().drive(onNext: Handler.twitterTap)
+
+            disposeBag += username.asDriver().drive(onNext: )
+
+            disposeBag += actionButton.rx.tap.asDriver()
+                .map {
+                    return (
+                        usernameField.text ?? "",
+                        emailField.text ?? "",
+                        passwordField.text ?? ""
+                    )
+                }
+                .drive(onNext: Landing.Handler.actionTap)
+            disposeBag += helperButton.rx.tap.asDriver()
+                .scan(Landing.State.Option.login) { previousState, _ in
+                    switch previousState {
+                    case .login: return .register
+                    case .register: return .login
+                    }
+                }
+                .drive(onNext: Landing.Handler.changeAuthOptionTap)
         }
+    }
 
-        func twitterTap() {
+    private class Handler {
+
+        static func twitterTap() {
             store.dispatch(Authentication.signIn(.twitter))
         }
 
-        func facebookTap() {
+        static func facebookTap() {
             store.dispatch(Authentication.signIn(.facebook))
         }
 
-        func actionTap(authData: User.Service.Auth) {
+        static func actionTap(name: String, email: String, password: String) {
             store.dispatch(Authentication.signIn(authData))
         }
 
-        func changeAuthOptionTap(option: ViewModel.Option) {
+        static func changeAuthOptionTap(option: ViewModel.Option) {
             store.dispatch(Landing.Action.updateOption(option))
         }
 
-        func errorOkTap() {
+        static func errorOkTap() {
             store.dispatch(Landing.Action.dismissError)
         }
 
     }
-
 }

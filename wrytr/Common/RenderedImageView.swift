@@ -15,9 +15,7 @@ class RenderedImageButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        if let image = self.imageView?.image {
-            setImage(image.withRenderingMode(.alwaysTemplate), for: UIControlState())
-        }
+        setImage(self.imageView!.image.withRenderingMode(.alwaysTemplate), for: UIControlState())
     }
 
 }

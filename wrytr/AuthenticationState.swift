@@ -16,6 +16,18 @@ extension Authentication {
         case loggedIn(UserType)
         case errorLoggingIn(PresentableError)
         case loggedOut
+
+        func facebookLogin() -> AsyncAction {
+            return { state, store in
+                store.dispatch(Action.loggingIn)
+
+                neverDisposeBag += User.Service.facebookAuth().subscribe(authResponder)
+            }
+        }
+
+        private func authResponder(_ observer: AnyObserver<UserType>) {
+
+        }
     }
 
     static func signIn(_ params: User.Service.Auth) -> AsyncAction {
