@@ -4,15 +4,15 @@ typealias Store = Cordux.Store<AppState>
 
 struct AppState: StateType {
     var route: Route = []
-    var landingState = Landing.ViewModel()
-    var feedState = Feed.ViewModel()
+    var landingState = Landing.State()
+    var feedState = Feed.State()
     var authenticationState = Authentication.State()
     var postState = Post.State()
 }
 
 fileprivate let viewModelReducers = CombinedReducer([
-    Landing.ViewModel.Reducer(),
-    Feed.ViewModel.Reducer()
+    Landing.Reducer(),
+    Feed.Reducer()
 ])
 
 let appReducer = CombinedReducer([

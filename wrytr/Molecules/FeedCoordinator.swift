@@ -4,17 +4,19 @@ import Cordux
 class Feed {
 
     class Coordinator: NavigationControllerCoordinator {
+        typealias State = Feed.State
         enum RouteSegment: String, RouteConvertible {
             case feed
         }
 
+        let store: Store
         let navigationController: UINavigationController = FeedNavigationController.fromStoryboard()
 
         init(store: Store) {
             self.store = store
 
             let feedVC = Feed.ViewController.fromStoryboard()
-            store.subscribe(feedVC, { $0.feedState })
+            self.store.subscribe(feedVC, { $0.feedState })
 
             self.navigationController.setViewControllers([feedVC], animated: false)
         }
