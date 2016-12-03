@@ -4,6 +4,7 @@ github "willowtreeapps/cordux" "v0.1.10"
 github "AndrewSB/Library" "master"
 github "AndrewSB/RxParseCallback" "master"
 
+github "Thomvis/BrightFutures"
 github "ReactiveX/RxSwift" ~> 3.0
 github "antitypical/Result" "5647ba4" # pin to commit hash so we can force a build while they don't vend a swift 3.0.1 binary
 

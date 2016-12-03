@@ -123,6 +123,7 @@
 		46C099191CA072250015779C /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 46C099161CA072250015779C /* TwitterKitResources.bundle */; };
 		46C0991A1CA072250015779C /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099171CA072250015779C /* TwitterCore.framework */; };
 		46C099201CA097640015779C /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0991F1CA097640015779C /* LoadingViewController.swift */; };
+		46C0B91E1DE691E600085BD0 /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C0B91D1DE691E600085BD0 /* BrightFutures.framework */; };
 		46CD47721D83808500C3D217 /* UIViewController + Alert + Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47711D83808500C3D217 /* UIViewController + Alert + Error.swift */; };
 /* End PBXBuildFile section */
 
@@ -247,6 +248,7 @@
 		46C099161CA072250015779C /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = Frameworks/TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		46C099171CA072250015779C /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = Frameworks/TwitterCore.framework; sourceTree = "<group>"; };
 		46C0991F1CA097640015779C /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoadingViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		46C0B91D1DE691E600085BD0 /* BrightFutures.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BrightFutures.framework; path = Carthage/Build/iOS/BrightFutures.framework; sourceTree = "<group>"; };
 		46CD47711D83808500C3D217 /* UIViewController + Alert + Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alert + Error.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -284,6 +286,7 @@
 				461FD7561D760B30001BE92E /* PINRemoteImage.framework in Frameworks */,
 				463913E31D7644C90077D0E5 /* UnderKeyboard.framework in Frameworks */,
 				46678C981DBEC28B00E4007F /* RxParseCallbacks.framework in Frameworks */,
+				46C0B91E1DE691E600085BD0 /* BrightFutures.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +332,7 @@
 		461FD7521D760B30001BE92E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				46C0B91D1DE691E600085BD0 /* BrightFutures.framework */,
 				46678C971DBEC28B00E4007F /* RxParseCallbacks.framework */,
 				4691519E1DBEB89A00064A49 /* RxLibrary.framework */,
 				461345731D9A4925001ABAF2 /* FacebookCore.framework */,
@@ -795,6 +799,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxLibrary.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxParseCallbacks.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/BrightFutures.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
