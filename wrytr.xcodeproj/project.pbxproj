@@ -123,6 +123,7 @@
 		46C099191CA072250015779C /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 46C099161CA072250015779C /* TwitterKitResources.bundle */; };
 		46C0991A1CA072250015779C /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099171CA072250015779C /* TwitterCore.framework */; };
 		46C099201CA097640015779C /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0991F1CA097640015779C /* LoadingViewController.swift */; };
+		46C0B91C1DE6148B00085BD0 /* DisposeBag += .swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0B91B1DE6148B00085BD0 /* DisposeBag += .swift */; };
 		46C0B91E1DE691E600085BD0 /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C0B91D1DE691E600085BD0 /* BrightFutures.framework */; };
 		46CD47721D83808500C3D217 /* UIViewController + Alert + Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47711D83808500C3D217 /* UIViewController + Alert + Error.swift */; };
 /* End PBXBuildFile section */
@@ -248,6 +249,7 @@
 		46C099161CA072250015779C /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = Frameworks/TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		46C099171CA072250015779C /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = Frameworks/TwitterCore.framework; sourceTree = "<group>"; };
 		46C0991F1CA097640015779C /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoadingViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		46C0B91B1DE6148B00085BD0 /* DisposeBag += .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DisposeBag += .swift"; sourceTree = "<group>"; };
 		46C0B91D1DE691E600085BD0 /* BrightFutures.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BrightFutures.framework; path = Carthage/Build/iOS/BrightFutures.framework; sourceTree = "<group>"; };
 		46CD47711D83808500C3D217 /* UIViewController + Alert + Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alert + Error.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -551,6 +553,7 @@
 			isa = PBXGroup;
 			children = (
 				4644FBDA1C9E1535004ACBAF /* RxViewController.swift */,
+				46C0B91B1DE6148B00085BD0 /* DisposeBag += .swift */,
 			);
 			name = Rx;
 			sourceTree = "<group>";
@@ -859,6 +862,7 @@
 				46452E791D77AB6D0053EC4A /* FacebookProvider.swift in Sources */,
 				462358761D7789F3007947B6 /* FirebaseProvider.swift in Sources */,
 				4606A6701D8398CF00259AA1 /* Create.swift in Sources */,
+				46C0B91C1DE6148B00085BD0 /* DisposeBag += .swift in Sources */,
 				46387B5E1D8A0A9A00C7A9EB /* Compose.swift in Sources */,
 				4623587A1D778B69007947B6 /* AppCoordinator.swift in Sources */,
 				463913E11D7641590077D0E5 /* DismissesKeyboardOnTap.swift in Sources */,
