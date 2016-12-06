@@ -54,7 +54,6 @@
 		4636B6711D7F636200C4B43D /* FeedReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6701D7F636200C4B43D /* FeedReducer.swift */; };
 		4636B6731D7F637C00C4B43D /* FeedHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6721D7F637C00C4B43D /* FeedHandler.swift */; };
 		4636B6791D7F78E900C4B43D /* AsyncAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6781D7F78E900C4B43D /* AsyncAction.swift */; };
-		46387B611D8A0DF700C7A9EB /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46387B601D8A0DF700C7A9EB /* PostDetail.swift */; };
 		46387B631D8A0F4400C7A9EB /* PostDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46387B621D8A0F4400C7A9EB /* PostDetail.storyboard */; };
 		46387B651D8A0F8600C7A9EB /* PostDetailUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46387B641D8A0F8600C7A9EB /* PostDetailUI.swift */; };
 		463913E11D7641590077D0E5 /* DismissesKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */; };
@@ -169,7 +168,6 @@
 		4636B6701D7F636200C4B43D /* FeedReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedReducer.swift; sourceTree = "<group>"; };
 		4636B6721D7F637C00C4B43D /* FeedHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedHandler.swift; sourceTree = "<group>"; };
 		4636B6781D7F78E900C4B43D /* AsyncAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncAction.swift; sourceTree = "<group>"; };
-		46387B601D8A0DF700C7A9EB /* PostDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
 		46387B621D8A0F4400C7A9EB /* PostDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PostDetail.storyboard; path = wrytr/Legacy/Views/Main/PostDetail.storyboard; sourceTree = SOURCE_ROOT; };
 		46387B641D8A0F8600C7A9EB /* PostDetailUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailUI.swift; sourceTree = "<group>"; };
 		463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissesKeyboardOnTap.swift; sourceTree = "<group>"; };
@@ -482,7 +480,6 @@
 			isa = PBXGroup;
 			children = (
 				46387B621D8A0F4400C7A9EB /* PostDetail.storyboard */,
-				46387B601D8A0DF700C7A9EB /* PostDetail.swift */,
 				46387B641D8A0F8600C7A9EB /* PostDetailUI.swift */,
 				462894E51D37F593006044E1 /* PostDetailViewController.swift */,
 				462894E71D37F6B3006044E1 /* PublishReplyViewController.swift */,
@@ -863,7 +860,6 @@
 				46452E6B1D77997A0053EC4A /* Fabric.swift in Sources */,
 				46271FAE1CD2B02F007196B2 /* ChallengeTableView.swift in Sources */,
 				460D83F61DF6417E00DDDC8E /* AppConstants.swift in Sources */,
-				46387B611D8A0DF700C7A9EB /* PostDetail.swift in Sources */,
 				4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */,
 				46452E5B1D7795190053EC4A /* User.swift in Sources */,
 				46452E5E1D7795D20053EC4A /* UserType.swift in Sources */,
