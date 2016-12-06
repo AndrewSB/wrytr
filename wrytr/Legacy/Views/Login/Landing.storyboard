@@ -171,7 +171,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="J4R-EN-HXX">
                                                         <rect key="frame" x="22" y="0.0" width="331" height="30"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foP-2e-3fU">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foP-2e-3fU">
                                                                 <rect key="frame" x="0.0" y="0.0" width="221" height="30"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <state key="normal" title="tos policy">

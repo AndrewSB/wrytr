@@ -11,6 +11,7 @@ github "antitypical/Result"
 
 github "pinterest/PINRemoteImage"
 github "marketplacer/UnderKeyboard"
+github "eddiekaiger/SwiftyAttributes"
 
 github "devxoul/Then" ~> 2.0
 

@@ -1,11 +1,9 @@
 import UIKit
+import Library
+import Cordux
 import RxSwift
 import RxCocoa
-import RxOptional
-import Library
-import RxLibrary
-import ReSwift
-import Cordux
+import SwiftyAttributes
 
 extension Landing {
     typealias ViewController = LandingViewController
@@ -58,14 +56,16 @@ class LandingViewController: UIViewController {
 
     @IBOutlet weak var termsOfServiceButton: UIButton! {
         didSet {
-//            let title = tr(.loginLandingButtonTosTitle)
-//            let buttonRange = NSRange(ofString: "Terms & Privacy Policy", inString: title)
-//
-//            let attributedString = NSMutableAttributedString(string: title)
-//            attributedString.addAttributes([NSForegroundColorAttributeName: UIColor(named: .tint)], range: buttonRange)
-//            termsOfServiceButton.setAttributedTitle(attributedString, for: .normal)
-//
-//            termsOfServiceButton.titleLabel!.lineBreakMode = .byWordWrapping
+            let prefix = tr(.loginLandingButtonTosTitlePrefix)
+            let buttonText = tr(.loginLandingButtonTosTitleButton)
+            let suffix = tr(.loginLandingButtonTosTitleSuffix)
+
+            let textColor = termsOfServiceButton.currentTitleColor
+
+            let attributedString = prefix.withTextColor(textColor) + buttonText.withTextColor(UIColor(named: .tint)) + suffix.withTextColor(textColor)
+
+            termsOfServiceButton.titleLabel!.lineBreakMode = .byWordWrapping
+            termsOfServiceButton.setAttributedTitle(attributedString, for: .normal)
         }
     }
 
@@ -113,9 +113,9 @@ extension Landing.ViewController: Cordux.SubscriberType {
         _ = state.landingState.loading ? startLoading() : stopLoading()
         render(option: state.landingState.option, animated: true)
 
-        state.authenticationState.error.flatMap { err in
+        state.landingState.error.flatMap { err in
             let errorAlert = UIAlertController(title: err.title, message: err.description, preferredStyle: .alert)
-            errorAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { [weak self] in
+            errorAlert.addAction(UIAlertAction(title: tr(.errorDefaultOk), style: .cancel, handler: { [weak self] in
                 self!.dismissErrorSink.onNext(())
             }))
             self.present(errorAlert, animated: true, completion: .none)

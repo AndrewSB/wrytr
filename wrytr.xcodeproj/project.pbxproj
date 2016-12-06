@@ -97,6 +97,7 @@
 		466E74031CAFA72600EC0B7C /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466E74021CAFA72600EC0B7C /* Feed.storyboard */; };
 		467403401DF75CEC00EFEBC9 /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4674033F1DF75CEC00EFEBC9 /* Dispatcher.swift */; };
 		467403481DF76F2800EFEBC9 /* Readonly Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467403471DF76F2800EFEBC9 /* Readonly Store.swift */; };
+		4674034A1DF7820A00EFEBC9 /* SwiftyAttributes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 467403491DF7820A00EFEBC9 /* SwiftyAttributes.framework */; };
 		468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468614BE1C89CC3A002C2BAC /* AppDelegate.swift */; };
 		468614C61C89CC3A002C2BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468614C51C89CC3A002C2BAC /* Assets.xcassets */; };
 		468614C91C89CC3A002C2BAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */; };
@@ -216,6 +217,7 @@
 		466E74021CAFA72600EC0B7C /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Feed.storyboard; path = ../Legacy/Views/Main/Feed.storyboard; sourceTree = "<group>"; };
 		4674033F1DF75CEC00EFEBC9 /* Dispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
 		467403471DF76F2800EFEBC9 /* Readonly Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Readonly Store.swift"; sourceTree = "<group>"; };
+		467403491DF7820A00EFEBC9 /* SwiftyAttributes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyAttributes.framework; path = Carthage/Build/iOS/SwiftyAttributes.framework; sourceTree = "<group>"; };
 		468614BB1C89CC3A002C2BAC /* wrytr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wrytr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		468614BE1C89CC3A002C2BAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		468614C51C89CC3A002C2BAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				46678C981DBEC28B00E4007F /* RxParseCallbacks.framework in Frameworks */,
 				46C0B91E1DE691E600085BD0 /* BrightFutures.framework in Frameworks */,
 				460D83F81DF677AB00DDDC8E /* RxOptional.framework in Frameworks */,
+				4674034A1DF7820A00EFEBC9 /* SwiftyAttributes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +325,7 @@
 		461FD7521D760B30001BE92E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				467403491DF7820A00EFEBC9 /* SwiftyAttributes.framework */,
 				460D83F71DF677AB00DDDC8E /* RxOptional.framework */,
 				46C0B91D1DE691E600085BD0 /* BrightFutures.framework */,
 				46678C971DBEC28B00E4007F /* RxParseCallbacks.framework */,
@@ -790,6 +794,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/BrightFutures.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxOptional.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyAttributes.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (

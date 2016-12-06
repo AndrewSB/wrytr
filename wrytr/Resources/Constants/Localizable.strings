@@ -13,7 +13,9 @@
 "login.landing.emailbutton.title" = "%@ with Email";
 "login.landing.helper.login.title" = "Haven't registered yet?";
 "login.landing.helper.register.title" = "Already registered?";
-"login.landing.button.tos.title" = "By signing up, you agree to our Terms & Privacy Policy.";
+"login.landing.button.tos.title.prefix" = "By signing up, you agree to our ";
+"login.landing.button.tos.title.button" = "Terms & Privacy Policy";
+"login.landing.button.tos.title.suffix" = ".";
 
 "feed.title" = "Feed";
 
@@ -23,3 +25,5 @@
 
 "auth.error.facebook.cancelled" = "It seems as if you cancelled the facebook login? Try again.";
 "auth.error.facebook.generic" = "There was an error authenticating with Facebook, Try signing in again.";
+
+"error.default.ok" = "Ok";

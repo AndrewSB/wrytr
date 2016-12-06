@@ -13,10 +13,16 @@ enum L10n {
   case authErrorFacebookGeneric
   /// Create
   case createTitle
+  /// Ok
+  case errorDefaultOk
   /// Feed
   case feedTitle
-  /// By signing up, you agree to our Terms & Privacy Policy.
-  case loginLandingButtonTosTitle
+  /// Terms & Privacy Policy
+  case loginLandingButtonTosTitleButton
+  /// By signing up, you agree to our 
+  case loginLandingButtonTosTitlePrefix
+  /// .
+  case loginLandingButtonTosTitleSuffix
   /// %@ with Email
   case loginLandingEmailbuttonTitle(String)
   /// Haven't registered yet?
@@ -47,10 +53,16 @@ extension L10n: CustomStringConvertible {
         return L10n.tr(key: "auth.error.facebook.generic")
       case .createTitle:
         return L10n.tr(key: "create.title")
+      case .errorDefaultOk:
+        return L10n.tr(key: "error.default.ok")
       case .feedTitle:
         return L10n.tr(key: "feed.title")
-      case .loginLandingButtonTosTitle:
-        return L10n.tr(key: "login.landing.button.tos.title")
+      case .loginLandingButtonTosTitleButton:
+        return L10n.tr(key: "login.landing.button.tos.title.button")
+      case .loginLandingButtonTosTitlePrefix:
+        return L10n.tr(key: "login.landing.button.tos.title.prefix")
+      case .loginLandingButtonTosTitleSuffix:
+        return L10n.tr(key: "login.landing.button.tos.title.suffix")
       case .loginLandingEmailbuttonTitle(let p0):
         return L10n.tr(key: "login.landing.emailbutton.title", p0)
       case .loginLandingHelperLoginTitle:
