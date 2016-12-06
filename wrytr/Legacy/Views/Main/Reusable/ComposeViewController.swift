@@ -1,10 +1,70 @@
 import UIKit
 import Library
+import RxLibrary
 import RxSwift
+import RxCocoa
 import UnderKeyboard
 
-extension Compose {
+class Compose {
     typealias ViewController = ComposeViewController
+}
+
+class ComposeViewController: RxViewController {
+    private let characterLimit = App.Constants.composeCharacterCount
+    private let initialBottomPadding: CGFloat = 22
+    private let tabBarHeight: CGFloat = 49
+
+    private let keyboardObserver = UnderKeyboardObserver()
+
+    let postCreated = PublishSubject<String>()
+
+    @IBOutlet weak var profileImageView: RoundedImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var challengeTextView: UITextView!
+    @IBOutlet weak var characterCountLabel: UILabel!
+    @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
+
+}
+
+extension Compose.ViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        keyboardObserver.start()
+        keyboardObserver.willAnimateKeyboard = { height in
+            let isHidingKeyboard = height == 0
+
+            self.bottomLayoutConstraint.constant = isHidingKeyboard ? initialBottomPadding : height - tabBarHeight
+        }
+        keyboardObserver.animateKeyboard = { _ in self.view.layoutSubviews() }
+
+        // update the character count label when the text changes
+        disposeBag += challengeTextView.rx.textInput.text
+            // get the count
+            .map { text in text!.characters.count }
+            // turn the count into an attributed string
+            .map { count in
+                let countColor: UIColor = count >= self.characterLimit ? .red : .gray
+                let countString = generateAttributedString("\(count)", color: countColor)
+                let limitString = generateAttributedString("/\(self.characterLimit)", color: .black)
+                countString.append(limitString)
+                return countString
+            }
+            // update the label's size
+            .do(onNext: { [weak self] _ in self!.characterCountLabel.sizeToFit() })
+            // bind it to the label's text
+            .bindTo(self.characterCountLabel.rx.attributedText)
+
+        // whenever you hit enter, create a post
+        disposeBag += challengeTextView.rx.controlEvent(.editingDidEndOnExit)
+            // grab the text
+            .map { [weak self] in self!.challengeTextView.text! }
+            // create a post
+            .bindTo(postCreated)
+
+    }
+
 }
 
 extension Compose.ViewController {
@@ -13,51 +73,8 @@ extension Compose.ViewController {
     }
 }
 
-class ComposeViewController: InterfaceProvidingViewController {
-    let keyboardObserver = UnderKeyboardObserver()
+fileprivate func generateAttributedString(_ string: String, color: UIColor) -> NSMutableAttributedString {
+    let attributedString = NSAttributedString(string: string, attributes: [NSForegroundColorAttributeName: color])
 
-    var ui: UIType? // this is an antipattern, but I dont want do it right rn
-
-    @IBOutlet weak var profileImageView: RoundedImageView!
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var challengeTextView: UITextView!
-    @IBOutlet weak var characterCountLabel: UILabel!
-    @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
-
-    struct IB: Primitive {
-        let profile: RoundedImageView
-        let username: UILabel
-        let textView: UITextView
-        let characterCount: UILabel
-        let bottomConstraint: NSLayoutConstraint
-    }
-
-}
-
-extension ComposeViewController {
-
-    override func viewDidLoad() {
-        self.interface = IB(
-            profile: profileImageView,
-            username: usernameLabel,
-            textView: challengeTextView,
-            characterCount: characterCountLabel,
-            bottomConstraint: bottomLayoutConstraint
-        )
-
-        super.viewDidLoad()
-
-        keyboardObserver.start()
-        keyboardObserver.willAnimateKeyboard = { height in
-            let isHidingKeyboard = height == 0
-
-            let initialBottomPadding: CGFloat = 22
-            let tabBarHeight: CGFloat = 49
-
-            self.bottomLayoutConstraint.constant = isHidingKeyboard ? initialBottomPadding : height - tabBarHeight
-        }
-        keyboardObserver.animateKeyboard = { _ in self.view.layoutSubviews() }
-
-    }
-
+    return NSMutableAttributedString(attributedString: attributedString)
 }

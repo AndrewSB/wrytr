@@ -58,7 +58,7 @@ extension Authentication {
 
 extension Authentication {
     final class Reducer: Cordux.Reducer {
-        public func handleAction(_ action: Cordux.Action, state: AppState) -> AppState {
+        public func handleAction(_ action: Cordux.Action, state: App.State) -> App.State {
             var state = state
 
             switch action {
