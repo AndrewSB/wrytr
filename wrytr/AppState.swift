@@ -1,8 +1,15 @@
 import Cordux
 
-let store = Store(initialState: App.State(), reducer: appReducer, middlewares: [])
+let appStore = Cordux.Store<App.State>(initialState: App.State(), reducer: appReducer, middlewares: [])
 
-typealias Store = Cordux.Store<App.State>
+typealias StoreDependency = (
+    state: ReadonlyStore<App.State>,
+    dispatcher: Dispatcher<App.State>
+)
+let defaultStoreDependency: StoreDependency = (
+    state: ReadonlyStore(store: appStore),
+    dispatcher: Dispatcher(store: appStore)
+)
 
 class App {
     struct State: StateType {

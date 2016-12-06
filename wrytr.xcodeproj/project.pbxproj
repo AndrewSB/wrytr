@@ -95,6 +95,8 @@
 		466BD09E1CADAB09008DC0C3 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD09D1CADAB09008DC0C3 /* Firebase.framework */; };
 		466E73FD1CAF271A00EC0B7C /* Firebase+Rx Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E73FC1CAF271A00EC0B7C /* Firebase+Rx Auth.swift */; };
 		466E74031CAFA72600EC0B7C /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466E74021CAFA72600EC0B7C /* Feed.storyboard */; };
+		467403401DF75CEC00EFEBC9 /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4674033F1DF75CEC00EFEBC9 /* Dispatcher.swift */; };
+		467403481DF76F2800EFEBC9 /* Readonly Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467403471DF76F2800EFEBC9 /* Readonly Store.swift */; };
 		468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468614BE1C89CC3A002C2BAC /* AppDelegate.swift */; };
 		468614C61C89CC3A002C2BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468614C51C89CC3A002C2BAC /* Assets.xcassets */; };
 		468614C91C89CC3A002C2BAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */; };
@@ -212,6 +214,8 @@
 		466BD09D1CADAB09008DC0C3 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Frameworks/Firebase.framework; sourceTree = "<group>"; };
 		466E73FC1CAF271A00EC0B7C /* Firebase+Rx Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Firebase+Rx Auth.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		466E74021CAFA72600EC0B7C /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Feed.storyboard; path = ../Legacy/Views/Main/Feed.storyboard; sourceTree = "<group>"; };
+		4674033F1DF75CEC00EFEBC9 /* Dispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
+		467403471DF76F2800EFEBC9 /* Readonly Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Readonly Store.swift"; sourceTree = "<group>"; };
 		468614BB1C89CC3A002C2BAC /* wrytr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wrytr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		468614BE1C89CC3A002C2BAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		468614C51C89CC3A002C2BAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -590,6 +594,8 @@
 			isa = PBXGroup;
 			children = (
 				4636B6781D7F78E900C4B43D /* AsyncAction.swift */,
+				4674033F1DF75CEC00EFEBC9 /* Dispatcher.swift */,
+				467403471DF76F2800EFEBC9 /* Readonly Store.swift */,
 				460D83F91DF6797200DDDC8E /* Rx + ReSwift.swift */,
 				462A77D31D8883D200E6F6A0 /* CombinedReducer.swift */,
 				46452E6D1D779EAB0053EC4A /* AuthenticationState.swift */,
@@ -845,6 +851,7 @@
 				463913E11D7641590077D0E5 /* DismissesKeyboardOnTap.swift in Sources */,
 				46AE37531D7A3FD3005A89F3 /* Firebase+UserType.swift in Sources */,
 				4606A6721D8398D500259AA1 /* CreateReducer.swift in Sources */,
+				467403401DF75CEC00EFEBC9 /* Dispatcher.swift in Sources */,
 				462894E81D37F6B3006044E1 /* PublishReplyViewController.swift in Sources */,
 				46452E721D77A7E40053EC4A /* LandingReducer.swift in Sources */,
 				46452E6E1D779EAB0053EC4A /* AuthenticationState.swift in Sources */,
@@ -886,6 +893,7 @@
 				466E73FD1CAF271A00EC0B7C /* Firebase+Rx Auth.swift in Sources */,
 				4606A67E1D83991300259AA1 /* MeHandler.swift in Sources */,
 				4623EB5D1D88ABC9004880E3 /* PostState.swift in Sources */,
+				467403481DF76F2800EFEBC9 /* Readonly Store.swift in Sources */,
 				462358781D778B45007947B6 /* StartupViewController.swift in Sources */,
 				4623586E1D7788B5007947B6 /* UserService.swift in Sources */,
 				462894E61D37F593006044E1 /* PostDetailViewController.swift in Sources */,
