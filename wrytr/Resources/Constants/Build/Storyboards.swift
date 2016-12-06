@@ -118,12 +118,30 @@ struct StoryboardScene {
   enum LaunchScreen: StoryboardSceneType {
     static let storyboardName = "LaunchScreen"
   }
-  enum Me: StoryboardSceneType {
+  enum Me: String, StoryboardSceneType {
     static let storyboardName = "Me"
 
-    static func initialViewController() -> UINavigationController {
-      guard let vc = storyboard().instantiateInitialViewController() as? UINavigationController else {
+    static func initialViewController() -> MeNavigationController {
+      guard let vc = storyboard().instantiateInitialViewController() as? MeNavigationController else {
         fatalError("Failed to instantiate initialViewController for \(self.storyboardName)")
+      }
+      return vc
+    }
+
+    case meVCScene = "meVC"
+    static func instantiateMeVC() -> MeViewController {
+      guard let vc = StoryboardScene.Me.meVCScene.viewController() as? MeViewController
+      else {
+        fatalError("ViewController 'meVC' is not of the expected class MeViewController.")
+      }
+      return vc
+    }
+
+    case navConScene = "navCon"
+    static func instantiateNavCon() -> MeNavigationController {
+      guard let vc = StoryboardScene.Me.navConScene.viewController() as? MeNavigationController
+      else {
+        fatalError("ViewController 'navCon' is not of the expected class MeNavigationController.")
       }
       return vc
     }

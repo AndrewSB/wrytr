@@ -1,9 +1,22 @@
-//
-//  MeViewController.swift
-//  wrytr
-//
-//  Created by Andrew Breckenridge on 9/9/16.
-//  Copyright © 2016 Andrew Breckenridge. All rights reserved.
-//
+import UIKit
 
-import Foundation
+extension Me {
+    typealias ViewController = MeViewController
+    typealias NavigationController = MeNavigationController
+}
+
+class MeViewController: UIViewController {
+
+}
+
+extension Me.ViewController {
+    static func fromStoryboard() -> Me.ViewController {
+        return StoryboardScene.Me.instantiateMeVC()
+    }
+}
+
+class MeNavigationController: UINavigationController {
+    static func fromStoryboard() -> Me.NavigationController {
+        return StoryboardScene.Me.instantiateNavCon()
+    }
+}

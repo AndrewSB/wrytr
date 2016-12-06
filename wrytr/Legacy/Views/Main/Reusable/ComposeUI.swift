@@ -13,7 +13,7 @@ extension Compose {
 
         let postCreated: Observable<String>
 
-        fileprivate let internalDelegate = InternalDelegate()
+        fileprivate weak let internalDelegate = InternalDelegate()
 
         lazy var bindings: [Disposable] = [
             self.interface.textView.rx.textInput.text

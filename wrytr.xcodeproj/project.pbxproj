@@ -13,11 +13,10 @@
 		4606A6741D8398E600259AA1 /* CreateHander.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6731D8398E600259AA1 /* CreateHander.swift */; };
 		4606A6761D8398F300259AA1 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6751D8398F300259AA1 /* CreateViewController.swift */; };
 		4606A6781D8398FB00259AA1 /* CreateUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6771D8398FB00259AA1 /* CreateUI.swift */; };
-		4606A67A1D83990400259AA1 /* Me.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6791D83990400259AA1 /* Me.swift */; };
-		4606A67C1D83990B00259AA1 /* MeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A67B1D83990B00259AA1 /* MeViewModel.swift */; };
+		4606A67A1D83990400259AA1 /* MeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6791D83990400259AA1 /* MeCoordinator.swift */; };
+		4606A67C1D83990B00259AA1 /* MeReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A67B1D83990B00259AA1 /* MeReducer.swift */; };
 		4606A67E1D83991300259AA1 /* MeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A67D1D83991300259AA1 /* MeHandler.swift */; };
 		4606A6801D83991900259AA1 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A67F1D83991900259AA1 /* MeViewController.swift */; };
-		4606A6821D83992000259AA1 /* MeViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6811D83992000259AA1 /* MeViewUI.swift */; };
 		461345771D9A4925001ABAF2 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461345731D9A4925001ABAF2 /* FacebookCore.framework */; };
 		461345781D9A4925001ABAF2 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461345741D9A4925001ABAF2 /* FacebookLogin.framework */; };
 		461345791D9A4925001ABAF2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461345751D9A4925001ABAF2 /* FBSDKCoreKit.framework */; };
@@ -107,7 +106,6 @@
 		468D0E531CCED77A004250F6 /* RenderedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D0E521CCED77A004250F6 /* RenderedImageView.swift */; };
 		4691519F1DBEB89A00064A49 /* RxLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4691519E1DBEB89A00064A49 /* RxLibrary.framework */; };
 		46AE37471D78F768005A89F3 /* Then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AE37461D78F768005A89F3 /* Then.framework */; };
-		46AE37491D78F7BE005A89F3 /* LandingUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE37481D78F7BE005A89F3 /* LandingUI.swift */; };
 		46AE374F1D7A3559005A89F3 /* PresentableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE374E1D7A3559005A89F3 /* PresentableError.swift */; };
 		46AE37511D7A3B2C005A89F3 /* UIAlertAction + SimpleHandlerInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE37501D7A3B2C005A89F3 /* UIAlertAction + SimpleHandlerInit.swift */; };
 		46AE37531D7A3FD3005A89F3 /* Firebase+UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE37521D7A3FD3005A89F3 /* Firebase+UserType.swift */; };
@@ -122,10 +120,8 @@
 		46C099181CA072250015779C /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099151CA072250015779C /* TwitterKit.framework */; };
 		46C099191CA072250015779C /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 46C099161CA072250015779C /* TwitterKitResources.bundle */; };
 		46C0991A1CA072250015779C /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099171CA072250015779C /* TwitterCore.framework */; };
-		46C099201CA097640015779C /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0991F1CA097640015779C /* LoadingViewController.swift */; };
 		46C0B91C1DE6148B00085BD0 /* DisposeBag += .swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0B91B1DE6148B00085BD0 /* DisposeBag += .swift */; };
 		46C0B91E1DE691E600085BD0 /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C0B91D1DE691E600085BD0 /* BrightFutures.framework */; };
-		46CD47721D83808500C3D217 /* UIViewController + Alert + Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47711D83808500C3D217 /* UIViewController + Alert + Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,11 +131,10 @@
 		4606A6731D8398E600259AA1 /* CreateHander.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateHander.swift; sourceTree = "<group>"; };
 		4606A6751D8398F300259AA1 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		4606A6771D8398FB00259AA1 /* CreateUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUI.swift; sourceTree = "<group>"; };
-		4606A6791D83990400259AA1 /* Me.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Me.swift; sourceTree = "<group>"; };
-		4606A67B1D83990B00259AA1 /* MeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewModel.swift; sourceTree = "<group>"; };
+		4606A6791D83990400259AA1 /* MeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeCoordinator.swift; sourceTree = "<group>"; };
+		4606A67B1D83990B00259AA1 /* MeReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeReducer.swift; sourceTree = "<group>"; };
 		4606A67D1D83991300259AA1 /* MeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeHandler.swift; sourceTree = "<group>"; };
 		4606A67F1D83991900259AA1 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
-		4606A6811D83992000259AA1 /* MeViewUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewUI.swift; sourceTree = "<group>"; };
 		461345731D9A4925001ABAF2 /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = Carthage/Build/iOS/FacebookCore.framework; sourceTree = "<group>"; };
 		461345741D9A4925001ABAF2 /* FacebookLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookLogin.framework; path = Carthage/Build/iOS/FacebookLogin.framework; sourceTree = "<group>"; };
 		461345751D9A4925001ABAF2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Carthage/Build/iOS/FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -233,7 +228,6 @@
 		468D0E521CCED77A004250F6 /* RenderedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RenderedImageView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4691519E1DBEB89A00064A49 /* RxLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxLibrary.framework; path = Carthage/Build/iOS/RxLibrary.framework; sourceTree = "<group>"; };
 		46AE37461D78F768005A89F3 /* Then.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Then.framework; path = Carthage/Build/iOS/Then.framework; sourceTree = "<group>"; };
-		46AE37481D78F7BE005A89F3 /* LandingUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingUI.swift; sourceTree = "<group>"; };
 		46AE374E1D7A3559005A89F3 /* PresentableError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentableError.swift; sourceTree = "<group>"; };
 		46AE37501D7A3B2C005A89F3 /* UIAlertAction + SimpleHandlerInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertAction + SimpleHandlerInit.swift"; sourceTree = "<group>"; };
 		46AE37521D7A3FD3005A89F3 /* Firebase+UserType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+UserType.swift"; sourceTree = "<group>"; };
@@ -248,10 +242,8 @@
 		46C099151CA072250015779C /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = Frameworks/TwitterKit.framework; sourceTree = "<group>"; };
 		46C099161CA072250015779C /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = Frameworks/TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		46C099171CA072250015779C /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = Frameworks/TwitterCore.framework; sourceTree = "<group>"; };
-		46C0991F1CA097640015779C /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoadingViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		46C0B91B1DE6148B00085BD0 /* DisposeBag += .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DisposeBag += .swift"; sourceTree = "<group>"; };
 		46C0B91D1DE691E600085BD0 /* BrightFutures.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BrightFutures.framework; path = Carthage/Build/iOS/BrightFutures.framework; sourceTree = "<group>"; };
-		46CD47711D83808500C3D217 /* UIViewController + Alert + Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alert + Error.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,11 +290,10 @@
 		4606A66D1D8398C000259AA1 /* Me */ = {
 			isa = PBXGroup;
 			children = (
-				4606A6791D83990400259AA1 /* Me.swift */,
-				4606A67B1D83990B00259AA1 /* MeViewModel.swift */,
+				4606A6791D83990400259AA1 /* MeCoordinator.swift */,
+				4606A67B1D83990B00259AA1 /* MeReducer.swift */,
 				4606A67D1D83991300259AA1 /* MeHandler.swift */,
 				4606A67F1D83991900259AA1 /* MeViewController.swift */,
-				4606A6811D83992000259AA1 /* MeViewUI.swift */,
 			);
 			name = Me;
 			sourceTree = "<group>";
@@ -373,7 +364,6 @@
 				46452E551D7794BC0053EC4A /* Rx */,
 				46452E561D7794C50053EC4A /* UI */,
 				463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */,
-				46CD47711D83808500C3D217 /* UIViewController + Alert + Error.swift */,
 				46AE374E1D7A3559005A89F3 /* PresentableError.swift */,
 				46AE375C1D7AB85E005A89F3 /* URL + Decodable.swift */,
 				46452E671D77996D0053EC4A /* ThirdParty */,
@@ -461,7 +451,6 @@
 				46452E711D77A7E40053EC4A /* LandingReducer.swift */,
 				46452E751D77A7F30053EC4A /* LandingHandler.swift */,
 				46452E731D77A7ED0053EC4A /* LandingViewController.swift */,
-				46AE37481D78F7BE005A89F3 /* LandingUI.swift */,
 			);
 			name = Landing;
 			sourceTree = "<group>";
@@ -572,7 +561,6 @@
 			children = (
 				468D0E521CCED77A004250F6 /* RenderedImageView.swift */,
 				460573FD1DF248CA00C582A6 /* RoundedRenderedImageButton.swift */,
-				46C0991F1CA097640015779C /* LoadingViewController.swift */,
 				46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */,
 				462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */,
 				46AE37501D7A3B2C005A89F3 /* UIAlertAction + SimpleHandlerInit.swift */,
@@ -848,7 +836,6 @@
 			files = (
 				46AE37551D7A9B95005A89F3 /* Firebase+Rx SetData.swift in Sources */,
 				4644FBA51C9CC820004ACBAF /* Storyboards.swift in Sources */,
-				46AE37491D78F7BE005A89F3 /* LandingUI.swift in Sources */,
 				4644FBBE1C9CD686004ACBAF /* Colors.swift in Sources */,
 				4636B6731D7F637C00C4B43D /* FeedHandler.swift in Sources */,
 				46452E741D77A7ED0053EC4A /* LandingViewController.swift in Sources */,
@@ -856,7 +843,6 @@
 				4636B66F1D7F633400C4B43D /* FeedViewController.swift in Sources */,
 				4644FBC71C9D256B004ACBAF /* Localizable_Strings.swift in Sources */,
 				462F03261CE273D00031B1B1 /* UIStackExtension.swift in Sources */,
-				46C099201CA097640015779C /* LoadingViewController.swift in Sources */,
 				46452E761D77A7F30053EC4A /* LandingHandler.swift in Sources */,
 				4623587E1D778D9B007947B6 /* AuthenticationCoordinator.swift in Sources */,
 				46452E791D77AB6D0053EC4A /* FacebookProvider.swift in Sources */,
@@ -878,7 +864,7 @@
 				46387B651D8A0F8600C7A9EB /* PostDetailUI.swift in Sources */,
 				46452E7B1D77AB710053EC4A /* TwitterProvider.swift in Sources */,
 				462894EA1D37F6D7006044E1 /* PostResponsesViewController.swift in Sources */,
-				4606A67A1D83990400259AA1 /* Me.swift in Sources */,
+				4606A67A1D83990400259AA1 /* MeCoordinator.swift in Sources */,
 				4606A6801D83991900259AA1 /* MeViewController.swift in Sources */,
 				462358701D7788BC007947B6 /* PostService.swift in Sources */,
 				4606A6761D8398F300259AA1 /* CreateViewController.swift in Sources */,
@@ -896,8 +882,7 @@
 				462894ED1D37F78A006044E1 /* ComposeViewController.swift in Sources */,
 				4644FBB11C9CCE79004ACBAF /* Images.swift in Sources */,
 				4636B6711D7F636200C4B43D /* FeedReducer.swift in Sources */,
-				4606A67C1D83990B00259AA1 /* MeViewModel.swift in Sources */,
-				4606A6821D83992000259AA1 /* MeViewUI.swift in Sources */,
+				4606A67C1D83990B00259AA1 /* MeReducer.swift in Sources */,
 				46AE37511D7A3B2C005A89F3 /* UIAlertAction + SimpleHandlerInit.swift in Sources */,
 				4644FBA81C9CC9CB004ACBAF /* AppState.swift in Sources */,
 				46452E601D7797AC0053EC4A /* PostType.swift in Sources */,
@@ -910,7 +895,6 @@
 				46452E691D7799760053EC4A /* Facebook.swift in Sources */,
 				4606A6781D8398FB00259AA1 /* CreateUI.swift in Sources */,
 				466E73FD1CAF271A00EC0B7C /* Firebase+Rx Auth.swift in Sources */,
-				46CD47721D83808500C3D217 /* UIViewController + Alert + Error.swift in Sources */,
 				4606A67E1D83991300259AA1 /* MeHandler.swift in Sources */,
 				4623EB5D1D88ABC9004880E3 /* PostState.swift in Sources */,
 				462358781D778B45007947B6 /* StartupViewController.swift in Sources */,
