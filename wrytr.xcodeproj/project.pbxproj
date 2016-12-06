@@ -16,6 +16,7 @@
 		4606A67E1D83991300259AA1 /* MeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A67D1D83991300259AA1 /* MeHandler.swift */; };
 		4606A6801D83991900259AA1 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A67F1D83991900259AA1 /* MeViewController.swift */; };
 		460D83F61DF6417E00DDDC8E /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460D83F51DF6417E00DDDC8E /* AppConstants.swift */; };
+		460D83F81DF677AB00DDDC8E /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 460D83F71DF677AB00DDDC8E /* RxOptional.framework */; };
 		460D83FA1DF6797200DDDC8E /* Rx + ReSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460D83F91DF6797200DDDC8E /* Rx + ReSwift.swift */; };
 		461345771D9A4925001ABAF2 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461345731D9A4925001ABAF2 /* FacebookCore.framework */; };
 		461345781D9A4925001ABAF2 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461345741D9A4925001ABAF2 /* FacebookLogin.framework */; };
@@ -130,6 +131,7 @@
 		4606A67D1D83991300259AA1 /* MeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeHandler.swift; sourceTree = "<group>"; };
 		4606A67F1D83991900259AA1 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		460D83F51DF6417E00DDDC8E /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		460D83F71DF677AB00DDDC8E /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
 		460D83F91DF6797200DDDC8E /* Rx + ReSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rx + ReSwift.swift"; sourceTree = "<group>"; };
 		461345731D9A4925001ABAF2 /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = Carthage/Build/iOS/FacebookCore.framework; sourceTree = "<group>"; };
 		461345741D9A4925001ABAF2 /* FacebookLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookLogin.framework; path = Carthage/Build/iOS/FacebookLogin.framework; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				463913E31D7644C90077D0E5 /* UnderKeyboard.framework in Frameworks */,
 				46678C981DBEC28B00E4007F /* RxParseCallbacks.framework in Frameworks */,
 				46C0B91E1DE691E600085BD0 /* BrightFutures.framework in Frameworks */,
+				460D83F81DF677AB00DDDC8E /* RxOptional.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +318,7 @@
 		461FD7521D760B30001BE92E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				460D83F71DF677AB00DDDC8E /* RxOptional.framework */,
 				46C0B91D1DE691E600085BD0 /* BrightFutures.framework */,
 				46678C971DBEC28B00E4007F /* RxParseCallbacks.framework */,
 				4691519E1DBEB89A00064A49 /* RxLibrary.framework */,
@@ -779,6 +783,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxParseCallbacks.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/BrightFutures.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxOptional.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (

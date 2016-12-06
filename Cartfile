@@ -6,6 +6,7 @@ github "AndrewSB/RxParseCallback" "master"
 
 github "Thomvis/BrightFutures"
 github "ReactiveX/RxSwift" ~> 3.0
+github "RxSwiftCommunity/RxOptional"
 github "antitypical/Result"
 
 github "pinterest/PINRemoteImage"
