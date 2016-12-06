@@ -1,9 +1,5 @@
 extension Create {
-    class Handler: HandlerType {
-        let store: Store
+    class Handler {
 
-        init(store: Store) {
-            self.store = store
-        }
     }
 }

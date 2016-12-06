@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -51,18 +51,21 @@
                                     <constraint firstItem="vaI-ls-6oR" firstAttribute="top" secondItem="0jx-Ta-QcG" secondAttribute="top" id="xdp-nz-o3a"/>
                                 </constraints>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvr-1H-gvZ">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5O0-pS-L9C">
                                 <rect key="frame" x="16" y="177" width="343" height="441"/>
+                                <connections>
+                                    <segue destination="rfh-hv-Mfa" kind="embed" id="xTO-GX-eUa"/>
+                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="dvr-1H-gvZ" firstAttribute="leading" secondItem="uVT-8R-PJI" secondAttribute="leadingMargin" id="8gL-TR-7GF"/>
                             <constraint firstItem="0jx-Ta-QcG" firstAttribute="leading" secondItem="uVT-8R-PJI" secondAttribute="leading" id="Akg-6I-42D"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dvr-1H-gvZ" secondAttribute="trailing" id="DrS-e6-Vtv"/>
-                            <constraint firstItem="ql5-FI-LjR" firstAttribute="top" secondItem="dvr-1H-gvZ" secondAttribute="bottom" id="ITZ-Xq-F9c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5O0-pS-L9C" secondAttribute="trailing" id="E1p-lR-Zet"/>
                             <constraint firstItem="0jx-Ta-QcG" firstAttribute="top" secondItem="G5p-5F-YZx" secondAttribute="bottom" id="SUB-yj-UIY"/>
-                            <constraint firstItem="dvr-1H-gvZ" firstAttribute="top" secondItem="0jx-Ta-QcG" secondAttribute="bottom" constant="22" id="Yd3-Qo-Kg0"/>
+                            <constraint firstItem="ql5-FI-LjR" firstAttribute="top" secondItem="5O0-pS-L9C" secondAttribute="bottom" id="ivF-px-nCI"/>
+                            <constraint firstItem="5O0-pS-L9C" firstAttribute="leading" secondItem="uVT-8R-PJI" secondAttribute="leadingMargin" id="li2-KX-6Ni"/>
+                            <constraint firstItem="5O0-pS-L9C" firstAttribute="top" secondItem="0jx-Ta-QcG" secondAttribute="bottom" constant="22" id="qBB-83-ga9"/>
                             <constraint firstAttribute="trailing" secondItem="0jx-Ta-QcG" secondAttribute="trailing" id="xw2-TU-UAd"/>
                         </constraints>
                     </view>
@@ -72,9 +75,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="container" destination="dvr-1H-gvZ" id="jjT-dP-t9u"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ZO-qL-gGd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,6 +95,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3f-ON-0Mx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-813" y="365"/>
+        </scene>
+        <!--compose-->
+        <scene sceneID="fBX-qK-Sjt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Compose" referencedIdentifier="compose" id="rfh-hv-Mfa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bRN-g6-91O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-56" y="813"/>
         </scene>
     </scenes>
     <resources>

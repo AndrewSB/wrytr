@@ -3,6 +3,34 @@ import Library
 
 extension Create {
     typealias ViewController = CreateViewController
+    typealias NavigationController = CreateNavigationController
+}
+
+class CreateViewController: UIViewController {
+
+    var composeViewController: ComposeViewController!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.title = tr(.createTitle)
+
+        let localUser = store.state.authenticationState.user!
+
+        composeViewController.username.text = localUser.name
+        if let url = localUser.photo {
+            composeViewController.profile.pin_setImage(from: url)
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+
+        if let composeVC = segue.destination as? ComposeViewController {
+            self.composeViewController = composeVC
+        }
+    }
+
 }
 
 extension Create.ViewController {
@@ -15,40 +43,4 @@ class CreateNavigationController: UINavigationController {
     static func fromStoryboard() -> CreateNavigationController {
         return StoryboardScene.Create.instantiateCreateNav()
     }
-}
-
-class CreateViewController: InterfaceProvidingViewController {
-
-    fileprivate let composeViewController = StoryboardScene.Compose.instantiateCompose()
-    @IBOutlet weak var container: UIView!
-
-    struct IB: Primitive {
-        let profile: RoundedImageView
-        let username: UILabel
-        let textView: UITextView
-        let tabBarItem: UITabBarItem
-    }
-
-    override func viewDidLoad() {
-        self.addChildViewController(composeViewController)
-        self.container.addSubview(composeViewController.view)
-
-        let constraints = [
-            container.leftAnchor.constraint(equalTo: composeViewController.view.leftAnchor),
-            container.rightAnchor.constraint(equalTo: composeViewController.view.rightAnchor),
-            container.topAnchor.constraint(equalTo: composeViewController.view.topAnchor),
-            container.bottomAnchor.constraint(equalTo: composeViewController.view.bottomAnchor),
-        ]
-        NSLayoutConstraint.activate(constraints)
-
-        self.interface = IB(
-            profile: composeViewController.profileImageView,
-            username: composeViewController.usernameLabel,
-            textView: composeViewController.challengeTextView,
-            tabBarItem: tabBarItem
-        )
-
-        super.viewDidLoad()
-    }
-
 }

@@ -11,6 +11,8 @@ class FeedViewController: UIViewController, StoreSubscriber {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.title = tr(.feedTitle)
     }
 
     func newState(state: Feed.State) {

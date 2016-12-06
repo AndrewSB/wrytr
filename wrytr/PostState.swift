@@ -38,7 +38,7 @@ extension Post {
 extension Post {
 
     final class Reducer: Cordux.Reducer {
-        func handleAction(_ action: Cordux.Action, state: AppState) -> AppState {
+        func handleAction(_ action: Cordux.Action, state: App.State) -> App.State {
             var state = state
 
             switch action {

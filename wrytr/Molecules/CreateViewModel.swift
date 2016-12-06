@@ -1,3 +1,0 @@
-extension Create {
-    struct ViewModel {}
-}

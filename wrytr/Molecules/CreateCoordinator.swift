@@ -1,6 +1,6 @@
 import Cordux
 
-extension Create {
+class Create {
 
     class Coordinator: NavigationControllerCoordinator {
         enum RouteSegment: String, RouteConvertible {
