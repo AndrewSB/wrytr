@@ -3,13 +3,13 @@ import RxSwift
 import RxCocoa
 import Library
 import RxLibrary
-import Cordux
+import ReSwift
 
 extension Landing {
     typealias ViewController = LandingViewController
 }
 
-class LandingViewController: RxViewController {
+class LandingViewController: UIViewController {
     @IBOutlet weak var subtitle: UILabel! {
         didSet { subtitle.text = tr(.loginLandingSubtitle) }
     }
@@ -78,13 +78,33 @@ class LandingViewController: RxViewController {
     }
 }
 
-extension Landing.ViewController {
+extension Landing.ViewController: StoreSubscriber {
+    func newState(state: Landing.State) {
+        _ = state.loading ? self.showLoading() : hideLoading()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        state.error.flatMap { err in
+            let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: self.handler.errorOkTap)
+            self.presentError(error: err, actions: [okAction])
+        }
 
     }
 
+    func render(option: Landing.State.Option, animated: Bool) {
+        formContainer.layoutIfNeeded()
+        defer {
+            if animated {
+                UIView.animate(withDuration: 0.2) { self.formContainer.layoutIfNeeded() }
+            } else {
+                self.formContainer.layoutIfNeeded()
+            }
+        }
+
+        formHeader.text = tr(.loginLandingEmailbuttonTitle(option.worded))
+        usernameField.isHidden = option == .login
+        actionButton.set(title: option.worded)
+        helperButton.set(title: option.other.worded)
+        helperLabel.text = option.helperText
+    }
 }
 
 extension Landing.ViewController {

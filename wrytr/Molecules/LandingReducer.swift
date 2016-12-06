@@ -9,6 +9,27 @@ class Landing {
         enum Option {
             case login
             case register
+
+            var other: Option {
+                switch self {
+                case .login:    return .register
+                case .register: return .login
+                }
+            }
+
+            var worded: String {
+                switch self {
+                case .login:    return tr(.loginLandingLoginTitle)
+                case .register: return tr(.loginLandingRegisterTitle)
+                }
+            }
+
+            var helperText: String {
+                switch self {
+                case .login:    return tr(.loginLandingHelperLoginTitle)
+                case .register: return tr(.loginLandingHelperRegisterTitle)
+                }
+            }
         }
     }
 
@@ -31,14 +52,12 @@ extension Landing {
 
             case Authentication.Action.loggedIn:
                 state.loading = false
-                //state.route = [AppCoordinator.RouteSegment.home.rawValue] // TODO: what do we do here? We can't access the route
 
             case Authentication.Action.errorLoggingIn(let error):
                 state.loading = false
                 state.error = error
 
             case let action as Landing.Action:
-                // TODO: refactor this
                 switch action {
                 case .updateOption(let newOption):
                     state.option = newOption
@@ -48,19 +67,6 @@ extension Landing {
 
             default:
                 break
-            }
-
-            return state
-        }
-
-        private func handleLandingAction(action: Landing.Action, state: Landing.ViewModel) -> Landing.State {
-            var state = state
-
-            switch action {
-            case .updateOption(let newOption):
-                state.option = newOption
-            case .dismissError:
-                state.error = nil
             }
 
             return state
