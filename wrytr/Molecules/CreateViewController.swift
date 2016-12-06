@@ -1,5 +1,6 @@
 import UIKit
 import Library
+import Cordux
 
 extension Create {
     typealias ViewController = CreateViewController
@@ -17,9 +18,9 @@ class CreateViewController: UIViewController {
 
         let localUser = store.state.authenticationState.user!
 
-        composeViewController.username.text = localUser.name
+        composeViewController.usernameLabel.text = localUser.name
         if let url = localUser.photo {
-            composeViewController.profile.pin_setImage(from: url)
+            composeViewController.profileImageView.pin_setImage(from: url)
         }
     }
 
@@ -31,6 +32,14 @@ class CreateViewController: UIViewController {
         }
     }
 
+}
+
+extension Create.ViewController: Cordux.SubscriberType {
+    typealias StoreSubscriberStateType = App.State
+
+    public func newState(_ subscription: App.State) {
+
+    }
 }
 
 extension Create.ViewController {

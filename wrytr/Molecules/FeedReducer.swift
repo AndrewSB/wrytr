@@ -15,18 +15,18 @@ extension Feed {
 
     final class Reducer: Cordux.Reducer {
 
-        func handleAction(_ action: Cordux.Action, state: Feed.State) -> Feed.State {
-            let state = state
+        func handleAction(_ action: Cordux.Action, state: App.State) -> App.State {
+            var state = state
 
             switch action {
             case let Post.Action.loaded(posts):
-                state.posts = posts
+                state.feedState.posts = posts
 
             case let Post.Action.errorLoadingPosts(error):
-                state.error = error
+                state.feedState.error = error
 
             case Feed.Action.dismissError:
-                state.error = nil
+                state.feedState.error = nil
 
             default:
                 break

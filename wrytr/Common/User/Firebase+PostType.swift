@@ -70,7 +70,7 @@ extension Reactive where Base: Firebase {
                 return dictionariesWithUIDIncluded
             }.flatMap { json -> Observable<[Firebase.Post]> in
                 do {
-                    return .just(try [Firebase.Post].decode(json))
+                    return .just(try Array<Firebase.Post>.decode(json))
                 } catch { return .error(error) }
             }
     }

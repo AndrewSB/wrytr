@@ -4,6 +4,7 @@ import RxCocoa
 import Library
 import RxLibrary
 import ReSwift
+import Cordux
 
 extension Landing {
     typealias ViewController = LandingViewController
@@ -78,15 +79,16 @@ class LandingViewController: UIViewController {
     }
 }
 
-extension Landing.ViewController: StoreSubscriber {
-    func newState(state: Landing.State) {
-        _ = state.loading ? self.showLoading() : hideLoading()
+extension Landing.ViewController: Cordux.SubscriberType {
+    typealias StoreSubscriberStateType = App.State
 
-        state.error.flatMap { err in
-            let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: self.handler.errorOkTap)
+    func newState(_ state: App.State) {
+        _ = state.landingState.loading ? startLoading() : stopLoading()
+
+        state.authenticationState.error.flatMap { err in
+            let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: Handler.errorOkTap)
             self.presentError(error: err, actions: [okAction])
         }
-
     }
 
     func render(option: Landing.State.Option, animated: Bool) {

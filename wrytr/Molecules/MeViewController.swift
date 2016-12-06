@@ -1,4 +1,5 @@
 import UIKit
+import Cordux
 
 extension Me {
     typealias ViewController = MeViewController
@@ -7,6 +8,14 @@ extension Me {
 
 class MeViewController: UIViewController {
 
+}
+
+extension Me.ViewController: Cordux.SubscriberType {
+    typealias StoreSubscriberStateType = App.State
+
+    public func newState(_ subscription: App.State) {
+        
+    }
 }
 
 extension Me.ViewController {

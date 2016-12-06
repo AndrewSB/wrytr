@@ -7,6 +7,7 @@ extension Landing {
     class Output {
         private let disposeBag = DisposeBag()
 
+        // swiftlint:disable:next function_parameter_count
         init(facebookTap: ControlEvent<Void>,
              twitterTap: ControlEvent<Void>,
              username: ControlProperty<String>,

@@ -63,7 +63,22 @@ extension Authentication {
 
             switch action {
             case let authAction as Authentication.Action:
-                state.authenticationState = self.handleAction(authAction, state: state.authenticationState)
+                switch authAction {
+                case .loggedIn(let user):
+                    state.authenticationState.user = user
+                    state.authenticationState.error = nil
+                    state.route = [App.Coordinator.RouteSegment.home.rawValue]
+
+                case .errorLoggingIn(let error):
+                    state.authenticationState.error = error
+
+                case .loggedOut:
+                    state.authenticationState.error = nil
+                    state.authenticationState.user = nil
+                    state.route = [App.Coordinator.RouteSegment.auth.rawValue]
+
+                }
+
             default:
                 break
             }
@@ -71,26 +86,5 @@ extension Authentication {
             return state
         }
 
-        private func handleAction(_ action: Authentication.Action, state: App.State) -> App.State {
-            var state = state
-
-            switch action {
-            case .loggedIn(let user):
-                state.authenticationState.user = user
-                state.authenticationState.error = nil
-                state.route = [App.Coordinator.RouteSegment.home.rawValue]
-
-            case .errorLoggingIn(let error):
-                state.authenticationState.error = error
-
-            case .loggedOut:
-                state.authenticationState.error = nil
-                state.authenticationState.user = nil
-                state.route = [App.Coordinator.RouteSegment.auth.rawValue]
-
-            }
-
-            return state
-        }
     }
 }

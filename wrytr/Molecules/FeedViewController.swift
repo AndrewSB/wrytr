@@ -1,11 +1,11 @@
 import UIKit
-import ReSwift
+import Cordux
 
 extension Feed {
     typealias ViewController = FeedViewController
 }
 
-class FeedViewController: UIViewController, StoreSubscriber {
+class FeedViewController: UIViewController {
     @IBOutlet weak var newPopularControl: UISegmentedControl!
     @IBOutlet weak var tableView: ChallengeTableView!
 
@@ -14,8 +14,12 @@ class FeedViewController: UIViewController, StoreSubscriber {
 
         self.title = tr(.feedTitle)
     }
+}
 
-    func newState(state: Feed.State) {
+extension Feed.ViewController: Cordux.SubscriberType {
+    typealias StoreSubscriberStateType = App.State
+
+    func newState(_ state: App.State) {
         print(state)
     }
 }

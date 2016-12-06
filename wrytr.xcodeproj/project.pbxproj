@@ -55,7 +55,6 @@
 		4636B6731D7F637C00C4B43D /* FeedHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6721D7F637C00C4B43D /* FeedHandler.swift */; };
 		4636B6791D7F78E900C4B43D /* AsyncAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6781D7F78E900C4B43D /* AsyncAction.swift */; };
 		46387B631D8A0F4400C7A9EB /* PostDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46387B621D8A0F4400C7A9EB /* PostDetail.storyboard */; };
-		46387B651D8A0F8600C7A9EB /* PostDetailUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46387B641D8A0F8600C7A9EB /* PostDetailUI.swift */; };
 		463913E11D7641590077D0E5 /* DismissesKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */; };
 		463913E31D7644C90077D0E5 /* UnderKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463913E21D7644C90077D0E5 /* UnderKeyboard.framework */; };
 		463A75961D879E2E0030CFB2 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463A75951D879E2E0030CFB2 /* Himotoki.framework */; };
@@ -169,7 +168,6 @@
 		4636B6721D7F637C00C4B43D /* FeedHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedHandler.swift; sourceTree = "<group>"; };
 		4636B6781D7F78E900C4B43D /* AsyncAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncAction.swift; sourceTree = "<group>"; };
 		46387B621D8A0F4400C7A9EB /* PostDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PostDetail.storyboard; path = wrytr/Legacy/Views/Main/PostDetail.storyboard; sourceTree = SOURCE_ROOT; };
-		46387B641D8A0F8600C7A9EB /* PostDetailUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailUI.swift; sourceTree = "<group>"; };
 		463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissesKeyboardOnTap.swift; sourceTree = "<group>"; };
 		463913E21D7644C90077D0E5 /* UnderKeyboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UnderKeyboard.framework; path = Carthage/Build/iOS/UnderKeyboard.framework; sourceTree = "<group>"; };
 		463A75951D879E2E0030CFB2 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
@@ -480,7 +478,6 @@
 			isa = PBXGroup;
 			children = (
 				46387B621D8A0F4400C7A9EB /* PostDetail.storyboard */,
-				46387B641D8A0F8600C7A9EB /* PostDetailUI.swift */,
 				462894E51D37F593006044E1 /* PostDetailViewController.swift */,
 				462894E71D37F6B3006044E1 /* PublishReplyViewController.swift */,
 				462894E91D37F6D7006044E1 /* PostResponsesViewController.swift */,
@@ -846,7 +843,6 @@
 				462358801D778DA1007947B6 /* HomeCoordinator.swift in Sources */,
 				462F03181CE148CE0031B1B1 /* NoHairlineNavigationBar.swift in Sources */,
 				46AE374F1D7A3559005A89F3 /* PresentableError.swift in Sources */,
-				46387B651D8A0F8600C7A9EB /* PostDetailUI.swift in Sources */,
 				46452E7B1D77AB710053EC4A /* TwitterProvider.swift in Sources */,
 				462894EA1D37F6D7006044E1 /* PostResponsesViewController.swift in Sources */,
 				4606A67A1D83990400259AA1 /* MeCoordinator.swift in Sources */,

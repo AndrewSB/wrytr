@@ -9,7 +9,7 @@ extension Me {
 extension Me {
     final class Reducer: Cordux.Reducer {
 
-        func handleAction(_ action: Cordux.Action, state: Me.State) -> Me.State {
+        func handleAction(_ action: Cordux.Action, state: App.State) -> App.State {
 
             return state
         }

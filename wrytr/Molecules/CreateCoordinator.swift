@@ -14,7 +14,8 @@ class Create {
         init(store: Store) {
             self.store = store
 
-            let createVC = Create.make(withRouteSegment: RouteSegment.create, store: store)
+            let createVC = Create.ViewController.fromStoryboard()
+            store.subscribe(createVC)
             self.navigationController.setViewControllers([createVC], animated: false)
         }
 
