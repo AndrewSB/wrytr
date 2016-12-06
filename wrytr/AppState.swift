@@ -15,22 +15,26 @@ let defaultStoreDependency: StoreDependency = (
 class App {
     struct State: StateType {
         var route: Route = []
-        var landingState = Landing.State()
-        var feedState = Feed.State()
+
         var authenticationState = Authentication.State()
         var postState = Post.State()
+
+        var landingState = Landing.State()
+        var feedState = Feed.State()
+        var createState = Create.State()
+        var meState = Me.State()
     }
 }
+
+let appReducer = CombinedReducer([
+    Authentication.Reducer(),
+    Post.Reducer(),
+    viewModelReducers
+])
 
 fileprivate let viewModelReducers = CombinedReducer([
     Landing.Reducer(),
     Feed.Reducer(),
     Create.Reducer(),
     Me.Reducer()
-])
-
-let appReducer = CombinedReducer([
-    Authentication.Reducer(),
-    Post.Reducer(),
-    viewModelReducers
 ])

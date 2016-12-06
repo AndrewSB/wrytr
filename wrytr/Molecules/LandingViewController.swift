@@ -50,22 +50,22 @@ class LandingViewController: UIViewController {
         didSet { usernameField.configure() }
     }
     @IBOutlet weak var emailField: InsettableTextField! {
-        didSet { usernameField.configure() }
+        didSet { emailField.configure() }
     }
     @IBOutlet weak var passwordField: InsettableTextField! {
-        didSet { usernameField.configure() }
+        didSet { passwordField.configure() }
     }
 
     @IBOutlet weak var termsOfServiceButton: UIButton! {
         didSet {
-            let title = tr(.loginLandingButtonTosTitle)
-            let buttonRange = NSRange(ofString: "Terms & Privacy Policy", inString: title)
-
-            let attributedString = NSMutableAttributedString(string: title)
-            attributedString.addAttributes([NSForegroundColorAttributeName: UIColor(named: .tint)], range: buttonRange)
-            termsOfServiceButton.setAttributedTitle(attributedString, for: .normal)
-
-            termsOfServiceButton.titleLabel!.lineBreakMode = .byWordWrapping
+//            let title = tr(.loginLandingButtonTosTitle)
+//            let buttonRange = NSRange(ofString: "Terms & Privacy Policy", inString: title)
+//
+//            let attributedString = NSMutableAttributedString(string: title)
+//            attributedString.addAttributes([NSForegroundColorAttributeName: UIColor(named: .tint)], range: buttonRange)
+//            termsOfServiceButton.setAttributedTitle(attributedString, for: .normal)
+//
+//            termsOfServiceButton.titleLabel!.lineBreakMode = .byWordWrapping
         }
     }
 
@@ -78,17 +78,47 @@ class LandingViewController: UIViewController {
             helperButton.layer.borderWidth = 1
         }
     }
+
+    var controller: Landing.Controller!
+    let dismissErrorSink = PublishSubject<Void>()
 }
 
 extension Landing.ViewController: Cordux.SubscriberType {
     typealias StoreSubscriberStateType = App.State
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.controller = Landing.Controller(
+            input: (
+                button: (
+                    facebook: facebookButton.rx.tap,
+                    twitter: twitterButton.rx.tap,
+                    action: actionButton.rx.tap,
+                    switchOption: helperButton.rx.tap,
+                    dismissError: dismissErrorSink.asDriver(onErrorJustReturn: ())
+                ),
+                text: (
+                    username: usernameField.rx.text,
+                    email: emailField.rx.text,
+                    password: passwordField.rx.text
+                )
+            )
+        )
+
+        self.render(option: appStore.state.landingState.option, animated: false)
+    }
+
     func newState(_ state: App.State) {
         _ = state.landingState.loading ? startLoading() : stopLoading()
+        render(option: state.landingState.option, animated: true)
 
         state.authenticationState.error.flatMap { err in
-            let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: Handler.errorOkTap)
-            self.presentError(error: err, actions: [okAction])
+            let errorAlert = UIAlertController(title: err.title, message: err.description, preferredStyle: .alert)
+            errorAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { [weak self] in
+                self!.dismissErrorSink.onNext(())
+            }))
+            self.present(errorAlert, animated: true, completion: .none)
         }
     }
 

@@ -43,26 +43,26 @@ extension Landing {
 
     final class Reducer: Cordux.Reducer {
 
-        func handleAction(_ action: Cordux.Action, state: Landing.State) -> Landing.State {
+        func handleAction(_ action: Cordux.Action, state: App.State) -> App.State {
             var state = state
 
             switch action {
             case Authentication.Action.loggingIn:
-                state.loading = true
+                state.landingState.loading = true
 
             case Authentication.Action.loggedIn:
-                state.loading = false
+                state.landingState.loading = false
 
             case Authentication.Action.errorLoggingIn(let error):
-                state.loading = false
-                state.error = error
+                state.landingState.loading = false
+                state.landingState.error = error
 
             case let action as Landing.Action:
                 switch action {
                 case .updateOption(let newOption):
-                    state.option = newOption
+                    state.landingState.option = newOption
                 case .dismissError:
-                    state.error = nil
+                    state.landingState.error = nil
                 }
 
             default:
