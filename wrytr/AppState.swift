@@ -1,4 +1,5 @@
 import Cordux
+import RxCocoa
 
 let appStore = Cordux.Store<App.State>(initialState: App.State(), reducer: appReducer, middlewares: [])
 
