@@ -1,8 +1,6 @@
 import UIKit
 import Cordux
 
-let store = Store(initialState: AppState(), reducer: appReducer, middlewares: [])
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

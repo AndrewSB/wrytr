@@ -52,7 +52,7 @@ extension Reactive where Base: Firebase {
             .child(byAppendingPath: "posts")
             .queryOrdered(byChild: "date")
             .rx.observeEventOnce()
-            .map { arrayOfPostData -> Array<[String: AnyObject]> in
+            .map { arrayOfPostData -> [[String: AnyObject]] in
                 guard let json = arrayOfPostData.value as? [String : AnyObject] else {
                     // assume empty
                     return []
@@ -70,7 +70,7 @@ extension Reactive where Base: Firebase {
                 return dictionariesWithUIDIncluded
             }.flatMap { json -> Observable<[Firebase.Post]> in
                 do {
-                    return .just(try Array<Firebase.Post>.decode(json))
+                    return .just(try [Firebase.Post].decode(json))
                 } catch { return .error(error) }
             }
     }

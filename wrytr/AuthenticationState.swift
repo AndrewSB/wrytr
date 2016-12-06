@@ -20,34 +20,39 @@ extension Authentication {
         func facebookLogin() -> AsyncAction {
             return { state, store in
                 store.dispatch(Action.loggingIn)
-
                 neverDisposeBag += User.Service.facebookAuth().subscribe(authResponder)
             }
         }
 
-        private func authResponder(_ observer: AnyObserver<UserType>) {
-
-        }
-    }
-
-    static func signIn(_ params: User.Service.Auth) -> AsyncAction {
-        return { state, store in
-            store.dispatch(Action.loggingIn)
-
-            User.Service.auth(params: params).subscribe {
-                switch $0 {
-                case .next(let user):
-                    store.dispatch(Action.loggedIn(user))
-                case .error(let error):
-                    store.dispatch(Action.errorLoggingIn(error as! PresentableError))
-                case .completed:
-                    break
-                }
-            }.addDisposableTo(neverDisposeBag)
-
-            return nil
+        func twitterLogin() -> AsyncAction {
+            return { state, store in
+                store.dispatch(Action.loggingIn)
+                neverDisposeBag += User.Service.twitterAuth().subscribe(authResponder)
+            }
         }
 
+        func signup(name: String, email: String, password: String) -> AsyncAction {
+            return { state, store in
+                store.dispatch(Action.loggingIn)
+                neverDisposeBag += User.Service.signup(name: name, email: email, password: password).subscribe(authResponder)
+            }
+        }
+
+        func login(email: String, password: String) -> AsyncAction {
+            return { state, store in
+                store.dispatch(Action.loggingIn)
+                neverDisposeBag += User.Service.login(email: email, password: password).subscribe(authResponder)
+            }
+        }
+
+        private func authResponder(_ observer: Event<UserType>) {
+            switch event {
+            case .next(let user):   store.dispatch(Action.loggedIn(user))
+            case .error(let error): store.dispatch(Action.errorLoggingIn(error as! PresentableError))
+            case .completed:        break
+
+            }
+        }
     }
 }
 
@@ -55,7 +60,6 @@ extension Authentication {
     final class Reducer: Cordux.Reducer {
         public func handleAction(_ action: Cordux.Action, state: AppState) -> AppState {
             var state = state
-            print("dispatched: \(action)")
 
             switch action {
             case let authAction as Authentication.Action:
@@ -67,19 +71,23 @@ extension Authentication {
             return state
         }
 
-        private func handleAction(_ action: Authentication.Action, state: Authentication.State) -> Authentication.State {
+        private func handleAction(_ action: Authentication.Action, state: App.State) -> App.State {
             var state = state
 
             switch action {
-            case .loggingIn:
-                break
             case .loggedIn(let user):
-                state.user = user
+                state.authenticationState.user = user
+                state.authenticationState.error = nil
+                state.route = [App.Coordinator.RouteSegment.home.rawValue]
+
             case .errorLoggingIn(let error):
-                state.error = error
+                state.authenticationState.error = error
+
             case .loggedOut:
-                state.error = nil
-                state.user = nil
+                state.authenticationState.error = nil
+                state.authenticationState.user = nil
+                state.route = [App.Coordinator.RouteSegment.auth.rawValue]
+
             }
 
             return state
