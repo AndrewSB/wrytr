@@ -133,20 +133,20 @@ extension Landing.ViewController: Cordux.SubscriberType {
     }
 
     func render(option: Landing.State.Option, animated: Bool) {
-        formContainer.layoutIfNeeded()
+        formContainer?.layoutIfNeeded()
         defer {
             if animated {
-                UIView.animate(withDuration: 0.2) { self.formContainer.layoutIfNeeded() }
+                UIView.animate(withDuration: 0.2) { [weak self] in self?.formContainer?.layoutIfNeeded() }
             } else {
-                self.formContainer.layoutIfNeeded()
+                self.formContainer?.layoutIfNeeded()
             }
         }
 
-        formHeader.text = tr(.loginLandingEmailbuttonTitle(option.worded))
-        usernameField.isHidden = option == .login
-        actionButton.set(title: option.worded)
-        helperButton.set(title: option.other.worded)
-        helperLabel.text = option.helperText
+        formHeader?.text = tr(.loginLandingEmailbuttonTitle(option.worded))
+        usernameField?.isHidden = option == .login
+        actionButton?.set(title: option.worded)
+        helperButton?.set(title: option.other.worded)
+        helperLabel?.text = option.helperText
     }
 }
 
