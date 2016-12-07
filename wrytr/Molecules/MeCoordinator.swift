@@ -7,10 +7,10 @@ class Me { // swiftlint:disable:this type_name (Me)
             case me
         }
 
-        let store: Store
+        let store: Cordux.Store<App.State>
         let navigationController: UINavigationController = MeNavigationController.fromStoryboard()
 
-        init(store: Store) {
+        init(store: Cordux.Store<App.State>) {
             self.store = store
 
             let meVC = Me.ViewController.fromStoryboard()

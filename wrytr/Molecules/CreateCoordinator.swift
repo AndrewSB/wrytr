@@ -7,11 +7,11 @@ class Create {
             case create
         }
 
-        let store: Store
+        let store: Cordux.Store<App.State>
 
         let navigationController: UINavigationController = CreateNavigationController.fromStoryboard()
 
-        init(store: Store) {
+        init(store: Cordux.Store<App.State>) {
             self.store = store
 
             let createVC = Create.ViewController.fromStoryboard()

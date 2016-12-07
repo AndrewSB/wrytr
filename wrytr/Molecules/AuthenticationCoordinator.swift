@@ -10,13 +10,13 @@ extension Authentication {
             case landing
         }
 
-        let store: Store
+        let store: Cordux.Store<App.State>
 
         let navigationController = UINavigationController().then {
             $0.isNavigationBarHidden = true
         }
 
-        init(store: Store) {
+        init(store: Cordux.Store<App.State>) {
             self.store = store
 
             let landingVC = Landing.ViewController.fromStoryboard()

@@ -17,38 +17,42 @@ extension Authentication {
         case errorLoggingIn(PresentableError)
         case loggedOut
 
-        func facebookLogin() -> AsyncAction {
+        static func facebookLogin() -> Cordux.Store<App.State>.AsyncAction {
             return { state, store in
                 store.dispatch(Action.loggingIn)
-                neverDisposeBag += User.Service.facebookAuth().subscribe(authResponder)
+                User.Service.facebookAuth().subscribe(authResponder).addDisposableTo(neverDisposeBag)
+                return nil
             }
         }
 
-        func twitterLogin() -> AsyncAction {
+        static func twitterLogin() -> Cordux.Store<App.State>.AsyncAction {
             return { state, store in
                 store.dispatch(Action.loggingIn)
-                neverDisposeBag += User.Service.twitterAuth().subscribe(authResponder)
+                User.Service.twitterAuth().subscribe(authResponder).addDisposableTo(neverDisposeBag)
+                return nil
             }
         }
 
-        func signup(name: String, email: String, password: String) -> AsyncAction {
+        static func login(email: String, password: String) -> Cordux.Store<App.State>.AsyncAction {
             return { state, store in
                 store.dispatch(Action.loggingIn)
-                neverDisposeBag += User.Service.signup(name: name, email: email, password: password).subscribe(authResponder)
+                User.Service.login(email: email, password: password).subscribe(authResponder).addDisposableTo(neverDisposeBag)
+                return nil
             }
         }
 
-        func login(email: String, password: String) -> AsyncAction {
+        static func signup(name: String, email: String, password: String) -> Cordux.Store<App.State>.AsyncAction {
             return { state, store in
                 store.dispatch(Action.loggingIn)
-                neverDisposeBag += User.Service.login(email: email, password: password).subscribe(authResponder)
+                 User.Service.signup(name: name, email: email, password: password).subscribe(authResponder).addDisposableTo(neverDisposeBag)
+                return nil
             }
         }
 
-        private func authResponder(_ observer: Event<UserType>) {
+        private static func authResponder(_ event: Event<UserType>) {
             switch event {
-            case .next(let user):   store.dispatch(Action.loggedIn(user))
-            case .error(let error): store.dispatch(Action.errorLoggingIn(error as! PresentableError))
+            case .next(let user):   appStore.dispatch(Action.loggedIn(user))
+            case .error(let error): appStore.dispatch(Action.errorLoggingIn(error as! PresentableError))
             case .completed:        break
 
             }
@@ -64,6 +68,9 @@ extension Authentication {
             switch action {
             case let authAction as Authentication.Action:
                 switch authAction {
+                case .loggingIn:
+                    break
+
                 case .loggedIn(let user):
                     state.authenticationState.user = user
                     state.authenticationState.error = nil
@@ -76,7 +83,6 @@ extension Authentication {
                     state.authenticationState.error = nil
                     state.authenticationState.user = nil
                     state.route = [App.Coordinator.RouteSegment.auth.rawValue]
-
                 }
 
             default:

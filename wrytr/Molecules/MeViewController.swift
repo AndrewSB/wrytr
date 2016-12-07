@@ -14,7 +14,7 @@ extension Me.ViewController: Cordux.SubscriberType {
     typealias StoreSubscriberStateType = App.State
 
     public func newState(_ subscription: App.State) {
-        
+
     }
 }
 

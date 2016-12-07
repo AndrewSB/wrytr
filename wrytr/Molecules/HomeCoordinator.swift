@@ -12,7 +12,7 @@ extension Home {
             case create
             case me
 
-            func coordinator(withStore store: Store) -> AnyCoordinator {
+            func coordinator(withStore store: Cordux.Store<App.State>) -> AnyCoordinator {
                 switch self {
                 case .feed:
                     return Feed.Coordinator(store: store)
@@ -24,12 +24,12 @@ extension Home {
             }
         }
 
-        let store: Store
+        let store: Cordux.Store<App.State>
 
         let scenes: [Scene]
         let tabBarController = UITabBarController()
 
-        init(store: Store) {
+        init(store: Cordux.Store<App.State>) {
             self.store = store
             self.scenes = [RouteSegment.feed, RouteSegment.create, RouteSegment.me].map { route in
                 Scene(prefix: route.rawValue, coordinator: route.coordinator(withStore: store))
