@@ -1029,6 +1029,7 @@
 				INFOPLIST_FILE = "wrytr/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=80";
 				PRODUCT_BUNDLE_IDENTIFIER = tfw.wrytr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b7f9e188-1801-45d0-9432-5c51d5459a51";
@@ -1056,6 +1057,7 @@
 				INFOPLIST_FILE = "wrytr/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=80";
 				PRODUCT_BUNDLE_IDENTIFIER = tfw.wrytr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "754627de-0dcb-482b-8c8a-77fdfc88fdc3";
