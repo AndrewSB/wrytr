@@ -15,13 +15,6 @@ class CreateViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = tr(.createTitle)
-
-        let localUser = store.state.authenticationState.user!
-
-        composeViewController.usernameLabel.text = localUser.name
-        if let url = localUser.photo {
-            composeViewController.profileImageView.pin_setImage(from: url)
-        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -38,7 +31,12 @@ extension Create.ViewController: Cordux.SubscriberType {
     typealias StoreSubscriberStateType = App.State
 
     public func newState(_ subscription: App.State) {
+        let localUser = subscription.authenticationState.user!
 
+        composeViewController?.usernameLabel?.text = localUser.name
+        if let url = localUser.photo {
+            composeViewController?.profileImageView?.pin_setImage(from: url)
+        }
     }
 }
 
