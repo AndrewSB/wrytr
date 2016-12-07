@@ -13,7 +13,6 @@ class ReadonlyStore<State: StateType> {
     }
 
     func asDriver() -> Driver<State> {
-        return self.store.asObservable()
-            .asDriver(onErrorJustReturn: self.value)
+        return self.store.asObservable().asDriver(onErrorJustReturn: self.value)
     }
 }
