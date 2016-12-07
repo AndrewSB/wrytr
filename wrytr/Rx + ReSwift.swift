@@ -34,8 +34,14 @@ extension Cordux.Store: ReactiveStoreType {
         return Observable.create({ (observer) -> Disposable in
             let subscriber = ReactiveStoreSubscriber<ReactiveStoreState>()
             self.subscribe(subscriber)
-            self.subscribe(subscriber)
-            return Disposables.create { self.unsubscribe(subscriber) }
+
+            var disposeBag: DisposeBag! = DisposeBag()
+            subscriber.subject.asObservable().subscribe(observer).addDisposableTo(disposeBag)
+
+            return Disposables.create {
+                self.unsubscribe(subscriber)
+                disposeBag = nil
+            }
         })
     }
 
