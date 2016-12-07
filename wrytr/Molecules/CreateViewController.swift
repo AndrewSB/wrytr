@@ -31,7 +31,9 @@ extension Create.ViewController: Cordux.SubscriberType {
     typealias StoreSubscriberStateType = App.State
 
     public func newState(_ subscription: App.State) {
-        let localUser = subscription.authenticationState.user!
+        guard case let .loggedIn(localUser) = subscription.authenticationState.user else {
+            fatalError("You're trying to create something without being logged in")
+        }
 
         composeViewController?.usernameLabel?.text = localUser.name
         if let url = localUser.photo {

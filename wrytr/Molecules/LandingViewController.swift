@@ -110,15 +110,25 @@ extension Landing.ViewController: Cordux.SubscriberType {
     }
 
     func newState(_ state: App.State) {
-        _ = state.landingState.loading ? startLoading() : stopLoading()
         render(option: state.landingState.option, animated: true)
 
-        state.landingState.error.flatMap { err in
+        switch state.authenticationState.user {
+        case .loggingIn:
+            startLoading()
+
+        case .failedToLogin(let err):
+            stopLoading()
             let errorAlert = UIAlertController(title: err.title, message: err.description, preferredStyle: .alert)
             errorAlert.addAction(UIAlertAction(title: tr(.errorDefaultOk), style: .cancel, handler: { [weak self] in
                 self!.dismissErrorSink.onNext(())
             }))
             self.present(errorAlert, animated: true, completion: .none)
+
+        case .loggedOut:
+            stopLoading()
+
+        case .loggedIn:
+            stopLoading()
         }
     }
 

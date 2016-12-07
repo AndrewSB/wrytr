@@ -3,8 +3,7 @@ import Cordux
 
 extension App {
 
-    @UIApplicationMain
-    final class Delegate: UIResponder, UIApplicationDelegate {
+    @UIApplicationMain final class Delegate: UIResponder, UIApplicationDelegate {
 
         var window: UIWindow?
         var coordinator: App.Coordinator!

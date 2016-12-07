@@ -7,8 +7,17 @@ fileprivate let neverDisposeBag = DisposeBag()
 extension Authentication {
 
     struct State: ReSwift.StateType {
-        var user: UserType? = User.Service.authedUser
-        var error: PresentableError? = nil
+        var user: Auth = User.Service.authedUser.flatMap(Auth.loggedIn) ?? .loggedOut
+
+        /**
+         Expectations
+         */
+        enum Auth {
+            case loggedOut
+            case loggingIn
+            case failedToLogin(PresentableError)
+            case loggedIn(UserType)
+        }
     }
 
     enum Action: Cordux.Action {
@@ -69,19 +78,17 @@ extension Authentication {
             case let authAction as Authentication.Action:
                 switch authAction {
                 case .loggingIn:
-                    break
+                    state.authenticationState.user = .loggingIn
 
                 case .loggedIn(let user):
-                    state.authenticationState.user = user
-                    state.authenticationState.error = nil
+                    state.authenticationState.user = .loggedIn(user)
                     state.route = [App.Coordinator.RouteSegment.home.rawValue]
 
                 case .errorLoggingIn(let error):
-                    state.authenticationState.error = error
+                    state.authenticationState.user = .failedToLogin(error)
 
                 case .loggedOut:
-                    state.authenticationState.error = nil
-                    state.authenticationState.user = nil
+                    state.authenticationState.user = .loggedOut
                     state.route = [App.Coordinator.RouteSegment.auth.rawValue]
                 }
 
