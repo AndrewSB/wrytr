@@ -17,24 +17,24 @@ extension Post {
         case loadingPosts
         case loaded([PostType])
         case errorLoadingPosts(PresentableError)
-    }
 
-    static func loadPosts() -> Cordux.Store<App.State>.AsyncAction {
-        return { state, store in
-            store.dispatch(Action.loadingPosts)
+        static func loadPosts() -> Cordux.Store<App.State>.AsyncAction {
+            return { state, store in
+                store.dispatch(Action.loadingPosts)
 
-            Post.Service.getNewPosts().subscribe {
-                switch $0 {
-                case .next(let posts):
-                    store.dispatch(Action.loaded(posts))
-                case .error(let err):
-                    store.dispatch(Action.errorLoadingPosts(err as! PresentableError))
-                case .completed:
-                    break
-                }
-            }.addDisposableTo(neverDisposeBag)
-
-            return nil
+                Post.Service.getNewPosts().subscribe {
+                    switch $0 {
+                    case .next(let posts):
+                        store.dispatch(Action.loaded(posts))
+                    case .error(let err):
+                        store.dispatch(Action.errorLoadingPosts(err as! PresentableError))
+                    case .completed:
+                        break
+                    }
+                }.addDisposableTo(neverDisposeBag)
+                
+                return nil
+            }
         }
     }
 }
