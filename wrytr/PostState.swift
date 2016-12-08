@@ -7,6 +7,10 @@ extension Post {
 
     struct State {
         var posts: [PostType] = []
+
+        // TODO: think about how this action should be structured? Should it be a queue of actions instead of just one?
+        // this lets us express a loading & error state, but it's unfortunate that it can also hold a .loaded([PostType]) as well
+        var lastAction: Action = .loaded([])
     }
 
     enum Action: Cordux.Action {
@@ -15,7 +19,7 @@ extension Post {
         case errorLoadingPosts(PresentableError)
     }
 
-    static func loadPosts() -> AsyncAction {
+    static func loadPosts() -> Cordux.Store<App.State>.AsyncAction {
         return { state, store in
             store.dispatch(Action.loadingPosts)
 
@@ -42,8 +46,17 @@ extension Post {
             var state = state
 
             switch action {
-            case let Action.loaded(posts):
-                state.postState.posts = posts
+            case let postAction as Post.Action:
+                switch postAction {
+                case .loadingPosts:
+                    state.postState.lastAction = postAction
+                case .errorLoadingPosts:
+                    state.postState.lastAction = postAction
+                case .loaded(let posts):
+                    state.postState.lastAction = postAction
+                    state.postState.posts = posts // TODO: figure out how to resolve this. It should probably merge? Not replace the old posts
+                }
+
             default:
                 break
             }
