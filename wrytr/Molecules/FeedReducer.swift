@@ -2,12 +2,26 @@ import Cordux
 
 extension Feed {
     class State {
-        var posts: [PostType] = []
+        var postSource: Source = .friends
+        var postOrdering: Ordering = .popular
+
         var error: PresentableError? = nil
+
+        enum Source {
+            case friends
+            case everyone
+        }
+
+        enum Ordering {
+            case new
+            case popular
+        }
     }
 
     enum Action: Cordux.Action {
         case dismissError
+        case updateOrdering(State.Ordering)
+        case updateSource(State.Source)
     }
 }
 
@@ -16,17 +30,22 @@ extension Feed {
     final class Reducer: Cordux.Reducer {
 
         func handleAction(_ action: Cordux.Action, state: App.State) -> App.State {
-            var state = state
+            let state = state // TODO: why can this be a let? We're mutating this right below???
 
+            // TODO: refactor this. The abstraction of a Post.Action.errorLoadingPosts always pertaining to the feed is leaky
             switch action {
-            case let Post.Action.loaded(posts):
-                state.feedState.posts = posts
-
-            case let Post.Action.errorLoadingPosts(error):
+            case Post.Action.errorLoadingPosts(let error):
                 state.feedState.error = error
 
-            case Feed.Action.dismissError:
-                state.feedState.error = nil
+            case let feedAction as Feed.Action:
+                switch feedAction {
+                case .dismissError:
+                    state.feedState.error = nil
+                case .updateSource(let source):
+                    state.feedState.postSource = source
+                case .updateOrdering(let ordering):
+                    state.feedState.postOrdering = ordering
+                }
 
             default:
                 break

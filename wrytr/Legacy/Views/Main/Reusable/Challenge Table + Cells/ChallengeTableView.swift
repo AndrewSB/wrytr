@@ -5,15 +5,37 @@ import RxCocoa
 class ChallengeTableView: UITableView {
     fileprivate let disposeBag = DisposeBag()
 
-    fileprivate let sideInset: CGFloat = 14
+    fileprivate static let sideInset: CGFloat = 14
 
     let posts = Variable([PostType]())
+
+    private var _refreshControl: UIRefreshControl? // for pre-iOS 10
+    override var refreshControl: UIRefreshControl? {
+        get {
+            if #available(iOS 10, *) {
+                return super.refreshControl
+            } else {
+                return _refreshControl
+            }
+        }
+        set {
+            if #available(iOS 10, *) {
+                super.refreshControl = newValue // TODO: not sure if this is right
+            } else {
+                _refreshControl?.removeFromSuperview()
+                _refreshControl = newValue
+                if let rc = newValue { self.addSubview(rc) }
+            }
+        }
+    }
 }
 
 extension ChallengeTableView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+
+        self.refreshControl = UIRefreshControl()
 
         self.rowHeight = UITableViewAutomaticDimension
         self.estimatedRowHeight = 100
@@ -63,7 +85,7 @@ extension ChallengeTableView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "lol") as! ChallengeTableViewCell // swiftlint:disable:this force_cast
         let element = posts.value[indexPath.section]
 
-        cell.xInsets = sideInset
+        cell.xInsets = ChallengeTableView.sideInset
         cell.prompt.text = element.prompt
 
         User.Service.fetchUser(userID: element.author).map { $0.photo }
