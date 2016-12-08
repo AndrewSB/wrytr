@@ -98,6 +98,7 @@
 		467403401DF75CEC00EFEBC9 /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4674033F1DF75CEC00EFEBC9 /* Dispatcher.swift */; };
 		467403481DF76F2800EFEBC9 /* Readonly Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467403471DF76F2800EFEBC9 /* Readonly Store.swift */; };
 		4674034A1DF7820A00EFEBC9 /* SwiftyAttributes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 467403491DF7820A00EFEBC9 /* SwiftyAttributes.framework */; };
+		4674034C1DF9220B00EFEBC9 /* DismissOnReturnTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4674034B1DF9220B00EFEBC9 /* DismissOnReturnTextViewDelegate.swift */; };
 		468614BF1C89CC3A002C2BAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468614BE1C89CC3A002C2BAC /* AppDelegate.swift */; };
 		468614C61C89CC3A002C2BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468614C51C89CC3A002C2BAC /* Assets.xcassets */; };
 		468614C91C89CC3A002C2BAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468614C71C89CC3A002C2BAC /* LaunchScreen.storyboard */; };
@@ -218,6 +219,7 @@
 		4674033F1DF75CEC00EFEBC9 /* Dispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
 		467403471DF76F2800EFEBC9 /* Readonly Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Readonly Store.swift"; sourceTree = "<group>"; };
 		467403491DF7820A00EFEBC9 /* SwiftyAttributes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyAttributes.framework; path = Carthage/Build/iOS/SwiftyAttributes.framework; sourceTree = "<group>"; };
+		4674034B1DF9220B00EFEBC9 /* DismissOnReturnTextViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissOnReturnTextViewDelegate.swift; sourceTree = "<group>"; };
 		468614BB1C89CC3A002C2BAC /* wrytr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wrytr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		468614BE1C89CC3A002C2BAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		468614C51C89CC3A002C2BAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				46452E551D7794BC0053EC4A /* Rx */,
 				46452E561D7794C50053EC4A /* UI */,
 				463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */,
+				4674034B1DF9220B00EFEBC9 /* DismissOnReturnTextViewDelegate.swift */,
 				46AE374E1D7A3559005A89F3 /* PresentableError.swift */,
 				46AE375C1D7AB85E005A89F3 /* URL + Decodable.swift */,
 				46452E671D77996D0053EC4A /* ThirdParty */,
@@ -838,6 +841,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4674034C1DF9220B00EFEBC9 /* DismissOnReturnTextViewDelegate.swift in Sources */,
 				46AE37551D7A9B95005A89F3 /* Firebase+Rx SetData.swift in Sources */,
 				4644FBA51C9CC820004ACBAF /* Storyboards.swift in Sources */,
 				4644FBBE1C9CD686004ACBAF /* Colors.swift in Sources */,

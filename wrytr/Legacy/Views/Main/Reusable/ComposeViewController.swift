@@ -10,11 +10,11 @@ class Compose {
 }
 
 class ComposeViewController: RxViewController {
-    private let characterLimit = App.Constants.composeCharacterCount
-    private let initialBottomPadding: CGFloat = 22
-    private let tabBarHeight: CGFloat = 49
+    fileprivate static let characterLimit = App.Constants.composeCharacterCount
+    fileprivate static let initialBottomPadding: CGFloat = 22
+    fileprivate static let tabBarHeight: CGFloat = 49
 
-    private let keyboardObserver = UnderKeyboardObserver()
+    fileprivate let keyboardObserver = UnderKeyboardObserver()
 
     let postCreated = PublishSubject<String>()
 
@@ -35,19 +35,19 @@ extension Compose.ViewController {
         keyboardObserver.willAnimateKeyboard = { height in
             let isHidingKeyboard = height == 0
 
-            self.bottomLayoutConstraint.constant = isHidingKeyboard ? initialBottomPadding : height - tabBarHeight
+            self.bottomLayoutConstraint.constant = isHidingKeyboard ? Compose.ViewController.initialBottomPadding : height - Compose.ViewController.tabBarHeight
         }
         keyboardObserver.animateKeyboard = { _ in self.view.layoutSubviews() }
 
         // update the character count label when the text changes
-        disposeBag += challengeTextView.rx.textInput.text
+        challengeTextView.rx.textInput.text
             // get the count
             .map { text in text!.characters.count }
             // turn the count into an attributed string
             .map { count in
-                let countColor: UIColor = count >= self.characterLimit ? .red : .gray
+                let countColor: UIColor = count >= Compose.ViewController.characterLimit ? .red : .gray
                 let countString = generateAttributedString("\(count)", color: countColor)
-                let limitString = generateAttributedString("/\(self.characterLimit)", color: .black)
+                let limitString = generateAttributedString("/\(Compose.ViewController.characterLimit)", color: .black)
                 countString.append(limitString)
                 return countString
             }
@@ -55,14 +55,17 @@ extension Compose.ViewController {
             .do(onNext: { [weak self] _ in self!.characterCountLabel.sizeToFit() })
             // bind it to the label's text
             .bindTo(self.characterCountLabel.rx.attributedText)
+            .addDisposableTo(disposeBag)
 
         // whenever you hit enter, create a post
-        disposeBag += challengeTextView.rx.controlEvent(.editingDidEndOnExit)
+        challengeTextView.rx.didEndEditing
             // grab the text
-            .map { [weak self] in self!.challengeTextView.text! }
+            .map { [weak self] _ in self!.challengeTextView.text! }
             // create a post
             .bindTo(postCreated)
+            .addDisposableTo(disposeBag)
 
+        challengeTextView.delegate = DismissOnReturnTextViewDelegate()
     }
 
 }
