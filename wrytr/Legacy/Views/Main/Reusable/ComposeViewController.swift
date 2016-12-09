@@ -65,7 +65,7 @@ extension Compose.ViewController {
             .bindTo(postCreated)
             .addDisposableTo(disposeBag)
 
-        challengeTextView.delegate = DismissOnReturnTextViewDelegate()
+        challengeTextView.rx.setDelegate(DismissOnReturnTextViewDelegate()).addDisposableTo(disposeBag)
     }
 
 }
