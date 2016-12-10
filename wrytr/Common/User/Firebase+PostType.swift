@@ -10,7 +10,7 @@ extension Firebase {
         let prompt: String
 
         let author: UserID
-        fileprivate var internalReactions: [Reaction]
+        fileprivate(set) var internalReactions: [Reaction]
 
         var reactions: [ReactionType] { return internalReactions.map { $0 as ReactionType } }
     }

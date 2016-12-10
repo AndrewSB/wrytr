@@ -12,8 +12,11 @@ extension Feed {
 }
 
 class FeedViewController: RxViewController {
-    @IBOutlet weak var newPopularControl: UISegmentedControl!
-    @IBOutlet weak var tableView: ChallengeTableView!
+    @IBOutlet weak var tableView: ChallengeTableView! {
+        didSet {
+            tableView.segmentedControlSectionTitles = ["New", "Popular"]
+        }
+    }
 
     var controller: Feed.Controller!
 
@@ -30,7 +33,7 @@ class FeedViewController: RxViewController {
             inputs: (
                 pullToRefresh: tableView.refreshControl!.rx.controlEvent(.valueChanged),
                 source: .just(.friends),
-                ordering: newPopularControl.rx.value.map { value -> Feed.State.Ordering in
+                ordering: tableView.topSegmentedControl.rx.value.map { value -> Feed.State.Ordering in
                     switch value {
                     case 0: return .new
                     case 1: return .popular
