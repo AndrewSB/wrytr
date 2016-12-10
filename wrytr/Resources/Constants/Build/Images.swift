@@ -15,6 +15,7 @@
 enum Asset: String {
   case comment = "comment"
   case facebookLogo = "facebook-logo"
+  case followButton = "follow-button"
   case arrowLeft = "arrow-left"
   case elipses = "elipses"
   case iIcon = "i-icon"

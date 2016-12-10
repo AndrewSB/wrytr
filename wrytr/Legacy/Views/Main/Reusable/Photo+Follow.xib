@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfilePhoto" customModule="wrytr" customModuleProvider="target">
+            <connections>
+                <outlet property="accessory" destination="XcN-Y3-kro" id="qjc-C9-Fbt"/>
+                <outlet property="accessoryUnderlay" destination="KKK-Sm-khO" id="B9v-16-mXG"/>
+                <outlet property="avatar" destination="AhJ-1V-Vdq" id="f7X-sJ-jhJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProfilePhoto" customModule="wrytr" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKK-Sm-khO" customClass="RoundedView" customModule="Library">
+                    <rect key="frame" x="88.5" y="12" width="74" height="75"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VKv-AT-zgY">
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="100"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emailshare.png" translatesAutoresizingMaskIntoConstraints="NO" id="AhJ-1V-Vdq" customClass="RoundedImageView" customModule="Library">
+                            <rect key="frame" x="0.0" y="0.0" width="100.5" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="AhJ-1V-Vdq" secondAttribute="height" multiplier="1:1" id="XIh-xN-qiU"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcN-Y3-kro" customClass="RoundedButton">
+                            <rect key="frame" x="100.5" y="25" width="49.5" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="XcN-Y3-kro" secondAttribute="height" multiplier="1:1" id="jWB-Mi-VZC"/>
+                            </constraints>
+                            <state key="normal" image="follow-button"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="XcN-Y3-kro" firstAttribute="height" secondItem="AhJ-1V-Vdq" secondAttribute="height" multiplier="0.5" id="MwK-v3-Dz6"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="VKv-AT-zgY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2Zp-q8-suX"/>
+                <constraint firstAttribute="trailing" secondItem="VKv-AT-zgY" secondAttribute="trailing" id="6py-JT-Wpo"/>
+                <constraint firstAttribute="bottom" secondItem="VKv-AT-zgY" secondAttribute="bottom" id="CaJ-hV-VqE"/>
+                <constraint firstItem="XcN-Y3-kro" firstAttribute="centerX" secondItem="KKK-Sm-khO" secondAttribute="centerX" id="LDA-K2-8ju"/>
+                <constraint firstItem="KKK-Sm-khO" firstAttribute="height" secondItem="XcN-Y3-kro" secondAttribute="height" multiplier="1.5" id="Xe4-Ig-PQ0"/>
+                <constraint firstItem="XcN-Y3-kro" firstAttribute="centerY" secondItem="KKK-Sm-khO" secondAttribute="centerY" id="dfr-xA-KxL"/>
+                <constraint firstItem="KKK-Sm-khO" firstAttribute="width" secondItem="XcN-Y3-kro" secondAttribute="width" multiplier="1.5" id="h9b-PC-aNz"/>
+                <constraint firstItem="VKv-AT-zgY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hbX-Vm-fa7"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-82" y="-29"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="emailshare.png" width="240" height="197"/>
+        <image name="follow-button" width="49" height="51"/>
+    </resources>
+</document>

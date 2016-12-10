@@ -158,6 +158,18 @@ struct StoryboardScene {
       return vc
     }
   }
+  enum Profile: String, StoryboardSceneType {
+    static let storyboardName = "Profile"
+
+    case profileScene = "profile"
+    static func instantiateProfile() -> ProfileViewController {
+      guard let vc = StoryboardScene.Profile.profileScene.viewController() as? ProfileViewController
+      else {
+        fatalError("ViewController 'profile' is not of the expected class ProfileViewController.")
+      }
+      return vc
+    }
+  }
   enum Startup: StoryboardSceneType {
     static let storyboardName = "Startup"
 
