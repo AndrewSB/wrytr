@@ -5,12 +5,14 @@ import Firebase
 
 class ChallengeTableView: UITableView {
     fileprivate let disposeBag = DisposeBag()
+    fileprivate var segmentedControlDisposeBag = DisposeBag()
 
     fileprivate static let sideInset: CGFloat = 14
 
-    var topSegmentedControl: UISegmentedControl {
+    let selectedSegmentControlSection = Variable(0) // start with section 0
+    var topSegmentedControlValue: ControlProperty<Int> {
         let segmentedHeader = self.tableView(self, viewForHeaderInSection: 0) as! SegmentedTableViewHeaderFooterView
-        return segmentedHeader.segmentedControl
+        return segmentedHeader.selected
     }
 
     var segmentedControlSectionTitles: [String] = []
@@ -46,6 +48,7 @@ extension ChallengeTableView {
 
         self.rowHeight = UITableViewAutomaticDimension
         self.estimatedRowHeight = 100
+        self.backgroundColor = .white
 
         self.register(UINib(nibName: "ChallengeTableViewCell", bundle: nil), forCellReuseIdentifier: "lol")
         self.register(SegmentedTableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "segmentedControl")
@@ -55,10 +58,6 @@ extension ChallengeTableView {
         posts.asObservable()
             .subscribe(onNext: { [weak self] _ in self?.reloadData() })
             .addDisposableTo(disposeBag)
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-            self.posts.value.append(Firebase.Post(id: "", prompt: "idsbdabfiu", author: "facebook:10209194105510450", internalReactions: []))
-        }
     }
 
 }
@@ -71,31 +70,22 @@ extension ChallengeTableView: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) { // swiftlint:disable:this variable_name
-        view.tintColor = .clear
+//        view.tintColor = .clear // TODO: make sure this isn't needed
     }
 
-    // TODO: I needed to implement this & headerView(forSection section: Int). That might be bad in the future?
-    // If I didn't also implement `headerView(forSection section: Int)`, the app was crashing on launch because the header didn't exist when there were 0 rows
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return header(forSection: section)
-    }
-
-//    override func headerView(forSection section: Int) -> UITableViewHeaderFooterView? {
-//        return header(forSection: section)
-//    }
-
-    private func header(forSection section: Int) -> UITableViewHeaderFooterView? {
         switch section {
         case 0:
             let segmentHeader = self.dequeueReusableHeaderFooterView(withIdentifier: "segmentedControl") as! SegmentedTableViewHeaderFooterView
-            segmentHeader.segmentedControl.removeAllSegments()
-            self.segmentedControlSectionTitles.enumerated().forEach { idx, title in
-                segmentHeader.segmentedControl.insertSegment(withTitle: title, at: idx, animated: false)
-            }
+            segmentHeader.segments = self.segmentedControlSectionTitles
+            segmentHeader.selectedSegmentIndex = self.selectedSegmentControlSection.value
+            segmentHeader.tintColor = UIColor(named: .tint)
 
-            segmentHeader.backgroundColor = .red
-            segmentHeader.segmentedControl.backgroundColor = .yellow
+            segmentedControlDisposeBag = DisposeBag() // dispose of all the old ones before you grab the latest one
+            segmentHeader.selected.bindTo(selectedSegmentControlSection).addDisposableTo(segmentedControlDisposeBag)
+
             return segmentHeader
+
         default:
             return nil
         }
@@ -104,7 +94,7 @@ extension ChallengeTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
         case 0:
-            return 44
+            return 50
         default:
             return 10
         }

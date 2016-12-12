@@ -33,7 +33,7 @@ class FeedViewController: RxViewController {
             inputs: (
                 pullToRefresh: tableView.refreshControl!.rx.controlEvent(.valueChanged),
                 source: .just(.friends),
-                ordering: tableView.topSegmentedControl.rx.value.map { value -> Feed.State.Ordering in
+                ordering: tableView.topSegmentedControlValue.map { value -> Feed.State.Ordering in
                     switch value {
                     case 0: return .new
                     case 1: return .popular
