@@ -181,7 +181,7 @@
 		4623EB5C1D88ABC9004880E3 /* PostState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostState.swift; sourceTree = "<group>"; };
 		4623EB5E1D88B2A4004880E3 /* Firebase+PostType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+PostType.swift"; sourceTree = "<group>"; };
 		4623EB601D88C25D004880E3 /* CreateCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCoordinator.swift; sourceTree = "<group>"; };
-		4623EB641D88D322004880E3 /* Compose.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Compose.storyboard; path = ../../../../Resources/Compose.storyboard; sourceTree = "<group>"; };
+		4623EB641D88D322004880E3 /* Compose.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Compose.storyboard; sourceTree = "<group>"; };
 		46271FAA1CD2AB36007196B2 /* Library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Library.framework; path = Carthage/Build/iOS/Library.framework; sourceTree = "<group>"; };
 		46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ChallengeTableView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		462894E51D37F593006044E1 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
@@ -197,9 +197,9 @@
 		46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ExtendedNavbarView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4636B66E1D7F633400C4B43D /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		4636B6701D7F636200C4B43D /* FeedReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedReducer.swift; sourceTree = "<group>"; };
-		4636B6721D7F637C00C4B43D /* ChallengeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChallengeController.swift; path = ../../../../../Molecules/ChallengeController.swift; sourceTree = "<group>"; };
+		4636B6721D7F637C00C4B43D /* ChallengeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeController.swift; sourceTree = "<group>"; };
 		4636B6781D7F78E900C4B43D /* AsyncAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncAction.swift; sourceTree = "<group>"; };
-		46387B621D8A0F4400C7A9EB /* PostDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PostDetail.storyboard; path = wrytr/Legacy/Views/Main/PostDetail.storyboard; sourceTree = SOURCE_ROOT; };
+		46387B621D8A0F4400C7A9EB /* PostDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PostDetail.storyboard; sourceTree = "<group>"; };
 		463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissesKeyboardOnTap.swift; sourceTree = "<group>"; };
 		463913E21D7644C90077D0E5 /* UnderKeyboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UnderKeyboard.framework; path = Carthage/Build/iOS/UnderKeyboard.framework; sourceTree = "<group>"; };
 		463A75951D879E2E0030CFB2 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
@@ -229,9 +229,9 @@
 		46452E751D77A7F30053EC4A /* LandingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingController.swift; sourceTree = "<group>"; };
 		46452E781D77AB6D0053EC4A /* FacebookProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookProvider.swift; sourceTree = "<group>"; };
 		46452E7A1D77AB710053EC4A /* TwitterProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterProvider.swift; sourceTree = "<group>"; };
-		4648AA5C1DDC1D610004872D /* wrytr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = wrytr.entitlements; path = ../wrytr.entitlements; sourceTree = "<group>"; };
-		4658D6B91CC08919009527DF /* Create.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Create.storyboard; path = ../Legacy/Views/Main/Create.storyboard; sourceTree = "<group>"; };
-		4658D6BB1CC0891F009527DF /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Me.storyboard; path = ../Legacy/Views/Main/Me.storyboard; sourceTree = "<group>"; };
+		4648AA5C1DDC1D610004872D /* wrytr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wrytr.entitlements; sourceTree = "<group>"; };
+		4658D6B91CC08919009527DF /* Create.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Create.storyboard; sourceTree = "<group>"; };
+		4658D6BB1CC0891F009527DF /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		46678C971DBEC28B00E4007F /* RxParseCallbacks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxParseCallbacks.framework; path = Carthage/Build/iOS/RxParseCallbacks.framework; sourceTree = "<group>"; };
 		466BD0941CADA990008DC0C3 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		466BD0961CADA9FF008DC0C3 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
@@ -239,7 +239,7 @@
 		466BD09A1CADAA14008DC0C3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		466BD09D1CADAB09008DC0C3 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Frameworks/Firebase.framework; sourceTree = "<group>"; };
 		466E73FC1CAF271A00EC0B7C /* Firebase+Rx Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Firebase+Rx Auth.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		466E74021CAFA72600EC0B7C /* Challenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Challenge.storyboard; path = ../../Challenge.storyboard; sourceTree = "<group>"; };
+		466E74021CAFA72600EC0B7C /* Challenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Challenge.storyboard; sourceTree = "<group>"; };
 		4674033F1DF75CEC00EFEBC9 /* Dispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
 		467403471DF76F2800EFEBC9 /* Readonly Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Readonly Store.swift"; sourceTree = "<group>"; };
 		467403491DF7820A00EFEBC9 /* SwiftyAttributes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyAttributes.framework; path = Carthage/Build/iOS/SwiftyAttributes.framework; sourceTree = "<group>"; };
@@ -259,7 +259,7 @@
 		46AE37521D7A3FD3005A89F3 /* Firebase+UserType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+UserType.swift"; sourceTree = "<group>"; };
 		46AE37541D7A9B95005A89F3 /* Firebase+Rx SetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+Rx SetData.swift"; sourceTree = "<group>"; };
 		46AE375C1D7AB85E005A89F3 /* URL + Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL + Decodable.swift"; sourceTree = "<group>"; };
-		46BF97781C9B6DA700579066 /* Landing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Landing.storyboard; path = ../Legacy/Views/Login/Landing.storyboard; sourceTree = "<group>"; };
+		46BF97781C9B6DA700579066 /* Landing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Landing.storyboard; sourceTree = "<group>"; };
 		46C099011C9E34D10015779C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
 		46C099021C9E34D10015779C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
 		46C099031C9E34D10015779C /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Frameworks/Fabric.framework; sourceTree = "<group>"; };
@@ -325,7 +325,7 @@
 				468D0E501CCED4ED004250F6 /* ChallengeTableViewCell.swift */,
 				461BB5341DFB92FE00F9202A /* SegmentedTableViewHeaderFooterView.swift */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		4606A66D1D8398C000259AA1 /* Me */ = {
@@ -338,7 +338,7 @@
 				4606A67D1D83991300259AA1 /* MeHandler.swift */,
 				4606A67F1D83991900259AA1 /* MeViewController.swift */,
 			);
-			name = Me;
+			path = Me;
 			sourceTree = "<group>";
 		};
 		4606A66E1D8398C300259AA1 /* Create */ = {
@@ -350,7 +350,7 @@
 				4606A6731D8398E600259AA1 /* CreateHander.swift */,
 				4606A6751D8398F300259AA1 /* CreateViewController.swift */,
 			);
-			name = Create;
+			path = Create;
 			sourceTree = "<group>";
 		};
 		46184E031D89F883003ECFEB /* Compose */ = {
@@ -359,7 +359,7 @@
 				462894EC1D37F78A006044E1 /* ComposeViewController.swift */,
 				4623EB641D88D322004880E3 /* Compose.storyboard */,
 			);
-			name = Compose;
+			path = Compose;
 			sourceTree = "<group>";
 		};
 		461BB52F1DFB863300F9202A /* ProfilePicutre + Follow Button */ = {
@@ -368,7 +368,7 @@
 				461BB5301DFB865600F9202A /* Photo+Follow.xib */,
 				461BB5321DFB8A3000F9202A /* Profile+Photo.swift */,
 			);
-			name = "ProfilePicutre + Follow Button";
+			path = "ProfilePicutre + Follow Button";
 			sourceTree = "<group>";
 		};
 		461BB5361DFF573700F9202A /* Friends */ = {
@@ -378,7 +378,7 @@
 				46016ADF1E008EEA0082A9DA /* FriendsReducer.swift */,
 				461BB53D1DFF644900F9202A /* FriendsViewController.swift */,
 			);
-			name = Friends;
+			path = Friends;
 			sourceTree = "<group>";
 		};
 		461FD7521D760B30001BE92E /* Frameworks */ = {
@@ -430,6 +430,7 @@
 				46AE375C1D7AB85E005A89F3 /* URL + Decodable.swift */,
 				46452E671D77996D0053EC4A /* ThirdParty */,
 			);
+			name = Common;
 			path = Common;
 			sourceTree = "<group>";
 		};
@@ -501,7 +502,7 @@
 				4623586C1D7788AC007947B6 /* Post */,
 				4623586B1D7788A3007947B6 /* User */,
 			);
-			name = API;
+			path = API;
 			sourceTree = "<group>";
 		};
 		4623587B1D778D87007947B6 /* Landing */ = {
@@ -512,7 +513,7 @@
 				46452E751D77A7F30053EC4A /* LandingController.swift */,
 				46452E731D77A7ED0053EC4A /* LandingViewController.swift */,
 			);
-			name = Landing;
+			path = Landing;
 			sourceTree = "<group>";
 		};
 		4623587C1D778D8D007947B6 /* Feed */ = {
@@ -522,7 +523,7 @@
 				4636B6701D7F636200C4B43D /* FeedReducer.swift */,
 				4636B66E1D7F633400C4B43D /* FeedViewController.swift */,
 			);
-			name = Feed;
+			path = Feed;
 			sourceTree = "<group>";
 		};
 		46271FAC1CD2B00E007196B2 /* Reusable */ = {
@@ -534,8 +535,7 @@
 				462894E41D37F564006044E1 /* Challenge Nav + VC + Table + Cells */,
 				462894EB1D37F76D006044E1 /* Post Detail */,
 			);
-			name = Reusable;
-			path = ../Legacy/Views/Main/Reusable;
+			path = Reusable;
 			sourceTree = "<group>";
 		};
 		462894E41D37F564006044E1 /* Challenge Nav + VC + Table + Cells */ = {
@@ -545,8 +545,7 @@
 				46016ADD1E008B430082A9DA /* ChallengeReducer.swift */,
 				46016ADC1E008AF00082A9DA /* Views */,
 			);
-			name = "Challenge Nav + VC + Table + Cells";
-			path = "Challenge Table + Cells";
+			path = "Challenge Nav + VC + Table + Cells";
 			sourceTree = "<group>";
 		};
 		462894EB1D37F76D006044E1 /* Post Detail */ = {
@@ -566,7 +565,7 @@
 				461BB52D1DFB842300F9202A /* Profile.storyboard */,
 				461BB52B1DFB841D00F9202A /* ProfileViewController.swift */,
 			);
-			name = "User Screen";
+			path = "User Screen";
 			sourceTree = "<group>";
 		};
 		4644FBA21C9CC80A004ACBAF /* Constants */ = {
@@ -605,7 +604,7 @@
 				4644FBDA1C9E1535004ACBAF /* RxViewController.swift */,
 				46C0B91B1DE6148B00085BD0 /* DisposeBag += .swift */,
 			);
-			name = Rx;
+			path = Rx;
 			sourceTree = "<group>";
 		};
 		46452E561D7794C50053EC4A /* UI */ = {
@@ -614,7 +613,7 @@
 				46452E581D7794D70053EC4A /* Extensions */,
 				46452E571D7794C90053EC4A /* Subclasses */,
 			);
-			name = UI;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		46452E571D7794C90053EC4A /* Subclasses */ = {
@@ -627,7 +626,7 @@
 				46AE37501D7A3B2C005A89F3 /* UIAlertAction + SimpleHandlerInit.swift */,
 				46016ADA1E0088A20082A9DA /* ContainerViewController.swift */,
 			);
-			name = Subclasses;
+			path = Subclasses;
 			sourceTree = "<group>";
 		};
 		46452E581D7794D70053EC4A /* Extensions */ = {
@@ -636,7 +635,7 @@
 				462F03251CE273D00031B1B1 /* UIStackExtension.swift */,
 				462F03291CE2ADDF0031B1B1 /* NSRangeExtension.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		46452E5C1D7795BC0053EC4A /* Helper */ = {
@@ -644,8 +643,7 @@
 			children = (
 				46452E771D77AB550053EC4A /* Extensions */,
 			);
-			name = Helper;
-			path = User;
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		46452E671D77996D0053EC4A /* ThirdParty */ = {
@@ -655,7 +653,7 @@
 				46452E681D7799760053EC4A /* Facebook.swift */,
 				46452E6A1D77997A0053EC4A /* Fabric.swift */,
 			);
-			name = ThirdParty;
+			path = ThirdParty;
 			sourceTree = "<group>";
 		};
 		46452E6C1D779E980053EC4A /* State */ = {
@@ -669,7 +667,7 @@
 				46452E6D1D779EAB0053EC4A /* AuthenticationState.swift */,
 				4623EB5C1D88ABC9004880E3 /* PostState.swift */,
 			);
-			name = State;
+			path = State;
 			sourceTree = "<group>";
 		};
 		46452E771D77AB550053EC4A /* Extensions */ = {
@@ -681,7 +679,7 @@
 				46AE37521D7A3FD3005A89F3 /* Firebase+UserType.swift */,
 				4623EB5E1D88B2A4004880E3 /* Firebase+PostType.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		466BD09C1CADAAEF008DC0C3 /* Firebase dependencies */ = {
@@ -700,6 +698,7 @@
 			isa = PBXGroup;
 			children = (
 				468614BD1C89CC3A002C2BAC /* wrytr */,
+				462358651D7787AF007947B6 /* Common */,
 				468614BC1C89CC3A002C2BAC /* Products */,
 				461FD7521D760B30001BE92E /* Frameworks */,
 			);
@@ -721,7 +720,6 @@
 				460D83F51DF6417E00DDDC8E /* AppConstants.swift */,
 				46452E6C1D779E980053EC4A /* State */,
 				462358661D7787B4007947B6 /* Molecules */,
-				462358651D7787AF007947B6 /* Common */,
 				462358671D7787DD007947B6 /* Resources */,
 				4644FBBA1C9CD566004ACBAF /* Supporting Files */,
 			);
@@ -1092,7 +1090,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = wrytr/wrytr.entitlements;
+				CODE_SIGN_ENTITLEMENTS = wrytr/Resources/wrytr.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Rob Santwer (N8T89MCN97)";
 				CURRENT_PROJECT_VERSION = 19;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1120,7 +1118,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = wrytr/wrytr.entitlements;
+				CODE_SIGN_ENTITLEMENTS = wrytr/Resources/wrytr.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Rob Santwer (L8BYC3JY5Z)";
 				CURRENT_PROJECT_VERSION = 19;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
