@@ -50,7 +50,6 @@ extension ChallengeTableView {
         self.estimatedRowHeight = 100
         self.backgroundColor = .white
 
-        self.register(UINib(nibName: "ChallengeTableViewCell", bundle: nil), forCellReuseIdentifier: "lol")
         self.register(SegmentedTableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "segmentedControl")
 
         (dataSource, delegate) = (self, self)

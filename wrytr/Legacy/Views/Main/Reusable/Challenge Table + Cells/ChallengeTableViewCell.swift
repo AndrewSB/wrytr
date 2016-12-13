@@ -1,5 +1,4 @@
 import UIKit
-
 import Library
 
 class ChallengeTableViewCell: UITableViewCell {
@@ -31,6 +30,7 @@ class ChallengeTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var reply: RoundedButton! {
         didSet {
+            reply.set(title: tr(.challengeTableCellReplybuttonTitle))
             reply.layer.borderWidth = 1
             reply.layer.borderColor = UIColor.lightGray.cgColor
         }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46016ADB1E0088A20082A9DA /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46016ADA1E0088A20082A9DA /* ContainerViewController.swift */; };
 		460573FE1DF248CA00C582A6 /* RoundedRenderedImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460573FD1DF248CA00C582A6 /* RoundedRenderedImageButton.swift */; };
 		4606A6721D8398D500259AA1 /* CreateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6711D8398D500259AA1 /* CreateReducer.swift */; };
 		4606A6741D8398E600259AA1 /* CreateHander.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6731D8398E600259AA1 /* CreateHander.swift */; };
@@ -28,6 +29,8 @@
 		461BB5311DFB865600F9202A /* Photo+Follow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 461BB5301DFB865600F9202A /* Photo+Follow.xib */; };
 		461BB5331DFB8A3000F9202A /* Profile+Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB5321DFB8A3000F9202A /* Profile+Photo.swift */; };
 		461BB5351DFB92FE00F9202A /* SegmentedTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB5341DFB92FE00F9202A /* SegmentedTableViewHeaderFooterView.swift */; };
+		461BB53A1DFF584100F9202A /* ChallengeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB5391DFF584100F9202A /* ChallengeNavigationController.swift */; };
+		461BB53C1DFF584800F9202A /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB53B1DFF584800F9202A /* ChallengeViewController.swift */; };
 		461FD7551D760B30001BE92E /* PINCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461FD7531D760B30001BE92E /* PINCache.framework */; };
 		461FD7561D760B30001BE92E /* PINRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461FD7541D760B30001BE92E /* PINRemoteImage.framework */; };
 		462358631D7785C7007947B6 /* Cordux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462358621D7785C7007947B6 /* Cordux.framework */; };
@@ -56,7 +59,6 @@
 		462F03221CE267280031B1B1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462F03211CE267280031B1B1 /* Result.framework */; };
 		462F03261CE273D00031B1B1 /* UIStackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03251CE273D00031B1B1 /* UIStackExtension.swift */; };
 		462F032A1CE2ADDF0031B1B1 /* NSRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F03291CE2ADDF0031B1B1 /* NSRangeExtension.swift */; };
-		462F03301CE2CF1B0031B1B1 /* ChallengeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462F032F1CE2CF1B0031B1B1 /* ChallengeTableViewCell.xib */; };
 		46307D391CDD67A700E47A1C /* ExtendedNavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */; };
 		4636B66F1D7F633400C4B43D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B66E1D7F633400C4B43D /* FeedViewController.swift */; };
 		4636B6711D7F636200C4B43D /* FeedReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6701D7F636200C4B43D /* FeedReducer.swift */; };
@@ -100,7 +102,7 @@
 		466BD09B1CADAA14008DC0C3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD09A1CADAA14008DC0C3 /* Security.framework */; };
 		466BD09E1CADAB09008DC0C3 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD09D1CADAB09008DC0C3 /* Firebase.framework */; };
 		466E73FD1CAF271A00EC0B7C /* Firebase+Rx Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E73FC1CAF271A00EC0B7C /* Firebase+Rx Auth.swift */; };
-		466E74031CAFA72600EC0B7C /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466E74021CAFA72600EC0B7C /* Feed.storyboard */; };
+		466E74031CAFA72600EC0B7C /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466E74021CAFA72600EC0B7C /* Challenge.storyboard */; };
 		467403401DF75CEC00EFEBC9 /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4674033F1DF75CEC00EFEBC9 /* Dispatcher.swift */; };
 		467403481DF76F2800EFEBC9 /* Readonly Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467403471DF76F2800EFEBC9 /* Readonly Store.swift */; };
 		4674034A1DF7820A00EFEBC9 /* SwiftyAttributes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 467403491DF7820A00EFEBC9 /* SwiftyAttributes.framework */; };
@@ -132,6 +134,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		46016ADA1E0088A20082A9DA /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		460573FD1DF248CA00C582A6 /* RoundedRenderedImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedRenderedImageButton.swift; sourceTree = "<group>"; };
 		4606A6711D8398D500259AA1 /* CreateReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateReducer.swift; sourceTree = "<group>"; };
 		4606A6731D8398E600259AA1 /* CreateHander.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateHander.swift; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 		461BB5301DFB865600F9202A /* Photo+Follow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Photo+Follow.xib"; sourceTree = "<group>"; };
 		461BB5321DFB8A3000F9202A /* Profile+Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile+Photo.swift"; sourceTree = "<group>"; };
 		461BB5341DFB92FE00F9202A /* SegmentedTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		461BB5391DFF584100F9202A /* ChallengeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeNavigationController.swift; sourceTree = "<group>"; };
+		461BB53B1DFF584800F9202A /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		461FD7531D760B30001BE92E /* PINCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINCache.framework; path = Carthage/Build/iOS/PINCache.framework; sourceTree = "<group>"; };
 		461FD7541D760B30001BE92E /* PINRemoteImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINRemoteImage.framework; path = Carthage/Build/iOS/PINRemoteImage.framework; sourceTree = "<group>"; };
 		462358621D7785C7007947B6 /* Cordux.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cordux.framework; path = Carthage/Build/iOS/Cordux.framework; sourceTree = "<group>"; };
@@ -181,7 +186,6 @@
 		462F03211CE267280031B1B1 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		462F03251CE273D00031B1B1 /* UIStackExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackExtension.swift; sourceTree = "<group>"; };
 		462F03291CE2ADDF0031B1B1 /* NSRangeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRangeExtension.swift; sourceTree = "<group>"; };
-		462F032F1CE2CF1B0031B1B1 /* ChallengeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChallengeTableViewCell.xib; sourceTree = "<group>"; };
 		46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ExtendedNavbarView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4636B66E1D7F633400C4B43D /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		4636B6701D7F636200C4B43D /* FeedReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedReducer.swift; sourceTree = "<group>"; };
@@ -227,7 +231,7 @@
 		466BD09A1CADAA14008DC0C3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		466BD09D1CADAB09008DC0C3 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Frameworks/Firebase.framework; sourceTree = "<group>"; };
 		466E73FC1CAF271A00EC0B7C /* Firebase+Rx Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Firebase+Rx Auth.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		466E74021CAFA72600EC0B7C /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Feed.storyboard; path = ../Legacy/Views/Main/Feed.storyboard; sourceTree = "<group>"; };
+		466E74021CAFA72600EC0B7C /* Challenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Challenge.storyboard; path = ../../Challenge.storyboard; sourceTree = "<group>"; };
 		4674033F1DF75CEC00EFEBC9 /* Dispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
 		467403471DF76F2800EFEBC9 /* Readonly Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Readonly Store.swift"; sourceTree = "<group>"; };
 		467403491DF7820A00EFEBC9 /* SwiftyAttributes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyAttributes.framework; path = Carthage/Build/iOS/SwiftyAttributes.framework; sourceTree = "<group>"; };
@@ -482,7 +486,6 @@
 		4623587C1D778D8D007947B6 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				466E74021CAFA72600EC0B7C /* Feed.storyboard */,
 				462A77D51D8892B200E6F6A0 /* FeedCoordinator.swift */,
 				4636B6701D7F636200C4B43D /* FeedReducer.swift */,
 				4636B6721D7F637C00C4B43D /* FeedController.swift */,
@@ -497,21 +500,24 @@
 				461BB52F1DFB863300F9202A /* ProfilePicutre + Follow Button */,
 				46387B5F1D8A0D3000C7A9EB /* User Screen */,
 				46184E031D89F883003ECFEB /* Compose */,
-				462894E41D37F564006044E1 /* Challenge Table + Cells */,
+				462894E41D37F564006044E1 /* Challenge Nav + VC + Table + Cells */,
 				462894EB1D37F76D006044E1 /* Post Detail */,
 			);
 			name = Reusable;
 			path = ../Legacy/Views/Main/Reusable;
 			sourceTree = "<group>";
 		};
-		462894E41D37F564006044E1 /* Challenge Table + Cells */ = {
+		462894E41D37F564006044E1 /* Challenge Nav + VC + Table + Cells */ = {
 			isa = PBXGroup;
 			children = (
-				468D0E501CCED4ED004250F6 /* ChallengeTableViewCell.swift */,
+				466E74021CAFA72600EC0B7C /* Challenge.storyboard */,
+				461BB5391DFF584100F9202A /* ChallengeNavigationController.swift */,
+				461BB53B1DFF584800F9202A /* ChallengeViewController.swift */,
 				46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */,
+				468D0E501CCED4ED004250F6 /* ChallengeTableViewCell.swift */,
 				461BB5341DFB92FE00F9202A /* SegmentedTableViewHeaderFooterView.swift */,
-				462F032F1CE2CF1B0031B1B1 /* ChallengeTableViewCell.xib */,
 			);
+			name = "Challenge Nav + VC + Table + Cells";
 			path = "Challenge Table + Cells";
 			sourceTree = "<group>";
 		};
@@ -591,6 +597,7 @@
 				46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */,
 				462F03171CE148CE0031B1B1 /* NoHairlineNavigationBar.swift */,
 				46AE37501D7A3B2C005A89F3 /* UIAlertAction + SimpleHandlerInit.swift */,
+				46016ADA1E0088A20082A9DA /* ContainerViewController.swift */,
 			);
 			name = Subclasses;
 			sourceTree = "<group>";
@@ -764,13 +771,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				462358731D7788F5007947B6 /* Startup.storyboard in Resources */,
-				466E74031CAFA72600EC0B7C /* Feed.storyboard in Resources */,
+				466E74031CAFA72600EC0B7C /* Challenge.storyboard in Resources */,
 				462358821D77947F007947B6 /* strings-swift3.stencil in Resources */,
 				46387B631D8A0F4400C7A9EB /* PostDetail.storyboard in Resources */,
 				4658D6BA1CC08919009527DF /* Create.storyboard in Resources */,
 				4658D6BC1CC0891F009527DF /* Me.storyboard in Resources */,
 				4644FBBC1C9CD67D004ACBAF /* colors.txt in Resources */,
-				462F03301CE2CF1B0031B1B1 /* ChallengeTableViewCell.xib in Resources */,
 				46C099191CA072250015779C /* TwitterKitResources.bundle in Resources */,
 				461BB5311DFB865600F9202A /* Photo+Follow.xib in Resources */,
 				4623EB651D88D322004880E3 /* Compose.storyboard in Resources */,
@@ -872,6 +878,7 @@
 				4674034C1DF9220B00EFEBC9 /* DismissOnReturnTextViewDelegate.swift in Sources */,
 				46AE37551D7A9B95005A89F3 /* Firebase+Rx SetData.swift in Sources */,
 				4644FBA51C9CC820004ACBAF /* Storyboards.swift in Sources */,
+				46016ADB1E0088A20082A9DA /* ContainerViewController.swift in Sources */,
 				4644FBBE1C9CD686004ACBAF /* Colors.swift in Sources */,
 				4636B6731D7F637C00C4B43D /* FeedController.swift in Sources */,
 				46452E741D77A7ED0053EC4A /* LandingViewController.swift in Sources */,
@@ -879,6 +886,7 @@
 				46452E621D7797B00053EC4A /* Post.swift in Sources */,
 				4636B66F1D7F633400C4B43D /* FeedViewController.swift in Sources */,
 				4644FBC71C9D256B004ACBAF /* Localizable_Strings.swift in Sources */,
+				461BB53C1DFF584800F9202A /* ChallengeViewController.swift in Sources */,
 				462F03261CE273D00031B1B1 /* UIStackExtension.swift in Sources */,
 				46452E761D77A7F30053EC4A /* LandingController.swift in Sources */,
 				4623587E1D778D9B007947B6 /* AuthenticationCoordinator.swift in Sources */,
@@ -893,6 +901,7 @@
 				462894E81D37F6B3006044E1 /* PublishReplyViewController.swift in Sources */,
 				46452E721D77A7E40053EC4A /* LandingReducer.swift in Sources */,
 				46452E6E1D779EAB0053EC4A /* AuthenticationState.swift in Sources */,
+				461BB53A1DFF584100F9202A /* ChallengeNavigationController.swift in Sources */,
 				462358801D778DA1007947B6 /* HomeCoordinator.swift in Sources */,
 				462F03181CE148CE0031B1B1 /* NoHairlineNavigationBar.swift in Sources */,
 				46AE374F1D7A3559005A89F3 /* PresentableError.swift in Sources */,

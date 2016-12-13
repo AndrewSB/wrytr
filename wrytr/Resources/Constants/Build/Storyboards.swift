@@ -42,6 +42,34 @@ extension UIViewController {
 }
 
 struct StoryboardScene {
+  enum Challenge: String, StoryboardSceneType {
+    static let storyboardName = "Challenge"
+
+    static func initialViewController() -> ChallengeNavigationController {
+      guard let vc = storyboard().instantiateInitialViewController() as? ChallengeNavigationController else {
+        fatalError("Failed to instantiate initialViewController for \(self.storyboardName)")
+      }
+      return vc
+    }
+
+    case challengeNavScene = "challengeNav"
+    static func instantiateChallengeNav() -> ChallengeNavigationController {
+      guard let vc = StoryboardScene.Challenge.challengeNavScene.viewController() as? ChallengeNavigationController
+      else {
+        fatalError("ViewController 'challengeNav' is not of the expected class ChallengeNavigationController.")
+      }
+      return vc
+    }
+
+    case challengeVCScene = "challengeVC"
+    static func instantiateChallengeVC() -> ChallengeViewController {
+      guard let vc = StoryboardScene.Challenge.challengeVCScene.viewController() as? ChallengeViewController
+      else {
+        fatalError("ViewController 'challengeVC' is not of the expected class ChallengeViewController.")
+      }
+      return vc
+    }
+  }
   enum Compose: String, StoryboardSceneType {
     static let storyboardName = "Compose"
 
@@ -71,34 +99,6 @@ struct StoryboardScene {
       guard let vc = StoryboardScene.Create.createNavScene.viewController() as? CreateNavigationController
       else {
         fatalError("ViewController 'createNav' is not of the expected class CreateNavigationController.")
-      }
-      return vc
-    }
-  }
-  enum Feed: String, StoryboardSceneType {
-    static let storyboardName = "Feed"
-
-    static func initialViewController() -> FeedNavigationController {
-      guard let vc = storyboard().instantiateInitialViewController() as? FeedNavigationController else {
-        fatalError("Failed to instantiate initialViewController for \(self.storyboardName)")
-      }
-      return vc
-    }
-
-    case feedScene = "feed"
-    static func instantiateFeed() -> FeedViewController {
-      guard let vc = StoryboardScene.Feed.feedScene.viewController() as? FeedViewController
-      else {
-        fatalError("ViewController 'feed' is not of the expected class FeedViewController.")
-      }
-      return vc
-    }
-
-    case feedNavScene = "feedNav"
-    static func instantiateFeedNav() -> FeedNavigationController {
-      guard let vc = StoryboardScene.Feed.feedNavScene.viewController() as? FeedNavigationController
-      else {
-        fatalError("ViewController 'feedNav' is not of the expected class FeedNavigationController.")
       }
       return vc
     }
