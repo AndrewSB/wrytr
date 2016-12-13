@@ -11,6 +11,8 @@ enum L10n {
   case authErrorFacebookCancelled
   /// There was an error authenticating with Facebook, Try signing in again.
   case authErrorFacebookGeneric
+  /// Reply
+  case challengeTableCellReplybuttonTitle
   /// Create
   case createTitle
   /// Ok
@@ -51,6 +53,8 @@ extension L10n: CustomStringConvertible {
         return L10n.tr(key: "auth.error.facebook.cancelled")
       case .authErrorFacebookGeneric:
         return L10n.tr(key: "auth.error.facebook.generic")
+      case .challengeTableCellReplybuttonTitle:
+        return L10n.tr(key: "challenge.table.cell.replybutton.title")
       case .createTitle:
         return L10n.tr(key: "create.title")
       case .errorDefaultOk:

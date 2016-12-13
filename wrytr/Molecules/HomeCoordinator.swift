@@ -9,6 +9,7 @@ extension Home {
     class Coordinator: NSObject, TabBarControllerCoordinator {
         enum RouteSegment: String, RouteConvertible {
             case feed
+            case friends
             case create
             case me
 
@@ -16,10 +17,12 @@ extension Home {
                 switch self {
                 case .feed:
                     return Feed.Coordinator(store: store)
+                case .friends:
+                    return Friends.Coordinator(store: store)
                 case .create:
                     return Create.Coordinator(store: store)
                 case .me:
-                    return Feed.Coordinator(store: store)
+                    return Me.Coordinator(store: store)
                 }
             }
         }
@@ -31,7 +34,7 @@ extension Home {
 
         init(store: Cordux.Store<App.State>) {
             self.store = store
-            self.scenes = [RouteSegment.feed, RouteSegment.create, RouteSegment.me].map { route in
+            self.scenes = [RouteSegment.feed, RouteSegment.friends, RouteSegment.create, RouteSegment.me].map { route in
                 Scene(prefix: route.rawValue, coordinator: route.coordinator(withStore: store))
             }
             super.init()

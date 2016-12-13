@@ -21,6 +21,7 @@ class App {
 
         var landingState = Landing.State()
         var feedState = Feed.State()
+        var friendsState = Friends.State()
         var createState = Create.State()
         var meState = Me.State()
     }
@@ -35,6 +36,7 @@ let appReducer = CombinedReducer([
 fileprivate let viewModelReducers = CombinedReducer([
     Landing.Reducer(),
     Feed.Reducer(),
+    Friends.Reducer(),
     Create.Reducer(),
     Me.Reducer()
 ])

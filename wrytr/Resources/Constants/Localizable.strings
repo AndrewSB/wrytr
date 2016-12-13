@@ -17,6 +17,8 @@
 "login.landing.button.tos.title.button" = "Terms & Privacy Policy";
 "login.landing.button.tos.title.suffix" = ".";
 
+"challenge.table.cell.replybutton.title" = "Reply";
+
 "feed.title" = "Feed";
 
 "create.title" = "Create";

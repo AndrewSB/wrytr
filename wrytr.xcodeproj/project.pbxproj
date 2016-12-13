@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		46016ADB1E0088A20082A9DA /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46016ADA1E0088A20082A9DA /* ContainerViewController.swift */; };
+		46016ADE1E008B430082A9DA /* ChallengeReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46016ADD1E008B430082A9DA /* ChallengeReducer.swift */; };
+		46016AE01E008EEA0082A9DA /* FriendsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46016ADF1E008EEA0082A9DA /* FriendsReducer.swift */; };
 		460573FE1DF248CA00C582A6 /* RoundedRenderedImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460573FD1DF248CA00C582A6 /* RoundedRenderedImageButton.swift */; };
 		4606A6721D8398D500259AA1 /* CreateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6711D8398D500259AA1 /* CreateReducer.swift */; };
 		4606A6741D8398E600259AA1 /* CreateHander.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606A6731D8398E600259AA1 /* CreateHander.swift */; };
@@ -29,8 +31,10 @@
 		461BB5311DFB865600F9202A /* Photo+Follow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 461BB5301DFB865600F9202A /* Photo+Follow.xib */; };
 		461BB5331DFB8A3000F9202A /* Profile+Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB5321DFB8A3000F9202A /* Profile+Photo.swift */; };
 		461BB5351DFB92FE00F9202A /* SegmentedTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB5341DFB92FE00F9202A /* SegmentedTableViewHeaderFooterView.swift */; };
+		461BB5381DFF574300F9202A /* FriendsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB5371DFF574300F9202A /* FriendsCoordinator.swift */; };
 		461BB53A1DFF584100F9202A /* ChallengeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB5391DFF584100F9202A /* ChallengeNavigationController.swift */; };
 		461BB53C1DFF584800F9202A /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB53B1DFF584800F9202A /* ChallengeViewController.swift */; };
+		461BB53E1DFF644900F9202A /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB53D1DFF644900F9202A /* FriendsViewController.swift */; };
 		461FD7551D760B30001BE92E /* PINCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461FD7531D760B30001BE92E /* PINCache.framework */; };
 		461FD7561D760B30001BE92E /* PINRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461FD7541D760B30001BE92E /* PINRemoteImage.framework */; };
 		462358631D7785C7007947B6 /* Cordux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462358621D7785C7007947B6 /* Cordux.framework */; };
@@ -62,7 +66,7 @@
 		46307D391CDD67A700E47A1C /* ExtendedNavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */; };
 		4636B66F1D7F633400C4B43D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B66E1D7F633400C4B43D /* FeedViewController.swift */; };
 		4636B6711D7F636200C4B43D /* FeedReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6701D7F636200C4B43D /* FeedReducer.swift */; };
-		4636B6731D7F637C00C4B43D /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6721D7F637C00C4B43D /* FeedController.swift */; };
+		4636B6731D7F637C00C4B43D /* ChallengeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6721D7F637C00C4B43D /* ChallengeController.swift */; };
 		4636B6791D7F78E900C4B43D /* AsyncAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636B6781D7F78E900C4B43D /* AsyncAction.swift */; };
 		46387B631D8A0F4400C7A9EB /* PostDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46387B621D8A0F4400C7A9EB /* PostDetail.storyboard */; };
 		463913E11D7641590077D0E5 /* DismissesKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */; };
@@ -135,6 +139,8 @@
 
 /* Begin PBXFileReference section */
 		46016ADA1E0088A20082A9DA /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		46016ADD1E008B430082A9DA /* ChallengeReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeReducer.swift; sourceTree = "<group>"; };
+		46016ADF1E008EEA0082A9DA /* FriendsReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsReducer.swift; sourceTree = "<group>"; };
 		460573FD1DF248CA00C582A6 /* RoundedRenderedImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedRenderedImageButton.swift; sourceTree = "<group>"; };
 		4606A6711D8398D500259AA1 /* CreateReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateReducer.swift; sourceTree = "<group>"; };
 		4606A6731D8398E600259AA1 /* CreateHander.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateHander.swift; sourceTree = "<group>"; };
@@ -156,8 +162,10 @@
 		461BB5301DFB865600F9202A /* Photo+Follow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Photo+Follow.xib"; sourceTree = "<group>"; };
 		461BB5321DFB8A3000F9202A /* Profile+Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile+Photo.swift"; sourceTree = "<group>"; };
 		461BB5341DFB92FE00F9202A /* SegmentedTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		461BB5371DFF574300F9202A /* FriendsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsCoordinator.swift; sourceTree = "<group>"; };
 		461BB5391DFF584100F9202A /* ChallengeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeNavigationController.swift; sourceTree = "<group>"; };
 		461BB53B1DFF584800F9202A /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
+		461BB53D1DFF644900F9202A /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		461FD7531D760B30001BE92E /* PINCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINCache.framework; path = Carthage/Build/iOS/PINCache.framework; sourceTree = "<group>"; };
 		461FD7541D760B30001BE92E /* PINRemoteImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINRemoteImage.framework; path = Carthage/Build/iOS/PINRemoteImage.framework; sourceTree = "<group>"; };
 		462358621D7785C7007947B6 /* Cordux.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cordux.framework; path = Carthage/Build/iOS/Cordux.framework; sourceTree = "<group>"; };
@@ -189,7 +197,7 @@
 		46307D381CDD67A700E47A1C /* ExtendedNavbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ExtendedNavbarView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4636B66E1D7F633400C4B43D /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		4636B6701D7F636200C4B43D /* FeedReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedReducer.swift; sourceTree = "<group>"; };
-		4636B6721D7F637C00C4B43D /* FeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		4636B6721D7F637C00C4B43D /* ChallengeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChallengeController.swift; path = ../../../../../Molecules/ChallengeController.swift; sourceTree = "<group>"; };
 		4636B6781D7F78E900C4B43D /* AsyncAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncAction.swift; sourceTree = "<group>"; };
 		46387B621D8A0F4400C7A9EB /* PostDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PostDetail.storyboard; path = wrytr/Legacy/Views/Main/PostDetail.storyboard; sourceTree = SOURCE_ROOT; };
 		463913E01D7641590077D0E5 /* DismissesKeyboardOnTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissesKeyboardOnTap.swift; sourceTree = "<group>"; };
@@ -307,6 +315,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46016ADC1E008AF00082A9DA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				466E74021CAFA72600EC0B7C /* Challenge.storyboard */,
+				461BB5391DFF584100F9202A /* ChallengeNavigationController.swift */,
+				461BB53B1DFF584800F9202A /* ChallengeViewController.swift */,
+				46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */,
+				468D0E501CCED4ED004250F6 /* ChallengeTableViewCell.swift */,
+				461BB5341DFB92FE00F9202A /* SegmentedTableViewHeaderFooterView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		4606A66D1D8398C000259AA1 /* Me */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +369,16 @@
 				461BB5321DFB8A3000F9202A /* Profile+Photo.swift */,
 			);
 			name = "ProfilePicutre + Follow Button";
+			sourceTree = "<group>";
+		};
+		461BB5361DFF573700F9202A /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				461BB5371DFF574300F9202A /* FriendsCoordinator.swift */,
+				46016ADF1E008EEA0082A9DA /* FriendsReducer.swift */,
+				461BB53D1DFF644900F9202A /* FriendsViewController.swift */,
+			);
+			name = Friends;
 			sourceTree = "<group>";
 		};
 		461FD7521D760B30001BE92E /* Frameworks */ = {
@@ -411,6 +442,7 @@
 				4623587B1D778D87007947B6 /* Landing */,
 				4623587F1D778DA1007947B6 /* HomeCoordinator.swift */,
 				4623587C1D778D8D007947B6 /* Feed */,
+				461BB5361DFF573700F9202A /* Friends */,
 				4606A66E1D8398C300259AA1 /* Create */,
 				4606A66D1D8398C000259AA1 /* Me */,
 			);
@@ -488,7 +520,6 @@
 			children = (
 				462A77D51D8892B200E6F6A0 /* FeedCoordinator.swift */,
 				4636B6701D7F636200C4B43D /* FeedReducer.swift */,
-				4636B6721D7F637C00C4B43D /* FeedController.swift */,
 				4636B66E1D7F633400C4B43D /* FeedViewController.swift */,
 			);
 			name = Feed;
@@ -510,12 +541,9 @@
 		462894E41D37F564006044E1 /* Challenge Nav + VC + Table + Cells */ = {
 			isa = PBXGroup;
 			children = (
-				466E74021CAFA72600EC0B7C /* Challenge.storyboard */,
-				461BB5391DFF584100F9202A /* ChallengeNavigationController.swift */,
-				461BB53B1DFF584800F9202A /* ChallengeViewController.swift */,
-				46271FAD1CD2B02F007196B2 /* ChallengeTableView.swift */,
-				468D0E501CCED4ED004250F6 /* ChallengeTableViewCell.swift */,
-				461BB5341DFB92FE00F9202A /* SegmentedTableViewHeaderFooterView.swift */,
+				4636B6721D7F637C00C4B43D /* ChallengeController.swift */,
+				46016ADD1E008B430082A9DA /* ChallengeReducer.swift */,
+				46016ADC1E008AF00082A9DA /* Views */,
 			);
 			name = "Challenge Nav + VC + Table + Cells";
 			path = "Challenge Table + Cells";
@@ -880,11 +908,12 @@
 				4644FBA51C9CC820004ACBAF /* Storyboards.swift in Sources */,
 				46016ADB1E0088A20082A9DA /* ContainerViewController.swift in Sources */,
 				4644FBBE1C9CD686004ACBAF /* Colors.swift in Sources */,
-				4636B6731D7F637C00C4B43D /* FeedController.swift in Sources */,
+				4636B6731D7F637C00C4B43D /* ChallengeController.swift in Sources */,
 				46452E741D77A7ED0053EC4A /* LandingViewController.swift in Sources */,
 				461BB52C1DFB841D00F9202A /* ProfileViewController.swift in Sources */,
 				46452E621D7797B00053EC4A /* Post.swift in Sources */,
 				4636B66F1D7F633400C4B43D /* FeedViewController.swift in Sources */,
+				461BB5381DFF574300F9202A /* FriendsCoordinator.swift in Sources */,
 				4644FBC71C9D256B004ACBAF /* Localizable_Strings.swift in Sources */,
 				461BB53C1DFF584800F9202A /* ChallengeViewController.swift in Sources */,
 				462F03261CE273D00031B1B1 /* UIStackExtension.swift in Sources */,
@@ -903,11 +932,13 @@
 				46452E6E1D779EAB0053EC4A /* AuthenticationState.swift in Sources */,
 				461BB53A1DFF584100F9202A /* ChallengeNavigationController.swift in Sources */,
 				462358801D778DA1007947B6 /* HomeCoordinator.swift in Sources */,
+				461BB53E1DFF644900F9202A /* FriendsViewController.swift in Sources */,
 				462F03181CE148CE0031B1B1 /* NoHairlineNavigationBar.swift in Sources */,
 				46AE374F1D7A3559005A89F3 /* PresentableError.swift in Sources */,
 				46452E7B1D77AB710053EC4A /* TwitterProvider.swift in Sources */,
 				462894EA1D37F6D7006044E1 /* PostResponsesViewController.swift in Sources */,
 				4606A67A1D83990400259AA1 /* MeCoordinator.swift in Sources */,
+				46016ADE1E008B430082A9DA /* ChallengeReducer.swift in Sources */,
 				4606A6801D83991900259AA1 /* MeViewController.swift in Sources */,
 				462358701D7788BC007947B6 /* PostService.swift in Sources */,
 				4606A6761D8398F300259AA1 /* CreateViewController.swift in Sources */,
@@ -923,6 +954,7 @@
 				461BB5331DFB8A3000F9202A /* Profile+Photo.swift in Sources */,
 				4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */,
 				46452E5B1D7795190053EC4A /* User.swift in Sources */,
+				46016AE01E008EEA0082A9DA /* FriendsReducer.swift in Sources */,
 				46452E5E1D7795D20053EC4A /* UserType.swift in Sources */,
 				468D0E511CCED4ED004250F6 /* ChallengeTableViewCell.swift in Sources */,
 				462894ED1D37F78A006044E1 /* ComposeViewController.swift in Sources */,

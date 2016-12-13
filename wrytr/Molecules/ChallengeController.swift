@@ -3,7 +3,7 @@ import RxSwift
 import RxCocoa
 import Cordux
 
-extension Feed {
+class Challenge {
     class Controller {
         private let disposeBag = DisposeBag()
 
@@ -19,14 +19,15 @@ extension Feed {
             ),
             store: StoreDependency = defaultStoreDependency
         ) {
+
             inputs.pullToRefresh.bindNext { store.dispatcher.dispatch(Post.Action.loadPosts()) }
                 .addDisposableTo(disposeBag)
 
-            inputs.ordering.map(Feed.Action.updateOrdering)
+            inputs.ordering.map(Challenge.Action.updateOrdering)
                 .bindNext(store.dispatcher.dispatch)
                 .addDisposableTo(disposeBag)
 
-            inputs.source.map(Feed.Action.updateSource)
+            inputs.source.map(Challenge.Action.updateSource)
                 .bindNext(store.dispatcher.dispatch)
                 .addDisposableTo(disposeBag)
 

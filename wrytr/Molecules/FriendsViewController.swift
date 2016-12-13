@@ -1,11 +1,8 @@
 import UIKit
 import Cordux
 import RxSwift
-import RxCocoa
-import RxLibrary
-import Then
 
-extension Feed {
+extension Friends {
 
     class ViewController: ContainerViewController<ChallengeViewController> {
         init(challengeViewController: ChallengeViewController) {
@@ -26,7 +23,7 @@ extension Feed {
             self.controller = Challenge.Controller(
                 inputs: (
                     pullToRefresh: contained.tableView.refreshControl!.rx.controlEvent(.valueChanged),
-                    source: .just(.everyone),
+                    source: .just(.friends),
                     ordering: contained.tableView.topSegmentedControlValue.map { value -> Challenge.State.Ordering in
                         switch value {
                         case 0: return .new
@@ -41,10 +38,11 @@ extension Feed {
                 )
             )
         }
-
     }
+
 }
-extension Feed.ViewController: Cordux.SubscriberType {
+
+extension Friends.ViewController: Cordux.SubscriberType {
     typealias StoreSubscriberStateType = App.State
 
     func newState(_ state: App.State) {
