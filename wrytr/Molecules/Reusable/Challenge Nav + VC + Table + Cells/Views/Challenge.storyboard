@@ -31,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="113"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CYv-4U-Pah" id="3j0-a7-K3k">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="112.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABp-Xe-4YS" customClass="RenderedImageButton" customModule="wrytr" customModuleProvider="target">
@@ -165,7 +165,6 @@
         <scene sceneID="jhx-pb-TpP">
             <objects>
                 <navigationController storyboardIdentifier="challengeNav" automaticallyAdjustsScrollViewInsets="NO" id="vNa-Bw-iUW" customClass="ChallengeNavigationController" customModule="wrytr" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icon-tabbar-feed" id="kdI-A5-8Ih"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VVv-3Z-ExB" customClass="NoHairlineNavigationBar" customModule="wrytr" customModuleProvider="target">
@@ -186,7 +185,6 @@
     <resources>
         <image name="comment" width="35" height="34"/>
         <image name="elipses" width="22" height="5"/>
-        <image name="icon-tabbar-feed" width="30" height="30"/>
         <image name="share" width="30" height="40"/>
         <image name="star" width="42" height="42"/>
     </resources>

@@ -19,6 +19,8 @@ enum L10n {
   case errorDefaultOk
   /// Feed
   case feedTitle
+  /// Friends
+  case friendTitle
   /// Terms & Privacy Policy
   case loginLandingButtonTosTitleButton
   /// By signing up, you agree to our 
@@ -61,6 +63,8 @@ extension L10n: CustomStringConvertible {
         return L10n.tr(key: "error.default.ok")
       case .feedTitle:
         return L10n.tr(key: "feed.title")
+      case .friendTitle:
+        return L10n.tr(key: "friend.title")
       case .loginLandingButtonTosTitleButton:
         return L10n.tr(key: "login.landing.button.tos.title.button")
       case .loginLandingButtonTosTitlePrefix:

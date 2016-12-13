@@ -2,9 +2,12 @@ import Cordux
 import RxCocoa
 import Then
 
-class Home {}
+protocol TabBarItemProviding: class {
+    static var tabItem: UITabBarItem { get }
+    var tabBarItem: UITabBarItem! { get set }
+}
 
-extension Home {
+class Home {
 
     class Coordinator: NSObject, TabBarControllerCoordinator {
         enum RouteSegment: String, RouteConvertible {
@@ -34,14 +37,22 @@ extension Home {
 
         init(store: Cordux.Store<App.State>) {
             self.store = store
-            self.scenes = [RouteSegment.feed, RouteSegment.friends, RouteSegment.create, RouteSegment.me].map { route in
+
+            let sceneRoutes: [RouteSegment] = [.feed, .friends, .create, .me]
+            self.scenes = sceneRoutes.map { route in
                 Scene(prefix: route.rawValue, coordinator: route.coordinator(withStore: store))
             }
+
             super.init()
 
             self.tabBarController.delegate = self
             self.tabBarController.viewControllers = self.scenes.map { scene in
-                scene.coordinator.rootViewController
+                let vc = scene.coordinator.rootViewController
+                guard let tabBarVC = scene.coordinator.rootViewController.unwrapNavCon() as? TabBarItemProviding else {
+                    fatalError()
+                }
+                vc.tabBarItem = type(of: tabBarVC).tabItem
+                return vc
             }
         }
     }

@@ -7,15 +7,14 @@ extension Create {
     typealias NavigationController = CreateNavigationController
 }
 
-class CreateViewController: UIViewController {
+class CreateViewController: UIViewController, TabBarItemProviding {
+
+    static let tabItem: UITabBarItem = UITabBarItem().then {
+        $0.title = tr(.createTitle)
+        $0.image = UIImage(asset: .iconTabbarCreate)
+    }
 
     var composeViewController: ComposeViewController!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        self.title = tr(.createTitle)
-    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)

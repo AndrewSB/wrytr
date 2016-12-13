@@ -430,7 +430,6 @@
 				46AE375C1D7AB85E005A89F3 /* URL + Decodable.swift */,
 				46452E671D77996D0053EC4A /* ThirdParty */,
 			);
-			name = Common;
 			path = Common;
 			sourceTree = "<group>";
 		};

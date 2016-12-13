@@ -6,7 +6,12 @@ extension Me {
     typealias NavigationController = MeNavigationController
 }
 
-class MeViewController: UIViewController {
+class MeViewController: UIViewController, TabBarItemProviding {
+    static let tabItem: UITabBarItem = UITabBarItem().then {
+        $0.title = tr(.meTitle)
+        $0.image = UIImage(asset: .iconTabbarProfile)
+    }
+
 
 }
 

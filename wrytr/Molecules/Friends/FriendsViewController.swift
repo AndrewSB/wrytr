@@ -4,7 +4,12 @@ import RxSwift
 
 extension Friends {
 
-    class ViewController: ContainerViewController<ChallengeViewController> {
+    class ViewController: ContainerViewController<ChallengeViewController>, TabBarItemProviding {
+        static let tabItem: UITabBarItem = UITabBarItem().then {
+            $0.title = tr(.friendTitle)
+            $0.image = UIImage(asset: .iconTabbarFriends)
+        }
+
         init(challengeViewController: ChallengeViewController) {
             super.init(viewController: challengeViewController)
         }

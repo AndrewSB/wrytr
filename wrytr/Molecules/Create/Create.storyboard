@@ -84,7 +84,6 @@
         <scene sceneID="cSM-Jj-Lkz">
             <objects>
                 <navigationController storyboardIdentifier="createNav" id="sk9-2Y-PF8" customClass="CreateNavigationController" customModule="wrytr" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="" image="icon-tabbar-create" id="STZ-pF-kSm"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="SDX-Xx-T4U" customClass="NoHairlineNavigationBar" customModule="wrytr" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -107,6 +106,5 @@
     </scenes>
     <resources>
         <image name="i-icon" width="22" height="22"/>
-        <image name="icon-tabbar-create" width="30" height="30"/>
     </resources>
 </document>

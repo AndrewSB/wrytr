@@ -7,7 +7,12 @@ import Then
 
 extension Feed {
 
-    class ViewController: ContainerViewController<ChallengeViewController> {
+    class ViewController: ContainerViewController<ChallengeViewController>, TabBarItemProviding {
+        static let tabItem: UITabBarItem = UITabBarItem().then {
+            $0.title = tr(.feedTitle)
+            $0.image = UIImage(asset: .iconTabbarFeed)
+        }
+
         init(challengeViewController: ChallengeViewController) {
             super.init(viewController: challengeViewController)
         }
