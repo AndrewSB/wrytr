@@ -170,6 +170,18 @@ struct StoryboardScene {
       return vc
     }
   }
+  enum ProfilePhoto: String, StoryboardSceneType {
+    static let storyboardName = "ProfilePhoto"
+
+    case profilePhotoVCScene = "profilePhotoVC"
+    static func instantiateProfilePhotoVC() -> ProfilePhotoViewController {
+      guard let vc = StoryboardScene.ProfilePhoto.profilePhotoVCScene.viewController() as? ProfilePhotoViewController
+      else {
+        fatalError("ViewController 'profilePhotoVC' is not of the expected class ProfilePhotoViewController.")
+      }
+      return vc
+    }
+  }
   enum Startup: StoryboardSceneType {
     static let storyboardName = "Startup"
 
@@ -183,4 +195,7 @@ struct StoryboardScene {
 }
 
 struct StoryboardSegue {
+  enum Me: String, StoryboardSegueType {
+    case embedProfilePhoto = "embedProfilePhoto"
+  }
 }

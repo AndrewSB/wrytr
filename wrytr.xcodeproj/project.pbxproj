@@ -28,8 +28,6 @@
 		461BB52A1DFB764900F9202A /* MeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB5291DFB764900F9202A /* MeController.swift */; };
 		461BB52C1DFB841D00F9202A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB52B1DFB841D00F9202A /* ProfileViewController.swift */; };
 		461BB52E1DFB842300F9202A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 461BB52D1DFB842300F9202A /* Profile.storyboard */; };
-		461BB5311DFB865600F9202A /* Photo+Follow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 461BB5301DFB865600F9202A /* Photo+Follow.xib */; };
-		461BB5331DFB8A3000F9202A /* Profile+Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB5321DFB8A3000F9202A /* Profile+Photo.swift */; };
 		461BB5351DFB92FE00F9202A /* SegmentedTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB5341DFB92FE00F9202A /* SegmentedTableViewHeaderFooterView.swift */; };
 		461BB5381DFF574300F9202A /* FriendsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB5371DFF574300F9202A /* FriendsCoordinator.swift */; };
 		461BB53A1DFF584100F9202A /* ChallengeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB5391DFF584100F9202A /* ChallengeNavigationController.swift */; };
@@ -105,6 +103,8 @@
 		466BD0991CADAA08008DC0C3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD0981CADAA08008DC0C3 /* CFNetwork.framework */; };
 		466BD09B1CADAA14008DC0C3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD09A1CADAA14008DC0C3 /* Security.framework */; };
 		466BD09E1CADAB09008DC0C3 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD09D1CADAB09008DC0C3 /* Firebase.framework */; };
+		466DEB0B1E00BFAF0061E665 /* ProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466DEB091E00BFAF0061E665 /* ProfilePhotoViewController.swift */; };
+		466DEB0E1E01E6840061E665 /* ProfilePhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466DEB0D1E01E6840061E665 /* ProfilePhoto.storyboard */; };
 		466E73FD1CAF271A00EC0B7C /* Firebase+Rx Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E73FC1CAF271A00EC0B7C /* Firebase+Rx Auth.swift */; };
 		466E74031CAFA72600EC0B7C /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466E74021CAFA72600EC0B7C /* Challenge.storyboard */; };
 		467403401DF75CEC00EFEBC9 /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4674033F1DF75CEC00EFEBC9 /* Dispatcher.swift */; };
@@ -159,8 +159,6 @@
 		461BB5291DFB764900F9202A /* MeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeController.swift; sourceTree = "<group>"; };
 		461BB52B1DFB841D00F9202A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		461BB52D1DFB842300F9202A /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		461BB5301DFB865600F9202A /* Photo+Follow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Photo+Follow.xib"; sourceTree = "<group>"; };
-		461BB5321DFB8A3000F9202A /* Profile+Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile+Photo.swift"; sourceTree = "<group>"; };
 		461BB5341DFB92FE00F9202A /* SegmentedTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		461BB5371DFF574300F9202A /* FriendsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsCoordinator.swift; sourceTree = "<group>"; };
 		461BB5391DFF584100F9202A /* ChallengeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeNavigationController.swift; sourceTree = "<group>"; };
@@ -238,6 +236,8 @@
 		466BD0981CADAA08008DC0C3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		466BD09A1CADAA14008DC0C3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		466BD09D1CADAB09008DC0C3 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Frameworks/Firebase.framework; sourceTree = "<group>"; };
+		466DEB091E00BFAF0061E665 /* ProfilePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhotoViewController.swift; sourceTree = "<group>"; };
+		466DEB0D1E01E6840061E665 /* ProfilePhoto.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfilePhoto.storyboard; sourceTree = "<group>"; };
 		466E73FC1CAF271A00EC0B7C /* Firebase+Rx Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Firebase+Rx Auth.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		466E74021CAFA72600EC0B7C /* Challenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Challenge.storyboard; sourceTree = "<group>"; };
 		4674033F1DF75CEC00EFEBC9 /* Dispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
@@ -365,8 +365,8 @@
 		461BB52F1DFB863300F9202A /* ProfilePicutre + Follow Button */ = {
 			isa = PBXGroup;
 			children = (
-				461BB5301DFB865600F9202A /* Photo+Follow.xib */,
-				461BB5321DFB8A3000F9202A /* Profile+Photo.swift */,
+				466DEB091E00BFAF0061E665 /* ProfilePhotoViewController.swift */,
+				466DEB0D1E01E6840061E665 /* ProfilePhoto.storyboard */,
 			);
 			path = "ProfilePicutre + Follow Button";
 			sourceTree = "<group>";
@@ -801,9 +801,9 @@
 				46387B631D8A0F4400C7A9EB /* PostDetail.storyboard in Resources */,
 				4658D6BA1CC08919009527DF /* Create.storyboard in Resources */,
 				4658D6BC1CC0891F009527DF /* Me.storyboard in Resources */,
+				466DEB0E1E01E6840061E665 /* ProfilePhoto.storyboard in Resources */,
 				4644FBBC1C9CD67D004ACBAF /* colors.txt in Resources */,
 				46C099191CA072250015779C /* TwitterKitResources.bundle in Resources */,
-				461BB5311DFB865600F9202A /* Photo+Follow.xib in Resources */,
 				4623EB651D88D322004880E3 /* Compose.storyboard in Resources */,
 				4644FBC51C9CDE8D004ACBAF /* Localizable.strings in Resources */,
 				46BF97791C9B6DA700579066 /* Landing.storyboard in Resources */,
@@ -948,7 +948,6 @@
 				461BB52A1DFB764900F9202A /* MeController.swift in Sources */,
 				46271FAE1CD2B02F007196B2 /* ChallengeTableView.swift in Sources */,
 				460D83F61DF6417E00DDDC8E /* AppConstants.swift in Sources */,
-				461BB5331DFB8A3000F9202A /* Profile+Photo.swift in Sources */,
 				4644FBDB1C9E1535004ACBAF /* RxViewController.swift in Sources */,
 				46452E5B1D7795190053EC4A /* User.swift in Sources */,
 				46016AE01E008EEA0082A9DA /* FriendsReducer.swift in Sources */,
@@ -974,6 +973,7 @@
 				4623EB5D1D88ABC9004880E3 /* PostState.swift in Sources */,
 				467403481DF76F2800EFEBC9 /* Readonly Store.swift in Sources */,
 				462358781D778B45007947B6 /* StartupViewController.swift in Sources */,
+				466DEB0B1E00BFAF0061E665 /* ProfilePhotoViewController.swift in Sources */,
 				4623586E1D7788B5007947B6 /* UserService.swift in Sources */,
 				462894E61D37F593006044E1 /* PostDetailViewController.swift in Sources */,
 				462A77D41D8883D200E6F6A0 /* CombinedReducer.swift in Sources */,

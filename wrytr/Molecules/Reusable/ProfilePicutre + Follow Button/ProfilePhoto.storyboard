@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile Photo View Controller-->
+        <scene sceneID="cej-zX-Jr6">
+            <objects>
+                <viewController storyboardIdentifier="profilePhotoVC" id="QE0-Lw-b2D" customClass="ProfilePhotoViewController" customModule="wrytr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uWr-8x-8Me"/>
+                        <viewControllerLayoutGuide type="bottom" id="KjP-NG-RUF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6x7-Ya-Hay">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TMm-F6-t1P">
+                                <rect key="frame" x="66.5" y="0.0" width="267" height="200"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="tjd-gf-XYo" customClass="RoundedImageView" customModule="Library">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="tjd-gf-XYo" secondAttribute="height" multiplier="1:1" priority="999" id="o88-p9-hvq"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AfM-wI-UsW" customClass="RoundedView" customModule="Library">
+                                        <rect key="frame" x="142" y="25" width="150" height="150.5"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qks-iG-RE8" customClass="RoundedButton" customModule="Library">
+                                        <rect key="frame" x="167" y="50" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Qks-iG-RE8" secondAttribute="height" multiplier="1:1" id="YZw-j2-jql"/>
+                                        </constraints>
+                                        <state key="normal" image="follow-button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Qks-iG-RE8" firstAttribute="centerY" secondItem="tjd-gf-XYo" secondAttribute="centerY" id="7iq-Am-JZe"/>
+                                    <constraint firstAttribute="bottom" secondItem="tjd-gf-XYo" secondAttribute="bottom" id="BK1-cv-li1"/>
+                                    <constraint firstItem="AfM-wI-UsW" firstAttribute="height" secondItem="Qks-iG-RE8" secondAttribute="height" multiplier="1.5" id="BZx-1Q-KeX"/>
+                                    <constraint firstAttribute="width" secondItem="TMm-F6-t1P" secondAttribute="height" multiplier="4:3" id="G3R-Df-OMw"/>
+                                    <constraint firstItem="tjd-gf-XYo" firstAttribute="leading" secondItem="TMm-F6-t1P" secondAttribute="leading" id="HXi-lf-gKv"/>
+                                    <constraint firstItem="AfM-wI-UsW" firstAttribute="width" secondItem="Qks-iG-RE8" secondAttribute="width" multiplier="1.5" id="KOB-Md-z3X"/>
+                                    <constraint firstItem="AfM-wI-UsW" firstAttribute="centerX" secondItem="Qks-iG-RE8" secondAttribute="centerX" id="Mmc-Tz-4YT"/>
+                                    <constraint firstItem="AfM-wI-UsW" firstAttribute="centerY" secondItem="Qks-iG-RE8" secondAttribute="centerY" id="Scf-Ma-Lfs"/>
+                                    <constraint firstItem="tjd-gf-XYo" firstAttribute="top" secondItem="TMm-F6-t1P" secondAttribute="top" id="orp-3V-ank"/>
+                                    <constraint firstAttribute="trailing" secondItem="tjd-gf-XYo" secondAttribute="trailing" id="uwG-HJ-dnW"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qks-iG-RE8" secondAttribute="trailing" id="wlk-IN-ZHa"/>
+                                    <constraint firstItem="tjd-gf-XYo" firstAttribute="height" secondItem="Qks-iG-RE8" secondAttribute="height" multiplier="2" id="zjd-u2-fsO"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="uwG-HJ-dnW"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KjP-NG-RUF" firstAttribute="top" secondItem="TMm-F6-t1P" secondAttribute="bottom" id="cDE-VS-uf6"/>
+                            <constraint firstItem="TMm-F6-t1P" firstAttribute="top" secondItem="uWr-8x-8Me" secondAttribute="bottom" id="eB8-mm-u9n"/>
+                            <constraint firstItem="TMm-F6-t1P" firstAttribute="centerX" secondItem="6x7-Ya-Hay" secondAttribute="centerX" id="ui8-of-pAL"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="200"/>
+                    <connections>
+                        <outlet property="accessory" destination="Qks-iG-RE8" id="bDD-ow-NaA"/>
+                        <outlet property="accessoryUnderlay" destination="AfM-wI-UsW" id="Mmo-No-Ae7"/>
+                        <outlet property="avatar" destination="tjd-gf-XYo" id="dIK-be-JwP"/>
+                        <outlet property="avatarFillsWidthConstraint" destination="uwG-HJ-dnW" id="fgx-OD-vqd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mo8-ag-Odl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="23" y="65"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="follow-button" width="49" height="51"/>
+        <image name="star" width="42" height="42"/>
+    </resources>
+</document>
