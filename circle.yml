@@ -1,0 +1,5 @@
+machine:
+  xcode:
+    version: "8.0"
+  environment:
+    LANG: en_US.UTF-8
