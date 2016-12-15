@@ -12,3 +12,9 @@ dependencies:
      - fastlane bootstrap
   cache_directories:
      - Carthage
+
+deployment:
+  testflight:
+    branch: master
+    commands:
+      - fastlane beta

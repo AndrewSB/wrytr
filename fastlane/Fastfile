@@ -14,7 +14,7 @@ platform :ios do
     ensure_git_status_clean    
 
     itc(destination: 'TestFlight', project: 'wrytr.xcodeproj', scheme: 'wrytr')
-    push_notif(title: 'wrytr deployed to Testflight!'
+    push_notif(title: 'wrytr deployed to Testflight!')
   end
 
   lane :release do
@@ -22,6 +22,6 @@ platform :ios do
     ensure_git_status_clean    
     
     itc(destination: 'App Store', project: 'wrytr.xcodeproj', scheme: 'wrytr')
-    push_notif(title: 'wrytr deployed to App Store!'
+    push_notif(title: 'wrytr deployed to App Store!')
   end
 end
