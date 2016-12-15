@@ -9,6 +9,6 @@ dependencies:
      - yes | snapshot reset_simulators # temp fix for circle CI bug https://discuss.circleci.com/t/multiple-ios-simulators-available-for-single-os-device-configurations/7854/15
      - curl -L -O https://github.com/YPlan/CartfileDiff/releases/download/0.1/CartfileDiff.pkg && sudo installer -pkg CartfileDiff.pkg -target /
   override:
-     - scripts/bootstrap-if-needed
+     - fastlane bootstrap
   cache_directories:
      - Carthage
