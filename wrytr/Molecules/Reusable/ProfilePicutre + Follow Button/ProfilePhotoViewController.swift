@@ -11,7 +11,10 @@ class ProfilePhotoViewController: RxViewController {
 
     @IBOutlet weak var avatarFillsWidthConstraint: NSLayoutConstraint!
     @IBOutlet private weak var avatar: RoundedImageView! {
-        didSet { avatar.image = nil }
+        didSet {
+            avatar.clipsToBounds = true
+            avatar.image = nil
+        }
     }
     @IBOutlet private weak var accessory: RoundedButton! {
         didSet { accessory.imageView!.image = nil }

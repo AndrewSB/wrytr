@@ -9,10 +9,16 @@ class ChallengeTableView: UITableView {
 
     fileprivate static let sideInset: CGFloat = 14
 
+    override var tintColor: UIColor! {
+        didSet { topSegmentedControl.tintColor = tintColor }
+    }
+
     let selectedSegmentControlSection = Variable(0) // start with section 0
+    var topSegmentedControl: SegmentedTableViewHeaderFooterView {
+        return self.tableView(self, viewForHeaderInSection: 0) as! SegmentedTableViewHeaderFooterView
+    }
     var topSegmentedControlValue: ControlProperty<Int> {
-        let segmentedHeader = self.tableView(self, viewForHeaderInSection: 0) as! SegmentedTableViewHeaderFooterView
-        return segmentedHeader.selected
+        return topSegmentedControl.selected
     }
 
     var segmentedControlSectionTitles: [String] = []
@@ -37,13 +43,18 @@ class ChallengeTableView: UITableView {
             }
         }
     }
-}
 
-extension ChallengeTableView {
+    override init(frame: CGRect, style: UITableViewStyle) {
+        super.init(frame: frame, style: style)
+        commonInit()
+    }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
 
+    func commonInit() {
         self.refreshControl = UIRefreshControl()
 
         self.rowHeight = UITableViewAutomaticDimension
@@ -76,6 +87,7 @@ extension ChallengeTableView: UITableViewDelegate {
         switch section {
         case 0:
             let segmentHeader = self.dequeueReusableHeaderFooterView(withIdentifier: "segmentedControl") as! SegmentedTableViewHeaderFooterView
+            print("dequeued \(segmentHeader)")
             segmentHeader.segments = self.segmentedControlSectionTitles
             segmentHeader.selectedSegmentIndex = self.selectedSegmentControlSection.value
             segmentHeader.tintColor = UIColor(named: .tint)

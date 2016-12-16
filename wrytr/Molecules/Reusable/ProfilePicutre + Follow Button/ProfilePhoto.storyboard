@@ -26,7 +26,7 @@
                             <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TMm-F6-t1P">
                                 <rect key="frame" x="66.5" y="0.0" width="267" height="200"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="tjd-gf-XYo" customClass="RoundedImageView" customModule="Library">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="tjd-gf-XYo" customClass="RoundedImageView" customModule="Library">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="tjd-gf-XYo" secondAttribute="height" multiplier="1:1" priority="999" id="o88-p9-hvq"/>

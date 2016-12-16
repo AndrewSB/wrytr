@@ -8,10 +8,22 @@ extension Me {
 
 class MeViewController: UIViewController, TabBarItemProviding {
 
-    @IBOutlet weak var challengeTableView: ChallengeTableView!
-    @IBOutlet weak var challengeTableHeaderView: UIView!
+    @IBOutlet weak var challengeTableView: ChallengeTableView! {
+        didSet {
+            challengeTableView.tintColor = UIColor(named: .loginLoginBackground)
+            challengeTableView.segmentedControlSectionTitles = ["All", "Created", "Responded"]
+        }
+    }
+    @IBOutlet weak var challengeTableHeaderView: UIView! {
+        didSet { challengeTableHeaderView.backgroundColor = UIColor(named: .loginLoginBackground) }
+    }
 
-    var profilePhoto: ProfilePhotoViewController!
+    var profilePhoto: ProfilePhotoViewController! = nil {
+        didSet {
+            profilePhoto.view.backgroundColor = UIColor(named: .loginLoginBackground)
+            profilePhoto.state.value = .none
+        }
+    }
     @IBOutlet weak var nameLabel: UILabel!
 
     @IBOutlet weak var elipses: UIButton!
@@ -35,7 +47,15 @@ extension Me.ViewController: Cordux.SubscriberType {
     typealias StoreSubscriberStateType = App.State
 
     public func newState(_ subscription: App.State) {
+        self.loadViewIfNeeded()
 
+        switch subscription.authenticationState.user {
+        case .loggedIn(let user):
+            self.profilePhoto.user.value = user
+            self.nameLabel.text = user.name
+
+        default: fatalError("cant show this page if you aren't signed in")
+        }
     }
 }
 
