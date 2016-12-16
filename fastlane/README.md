@@ -5,6 +5,19 @@ fastlane documentation
 sudo gem install fastlane
 ```
 # Available Actions
+### bootstrap
+```
+fastlane bootstrap
+```
+
+### match_build_number_to_git
+```
+fastlane match_build_number_to_git
+```
+
+
+----
+
 ## iOS
 ### ios test
 ```
@@ -16,9 +29,9 @@ fastlane ios test
 fastlane ios beta
 ```
 
-### ios appstore
+### ios release
 ```
-fastlane ios appstore
+fastlane ios release
 ```
 
 
