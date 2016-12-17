@@ -10,16 +10,16 @@ platform :ios do
   end
 
   lane :beta do
-    match_build_number_to_git(project: 'wrytr.xcodeproj', branch: 'master')
     ensure_git_status_clean    
+    match_build_number_to_git(project: 'wrytr.xcodeproj', branch: 'master')
 
     itc(destination: 'TestFlight', project: 'wrytr.xcodeproj', scheme: 'wrytr')
     push_notif(title: 'wrytr deployed to Testflight!')
   end
 
   lane :release do
-    match_build_number_to_git(project: 'wrytr.xcodeproj', branch: 'master')
     ensure_git_status_clean    
+    match_build_number_to_git(project: 'wrytr.xcodeproj', branch: 'master')
     
     itc(destination: 'App Store', project: 'wrytr.xcodeproj', scheme: 'wrytr')
     push_notif(title: 'wrytr deployed to App Store!')
