@@ -10,7 +10,12 @@ platform :ios do
   end
 
   lane :beta do
-    ensure_git_status_clean    
+    begin ensure_git_status_clean    
+    rescue => exception
+      UI.error("git status was dirty! It was: \n#{`git status`}")
+      throw exception
+    end
+
     match_build_number_to_git(project: 'wrytr.xcodeproj', branch: 'master')
 
     itc(destination: 'TestFlight', project: 'wrytr.xcodeproj', scheme: 'wrytr')
@@ -18,7 +23,12 @@ platform :ios do
   end
 
   lane :release do
-    ensure_git_status_clean    
+    begin ensure_git_status_clean    
+    rescue => exception
+      UI.error("git status was dirty! It was: \n#{`git status`}")
+      throw exception
+    end
+
     match_build_number_to_git(project: 'wrytr.xcodeproj', branch: 'master')
     
     itc(destination: 'App Store', project: 'wrytr.xcodeproj', scheme: 'wrytr')
