@@ -3,6 +3,9 @@
 Preview.html
 build/
 
+# CI specific
+Carthage/Cartfile.resolved
+CartfileDiff.pkg
 
 # Created by https://www.gitignore.io/api/swift
 
