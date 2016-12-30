@@ -16,7 +16,7 @@ extension Reactive where Base: Firebase {
 
     }
 
-    func setChildByAutoId(_ value: AnyObject!) -> Observable<Firebase> {
+    func setChildByAutoId(_ value: Any!) -> Observable<Firebase> {
 
         return ParseRxCallbacks.createWithCallback({ observer in
             self.base.childByAutoId().setValue(value) {

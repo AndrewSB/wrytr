@@ -5,7 +5,6 @@ protocol PostType {
     var prompt: String { get }
 
     var author: UserID { get }
-    var reactions: [ReactionType] { get }
 }
 
 func == (lhs: PostType, rhs: PostType) -> Bool {

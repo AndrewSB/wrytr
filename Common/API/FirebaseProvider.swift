@@ -96,4 +96,16 @@ extension Firebase.Provider {
     func fetchPosts() -> Observable<[Firebase.Post]> {
         return ref.rx.fetchPosts()
     }
+
+    func createPost(prompt: String, by user: UserID) -> Observable<Firebase.Post> {
+        return ref.rx.createPost(prompt: prompt, by: user)
+    }
+
+    func createReaction(content: String, on post: PostID, by user: UserID) -> Observable<Firebase.Reaction> {
+        return ref.rx.createReaction(content: content, on: post, by: user)
+    }
+
+    func updateReaction(_ newReaction: Firebase.Reaction) -> Observable<Firebase.Reaction> {
+        return ref.rx.updateReaction(newReaction)
+    }
 }
