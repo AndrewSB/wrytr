@@ -5,13 +5,21 @@ protocol PresentableError: Error {
     var description: String { get }
 }
 
-extension PresentableError {
-    var title: String {
-        return "🤔"
+struct UserlandError: PresentableError {
+    let title: String
+    let description: String
+    
+    init(title: String = "🤔", description: String) {
+        self.title = title
+        self.description = description
     }
 }
 
 extension NSError: PresentableError {
+    open var title: String {
+        return "🤔"
+    }
+    
     open override var description: String {
         return localizedDescription
     }
