@@ -1,5 +1,6 @@
 import RxSwift
 import RxCocoa
+import RxSwiftExt
 import Firebase
 import Himotoki
 
@@ -19,6 +20,7 @@ extension Firebase {
         let post: PostID
         let content: String
     }
+    
 }
 
 extension Firebase.Post: Decodable {
@@ -60,22 +62,22 @@ extension Firebase.Reaction: Decodable {
     }
 }
 
-extension Reactive where Base: Firebase {
+extension Firebase.Provider {
 
     func fetchPosts() -> Observable<[Firebase.Post]> {
-        return self.base
+        return ref
             .child(byAppendingPath: "posts")
             .queryOrdered(byChild: "date")
             .rx.observeEventOnce()
             .map { arrayOfPostData -> [[String: AnyObject]] in
                 guard let json = arrayOfPostData.value as? [String : AnyObject] else {
-                    // assume empty
+                    // assume empty if doesn't cast
                     return []
                 }
 
                 let dictionariesWithUIDIncluded = json.map { (key, val) -> [String: AnyObject] in
                     guard var innerJSON = val as? [String: AnyObject] else {
-                        assertionFailure(); return [:]
+                        fatalError()
                     }
 
                     innerJSON["uid"] = key as AnyObject
@@ -83,15 +85,12 @@ extension Reactive where Base: Firebase {
                 }
 
                 return dictionariesWithUIDIncluded
-            }.flatMap { json -> Observable<[Firebase.Post]> in
-                do {
-                    return .just(try Array<Firebase.Post>.decode(json))
-                } catch { return .error(error) }
             }
+            .map(Array<Firebase.Post>.decode)
     }
 
     func createPost(prompt: String, by userId: UserID) -> Observable<Firebase.Post> {
-        return self.base
+        return ref
             .child(byAppendingPath: "posts")
             .rx.setChildByAutoId([
                 "prompt": prompt,
@@ -101,7 +100,7 @@ extension Reactive where Base: Firebase {
     }
 
     func createReaction(content: String, on post: PostID, by author: UserID) -> Observable<Firebase.Reaction> {
-        return self.base
+        return ref
             .child(byAppendingPath: "reactions")
             .rx.setChildByAutoId([
                 "content": content,
@@ -112,7 +111,7 @@ extension Reactive where Base: Firebase {
     }
 
     func updateReaction(_ id: ReactionID, newContent: String) -> Observable<String> {
-        return self.base
+        return ref
             .child(byAppendingPath: "reactions")
             .child(byAppendingPath: id)
             .child(byAppendingPath: "content")
@@ -121,7 +120,7 @@ extension Reactive where Base: Firebase {
     }
     
     func deleteReaction(withID id: ReactionID) -> Observable<Void> {
-        return self.base
+        return ref
             .child(byAppendingPath: "reactions")
             .child(byAppendingPath: id)
             .rx.setValue(.none)

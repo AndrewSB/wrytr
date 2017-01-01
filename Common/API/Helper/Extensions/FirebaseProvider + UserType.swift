@@ -34,11 +34,10 @@ extension Firebase.User: Decodable {
     }
 }
 
-extension Reactive where Base: Firebase {
+extension Firebase.Provider {
 
     func fetchUser(withId id: UserID) -> Observable<Firebase.User> {
-        return self.base
-            .child(byAppendingPath: "users/\(id)")
+        return ref.child(byAppendingPath: "users/\(id)")
             .rx.observeEventOnce()
             .map { userData -> [String: AnyObject] in
                 guard let json: [String: AnyObject] = userData.value as? [String : AnyObject] else {
@@ -54,11 +53,10 @@ extension Reactive where Base: Firebase {
             }
     }
 
-    func updateUser(userId id: UserID, newUser: UserType) -> Observable<Firebase.User> {
+    func update(user newUser: Firebase.User) -> Observable<Firebase.User> {
         let firebaseUser = Firebase.User(id: newUser.id, name: newUser.name, photo: newUser.photo)
 
-        return self.base
-            .child(byAppendingPath: "users/\(id)")
+        return ref.child(byAppendingPath: "users/\(newUser.id)")
             .rx.setValue(firebaseUser.encoded() as AnyObject)
             .map { _ in firebaseUser }
     }

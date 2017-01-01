@@ -5,7 +5,7 @@ import RxCocoa
 extension Firebase {
 
     class Provider {
-        fileprivate let ref = Firebase(url: "http://wrytr.firebaseio.com")! // swiftlint:disable:this variable_name
+        internal let ref = Firebase(url: "http://wrytr.firebaseio.com")! // swiftlint:disable:this variable_name
 
         var isLoggedIn: Bool {
             return ref.authData != nil
@@ -24,7 +24,7 @@ extension Firebase {
 
 extension Firebase.Provider {
     func login(email: String, password: String) -> Observable<Firebase.User> {
-        return ref.rx.login(email: email, password: password).flatMap(self.ref.rx.fetchUser)
+        return ref.rx.login(email: email, password: password).flatMap(self.fetchUser)
     }
 
     func signup(name: String, email: String, password: String) -> Observable<Firebase.User> {
@@ -78,38 +78,5 @@ extension Firebase.Provider {
             .flatMap { URL(string: $0) }
 
         return Firebase.User(id: authData.uid, name: name, photo: imageUrl)
-    }
-}
-
-extension Firebase.Provider {
-    func getUser(withUserID userID: UserID) -> Observable<Firebase.User> {
-        return ref.rx.fetchUser(withId: userID)
-    }
-
-    func update(user newUser: UserType) -> Observable<Firebase.User> {
-        return ref.rx.updateUser(userId: newUser.id, newUser: newUser)
-    }
-
-}
-
-extension Firebase.Provider {
-    func fetchPosts() -> Observable<[Firebase.Post]> {
-        return ref.rx.fetchPosts()
-    }
-
-    func createPost(prompt: String, by user: UserID) -> Observable<Firebase.Post> {
-        return ref.rx.createPost(prompt: prompt, by: user)
-    }
-
-    func createReaction(content: String, on post: PostID, by user: UserID) -> Observable<Firebase.Reaction> {
-        return ref.rx.createReaction(content: content, on: post, by: user)
-    }
-
-    func updateReaction(_ id: ReactionID, newContent: String) -> Observable<String> {
-        return ref.rx.updateReaction(id, newContent: newContent)
-    }
-    
-    func deleteReaction(_ id: ReactionID) -> Observable<Void> {
-        return ref.rx.deleteReaction(withID: id)
     }
 }

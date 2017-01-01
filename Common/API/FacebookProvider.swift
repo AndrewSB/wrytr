@@ -11,7 +11,6 @@ class Facebook {
 
             return ParseRxCallbacks.createWithCallback({ observer -> Void in
                 FBSDKLoginManager().logIn(withReadPermissions: permissions, from: nil, handler: ParseRxCallbacks.parseUnwrappedOptionalCallback(observer))
-                return
             })
 
         }

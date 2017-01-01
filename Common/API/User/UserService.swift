@@ -17,7 +17,7 @@ extension User {
         }
 
         static func fetchUser(userID: UserID) -> Observable<UserType> {
-            return 🔥.getUser(withUserID: userID).map { $0 as UserType }
+            return 🔥.fetchUser(withId: userID).map { $0 as UserType }
         }
 
         static func facebookAuth() -> Observable<UserType> {
