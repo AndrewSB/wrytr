@@ -1,13 +1,14 @@
-github "ReSwift/ReSwift" "master"
+github "ReSwift/ReSwift" ~> 3.0
 github "willowtreeapps/cordux" "v0.1.10"
 
 github "AndrewSB/Library" "master"
 github "AndrewSB/RxParseCallback" "master"
 
-github "Thomvis/BrightFutures"
+github "antitypical/Result"
+
 github "ReactiveX/RxSwift" ~> 3.0
 github "RxSwiftCommunity/RxOptional"
-github "antitypical/Result"
+github "RxSwiftCommunity/RxSwiftExt"
 
 github "pinterest/PINRemoteImage"
 github "marketplacer/UnderKeyboard"
