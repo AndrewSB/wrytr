@@ -111,10 +111,20 @@ extension Reactive where Base: Firebase {
             .map { ref in Firebase.Reaction(id: ref.key, author: author, post: post, content: content) }
     }
 
-    func updateReaction(_ reaction: Firebase.Reaction) -> Observable<Firebase.Reaction> {
+    func updateReaction(_ id: ReactionID, newContent: String) -> Observable<String> {
         return self.base
             .child(byAppendingPath: "reactions")
-            .child(byAppendingPath: reaction.id)
-            .rx.setValue(reaction.encode())
+            .child(byAppendingPath: id)
+            .child(byAppendingPath: "content")
+            .rx.setValue(NSString(string: newContent))
+            .mapTo(newContent)
+    }
+    
+    func deleteReaction(withID id: ReactionID) -> Observable<Void> {
+        return self.base
+            .child(byAppendingPath: "reactions")
+            .child(byAppendingPath: id)
+            .rx.setValue(.none)
+            .mapTo(())
     }
 }

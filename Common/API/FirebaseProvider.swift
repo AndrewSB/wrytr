@@ -105,7 +105,11 @@ extension Firebase.Provider {
         return ref.rx.createReaction(content: content, on: post, by: user)
     }
 
-    func updateReaction(_ newReaction: Firebase.Reaction) -> Observable<Firebase.Reaction> {
-        return ref.rx.updateReaction(newReaction)
+    func updateReaction(_ id: ReactionID, newContent: String) -> Observable<String> {
+        return ref.rx.updateReaction(id, newContent: newContent)
+    }
+    
+    func deleteReaction(_ id: ReactionID) -> Observable<Void> {
+        return ref.rx.deleteReaction(withID: id)
     }
 }
