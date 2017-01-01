@@ -11,17 +11,16 @@ extension Create {
                 command: ControlProperty<Void>
             ),
             store: StoreDependency = defaultStoreDependency
-        ) {
-        
-        
+            ) {
+
             input.text
                 .flatMapLatest { latestText in input.command.map { latestText} }
                 .subscribe(onNext: handlePostingNewChallenge)
                 .addDisposableTo(disposeBag)
         }
-        
+
         private func handlePostingNewChallenge(challengeText: String) {
-            
+
         }
     }
 }

@@ -4,9 +4,5 @@ import RxCocoa
 import Cordux
 
 extension Me {
-    class Controller {
-
-        
-
-    }
+    class Controller {}
 }

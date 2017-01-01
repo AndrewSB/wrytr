@@ -32,7 +32,7 @@ extension Post {
                         break
                     }
                 }.addDisposableTo(neverDisposeBag)
-                
+
                 return nil
             }
         }

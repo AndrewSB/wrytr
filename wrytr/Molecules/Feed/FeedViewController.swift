@@ -41,7 +41,7 @@ extension Feed {
                     }
                 ),
                 sinks: (
-                    refreshControlVisible: contained.tableView.refreshControl!.rx.refreshing,
+                    refreshControlVisible: contained.tableView.refreshControl!.rx.isRefreshing,
                     posts: contained.posts
                 )
             )
