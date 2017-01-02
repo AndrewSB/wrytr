@@ -73,6 +73,7 @@
 		463A75961D879E2E0030CFB2 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463A75951D879E2E0030CFB2 /* Himotoki.framework */; };
 		463CF2571E191B1B00824884 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463CF2561E191B1B00824884 /* RxSwiftExt.framework */; };
 		463CF2591E191DD500824884 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463CF2581E191DD500824884 /* APIError.swift */; };
+		463CF25B1E19278A00824884 /* FirebaseProvider + ReactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463CF25A1E19278A00824884 /* FirebaseProvider + ReactionType.swift */; };
 		4644FB9C1C9CBCEF004ACBAF /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */; };
 		4644FBA51C9CC820004ACBAF /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBA41C9CC820004ACBAF /* Storyboards.swift */; };
 		4644FBA81C9CC9CB004ACBAF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644FBA71C9CC9CB004ACBAF /* AppState.swift */; };
@@ -192,7 +193,7 @@
 		4623587F1D778DA1007947B6 /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		462358811D77947F007947B6 /* strings-swift3.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "strings-swift3.stencil"; sourceTree = "<group>"; };
 		4623EB5C1D88ABC9004880E3 /* PostState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostState.swift; sourceTree = "<group>"; };
-		4623EB5E1D88B2A4004880E3 /* FirebaseProvider + PostType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FirebaseProvider + PostType.swift"; path = "Helper/Extensions/FirebaseProvider + PostType.swift"; sourceTree = "<group>"; };
+		4623EB5E1D88B2A4004880E3 /* FirebaseProvider + PostType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FirebaseProvider + PostType.swift"; path = "../Common/API/Helper/Extensions/FirebaseProvider + PostType.swift"; sourceTree = "<group>"; };
 		4623EB601D88C25D004880E3 /* CreateCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCoordinator.swift; sourceTree = "<group>"; };
 		4623EB641D88D322004880E3 /* Compose.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Compose.storyboard; sourceTree = "<group>"; };
 		46271FAA1CD2AB36007196B2 /* Library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Library.framework; path = Carthage/Build/iOS/Library.framework; sourceTree = "<group>"; };
@@ -217,7 +218,8 @@
 		463913E21D7644C90077D0E5 /* UnderKeyboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UnderKeyboard.framework; path = Carthage/Build/iOS/UnderKeyboard.framework; sourceTree = "<group>"; };
 		463A75951D879E2E0030CFB2 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
 		463CF2561E191B1B00824884 /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
-		463CF2581E191DD500824884 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		463CF2581E191DD500824884 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIError.swift; path = ../Common/API/APIError.swift; sourceTree = "<group>"; };
+		463CF25A1E19278A00824884 /* FirebaseProvider + ReactionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FirebaseProvider + ReactionType.swift"; path = "../Common/API/FirebaseProvider + ReactionType.swift"; sourceTree = "<group>"; };
 		4644FB9A1C9CBCEF004ACBAF /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
 		4644FBA41C9CC820004ACBAF /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		4644FBA71C9CC9CB004ACBAF /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -273,7 +275,7 @@
 		46AE37461D78F768005A89F3 /* Then.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Then.framework; path = Carthage/Build/iOS/Then.framework; sourceTree = "<group>"; };
 		46AE374E1D7A3559005A89F3 /* PresentableError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentableError.swift; sourceTree = "<group>"; };
 		46AE37501D7A3B2C005A89F3 /* UIAlertAction + SimpleHandlerInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertAction + SimpleHandlerInit.swift"; sourceTree = "<group>"; };
-		46AE37521D7A3FD3005A89F3 /* FirebaseProvider + UserType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FirebaseProvider + UserType.swift"; path = "Helper/Extensions/FirebaseProvider + UserType.swift"; sourceTree = "<group>"; };
+		46AE37521D7A3FD3005A89F3 /* FirebaseProvider + UserType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FirebaseProvider + UserType.swift"; path = "../Common/API/Helper/Extensions/FirebaseProvider + UserType.swift"; sourceTree = "<group>"; };
 		46AE37541D7A9B95005A89F3 /* Firebase+Rx SetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+Rx SetData.swift"; sourceTree = "<group>"; };
 		46AE375C1D7AB85E005A89F3 /* URL + Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL + Decodable.swift"; sourceTree = "<group>"; };
 		46BF97781C9B6DA700579066 /* Landing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Landing.storyboard; sourceTree = "<group>"; };
@@ -499,7 +501,8 @@
 				4623586D1D7788B5007947B6 /* UserService.swift */,
 				46452E5D1D7795D20053EC4A /* UserType.swift */,
 			);
-			path = User;
+			name = User;
+			path = ../Common/API/User;
 			sourceTree = "<group>";
 		};
 		4623586C1D7788AC007947B6 /* Post */ = {
@@ -510,7 +513,8 @@
 				46452E5F1D7797AC0053EC4A /* PostType.swift */,
 				46452E631D7797F10053EC4A /* ReactionType.swift */,
 			);
-			path = Post;
+			name = Post;
+			path = ../Common/API/Post;
 			sourceTree = "<group>";
 		};
 		462358711D7788EF007947B6 /* Startup */ = {
@@ -530,11 +534,6 @@
 				46452E781D77AB6D0053EC4A /* FacebookProvider.swift */,
 				46452E7A1D77AB710053EC4A /* TwitterProvider.swift */,
 				462358751D7789F3007947B6 /* FirebaseProvider.swift */,
-				46AE37521D7A3FD3005A89F3 /* FirebaseProvider + UserType.swift */,
-				4623EB5E1D88B2A4004880E3 /* FirebaseProvider + PostType.swift */,
-				4623586C1D7788AC007947B6 /* Post */,
-				4623586B1D7788A3007947B6 /* User */,
-				463CF2581E191DD500824884 /* APIError.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -600,6 +599,19 @@
 				461BB52B1DFB841D00F9202A /* ProfileViewController.swift */,
 			);
 			path = "User Screen";
+			sourceTree = "<group>";
+		};
+		463CF25C1E19A26200824884 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4623586C1D7788AC007947B6 /* Post */,
+				4623586B1D7788A3007947B6 /* User */,
+				463CF2581E191DD500824884 /* APIError.swift */,
+				46AE37521D7A3FD3005A89F3 /* FirebaseProvider + UserType.swift */,
+				4623EB5E1D88B2A4004880E3 /* FirebaseProvider + PostType.swift */,
+				463CF25A1E19278A00824884 /* FirebaseProvider + ReactionType.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 		4644FBA21C9CC80A004ACBAF /* Constants */ = {
@@ -749,6 +761,7 @@
 		468614BD1C89CC3A002C2BAC /* wrytr */ = {
 			isa = PBXGroup;
 			children = (
+				463CF25C1E19A26200824884 /* API */,
 				468614BE1C89CC3A002C2BAC /* AppDelegate.swift */,
 				4644FBA71C9CC9CB004ACBAF /* AppState.swift */,
 				460D83F51DF6417E00DDDC8E /* AppConstants.swift */,
@@ -992,6 +1005,7 @@
 				4623587E1D778D9B007947B6 /* AuthenticationCoordinator.swift in Sources */,
 				46452E791D77AB6D0053EC4A /* FacebookProvider.swift in Sources */,
 				462358761D7789F3007947B6 /* FirebaseProvider.swift in Sources */,
+				463CF25B1E19278A00824884 /* FirebaseProvider + ReactionType.swift in Sources */,
 				46C0B91C1DE6148B00085BD0 /* DisposeBag += .swift in Sources */,
 				4623587A1D778B69007947B6 /* AppCoordinator.swift in Sources */,
 				463913E11D7641590077D0E5 /* DismissesKeyboardOnTap.swift in Sources */,
