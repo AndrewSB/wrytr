@@ -34,9 +34,11 @@ extension Create.ViewController: Cordux.SubscriberType {
             fatalError("You're trying to create something without being logged in")
         }
 
-        composeViewController?.usernameLabel?.text = localUser.name
+        self.loadViewIfNeeded()
+
+        composeViewController.usernameLabel.text = localUser.name
         if let url = localUser.photo {
-            composeViewController?.profileImageView?.pin_setImage(from: url)
+            composeViewController.profileImageView.pin_setImage(from: url)
         }
     }
 }
