@@ -9,6 +9,7 @@ github "antitypical/Result"
 github "ReactiveX/RxSwift" ~> 3.0
 github "RxSwiftCommunity/RxOptional"
 github "RxSwiftCommunity/RxSwiftExt"
+github "RxSwiftCommunity/RxSwiftUtilities"
 
 github "pinterest/PINRemoteImage"
 github "marketplacer/UnderKeyboard"

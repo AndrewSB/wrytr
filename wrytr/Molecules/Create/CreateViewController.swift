@@ -1,6 +1,7 @@
 import UIKit
 import Library
 import Cordux
+import RxSwiftExt
 
 extension Create {
     typealias ViewController = CreateViewController
@@ -15,6 +16,19 @@ class CreateViewController: UIViewController, TabBarItemProviding {
     }
 
     var composeViewController: ComposeViewController!
+
+    var controller: Create.Controller!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.controller = Create.Controller(
+            input: (
+                text: self.composeViewController.challengeTextView.rx.text.filterNil(),
+                command: self.composeViewController.postCreated.mapTo(())
+            )
+        )
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -39,6 +53,16 @@ extension Create.ViewController: Cordux.SubscriberType {
         composeViewController.usernameLabel.text = localUser.name
         if let url = localUser.photo {
             composeViewController.profileImageView.pin_setImage(from: url)
+        }
+
+        subscription.postState.isCreatingPost ? startLoading(.gray) : stopLoading()
+        if let err = subscription.postState.errorCreating {
+            let errorAlert = UIAlertController(title: err.title, message: err.description, preferredStyle: .alert)
+            errorAlert.addAction(UIAlertAction(title: tr(.errorDefaultOk), style: .cancel, handler: .none))
+            self.present(errorAlert, animated: true, completion: {
+                appStore.dispatch(Create.Action.dismissError)
+            })
+
         }
     }
 }

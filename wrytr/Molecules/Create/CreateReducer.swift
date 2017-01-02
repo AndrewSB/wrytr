@@ -1,10 +1,11 @@
 import Cordux
 
 extension Create {
-    struct State {}
+    struct State {
+    }
 
     enum Action: Cordux.Action {
-        case post(text: String, user: UserType)
+        case dismissError
     }
 }
 
@@ -14,12 +15,13 @@ extension Create {
         public func handleAction(_ action: Cordux.Action, state: App.State) -> App.State {
             var state = state
 
+            // TODO: Potential limitation: Currently we can only create one post at a time
             switch action {
-            case let createAction as Create.Action:
-                switch createAction {
-                case Create.Action.post(let text, let user):
-                    print("NEW POST: \(user): \(text)")
-                }
+            case Post.CreateAction.createdPost(let post):
+                state.route = ["home", "feed", post.id]
+
+            case Action.dismissError:
+                state.postState.errorCreating = .none
 
             default:
                 break

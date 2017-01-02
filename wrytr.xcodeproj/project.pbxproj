@@ -101,6 +101,7 @@
 		46452E7B1D77AB710053EC4A /* TwitterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46452E7A1D77AB710053EC4A /* TwitterProvider.swift */; };
 		4658D6BA1CC08919009527DF /* Create.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4658D6B91CC08919009527DF /* Create.storyboard */; };
 		4658D6BC1CC0891F009527DF /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4658D6BB1CC0891F009527DF /* Me.storyboard */; };
+		465F63FA1E1A305C003187A3 /* RxSwiftUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465F63F91E1A305C003187A3 /* RxSwiftUtilities.framework */; };
 		46678C981DBEC28B00E4007F /* RxParseCallbacks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46678C971DBEC28B00E4007F /* RxParseCallbacks.framework */; };
 		466BD0951CADA990008DC0C3 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD0941CADA990008DC0C3 /* libc++.tbd */; };
 		466BD0971CADA9FF008DC0C3 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD0961CADA9FF008DC0C3 /* libicucore.tbd */; };
@@ -249,6 +250,7 @@
 		4648AA5C1DDC1D610004872D /* wrytr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wrytr.entitlements; sourceTree = "<group>"; };
 		4658D6B91CC08919009527DF /* Create.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Create.storyboard; sourceTree = "<group>"; };
 		4658D6BB1CC0891F009527DF /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
+		465F63F91E1A305C003187A3 /* RxSwiftUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftUtilities.framework; path = Carthage/Build/iOS/RxSwiftUtilities.framework; sourceTree = "<group>"; };
 		46678C971DBEC28B00E4007F /* RxParseCallbacks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxParseCallbacks.framework; path = Carthage/Build/iOS/RxParseCallbacks.framework; sourceTree = "<group>"; };
 		466BD0941CADA990008DC0C3 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		466BD0961CADA9FF008DC0C3 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
@@ -334,6 +336,7 @@
 				460D83F81DF677AB00DDDC8E /* RxOptional.framework in Frameworks */,
 				4674034A1DF7820A00EFEBC9 /* SwiftyAttributes.framework in Frameworks */,
 				463CF2571E191B1B00824884 /* RxSwiftExt.framework in Frameworks */,
+				465F63FA1E1A305C003187A3 /* RxSwiftUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +421,7 @@
 		461FD7521D760B30001BE92E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				465F63F91E1A305C003187A3 /* RxSwiftUtilities.framework */,
 				463CF2561E191B1B00824884 /* RxSwiftExt.framework */,
 				467403491DF7820A00EFEBC9 /* SwiftyAttributes.framework */,
 				460D83F71DF677AB00DDDC8E /* RxOptional.framework */,
@@ -936,6 +940,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxOptional.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyAttributes.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwiftExt.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwiftUtilities.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
