@@ -76,13 +76,28 @@ extension Firebase.Provider {
     }
 
     func createPost(prompt: String, by userId: UserID) -> Observable<Firebase.Post> {
-        return ref
+        /// This idea comes from https://github.com/firebase/quickstart-ios/blob/f0c4be06f9bfe73a4a90116b19ee8f500c24f4c1/database/DatabaseExampleSwift/NewPostViewController.swift#L68
+        /// Create new post at /user-posts/$userid/$postid and at
+        /// /posts/$postid simultaneously
+        ///
+        /// /user-posts/$userid/$postid so we can find posts for you & your followers
+        /// /posts/$postid so we can find everyone's recent & popular posts
+
+        let postId = ref.child(byAppendingPath: "posts").childByAutoId().key! as PostID
+        let post = Firebase.Post.init(id: postId, prompt: prompt, author: userId)
+
+        let globalScopedPost = ref
             .child(byAppendingPath: "posts")
-            .rx.setChildByAutoId([
-                "prompt": prompt,
-                "author": userId
-            ])
-            .map { ref in Firebase.Post(id: ref.key, prompt: prompt, author: userId) }
+            .child(byAppendingPath: postId)
+            .rx.setValue(post.encoded() as AnyObject!)
+
+        let userScopedPost = ref
+            .child(byAppendingPath: "user-posts")
+            .child(byAppendingPath: userId)
+            .child(byAppendingPath: postId)
+            .rx.setValue(post.encoded() as AnyObject)
+
+        return Observable.zip(globalScopedPost, userScopedPost) { _, _ in post }
     }
 
 }

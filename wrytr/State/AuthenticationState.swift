@@ -17,6 +17,13 @@ extension Authentication {
             case loggingIn
             case failedToLogin(PresentableError)
             case loggedIn(UserType)
+
+            var userModelIfLoggedIn: UserType? {
+                switch self {
+                case .loggedIn(let model):  return model
+                default:                    return nil
+                }
+            }
         }
     }
 
