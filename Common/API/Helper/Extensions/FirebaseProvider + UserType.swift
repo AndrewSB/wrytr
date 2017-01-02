@@ -37,26 +37,25 @@ extension Firebase.User: Decodable {
 extension Firebase.Provider {
 
     func fetchUser(withId id: UserID) -> Observable<Firebase.User> {
-        return ref.child(byAppendingPath: "users/\(id)")
+        return ref
+            .child(byAppendingPath: "users")
+            .child(byAppendingPath: id)
             .rx.observeEventOnce()
             .map { userData -> [String: AnyObject] in
-                guard let json: [String: AnyObject] = userData.value as? [String : AnyObject] else {
-                    assertionFailure()
-                    return [:]
+                guard let json = userData.value as? [String : AnyObject] else {
+                    fatalError()
                 }
                 return json
             }
-            .flatMap { json -> Observable<Firebase.User> in
-                do {
-                    return .just(try Firebase.User.decodeValue(json))
-                } catch { return .error(error) }
-            }
+            .map(Firebase.User.decodeValue)
     }
 
     func update(user newUser: Firebase.User) -> Observable<Firebase.User> {
         let firebaseUser = Firebase.User(id: newUser.id, name: newUser.name, photo: newUser.photo)
 
-        return ref.child(byAppendingPath: "users/\(newUser.id)")
+        return ref
+            .child(byAppendingPath: "users")
+            .child(byAppendingPath: newUser.id)
             .rx.setValue(firebaseUser.encoded() as AnyObject)
             .map { _ in firebaseUser }
     }

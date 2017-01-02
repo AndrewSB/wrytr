@@ -13,7 +13,7 @@ extension Post {
 
 extension Post.Service {
     static func post(withID id: PostID) -> Observable<PostType?> {
-        
+        return 🔥.fetchPost(withId: id).map { $0 as? PostType }
     }
     
     static func getNewPosts() -> Observable<[PostType]> {
@@ -27,10 +27,12 @@ extension Post.Service {
 
 extension Post.Service {
     static func reactionsForPost(withID id: PostID) -> Observable<[ReactionType]> {
-        
+        return 🔥.reactions(forPost: id).map { reactions in reactions.map { $0 as ReactionType } }
     }
     
-    static func reaction(withID id: ReactionID) -> Observable<ReactionType?> {}
+    static func reaction(withID id: ReactionID) -> Observable<ReactionType?> {
+        return 🔥.reaction(withId: id).map { $0 as ReactionType }
+    }
     
     static func react(toPost post: PostID, content: String, user: UserID) -> Observable<ReactionType> {
         return 🔥.createReaction(content: content, on: post, by: user).map { $0 as ReactionType }

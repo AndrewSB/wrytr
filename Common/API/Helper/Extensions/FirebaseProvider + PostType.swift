@@ -1,8 +1,8 @@
 import RxSwift
-import RxCocoa
 import RxSwiftExt
 import Firebase
 import Himotoki
+import Library
 
 extension Firebase {
 
@@ -11,14 +11,12 @@ extension Firebase {
         let prompt: String
 
         let author: UserID
-    }
 
-    struct Reaction: ReactionType {
-        let id: ReactionID
+        static func fromFirebase(ref: FDataSnapshot) -> Post? {
+            guard let json = ref.value as? [String: Any] else { return nil }
 
-        let author: UserID
-        let post: PostID
-        let content: String
+            return try? Post.decodeValue(["uid": ref.key! as Any] + json)
+        }
     }
     
 }
@@ -42,33 +40,21 @@ extension Firebase.Post: Decodable {
     }
 }
 
-extension Firebase.Reaction: Decodable {
-    static func decode(_ e: Extractor) throws -> Firebase.Reaction { //swiftlint:disable:this variable_name
-        return try Firebase.Reaction(
-            id: e <| "uid",
-            author: e <| "authorId",
-            post: e <| "postId",
-            content: e <| "content"
-        )
-    }
-
-    // doesnt include the id, since we never want to upload that. The ID is simply the location
-    func encoded() -> [String: Any] {
-        return [
-            "authorId": author,
-            "postId": post,
-            "content": content
-        ]
-    }
-}
-
 extension Firebase.Provider {
+    func fetchPost(withId id: PostID) -> Observable<Firebase.Post?> {
+        return ref
+            .child(byAppendingPath: "posts")
+            .child(byAppendingPath: id)
+            .rx.observeEventOnce()
+            .map(Firebase.Post.fromFirebase)
+    }
 
     func fetchPosts() -> Observable<[Firebase.Post]> {
         return ref
             .child(byAppendingPath: "posts")
             .queryOrdered(byChild: "date")
             .rx.observeEventOnce()
+            // TODO: refactor this to use `Firebase.Post.fromFirebase`
             .map { arrayOfPostData -> [[String: AnyObject]] in
                 guard let json = arrayOfPostData.value as? [String : AnyObject] else {
                     // assume empty if doesn't cast
@@ -99,31 +85,4 @@ extension Firebase.Provider {
             .map { ref in Firebase.Post(id: ref.key, prompt: prompt, author: userId) }
     }
 
-    func createReaction(content: String, on post: PostID, by author: UserID) -> Observable<Firebase.Reaction> {
-        return ref
-            .child(byAppendingPath: "reactions")
-            .rx.setChildByAutoId([
-                "content": content,
-                "postId": post,
-                "authorId": author
-            ])
-            .map { ref in Firebase.Reaction(id: ref.key, author: author, post: post, content: content) }
-    }
-
-    func updateReaction(_ id: ReactionID, newContent: String) -> Observable<String> {
-        return ref
-            .child(byAppendingPath: "reactions")
-            .child(byAppendingPath: id)
-            .child(byAppendingPath: "content")
-            .rx.setValue(NSString(string: newContent))
-            .mapTo(newContent)
-    }
-    
-    func deleteReaction(withID id: ReactionID) -> Observable<Void> {
-        return ref
-            .child(byAppendingPath: "reactions")
-            .child(byAppendingPath: id)
-            .rx.setValue(.none)
-            .mapTo(())
-    }
 }
