@@ -20,7 +20,8 @@ class Challenge {
             store: StoreDependency = defaultStoreDependency
         ) {
 
-            inputs.pullToRefresh.bindNext { store.dispatcher.dispatch(Post.Action.loadPosts()) }
+            inputs.pullToRefresh.map(Post.LoadAction.loadPosts)
+                .bindNext(store.dispatcher.dispatch)
                 .addDisposableTo(disposeBag)
 
             inputs.ordering.map(Challenge.Action.updateOrdering)
@@ -32,18 +33,12 @@ class Challenge {
                 .addDisposableTo(disposeBag)
 
             store.state.asDriver()
-                .map { $0.postState.lastAction }
-                .map { lastAction in
-                    switch lastAction {
-                    case .loadingPosts:                 return true
-                    case .errorLoadingPosts, .loaded:   return false
-                    }
-                }
+                .map { $0.postState.isLoadingPosts }
                 .drive(sinks.refreshControlVisible)
                 .addDisposableTo(disposeBag)
 
             store.state.asDriver()
-                .map { $0.postState.posts }
+                .map { $0.postState.loadedPosts }
                 .map { posts in
                     // TODO: use the source & ordering to mutate posts
                     return posts

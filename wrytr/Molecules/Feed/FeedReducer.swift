@@ -17,17 +17,18 @@ extension Feed {
         private let challengeReducer = Challenge.Reducer()
 
         func handleAction(_ action: Cordux.Action, state: App.State) -> App.State {
-            let state = state
+            var state = state
 
             // TODO: refactor this. The abstraction of a Post.Action.errorLoadingPosts always pertaining to the feed is leaky
             switch action {
-            case Post.Action.errorLoadingPosts(let error):
+            case Post.LoadAction.errorLoadingPosts(let error):
                 state.feedState.error = error
 
             case let feedAction as Feed.Action:
                 switch feedAction {
                 case .dismissError:
-                    state.feedState.error = nil
+                    state.feedState.error = .none
+                    state.postState.errorLoading = .none // TODO: this is part of the leaky abstraction. This is also repeated in the Friends Reducer :/
                 }
 
             default:
