@@ -13,18 +13,18 @@
 
 // swiftlint:disable type_body_length
 enum Asset: String {
+  case arrowLeft = "arrow-left"
   case comment = "comment"
+  case elipses = "elipses"
   case facebookLogo = "facebook-logo"
   case followButton = "follow-button"
-  case arrowLeft = "arrow-left"
-  case elipses = "elipses"
   case iIcon = "i-icon"
-  case share = "share"
-  case star = "star"
   case iconTabbarCreate = "icon-tabbar-create"
   case iconTabbarFeed = "icon-tabbar-feed"
   case iconTabbarFriends = "icon-tabbar-friends"
   case iconTabbarProfile = "icon-tabbar-profile"
+  case share = "share"
+  case star = "star"
   case twitterLogo = "twitter-logo"
   case wrytrWorded = "wrytr-worded"
 

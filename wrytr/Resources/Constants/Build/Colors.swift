@@ -42,11 +42,16 @@ enum ColorName {
 
   var rgbaValue: UInt32 {
     switch self {
-    case .facebookBlue: return 0x39579aff
-    case .loginLoginBackground: return 0x3798cbff
-    case .loginSignupBackground: return 0x53bfa8ff
-    case .tint: return 0x2bacb5ff
-    case .twitterBlue: return 0x50abf1ff
+    case .facebookBlue:
+      return 0x39579aff
+    case .loginLoginBackground:
+      return 0x3798cbff
+    case .loginSignupBackground:
+      return 0x53bfa8ff
+    case .tint:
+      return 0x2bacb5ff
+    case .twitterBlue:
+      return 0x50abf1ff
     }
   }
 

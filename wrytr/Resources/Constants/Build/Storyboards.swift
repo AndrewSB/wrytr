@@ -2,6 +2,7 @@
 
 import Foundation
 import UIKit
+import wrytr
 
 // swiftlint:disable file_length
 // swiftlint:disable line_length
@@ -45,27 +46,27 @@ struct StoryboardScene {
   enum Challenge: String, StoryboardSceneType {
     static let storyboardName = "Challenge"
 
-    static func initialViewController() -> ChallengeNavigationController {
-      guard let vc = storyboard().instantiateInitialViewController() as? ChallengeNavigationController else {
+    static func initialViewController() -> wrytr.ChallengeNavigationController {
+      guard let vc = storyboard().instantiateInitialViewController() as? wrytr.ChallengeNavigationController else {
         fatalError("Failed to instantiate initialViewController for \(self.storyboardName)")
       }
       return vc
     }
 
     case challengeNavScene = "challengeNav"
-    static func instantiateChallengeNav() -> ChallengeNavigationController {
-      guard let vc = StoryboardScene.Challenge.challengeNavScene.viewController() as? ChallengeNavigationController
+    static func instantiateChallengeNav() -> wrytr.ChallengeNavigationController {
+      guard let vc = StoryboardScene.Challenge.challengeNavScene.viewController() as? wrytr.ChallengeNavigationController
       else {
-        fatalError("ViewController 'challengeNav' is not of the expected class ChallengeNavigationController.")
+        fatalError("ViewController 'challengeNav' is not of the expected class wrytr.ChallengeNavigationController.")
       }
       return vc
     }
 
     case challengeVCScene = "challengeVC"
-    static func instantiateChallengeVC() -> ChallengeViewController {
-      guard let vc = StoryboardScene.Challenge.challengeVCScene.viewController() as? ChallengeViewController
+    static func instantiateChallengeVC() -> wrytr.ChallengeViewController {
+      guard let vc = StoryboardScene.Challenge.challengeVCScene.viewController() as? wrytr.ChallengeViewController
       else {
-        fatalError("ViewController 'challengeVC' is not of the expected class ChallengeViewController.")
+        fatalError("ViewController 'challengeVC' is not of the expected class wrytr.ChallengeViewController.")
       }
       return vc
     }
@@ -74,10 +75,10 @@ struct StoryboardScene {
     static let storyboardName = "Compose"
 
     case composeScene = "compose"
-    static func instantiateCompose() -> ComposeViewController {
-      guard let vc = StoryboardScene.Compose.composeScene.viewController() as? ComposeViewController
+    static func instantiateCompose() -> wrytr.ComposeViewController {
+      guard let vc = StoryboardScene.Compose.composeScene.viewController() as? wrytr.ComposeViewController
       else {
-        fatalError("ViewController 'compose' is not of the expected class ComposeViewController.")
+        fatalError("ViewController 'compose' is not of the expected class wrytr.ComposeViewController.")
       }
       return vc
     }
@@ -86,19 +87,19 @@ struct StoryboardScene {
     static let storyboardName = "Create"
 
     case createScene = "create"
-    static func instantiateCreate() -> CreateViewController {
-      guard let vc = StoryboardScene.Create.createScene.viewController() as? CreateViewController
+    static func instantiateCreate() -> wrytr.CreateViewController {
+      guard let vc = StoryboardScene.Create.createScene.viewController() as? wrytr.CreateViewController
       else {
-        fatalError("ViewController 'create' is not of the expected class CreateViewController.")
+        fatalError("ViewController 'create' is not of the expected class wrytr.CreateViewController.")
       }
       return vc
     }
 
     case createNavScene = "createNav"
-    static func instantiateCreateNav() -> CreateNavigationController {
-      guard let vc = StoryboardScene.Create.createNavScene.viewController() as? CreateNavigationController
+    static func instantiateCreateNav() -> wrytr.CreateNavigationController {
+      guard let vc = StoryboardScene.Create.createNavScene.viewController() as? wrytr.CreateNavigationController
       else {
-        fatalError("ViewController 'createNav' is not of the expected class CreateNavigationController.")
+        fatalError("ViewController 'createNav' is not of the expected class wrytr.CreateNavigationController.")
       }
       return vc
     }
@@ -107,10 +108,10 @@ struct StoryboardScene {
     static let storyboardName = "Landing"
 
     case landingScene = "Landing"
-    static func instantiateLanding() -> LandingViewController {
-      guard let vc = StoryboardScene.Landing.landingScene.viewController() as? LandingViewController
+    static func instantiateLanding() -> wrytr.LandingViewController {
+      guard let vc = StoryboardScene.Landing.landingScene.viewController() as? wrytr.LandingViewController
       else {
-        fatalError("ViewController 'Landing' is not of the expected class LandingViewController.")
+        fatalError("ViewController 'Landing' is not of the expected class wrytr.LandingViewController.")
       }
       return vc
     }
@@ -121,27 +122,27 @@ struct StoryboardScene {
   enum Me: String, StoryboardSceneType {
     static let storyboardName = "Me"
 
-    static func initialViewController() -> MeNavigationController {
-      guard let vc = storyboard().instantiateInitialViewController() as? MeNavigationController else {
+    static func initialViewController() -> wrytr.MeNavigationController {
+      guard let vc = storyboard().instantiateInitialViewController() as? wrytr.MeNavigationController else {
         fatalError("Failed to instantiate initialViewController for \(self.storyboardName)")
       }
       return vc
     }
 
     case meVCScene = "meVC"
-    static func instantiateMeVC() -> MeViewController {
-      guard let vc = StoryboardScene.Me.meVCScene.viewController() as? MeViewController
+    static func instantiateMeVC() -> wrytr.MeViewController {
+      guard let vc = StoryboardScene.Me.meVCScene.viewController() as? wrytr.MeViewController
       else {
-        fatalError("ViewController 'meVC' is not of the expected class MeViewController.")
+        fatalError("ViewController 'meVC' is not of the expected class wrytr.MeViewController.")
       }
       return vc
     }
 
     case navConScene = "navCon"
-    static func instantiateNavCon() -> MeNavigationController {
-      guard let vc = StoryboardScene.Me.navConScene.viewController() as? MeNavigationController
+    static func instantiateNavCon() -> wrytr.MeNavigationController {
+      guard let vc = StoryboardScene.Me.navConScene.viewController() as? wrytr.MeNavigationController
       else {
-        fatalError("ViewController 'navCon' is not of the expected class MeNavigationController.")
+        fatalError("ViewController 'navCon' is not of the expected class wrytr.MeNavigationController.")
       }
       return vc
     }
@@ -150,10 +151,10 @@ struct StoryboardScene {
     static let storyboardName = "PostDetail"
 
     case postDetailScene = "postDetail"
-    static func instantiatePostDetail() -> PostDetailViewController {
-      guard let vc = StoryboardScene.PostDetail.postDetailScene.viewController() as? PostDetailViewController
+    static func instantiatePostDetail() -> wrytr.PostDetailViewController {
+      guard let vc = StoryboardScene.PostDetail.postDetailScene.viewController() as? wrytr.PostDetailViewController
       else {
-        fatalError("ViewController 'postDetail' is not of the expected class PostDetailViewController.")
+        fatalError("ViewController 'postDetail' is not of the expected class wrytr.PostDetailViewController.")
       }
       return vc
     }
@@ -162,10 +163,10 @@ struct StoryboardScene {
     static let storyboardName = "Profile"
 
     case profileScene = "profile"
-    static func instantiateProfile() -> ProfileViewController {
-      guard let vc = StoryboardScene.Profile.profileScene.viewController() as? ProfileViewController
+    static func instantiateProfile() -> wrytr.ProfileViewController {
+      guard let vc = StoryboardScene.Profile.profileScene.viewController() as? wrytr.ProfileViewController
       else {
-        fatalError("ViewController 'profile' is not of the expected class ProfileViewController.")
+        fatalError("ViewController 'profile' is not of the expected class wrytr.ProfileViewController.")
       }
       return vc
     }
@@ -174,10 +175,10 @@ struct StoryboardScene {
     static let storyboardName = "ProfilePhoto"
 
     case profilePhotoVCScene = "profilePhotoVC"
-    static func instantiateProfilePhotoVC() -> ProfilePhotoViewController {
-      guard let vc = StoryboardScene.ProfilePhoto.profilePhotoVCScene.viewController() as? ProfilePhotoViewController
+    static func instantiateProfilePhotoVC() -> wrytr.ProfilePhotoViewController {
+      guard let vc = StoryboardScene.ProfilePhoto.profilePhotoVCScene.viewController() as? wrytr.ProfilePhotoViewController
       else {
-        fatalError("ViewController 'profilePhotoVC' is not of the expected class ProfilePhotoViewController.")
+        fatalError("ViewController 'profilePhotoVC' is not of the expected class wrytr.ProfilePhotoViewController.")
       }
       return vc
     }
@@ -185,8 +186,8 @@ struct StoryboardScene {
   enum Startup: StoryboardSceneType {
     static let storyboardName = "Startup"
 
-    static func initialViewController() -> StartupViewController {
-      guard let vc = storyboard().instantiateInitialViewController() as? StartupViewController else {
+    static func initialViewController() -> wrytr.StartupViewController {
+      guard let vc = storyboard().instantiateInitialViewController() as? wrytr.StartupViewController else {
         fatalError("Failed to instantiate initialViewController for \(self.storyboardName)")
       }
       return vc
