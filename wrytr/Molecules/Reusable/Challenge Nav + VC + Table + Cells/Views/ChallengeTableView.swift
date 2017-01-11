@@ -2,6 +2,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Firebase
+import Then
 
 class ChallengeTableView: UITableView {
     fileprivate let disposeBag = DisposeBag()
@@ -14,14 +15,22 @@ class ChallengeTableView: UITableView {
     }
 
     let selectedSegmentControlSection = Variable(0) // start with section 0
-    var topSegmentedControl: SegmentedTableViewHeaderFooterView {
-        return self.tableView(self, viewForHeaderInSection: 0) as! SegmentedTableViewHeaderFooterView
+    lazy var topSegmentedControl: SegmentedTableViewHeaderView = SegmentedTableViewHeaderView(frame: .zero).then {
+        $0.frame.size.height = 50
+
+        $0.tintColor = UIColor(named: .tint)
+        $0.selected.bindTo(self.selectedSegmentControlSection).addDisposableTo(self.disposeBag)
     }
+
     var topSegmentedControlValue: ControlProperty<Int> {
         return topSegmentedControl.selected
     }
 
-    var segmentedControlSectionTitles: [String] = []
+    var segmentedControlSectionTitles: [String] = [] {
+        didSet {
+            topSegmentedControl.segments = segmentedControlSectionTitles
+        }
+    }
     let posts = Variable([PostType]())
 
     private var _refreshControl: UIRefreshControl? // for pre-iOS 10
@@ -57,17 +66,30 @@ class ChallengeTableView: UITableView {
     func commonInit() {
         self.refreshControl = UIRefreshControl()
 
+        // this initialValue is saved since accessing the topSegmentedControl binds to the selectedValue, which changes from initial (0) to the default value (-1)
+        let initialValue = self.selectedSegmentControlSection.value
+        topSegmentedControl.selectedSegmentIndex = initialValue
+
         self.rowHeight = UITableViewAutomaticDimension
         self.estimatedRowHeight = 100
         self.backgroundColor = .white
-
-        self.register(SegmentedTableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "segmentedControl")
 
         (dataSource, delegate) = (self, self)
 
         posts.asObservable()
             .subscribe(onNext: { [weak self] _ in self?.reloadData() })
             .addDisposableTo(disposeBag)
+
+        switch self.tableHeaderView {
+        case .none:
+            self.tableHeaderView = topSegmentedControl
+
+        case .some(let header):
+            header.frame.size.height += 50
+            topSegmentedControl.frame.origin.y = header.frame.size.height - 50
+            header.addSubview(topSegmentedControl)
+
+        }
     }
 
 }
@@ -76,39 +98,6 @@ extension ChallengeTableView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
-    }
-
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) { // swiftlint:disable:this variable_name
-//        view.tintColor = .clear // TODO: make sure this isn't needed
-    }
-
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        switch section {
-        case 0:
-            let segmentHeader = self.dequeueReusableHeaderFooterView(withIdentifier: "segmentedControl") as! SegmentedTableViewHeaderFooterView
-            print("dequeued \(segmentHeader)")
-            segmentHeader.segments = self.segmentedControlSectionTitles
-            segmentHeader.selectedSegmentIndex = self.selectedSegmentControlSection.value
-            segmentHeader.tintColor = UIColor(named: .tint)
-
-            segmentedControlDisposeBag = DisposeBag() // dispose of all the old ones before you grab the latest one
-            segmentHeader.selected.bindTo(selectedSegmentControlSection).addDisposableTo(segmentedControlDisposeBag)
-
-            return segmentHeader
-
-        default:
-            return nil
-        }
-    }
-
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        switch section {
-        case 0:
-            return 50
-        default:
-            return 10
-        }
     }
 
 }
@@ -116,26 +105,23 @@ extension ChallengeTableView: UITableViewDelegate {
 extension ChallengeTableView: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch posts.value.count {
-        case 0:
-            return 0 // return 0 if there are no posts, to work with our hack in `numberOfSections`
-        default:
-            return 1
-        }
+        return 1
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        switch posts.value.count {
-        case 0:
-            return 1 // return 1 so we never have an empty tableView (so the segmented control header always shows)
-        default:
-            return posts.value.count
+        return posts.value.count
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        switch section {
+        case posts.value.count: return 0 // no extra spacing for the last section
+        default:                return 11
         }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "lol") as! ChallengeTableViewCell // swiftlint:disable:this force_cast
-        let element = posts.value[indexPath.section]
+        let element = posts.value[indexPath.row]
 
         cell.xInsets = ChallengeTableView.sideInset
         cell.prompt.text = element.prompt

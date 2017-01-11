@@ -3,7 +3,7 @@ import Then
 import RxSwift
 import RxCocoa
 
-class SegmentedTableViewHeaderFooterView: UITableViewHeaderFooterView {
+class SegmentedTableViewHeaderView: UIView {
     private let segmentedControl = UISegmentedControl()
 
     var segments: [String] = [] {
@@ -29,9 +29,9 @@ class SegmentedTableViewHeaderFooterView: UITableViewHeaderFooterView {
     var selected: ControlProperty<Int> {
         return segmentedControl.rx.value
     }
-
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         commonInit()
     }
 

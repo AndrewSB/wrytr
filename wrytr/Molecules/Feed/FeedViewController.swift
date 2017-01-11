@@ -32,13 +32,15 @@ extension Feed {
                 inputs: (
                     pullToRefresh: contained.tableView.refreshControl!.rx.controlEvent(.valueChanged),
                     source: .just(.everyone),
-                    ordering: contained.tableView.topSegmentedControlValue.map { value -> Challenge.State.Ordering in
-                        switch value {
-                        case 0: return .new
-                        case 1: return .popular
-                        default: fatalError("dont know how to handle > 2 cases yet. Just new & popular")
+                    ordering: contained.tableView.topSegmentedControlValue
+                        .ignore(-1)
+                        .map { value -> Challenge.State.Ordering in
+                            switch value {
+                            case 0: return .new
+                            case 1: return .popular
+                            default: fatalError("dont know how to handle > 2 cases yet. Just new & popular")
+                            }
                         }
-                    }
                 ),
                 sinks: (
                     refreshControlVisible: contained.tableView.refreshControl!.rx.isRefreshing,
