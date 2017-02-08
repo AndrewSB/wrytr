@@ -26,10 +26,7 @@ class ProfilePhotoViewController: RxViewController {
 
         self.rx.observe(UIColor.self, "view.backgroundColor")
             .startWith(self.view.backgroundColor!)
-            .subscribe(onNext: { color in
-                print("background color is \(color)")
-                self.accessoryUnderlay.backgroundColor = color
-            })
+            .subscribe(onNext: { color in self.accessoryUnderlay.backgroundColor = color })
             .addDisposableTo(disposeBag)
 
 //        Observable<Int>.timer(1, period: 1, scheduler: MainScheduler.instance)

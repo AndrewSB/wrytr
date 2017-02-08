@@ -11,7 +11,8 @@ class Challenge {
             inputs: (
                 pullToRefresh: ControlEvent<Void>,
                 source: Observable<State.Source>,
-                ordering: Observable<State.Ordering>
+                ordering: Observable<State.Ordering>,
+                challengeSelected: Observable<PostID>
             ),
             sinks: (
                 refreshControlVisible: UIBindingObserver<UIRefreshControl, Bool>,
@@ -29,6 +30,10 @@ class Challenge {
                 .addDisposableTo(disposeBag)
 
             inputs.source.map(Challenge.Action.updateSource)
+                .bindNext(store.dispatcher.dispatch)
+                .addDisposableTo(disposeBag)
+
+            inputs.challengeSelected.map(RouteAction.push)
                 .bindNext(store.dispatcher.dispatch)
                 .addDisposableTo(disposeBag)
 

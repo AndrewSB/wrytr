@@ -31,7 +31,12 @@ class ChallengeTableView: UITableView {
             topSegmentedControl.segments = segmentedControlSectionTitles
         }
     }
+
     let posts = Variable([PostType]())
+    lazy var postAtIndexPath: (IndexPath) -> PostType = { indexPath in self.posts.value[indexPath.section] }
+
+    fileprivate var itemSelectedSubject = PublishSubject<PostType>()
+    var itemSelected: Observable<PostType> { return itemSelectedSubject.asObservable() }
 
     private var _refreshControl: UIRefreshControl? // for pre-iOS 10
     override var refreshControl: UIRefreshControl? {
@@ -97,6 +102,7 @@ class ChallengeTableView: UITableView {
 extension ChallengeTableView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.itemSelectedSubject.onNext(postAtIndexPath(indexPath))
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
@@ -121,7 +127,7 @@ extension ChallengeTableView: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "lol") as! ChallengeTableViewCell // swiftlint:disable:this force_cast
-        let element = posts.value[indexPath.row]
+        let element = postAtIndexPath(indexPath)
 
         cell.xInsets = ChallengeTableView.sideInset
         cell.prompt.text = element.prompt

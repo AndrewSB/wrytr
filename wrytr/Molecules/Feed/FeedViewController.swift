@@ -40,7 +40,8 @@ extension Feed {
                             case 1: return .popular
                             default: fatalError("dont know how to handle > 2 cases yet. Just new & popular")
                             }
-                        }
+                        },
+                    challengeSelected: contained.tableView.itemSelected.map { $0.id }
                 ),
                 sinks: (
                     refreshControlVisible: contained.tableView.refreshControl!.rx.isRefreshing,

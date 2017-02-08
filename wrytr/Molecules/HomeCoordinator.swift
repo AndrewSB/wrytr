@@ -32,6 +32,16 @@ class Home {
 
         let store: Cordux.Store<App.State>
 
+        lazy var sceneForRoute: (Route) -> Scene? = { route in
+            route.first.flatMap(RouteSegment.init).map {
+                switch $0 {
+                case .feed:     return self.scenes[0]
+                case .friends:     return self.scenes[1]
+                case .create:     return self.scenes[2]
+                case .me:     return self.scenes[3]
+                }
+            }
+        }
         let scenes: [Scene]
         let tabBarController = UITabBarController()
 
@@ -48,9 +58,7 @@ class Home {
             self.tabBarController.delegate = self
             self.tabBarController.viewControllers = self.scenes.map { scene in
                 let vc = scene.coordinator.rootViewController
-                guard let tabBarVC = scene.coordinator.rootViewController.unwrapNavCon() as? TabBarItemProviding else {
-                    fatalError()
-                }
+                guard let tabBarVC = scene.coordinator.rootViewController.unwrapNavCon() as? TabBarItemProviding else { fatalError() }
                 vc.tabBarItem = type(of: tabBarVC).tabItem
                 return vc
             }
@@ -60,7 +68,17 @@ class Home {
 }
 
 extension Home.Coordinator {
-    func start(route: Route?) {}
+    func start(route: Route?) {
+        guard let route = route, !route.isEmpty else {
+            return self.store.route(.push(RouteSegment.feed))
+        }
+    }
+
+    /// This is called each time the store is dispatched programatically 
+    func changeScene(_ route: Route) {
+        print("change scene to \(route). self is \(self.route). Parent is \(appStore.state.route)")
+    }
+
 }
 
 extension Home.Coordinator: UITabBarControllerDelegate {
