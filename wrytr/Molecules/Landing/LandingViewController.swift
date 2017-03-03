@@ -114,7 +114,7 @@ extension Landing.ViewController: Cordux.SubscriberType {
 
         switch state.authenticationState.user {
         case .loggingIn:
-            startLoading()
+            startLoading(.gray)
 
         case .failedToLogin(let err):
             stopLoading()
