@@ -1225,6 +1225,7 @@
 		468614CE1C89CC3A002C2BAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = wrytr/Resources/wrytr.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Rob Santwer (N8T89MCN97)";
@@ -1253,6 +1254,7 @@
 		468614CF1C89CC3A002C2BAC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = wrytr/Resources/wrytr.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Rob Santwer (L8BYC3JY5Z)";
