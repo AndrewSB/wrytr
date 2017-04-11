@@ -2,7 +2,6 @@
 
 import Foundation
 import UIKit
-import wrytr
 
 // swiftlint:disable file_length
 // swiftlint:disable line_length
@@ -14,7 +13,7 @@ protocol StoryboardSceneType {
 
 extension StoryboardSceneType {
   static func storyboard() -> UIStoryboard {
-    return UIStoryboard(name: self.storyboardName, bundle: nil)
+    return UIStoryboard(name: self.storyboardName, bundle: Bundle(for: BundleToken.self))
   }
 
   static func initialViewController() -> UIViewController {
@@ -42,7 +41,7 @@ extension UIViewController {
   }
 }
 
-struct StoryboardScene {
+enum StoryboardScene {
   enum Challenge: String, StoryboardSceneType {
     static let storyboardName = "Challenge"
 
@@ -195,8 +194,10 @@ struct StoryboardScene {
   }
 }
 
-struct StoryboardSegue {
+enum StoryboardSegue {
   enum Me: String, StoryboardSegueType {
-    case embedProfilePhoto = "embedProfilePhoto"
+    case embedProfilePhoto
   }
 }
+
+private final class BundleToken {}

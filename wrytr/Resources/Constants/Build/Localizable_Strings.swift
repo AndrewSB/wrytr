@@ -21,6 +21,8 @@ enum L10n {
   case feedTitle
   /// Friends
   case friendTitle
+  /// Use your words
+  case loginLandingSubtitle
   /// Terms & Privacy Policy
   case loginLandingButtonTosTitleButton
   /// By signing up, you agree to our 
@@ -39,8 +41,6 @@ enum L10n {
   case loginLandingRegisterTitle
   /// Continue with social
   case loginLandingSocialButtonTitle
-  /// Use your words
-  case loginLandingSubtitle
   /// Me
   case meTitle
 }
@@ -65,14 +65,16 @@ extension L10n: CustomStringConvertible {
         return L10n.tr(key: "feed.title")
       case .friendTitle:
         return L10n.tr(key: "friend.title")
+      case .loginLandingSubtitle:
+        return L10n.tr(key: "login.landing.subtitle")
       case .loginLandingButtonTosTitleButton:
         return L10n.tr(key: "login.landing.button.tos.title.button")
       case .loginLandingButtonTosTitlePrefix:
         return L10n.tr(key: "login.landing.button.tos.title.prefix")
       case .loginLandingButtonTosTitleSuffix:
         return L10n.tr(key: "login.landing.button.tos.title.suffix")
-      case .loginLandingEmailbuttonTitle(let p0):
-        return L10n.tr(key: "login.landing.emailbutton.title", p0)
+      case .loginLandingEmailbuttonTitle(let p1):
+        return L10n.tr(key: "login.landing.emailbutton.title", p1)
       case .loginLandingHelperLoginTitle:
         return L10n.tr(key: "login.landing.helper.login.title")
       case .loginLandingHelperRegisterTitle:
@@ -83,15 +85,13 @@ extension L10n: CustomStringConvertible {
         return L10n.tr(key: "login.landing.register.title")
       case .loginLandingSocialButtonTitle:
         return L10n.tr(key: "login.landing.socialButton.title")
-      case .loginLandingSubtitle:
-        return L10n.tr(key: "login.landing.subtitle")
       case .meTitle:
         return L10n.tr(key: "me.title")
     }
   }
 
   private static func tr(key: String, _ args: CVarArg...) -> String {
-    let format = NSLocalizedString(key, comment: "")
+    let format = NSLocalizedString(key, bundle: Bundle(for: BundleToken.self), comment: "")
     return String(format: format, locale: Locale.current, arguments: args)
   }
 }
@@ -99,3 +99,5 @@ extension L10n: CustomStringConvertible {
 func tr(_ key: L10n) -> String {
   return key.string
 }
+
+private final class BundleToken {}
