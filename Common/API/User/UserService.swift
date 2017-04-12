@@ -13,7 +13,7 @@ extension User {
         }
 
         static var authedUser: UserType? {
-            return 🔥.authUser as? UserType
+            return 🔥.authUser
         }
 
         static func fetchUser(userID: UserID) -> Observable<UserType> {

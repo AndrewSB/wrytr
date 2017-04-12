@@ -6,7 +6,7 @@ class Feed {
     class Coordinator: NavigationControllerCoordinator {
         typealias State = App.State
         enum RouteSegment: String, RouteConvertible {
-            case feed
+            case feed // swiftlint:disable:this identifier_name
         }
 
         let store: Cordux.Store<App.State>
@@ -26,15 +26,17 @@ class Feed {
                 return self.store.route(.push(RouteSegment.feed)) // this will call updateRoute
             }
 
-            updateRoute(route)
+            updateRoute(route) {}
         }
 
-        func updateRoute(_ route: Route) {
+        func updateRoute(_ route: Route, completionHandler: @escaping () -> Void) {
             let parsedRoute = route.flatMap(RouteSegment.init)
 
             if parsedRoute != [.feed] || !parsedRoute.isEmpty {} else {
                 assertionFailure()
             }
+
+            completionHandler()
         }
     }
 

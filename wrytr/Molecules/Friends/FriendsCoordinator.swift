@@ -25,15 +25,17 @@ class Friends {
                 return self.store.route(.push(RouteSegment.friends)) // this will call updateRoute
             }
 
-            updateRoute(route)
+            updateRoute(route) {}
         }
 
-        func updateRoute(_ route: Route) {
+        func updateRoute(_ route: Route, completionHandler: @escaping () -> Void) {
             let parsedRoute = route.flatMap(RouteSegment.init)
 
             if parsedRoute != [.friends] || !parsedRoute.isEmpty {} else {
                 assertionFailure()
             }
+
+            completionHandler()
         }
     }
 }

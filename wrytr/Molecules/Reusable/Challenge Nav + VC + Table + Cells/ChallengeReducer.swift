@@ -11,7 +11,7 @@ extension Challenge {
         }
 
         enum Ordering {
-            case new
+            case new // swiftlint:disable:this variable_name
             case popular
         }
     }

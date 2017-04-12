@@ -4,25 +4,21 @@ import Cordux
 extension App {
     final class Coordinator: SceneCoordinator {
         enum RouteSegment: String, RouteConvertible {
-            case auth
-            case home
-
-            var coordinator: AnyCoordinator.Type {
-                switch self {
-                case .auth:
-                    return Authentication.Coordinator.self
-                case .home:
-                    return Home.Coordinator.self
-                }
-            }
-
+            case auth // swiftlint:disable:this variable_name
+            case home // swiftlint:disable:this variable_name
         }
-        var scenePrefix: String?
+
+        fileprivate var childCoordinatorsPresented: [RouteSegment: (AnyCoordinator, Bool)] = [:]
 
         let store: Cordux.Store<App.State>
         let container: UIViewController
 
-        var currentScene: AnyCoordinator?
+        /// The current scene being shown by the coordinator.
+        var currentScene: Scene? {
+            didSet {
+                print("set scene to \(String(describing: currentScene))")
+            }
+        }
 
         var rootViewController: UIViewController {
             return container
@@ -41,34 +37,41 @@ extension App {
                 return store.route(.push(initialRouteSegment.route())) // this will call changeScene
             }
 
-            changeScene(route)
         }
 
-        func changeScene(_ route: Route) {
-            guard let segment = RouteSegment(rawValue: route.first ?? "") else {
-                return
+        func presentCoordinator(_ coordinator: AnyCoordinator?, completionHandler: @escaping () -> Void) {
+            guard let coordinator = coordinator else { fatalError() }
+
+            let filtered = childCoordinatorsPresented.values
+                .map { coordinator, _ in coordinator }
+                .filter { coordinator.route == $0.route }
+            guard filtered.count == 1 else { fatalError() }
+
+            let new = filtered.first!
+            let newRouteSegment = RouteSegment(rawValue: new.route.components.last!)!
+
+            switch childCoordinatorsPresented[newRouteSegment]! {
+            case (_, true):  break
+            case (_, false):
+                new.start(route: newRouteSegment.route())
+                childCoordinatorsPresented[newRouteSegment]!.1 = true
             }
 
-            guard segment.coordinator != type(of: currentScene) else {
-                return
-            }
+            switchView(inContainerView: self.container, from: current.rootViewController, to: new.rootViewController, completion: completionHandler)
+        }
 
-            let old = currentScene?.rootViewController
+        // swiftlint:disable:next identifier_name
+        func coordinatorForTag(_ tag: String) -> (coordinator: AnyCoordinator, started: Bool)? {
+            guard let routeSegment = RouteSegment(rawValue: tag) else { return .none }
 
-            let coordinator: AnyCoordinator
-            switch segment {
+            switch routeSegment {
             case .auth:
-                coordinator = Authentication.Coordinator(store: self.store)
+                return (Authentication.Coordinator(store: self.store), false)
             case .home:
-                coordinator = Home.Coordinator(store: self.store)
+                return (Home.Coordinator(store: self.store), false)
             }
-            self.currentScene = coordinator
-            self.scenePrefix = segment.rawValue
-            coordinator.start(route: sceneRoute(route))
-
-            let new = coordinator.rootViewController
-            switchView(inContainerView: self.container, from: old, to: new)
         }
+
     }
 }
 
@@ -77,7 +80,8 @@ private typealias ContainerAnimator = App.Coordinator
 private extension ContainerAnimator {
     func switchView(inContainerView container: UIViewController,
                     from fromVC: UIViewController?, // potentially nil, if youre setting the view for the first time
-        to toVC: UIViewController) { // swiftlint:disable:this variable_name
+                    to toVC: UIViewController, // swiftlint:disable:this variable_name
+                    completion: @escaping () -> Void) { // swiftlint:disable:this variable_name
 
         fromVC?.willMove(toParentViewController: nil)
         container.addChildViewController(toVC)
@@ -99,6 +103,7 @@ private extension ContainerAnimator {
             fromVC?.view.removeFromSuperview()
             fromVC?.removeFromParentViewController()
             toVC.didMove(toParentViewController: container)
+            completion()
         })
     }
 }

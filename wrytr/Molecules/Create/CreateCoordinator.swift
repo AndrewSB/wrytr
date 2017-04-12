@@ -24,15 +24,16 @@ class Create {
                 return self.store.route(.push(RouteSegment.create))
             }
 
-            updateRoute(route)
+            updateRoute(route) {}
         }
 
-        func updateRoute(_ route: Route) {
-            let parsedRoute = route.flatMap(RouteSegment.init)
+        func updateRoute(_ route: Route, completionHandler: @escaping () -> Void) {            let parsedRoute = route.flatMap(RouteSegment.init)
 
             if parsedRoute != [.create] || !parsedRoute.isEmpty {} else {
                 assertionFailure()
             }
+
+            completionHandler()
         }
     }
 

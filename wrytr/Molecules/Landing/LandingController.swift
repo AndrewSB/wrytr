@@ -27,11 +27,11 @@ extension Landing {
         ) {
 
             input.button.facebook.map(Authentication.Action.facebookLogin)
-                .bindNext(store.dispatcher.dispatch)
+                .bind(onNext: store.dispatcher.dispatch)
                 .addDisposableTo(disposeBag)
 
             input.button.twitter.map(Authentication.Action.twitterLogin)
-                .bindNext(store.dispatcher.dispatch)
+                .bind(onNext: store.dispatcher.dispatch)
                 .addDisposableTo(disposeBag)
 
             input.button.dismissError.map { Landing.Action.dismissError }

@@ -28,7 +28,7 @@ extension Post {
                     case .next(let posts):
                         store.dispatch(LoadAction.loaded(posts))
                     case .error(let err):
-                        store.dispatch(LoadAction.errorLoadingPosts(err as! PresentableError))
+                        store.dispatch(LoadAction.errorLoadingPosts(err as PresentableError))
                     case .completed:
                         break
                     }
@@ -53,7 +53,7 @@ extension Post {
                     case .next(let post):
                         store.dispatch(CreateAction.createdPost(post))
                     case .error(let err):
-                        store.dispatch(CreateAction.errorCreatingPost(err as! PresentableError))
+                        store.dispatch(CreateAction.errorCreatingPost(err as PresentableError))
                     case .completed:
                         break
                     }

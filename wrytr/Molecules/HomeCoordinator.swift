@@ -11,10 +11,10 @@ class Home {
 
     class Coordinator: NSObject, TabBarControllerCoordinator {
         enum RouteSegment: String, RouteConvertible {
-            case feed
+            case feed // swiftlint:disable:this identifier_name
             case friends
             case create
-            case me
+            case me // swiftlint:disable:this identifier_name
 
             func coordinator(withStore store: Cordux.Store<App.State>) -> AnyCoordinator {
                 switch self {
@@ -50,7 +50,7 @@ class Home {
 
             let sceneRoutes: [RouteSegment] = [.feed, .friends, .create, .me]
             self.scenes = sceneRoutes.map { route in
-                Scene(prefix: route.rawValue, coordinator: route.coordinator(withStore: store))
+                Scene(tag: route.rawValue, coordinator: route.coordinator(withStore: store))
             }
 
             super.init()

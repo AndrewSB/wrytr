@@ -3,7 +3,7 @@ import Cordux
 extension Feed {
     class State {
         var challenge: Challenge.State = Challenge.State()
-        var error: PresentableError? = nil
+        var error: PresentableError?
     }
 
     enum Action: Cordux.Action {

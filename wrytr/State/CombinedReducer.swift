@@ -20,6 +20,7 @@ public struct CombinedReducer: AnyReducer {
         self.reducers = reducers
     }
 
+    // swiftlint:disable:next identifier_name
     public func _handleAction(_ action: Action, state: StateType) -> StateType {
         return reducers.reduce(state) { (currentState, reducer) -> StateType in
             return reducer._handleAction(action, state: currentState)

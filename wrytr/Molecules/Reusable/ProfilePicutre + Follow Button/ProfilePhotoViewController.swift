@@ -70,7 +70,7 @@ extension ProfilePhotoViewController {
     enum State {
         case followed
         case follow
-        case none
+        case none // swiftlint:disable:this variable_name
     }
 }
 

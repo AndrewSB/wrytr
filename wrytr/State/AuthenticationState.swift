@@ -68,7 +68,7 @@ extension Authentication {
         private static func authResponder(_ event: Event<UserType>) {
             switch event {
             case .next(let user):   appStore.dispatch(Action.loggedIn(user))
-            case .error(let error): appStore.dispatch(Action.errorLoggingIn(error as! PresentableError))
+            case .error(let error): appStore.dispatch(Action.errorLoggingIn(error as PresentableError))
             case .completed:        break
 
             }

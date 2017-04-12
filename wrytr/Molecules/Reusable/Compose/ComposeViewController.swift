@@ -54,7 +54,7 @@ extension Compose.ViewController {
             // update the label's size
             .do(onNext: { [weak self] _ in self!.characterCountLabel.sizeToFit() })
             // bind it to the label's text
-            .bindTo(self.characterCountLabel.rx.attributedText)
+            .bind(to: self.characterCountLabel.rx.attributedText)
             .addDisposableTo(disposeBag)
 
         // whenever you hit enter, create a post
@@ -62,7 +62,7 @@ extension Compose.ViewController {
             // grab the text
             .map { [weak self] _ in self!.challengeTextView.text! }
             // create a post
-            .bindTo(postCreated)
+            .bind(to: postCreated)
             .addDisposableTo(disposeBag)
 
         challengeTextView.rx.delegate.setForwardToDelegate(DismissOnReturnTextViewDelegate(), retainDelegate: true)

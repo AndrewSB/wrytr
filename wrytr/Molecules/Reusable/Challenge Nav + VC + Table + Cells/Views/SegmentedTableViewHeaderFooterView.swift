@@ -29,7 +29,7 @@ class SegmentedTableViewHeaderView: UIView {
     var selected: ControlProperty<Int> {
         return segmentedControl.rx.value
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()

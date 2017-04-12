@@ -19,7 +19,7 @@ class ChallengeTableView: UITableView {
         $0.frame.size.height = 50
 
         $0.tintColor = UIColor(named: .tint)
-        $0.selected.bindTo(self.selectedSegmentControlSection).addDisposableTo(self.disposeBag)
+        $0.selected.bind(to: self.selectedSegmentControlSection).addDisposableTo(self.disposeBag)
     }
 
     var topSegmentedControlValue: ControlProperty<Int> {

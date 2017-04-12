@@ -4,7 +4,7 @@ import Cordux
 class Me { // swiftlint:disable:this type_name (Me)
     class Coordinator: NavigationControllerCoordinator {
         enum RouteSegment: String, RouteConvertible {
-            case me
+            case me // swiftlint:disable:this identifier_name
         }
 
         let store: Cordux.Store<App.State>
@@ -24,15 +24,16 @@ class Me { // swiftlint:disable:this type_name (Me)
                 return self.store.route(.push(RouteSegment.me)) // this will call updateRoute
             }
 
-            updateRoute(route)
+            updateRoute(route) {}
         }
 
-        func updateRoute(_ route: Route) {
-            let parsedRoute = route.flatMap(RouteSegment.init)
+        func updateRoute(_ route: Route, completionHandler: @escaping () -> Void) {            let parsedRoute = route.flatMap(RouteSegment.init)
 
             if parsedRoute != [.me] || !parsedRoute.isEmpty {} else {
                 assertionFailure()
             }
+
+            completionHandler()
         }
     }
 }

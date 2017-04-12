@@ -1,6 +1,5 @@
 import RxSwift
 import RxSwiftExt
-import RxOptional
 import Library
 import Firebase
 import Himotoki
@@ -47,7 +46,7 @@ extension Firebase.Reaction: Decodable {
 }
 
 extension Firebase.Provider {
-    func reaction(withId id: ReactionID) -> Observable<Firebase.Reaction> {
+    func reaction(withId id: ReactionID) -> Observable<Firebase.Reaction?> {
         return ref
             .child(byAppendingPath: "reactions")
             .child(byAppendingPath: id)

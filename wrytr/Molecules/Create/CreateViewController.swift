@@ -24,7 +24,7 @@ class CreateViewController: UIViewController, TabBarItemProviding {
 
         self.controller = Create.Controller(
             input: (
-                text: self.composeViewController.challengeTextView.rx.text.filterNil(),
+                text: self.composeViewController.challengeTextView.rx.text.unwrap(),
                 command: self.composeViewController.postCreated.mapTo(())
             )
         )

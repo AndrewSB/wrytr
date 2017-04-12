@@ -22,19 +22,19 @@ class Challenge {
         ) {
 
             inputs.pullToRefresh.map(Post.LoadAction.loadPosts)
-                .bindNext(store.dispatcher.dispatch)
+                .bind(onNext: store.dispatcher.dispatch)
                 .addDisposableTo(disposeBag)
 
             inputs.ordering.map(Challenge.Action.updateOrdering)
-                .bindNext(store.dispatcher.dispatch)
+                .bind(onNext: store.dispatcher.dispatch)
                 .addDisposableTo(disposeBag)
 
             inputs.source.map(Challenge.Action.updateSource)
-                .bindNext(store.dispatcher.dispatch)
+                .bind(onNext: store.dispatcher.dispatch)
                 .addDisposableTo(disposeBag)
 
             inputs.challengeSelected.map(RouteAction.push)
-                .bindNext(store.dispatcher.dispatch)
+                .bind(onNext: store.dispatcher.dispatch)
                 .addDisposableTo(disposeBag)
 
             store.state.asDriver()

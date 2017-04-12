@@ -17,7 +17,7 @@ extension Firebase.User: Decodable {
         return try Firebase.User(
             id: e <| "uid",
             name: e <| "name",
-            photo: try URLTransformer.apply(e <| "profileImageURL")
+            photo: try URLTransformer.apply(e <|? "profileImageURL")
         )
     }
 
