@@ -1,6 +1,8 @@
 # wrytr
 A social app written in ReSwift with Cordux
 
+[![CircleCI](https://circleci.com/gh/AndrewSB/wrytr.svg?style=svg)](https://circleci.com/gh/AndrewSB/wrytr)
+
 ## Installation
 
 1. `git clone` this repository and `cd` into it
