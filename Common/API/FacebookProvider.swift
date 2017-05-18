@@ -1,7 +1,7 @@
 import FBSDKCoreKit
 import FBSDKLoginKit
 import RxSwift
-import RxParseCallbacks
+import RxParseCallback
 
 class Facebook {
 

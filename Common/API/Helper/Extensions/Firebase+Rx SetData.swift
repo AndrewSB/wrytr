@@ -1,7 +1,7 @@
 import Firebase
 import RxSwift
 import RxCocoa
-import RxParseCallbacks
+import RxParseCallback
 
 extension Reactive where Base: Firebase {
 

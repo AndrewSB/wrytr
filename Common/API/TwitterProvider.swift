@@ -1,6 +1,6 @@
 import TwitterKit
 import RxSwift
-import RxParseCallbacks
+import RxParseCallback
 
 extension Twitter {
 
