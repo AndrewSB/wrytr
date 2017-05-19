@@ -1,17 +1,13 @@
 import RxSwift
 import ReSwift
-import Cordux
 
 fileprivate let neverDisposeBag = DisposeBag()
 
 extension Authentication {
 
     struct State: ReSwift.StateType {
-        var user: Auth = User.Service.authedUser.flatMap(Auth.loggedIn) ?? .loggedOut
+        var user: Auth? = .none
 
-        /**
-         Expectations
-         */
         enum Auth {
             case loggedOut
             case loggingIn

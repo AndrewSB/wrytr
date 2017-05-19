@@ -1,5 +1,4 @@
 github "ReSwift/ReSwift" "master"
-github "willowtreeapps/cordux"
 
 github "AndrewSB/Library" "master"
 github "AndrewSB/RxParseCallback" "master"
@@ -18,4 +17,5 @@ github "devxoul/Then" ~> 2.0
 
 github "ikesyo/Himotoki" ~> 3.0.0
 
-github "facebook/facebook-sdk-swift" "master"
+github "facebook/Facebook-SDK-Swift" "master"
+github "facebook/facebook-ios-sdk" == 4.21

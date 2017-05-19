@@ -1,4 +1,4 @@
-import Cordux
+import ReSwift
 
 extension Friends {
     class State {
@@ -7,10 +7,12 @@ extension Friends {
 }
 
 extension Friends {
-    final class Reducer: Cordux.Reducer {
-        private let challengeReducer = Challenge.Reducer()
+    private lazy var challengeReducer = Challenge.Reducer()
 
-        func handleAction(_ action: Cordux.Action, state: App.State) -> App.State {
+    var reducer: Reducer {
+        return { action, state in
+            // TODO: try using a lens here
+            var state = state
             state.friendsState.challenge = challengeReducer.handleAction(action, state: state.friendsState.challenge)
 
             return state

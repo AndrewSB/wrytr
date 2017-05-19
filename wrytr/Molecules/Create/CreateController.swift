@@ -1,7 +1,6 @@
 import RxSwift
 import RxCocoa
 import RxSwiftUtilities
-import Cordux
 
 extension Create {
     class Controller {
@@ -12,7 +11,7 @@ extension Create {
                 text: Observable<String>,
                 command: Observable<Void>
             ),
-            store: StoreDependency = defaultStoreDependency
+            store: DefaultStore = App.current.store
         ) {
 
             input.text
@@ -23,7 +22,7 @@ extension Create {
                         by: store.state.value.authenticationState.user.userModelIfLoggedIn!.id
                      )
                 }
-                .subscribe(onNext: store.dispatcher.dispatch)
+                .subscribe(onNext: store.dispatch)
                 .addDisposableTo(disposeBag)
         }
     }

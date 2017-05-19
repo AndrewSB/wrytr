@@ -1,11 +1,11 @@
 import UIKit
-import Cordux
+import ReSwift
 import RxSwift
 import RxCocoa
 import RxLibrary
 import Then
 
-extension Feed {
+class Feed {
 
     class ViewController: ContainerViewController<ChallengeViewController>, TabBarItemProviding {
         static let tabItem: UITabBarItem = UITabBarItem().then {
@@ -52,9 +52,8 @@ extension Feed {
 
     }
 }
-extension Feed.ViewController: Cordux.SubscriberType {
-    typealias StoreSubscriberStateType = App.State
 
-    func newState(_ state: App.State) {
+extension Feed.ViewController: StoreSubscriber {
+    func newState(state: App.State) {
     }
 }

@@ -1,4 +1,4 @@
-import Cordux
+import ReSwift
 
 extension Challenge {
     struct State {
@@ -23,8 +23,8 @@ extension Challenge {
 }
 
 extension Challenge {
-    final class Reducer: Cordux.Reducer {
-        func handleAction(_ action: Cordux.Action, state: Challenge.State) -> Challenge.State {
+    var reducer: Reducer {
+        return { action, state in
             guard let challengeAction = action as? Challenge.Action else {
                 return state
             }

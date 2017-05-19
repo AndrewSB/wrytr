@@ -1,4 +1,4 @@
-import Cordux
+import ReSwift
 
 extension Create {
     struct State {
@@ -11,8 +11,8 @@ extension Create {
 
 extension Create {
 
-    final class Reducer: Cordux.Reducer {
-        public func handleAction(_ action: Cordux.Action, state: App.State) -> App.State {
+    var reducer: Reducer {
+        return { action, state in
             var state = state
 
             // TODO: Potential limitation: Currently we can only create one post at a time

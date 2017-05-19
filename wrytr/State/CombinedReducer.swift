@@ -1,5 +1,5 @@
 import Foundation
-import Cordux
+import ReSwift
 /**
  A Reducer that combines multiple reducers into one. You will typically use this reducer during
  initial store setup:

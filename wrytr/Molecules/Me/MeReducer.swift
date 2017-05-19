@@ -1,18 +1,15 @@
-import Cordux
+import ReSwift
 
 extension Me {
     class State {}
 
-    enum Action: Cordux.Action {}
+    enum Action: Action {}
 }
 
 extension Me {
-    final class Reducer: Cordux.Reducer {
-
-        func handleAction(_ action: Cordux.Action, state: App.State) -> App.State {
-
-            return state
+    var reducer: Reducer {
+        return { action, state in
+            fatalError("to be implemented")
         }
-
     }
 }

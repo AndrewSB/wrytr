@@ -182,16 +182,6 @@ enum StoryboardScene {
       return vc
     }
   }
-  enum Startup: StoryboardSceneType {
-    static let storyboardName = "Startup"
-
-    static func initialViewController() -> wrytr.StartupViewController {
-      guard let vc = storyboard().instantiateInitialViewController() as? wrytr.StartupViewController else {
-        fatalError("Failed to instantiate initialViewController for \(self.storyboardName)")
-      }
-      return vc
-    }
-  }
 }
 
 enum StoryboardSegue {

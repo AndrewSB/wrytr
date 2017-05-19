@@ -1,8 +1,8 @@
 import UIKit
-import Cordux
+import ReSwift
 import RxSwift
 
-extension Friends {
+class Friends {
 
     class ViewController: ContainerViewController<ChallengeViewController>, TabBarItemProviding {
         static let tabItem: UITabBarItem = UITabBarItem().then {
@@ -48,9 +48,7 @@ extension Friends {
 
 }
 
-extension Friends.ViewController: Cordux.SubscriberType {
-    typealias StoreSubscriberStateType = App.State
-
-    func newState(_ state: App.State) {
+extension Friends.ViewController: StoreSubscriber {
+    func newState(state: App.State) {
     }
 }

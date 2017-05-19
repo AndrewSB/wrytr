@@ -1,9 +1,9 @@
 import UIKit
 import Library
-import Cordux
+import ReSwift
 import RxSwiftExt
 
-extension Create {
+class Create {
     typealias ViewController = CreateViewController
     typealias NavigationController = CreateNavigationController
 }
@@ -40,10 +40,9 @@ class CreateViewController: UIViewController, TabBarItemProviding {
 
 }
 
-extension Create.ViewController: Cordux.SubscriberType {
-    typealias StoreSubscriberStateType = App.State
+extension Create.ViewController: StoreSubscriber {
 
-    public func newState(_ subscription: App.State) {
+    public func newState(state: App.State) {
         guard case let .loggedIn(localUser) = subscription.authenticationState.user else {
             fatalError("You're trying to create something without being logged in")
         }

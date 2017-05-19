@@ -1,5 +1,4 @@
 import RxSwift
-import Cordux
 
 fileprivate let neverDisposeBag = DisposeBag()
 

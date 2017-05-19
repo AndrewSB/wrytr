@@ -1,6 +1,6 @@
-import Cordux
+import ReSwift
 
-class Landing {
+extension Landing {
     struct State {
         var option: Option = .login
 
@@ -39,9 +39,8 @@ class Landing {
 
 extension Landing {
 
-    final class Reducer: Cordux.Reducer {
-
-        func handleAction(_ action: Cordux.Action, state: App.State) -> App.State {
+    var reducer: Reducer {
+        return { action, state in
             var state = state
 
             switch action {
@@ -65,4 +64,5 @@ extension Landing {
             return state
         }
     }
+
 }

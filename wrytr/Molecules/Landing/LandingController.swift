@@ -1,7 +1,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import Cordux
 
 extension Landing {
 
@@ -23,9 +22,12 @@ extension Landing {
                     password: ControlProperty<String?>
                 )
             ),
+            output: (
+                option: Driver<Landing.State.Option>
+            ),
             store: StoreDependency = defaultStoreDependency
         ) {
-
+            /// Initial state unanimated
             input.button.facebook.map(Authentication.Action.facebookLogin)
                 .bind(onNext: store.dispatcher.dispatch)
                 .addDisposableTo(disposeBag)
@@ -38,19 +40,19 @@ extension Landing {
                 .drive(onNext: store.dispatcher.dispatch)
                 .addDisposableTo(disposeBag)
 
-// TODO: username validation?
-//            disposeBag += username.asDriver().drive(onNext: )
+            let latestUsernamePasswordAndEmail = Driver.combineLatest(
+                input.text.username.orEmpty.asDriver(),
+                input.text.email.orEmpty.asDriver(),
+                input.text.password.orEmpty.asDriver(),
+                resultSelector:  { (username: $0, email: $1, password: $2) }
+            )
 
             store.state.asDriver()
                 .map { $0.landingState.option }
                 .flatMapLatest { option in
                     input.button.action.asDriver().map { option }
                 }
-                .withLatestFrom(Driver.combineLatest(
-                    input.text.username.orEmpty.asDriver(),
-                    input.text.email.orEmpty.asDriver(),
-                    input.text.password.orEmpty.asDriver()
-                ) { (username: $0, email: $1, password: $2) }) { option, fields -> Store<App.State>.AsyncAction in
+                .withLatestFrom(latestUsernamePasswordAndEmail) { option, fields -> Store<App.State>.AsyncAction in
                     switch option {
                     case .login:
                         return Authentication.Action.login(email: fields.email, password: fields.password)

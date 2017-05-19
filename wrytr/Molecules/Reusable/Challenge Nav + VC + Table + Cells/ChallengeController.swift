@@ -1,11 +1,15 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import Cordux
 
 class Challenge {
     class Controller {
         private let disposeBag = DisposeBag()
+
+        let output = (
+            refreshControlVisible: Driver<Bool>(),
+            posts: Variable<[PostType]>([])
+        )
 
         init(
             inputs: (
@@ -14,11 +18,7 @@ class Challenge {
                 ordering: Observable<State.Ordering>,
                 challengeSelected: Observable<PostID>
             ),
-            sinks: (
-                refreshControlVisible: UIBindingObserver<UIRefreshControl, Bool>,
-                posts: Variable<[PostType]>
-            ),
-            store: StoreDependency = defaultStoreDependency
+            store: DefaultStore = App
         ) {
 
             inputs.pullToRefresh.map(Post.LoadAction.loadPosts)
@@ -39,7 +39,7 @@ class Challenge {
 
             store.state.asDriver()
                 .map { $0.postState.isLoadingPosts }
-                .drive(sinks.refreshControlVisible)
+                .drive(output.refreshControlVisible)
                 .addDisposableTo(disposeBag)
 
             store.state.asDriver()

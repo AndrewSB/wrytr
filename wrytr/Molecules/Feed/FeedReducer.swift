@@ -1,4 +1,4 @@
-import Cordux
+import ReSwift
 
 extension Feed {
     class State {
@@ -12,11 +12,10 @@ extension Feed {
 }
 
 extension Feed {
+    private lazy var challengeReducer = Challenge.Reducer()
 
-    final class Reducer: Cordux.Reducer {
-        private let challengeReducer = Challenge.Reducer()
-
-        func handleAction(_ action: Cordux.Action, state: App.State) -> App.State {
+    var reducer: Reducer {
+        return { action, state in
             var state = state
 
             // TODO: refactor this. The abstraction of a Post.Action.errorLoadingPosts always pertaining to the feed is leaky
@@ -35,10 +34,9 @@ extension Feed {
                 break
             }
             state.feedState.challenge = challengeReducer.handleAction(action, state: state.feedState.challenge)
-
+            
             return state
         }
-
     }
 
 }

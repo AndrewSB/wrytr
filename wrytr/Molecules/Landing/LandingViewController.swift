@@ -1,11 +1,11 @@
 import UIKit
 import Library
-import Cordux
 import RxSwift
 import RxCocoa
 import SwiftyAttributes
+import ReSwift
 
-extension Landing {
+class Landing {
     typealias ViewController = LandingViewController
 }
 
@@ -83,7 +83,7 @@ class LandingViewController: UIViewController {
     let dismissErrorSink = PublishSubject<Void>()
 }
 
-extension Landing.ViewController: Cordux.SubscriberType {
+extension Landing.ViewController: StoreSubscriber {
     typealias StoreSubscriberStateType = App.State
 
     override func viewDidLoad() {
@@ -106,37 +106,20 @@ extension Landing.ViewController: Cordux.SubscriberType {
             )
         )
 
-        self.render(option: appStore.state.landingState.option, animated: false)
     }
 
-    func newState(_ state: App.State) {
+    func newState(state: App.State) {
         render(option: state.landingState.option, animated: true)
-
-        switch state.authenticationState.user {
-        case .loggingIn:
-            startLoading(.gray)
-
-        case .failedToLogin(let err):
-            stopLoading()
-            let errorAlert = UIAlertController(title: err.title, message: err.description, preferredStyle: .alert)
-            errorAlert.addAction(UIAlertAction(title: tr(.errorDefaultOk), style: .cancel, handler: { [weak self] in
-                self!.dismissErrorSink.onNext(())
-            }))
-            self.present(errorAlert, animated: true, completion: .none)
-
-        case .loggedOut:
-            stopLoading()
-
-        case .loggedIn:
-            stopLoading()
-        }
+        render(authLoadingState: state.authenticationState.user)
     }
 
-    func render(option: Landing.State.Option, animated: Bool) {
+    private func render(option: Landing.State.Option, animated: Bool) {
         formContainer?.layoutIfNeeded()
         defer {
             if animated {
-                UIView.animate(withDuration: 0.2) { [weak self] in self?.formContainer?.layoutIfNeeded() }
+                UIView.animate(withDuration: 0.2) { [weak self] in
+                    self?.formContainer?.layoutIfNeeded()
+                }
             } else {
                 self.formContainer?.layoutIfNeeded()
             }
@@ -148,10 +131,32 @@ extension Landing.ViewController: Cordux.SubscriberType {
         helperButton?.set(title: option.other.worded)
         helperLabel?.text = option.helperText
     }
+
+    private func render(authLoadingState: Authentication.State.User) {
+        switch authLoadingState {
+        case .loggingIn:
+            startLoading(.gray)
+
+        case .failedToLogin(let err):
+            stopLoading()
+            let errorAlert = UIAlertController(title: err.title, message: err.description, preferredStyle: .alert).then { errorAlert in
+                errorAlert.addAction(UIAlertAction(title: tr(.errorDefaultOk), style: .cancel, handler: { [weak self] in
+                    self!.dismissErrorSink.onNext(())
+                }))
+            }
+            self.present(errorAlert, animated: true, completion: .none)
+
+        case .loggedOut:
+            stopLoading()
+
+        case .loggedIn:
+            stopLoading()
+        }
+    }
 }
 
 extension Landing.ViewController {
-    static func fromStoryboard() -> LandingViewController {
+    static func fromStoryboard(authOption: Landing.State.Option) -> LandingViewController {
         return StoryboardScene.Landing.instantiateLanding()
     }
 }

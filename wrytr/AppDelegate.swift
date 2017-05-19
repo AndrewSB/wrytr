@@ -1,31 +1,35 @@
 import UIKit
-import Cordux
+import ReSwift
 
 extension App {
 
     @UIApplicationMain final class Delegate: UIResponder, UIApplicationDelegate {
 
         var window: UIWindow?
-        var coordinator: App.Coordinator!
-
-        private let thirdPartyServiceHandler = ThirdParty.Service.CombinedHandler([
-            ThirdParty.Service.Facebook.Handler(),
-            ThirdParty.Service.Fabric.Handler()
-        ])
+        var app: App!
 
         func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
-            guard let mainController = window?.rootViewController as? StartupViewController else {
-                fatalError()
-            }
 
             UITabBar.appearance().tintColor = Color(named: .tint)
 
-            UIViewController.swizzleLifecycleDelegatingViewControllerMethods() // for cordux
+            self.window =  UIWindow(frame: UIScreen.main.bounds).then { window in
+                window.makeKeyAndVisible()
+            }
+
+            self.app = {
+                let store = DefaultStore.create()
+                let components = App.Components(
+                    api: (User.Service.self, Post.Service.self),
+                    router: Router(mainNavigation: RootNavigator(window: self.window!)),
+                    thirdPartyServiceHandler: ThirdParty.Service.CombinedHandler([ThirdParty.Service.Facebook.Handler(), ThirdParty.Service.Fabric.Handler()])
+                )
+
+                let a = App()
+                App.current = a
+                return a
+            }()
 
             thirdPartyServiceHandler.onAppLaunch(application: application, launchOptions: launchOptions)
-
-            coordinator = App.Coordinator(store: appStore, container: mainController)
-            coordinator.start(route: appStore.state.route)
 
             return true
         }

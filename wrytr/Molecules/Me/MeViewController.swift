@@ -1,7 +1,7 @@
 import UIKit
-import Cordux
+import ReSwift
 
-extension Me {
+class Me {
     typealias ViewController = MeViewController
     typealias NavigationController = MeNavigationController
 }
@@ -43,13 +43,12 @@ class MeViewController: UIViewController, TabBarItemProviding {
     }
 }
 
-extension Me.ViewController: Cordux.SubscriberType {
-    typealias StoreSubscriberStateType = App.State
+extension Me.ViewController: StoreSubscriber {
 
-    public func newState(_ subscription: App.State) {
+    public func newState(state: Authentication.State) {
         self.loadViewIfNeeded()
 
-        switch subscription.authenticationState.user {
+        switch state.user {
         case .loggedIn(let user):
             self.profilePhoto.user.value = user
             self.nameLabel.text = user.name
