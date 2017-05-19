@@ -35,7 +35,6 @@
 		461BB53E1DFF644900F9202A /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB53D1DFF644900F9202A /* FriendsViewController.swift */; };
 		461FD7551D760B30001BE92E /* PINCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461FD7531D760B30001BE92E /* PINCache.framework */; };
 		461FD7561D760B30001BE92E /* PINRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461FD7541D760B30001BE92E /* PINRemoteImage.framework */; };
-		462358631D7785C7007947B6 /* Cordux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462358621D7785C7007947B6 /* Cordux.framework */; };
 		4623586E1D7788B5007947B6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4623586D1D7788B5007947B6 /* UserService.swift */; };
 		462358701D7788BC007947B6 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4623586F1D7788BC007947B6 /* PostService.swift */; };
 		462358761D7789F3007947B6 /* FirebaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462358751D7789F3007947B6 /* FirebaseProvider.swift */; };
@@ -95,7 +94,6 @@
 		4658D6BA1CC08919009527DF /* Create.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4658D6B91CC08919009527DF /* Create.storyboard */; };
 		4658D6BC1CC0891F009527DF /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4658D6BB1CC0891F009527DF /* Me.storyboard */; };
 		465F63FA1E1A305C003187A3 /* RxSwiftUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465F63F91E1A305C003187A3 /* RxSwiftUtilities.framework */; };
-		46678C981DBEC28B00E4007F /* RxParseCallbacks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46678C971DBEC28B00E4007F /* RxParseCallbacks.framework */; };
 		466BD0951CADA990008DC0C3 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD0941CADA990008DC0C3 /* libc++.tbd */; };
 		466BD0971CADA9FF008DC0C3 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD0961CADA9FF008DC0C3 /* libicucore.tbd */; };
 		466BD0991CADAA08008DC0C3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BD0981CADAA08008DC0C3 /* CFNetwork.framework */; };
@@ -134,6 +132,7 @@
 		46C099191CA072250015779C /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 46C099161CA072250015779C /* TwitterKitResources.bundle */; };
 		46C0991A1CA072250015779C /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099171CA072250015779C /* TwitterCore.framework */; };
 		46C0B91C1DE6148B00085BD0 /* DisposeBag += .swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0B91B1DE6148B00085BD0 /* DisposeBag += .swift */; };
+		46D075641ECFB69C0075B6BA /* RxParseCallback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46D075631ECFB69C0075B6BA /* RxParseCallback.framework */; };
 		46EA8E141ECF6C1E00FB1347 /* RxReSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA8E131ECF6C1E00FB1347 /* RxReSwift.swift */; };
 /* End PBXBuildFile section */
 
@@ -281,6 +280,7 @@
 		46C099161CA072250015779C /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = Frameworks/TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		46C099171CA072250015779C /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = Frameworks/TwitterCore.framework; sourceTree = "<group>"; };
 		46C0B91B1DE6148B00085BD0 /* DisposeBag += .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DisposeBag += .swift"; sourceTree = "<group>"; };
+		46D075631ECFB69C0075B6BA /* RxParseCallback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxParseCallback.framework; path = Carthage/Build/iOS/RxParseCallback.framework; sourceTree = "<group>"; };
 		46EA8E131ECF6C1E00FB1347 /* RxReSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxReSwift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -297,7 +297,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				463A75961D879E2E0030CFB2 /* Himotoki.framework in Frameworks */,
-				462358631D7785C7007947B6 /* Cordux.framework in Frameworks */,
 				46C099141C9F49F90015779C /* SystemConfiguration.framework in Frameworks */,
 				461345781D9A4925001ABAF2 /* FacebookLogin.framework in Frameworks */,
 				462F03221CE267280031B1B1 /* Result.framework in Frameworks */,
@@ -324,10 +323,10 @@
 				461345771D9A4925001ABAF2 /* FacebookCore.framework in Frameworks */,
 				461FD7561D760B30001BE92E /* PINRemoteImage.framework in Frameworks */,
 				463913E31D7644C90077D0E5 /* UnderKeyboard.framework in Frameworks */,
-				46678C981DBEC28B00E4007F /* RxParseCallbacks.framework in Frameworks */,
 				4674034A1DF7820A00EFEBC9 /* SwiftyAttributes.framework in Frameworks */,
 				463CF2571E191B1B00824884 /* RxSwiftExt.framework in Frameworks */,
 				465F63FA1E1A305C003187A3 /* RxSwiftUtilities.framework in Frameworks */,
+				46D075641ECFB69C0075B6BA /* RxParseCallback.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +429,7 @@
 		461FD7521D760B30001BE92E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				46D075631ECFB69C0075B6BA /* RxParseCallback.framework */,
 				465F63F91E1A305C003187A3 /* RxSwiftUtilities.framework */,
 				463CF2561E191B1B00824884 /* RxSwiftExt.framework */,
 				467403491DF7820A00EFEBC9 /* SwiftyAttributes.framework */,
@@ -946,7 +946,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/PINRemoteImage.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PINCache.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/UnderKeyboard.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Cordux.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Then.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Himotoki.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FBSDKCoreKit.framework",
@@ -954,7 +953,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/FacebookCore.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FacebookLogin.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxLibrary.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxParseCallbacks.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxParseCallback.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyAttributes.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwiftExt.framework",
