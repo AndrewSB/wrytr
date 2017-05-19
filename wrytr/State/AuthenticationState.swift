@@ -90,14 +90,14 @@ extension Authentication {
 }
 
 extension Authentication {
-    var reducer: Reducer<Authentication.State> {
+    static var reduce: Reducer<Authentication.State> {
         return { action, state in
             var state = state ?? Authentication.State()
-            guard let authAction = action as? Authentication.Action else {
-                return state
-            }
 
-            switch authAction {
+            switch action {
+            /// Handle all authentication actions
+            case let authAction as Authentication.Action:
+                switch authAction {
                 case .loggingIn:
                     state.user = .loggingIn
 
@@ -109,6 +109,21 @@ extension Authentication {
 
                 case .loggedOut:
                     state.user = .loggedOut
+                }
+
+            case Landing.Action.dismissError:
+                guard case .failedToLogin = state.user! else {
+                    fatalError("this was an assumption I had when I refactored. Untrue?")
+                }
+                switch state.user! {
+                case .loggedIn: fatalError() // dismissing an error is a no-op if you're loggedIn
+                default:
+                    state.user = .loggedOut
+                }
+
+
+            default:
+                break
             }
 
             return state

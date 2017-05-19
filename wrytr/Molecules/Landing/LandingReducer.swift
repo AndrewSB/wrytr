@@ -39,26 +39,18 @@ extension Landing {
 
 extension Landing {
 
-    var reducer: Reducer {
+    static var reduce: Reducer<Landing.State> {
         return { action, state in
-            var state = state
+            var state = state ?? Landing.State()
+            guard let landingAction = action as? Landing.Action else {
+                return state
+            }
 
-            switch action {
-
-            case let action as Landing.Action:
-                switch action {
-                case .updateOption(let newOption):
-                    state.landingState.option = newOption
-                case .dismissError:
-                    switch state.authenticationState.user {
-                    case .loggedIn: fatalError() // dismissing an error is a no-op if you're loggedIn
-                    default:
-                        state.authenticationState.user = .loggedOut
-                    }
-                }
-
-            default:
-                break
+            switch landingAction {
+            case .updateOption(let newOption):
+                state.option = newOption
+            case .dismissError:
+                break // the actual dismissal for this is handled outside of ReSwift, with a UIKit callback in LandingViewController
             }
 
             return state

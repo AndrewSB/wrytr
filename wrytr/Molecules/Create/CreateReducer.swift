@@ -11,17 +11,14 @@ extension Create {
 
 extension Create {
 
-    var reducer: Reducer<App.State> {
+    static var reduce: Reducer<Create.State> {
         return { action, state in
-            var state = state ?? App.State()
+            var state = state ?? Create.State()
 
             // TODO: Potential limitation: Currently we can only create one post at a time
             switch action {
-            case Post.CreateAction.createdPost(let post):
-                state.route = ["home", "feed", post.id]
-
             case Action.dismissError:
-                state.postState.errorCreating = .none
+                break // handled in Post.reduce
 
             default:
                 break

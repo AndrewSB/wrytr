@@ -23,10 +23,10 @@ extension Challenge {
 }
 
 extension Challenge {
-    var reducer: Reducer<Post.State> {
+    static var reduce: Reducer<Challenge.State> {
         return { action, state in
-            var state = state ?? Post.State()
-            
+            var state = state ?? Challenge.State()
+
             guard let challengeAction = action as? Challenge.Action else {
                 return state
             }

@@ -9,30 +9,18 @@ extension Store where State == App.State {
 }
 
 fileprivate let appReducer: Reducer<App.State> = { action, state in
-    var state = state
+    let state = state ?? App.State()
 
-    var route: AppRoute? = .none
+    return App.State(
+        route: Routing.reduce(action, state.route),
 
-    var authenticationState = Authentication.State()
-    var postState = Post.State()
+        authenticationState: Authentication.reduce(action, state.authenticationState),
+        postState: Post.reduce(action, state.postState),
 
-    var landingState = Landing.State()
-    var feedState = Feed.State()
-    var friendsState = Friends.State()
-    var createState = Create.State()
-    var meState = Me.State()
-
+        landingState: Landing.reduce(action, state.landingState),
+        feedState: Feed.reduce(action, state.feedState),
+        friendsState: Friends.reduce(action, state.friendsState),
+        createState: Create.reduce(action, state.createState),
+        meState: Me.reduce(action, state.meState)
+    )
 }
-
-private var reducers: [Reducer] = [
-    // top level
-    Authentication.reducer,
-    Post.reducer,
-
-    // view models
-    Landing.reducer,
-    Feed.reducer,
-    Friends.reducer,
-    Create.reducer,
-    Me.reducer
-]

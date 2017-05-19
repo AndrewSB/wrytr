@@ -4,8 +4,9 @@ class Home {
     class Navigator: ChildNavigation {
         var child: ChildNavigation?
 
-        let tabBarController = UITabBarController()
+        var presentationContext: ((UIViewController) -> Void)!
 
+        private let tabBarController = UITabBarController()
         func configure(with routables: [Routable]) {
             tabBarController.viewControllers = routables.map { $0.rootViewController }
         }

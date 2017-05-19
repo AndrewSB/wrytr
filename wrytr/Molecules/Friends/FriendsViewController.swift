@@ -20,6 +20,7 @@ class Friends {
 
         var controller: Challenge.Controller!
 
+        private let disposeBag = DisposeBag()
         override func viewDidLoad() {
             super.viewDidLoad()
 
@@ -28,21 +29,27 @@ class Friends {
             self.controller = Challenge.Controller(
                 inputs: (
                     pullToRefresh: contained.tableView.refreshControl!.rx.controlEvent(.valueChanged),
-                    source: .just(.friends),
-                    ordering: contained.tableView.topSegmentedControlValue.map { value -> Challenge.State.Ordering in
+                    source: Variable<Challenge.State.Source>(.friends),
+                    ordering: contained.tableView.topSegmentedControlValue
+                        .ignore(-1)
+                        .map { value -> Challenge.State.Ordering in
                         switch value {
                         case 0: return .new
                         case 1: return .popular
                         default: fatalError("dont know how to handle > 2 cases yet. Just new & popular")
                         }
                     },
-                    challengeSelected: contained.tableView.itemSelected.map { $0.id }
-                ),
-                sinks: (
-                    refreshControlVisible: contained.tableView.refreshControl!.rx.isRefreshing,
-                    posts: contained.posts
+                    challengeSelected: contained.tableView.itemSelected
                 )
             )
+
+            self.controller.output.refreshControlVisible.asDriver()
+                .drive(contained.tableView.refreshControl!.rx.isRefreshing)
+                .disposed(by: self.disposeBag)
+
+            self.controller.output.posts.asDriver()
+                .drive(contained.tableView.posts)
+                .disposed(by: self.disposeBag)
         }
     }
 

@@ -22,10 +22,7 @@ class App {
         self.store = store
         self.components = components
 
-        store.subscribe(components.router) { (subscription) -> Subscription<AppRoute> in
-            return subscription.route
-        }
-
+        store.subscribe(components.router) { $0.select({ $0.route }) }
     }
 
     public func launch() {

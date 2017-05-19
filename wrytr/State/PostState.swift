@@ -66,7 +66,7 @@ extension Post {
 }
 
 extension Post {
-    var reducer: Reducer<Post.State> {
+    static var reduce: Reducer<Post.State> {
         return { action, state in
             var state = state ?? Post.State()
 
@@ -100,11 +100,14 @@ extension Post {
                     state.isCreatingPost = false
                     state.createdPost = post
                 }
-                
+
+            case Create.Action.dismissError:
+                state.errorCreating = .none
+
             default:
                 break
             }
-            
+
             return state
         }
     }

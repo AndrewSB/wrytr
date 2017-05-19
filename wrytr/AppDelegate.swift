@@ -24,22 +24,22 @@ extension App {
                     thirdPartyServiceHandler: ThirdParty.Service.CombinedHandler([ThirdParty.Service.Facebook.Handler(), ThirdParty.Service.Fabric.Handler()])
                 )
 
-                let a = App()
+                let a = App(store: store, components: components)
                 App.current = a
                 return a
             }()
 
-            App.components.thirdPartyServiceHandler.onAppLaunch(application: application, launchOptions: launchOptions)
+            self.app.components.thirdPartyServiceHandler.onAppLaunch(application: application, launchOptions: launchOptions)
 
             return true
         }
 
         func applicationDidBecomeActive(_ application: UIApplication) {
-            App.components.thirdPartyServiceHandler.onAppActivate()
+            self.app.components.thirdPartyServiceHandler.onAppActivate()
         }
 
         func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-            return App.components.thirdPartyServiceHandler.onAppOpenURL(app: app, url: url, options: options)
+            return self.app.components.thirdPartyServiceHandler.onAppOpenURL(app: app, url: url, options: options)
         }
 
     }

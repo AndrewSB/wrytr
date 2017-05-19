@@ -2,7 +2,7 @@ import UIKit
 
 class Authentication {
     class Navigator: ChildNavigation {
-        var child: MainNavigation? = .none
+        var child: ChildNavigation? = .none
 
         var presentationContext: ((UIViewController) -> Void)!
 
@@ -18,7 +18,7 @@ class Authentication {
 
         func add(child: ChildNavigation) {
             self.child = child
-            child.presentationContext = { [weak self] childView in
+            self.child!.presentationContext = { [weak self] childView in
                 self!.activated!.rootViewController.present(childView, animated: false)
             }
         }

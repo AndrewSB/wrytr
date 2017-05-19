@@ -1,12 +1,4 @@
-//
-//  LandingModule.swift
-//  wrytr
-//
-//  Created by Andrew Breckenridge on 5/15/17.
-//  Copyright © 2017 Andrew Breckenridge. All rights reserved.
-//
-
-import Foundation
+import UIKit
 
 class Landing {
     class Module: Routable {
@@ -20,7 +12,7 @@ class Landing {
             return .auth(.landing)
         }
 
-        init(landingView: LandingViewController = LandingViewController.fromStoryboard()) {
+        init(landingView: LandingViewController = LandingViewController.fromStoryboard(authOption: .register)) {
             self.landingViewController = landingView
         }
     }

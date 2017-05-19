@@ -6,7 +6,6 @@ struct Routing: Action, Equatable {
     let route: AppRoute
 
     init(to route: AppRoute) {
-
         self.route = route
     }
 }

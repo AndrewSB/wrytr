@@ -110,7 +110,7 @@ extension Landing.ViewController: StoreSubscriber {
 
     func newState(state: App.State) {
         render(option: state.landingState.option, animated: true)
-        render(authLoadingState: state.authenticationState.user)
+        render(authLoadingState: state.authenticationState.user!)
     }
 
     private func render(option: Landing.State.Option, animated: Bool) {
@@ -132,7 +132,7 @@ extension Landing.ViewController: StoreSubscriber {
         helperLabel?.text = option.helperText
     }
 
-    private func render(authLoadingState: Authentication.State.User) {
+    private func render(authLoadingState: Authentication.State.Auth) {
         switch authLoadingState {
         case .loggingIn:
             startLoading(.gray)

@@ -9,21 +9,23 @@ extension Create {
         init(
             input: (
                 text: Observable<String>,
-                command: Observable<Void>
+                command: Observable<Void>,
+                dismissErrorTapped: Observable<Void>
             ),
             store: DefaultStore = App.current.store
         ) {
 
             input.text
-                .flatMapLatest(input.command.mapTo)
-                .map {
-                    Post.CreateAction.createPost(
-                        withContent: $0,
-                        by: store.state.value.authenticationState.user.userModelIfLoggedIn!.id
-                     )
+                .map { postContent in
+                    Post.CreateAction.createPost(withContent: postContent, by: store.state.authenticationState.user!.userModelIfLoggedIn!.id)
                 }
+                .flatMapLatest(input.command.mapTo)
                 .subscribe(onNext: store.dispatch)
                 .addDisposableTo(disposeBag)
+
+            input.dismissErrorTapped.mapTo(Create.Action.dismissError)
+                .subscribe(onNext: store.dispatch)
+                .disposed(by: disposeBag)
         }
     }
 }

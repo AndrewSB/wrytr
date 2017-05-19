@@ -4,7 +4,7 @@ import ReSwift
 // swiftlint:disable identifier_name
 
 extension Routing {
-    var reducer: Reducer<AppRoute> {
+    static var reduce: Reducer<AppRoute> {
         return { action, route in
             let route = route ?? {
                 fatalError("message case about this")
@@ -14,6 +14,7 @@ extension Routing {
             switch action {
             case let routingAction as Routing:
                 return routingAction.route
+
             case let authAction as Authentication.Action:
                 switch authAction {
                 case .loggedIn:
@@ -23,6 +24,10 @@ extension Routing {
                 default:
                     return route
                 }
+
+            case Post.CreateAction.createdPost(let post):
+                fatalError("I'm not sure how to figure out if the post was created on friends or feed below")
+                return .home(.feed(.detail(post)))
             default:
                 return route
             }

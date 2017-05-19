@@ -23,7 +23,7 @@ class Challenge {
         ) {
 
             inputs.pullToRefresh.map(Post.LoadAction.loadPosts)
-                .bind(onNext: store.dispatcher.dispatch)
+                .bind(onNext: store.dispatch)
                 .addDisposableTo(disposeBag)
 
             inputs.ordering.map(Challenge.Action.updateOrdering)
