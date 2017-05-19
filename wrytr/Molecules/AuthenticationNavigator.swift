@@ -1,6 +1,6 @@
 import UIKit
 
-extension Auth {
+class Authentication {
     class Navigator: ChildNavigation {
         var child: MainNavigation? = .none
 

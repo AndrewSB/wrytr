@@ -2,7 +2,7 @@ import UIKit
 
 class Home {
     class Navigator: ChildNavigation {
-        var child: MainNavigation?
+        var child: ChildNavigation?
 
         let tabBarController = UITabBarController()
 

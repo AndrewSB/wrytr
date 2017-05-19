@@ -1,4 +1,5 @@
 import RxSwift
+import ReSwift
 
 fileprivate let neverDisposeBag = DisposeBag()
 
@@ -13,12 +14,12 @@ extension Post {
         var errorCreating: PresentableError? = .none
     }
 
-    enum LoadAction: Cordux.Action {
+    enum LoadAction: ReSwift.Action {
         case loadingPosts
         case loaded([PostType])
         case errorLoadingPosts(PresentableError)
 
-        static func loadPosts() -> Cordux.Store<App.State>.AsyncAction {
+        static func loadPosts() -> DefaultStore.AsyncAction {
             return { state, store in
                 store.dispatch(LoadAction.loadingPosts)
 
@@ -38,12 +39,12 @@ extension Post {
         }
     }
 
-    enum CreateAction: Cordux.Action {
+    enum CreateAction: ReSwift.Action {
         case creatingPost(user: UserID, content: String)
         case createdPost(PostType)
         case errorCreatingPost(PresentableError)
 
-        static func createPost(withContent content: String, by user: UserID) -> Cordux.Store<App.State>.AsyncAction {
+        static func createPost(withContent content: String, by user: UserID) -> DefaultStore.AsyncAction {
             return { state, store in
                 store.dispatch(CreateAction.creatingPost(user: user, content: content))
 
@@ -65,46 +66,45 @@ extension Post {
 }
 
 extension Post {
-
-    final class Reducer: Cordux.Reducer {
-        func handleAction(_ action: Cordux.Action, state: App.State) -> App.State {
-            var state = state
+    var reducer: Reducer<Post.State> {
+        return { action, state in
+            var state = state ?? Post.State()
 
             switch action {
             case let loadPostAction as Post.LoadAction:
                 switch loadPostAction {
                 case .loadingPosts:
-                    state.postState.errorLoading = .none
-                    state.postState.isLoadingPosts = true
+                    state.errorLoading = .none
+                    state.isLoadingPosts = true
 
                 case .errorLoadingPosts(let err):
-                    state.postState.isLoadingPosts = false
-                    state.postState.errorLoading = err
+                    state.isLoadingPosts = false
+                    state.errorLoading = err
 
                 case .loaded(let posts):
-                    state.postState.isLoadingPosts = false
-                    state.postState.loadedPosts = posts // TODO: figure out how to resolve this. It should probably merge? Not replace the old posts
+                    state.isLoadingPosts = false
+                    state.loadedPosts = posts // TODO: figure out how to resolve this. It should probably merge? Not replace the old posts
                 }
 
             case let createPostAction as Post.CreateAction:
                 switch createPostAction {
                 case .creatingPost:
-                    state.postState.errorCreating = .none
-                    state.postState.isCreatingPost = true
+                    state.errorCreating = .none
+                    state.isCreatingPost = true
 
                 case .errorCreatingPost(let err):
-                    state.postState.isCreatingPost = false
-                    state.postState.errorCreating = err
+                    state.isCreatingPost = false
+                    state.errorCreating = err
 
                 case .createdPost(let post):
-                    state.postState.isCreatingPost = false
-                    state.postState.createdPost = post
+                    state.isCreatingPost = false
+                    state.createdPost = post
                 }
-
+                
             default:
                 break
             }
-
+            
             return state
         }
     }

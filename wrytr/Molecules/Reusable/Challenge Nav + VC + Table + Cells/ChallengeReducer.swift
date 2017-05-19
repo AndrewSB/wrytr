@@ -16,20 +16,20 @@ extension Challenge {
         }
     }
 
-    enum Action: Cordux.Action {
+    enum Action: ReSwift.Action {
         case updateOrdering(State.Ordering)
         case updateSource(State.Source)
     }
 }
 
 extension Challenge {
-    var reducer: Reducer {
+    var reducer: Reducer<Post.State> {
         return { action, state in
+            var state = state ?? Post.State()
+            
             guard let challengeAction = action as? Challenge.Action else {
                 return state
             }
-
-            var state = state
 
             switch challengeAction {
             case .updateSource(let source):

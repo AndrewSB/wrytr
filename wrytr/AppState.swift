@@ -3,7 +3,7 @@ import RxCocoa
 
 extension App {
     struct State: StateType {
-        var route: AppRoute? = .none
+        var route = AppRoute()
 
         var authenticationState = Authentication.State()
         var postState = Post.State()

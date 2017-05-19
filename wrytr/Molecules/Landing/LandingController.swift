@@ -22,22 +22,19 @@ extension Landing {
                     password: ControlProperty<String?>
                 )
             ),
-            output: (
-                option: Driver<Landing.State.Option>
-            ),
-            store: StoreDependency = defaultStoreDependency
+            store: DefaultStore = App.current.store
         ) {
             /// Initial state unanimated
             input.button.facebook.map(Authentication.Action.facebookLogin)
-                .bind(onNext: store.dispatcher.dispatch)
+                .bind(onNext: store.dispatch)
                 .addDisposableTo(disposeBag)
 
             input.button.twitter.map(Authentication.Action.twitterLogin)
-                .bind(onNext: store.dispatcher.dispatch)
+                .bind(onNext: store.dispatch)
                 .addDisposableTo(disposeBag)
 
             input.button.dismissError.map { Landing.Action.dismissError }
-                .drive(onNext: store.dispatcher.dispatch)
+                .drive(onNext: store.dispatch)
                 .addDisposableTo(disposeBag)
 
             let latestUsernamePasswordAndEmail = Driver.combineLatest(
@@ -47,12 +44,12 @@ extension Landing {
                 resultSelector:  { (username: $0, email: $1, password: $2) }
             )
 
-            store.state.asDriver()
+            store.asDriver()
                 .map { $0.landingState.option }
                 .flatMapLatest { option in
                     input.button.action.asDriver().map { option }
                 }
-                .withLatestFrom(latestUsernamePasswordAndEmail) { option, fields -> Store<App.State>.AsyncAction in
+                .withLatestFrom(latestUsernamePasswordAndEmail) { option, fields -> DefaultStore.AsyncAction in
                     switch option {
                     case .login:
                         return Authentication.Action.login(email: fields.email, password: fields.password)
@@ -60,18 +57,18 @@ extension Landing {
                         return Authentication.Action.signup(name: fields.username, email: fields.email, password: fields.password)
                     }
                 }
-                .drive(onNext: store.dispatcher.dispatch)
+                .drive(onNext: store.dispatch)
                 .addDisposableTo(disposeBag)
 
             input.button.switchOption.asDriver()
-                .scan(store.state.value.landingState.option) { previousState, _ in
+                .scan(store.state.landingState.option) { previousState, _ in
                     switch previousState {
                     case .login: return .register
                     case .register: return .login
                     }
                 }
                 .drive(onNext: { newOption in
-                    store.dispatcher.dispatch(Landing.Action.updateOption(newOption))
+                    store.dispatch(Landing.Action.updateOption(newOption))
                 })
                 .addDisposableTo(disposeBag)
         }

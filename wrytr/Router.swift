@@ -1,18 +1,20 @@
 import UIKit
 import ReSwift
 
-public protocol Routable {
+protocol Routable {
     var rootViewController: UIViewController { get }
     var route: AppRoute { get }
 }
 
-public protocol MainNavigation {
-    var child: MainNavigation? { get }
+protocol MainNavigation {
+    var child: ChildNavigation? { get set }
 
     func add(child: ChildNavigation)
+
+    func activate(routable: Routable)
 }
 
-public protocol ChildNavigation: MainNavigation {
+protocol ChildNavigation: MainNavigation {
     /// add these routes as children
     func configure(with routables: [Routable])
 
@@ -23,7 +25,7 @@ public protocol ChildNavigation: MainNavigation {
     var presentationContext: ((UIViewController) -> Void)! { get set }
 }
 
-private extension MainNavigation {
+extension MainNavigation {
     /// Iterates through all the children of provided `MainNavigation` and returns the leaf that has no child
     var recursiveLastChild: MainNavigation {
         switch child {
@@ -35,34 +37,32 @@ private extension MainNavigation {
     }
 }
 
-public class Router: StoreSubscriber {
-
+class Router: StoreSubscriber {
     let mainNavigation: MainNavigation
-    let configuration: RouterConfiguration
 
     var currentRoute: AppRoute?
 
-    public init(
-        mainNavigation: MainNavigation,
-        configuration: RouterConfiguration) {
+    init(mainNavigation: MainNavigation) {
 
         self.mainNavigation = mainNavigation
-        self.configuration = configuration
     }
 
-    public func newState(state: AppRoute?) {
+    func newState(state: AppRoute) {
+        /// Bail out if the route hasn't changed
+        guard state != currentRoute else {
+            fatalError("reswift should be preventing this now. If not, investigate")
+            return
+        }
 
-        guard let route = state,
-            route != currentRoute
-            else { return }
-
-        activate(route: route)
+        activate(route: state)
     }
 
     fileprivate func activate(route: AppRoute) {
         self.currentRoute = route
 
-        let routable = configuration.routable(for: route)
-        mainNavigation.activate(routable: routable)
+        mainNavigation.activate(routable: {
+            fatalError("figure out how to go from route -> routable")
+            return route as! Routable
+        }())
     }
 }

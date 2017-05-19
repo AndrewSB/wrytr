@@ -1,7 +1,7 @@
 import UIKit
 import ReSwift
 
-class Me {
+class Me { // swiftlint:disable:this type_name
     typealias ViewController = MeViewController
     typealias NavigationController = MeNavigationController
 }

@@ -31,7 +31,7 @@ extension Landing {
         }
     }
 
-    enum Action: Cordux.Action {
+    enum Action: ReSwift.Action {
         case updateOption(State.Option)
         case dismissError
     }

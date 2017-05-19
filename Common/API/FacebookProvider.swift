@@ -9,8 +9,8 @@ class Facebook {
 
         func login(withReadPermissions permissions: [String] = ["email", "public_profile", "user_friends"]) -> Observable<FBSDKLoginManagerLoginResult> {
 
-            return ParseRxCallbacks.createWithCallback({ observer -> Void in
-                FBSDKLoginManager().logIn(withReadPermissions: permissions, from: nil, handler: ParseRxCallbacks.parseUnwrappedOptionalCallback(observer))
+            return RxParseCallback.createWithCallback({ observer -> Void in
+                FBSDKLoginManager().logIn(withReadPermissions: permissions, from: nil, handler: RxParseCallback.parseUnwrappedOptionalCallback(observer))
             })
 
         }

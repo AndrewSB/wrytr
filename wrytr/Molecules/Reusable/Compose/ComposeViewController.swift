@@ -10,7 +10,7 @@ class Compose {
 }
 
 class ComposeViewController: RxViewController {
-    fileprivate static let characterLimit = App.Constants.composeCharacterCount
+    fileprivate static let characterLimit = 140
     fileprivate static let initialBottomPadding: CGFloat = 22
     fileprivate static let tabBarHeight: CGFloat = 49
 

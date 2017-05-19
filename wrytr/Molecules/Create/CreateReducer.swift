@@ -4,16 +4,16 @@ extension Create {
     struct State {
     }
 
-    enum Action: Cordux.Action {
+    enum Action: ReSwift.Action {
         case dismissError
     }
 }
 
 extension Create {
 
-    var reducer: Reducer {
+    var reducer: Reducer<App.State> {
         return { action, state in
-            var state = state
+            var state = state ?? App.State()
 
             // TODO: Potential limitation: Currently we can only create one post at a time
             switch action {

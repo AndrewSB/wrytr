@@ -6,15 +6,15 @@ extension Feed {
         var error: PresentableError?
     }
 
-    enum Action: Cordux.Action {
+    enum Action: ReSwift.Action {
         case dismissError
     }
 }
 
 extension Feed {
-    private lazy var challengeReducer = Challenge.Reducer()
+    private lazy var challengeReducer = Challenge.reducer
 
-    var reducer: Reducer {
+    var reducer: Reducer<App.State> {
         return { action, state in
             var state = state
 
@@ -33,7 +33,7 @@ extension Feed {
             default:
                 break
             }
-            state.feedState.challenge = challengeReducer.handleAction(action, state: state.feedState.challenge)
+            state.feedState.challenge = challengeReducer(action, state: state.feedState.challenge)
             
             return state
         }

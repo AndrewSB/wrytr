@@ -6,14 +6,13 @@ extension Friends {
     }
 }
 
+private lazy var challengeReducer = Challenge.reducer
 extension Friends {
-    private lazy var challengeReducer = Challenge.Reducer()
-
     var reducer: Reducer {
         return { action, state in
             // TODO: try using a lens here
             var state = state
-            state.friendsState.challenge = challengeReducer.handleAction(action, state: state.friendsState.challenge)
+            state.friendsState.challenge = challengeReducer(action, state: state.friendsState.challenge)
 
             return state
         }

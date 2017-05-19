@@ -29,17 +29,17 @@ extension App {
                 return a
             }()
 
-            thirdPartyServiceHandler.onAppLaunch(application: application, launchOptions: launchOptions)
+            App.components.thirdPartyServiceHandler.onAppLaunch(application: application, launchOptions: launchOptions)
 
             return true
         }
 
         func applicationDidBecomeActive(_ application: UIApplication) {
-            thirdPartyServiceHandler.onAppActivate()
+            App.components.thirdPartyServiceHandler.onAppActivate()
         }
 
         func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-            return thirdPartyServiceHandler.onAppOpenURL(app: app, url: url, options: options)
+            return App.components.thirdPartyServiceHandler.onAppOpenURL(app: app, url: url, options: options)
         }
 
     }

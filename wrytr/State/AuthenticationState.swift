@@ -23,48 +23,65 @@ extension Authentication {
         }
     }
 
-    enum Action: Cordux.Action {
+    enum Action: ReSwift.Action {
         case loggingIn
         case loggedIn(UserType)
         case errorLoggingIn(PresentableError)
         case loggedOut
 
-        static func facebookLogin() -> Cordux.Store<App.State>.AsyncAction {
+        static func facebookLogin() -> DefaultStore.AsyncAction {
             return { state, store in
                 store.dispatch(Action.loggingIn)
-                User.Service.facebookAuth().subscribe(authResponder).addDisposableTo(neverDisposeBag)
+                User.Service.facebookAuth()
+                    .subscribe { event in
+                        authResponder(store: App.current.store, event)
+                    }
+                    .addDisposableTo(neverDisposeBag)
+
                 return nil
             }
         }
 
-        static func twitterLogin() -> Cordux.Store<App.State>.AsyncAction {
+        static func twitterLogin() -> DefaultStore.AsyncAction {
             return { state, store in
                 store.dispatch(Action.loggingIn)
-                User.Service.twitterAuth().subscribe(authResponder).addDisposableTo(neverDisposeBag)
+                User.Service.twitterAuth()
+                    .subscribe { event in
+                        authResponder(store: App.current.store, event)
+                    }
+                    .addDisposableTo(neverDisposeBag)
                 return nil
             }
         }
 
-        static func login(email: String, password: String) -> Cordux.Store<App.State>.AsyncAction {
+        static func login(email: String, password: String) -> DefaultStore.AsyncAction {
             return { state, store in
                 store.dispatch(Action.loggingIn)
-                User.Service.login(email: email, password: password).subscribe(authResponder).addDisposableTo(neverDisposeBag)
+                User.Service.login(email: email, password: password)
+                    .subscribe { event in
+                        authResponder(store: App.current.store, event)
+                    }
+                    .addDisposableTo(neverDisposeBag)
                 return nil
             }
         }
 
-        static func signup(name: String, email: String, password: String) -> Cordux.Store<App.State>.AsyncAction {
+        static func signup(name: String, email: String, password: String) -> DefaultStore.AsyncAction {
             return { state, store in
                 store.dispatch(Action.loggingIn)
-                 User.Service.signup(name: name, email: email, password: password).subscribe(authResponder).addDisposableTo(neverDisposeBag)
+                User.Service.signup(name: name, email: email, password: password)
+                    .subscribe { event in
+                        authResponder(store: App.current.store, event)
+                    }
+                    .addDisposableTo(neverDisposeBag)
                 return nil
             }
         }
 
-        private static func authResponder(_ event: Event<UserType>) {
+        private static func authResponder(store: Store<App.State>, _ event: Event<UserType>) {
             switch event {
-            case .next(let user):   appStore.dispatch(Action.loggedIn(user))
-            case .error(let error): appStore.dispatch(Action.errorLoggingIn(error as PresentableError))
+            case .next(let user):   store.dispatch(Action.loggedIn(user))
+            case .error(let error): store.dispatch(Action.errorLoggingIn(error as PresentableError))
             case .completed:        break
 
             }
@@ -73,34 +90,28 @@ extension Authentication {
 }
 
 extension Authentication {
-    final class Reducer: Cordux.Reducer {
-        public func handleAction(_ action: Cordux.Action, state: App.State) -> App.State {
-            var state = state
+    var reducer: Reducer<Authentication.State> {
+        return { action, state in
+            var state = state ?? Authentication.State()
+            guard let authAction = action as? Authentication.Action else {
+                return state
+            }
 
-            switch action {
-            case let authAction as Authentication.Action:
-                switch authAction {
+            switch authAction {
                 case .loggingIn:
-                    state.authenticationState.user = .loggingIn
+                    state.user = .loggingIn
 
                 case .loggedIn(let user):
-                    state.authenticationState.user = .loggedIn(user)
-                    state.route = [App.Coordinator.RouteSegment.home.rawValue]
+                    state.user = .loggedIn(user)
 
                 case .errorLoggingIn(let error):
-                    state.authenticationState.user = .failedToLogin(error)
+                    state.user = .failedToLogin(error)
 
                 case .loggedOut:
-                    state.authenticationState.user = .loggedOut
-                    state.route = [App.Coordinator.RouteSegment.auth.rawValue]
-                }
-
-            default:
-                break
+                    state.user = .loggedOut
             }
 
             return state
         }
-
     }
 }

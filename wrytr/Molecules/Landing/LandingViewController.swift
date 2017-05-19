@@ -5,7 +5,7 @@ import RxCocoa
 import SwiftyAttributes
 import ReSwift
 
-class Landing {
+extension Landing {
     typealias ViewController = LandingViewController
 }
 

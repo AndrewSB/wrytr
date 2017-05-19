@@ -1,4 +1,5 @@
 import Foundation
+import ReSwift
 
 /**
  This is where globals are stored. I'd like it to be structured as something that explicitly defines all of the dependencies that can/will cause co-effects 
@@ -21,12 +22,15 @@ class App {
         self.store = store
         self.components = components
 
-        store.subscribe(components.router) { $0.route }
+        store.subscribe(components.router) { (subscription) -> Subscription<AppRoute> in
+            return subscription.route
+        }
+
     }
 
     public func launch() {
         let initialRoute: AppRoute = {
-            switch store.state.authenticationState.user {
+            switch store.state.authenticationState.user! {
             case .loggedIn:
                 return .home(.feed(.table))
             case .loggedOut, .failedToLogin:
@@ -34,7 +38,7 @@ class App {
             case .loggingIn:
                 fatalError("logging in on launch? what??")
             }
-        }
+        }()
 
         store.dispatch(Routing(to: initialRoute))
     }

@@ -7,9 +7,9 @@ extension Reactive where Base: Firebase {
 
     func login(email: String, password: String) -> Observable<UserID> {
 
-        return ParseRxCallbacks.createWithCallback({ observer in
+        return RxParseCallback.createWithCallback({ observer in
             self.base.authUser(email, password: password, withCompletionBlock: {
-                let listner = ParseRxCallbacks.parseUnwrappedOptionalCallback(observer)
+                let listner = RxParseCallback.parseUnwrappedOptionalCallback(observer)
                 listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
             })
         }).map { (authData: FAuthData) in
@@ -20,7 +20,7 @@ extension Reactive where Base: Firebase {
 
     func signup(email: String, password: String) -> Observable<UserID> {
 
-        return ParseRxCallbacks.createWithCallback({ observer in
+        return RxParseCallback.createWithCallback({ observer in
             return self.base.createUser(email, password: password, withValueCompletionBlock: { error, dict in
                 if let dict = dict {
                     observer.onNext(dict)
@@ -37,9 +37,9 @@ extension Reactive where Base: Firebase {
 
     func authAnon() -> Observable<FAuthData> {
 
-        return ParseRxCallbacks.createWithCallback({ observer in
+        return RxParseCallback.createWithCallback({ observer in
             self.base.authAnonymously {
-                let listner = ParseRxCallbacks.parseUnwrappedOptionalCallback(observer)
+                let listner = RxParseCallback.parseUnwrappedOptionalCallback(observer)
                 listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
             }
         })
@@ -49,9 +49,9 @@ extension Reactive where Base: Firebase {
     /// Usually facebook
     func oauth(_ provider: String, token: String) -> Observable<FAuthData> {
 
-        return ParseRxCallbacks.createWithCallback({ observer in
+        return RxParseCallback.createWithCallback({ observer in
             self.base.auth(withOAuthProvider: provider, token: token) {
-                let listner = ParseRxCallbacks.parseUnwrappedOptionalCallback(observer)
+                let listner = RxParseCallback.parseUnwrappedOptionalCallback(observer)
                 listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
             }
         })
@@ -61,9 +61,9 @@ extension Reactive where Base: Firebase {
     /// Usually Twitter
     func oauth(_ provider: String, parameters: [AnyHashable : Any]!) -> Observable<FAuthData> {
 
-        return ParseRxCallbacks.createWithCallback({ observer in
+        return RxParseCallback.createWithCallback({ observer in
             self.base.auth(withOAuthProvider: provider, parameters: parameters) {
-                let listner = ParseRxCallbacks.parseUnwrappedOptionalCallback(observer)
+                let listner = RxParseCallback.parseUnwrappedOptionalCallback(observer)
                 listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
             }
         })

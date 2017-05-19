@@ -43,7 +43,7 @@ class CreateViewController: UIViewController, TabBarItemProviding {
 extension Create.ViewController: StoreSubscriber {
 
     public func newState(state: App.State) {
-        guard case let .loggedIn(localUser) = subscription.authenticationState.user else {
+        guard case let .loggedIn(localUser) = state.authenticationState.user else {
             fatalError("You're trying to create something without being logged in")
         }
 
@@ -54,8 +54,8 @@ extension Create.ViewController: StoreSubscriber {
             composeViewController.profileImageView.pin_setImage(from: url)
         }
 
-        subscription.postState.isCreatingPost ? startLoading(.gray) : stopLoading()
-        if let err = subscription.postState.errorCreating {
+        state.postState.isCreatingPost ? startLoading(.gray) : stopLoading()
+        if let err = state.postState.errorCreating {
             let errorAlert = UIAlertController(title: err.title, message: err.description, preferredStyle: .alert)
             errorAlert.addAction(UIAlertAction(title: tr(.errorDefaultOk), style: .cancel, handler: .none))
             self.present(errorAlert, animated: true, completion: {
