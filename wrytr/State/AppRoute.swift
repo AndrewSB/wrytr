@@ -3,7 +3,20 @@ import ReSwift
 
 // swiftlint:disable identifier_name
 
-extension Routing {
+struct Routing: Action {
+    
+    let route: AppRoute
+    
+    init(to route: AppRoute) {
+        self.route = route
+    }
+}
+extension Routing: Equatable {
+
+    static func == (lhs: Routing, rhs: Routing) -> Bool {
+        return lhs.route == rhs.route
+    }
+
     static var reduce: Reducer<AppRoute> {
         return { action, route in
             let route = route ?? {

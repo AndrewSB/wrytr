@@ -18,7 +18,7 @@ class RootNavigator: MainNavigation {
 
     func activate(routable: Routable) {
         guard let leafChild = self.recursiveLastChild as? ChildNavigation else {
-            fatalError("what must a root navigator do without a child?")
+            fatalError("what's a root navigator to do without child 👵🏼😭")
         }
 
         leafChild.activate(routable: routable)

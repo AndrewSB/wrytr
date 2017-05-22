@@ -113,7 +113,7 @@ extension Authentication {
 
             case Landing.Action.dismissError:
                 guard case .failedToLogin = state.user! else {
-                    fatalError("this was an assumption I had when I refactored. Untrue?")
+                    fatalError("this was an assumption I had when I refactored: that the landing dismissError action would only happen if in the failedToLogin state. Untrue?")
                 }
                 switch state.user! {
                 case .loggedIn: fatalError() // dismissing an error is a no-op if you're loggedIn
