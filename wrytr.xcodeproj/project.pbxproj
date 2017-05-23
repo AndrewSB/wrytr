@@ -75,6 +75,29 @@
 		46B164D31ED4DB79002BEBD7 /* colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 46B1648E1ED4DB79002BEBD7 /* colors.txt */; };
 		46B164D41ED4DB79002BEBD7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46B1648F1ED4DB79002BEBD7 /* Localizable.strings */; };
 		46B164D51ED4DB79002BEBD7 /* strings-swift3.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 46B164901ED4DB79002BEBD7 /* strings-swift3.stencil */; };
+		46B164EE1ED4DBE9002BEBD7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164D71ED4DBE9002BEBD7 /* Bolts.framework */; };
+		46B164EF1ED4DBE9002BEBD7 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164D81ED4DBE9002BEBD7 /* FacebookCore.framework */; };
+		46B164F01ED4DBE9002BEBD7 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164D91ED4DBE9002BEBD7 /* FacebookLogin.framework */; };
+		46B164F11ED4DBE9002BEBD7 /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164DA1ED4DBE9002BEBD7 /* FacebookShare.framework */; };
+		46B164F21ED4DBE9002BEBD7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164DB1ED4DBE9002BEBD7 /* FBSDKCoreKit.framework */; };
+		46B164F31ED4DBE9002BEBD7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164DC1ED4DBE9002BEBD7 /* FBSDKLoginKit.framework */; };
+		46B164F41ED4DBE9002BEBD7 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164DD1ED4DBE9002BEBD7 /* FBSDKShareKit.framework */; };
+		46B164F51ED4DBE9002BEBD7 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164DE1ED4DBE9002BEBD7 /* Himotoki.framework */; };
+		46B164F61ED4DBE9002BEBD7 /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164DF1ED4DBE9002BEBD7 /* Library.framework */; };
+		46B164F71ED4DBE9002BEBD7 /* PINCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164E01ED4DBE9002BEBD7 /* PINCache.framework */; };
+		46B164F81ED4DBE9002BEBD7 /* PINOperation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164E11ED4DBE9002BEBD7 /* PINOperation.framework */; };
+		46B164F91ED4DBE9002BEBD7 /* PINRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164E21ED4DBE9002BEBD7 /* PINRemoteImage.framework */; };
+		46B164FA1ED4DBE9002BEBD7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164E31ED4DBE9002BEBD7 /* Result.framework */; };
+		46B164FB1ED4DBE9002BEBD7 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164E41ED4DBE9002BEBD7 /* ReSwift.framework */; };
+		46B164FC1ED4DBE9002BEBD7 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164E51ED4DBE9002BEBD7 /* RxCocoa.framework */; };
+		46B164FD1ED4DBE9002BEBD7 /* RxLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164E61ED4DBE9002BEBD7 /* RxLibrary.framework */; };
+		46B164FE1ED4DBE9002BEBD7 /* RxParseCallback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164E71ED4DBE9002BEBD7 /* RxParseCallback.framework */; };
+		46B164FF1ED4DBE9002BEBD7 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164E81ED4DBE9002BEBD7 /* RxSwift.framework */; };
+		46B165001ED4DBE9002BEBD7 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164E91ED4DBE9002BEBD7 /* RxSwiftExt.framework */; };
+		46B165011ED4DBE9002BEBD7 /* RxSwiftUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164EA1ED4DBE9002BEBD7 /* RxSwiftUtilities.framework */; };
+		46B165021ED4DBE9002BEBD7 /* SwiftyAttributes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164EB1ED4DBE9002BEBD7 /* SwiftyAttributes.framework */; };
+		46B165031ED4DBE9002BEBD7 /* Then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164EC1ED4DBE9002BEBD7 /* Then.framework */; };
+		46B165041ED4DBE9002BEBD7 /* UnderKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164ED1ED4DBE9002BEBD7 /* UnderKeyboard.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +171,29 @@
 		46B1648F1ED4DB79002BEBD7 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		46B164901ED4DB79002BEBD7 /* strings-swift3.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "strings-swift3.stencil"; sourceTree = "<group>"; };
 		46B164911ED4DB79002BEBD7 /* wrytr.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = wrytr.entitlements; sourceTree = "<group>"; };
+		46B164D71ED4DBE9002BEBD7 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
+		46B164D81ED4DBE9002BEBD7 /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = Carthage/Build/iOS/FacebookCore.framework; sourceTree = "<group>"; };
+		46B164D91ED4DBE9002BEBD7 /* FacebookLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookLogin.framework; path = Carthage/Build/iOS/FacebookLogin.framework; sourceTree = "<group>"; };
+		46B164DA1ED4DBE9002BEBD7 /* FacebookShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookShare.framework; path = Carthage/Build/iOS/FacebookShare.framework; sourceTree = "<group>"; };
+		46B164DB1ED4DBE9002BEBD7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Carthage/Build/iOS/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		46B164DC1ED4DBE9002BEBD7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Carthage/Build/iOS/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		46B164DD1ED4DBE9002BEBD7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = Carthage/Build/iOS/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		46B164DE1ED4DBE9002BEBD7 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
+		46B164DF1ED4DBE9002BEBD7 /* Library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Library.framework; path = Carthage/Build/iOS/Library.framework; sourceTree = "<group>"; };
+		46B164E01ED4DBE9002BEBD7 /* PINCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINCache.framework; path = Carthage/Build/iOS/PINCache.framework; sourceTree = "<group>"; };
+		46B164E11ED4DBE9002BEBD7 /* PINOperation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINOperation.framework; path = Carthage/Build/iOS/PINOperation.framework; sourceTree = "<group>"; };
+		46B164E21ED4DBE9002BEBD7 /* PINRemoteImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINRemoteImage.framework; path = Carthage/Build/iOS/PINRemoteImage.framework; sourceTree = "<group>"; };
+		46B164E31ED4DBE9002BEBD7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		46B164E41ED4DBE9002BEBD7 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
+		46B164E51ED4DBE9002BEBD7 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		46B164E61ED4DBE9002BEBD7 /* RxLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxLibrary.framework; path = Carthage/Build/iOS/RxLibrary.framework; sourceTree = "<group>"; };
+		46B164E71ED4DBE9002BEBD7 /* RxParseCallback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxParseCallback.framework; path = Carthage/Build/iOS/RxParseCallback.framework; sourceTree = "<group>"; };
+		46B164E81ED4DBE9002BEBD7 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		46B164E91ED4DBE9002BEBD7 /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
+		46B164EA1ED4DBE9002BEBD7 /* RxSwiftUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftUtilities.framework; path = Carthage/Build/iOS/RxSwiftUtilities.framework; sourceTree = "<group>"; };
+		46B164EB1ED4DBE9002BEBD7 /* SwiftyAttributes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyAttributes.framework; path = Carthage/Build/iOS/SwiftyAttributes.framework; sourceTree = "<group>"; };
+		46B164EC1ED4DBE9002BEBD7 /* Then.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Then.framework; path = Carthage/Build/iOS/Then.framework; sourceTree = "<group>"; };
+		46B164ED1ED4DBE9002BEBD7 /* UnderKeyboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UnderKeyboard.framework; path = Carthage/Build/iOS/UnderKeyboard.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +201,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46B164EE1ED4DBE9002BEBD7 /* Bolts.framework in Frameworks */,
+				46B164EF1ED4DBE9002BEBD7 /* FacebookCore.framework in Frameworks */,
+				46B164F01ED4DBE9002BEBD7 /* FacebookLogin.framework in Frameworks */,
+				46B164F11ED4DBE9002BEBD7 /* FacebookShare.framework in Frameworks */,
+				46B164F21ED4DBE9002BEBD7 /* FBSDKCoreKit.framework in Frameworks */,
+				46B164F31ED4DBE9002BEBD7 /* FBSDKLoginKit.framework in Frameworks */,
+				46B164F41ED4DBE9002BEBD7 /* FBSDKShareKit.framework in Frameworks */,
+				46B164F51ED4DBE9002BEBD7 /* Himotoki.framework in Frameworks */,
+				46B164F61ED4DBE9002BEBD7 /* Library.framework in Frameworks */,
+				46B164F71ED4DBE9002BEBD7 /* PINCache.framework in Frameworks */,
+				46B164F81ED4DBE9002BEBD7 /* PINOperation.framework in Frameworks */,
+				46B164F91ED4DBE9002BEBD7 /* PINRemoteImage.framework in Frameworks */,
+				46B164FA1ED4DBE9002BEBD7 /* Result.framework in Frameworks */,
+				46B164FB1ED4DBE9002BEBD7 /* ReSwift.framework in Frameworks */,
+				46B164FC1ED4DBE9002BEBD7 /* RxCocoa.framework in Frameworks */,
+				46B164FD1ED4DBE9002BEBD7 /* RxLibrary.framework in Frameworks */,
+				46B164FE1ED4DBE9002BEBD7 /* RxParseCallback.framework in Frameworks */,
+				46B164FF1ED4DBE9002BEBD7 /* RxSwift.framework in Frameworks */,
+				46B165001ED4DBE9002BEBD7 /* RxSwiftExt.framework in Frameworks */,
+				46B165011ED4DBE9002BEBD7 /* RxSwiftUtilities.framework in Frameworks */,
+				46B165021ED4DBE9002BEBD7 /* SwiftyAttributes.framework in Frameworks */,
+				46B165031ED4DBE9002BEBD7 /* Then.framework in Frameworks */,
+				46B165041ED4DBE9002BEBD7 /* UnderKeyboard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +235,7 @@
 			children = (
 				46B164331ED4DB79002BEBD7 /* wrytr */,
 				46B1637C1ED4DA58002BEBD7 /* Products */,
+				46B164D61ED4DBE9002BEBD7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -445,6 +515,36 @@
 			path = Build;
 			sourceTree = "<group>";
 		};
+		46B164D61ED4DBE9002BEBD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46B164D71ED4DBE9002BEBD7 /* Bolts.framework */,
+				46B164D81ED4DBE9002BEBD7 /* FacebookCore.framework */,
+				46B164D91ED4DBE9002BEBD7 /* FacebookLogin.framework */,
+				46B164DA1ED4DBE9002BEBD7 /* FacebookShare.framework */,
+				46B164DB1ED4DBE9002BEBD7 /* FBSDKCoreKit.framework */,
+				46B164DC1ED4DBE9002BEBD7 /* FBSDKLoginKit.framework */,
+				46B164DD1ED4DBE9002BEBD7 /* FBSDKShareKit.framework */,
+				46B164DE1ED4DBE9002BEBD7 /* Himotoki.framework */,
+				46B164DF1ED4DBE9002BEBD7 /* Library.framework */,
+				46B164E01ED4DBE9002BEBD7 /* PINCache.framework */,
+				46B164E11ED4DBE9002BEBD7 /* PINOperation.framework */,
+				46B164E21ED4DBE9002BEBD7 /* PINRemoteImage.framework */,
+				46B164E31ED4DBE9002BEBD7 /* Result.framework */,
+				46B164E41ED4DBE9002BEBD7 /* ReSwift.framework */,
+				46B164E51ED4DBE9002BEBD7 /* RxCocoa.framework */,
+				46B164E61ED4DBE9002BEBD7 /* RxLibrary.framework */,
+				46B164E71ED4DBE9002BEBD7 /* RxParseCallback.framework */,
+				46B164E81ED4DBE9002BEBD7 /* RxSwift.framework */,
+				46B164E91ED4DBE9002BEBD7 /* RxSwiftExt.framework */,
+				46B164EA1ED4DBE9002BEBD7 /* RxSwiftUtilities.framework */,
+				46B164EB1ED4DBE9002BEBD7 /* SwiftyAttributes.framework */,
+				46B164EC1ED4DBE9002BEBD7 /* Then.framework */,
+				46B164ED1ED4DBE9002BEBD7 /* UnderKeyboard.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -455,6 +555,7 @@
 				46B163771ED4DA58002BEBD7 /* Sources */,
 				46B163781ED4DA58002BEBD7 /* Frameworks */,
 				46B163791ED4DA58002BEBD7 /* Resources */,
+				46B165051ED4DBF1002BEBD7 /* carthage copy-frameworks */,
 			);
 			buildRules = (
 			);
@@ -523,6 +624,46 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46B165051ED4DBF1002BEBD7 /* carthage copy-frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FacebookCore.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FacebookLogin.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FacebookShare.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FBSDKCoreKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FBSDKLoginKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FBSDKShareKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Himotoki.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Library.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PINCache.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PINOperation.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PINRemoteImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxLibrary.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxParseCallback.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwiftExt.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwiftUtilities.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyAttributes.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Then.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/UnderKeyboard.framework",
+			);
+			name = "carthage copy-frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		46B163771ED4DA58002BEBD7 /* Sources */ = {
@@ -699,6 +840,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "$(PROJECT_DIR)/wrytr/Supporting Files/Resources/wrytr.entitlements";
 				DEVELOPMENT_TEAM = L8BYC3JY5Z;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/wrytr/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tfw.wrytr;
@@ -713,6 +858,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "$(PROJECT_DIR)/wrytr/Supporting Files/Resources/wrytr.entitlements";
 				DEVELOPMENT_TEAM = L8BYC3JY5Z;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/wrytr/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tfw.wrytr;
