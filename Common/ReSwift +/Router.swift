@@ -51,7 +51,6 @@ class Router: StoreSubscriber {
         /// Bail out if the route hasn't changed
         guard state != currentRoute else {
             fatalError("reswift should be preventing this now. If not, investigate")
-            return
         }
 
         activate(route: state)
@@ -62,7 +61,6 @@ class Router: StoreSubscriber {
 
         mainNavigation.activate(routable: {
             fatalError("figure out how to go from route -> routable")
-            return route as! Routable
-        }())
+         }())
     }
 }

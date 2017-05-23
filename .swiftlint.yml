@@ -8,7 +8,7 @@ included:
   - wrytr
 excluded:
   - Carthage
-  - wrytr/Resources/Constants/Build
+  - wrytr/Supporting Files/Resources/Constants/Build
 
 force_cast: warning
 line_length:
@@ -39,3 +39,5 @@ variable_name:
     - json
     - idx
     - text
+    - ref
+    - uid

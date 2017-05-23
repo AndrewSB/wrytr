@@ -16,9 +16,11 @@ extension Firebase {
             guard let json = snapshot.value as? [String: Any] else { return [] }
 
             return try json
-                .map { (key, value) -> [String: Any] in
-                    let singleReactionJSON = value as! [String: Any]
-                    return singleReactionJSON + ["uid": key]
+                .map { (uidKey, value) -> [String: Any] in
+                    guard let singleReactionJSON = value as? [String: Any] else {
+                        fatalError("there should be no empty values in the JSON")
+                    }
+                    return singleReactionJSON.embed(uid: uidKey)
                 }
                 .map(Reaction.decodeValue)
         }

@@ -24,7 +24,7 @@ extension Firebase.User: Decodable {
     func encoded() -> [String: String] {
         var coded = [
             "uid": id,
-            "name": name,
+            "name": name
         ]
         if let photoUrl = photo {
             coded["profileImageURL"] = photoUrl.absoluteString

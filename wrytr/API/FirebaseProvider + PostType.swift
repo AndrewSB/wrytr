@@ -15,10 +15,14 @@ extension Firebase {
         static func fromFirebase(ref: FDataSnapshot) -> Post? {
             guard let json = ref.value as? [String: Any] else { return nil }
 
-            return try? Post.decodeValue(["uid": ref.key! as Any] + json)
+            return fromFirebase(json: ["uid": ref.key! as Any] + json)
+        }
+
+        static func fromFirebase(json: [String: Any]) -> Post? {
+            return try? Post.decodeValue(json)
         }
     }
-    
+
 }
 
 extension Firebase.Post: Decodable {
@@ -54,25 +58,12 @@ extension Firebase.Provider {
             .child(byAppendingPath: "posts")
             .queryOrdered(byChild: "date")
             .rx.observeEventOnce()
-            // TODO: refactor this to use `Firebase.Post.fromFirebase`
-            .map { arrayOfPostData -> [[String: AnyObject]] in
-                guard let json = arrayOfPostData.value as? [String : AnyObject] else {
-                    // assume empty if doesn't cast
-                    return []
+            .map { arrayOfPostsRef in
+                guard let arrayOfPostsInJson = arrayOfPostsRef.value as? [[String: Any]] else {
+                    fatalError("rethink this :/")
                 }
-
-                let dictionariesWithUIDIncluded = json.map { (key, val) -> [String: AnyObject] in
-                    guard var innerJSON = val as? [String: AnyObject] else {
-                        fatalError()
-                    }
-
-                    innerJSON["uid"] = key as AnyObject
-                    return innerJSON
-                }
-
-                return dictionariesWithUIDIncluded
+                return arrayOfPostsInJson.map { Firebase.Post.fromFirebase(json: $0)! }
             }
-            .map(Array<Firebase.Post>.decode)
     }
 
     func createPost(prompt: String, by userId: UserID) -> Observable<Firebase.Post> {

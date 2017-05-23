@@ -41,7 +41,7 @@ extension Landing {
                 input.text.username.orEmpty.asDriver(),
                 input.text.email.orEmpty.asDriver(),
                 input.text.password.orEmpty.asDriver(),
-                resultSelector:  { (username: $0, email: $1, password: $2) }
+                resultSelector: { (username: $0, email: $1, password: $2) }
             )
 
             store.asDriver()

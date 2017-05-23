@@ -121,6 +121,7 @@
 		46AE37531D7A3FD3005A89F3 /* FirebaseProvider + UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE37521D7A3FD3005A89F3 /* FirebaseProvider + UserType.swift */; };
 		46AE37551D7A9B95005A89F3 /* Firebase+Rx SetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE37541D7A9B95005A89F3 /* Firebase+Rx SetData.swift */; };
 		46AE375D1D7AB85E005A89F3 /* URL + Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE375C1D7AB85E005A89F3 /* URL + Decodable.swift */; };
+		46B1636D1ED4B1CD002BEBD7 /* JSON + Embed UID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1636C1ED4B1CD002BEBD7 /* JSON + Embed UID.swift */; };
 		46BF97791C9B6DA700579066 /* Landing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF97781C9B6DA700579066 /* Landing.storyboard */; };
 		46C099061C9E34D10015779C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099011C9E34D10015779C /* Bolts.framework */; };
 		46C099071C9E34D10015779C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C099021C9E34D10015779C /* Crashlytics.framework */; };
@@ -268,6 +269,7 @@
 		46AE37521D7A3FD3005A89F3 /* FirebaseProvider + UserType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FirebaseProvider + UserType.swift"; sourceTree = "<group>"; };
 		46AE37541D7A9B95005A89F3 /* Firebase+Rx SetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+Rx SetData.swift"; sourceTree = "<group>"; };
 		46AE375C1D7AB85E005A89F3 /* URL + Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL + Decodable.swift"; sourceTree = "<group>"; };
+		46B1636C1ED4B1CD002BEBD7 /* JSON + Embed UID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSON + Embed UID.swift"; sourceTree = "<group>"; };
 		46BF97781C9B6DA700579066 /* Landing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Landing.storyboard; sourceTree = "<group>"; };
 		46C099011C9E34D10015779C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
 		46C099021C9E34D10015779C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
@@ -605,6 +607,7 @@
 				46AE37521D7A3FD3005A89F3 /* FirebaseProvider + UserType.swift */,
 				4623EB5E1D88B2A4004880E3 /* FirebaseProvider + PostType.swift */,
 				463CF25A1E19278A00824884 /* FirebaseProvider + ReactionType.swift */,
+				46B1636C1ED4B1CD002BEBD7 /* JSON + Embed UID.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1007,6 +1010,7 @@
 				461BB52C1DFB841D00F9202A /* ProfileViewController.swift in Sources */,
 				46452E621D7797B00053EC4A /* Post.swift in Sources */,
 				4636B66F1D7F633400C4B43D /* FeedViewController.swift in Sources */,
+				46B1636D1ED4B1CD002BEBD7 /* JSON + Embed UID.swift in Sources */,
 				462BCAC41ECA564D005570F7 /* LandingModule.swift in Sources */,
 				4644FBC71C9D256B004ACBAF /* Localizable_Strings.swift in Sources */,
 				461BB53C1DFF584800F9202A /* ChallengeViewController.swift in Sources */,

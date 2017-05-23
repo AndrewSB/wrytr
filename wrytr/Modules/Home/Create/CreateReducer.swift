@@ -13,15 +13,14 @@ extension Create {
 
     static var reduce: Reducer<Create.State> {
         return { action, state in
-            var state = state ?? Create.State()
+            let state = state ?? Create.State()
+            guard let createAction = action as? Create.Action else {
+                return state
+            }
 
-            // TODO: Potential limitation: Currently we can only create one post at a time
-            switch action {
-            case Action.dismissError:
+            switch createAction {
+            case .dismissError:
                 break // handled in Post.reduce
-
-            default:
-                break
             }
 
             return state

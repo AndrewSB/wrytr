@@ -4,9 +4,9 @@ import ReSwift
 // swiftlint:disable identifier_name
 
 struct Routing: Action {
-    
+
     let route: AppRoute
-    
+
     init(to route: AppRoute) {
         self.route = route
     }
@@ -19,10 +19,7 @@ extension Routing: Equatable {
 
     static var reduce: Reducer<AppRoute> {
         return { action, route in
-            let route = route ?? {
-                fatalError("message case about this")
-                return .auth(.landing)
-            }()
+            let route = route ?? .none
 
             switch action {
             case let routingAction as Routing:

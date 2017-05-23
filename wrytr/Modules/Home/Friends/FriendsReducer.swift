@@ -9,11 +9,17 @@ extension Friends {
 extension Friends {
     static var reduce: Reducer<Friends.State> {
         return { action, state in
-            // TODO: try using a lens here
+            return { (state) in
+                state.challenge = Challenge.reduce(action, state.challenge)
+                return state
+            }(state ?? Friends.State())
+
+/*
             var state = state ?? Friends.State()
             state.challenge = Challenge.reduce(action, state.challenge)
 
             return state
+ */
         }
     }
 }
