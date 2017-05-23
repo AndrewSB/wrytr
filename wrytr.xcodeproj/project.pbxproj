@@ -110,6 +110,33 @@
 		46B165261ED4E3CF002BEBD7 /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B1651B1ED4E3CF002BEBD7 /* FirebaseAuth.framework */; };
 		46B165271ED4E3CF002BEBD7 /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B1651C1ED4E3CF002BEBD7 /* GTMSessionFetcher.framework */; };
 		46B165281ED4E3CF002BEBD7 /* FirebaseDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B1651E1ED4E3CF002BEBD7 /* FirebaseDatabase.framework */; };
+		46B1654F1ED4E49D002BEBD7 /* FacebookProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1652C1ED4E49D002BEBD7 /* FacebookProvider.swift */; };
+		46B165501ED4E49D002BEBD7 /* FirebaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1652D1ED4E49D002BEBD7 /* FirebaseProvider.swift */; };
+		46B165511ED4E49D002BEBD7 /* Firebase+Rx Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165301ED4E49D002BEBD7 /* Firebase+Rx Auth.swift */; };
+		46B165521ED4E49D002BEBD7 /* Firebase+Rx FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165311ED4E49D002BEBD7 /* Firebase+Rx FetchData.swift */; };
+		46B165531ED4E49D002BEBD7 /* Firebase+Rx SetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165321ED4E49D002BEBD7 /* Firebase+Rx SetData.swift */; };
+		46B165541ED4E49D002BEBD7 /* TwitterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165331ED4E49D002BEBD7 /* TwitterProvider.swift */; };
+		46B165551ED4E49D002BEBD7 /* DismissesKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165341ED4E49D002BEBD7 /* DismissesKeyboardOnTap.swift */; };
+		46B165561ED4E49D002BEBD7 /* DismissOnReturnTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165351ED4E49D002BEBD7 /* DismissOnReturnTextViewDelegate.swift */; };
+		46B165571ED4E49D002BEBD7 /* PresentableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165361ED4E49D002BEBD7 /* PresentableError.swift */; };
+		46B165581ED4E49D002BEBD7 /* AsyncAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165381ED4E49D002BEBD7 /* AsyncAction.swift */; };
+		46B165591ED4E49D002BEBD7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165391ED4E49D002BEBD7 /* Router.swift */; };
+		46B1655A1ED4E49D002BEBD7 /* RxReSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1653A1ED4E49D002BEBD7 /* RxReSwift.swift */; };
+		46B1655B1ED4E49D002BEBD7 /* DisposeBag += .swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1653C1ED4E49D002BEBD7 /* DisposeBag += .swift */; };
+		46B1655C1ED4E49D002BEBD7 /* RxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1653D1ED4E49D002BEBD7 /* RxViewController.swift */; };
+		46B1655D1ED4E49D002BEBD7 /* TabBarItemProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1653E1ED4E49D002BEBD7 /* TabBarItemProviding.swift */; };
+		46B1655E1ED4E49D002BEBD7 /* Fabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165401ED4E49D002BEBD7 /* Fabric.swift */; };
+		46B1655F1ED4E49D002BEBD7 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165411ED4E49D002BEBD7 /* Facebook.swift */; };
+		46B165601ED4E49D002BEBD7 /* ThirdPartyServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165421ED4E49D002BEBD7 /* ThirdPartyServices.swift */; };
+		46B165611ED4E49D002BEBD7 /* NSRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165451ED4E49D002BEBD7 /* NSRangeExtension.swift */; };
+		46B165621ED4E49D002BEBD7 /* UIStackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165461ED4E49D002BEBD7 /* UIStackExtension.swift */; };
+		46B165631ED4E49D002BEBD7 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165481ED4E49D002BEBD7 /* ContainerViewController.swift */; };
+		46B165641ED4E49D002BEBD7 /* ExtendedNavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165491ED4E49D002BEBD7 /* ExtendedNavbarView.swift */; };
+		46B165651ED4E49D002BEBD7 /* NoHairlineNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1654A1ED4E49D002BEBD7 /* NoHairlineNavigationBar.swift */; };
+		46B165661ED4E49D002BEBD7 /* RenderedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1654B1ED4E49D002BEBD7 /* RenderedImageView.swift */; };
+		46B165671ED4E49D002BEBD7 /* RoundedRenderedImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1654C1ED4E49D002BEBD7 /* RoundedRenderedImageButton.swift */; };
+		46B165681ED4E49D002BEBD7 /* UIAlertAction + SimpleHandlerInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1654D1ED4E49D002BEBD7 /* UIAlertAction + SimpleHandlerInit.swift */; };
+		46B165691ED4E49D002BEBD7 /* URL + Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1654E1ED4E49D002BEBD7 /* URL + Decodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -221,6 +248,33 @@
 		46B1651E1ED4E3CF002BEBD7 /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseDatabase.framework; sourceTree = "<group>"; };
 		46B1651F1ED4E3CF002BEBD7 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		46B165291ED4E442002BEBD7 /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
+		46B1652C1ED4E49D002BEBD7 /* FacebookProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookProvider.swift; sourceTree = "<group>"; };
+		46B1652D1ED4E49D002BEBD7 /* FirebaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseProvider.swift; sourceTree = "<group>"; };
+		46B165301ED4E49D002BEBD7 /* Firebase+Rx Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+Rx Auth.swift"; sourceTree = "<group>"; };
+		46B165311ED4E49D002BEBD7 /* Firebase+Rx FetchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+Rx FetchData.swift"; sourceTree = "<group>"; };
+		46B165321ED4E49D002BEBD7 /* Firebase+Rx SetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+Rx SetData.swift"; sourceTree = "<group>"; };
+		46B165331ED4E49D002BEBD7 /* TwitterProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterProvider.swift; sourceTree = "<group>"; };
+		46B165341ED4E49D002BEBD7 /* DismissesKeyboardOnTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissesKeyboardOnTap.swift; sourceTree = "<group>"; };
+		46B165351ED4E49D002BEBD7 /* DismissOnReturnTextViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissOnReturnTextViewDelegate.swift; sourceTree = "<group>"; };
+		46B165361ED4E49D002BEBD7 /* PresentableError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentableError.swift; sourceTree = "<group>"; };
+		46B165381ED4E49D002BEBD7 /* AsyncAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncAction.swift; sourceTree = "<group>"; };
+		46B165391ED4E49D002BEBD7 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		46B1653A1ED4E49D002BEBD7 /* RxReSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxReSwift.swift; sourceTree = "<group>"; };
+		46B1653C1ED4E49D002BEBD7 /* DisposeBag += .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DisposeBag += .swift"; sourceTree = "<group>"; };
+		46B1653D1ED4E49D002BEBD7 /* RxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxViewController.swift; sourceTree = "<group>"; };
+		46B1653E1ED4E49D002BEBD7 /* TabBarItemProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItemProviding.swift; sourceTree = "<group>"; };
+		46B165401ED4E49D002BEBD7 /* Fabric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fabric.swift; sourceTree = "<group>"; };
+		46B165411ED4E49D002BEBD7 /* Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
+		46B165421ED4E49D002BEBD7 /* ThirdPartyServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdPartyServices.swift; sourceTree = "<group>"; };
+		46B165451ED4E49D002BEBD7 /* NSRangeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRangeExtension.swift; sourceTree = "<group>"; };
+		46B165461ED4E49D002BEBD7 /* UIStackExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackExtension.swift; sourceTree = "<group>"; };
+		46B165481ED4E49D002BEBD7 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		46B165491ED4E49D002BEBD7 /* ExtendedNavbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedNavbarView.swift; sourceTree = "<group>"; };
+		46B1654A1ED4E49D002BEBD7 /* NoHairlineNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoHairlineNavigationBar.swift; sourceTree = "<group>"; };
+		46B1654B1ED4E49D002BEBD7 /* RenderedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderedImageView.swift; sourceTree = "<group>"; };
+		46B1654C1ED4E49D002BEBD7 /* RoundedRenderedImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedRenderedImageButton.swift; sourceTree = "<group>"; };
+		46B1654D1ED4E49D002BEBD7 /* UIAlertAction + SimpleHandlerInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertAction + SimpleHandlerInit.swift"; sourceTree = "<group>"; };
+		46B1654E1ED4E49D002BEBD7 /* URL + Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL + Decodable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				46B164331ED4DB79002BEBD7 /* wrytr */,
+				46B1652A1ED4E49D002BEBD7 /* Common */,
 				46B1637C1ED4DA58002BEBD7 /* Products */,
 				46B165091ED4E1A3002BEBD7 /* Vendor */,
 				46B164D61ED4DBE9002BEBD7 /* Frameworks */,
@@ -640,6 +695,112 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		46B1652A1ED4E49D002BEBD7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				46B1652B1ED4E49D002BEBD7 /* API */,
+				46B165341ED4E49D002BEBD7 /* DismissesKeyboardOnTap.swift */,
+				46B165351ED4E49D002BEBD7 /* DismissOnReturnTextViewDelegate.swift */,
+				46B165361ED4E49D002BEBD7 /* PresentableError.swift */,
+				46B165371ED4E49D002BEBD7 /* ReSwift + */,
+				46B1653B1ED4E49D002BEBD7 /* Rx */,
+				46B1653E1ED4E49D002BEBD7 /* TabBarItemProviding.swift */,
+				46B1653F1ED4E49D002BEBD7 /* ThirdParty */,
+				46B165431ED4E49D002BEBD7 /* UI */,
+				46B1654E1ED4E49D002BEBD7 /* URL + Decodable.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		46B1652B1ED4E49D002BEBD7 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				46B1652D1ED4E49D002BEBD7 /* FirebaseProvider.swift */,
+				46B1652C1ED4E49D002BEBD7 /* FacebookProvider.swift */,
+				46B165331ED4E49D002BEBD7 /* TwitterProvider.swift */,
+				46B1652E1ED4E49D002BEBD7 /* Helper */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		46B1652E1ED4E49D002BEBD7 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				46B1652F1ED4E49D002BEBD7 /* Extensions */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		46B1652F1ED4E49D002BEBD7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				46B165301ED4E49D002BEBD7 /* Firebase+Rx Auth.swift */,
+				46B165311ED4E49D002BEBD7 /* Firebase+Rx FetchData.swift */,
+				46B165321ED4E49D002BEBD7 /* Firebase+Rx SetData.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		46B165371ED4E49D002BEBD7 /* ReSwift + */ = {
+			isa = PBXGroup;
+			children = (
+				46B165381ED4E49D002BEBD7 /* AsyncAction.swift */,
+				46B165391ED4E49D002BEBD7 /* Router.swift */,
+				46B1653A1ED4E49D002BEBD7 /* RxReSwift.swift */,
+			);
+			path = "ReSwift +";
+			sourceTree = "<group>";
+		};
+		46B1653B1ED4E49D002BEBD7 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				46B1653C1ED4E49D002BEBD7 /* DisposeBag += .swift */,
+				46B1653D1ED4E49D002BEBD7 /* RxViewController.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
+		46B1653F1ED4E49D002BEBD7 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				46B165401ED4E49D002BEBD7 /* Fabric.swift */,
+				46B165411ED4E49D002BEBD7 /* Facebook.swift */,
+				46B165421ED4E49D002BEBD7 /* ThirdPartyServices.swift */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		46B165431ED4E49D002BEBD7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				46B165441ED4E49D002BEBD7 /* Extensions */,
+				46B165471ED4E49D002BEBD7 /* Subclasses */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		46B165441ED4E49D002BEBD7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				46B165451ED4E49D002BEBD7 /* NSRangeExtension.swift */,
+				46B165461ED4E49D002BEBD7 /* UIStackExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		46B165471ED4E49D002BEBD7 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				46B165481ED4E49D002BEBD7 /* ContainerViewController.swift */,
+				46B165491ED4E49D002BEBD7 /* ExtendedNavbarView.swift */,
+				46B1654A1ED4E49D002BEBD7 /* NoHairlineNavigationBar.swift */,
+				46B1654B1ED4E49D002BEBD7 /* RenderedImageView.swift */,
+				46B1654C1ED4E49D002BEBD7 /* RoundedRenderedImageButton.swift */,
+				46B1654D1ED4E49D002BEBD7 /* UIAlertAction + SimpleHandlerInit.swift */,
+			);
+			path = Subclasses;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -810,14 +971,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				46B164A91ED4DB79002BEBD7 /* CreateViewController.swift in Sources */,
+				46B165671ED4E49D002BEBD7 /* RoundedRenderedImageButton.swift in Sources */,
 				46B1649E1ED4DB79002BEBD7 /* App.swift in Sources */,
 				46B164BA1ED4DB79002BEBD7 /* ChallengeViewController.swift in Sources */,
 				46B164AD1ED4DB79002BEBD7 /* FriendsViewController.swift in Sources */,
+				46B165561ED4E49D002BEBD7 /* DismissOnReturnTextViewDelegate.swift in Sources */,
+				46B165551ED4E49D002BEBD7 /* DismissesKeyboardOnTap.swift in Sources */,
 				46B164C11ED4DB79002BEBD7 /* PublishReplyViewController.swift in Sources */,
 				46B164CB1ED4DB79002BEBD7 /* Store.swift in Sources */,
+				46B165581ED4E49D002BEBD7 /* AsyncAction.swift in Sources */,
+				46B165541ED4E49D002BEBD7 /* TwitterProvider.swift in Sources */,
 				46B164961ED4DB79002BEBD7 /* JSON + Embed UID.swift in Sources */,
 				46B164C51ED4DB79002BEBD7 /* ProfileViewController.swift in Sources */,
+				46B165591ED4E49D002BEBD7 /* Router.swift in Sources */,
 				46B164C01ED4DB79002BEBD7 /* PostResponsesViewController.swift in Sources */,
+				46B165611ED4E49D002BEBD7 /* NSRangeExtension.swift in Sources */,
+				46B165691ED4E49D002BEBD7 /* URL + Decodable.swift in Sources */,
 				46B164A81ED4DB79002BEBD7 /* CreateReducer.swift in Sources */,
 				46B1649A1ED4DB79002BEBD7 /* ReactionType.swift in Sources */,
 				46B164A21ED4DB79002BEBD7 /* LandingController.swift in Sources */,
@@ -825,37 +994,56 @@
 				46B164CA1ED4DB79002BEBD7 /* PostState.swift in Sources */,
 				46B1649D1ED4DB79002BEBD7 /* UserType.swift in Sources */,
 				46B164B91ED4DB79002BEBD7 /* ChallengeTableViewCell.swift in Sources */,
+				46B165631ED4E49D002BEBD7 /* ContainerViewController.swift in Sources */,
 				46B164A71ED4DB79002BEBD7 /* CreateController.swift in Sources */,
 				46B164D01ED4DB79002BEBD7 /* Images.swift in Sources */,
 				46B164B81ED4DB79002BEBD7 /* ChallengeTableView.swift in Sources */,
 				46B164AA1ED4DB79002BEBD7 /* FeedReducer.swift in Sources */,
 				46B164B21ED4DB79002BEBD7 /* MeReducer.swift in Sources */,
+				46B165681ED4E49D002BEBD7 /* UIAlertAction + SimpleHandlerInit.swift in Sources */,
+				46B165501ED4E49D002BEBD7 /* FirebaseProvider.swift in Sources */,
 				46B1649F1ED4DB79002BEBD7 /* AppDelegate.swift in Sources */,
 				46B164D11ED4DB79002BEBD7 /* Localizable_Strings.swift in Sources */,
 				46B164B31ED4DB79002BEBD7 /* MeViewController.swift in Sources */,
 				46B164BF1ED4DB79002BEBD7 /* PostDetailViewController.swift in Sources */,
+				46B165641ED4E49D002BEBD7 /* ExtendedNavbarView.swift in Sources */,
+				46B165511ED4E49D002BEBD7 /* Firebase+Rx Auth.swift in Sources */,
 				46B164B01ED4DB79002BEBD7 /* MeController.swift in Sources */,
 				46B164BD1ED4DB79002BEBD7 /* ComposeViewController.swift in Sources */,
+				46B1655B1ED4E49D002BEBD7 /* DisposeBag += .swift in Sources */,
 				46B164B51ED4DB79002BEBD7 /* ChallengeReducer.swift in Sources */,
 				46B164A31ED4DB79002BEBD7 /* LandingModule.swift in Sources */,
 				46B164991ED4DB79002BEBD7 /* PostType.swift in Sources */,
 				46B164B11ED4DB79002BEBD7 /* MeHandler.swift in Sources */,
 				46B164AE1ED4DB79002BEBD7 /* HomeNavigator.swift in Sources */,
 				46B164C61ED4DB79002BEBD7 /* RootNavigator.swift in Sources */,
+				46B165621ED4E49D002BEBD7 /* UIStackExtension.swift in Sources */,
 				46B164AC1ED4DB79002BEBD7 /* FriendsReducer.swift in Sources */,
+				46B165601ED4E49D002BEBD7 /* ThirdPartyServices.swift in Sources */,
+				46B1654F1ED4E49D002BEBD7 /* FacebookProvider.swift in Sources */,
 				46B164951ED4DB79002BEBD7 /* FirebaseProvider + UserType.swift in Sources */,
+				46B1655F1ED4E49D002BEBD7 /* Facebook.swift in Sources */,
 				46B164981ED4DB79002BEBD7 /* PostService.swift in Sources */,
+				46B165571ED4E49D002BEBD7 /* PresentableError.swift in Sources */,
+				46B1655D1ED4E49D002BEBD7 /* TabBarItemProviding.swift in Sources */,
 				46B164921ED4DB79002BEBD7 /* APIError.swift in Sources */,
 				46B164C31ED4DB79002BEBD7 /* ProfilePhotoViewController.swift in Sources */,
 				46B164BB1ED4DB79002BEBD7 /* SegmentedTableViewHeaderFooterView.swift in Sources */,
+				46B165521ED4E49D002BEBD7 /* Firebase+Rx FetchData.swift in Sources */,
 				46B164CF1ED4DB79002BEBD7 /* Colors.swift in Sources */,
+				46B1655E1ED4E49D002BEBD7 /* Fabric.swift in Sources */,
 				46B1649C1ED4DB79002BEBD7 /* UserService.swift in Sources */,
 				46B164A51ED4DB79002BEBD7 /* LandingViewController.swift in Sources */,
+				46B165661ED4E49D002BEBD7 /* RenderedImageView.swift in Sources */,
+				46B165651ED4E49D002BEBD7 /* NoHairlineNavigationBar.swift in Sources */,
 				46B164D21ED4DB79002BEBD7 /* Storyboards.swift in Sources */,
+				46B1655C1ED4E49D002BEBD7 /* RxViewController.swift in Sources */,
+				46B165531ED4E49D002BEBD7 /* Firebase+Rx SetData.swift in Sources */,
 				46B164C91ED4DB79002BEBD7 /* AuthenticationState.swift in Sources */,
 				46B164A41ED4DB79002BEBD7 /* LandingReducer.swift in Sources */,
 				46B164971ED4DB79002BEBD7 /* Post.swift in Sources */,
 				46B164931ED4DB79002BEBD7 /* FirebaseProvider + PostType.swift in Sources */,
+				46B1655A1ED4E49D002BEBD7 /* RxReSwift.swift in Sources */,
 				46B164B41ED4DB79002BEBD7 /* ChallengeController.swift in Sources */,
 				46B164A01ED4DB79002BEBD7 /* AuthenticationNavigator.swift in Sources */,
 				46B164C81ED4DB79002BEBD7 /* AppState.swift in Sources */,
