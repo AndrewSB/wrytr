@@ -65,7 +65,6 @@
 		46B164C91ED4DB79002BEBD7 /* AuthenticationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1647F1ED4DB79002BEBD7 /* AuthenticationState.swift */; };
 		46B164CA1ED4DB79002BEBD7 /* PostState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B164801ED4DB79002BEBD7 /* PostState.swift */; };
 		46B164CB1ED4DB79002BEBD7 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B164811ED4DB79002BEBD7 /* Store.swift */; };
-		46B164CC1ED4DB79002BEBD7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46B164831ED4DB79002BEBD7 /* Info.plist */; };
 		46B164CD1ED4DB79002BEBD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B164851ED4DB79002BEBD7 /* Assets.xcassets */; };
 		46B164CE1ED4DB79002BEBD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B164861ED4DB79002BEBD7 /* LaunchScreen.storyboard */; };
 		46B164CF1ED4DB79002BEBD7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1648A1ED4DB79002BEBD7 /* Colors.swift */; };
@@ -98,6 +97,19 @@
 		46B165021ED4DBE9002BEBD7 /* SwiftyAttributes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164EB1ED4DBE9002BEBD7 /* SwiftyAttributes.framework */; };
 		46B165031ED4DBE9002BEBD7 /* Then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164EC1ED4DBE9002BEBD7 /* Then.framework */; };
 		46B165041ED4DBE9002BEBD7 /* UnderKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B164ED1ED4DBE9002BEBD7 /* UnderKeyboard.framework */; };
+		46B1650E1ED4E1A3002BEBD7 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B1650A1ED4E1A3002BEBD7 /* Crashlytics.framework */; };
+		46B1650F1ED4E1A3002BEBD7 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B1650B1ED4E1A3002BEBD7 /* Fabric.framework */; };
+		46B165101ED4E1A3002BEBD7 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B1650C1ED4E1A3002BEBD7 /* TwitterCore.framework */; };
+		46B165111ED4E1A3002BEBD7 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B1650D1ED4E1A3002BEBD7 /* TwitterKit.framework */; };
+		46B165201ED4E3CF002BEBD7 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B165141ED4E3CF002BEBD7 /* FirebaseAnalytics.framework */; };
+		46B165211ED4E3CF002BEBD7 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B165151ED4E3CF002BEBD7 /* FirebaseCore.framework */; };
+		46B165221ED4E3CF002BEBD7 /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B165161ED4E3CF002BEBD7 /* FirebaseCoreDiagnostics.framework */; };
+		46B165231ED4E3CF002BEBD7 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B165171ED4E3CF002BEBD7 /* FirebaseInstanceID.framework */; };
+		46B165241ED4E3CF002BEBD7 /* FirebaseNanoPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B165181ED4E3CF002BEBD7 /* FirebaseNanoPB.framework */; };
+		46B165251ED4E3CF002BEBD7 /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B165191ED4E3CF002BEBD7 /* GoogleToolboxForMac.framework */; };
+		46B165261ED4E3CF002BEBD7 /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B1651B1ED4E3CF002BEBD7 /* FirebaseAuth.framework */; };
+		46B165271ED4E3CF002BEBD7 /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B1651C1ED4E3CF002BEBD7 /* GTMSessionFetcher.framework */; };
+		46B165281ED4E3CF002BEBD7 /* FirebaseDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B1651E1ED4E3CF002BEBD7 /* FirebaseDatabase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -194,6 +206,21 @@
 		46B164EB1ED4DBE9002BEBD7 /* SwiftyAttributes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyAttributes.framework; path = Carthage/Build/iOS/SwiftyAttributes.framework; sourceTree = "<group>"; };
 		46B164EC1ED4DBE9002BEBD7 /* Then.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Then.framework; path = Carthage/Build/iOS/Then.framework; sourceTree = "<group>"; };
 		46B164ED1ED4DBE9002BEBD7 /* UnderKeyboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UnderKeyboard.framework; path = Carthage/Build/iOS/UnderKeyboard.framework; sourceTree = "<group>"; };
+		46B1650A1ED4E1A3002BEBD7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		46B1650B1ED4E1A3002BEBD7 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		46B1650C1ED4E1A3002BEBD7 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		46B1650D1ED4E1A3002BEBD7 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		46B165141ED4E3CF002BEBD7 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		46B165151ED4E3CF002BEBD7 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = "<group>"; };
+		46B165161ED4E3CF002BEBD7 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		46B165171ED4E3CF002BEBD7 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		46B165181ED4E3CF002BEBD7 /* FirebaseNanoPB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseNanoPB.framework; sourceTree = "<group>"; };
+		46B165191ED4E3CF002BEBD7 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleToolboxForMac.framework; sourceTree = "<group>"; };
+		46B1651B1ED4E3CF002BEBD7 /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = "<group>"; };
+		46B1651C1ED4E3CF002BEBD7 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = "<group>"; };
+		46B1651E1ED4E3CF002BEBD7 /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseDatabase.framework; sourceTree = "<group>"; };
+		46B1651F1ED4E3CF002BEBD7 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		46B165291ED4E442002BEBD7 /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,29 +228,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46B165281ED4E3CF002BEBD7 /* FirebaseDatabase.framework in Frameworks */,
 				46B164EE1ED4DBE9002BEBD7 /* Bolts.framework in Frameworks */,
 				46B164EF1ED4DBE9002BEBD7 /* FacebookCore.framework in Frameworks */,
 				46B164F01ED4DBE9002BEBD7 /* FacebookLogin.framework in Frameworks */,
 				46B164F11ED4DBE9002BEBD7 /* FacebookShare.framework in Frameworks */,
+				46B165201ED4E3CF002BEBD7 /* FirebaseAnalytics.framework in Frameworks */,
 				46B164F21ED4DBE9002BEBD7 /* FBSDKCoreKit.framework in Frameworks */,
+				46B165231ED4E3CF002BEBD7 /* FirebaseInstanceID.framework in Frameworks */,
+				46B165261ED4E3CF002BEBD7 /* FirebaseAuth.framework in Frameworks */,
 				46B164F31ED4DBE9002BEBD7 /* FBSDKLoginKit.framework in Frameworks */,
+				46B165211ED4E3CF002BEBD7 /* FirebaseCore.framework in Frameworks */,
 				46B164F41ED4DBE9002BEBD7 /* FBSDKShareKit.framework in Frameworks */,
 				46B164F51ED4DBE9002BEBD7 /* Himotoki.framework in Frameworks */,
 				46B164F61ED4DBE9002BEBD7 /* Library.framework in Frameworks */,
 				46B164F71ED4DBE9002BEBD7 /* PINCache.framework in Frameworks */,
+				46B1650E1ED4E1A3002BEBD7 /* Crashlytics.framework in Frameworks */,
 				46B164F81ED4DBE9002BEBD7 /* PINOperation.framework in Frameworks */,
 				46B164F91ED4DBE9002BEBD7 /* PINRemoteImage.framework in Frameworks */,
 				46B164FA1ED4DBE9002BEBD7 /* Result.framework in Frameworks */,
 				46B164FB1ED4DBE9002BEBD7 /* ReSwift.framework in Frameworks */,
+				46B165271ED4E3CF002BEBD7 /* GTMSessionFetcher.framework in Frameworks */,
 				46B164FC1ED4DBE9002BEBD7 /* RxCocoa.framework in Frameworks */,
+				46B165241ED4E3CF002BEBD7 /* FirebaseNanoPB.framework in Frameworks */,
 				46B164FD1ED4DBE9002BEBD7 /* RxLibrary.framework in Frameworks */,
+				46B165111ED4E1A3002BEBD7 /* TwitterKit.framework in Frameworks */,
 				46B164FE1ED4DBE9002BEBD7 /* RxParseCallback.framework in Frameworks */,
 				46B164FF1ED4DBE9002BEBD7 /* RxSwift.framework in Frameworks */,
 				46B165001ED4DBE9002BEBD7 /* RxSwiftExt.framework in Frameworks */,
 				46B165011ED4DBE9002BEBD7 /* RxSwiftUtilities.framework in Frameworks */,
+				46B1650F1ED4E1A3002BEBD7 /* Fabric.framework in Frameworks */,
+				46B165251ED4E3CF002BEBD7 /* GoogleToolboxForMac.framework in Frameworks */,
 				46B165021ED4DBE9002BEBD7 /* SwiftyAttributes.framework in Frameworks */,
 				46B165031ED4DBE9002BEBD7 /* Then.framework in Frameworks */,
+				46B165221ED4E3CF002BEBD7 /* FirebaseCoreDiagnostics.framework in Frameworks */,
 				46B165041ED4DBE9002BEBD7 /* UnderKeyboard.framework in Frameworks */,
+				46B165101ED4E1A3002BEBD7 /* TwitterCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +275,7 @@
 			children = (
 				46B164331ED4DB79002BEBD7 /* wrytr */,
 				46B1637C1ED4DA58002BEBD7 /* Products */,
+				46B165091ED4E1A3002BEBD7 /* Vendor */,
 				46B164D61ED4DBE9002BEBD7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -545,6 +586,60 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		46B165091ED4E1A3002BEBD7 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				46B165121ED4E3CF002BEBD7 /* Firebase */,
+				46B1650A1ED4E1A3002BEBD7 /* Crashlytics.framework */,
+				46B1650B1ED4E1A3002BEBD7 /* Fabric.framework */,
+				46B1650C1ED4E1A3002BEBD7 /* TwitterCore.framework */,
+				46B1650D1ED4E1A3002BEBD7 /* TwitterKit.framework */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		46B165121ED4E3CF002BEBD7 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				46B165131ED4E3CF002BEBD7 /* Analytics */,
+				46B1651A1ED4E3CF002BEBD7 /* Auth */,
+				46B1651D1ED4E3CF002BEBD7 /* Database */,
+				46B1651F1ED4E3CF002BEBD7 /* module.modulemap */,
+				46B165291ED4E442002BEBD7 /* Firebase.h */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		46B165131ED4E3CF002BEBD7 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				46B165141ED4E3CF002BEBD7 /* FirebaseAnalytics.framework */,
+				46B165151ED4E3CF002BEBD7 /* FirebaseCore.framework */,
+				46B165161ED4E3CF002BEBD7 /* FirebaseCoreDiagnostics.framework */,
+				46B165171ED4E3CF002BEBD7 /* FirebaseInstanceID.framework */,
+				46B165181ED4E3CF002BEBD7 /* FirebaseNanoPB.framework */,
+				46B165191ED4E3CF002BEBD7 /* GoogleToolboxForMac.framework */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		46B1651A1ED4E3CF002BEBD7 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				46B1651B1ED4E3CF002BEBD7 /* FirebaseAuth.framework */,
+				46B1651C1ED4E3CF002BEBD7 /* GTMSessionFetcher.framework */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		46B1651D1ED4E3CF002BEBD7 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				46B1651E1ED4E3CF002BEBD7 /* FirebaseDatabase.framework */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -552,9 +647,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46B1638D1ED4DA58002BEBD7 /* Build configuration list for PBXNativeTarget "wrytr" */;
 			buildPhases = (
+				46B165061ED4E012002BEBD7 /* swiftlint */,
+				46B165071ED4E028002BEBD7 /* SwiftGen */,
 				46B163771ED4DA58002BEBD7 /* Sources */,
 				46B163781ED4DA58002BEBD7 /* Frameworks */,
 				46B163791ED4DA58002BEBD7 /* Resources */,
+				46B165081ED4E03D002BEBD7 /* Install Fabric */,
 				46B165051ED4DBF1002BEBD7 /* carthage copy-frameworks */,
 			);
 			buildRules = (
@@ -609,7 +707,6 @@
 				46B164A61ED4DB79002BEBD7 /* Create.storyboard in Resources */,
 				46B164C21ED4DB79002BEBD7 /* ProfilePhoto.storyboard in Resources */,
 				46B164D31ED4DB79002BEBD7 /* colors.txt in Resources */,
-				46B164CC1ED4DB79002BEBD7 /* Info.plist in Resources */,
 				46B164C41ED4DB79002BEBD7 /* Profile.storyboard in Resources */,
 				46B164CD1ED4DB79002BEBD7 /* Assets.xcassets in Resources */,
 				46B164BE1ED4DB79002BEBD7 /* PostDetail.storyboard in Resources */,
@@ -662,6 +759,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		46B165061ED4E012002BEBD7 /* swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		46B165071ED4E028002BEBD7 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./scripts/swiftgen.sh \"${PROJECT_DIR}\" \"${PROJECT_NAME}\"";
+		};
+		46B165081ED4E03D002BEBD7 /* Install Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Install Fabric";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/Vendor/Fabric.framework/run\" c9709f407e459760ed04225dc4c1524bbe299ea1 3be561ba47fb763f2e8743990529806fc905488acbe191665fddec5d469631fd";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -843,12 +982,19 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Vendor",
+					"$(PROJECT_DIR)/Vendor/Firebase/Analytics",
+					"$(PROJECT_DIR)/Vendor/Firebase/Auth",
+					"$(PROJECT_DIR)/Vendor/Firebase/Database",
 				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/wrytr/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=80";
 				PRODUCT_BUNDLE_IDENTIFIER = tfw.wrytr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Vendor/Firebase";
 			};
 			name = Debug;
 		};
@@ -861,12 +1007,19 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Vendor",
+					"$(PROJECT_DIR)/Vendor/Firebase/Analytics",
+					"$(PROJECT_DIR)/Vendor/Firebase/Auth",
+					"$(PROJECT_DIR)/Vendor/Firebase/Database",
 				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/wrytr/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=80";
 				PRODUCT_BUNDLE_IDENTIFIER = tfw.wrytr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Vendor/Firebase";
 			};
 			name = Release;
 		};
