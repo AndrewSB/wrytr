@@ -14,7 +14,7 @@ generate_swiftgen() {
 	PROJECT_NAME=$2	
 
 	DOT_DIR="${PROJECT_DIR}/${PROJECT_NAME}"
-	RESOURCE_DIR="$DOT_DIR""/Resources"
+	RESOURCE_DIR="$DOT_DIR""/Supporting Files/Resources"
 	CONST_DIR="$RESOURCE_DIR""/Constants"
 	BUILD_DIR="$CONST_DIR""/Build"
 

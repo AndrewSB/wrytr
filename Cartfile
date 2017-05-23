@@ -1,4 +1,4 @@
-github "ReSwift/ReSwift" "master"
+github "ReSwift/ReSwift" ~> 4.0
 
 github "AndrewSB/Library" "master"
 github "AndrewSB/RxParseCallback" "master"
@@ -9,7 +9,7 @@ github "ReactiveX/RxSwift" ~> 3.0
 github "RxSwiftCommunity/RxSwiftExt"
 github "RxSwiftCommunity/RxSwiftUtilities"
 
-github "pinterest/PINRemoteImage"
+github "pinterest/PINRemoteImage" "master"
 github "marketplacer/UnderKeyboard"
 github "eddiekaiger/SwiftyAttributes"
 
