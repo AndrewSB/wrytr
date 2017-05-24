@@ -12,10 +12,10 @@ extension Firebase {
 
         let author: UserID
 
-        static func fromFirebase(ref: FDataSnapshot) -> Post? {
+        static func fromFirebase(ref: DataSnapshot) -> Post? {
             guard let json = ref.value as? [String: Any] else { return nil }
 
-            return fromFirebase(json: ["uid": ref.key! as Any] + json)
+            return fromFirebase(json: ["uid": ref.key as Any] + json)
         }
 
         static func fromFirebase(json: [String: Any]) -> Post? {
@@ -47,15 +47,15 @@ extension Firebase.Post: Decodable {
 extension Firebase.Provider {
     func fetchPost(withId id: PostID) -> Observable<Firebase.Post?> {
         return ref
-            .child(byAppendingPath: "posts")
-            .child(byAppendingPath: id)
+            .child("posts")
+            .child(id)
             .rx.observeEventOnce()
             .map(Firebase.Post.fromFirebase)
     }
 
     func fetchPosts() -> Observable<[Firebase.Post]> {
         return ref
-            .child(byAppendingPath: "posts")
+            .child("posts")
             .queryOrdered(byChild: "date")
             .rx.observeEventOnce()
             .map { arrayOfPostsRef in
@@ -67,25 +67,28 @@ extension Firebase.Provider {
     }
 
     func createPost(prompt: String, by userId: UserID) -> Observable<Firebase.Post> {
+        /**
         /// This idea comes from https://github.com/firebase/quickstart-ios/blob/f0c4be06f9bfe73a4a90116b19ee8f500c24f4c1/database/DatabaseExampleSwift/NewPostViewController.swift#L68
-        /// Create new post at /user-posts/$userid/$postid and at
+        /// Create new post at 
+        /// /user-posts/$userid/$postid and at
         /// /posts/$postid simultaneously
         ///
         /// /user-posts/$userid/$postid so we can find posts for you & your followers
         /// /posts/$postid so we can find everyone's recent & popular posts
+         */
 
-        let postId = ref.child(byAppendingPath: "posts").childByAutoId().key! as PostID
-        let post = Firebase.Post.init(id: postId, prompt: prompt, author: userId)
+        let postId = ref.child("posts").childByAutoId().key as PostID
+        let post = Firebase.Post(id: postId, prompt: prompt, author: userId)
 
         let globalScopedPost = ref
-            .child(byAppendingPath: "posts")
-            .child(byAppendingPath: postId)
-            .rx.setValue(post.encoded() as AnyObject!)
+            .child("posts")
+            .child(postId)
+            .rx.setValue(post.encoded())
 
         let userScopedPost = ref
-            .child(byAppendingPath: "user-posts")
-            .child(byAppendingPath: userId)
-            .child(byAppendingPath: postId)
+            .child("user-posts")
+            .child(userId)
+            .child(postId)
             .rx.setValue(post.encoded() as AnyObject)
 
         return Observable.zip(globalScopedPost, userScopedPost) { _, _ in post }

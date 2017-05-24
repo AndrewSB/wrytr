@@ -3,70 +3,29 @@ import RxSwift
 import RxCocoa
 import RxParseCallback
 
-extension Reactive where Base: Firebase {
+extension Reactive where Base: Auth {
 
-    func login(email: String, password: String) -> Observable<UserID> {
-
-        return RxParseCallback.createWithCallback({ observer in
-            self.base.authUser(email, password: password, withCompletionBlock: {
-                let listner = RxParseCallback.parseUnwrappedOptionalCallback(observer)
-                listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
-            })
-        }).map { (authData: FAuthData) in
-            return authData.uid
+    func login(email: String, password: String) -> Observable<FirebaseAuth.User> {
+        return RxParseCallback.createWithCallback { observer in
+            self.base.signIn(withEmail: email, password: password, completion: RxParseCallback.parseUnwrappedOptionalCallback(observer))
         }
-
     }
 
-    func signup(email: String, password: String) -> Observable<UserID> {
-
-        return RxParseCallback.createWithCallback({ observer in
-            return self.base.createUser(email, password: password, withValueCompletionBlock: { error, dict in
-                if let dict = dict {
-                    observer.onNext(dict)
-                } else {
-                    observer.onError(error!)
-                }
-                observer.onCompleted()
-            })
-        }).map { (dict: [AnyHashable: Any]) in
-            return dict["uid"] as! String
+    func signup(email: String, password: String) -> Observable<FirebaseAuth.User> {
+        return RxParseCallback.createWithCallback { observer in
+            self.base.createUser(withEmail: email, password: password, completion: RxParseCallback.parseUnwrappedOptionalCallback(observer))
         }
-
     }
 
-    func authAnon() -> Observable<FAuthData> {
-
-        return RxParseCallback.createWithCallback({ observer in
-            self.base.authAnonymously {
-                let listner = RxParseCallback.parseUnwrappedOptionalCallback(observer)
-                listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
-            }
-        })
-
+    func authAnon() -> Observable<FirebaseAuth.User> {
+        return RxParseCallback.createWithCallback { observer in
+            self.base.signInAnonymously(completion: RxParseCallback.parseUnwrappedOptionalCallback(observer))
+        }
     }
 
-    /// Usually facebook
-    func oauth(_ provider: String, token: String) -> Observable<FAuthData> {
-
-        return RxParseCallback.createWithCallback({ observer in
-            self.base.auth(withOAuthProvider: provider, token: token) {
-                let listner = RxParseCallback.parseUnwrappedOptionalCallback(observer)
-                listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
-            }
-        })
-
-    }
-
-    /// Usually Twitter
-    func oauth(_ provider: String, parameters: [AnyHashable : Any]!) -> Observable<FAuthData> {
-
-        return RxParseCallback.createWithCallback({ observer in
-            self.base.auth(withOAuthProvider: provider, parameters: parameters) {
-                let listner = RxParseCallback.parseUnwrappedOptionalCallback(observer)
-                listner($1, $0) // Firebase Y U switch the order of object & error? Conventions exist for a reason
-            }
-        })
-
+    func login(with credential: AuthCredential) -> Observable<FirebaseAuth.User> {
+        return RxParseCallback.createWithCallback { observer in
+            self.base.signIn(with: credential, completion: RxParseCallback.parseUnwrappedOptionalCallback(observer))
+        }
     }
 }

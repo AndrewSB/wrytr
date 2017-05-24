@@ -12,17 +12,16 @@ extension Firebase {
         let post: PostID
         let content: String
 
-        static func fromFirebase(_ snapshot: FDataSnapshot) throws -> [Firebase.Reaction] {
-            guard let json = snapshot.value as? [String: Any] else { return [] }
+        static func fromFirebase(_ snapshot: DataSnapshot) -> Firebase.Reaction? {
+            guard let json = snapshot.value as? [String: Any] else { return .none }
 
-            return try json
-                .map { (uidKey, value) -> [String: Any] in
-                    guard let singleReactionJSON = value as? [String: Any] else {
-                        fatalError("there should be no empty values in the JSON")
-                    }
-                    return singleReactionJSON.embed(uid: uidKey)
-                }
-                .map(Reaction.decodeValue)
+            return try? Firebase.Reaction.decodeValue(json.embed(uid: snapshot.key))
+        }
+
+        static func fromFirebase(_ snapshot: DataSnapshot) throws -> [Firebase.Reaction] {
+            return snapshot.children.map { reactionSnapshot in
+                Reaction.fromFirebase(reactionSnapshot as! DataSnapshot)!
+            }
         }
     }
 }
@@ -50,23 +49,23 @@ extension Firebase.Reaction: Decodable {
 extension Firebase.Provider {
     func reaction(withId id: ReactionID) -> Observable<Firebase.Reaction?> {
         return ref
-            .child(byAppendingPath: "reactions")
-            .child(byAppendingPath: id)
+            .child("reactions")
+            .child(id)
             .rx.observeEventOnce()
             .map(Firebase.Reaction.decodeValue)
     }
 
     func reactions(forPost postId: PostID) -> Observable<[Firebase.Reaction]> {
         return ref
-            .child(byAppendingPath: "reactions")
-            .child(byAppendingPath: postId)
+            .child("reactions")
+            .child(postId)
             .rx.observeEventOnce()
             .map(Firebase.Reaction.fromFirebase)
     }
 
     func createReaction(content: String, on post: PostID, by author: UserID) -> Observable<Firebase.Reaction> {
         return ref
-            .child(byAppendingPath: "reactions")
+            .child("reactions")
             .rx.setChildByAutoId([
                 "content": content,
                 "postId": post,
@@ -77,17 +76,17 @@ extension Firebase.Provider {
 
     func updateReaction(_ id: ReactionID, newContent: String) -> Observable<String> {
         return ref
-            .child(byAppendingPath: "reactions")
-            .child(byAppendingPath: id)
-            .child(byAppendingPath: "content")
-            .rx.setValue(NSString(string: newContent))
+            .child("reactions")
+            .child(id)
+            .child("content")
+            .rx.setValue(newContent)
             .mapTo(newContent)
     }
 
     func deleteReaction(withID id: ReactionID) -> Observable<Void> {
         return ref
-            .child(byAppendingPath: "reactions")
-            .child(byAppendingPath: id)
+            .child("reactions")
+            .child(id)
             .rx.setValue(.none)
             .mapTo(())
     }
