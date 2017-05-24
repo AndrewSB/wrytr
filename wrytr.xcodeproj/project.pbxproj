@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4657247E1ED62D8500153C76 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4657247D1ED62D8500153C76 /* TwitterKitResources.bundle */; };
 		46B164921ED4DB79002BEBD7 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B164351ED4DB79002BEBD7 /* APIError.swift */; };
 		46B164931ED4DB79002BEBD7 /* FirebaseProvider + PostType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B164361ED4DB79002BEBD7 /* FirebaseProvider + PostType.swift */; };
 		46B164941ED4DB79002BEBD7 /* FirebaseProvider + ReactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B164371ED4DB79002BEBD7 /* FirebaseProvider + ReactionType.swift */; };
@@ -140,6 +141,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4657247D1ED62D8500153C76 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		46B1637B1ED4DA58002BEBD7 /* wrytr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wrytr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B164351ED4DB79002BEBD7 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		46B164361ED4DB79002BEBD7 /* FirebaseProvider + PostType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FirebaseProvider + PostType.swift"; sourceTree = "<group>"; };
@@ -649,6 +651,7 @@
 				46B1650B1ED4E1A3002BEBD7 /* Fabric.framework */,
 				46B1650C1ED4E1A3002BEBD7 /* TwitterCore.framework */,
 				46B1650D1ED4E1A3002BEBD7 /* TwitterKit.framework */,
+				4657247D1ED62D8500153C76 /* TwitterKitResources.bundle */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -873,6 +876,7 @@
 				46B164BE1ED4DB79002BEBD7 /* PostDetail.storyboard in Resources */,
 				46B164A11ED4DB79002BEBD7 /* Landing.storyboard in Resources */,
 				46B164BC1ED4DB79002BEBD7 /* Compose.storyboard in Resources */,
+				4657247E1ED62D8500153C76 /* TwitterKitResources.bundle in Resources */,
 				46B164D41ED4DB79002BEBD7 /* Localizable.strings in Resources */,
 				46B164B61ED4DB79002BEBD7 /* Challenge.storyboard in Resources */,
 				46B164D51ED4DB79002BEBD7 /* strings-swift3.stencil in Resources */,
