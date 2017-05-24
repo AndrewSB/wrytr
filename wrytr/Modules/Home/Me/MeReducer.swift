@@ -9,7 +9,7 @@ extension Me {
 extension Me {
     static var reduce: Reducer<Me.State> {
         return { action, state in
-            fatalError("to be implemented")
+            return state ?? Me.State()
         }
     }
 }

@@ -7,12 +7,14 @@ class RootNavigator: MainNavigation {
 
     init(window: UIWindow) {
         self.window = window
+
+        window.rootViewController = UIViewController()
     }
 
     func add(child: ChildNavigation) {
         self.child = child
         self.child!.presentationContext = { [weak self] childView in
-            self!.window.rootViewController!.present(childView, animated: false)
+            self!.window.rootViewController = childView
         }
     }
 

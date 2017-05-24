@@ -43,7 +43,6 @@ class Router: StoreSubscriber {
     var currentRoute: AppRoute?
 
     init(mainNavigation: MainNavigation) {
-
         self.mainNavigation = mainNavigation
     }
 
@@ -59,8 +58,15 @@ class Router: StoreSubscriber {
     fileprivate func activate(route: AppRoute) {
         self.currentRoute = route
 
-        mainNavigation.activate(routable: {
-            fatalError("figure out how to go from route -> routable")
-         }())
+        mainNavigation.add(child: {
+            switch route {
+            case .none:
+                return Authentication.Navigator.init()
+            case .auth:
+                return Authentication.Navigator.init()
+            case .home:
+                return Home.Navigator()
+            }
+        }())
     }
 }

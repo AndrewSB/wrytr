@@ -436,10 +436,10 @@
 		46B1644F1ED4DB79002BEBD7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				46B164501ED4DB79002BEBD7 /* Create */,
+				46B1645B1ED4DB79002BEBD7 /* HomeNavigator.swift */,
 				46B164551ED4DB79002BEBD7 /* Feed */,
 				46B164581ED4DB79002BEBD7 /* Friends */,
-				46B1645B1ED4DB79002BEBD7 /* HomeNavigator.swift */,
+				46B164501ED4DB79002BEBD7 /* Create */,
 				46B1645C1ED4DB79002BEBD7 /* Me */,
 			);
 			path = Home;
