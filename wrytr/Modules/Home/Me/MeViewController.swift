@@ -48,7 +48,7 @@ extension Me.ViewController: StoreSubscriber {
     public func newState(state: Authentication.State) {
         self.loadViewIfNeeded()
 
-        switch state.user! {
+        switch state {
         case .loggedIn(let user):
             self.profilePhoto.user.value = user
             self.nameLabel.text = user.name

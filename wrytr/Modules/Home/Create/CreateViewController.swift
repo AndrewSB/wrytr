@@ -43,7 +43,7 @@ class CreateViewController: UIViewController, TabBarItemProviding {
 extension Create.ViewController: StoreSubscriber {
 
     public func newState(state: App.State) {
-        guard case let .loggedIn(localUser) = state.authenticationState.user! else {
+        guard case let .loggedIn(localUser) = state.authenticationState else {
             fatalError("You're trying to create something without being logged in")
         }
 

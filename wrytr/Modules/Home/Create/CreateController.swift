@@ -17,7 +17,7 @@ extension Create {
 
             input.text
                 .map { postContent in
-                    Post.CreateAction.createPost(withContent: postContent, by: store.state.authenticationState.user!.userModelIfLoggedIn!.id)
+                    Post.CreateAction.createPost(withContent: postContent, by: store.state.authenticationState.userModelIfLoggedIn!.id)
                 }
                 .flatMapLatest(input.command.mapTo)
                 .subscribe(onNext: store.dispatch)

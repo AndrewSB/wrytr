@@ -5,21 +5,30 @@ fileprivate let neverDisposeBag = DisposeBag()
 
 extension Authentication {
 
-    struct State: ReSwift.StateType {
-        var user: Auth? = .none
+    enum State: ReSwift.StateType {
+        case loggedOut
+        case loggingIn
+        case failedToLogin(PresentableError)
+        case loggedIn(UserType)
 
-        enum Auth {
-            case loggedOut
-            case loggingIn
-            case failedToLogin(PresentableError)
-            case loggedIn(UserType)
-
-            var userModelIfLoggedIn: UserType? {
-                switch self {
-                case .loggedIn(let model):  return model
-                default:                    return nil
-                }
+        static var `default`: State {
+            switch User.Service.authedUser {
+            case .none:
+                return .loggedOut
+            case .some(let user):
+                return .loggedIn(user)
             }
+        }
+
+        var userModelIfLoggedIn: UserType? {
+            switch self {
+            case .loggedIn(let model):  return model
+            default:                    return nil
+            }
+        }
+
+        init() {
+            self = State.default
         }
     }
 
@@ -99,28 +108,30 @@ extension Authentication {
             case let authAction as Authentication.Action:
                 switch authAction {
                 case .loggingIn:
-                    state.user = .loggingIn
+                    state = .loggingIn
 
                 case .loggedIn(let user):
-                    state.user = .loggedIn(user)
+                    state = .loggedIn(user)
 
                 case .errorLoggingIn(let error):
-                    state.user = .failedToLogin(error)
+                    state = .failedToLogin(error)
 
                 case .loggedOut:
-                    state.user = .loggedOut
+                    state = .loggedOut
                 }
 
             case Landing.Action.dismissError:
-                guard case .failedToLogin = state.user! else {
+                guard case .failedToLogin = state else {
                     fatalError("this was an assumption I had when I refactored: that the landing dismissError action would only happen if in the failedToLogin state. Untrue?")
                 }
-                switch state.user! {
+                switch state {
                 case .loggedIn: fatalError() // dismissing an error is a no-op if you're loggedIn
                 default:
-                    state.user = .loggedOut
+                    guard case .failedToLogin = state else {
+                        fatalError("this was an assumption I had when I refactored: that the landing dismissError action would only happen if in the failedToLogin state. Untrue?")
+                    }
+                    state = .loggedOut
                 }
-
 
             default:
                 break
