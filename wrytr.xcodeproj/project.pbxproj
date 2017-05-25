@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4657247E1ED62D8500153C76 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4657247D1ED62D8500153C76 /* TwitterKitResources.bundle */; };
+		465724801ED6320F00153C76 /* FeedModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657247F1ED6320F00153C76 /* FeedModule.swift */; };
+		465724821ED632BE00153C76 /* FriendsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465724811ED632BE00153C76 /* FriendsModule.swift */; };
+		465724841ED632E900153C76 /* CreateModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465724831ED632E900153C76 /* CreateModule.swift */; };
+		465724861ED6336A00153C76 /* MeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465724851ED6336A00153C76 /* MeModule.swift */; };
+		4672004D1ED6599B003DA10B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4672004C1ED6599B003DA10B /* GoogleService-Info.plist */; };
+		4672004F1ED65A68003DA10B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4672004E1ED65A68003DA10B /* AdSupport.framework */; };
 		46B164921ED4DB79002BEBD7 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B164351ED4DB79002BEBD7 /* APIError.swift */; };
 		46B164931ED4DB79002BEBD7 /* FirebaseProvider + PostType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B164361ED4DB79002BEBD7 /* FirebaseProvider + PostType.swift */; };
 		46B164941ED4DB79002BEBD7 /* FirebaseProvider + ReactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B164371ED4DB79002BEBD7 /* FirebaseProvider + ReactionType.swift */; };
@@ -142,6 +148,12 @@
 
 /* Begin PBXFileReference section */
 		4657247D1ED62D8500153C76 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		4657247F1ED6320F00153C76 /* FeedModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedModule.swift; sourceTree = "<group>"; };
+		465724811ED632BE00153C76 /* FriendsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsModule.swift; sourceTree = "<group>"; };
+		465724831ED632E900153C76 /* CreateModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateModule.swift; sourceTree = "<group>"; };
+		465724851ED6336A00153C76 /* MeModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeModule.swift; sourceTree = "<group>"; };
+		4672004C1ED6599B003DA10B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4672004E1ED65A68003DA10B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		46B1637B1ED4DA58002BEBD7 /* wrytr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wrytr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B164351ED4DB79002BEBD7 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		46B164361ED4DB79002BEBD7 /* FirebaseProvider + PostType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FirebaseProvider + PostType.swift"; sourceTree = "<group>"; };
@@ -284,6 +296,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4672004F1ED65A68003DA10B /* AdSupport.framework in Frameworks */,
 				46B165281ED4E3CF002BEBD7 /* FirebaseDatabase.framework in Frameworks */,
 				46B164EE1ED4DBE9002BEBD7 /* Bolts.framework in Frameworks */,
 				46B164EF1ED4DBE9002BEBD7 /* FacebookCore.framework in Frameworks */,
@@ -424,9 +437,9 @@
 		46B164491ED4DB79002BEBD7 /* Landing */ = {
 			isa = PBXGroup;
 			children = (
+				46B1644C1ED4DB79002BEBD7 /* LandingModule.swift */,
 				46B1644A1ED4DB79002BEBD7 /* Landing.storyboard */,
 				46B1644B1ED4DB79002BEBD7 /* LandingController.swift */,
-				46B1644C1ED4DB79002BEBD7 /* LandingModule.swift */,
 				46B1644D1ED4DB79002BEBD7 /* LandingReducer.swift */,
 				46B1644E1ED4DB79002BEBD7 /* LandingViewController.swift */,
 			);
@@ -448,6 +461,7 @@
 		46B164501ED4DB79002BEBD7 /* Create */ = {
 			isa = PBXGroup;
 			children = (
+				465724831ED632E900153C76 /* CreateModule.swift */,
 				46B164511ED4DB79002BEBD7 /* Create.storyboard */,
 				46B164521ED4DB79002BEBD7 /* CreateController.swift */,
 				46B164531ED4DB79002BEBD7 /* CreateReducer.swift */,
@@ -459,6 +473,7 @@
 		46B164551ED4DB79002BEBD7 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				4657247F1ED6320F00153C76 /* FeedModule.swift */,
 				46B164561ED4DB79002BEBD7 /* FeedReducer.swift */,
 				46B164571ED4DB79002BEBD7 /* FeedViewController.swift */,
 			);
@@ -468,6 +483,7 @@
 		46B164581ED4DB79002BEBD7 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
+				465724811ED632BE00153C76 /* FriendsModule.swift */,
 				46B164591ED4DB79002BEBD7 /* FriendsReducer.swift */,
 				46B1645A1ED4DB79002BEBD7 /* FriendsViewController.swift */,
 			);
@@ -477,6 +493,7 @@
 		46B1645C1ED4DB79002BEBD7 /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				465724851ED6336A00153C76 /* MeModule.swift */,
 				46B1645D1ED4DB79002BEBD7 /* Me.storyboard */,
 				46B1645E1ED4DB79002BEBD7 /* MeController.swift */,
 				46B1645F1ED4DB79002BEBD7 /* MeHandler.swift */,
@@ -574,6 +591,7 @@
 		46B164821ED4DB79002BEBD7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4672004C1ED6599B003DA10B /* GoogleService-Info.plist */,
 				46B164831ED4DB79002BEBD7 /* Info.plist */,
 				46B164841ED4DB79002BEBD7 /* Resources */,
 			);
@@ -616,6 +634,7 @@
 		46B164D61ED4DBE9002BEBD7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4672004E1ED65A68003DA10B /* AdSupport.framework */,
 				46B164D71ED4DBE9002BEBD7 /* Bolts.framework */,
 				46B164D81ED4DBE9002BEBD7 /* FacebookCore.framework */,
 				46B164D91ED4DBE9002BEBD7 /* FacebookLogin.framework */,
@@ -870,6 +889,7 @@
 			files = (
 				46B164A61ED4DB79002BEBD7 /* Create.storyboard in Resources */,
 				46B164C21ED4DB79002BEBD7 /* ProfilePhoto.storyboard in Resources */,
+				4672004D1ED6599B003DA10B /* GoogleService-Info.plist in Resources */,
 				46B164D31ED4DB79002BEBD7 /* colors.txt in Resources */,
 				46B164C41ED4DB79002BEBD7 /* Profile.storyboard in Resources */,
 				46B164CD1ED4DB79002BEBD7 /* Assets.xcassets in Resources */,
@@ -985,6 +1005,7 @@
 				46B164CB1ED4DB79002BEBD7 /* Store.swift in Sources */,
 				46B165581ED4E49D002BEBD7 /* AsyncAction.swift in Sources */,
 				46B165541ED4E49D002BEBD7 /* TwitterProvider.swift in Sources */,
+				465724841ED632E900153C76 /* CreateModule.swift in Sources */,
 				46B164961ED4DB79002BEBD7 /* JSON + Embed UID.swift in Sources */,
 				46B164C51ED4DB79002BEBD7 /* ProfileViewController.swift in Sources */,
 				46B165591ED4E49D002BEBD7 /* Router.swift in Sources */,
@@ -1003,6 +1024,7 @@
 				46B164D01ED4DB79002BEBD7 /* Images.swift in Sources */,
 				46B164B81ED4DB79002BEBD7 /* ChallengeTableView.swift in Sources */,
 				46B164AA1ED4DB79002BEBD7 /* FeedReducer.swift in Sources */,
+				465724821ED632BE00153C76 /* FriendsModule.swift in Sources */,
 				46B164B21ED4DB79002BEBD7 /* MeReducer.swift in Sources */,
 				46B165681ED4E49D002BEBD7 /* UIAlertAction + SimpleHandlerInit.swift in Sources */,
 				46B165501ED4E49D002BEBD7 /* FirebaseProvider.swift in Sources */,
@@ -1020,6 +1042,7 @@
 				46B164991ED4DB79002BEBD7 /* PostType.swift in Sources */,
 				46B164B11ED4DB79002BEBD7 /* MeHandler.swift in Sources */,
 				46B164AE1ED4DB79002BEBD7 /* HomeNavigator.swift in Sources */,
+				465724861ED6336A00153C76 /* MeModule.swift in Sources */,
 				46B164C61ED4DB79002BEBD7 /* RootNavigator.swift in Sources */,
 				46B165621ED4E49D002BEBD7 /* UIStackExtension.swift in Sources */,
 				46B164AC1ED4DB79002BEBD7 /* FriendsReducer.swift in Sources */,
@@ -1037,6 +1060,7 @@
 				46B164CF1ED4DB79002BEBD7 /* Colors.swift in Sources */,
 				46B1655E1ED4E49D002BEBD7 /* Fabric.swift in Sources */,
 				46B1649C1ED4DB79002BEBD7 /* UserService.swift in Sources */,
+				465724801ED6320F00153C76 /* FeedModule.swift in Sources */,
 				46B164A51ED4DB79002BEBD7 /* LandingViewController.swift in Sources */,
 				46B165661ED4E49D002BEBD7 /* RenderedImageView.swift in Sources */,
 				46B165651ED4E49D002BEBD7 /* NoHairlineNavigationBar.swift in Sources */,

@@ -3,7 +3,7 @@ import Library
 import ReSwift
 import RxSwift
 
-class Create {
+extension Create {
     typealias ViewController = CreateViewController
     typealias NavigationController = CreateNavigationController
 }

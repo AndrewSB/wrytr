@@ -2,7 +2,7 @@ import UIKit
 import ReSwift
 import RxSwift
 
-class Friends {
+extension Friends {
 
     class ViewController: ContainerViewController<ChallengeViewController>, TabBarItemProviding {
         static let tabItem: UITabBarItem = UITabBarItem().then {
@@ -10,7 +10,7 @@ class Friends {
             $0.image = UIImage(asset: .iconTabbarFriends)
         }
 
-        init(challengeViewController: ChallengeViewController) {
+        init(challengeViewController: ChallengeViewController = ChallengeViewController.fromStoryboard()) {
             super.init(viewController: challengeViewController)
         }
 

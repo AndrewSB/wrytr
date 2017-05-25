@@ -5,7 +5,7 @@ import RxCocoa
 import RxLibrary
 import Then
 
-class Feed {
+extension Feed {
 
     class ViewController: ContainerViewController<ChallengeViewController>, TabBarItemProviding {
         static let tabItem: UITabBarItem = UITabBarItem().then {
@@ -13,7 +13,7 @@ class Feed {
             $0.image = UIImage(asset: .iconTabbarFeed)
         }
 
-        init(challengeViewController: ChallengeViewController) {
+        init(challengeViewController: ChallengeViewController = ChallengeViewController.fromStoryboard()) {
             super.init(viewController: challengeViewController)
         }
 

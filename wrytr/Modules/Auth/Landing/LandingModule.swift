@@ -2,7 +2,7 @@ import UIKit
 
 class Landing {
     class Module: Routable {
-        let landingViewController: ViewController
+        private let landingViewController: ViewController
 
         var rootViewController: UIViewController {
             return landingViewController
