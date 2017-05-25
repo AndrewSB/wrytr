@@ -7,7 +7,6 @@ class RootNavigator: MainNavigation {
 
     init(window: UIWindow) {
         self.window = window
-
         window.rootViewController = UIViewController()
     }
 
@@ -18,11 +17,22 @@ class RootNavigator: MainNavigation {
         }
     }
 
-    func activate(routable: Routable) {
+    func activate(route: AppRoute) {
         guard let leafChild = self.recursiveLastChild as? ChildNavigation else {
-            fatalError("what's a root navigator to do without child 👵🏼😭")
+            /// If we don't have a child, let's add a relevant child
+            self.add(child: {
+                switch route {
+                case .auth:
+                    return Authentication.Navigator()
+                case .home:
+                    return Home.Navigator()
+                }
+            }())
+
+            // and that means (hopefully) we'll be able to activate that child as a leaf, so lets recurse :)
+            return activate(route: route)
         }
 
-        leafChild.activate(routable: routable)
+        leafChild.activate(route: route)
     }
 }

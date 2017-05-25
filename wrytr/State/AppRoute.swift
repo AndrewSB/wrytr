@@ -9,6 +9,8 @@ struct Routing: Action {
     init(to route: AppRoute) {
         self.route = route
     }
+
+    /// Long term it would be nice to have push and pop functions that return a new Routing action based on the current
 }
 extension Routing: Equatable {
 
@@ -18,7 +20,7 @@ extension Routing: Equatable {
 
     static var reduce: Reducer<AppRoute> {
         return { action, route in
-            let route = route ?? .none
+            let route = route ?? AppRoute.default
 
             switch action {
             case let routingAction as Routing:
@@ -47,9 +49,17 @@ extension Routing: Equatable {
 enum AppRoute: StateType, Equatable {
     case auth(AuthRoute)
     case home(HomeRoute)
-    case none
 
-    init() { self = .none }
+    static var `default`: AppRoute {
+        switch Authentication.State.`default` {
+        case .loggedIn:
+            return .home(.feed(.table))
+        case .loggedOut:
+            return .auth(.landing)
+        case .loggingIn, .failedToLogin:
+            fatalError("ASSUMPTION: this should never be called. Since default is only accessed at startup. IF we crash here, replace this with `return .auth(.landing))")
+        }
+    }
 
     static func == (lhs: AppRoute, rhs: AppRoute) -> Bool {
         switch (lhs, rhs) {
@@ -57,9 +67,7 @@ enum AppRoute: StateType, Equatable {
             return lA == rA
         case (.home(let lH), .home(let rH)):
             return lH == rH
-        case (.none, .none):
-            return true
-        case (.auth, .home), (.auth, .none), (.home, .auth), (.home, .none), (.none, .auth), (.none, .home):
+        case (.auth, .home), (.home, .auth):
             return false
         }
     }

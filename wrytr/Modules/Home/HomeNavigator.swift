@@ -11,12 +11,8 @@ class Home {
             tabBarController.viewControllers = routables.map { $0.rootViewController }
         }
 
-        func activate(routable: Routable) {
-            let childToBeActivated = tabBarController.viewControllers!.enumerated()
-                .filter { _, vc in vc == routable.rootViewController } // swiftlint:disable:this identifier_name
-                .first
+        init() {}
 
-            guard let indexToActivate = childToBeActivated?.offset else { fatalError("programmer error") }
 
             tabBarController.selectedIndex = indexToActivate
         }

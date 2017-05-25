@@ -4,23 +4,19 @@ class Authentication {
     class Navigator: ChildNavigation {
         var child: ChildNavigation? = .none
 
+        /// This is filled in by the parent (`RootNavigator`) and is invoked when the child wants to present a view
         var presentationContext: ((UIViewController) -> Void)!
 
-        var activated: Routable?
 
-        func configure(with routables: [Routable]) {
-            fatalError("no-op")
-        }
+        init() {}
+
 
         func activate(routable: Routable) {
             presentationContext(routable.rootViewController)
         }
 
         func add(child: ChildNavigation) {
-            self.child = child
-            self.child!.presentationContext = { [weak self] childView in
-                self!.activated!.rootViewController.present(childView, animated: false)
-            }
+            fatalError("unimplemented")
         }
 
     }

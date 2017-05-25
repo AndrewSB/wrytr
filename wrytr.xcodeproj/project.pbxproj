@@ -404,10 +404,10 @@
 		46B164461ED4DB79002BEBD7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				46B1647B1ED4DB79002BEBD7 /* RootNavigator.swift */,
 				46B164471ED4DB79002BEBD7 /* Auth */,
 				46B1644F1ED4DB79002BEBD7 /* Home */,
 				46B164621ED4DB79002BEBD7 /* Reusable */,
-				46B1647B1ED4DB79002BEBD7 /* RootNavigator.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";

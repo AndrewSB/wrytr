@@ -3,7 +3,7 @@ import ReSwift
 
 protocol Routable {
     var rootViewController: UIViewController { get }
-    var route: AppRoute { get }
+    var route: AppRoute { get } /// This is perhaps not necessary
 }
 
 protocol MainNavigation {
@@ -11,15 +11,12 @@ protocol MainNavigation {
 
     func add(child: ChildNavigation)
 
-    func activate(routable: Routable)
+    func activate(route: AppRoute)
 }
 
 protocol ChildNavigation: MainNavigation {
-    /// add these routes as children
-    func configure(with routables: [Routable])
-
     /// navigate to route
-    func activate(routable: Routable)
+    func activate(route: AppRoute)
 
     /// perhaps not the best abstraction, but a child can assume that after being configured by it's parent, context can be used to present itself
     var presentationContext: ((UIViewController) -> Void)! { get set }
@@ -57,16 +54,6 @@ class Router: StoreSubscriber {
 
     fileprivate func activate(route: AppRoute) {
         self.currentRoute = route
-
-        mainNavigation.add(child: {
-            switch route {
-            case .none:
-                return Authentication.Navigator.init()
-            case .auth:
-                return Authentication.Navigator.init()
-            case .home:
-                return Home.Navigator()
-            }
-        }())
+        mainNavigation.activate(route: route)
     }
 }

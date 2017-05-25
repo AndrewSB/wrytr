@@ -24,20 +24,4 @@ class App {
 
         store.subscribe(components.router) { $0.select({ $0.route }) }
     }
-
-    public func launch() {
-        let initialRoute: AppRoute = {
-            switch store.state.authenticationState.user! {
-            case .loggedIn:
-                return .home(.feed(.table))
-            case .loggedOut, .failedToLogin:
-                return .auth(.landing)
-            case .loggingIn:
-                fatalError("logging in on launch? what??")
-            }
-        }()
-
-        store.dispatch(Routing(to: initialRoute))
-    }
-
 }
