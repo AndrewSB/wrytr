@@ -19,10 +19,13 @@ generate_swiftgen() {
 	BUILD_DIR="$CONST_DIR""/Build"
 
 	if which /usr/local/bin/swiftgen > /dev/null; then
+		mkdir -p "$BUILD_DIR"
 		/usr/local/bin/swiftgen storyboards "$DOT_DIR" --output "$BUILD_DIR""/Storyboards.swift" --template swift3
 		/usr/local/bin/swiftgen images "$RESOURCE_DIR""/Assets.xcassets" --output "$BUILD_DIR""/Images.swift" --template swift3
 		/usr/local/bin/swiftgen colors "$CONST_DIR""/colors.txt" --output "$BUILD_DIR""/Colors.swift" --template swift3
 		/usr/local/bin/swiftgen strings "$CONST_DIR""/Localizable.strings" -output "$BUILD_DIR""/Localizable_Strings.swift" --template swift3
+	else 
+		echo "error: you need to brew install swiftgen"
 	fi
 }
 
