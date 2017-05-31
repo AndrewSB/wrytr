@@ -1,6 +1,6 @@
 import UIKit
 
-class Me {
+class Me { // swiftlint:disable:this type_name
     class Module: Routable {
         private let meNavigationController: NavigationController
 

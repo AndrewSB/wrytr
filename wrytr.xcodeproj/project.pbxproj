@@ -1178,6 +1178,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "$(PROJECT_DIR)/wrytr/Supporting Files/Resources/wrytr.entitlements";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = L8BYC3JY5Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1203,6 +1204,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "$(PROJECT_DIR)/wrytr/Supporting Files/Resources/wrytr.entitlements";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = L8BYC3JY5Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

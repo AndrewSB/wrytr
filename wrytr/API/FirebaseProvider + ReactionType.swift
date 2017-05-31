@@ -18,10 +18,15 @@ extension Firebase {
             return try? Firebase.Reaction.decodeValue(json.embed(uid: snapshot.key))
         }
 
-        static func fromFirebase(_ snapshot: DataSnapshot) throws -> [Firebase.Reaction] {
-            return snapshot.children.map { reactionSnapshot in
-                Reaction.fromFirebase(reactionSnapshot as! DataSnapshot)!
-            }
+        static func fromFirebase(_ snapshot: DataSnapshot) -> [Firebase.Reaction] {
+            return snapshot.children
+                .map { reactionSnapshot in
+                    guard let reactionSnapshot = reactionSnapshot as? DataSnapshot else {
+                        fatalError("an assumption I had about firebase")
+                    }
+                    return reactionSnapshot
+                }
+                .flatMap(Reaction.fromFirebase)
         }
     }
 }
