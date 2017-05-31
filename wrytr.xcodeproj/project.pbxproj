@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46196C711EDCEEC900DA514C /* AppComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46196C701EDCEEC900DA514C /* AppComponents.swift */; };
 		4657247E1ED62D8500153C76 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4657247D1ED62D8500153C76 /* TwitterKitResources.bundle */; };
 		465724801ED6320F00153C76 /* FeedModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657247F1ED6320F00153C76 /* FeedModule.swift */; };
 		465724821ED632BE00153C76 /* FriendsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465724811ED632BE00153C76 /* FriendsModule.swift */; };
@@ -132,9 +133,6 @@
 		46B1655B1ED4E49D002BEBD7 /* DisposeBag += .swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1653C1ED4E49D002BEBD7 /* DisposeBag += .swift */; };
 		46B1655C1ED4E49D002BEBD7 /* RxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1653D1ED4E49D002BEBD7 /* RxViewController.swift */; };
 		46B1655D1ED4E49D002BEBD7 /* TabBarItemProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1653E1ED4E49D002BEBD7 /* TabBarItemProviding.swift */; };
-		46B1655E1ED4E49D002BEBD7 /* Fabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165401ED4E49D002BEBD7 /* Fabric.swift */; };
-		46B1655F1ED4E49D002BEBD7 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165411ED4E49D002BEBD7 /* Facebook.swift */; };
-		46B165601ED4E49D002BEBD7 /* ThirdPartyServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165421ED4E49D002BEBD7 /* ThirdPartyServices.swift */; };
 		46B165611ED4E49D002BEBD7 /* NSRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165451ED4E49D002BEBD7 /* NSRangeExtension.swift */; };
 		46B165621ED4E49D002BEBD7 /* UIStackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165461ED4E49D002BEBD7 /* UIStackExtension.swift */; };
 		46B165631ED4E49D002BEBD7 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B165481ED4E49D002BEBD7 /* ContainerViewController.swift */; };
@@ -147,6 +145,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		46196C701EDCEEC900DA514C /* AppComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppComponents.swift; sourceTree = "<group>"; };
 		4657247D1ED62D8500153C76 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		4657247F1ED6320F00153C76 /* FeedModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedModule.swift; sourceTree = "<group>"; };
 		465724811ED632BE00153C76 /* FriendsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsModule.swift; sourceTree = "<group>"; };
@@ -277,9 +276,6 @@
 		46B1653C1ED4E49D002BEBD7 /* DisposeBag += .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DisposeBag += .swift"; sourceTree = "<group>"; };
 		46B1653D1ED4E49D002BEBD7 /* RxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxViewController.swift; sourceTree = "<group>"; };
 		46B1653E1ED4E49D002BEBD7 /* TabBarItemProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItemProviding.swift; sourceTree = "<group>"; };
-		46B165401ED4E49D002BEBD7 /* Fabric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fabric.swift; sourceTree = "<group>"; };
-		46B165411ED4E49D002BEBD7 /* Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
-		46B165421ED4E49D002BEBD7 /* ThirdPartyServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdPartyServices.swift; sourceTree = "<group>"; };
 		46B165451ED4E49D002BEBD7 /* NSRangeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRangeExtension.swift; sourceTree = "<group>"; };
 		46B165461ED4E49D002BEBD7 /* UIStackExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackExtension.swift; sourceTree = "<group>"; };
 		46B165481ED4E49D002BEBD7 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
@@ -409,6 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				46B164441ED4DB79002BEBD7 /* App.swift */,
+				46196C701EDCEEC900DA514C /* AppComponents.swift */,
 				46B164451ED4DB79002BEBD7 /* AppDelegate.swift */,
 			);
 			path = Application;
@@ -727,7 +724,6 @@
 				46B165371ED4E49D002BEBD7 /* ReSwift + */,
 				46B1653B1ED4E49D002BEBD7 /* Rx */,
 				46B1653E1ED4E49D002BEBD7 /* TabBarItemProviding.swift */,
-				46B1653F1ED4E49D002BEBD7 /* ThirdParty */,
 				46B165431ED4E49D002BEBD7 /* UI */,
 				46B1654E1ED4E49D002BEBD7 /* URL + Decodable.swift */,
 			);
@@ -780,16 +776,6 @@
 				46B1653D1ED4E49D002BEBD7 /* RxViewController.swift */,
 			);
 			path = Rx;
-			sourceTree = "<group>";
-		};
-		46B1653F1ED4E49D002BEBD7 /* ThirdParty */ = {
-			isa = PBXGroup;
-			children = (
-				46B165401ED4E49D002BEBD7 /* Fabric.swift */,
-				46B165411ED4E49D002BEBD7 /* Facebook.swift */,
-				46B165421ED4E49D002BEBD7 /* ThirdPartyServices.swift */,
-			);
-			path = ThirdParty;
 			sourceTree = "<group>";
 		};
 		46B165431ED4E49D002BEBD7 /* UI */ = {
@@ -1039,6 +1025,7 @@
 				46B1655B1ED4E49D002BEBD7 /* DisposeBag += .swift in Sources */,
 				46B164B51ED4DB79002BEBD7 /* ChallengeReducer.swift in Sources */,
 				46B164A31ED4DB79002BEBD7 /* LandingModule.swift in Sources */,
+				46196C711EDCEEC900DA514C /* AppComponents.swift in Sources */,
 				46B164991ED4DB79002BEBD7 /* PostType.swift in Sources */,
 				46B164B11ED4DB79002BEBD7 /* MeHandler.swift in Sources */,
 				46B164AE1ED4DB79002BEBD7 /* HomeNavigator.swift in Sources */,
@@ -1046,10 +1033,8 @@
 				46B164C61ED4DB79002BEBD7 /* RootNavigator.swift in Sources */,
 				46B165621ED4E49D002BEBD7 /* UIStackExtension.swift in Sources */,
 				46B164AC1ED4DB79002BEBD7 /* FriendsReducer.swift in Sources */,
-				46B165601ED4E49D002BEBD7 /* ThirdPartyServices.swift in Sources */,
 				46B1654F1ED4E49D002BEBD7 /* FacebookProvider.swift in Sources */,
 				46B164951ED4DB79002BEBD7 /* FirebaseProvider + UserType.swift in Sources */,
-				46B1655F1ED4E49D002BEBD7 /* Facebook.swift in Sources */,
 				46B164981ED4DB79002BEBD7 /* PostService.swift in Sources */,
 				46B165571ED4E49D002BEBD7 /* PresentableError.swift in Sources */,
 				46B1655D1ED4E49D002BEBD7 /* TabBarItemProviding.swift in Sources */,
@@ -1058,7 +1043,6 @@
 				46B164BB1ED4DB79002BEBD7 /* SegmentedTableViewHeaderFooterView.swift in Sources */,
 				46B165521ED4E49D002BEBD7 /* Firebase+Rx FetchData.swift in Sources */,
 				46B164CF1ED4DB79002BEBD7 /* Colors.swift in Sources */,
-				46B1655E1ED4E49D002BEBD7 /* Fabric.swift in Sources */,
 				46B1649C1ED4DB79002BEBD7 /* UserService.swift in Sources */,
 				465724801ED6320F00153C76 /* FeedModule.swift in Sources */,
 				46B164A51ED4DB79002BEBD7 /* LandingViewController.swift in Sources */,

@@ -1,5 +1,8 @@
 import UIKit
 import ReSwift
+import FacebookCore
+
+typealias AppURLOpenParams = (UIApplication, URL, [UIApplicationOpenURLOptionsKey : Any])
 
 extension App {
 
@@ -17,29 +20,20 @@ extension App {
             }
 
             self.app = {
-                let store = DefaultStore.create()
-                let components = App.Components(
-                    api: (User.Service.self, Post.Service.self),
-                    router: Router(mainNavigation: RootNavigator(window: self.window!)),
-                    thirdPartyServiceHandler: ThirdParty.Service.CombinedHandler([ThirdParty.Service.Facebook.Handler(), ThirdParty.Service.Fabric.Handler()])
-                )
-
-                let a = App(store: store, components: components)
+                let a = App(store: DefaultStore.create(), components: App.Components.productionComponents(in: self.window!))
                 App.current = a
                 return a
             }()
-
-            self.app.components.thirdPartyServiceHandler.onAppLaunch(application: application, launchOptions: launchOptions)
 
             return true
         }
 
         func applicationDidBecomeActive(_ application: UIApplication) {
-            self.app.components.thirdPartyServiceHandler.onAppActivate()
+            self.app.onAppActivate()
         }
 
         func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-            return self.app.components.thirdPartyServiceHandler.onAppOpenURL(app: app, url: url, options: options)
+            return self.app.onAppOpenUrl(app, url, options)
         }
 
     }
