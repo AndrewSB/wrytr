@@ -10,7 +10,7 @@ class Firebase {
 
         init() {
             FirebaseApp.configure()
-            self.ref = Database().reference()
+            self.ref = Database.database().reference()
         }
 
         var isLoggedIn: Bool {
