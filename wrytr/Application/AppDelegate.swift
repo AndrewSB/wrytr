@@ -22,6 +22,7 @@ extension App {
             self.app = {
                 let a = App(store: DefaultStore.create(), components: App.Components.productionComponents(in: self.window!))
                 App.current = a
+                a.start()
                 return a
             }()
 

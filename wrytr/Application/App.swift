@@ -40,7 +40,10 @@ class App {
     public init(store: DefaultStore, components: Components) {
         self.store = store
         self.components = components
+    }
 
+    /// subscribing the store causes some side effects, for those side effects to not fail, App.current needs to exist. So call launch after App.current is set :)
+    public func start() {
         self.bindings.forEach(disposeBag.insert)
 
         store.subscribe(components.router) { $0.select({ $0.route }) }
