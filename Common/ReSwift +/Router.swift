@@ -6,7 +6,7 @@ protocol Routable {
     var route: AppRoute { get } /// This is perhaps not necessary
 }
 
-protocol MainNavigation {
+protocol MainNavigation: class {
     var child: ChildNavigation? { get set }
 
     func add(child: ChildNavigation)

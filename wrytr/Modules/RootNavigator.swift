@@ -17,22 +17,62 @@ class RootNavigator: MainNavigation {
         }
     }
 
+    @discardableResult private func remove(child: ChildNavigation?) -> ChildNavigation {
+        var parent: MainNavigation? = self
+        var pointer: ChildNavigation? = self.child
+
+        while pointer !== child {
+            parent = child
+            pointer = child?.child
+        }
+        parent?.child = nil
+
+        guard let childPointer = pointer else {
+            fatalError("tried to remove a child that doesn't exist in the hierarchy")
+        }
+
+        return childPointer
+    }
+
     func activate(route: AppRoute) {
+        let child = ensureChildExistsOrAddChild(for: route)
+
+        if childIsCorrectParent(for: route) {
+            child.activate(route: route)
+        } else {
+            self.remove(child: child)
+            activate(route: route)
+        }
+    }
+
+    private func ensureChildExistsOrAddChild(for route: AppRoute) -> ChildNavigation {
         guard let leafChild = self.recursiveLastChild as? ChildNavigation else {
-            /// If we don't have a child, let's add a relevant child
-            self.add(child: {
+            let child: ChildNavigation = {
                 switch route {
                 case .auth:
                     return Authentication.Navigator()
                 case .home:
                     return Home.Navigator()
                 }
-            }())
+            }()
 
-            // and that means (hopefully) we'll be able to activate that child as a leaf, so lets recurse :)
-            return activate(route: route)
+            self.add(child: child)
+            return child
         }
 
-        leafChild.activate(route: route)
+        return leafChild
+    }
+
+    private func childIsCorrectParent(for route: AppRoute) -> Bool {
+        guard let child = self.child else {
+            return false
+        }
+
+        switch route {
+        case .auth:
+            return type(of: child) == Authentication.Navigator.self
+        case .home:
+            return type(of: child) == Home.Navigator.self
+        }
     }
 }
