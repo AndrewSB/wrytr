@@ -19,6 +19,7 @@ class Challenge {
                 ordering: Observable<State.Ordering>,
                 challengeSelected: Observable<PostType>
             ),
+            challengeSelected: @escaping (PostType) -> (ReSwift.Action),
             store: DefaultStore = App.current.store
         ) {
 
@@ -35,23 +36,8 @@ class Challenge {
                 .addDisposableTo(disposeBag)
 
             inputs.challengeSelected
-                .map { challenge -> ReSwift.Action in
-                    let homeRoute: (ChallengeRoute) -> HomeRoute = {
-                        switch inputs.source.value {
-                        case .friends:
-                            return HomeRoute.friends
-                        case .everyone:
-                            return HomeRoute.feed
-                        }
-                    }()
-
-                    guard store.state.route == .home(homeRoute(.table)) else { fatalError("programmer error") }
-                    return Routing(to: .home(homeRoute(.detail(challenge))))
-                }
-                .bind(onNext: { action in
-                    store.dispatch(action)
-                })
-                // .bind(onNext: store.dispatch)
+                .map(challengeSelected)
+                .bind(onNext: store.dispatch)
                 .addDisposableTo(disposeBag)
 
             store.asDriver()

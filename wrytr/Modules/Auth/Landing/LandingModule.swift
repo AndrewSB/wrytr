@@ -1,4 +1,5 @@
 import UIKit
+import ReSwift
 
 class Landing {
     class Module: Routable {
@@ -12,8 +13,9 @@ class Landing {
             return .auth(.landing)
         }
 
-        init(landingView: LandingViewController = LandingViewController.fromStoryboard(authOption: .register)) {
+        init(landingView: LandingViewController = LandingViewController.fromStoryboard(authOption: .register), store: DefaultStore = App.current.store) {
             self.landingViewController = landingView
+            store.subscribe(self.landingViewController)
         }
     }
 }

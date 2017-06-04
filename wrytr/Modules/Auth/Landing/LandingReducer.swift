@@ -1,7 +1,7 @@
 import ReSwift
 
 extension Landing {
-    struct State {
+    struct State: Equatable {
         var option: Option = .login
 
         enum Option {
@@ -28,6 +28,10 @@ extension Landing {
                 case .register: return tr(.loginLandingHelperRegisterTitle)
                 }
             }
+        }
+
+        static func == (lhs: State, rhs: State) -> Bool {
+            return lhs.option == rhs.option
         }
     }
 

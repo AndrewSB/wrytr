@@ -3,7 +3,7 @@ import ReSwift
 
 // swiftlint:disable identifier_name
 
-struct Routing: Action {
+struct Routing: ReSwift.Action {
     let route: AppRoute
 
     init(to route: AppRoute) {

@@ -40,7 +40,8 @@ extension Friends {
                         }
                     },
                     challengeSelected: contained.tableView.itemSelected
-                )
+                ),
+                challengeSelected: { post in Routing(to: .home(.feed(.detail(post)))) }
             )
 
             self.controller.output.refreshControlVisible.asDriver()
