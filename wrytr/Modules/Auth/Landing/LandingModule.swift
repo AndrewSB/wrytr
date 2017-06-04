@@ -15,7 +15,9 @@ class Landing {
 
         init(landingView: LandingViewController = LandingViewController.fromStoryboard(authOption: .register), store: DefaultStore = App.current.store) {
             self.landingViewController = landingView
+
             store.subscribe(self.landingViewController)
+            self.landingViewController.newState(state: store.state, animated: false)
         }
     }
 }

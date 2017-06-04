@@ -109,7 +109,11 @@ extension Landing.ViewController: StoreSubscriber {
     }
 
     func newState(state: App.State) {
-        render(option: state.landingState.option, animated: true)
+        self.newState(state: state, animated: true) // animate by default
+    }
+
+    func newState(state: App.State, animated: Bool = true) {
+        render(option: state.landingState.option, animated: animated)
         render(authLoadingState: state.authenticationState)
     }
 
