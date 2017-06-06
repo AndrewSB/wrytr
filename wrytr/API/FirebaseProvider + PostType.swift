@@ -59,10 +59,11 @@ extension Firebase.Provider {
             .queryOrdered(byChild: "date")
             .rx.observeEventOnce()
             .map { arrayOfPostsRef in
-                guard let arrayOfPostsInJson = arrayOfPostsRef.value as? [[String: Any]] else {
-                    fatalError("rethink this :/")
+                return arrayOfPostsRef.children.map { snapshot in
+                    guard let postSnapshot = snapshot as? DataSnapshot else { fatalError("rethink this :/") }
+
+                    return Firebase.Post.fromFirebase(ref: postSnapshot)!
                 }
-                return arrayOfPostsInJson.map { Firebase.Post.fromFirebase(json: $0)! }
             }
     }
 
