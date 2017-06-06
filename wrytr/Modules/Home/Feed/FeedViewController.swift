@@ -7,13 +7,13 @@ import Then
 
 extension Feed {
 
-    class ViewController: ContainerViewController<ChallengeViewController>, TabBarItemProviding {
+    class ViewController: ContainerViewController<ChallengeNavigationController>, TabBarItemProviding {
         static let tabItem: UITabBarItem = UITabBarItem().then {
             $0.title = tr(.feedTitle)
             $0.image = UIImage(asset: .iconTabbarFeed)
         }
 
-        init(challengeViewController: ChallengeViewController = ChallengeViewController.fromStoryboard()) {
+        init(challengeViewController: ChallengeNavigationController = ChallengeNavigationController.fromStoryboard(segmentedControlTitles: ["New", "Popular"])) {
             super.init(viewController: challengeViewController)
         }
 
@@ -26,8 +26,6 @@ extension Feed {
 
         override func viewDidLoad() {
             super.viewDidLoad()
-
-            self.contained.tableView.segmentedControlSectionTitles = ["New", "Popular"]
 
             self.controller = Challenge.Controller(
                 inputs: (

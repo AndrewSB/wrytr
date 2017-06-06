@@ -5,8 +5,10 @@ import Then
 extension Variable: Then {}
 
 class ChallengeViewController: RxViewController {
-    static func fromStoryboard() -> ChallengeViewController {
-        return StoryboardScene.Challenge.instantiateChallengeVC()
+    static func fromStoryboard(segmentedControlTitles: [String]) -> ChallengeViewController {
+        return StoryboardScene.Challenge.instantiateChallengeVC().then {
+            $0.tableView.segmentedControlSectionTitles = segmentedControlTitles
+        }
     }
 
     @IBOutlet weak var tableView: ChallengeTableView!
