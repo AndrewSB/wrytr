@@ -36,7 +36,7 @@ extension Firebase {
     }
 }
 
-extension Firebase.User: Decodable {
+extension Firebase.User: Himotoki.Decodable {
     //swiftlint:disable:next variable_name
     static func decode(_ e: Extractor) throws -> Firebase.User {
         return try Firebase.User(

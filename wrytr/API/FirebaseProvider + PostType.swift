@@ -25,7 +25,7 @@ extension Firebase {
 
 }
 
-extension Firebase.Post: Decodable {
+extension Firebase.Post: Himotoki.Decodable {
     static func decode(_ e: Extractor) throws -> Firebase.Post { //swiftlint:disable:this variable_name
 
         return try Firebase.Post(

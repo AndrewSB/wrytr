@@ -31,7 +31,7 @@ extension Firebase {
     }
 }
 
-extension Firebase.Reaction: Decodable {
+extension Firebase.Reaction: Himotoki.Decodable {
     static func decode(_ e: Extractor) throws -> Firebase.Reaction { //swiftlint:disable:this variable_name
         return try Firebase.Reaction(
             id: e <| "uid",

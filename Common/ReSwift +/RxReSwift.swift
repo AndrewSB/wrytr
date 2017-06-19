@@ -25,7 +25,7 @@ internal class ReactiveStoreSubscriber<S>: StoreSubscriber {
 
 public protocol ReactiveStoreType {
     associatedtype ReactiveStoreState
-    func asObservable<S: StoreSubscriber>() -> Observable<ReactiveStoreState> where S.StoreSubscriberStateType == ReactiveStoreState
+    func asObservable() -> Observable<ReactiveStoreState>
 }
 
 // MARK: - Store Extension (ReactiveStoreType)
